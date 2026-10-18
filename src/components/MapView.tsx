@@ -9,6 +9,7 @@ import type { BuiltupProps, EvidenceItem } from '../events/types';
 import { siteBounds, sitePoint, VERDICT_COLOR, verdictKey } from '../sites/geo';
 import type { SiteRecord } from '../sites/types';
 import { causeLabel } from '../lib/causes';
+import { siteLinksForEvent } from '../sites/links';
 import { RAIN_STOPS, rainColor } from '../lib/rainColor';
 import { fmtClock, fmtDateTime, HOUR } from '../lib/time';
 import { useEvent, useQuantTime, useStore } from '../state/store';
@@ -81,6 +82,9 @@ function tooltip({ object, layer }: PickingInfo) {
   if (layer.id === 'evidence') {
     const e = object as EvidenceItem;
     const when = e.t ? fmtDateTime(e.t) : 'time unknown';
+    // Read on hover rather than subscribed: 13 sites, so recomputing the links per tooltip is cheap.
+    const { sites, event } = useStore.getState();
+    const linked = sites && event ? siteLinksForEvent(sites.sites, event.id).get(e.props.id) ?? [] : [];
     return {
       html: `<div class="tip"><b>${e.props.location_name}</b><span>${e.props.claim}</span>${
         e.props.quote ? `<q>${e.props.quote}</q>` : ''
@@ -93,7 +97,7 @@ function tooltip({ object, layer }: PickingInfo) {
               e.props.cause_who ? ` (${e.props.cause_who})` : e.props.cause_attributed_by ? ` (${e.props.cause_attributed_by})` : ''
             }</span>`
           : ''
-      }</div>`,
+      }${linked.length ? `<span class="tip__site">Part of site: ${linked.map((l) => l.site.name).join(', ')}</span>` : ''}</div>`,
     };
   }
   const p = (object as { properties?: Record<string, unknown> }).properties;

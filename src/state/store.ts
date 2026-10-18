@@ -43,6 +43,8 @@ interface AppState {
   sites: LoadedSites | null;
   sitesError: string | null;
   selectedSiteId: string | null;
+  /** Claim to highlight on the site page after following a cause chip from Incident mode. */
+  focusClaimId: string | null;
   setEvent: (e: LoadedEvent) => void;
   setCatalog: (c: CatalogEntry[]) => void;
   setLoadError: (msg: string) => void;
@@ -57,6 +59,7 @@ interface AppState {
   setMode: (m: AppMode) => void;
   setSites: (s: LoadedSites | null, error?: string) => void;
   selectSite: (id: string | null) => void;
+  openSite: (siteId: string, claimId?: string) => void;
 }
 
 export const useStore = create<AppState>()((set, get) => ({
@@ -85,6 +88,7 @@ export const useStore = create<AppState>()((set, get) => ({
   sites: null,
   sitesError: null,
   selectedSiteId: null,
+  focusClaimId: null,
   setEvent: (event) => {
     setTimeZone(event.timezone);
     // Open on the radar pass if there is one: the single moment with a direct observation.
@@ -107,7 +111,8 @@ export const useStore = create<AppState>()((set, get) => ({
   setRainPoint: (rainPoint) => set({ rainPoint }),
   setMode: (mode) => set({ mode, playing: false }),
   setSites: (sites, sitesError) => set({ sites, sitesError: sitesError ?? null }),
-  selectSite: (selectedSiteId) => set({ selectedSiteId }),
+  selectSite: (selectedSiteId) => set({ selectedSiteId, focusClaimId: null }),
+  openSite: (selectedSiteId, claimId) => set({ mode: 'sites', playing: false, selectedSiteId, focusClaimId: claimId ?? null }),
 }));
 
 /** Time snapped to 15 min — for panels that shouldn't re-render every frame during playback. */

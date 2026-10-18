@@ -165,6 +165,11 @@ different city each year, which is why rain alone didn't explain flood days. Rea
    expansion, Oct 2022; Ijede 12-month job, due ~Feb 2026). Status = delivered / in progress / no visible work, evidenced by
    imagery and re-checked every rainy season.
 4. *Cause chain per claim.* Who claimed it → which structure → dated change → flood → evidence status. Cause chips link into it.
+   **Done 2026-10-18.**
+   - In Incident mode, a report that belongs to a site shows "Part of site: … →", and its map tooltip names the site.
+   - A cause chip that became a site claim is a button with an evidence-status dot. It opens the site page, scrolled to
+     that claim and highlighted.
+   - The links come from `sites.json` (flood radius + claims) via `src/sites/links.ts`. Sites now load at startup.
 
 **Future: scenarios, not forecasts.**
 5. *Terrain check first (cheap, decisive).* Copernicus GLO-30 / FABDEM (bare-earth) → depressions, fill-and-spill, flow

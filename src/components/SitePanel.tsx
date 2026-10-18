@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { loadEvent } from '../events/load';
 import { causeLabel, CAUSES } from '../lib/causes';
 import type { PromiseStatus } from '../lib/promises';
@@ -6,7 +6,7 @@ import { VERDICT_COLOR, verdictKey } from '../sites/geo';
 import type { EvidenceStatus, SitePromise, SiteRecord, WaybackImage } from '../sites/types';
 import { useStore } from '../state/store';
 
-const EVIDENCE_LABEL: Record<EvidenceStatus, string> = {
+export const EVIDENCE_LABEL: Record<EvidenceStatus, string> = {
   supports: 'Imagery supports',
   weak: 'Weak support',
   inconclusive: 'Inconclusive',
@@ -158,6 +158,11 @@ function BeforeAfter({ images }: { images: WaybackImage[] }) {
 
 function SiteDetail({ site, promises }: { site: SiteRecord; promises: Record<string, SitePromise> }) {
   const selectSite = useStore((s) => s.selectSite);
+  const focusClaimId = useStore((s) => s.focusClaimId);
+  // Arriving from a cause chip: bring that claim's row into view.
+  useEffect(() => {
+    if (focusClaimId) document.getElementById(`claim-${focusClaimId}`)?.scrollIntoView({ block: 'center', behavior: 'smooth' });
+  }, [focusClaimId, site.site_id]);
   const catalog = useStore((s) => s.catalog);
   const [opening, setOpening] = useState<string | null>(null);
   const floodYears = [...new Set(site.floods.map((f) => year(f.date)))];
@@ -206,7 +211,7 @@ function SiteDetail({ site, promises }: { site: SiteRecord; promises: Record<str
         {site.claims.length === 0 && <p className="empty">No source named a cause here.</p>}
         <ol className="chain">
           {site.claims.map((c) => (
-            <li key={c.claim_id}>
+            <li key={c.claim_id} id={`claim-${c.claim_id}`} className={c.claim_id === focusClaimId ? 'is-focus' : undefined}>
               <span className={`cause-chip${CAUSES.find((x) => x.tag === c.cause)?.human ? ' cause-chip--human' : ''}`}>{causeLabel(c.cause)}</span>
               <span className="chain__who">
                 {c.who ?? c.attributed_by ?? 'unattributed'}

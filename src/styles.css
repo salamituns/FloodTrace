@@ -205,9 +205,17 @@ h3, h4 { margin: 0; font-size: 12.5px; font-weight: 600; }
 .rain-legend--built .rain-legend__ramp span { width: 36px; color: #5a3a12; text-shadow: none; }
 .rain-legend--built .rain-legend__ramp span.is-dark { color: #fff; }
 .tip__cause { color: #f2c27b; font-size: 11px; }
+.tip__site { display: block; margin-top: 3px; color: #9fd0f0; font-size: 11px; font-weight: 600; }
 .cause-chips { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 2px; }
 .cause-chip { font-size: 10.5px; padding: 1px 6px; border-radius: 9px; background: #eef3f7; color: #2f5a7a; border: 1px solid #d5e2ec; }
 .cause-chip--human { background: #fbefe2; color: #8a4b12; border-color: #efd5b6; }
+.cause-chip--link { cursor: pointer; font: inherit; font-size: 10.5px; display: inline-flex; align-items: center; gap: 4px; }
+.cause-chip--link:hover { filter: brightness(0.95); text-decoration: underline; }
+.ev-dot { width: 7px; height: 7px; border-radius: 50%; background: #b3ab9f; display: inline-block; }
+.ev-dot--supports { background: #2c6b41; }
+.ev-dot--weak { background: #c9852f; }
+.ev-dot--contradicts { background: #a3361f; }
+.site-link { font-size: 11px; align-self: flex-start; padding: 0; }
 .causes { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 4px; font-size: 12px; }
 .causes li { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 8px; }
 .causes__bar { grid-column: 1 / -1; height: 4px; border-radius: 2px; background: #6f9fc4; }
@@ -260,6 +268,7 @@ h3, h4 { margin: 0; font-size: 12.5px; font-weight: 600; }
 .chain q, .promises q { font-style: italic; color: #4a453e; }
 .chain q a, .promises q a { color: inherit; }
 .chain small, .promises small { color: var(--muted); }
+.chain li.is-focus { border-left-color: var(--accent, #3d7fc4); background: rgba(61, 127, 196, 0.07); }
 
 .site-floods { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 6px; }
 .site-floods li { display: flex; justify-content: space-between; align-items: center; gap: 8px; }
