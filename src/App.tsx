@@ -60,16 +60,17 @@ function useHashSync() {
   }, []);
 }
 
-/** Fetch the site registry the first time Sites mode opens. */
+/** Fetch the site registry the first time Sites mode opens, and again after Retry clears the error. */
 function useSitesLoader() {
   const mode = useStore((s) => s.mode);
+  const failed = useStore((s) => s.sitesError !== null);
   useEffect(() => {
-    const { sites, sitesError, setSites } = useStore.getState();
-    if (mode !== 'sites' || sites || sitesError) return;
+    const { sites, setSites } = useStore.getState();
+    if (mode !== 'sites' || sites || failed) return;
     loadSites()
       .then((s) => setSites(s))
       .catch((err: unknown) => setSites(null, String(err)));
-  }, [mode]);
+  }, [mode, failed]);
 }
 
 export default function App() {

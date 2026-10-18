@@ -1,0 +1,1683 @@
+{
+ "meta": {
+  "task": "24b-terrain-controls (drainage sites)",
+  "note": "same terrain metrics at each site's centroid, radius from its location_confidence; control_percentile = percentile among the builtup_only design's control windows, percentile_local = percentile among the 'local' design's 1-3 km neighbourhood control windows (mixed radii), both for that DEM",
+  "seed": 20261018,
+  "generated_at": "2026-10-18T15:15:39Z",
+  "sources": {
+   "dem_primary": "FABDEM V1-2 (Forest And Buildings removed Copernicus DEM; Hawker, Uhe, Paulo, Sosa, Savage, Sampson, Neal 2022, Environmental Research Letters https://doi.org/10.1088/1748-9326/ac4d4f), University of Bristol data.bris repository, CC BY-NC-SA 4.0.",
+   "dem_comparison": "Copernicus GLO-30 DSM (Copernicus DEM, Airbus Defence and Space / ESA, 2022_02 release as distributed in the public AWS 'copernicus-dem-30m' bucket); contains buildings and vegetation.",
+   "dem_urls": {
+    "fabdem": "https://data.bris.ac.uk/datasets/s5hqmjcdj8yo2ibzi9b4ew3sn/N00E000-N10E010_FABDEM_V1-2.zip",
+    "fabdem_mirror": "https://huggingface.co/buckets/links-ads/fabdem/resolve/tiles/N00E000-N10E010_FABDEM_V1-2/<tile>",
+    "glo30": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_<tile>_DEM/Copernicus_DSM_COG_10_<tile>_DEM.tif"
+   },
+   "water_lagoon_sea": {
+    "lagoon": "OSM relations [2116202, 2116203], ODbL (OpenStreetMap contributors)",
+    "sea": "OSM natural=coastline via Overpass, rasterized with the lagoon polygons"
+   },
+   "waterways": {
+    "source": "OSM waterway=drain|canal|stream|ditch|river via Overpass",
+    "licence": "ODbL (OpenStreetMap contributors)",
+    "generated_at": "2026-10-18T14:36:44Z",
+    "n_ways": 1448
+   },
+   "builtup_2020_matching": "GHS-BUILT-S R2023A E2020, CC BY 4.0 (European Union, GHSL R2023A, GHS-BUILT-S)",
+   "land_mask": "ESA WorldCover 10 m v200 (2021), CC BY 4.0 (ESA WorldCover 10 m v200, 2021)",
+   "evidence": "events/*/evidence.geojson (five events)"
+  }
+ },
+ "sites": [
+  {
+   "site_id": "alpha-beach-156",
+   "structure_name": "System 156 (upstream), Alpha Beach Road corridor",
+   "location_confidence": "street",
+   "radius_m": 150.0,
+   "centroid": [
+    3.5089,
+    6.43663
+   ],
+   "dist_lagoon_sea_m": 1590.0,
+   "metrics": {
+    "fabdem": {
+     "hand_min": {
+      "value": 0.053,
+      "control_percentile": 0.7929,
+      "percentile_local": 0.8343
+     },
+     "dep_share_050": {
+      "value": 0.0,
+      "control_percentile": 0.0,
+      "percentile_local": 0.0
+     },
+     "acc_log10_max": {
+      "value": 1.813,
+      "control_percentile": 0.0643,
+      "percentile_local": 0.0587
+     },
+     "tpi_min": {
+      "value": 0.08,
+      "control_percentile": 0.9754,
+      "percentile_local": 0.9755
+     },
+     "elev_min": {
+      "value": 1.493,
+      "control_percentile": 0.0889,
+      "percentile_local": 0.2603
+     },
+     "hand_min_025": {
+      "value": 0.053,
+      "control_percentile": 0.894,
+      "percentile_local": 0.9071
+     },
+     "hand_min_4": {
+      "value": 0.053,
+      "control_percentile": 0.5441,
+      "percentile_local": 0.6475
+     },
+     "dep_share_025": {
+      "value": 0.0,
+      "control_percentile": 0.0,
+      "percentile_local": 0.0
+     },
+     "dep_share_100": {
+      "value": 0.0,
+      "control_percentile": 0.0,
+      "percentile_local": 0.0
+     },
+     "elev_median": {
+      "value": 1.581,
+      "control_percentile": 0.0516,
+      "percentile_local": 0.1869
+     },
+     "elev_point": {
+      "value": 1.581,
+      "control_percentile": 0.0488,
+      "percentile_local": 0.1869
+     }
+    },
+    "glo30": {
+     "hand_min": {
+      "value": -0.044,
+      "control_percentile": 0.7966,
+      "percentile_local": 0.8586
+     },
+     "dep_share_050": {
+      "value": 0.0,
+      "control_percentile": 0.0,
+      "percentile_local": 0.0
+     },
+     "acc_log10_max": {
+      "value": 1.716,
+      "control_percentile": 0.027,
+      "percentile_local": 0.0298
+     },
+     "tpi_min": {
+      "value": -0.543,
+      "control_percentile": 0.969,
+      "percentile_local": 0.9735
+     },
+     "elev_min": {
+      "value": 1.066,
+      "control_percentile": 0.0865,
+      "percentile_local": 0.244
+     },
+     "hand_min_025": {
+      "value": -0.093,
+      "control_percentile": 0.865,
+      "percentile_local": 0.9008
+     },
+     "hand_min_4": {
+      "value": 0.265,
+      "control_percentile": 0.6995,
+      "percentile_local": 0.7693
+     },
+     "dep_share_025": {
+      "value": 0.025,
+      "control_percentile": 0.131,
+      "percentile_local": 0.0825
+     },
+     "dep_share_100": {
+      "value": 0.0,
+      "control_percentile": 0.0,
+      "percentile_local": 0.0
+     },
+     "elev_median": {
+      "value": 1.786,
+      "control_percentile": 0.0349,
+      "percentile_local": 0.0909
+     },
+     "elev_point": {
+      "value": 1.669,
+      "control_percentile": 0.0313,
+      "percentile_local": 0.0992
+     }
+    }
+   }
+  },
+  {
+   "site_id": "agungi-collector",
+   "structure_name": "Agungi Road collector (existing, to lagoon); Agungi\u2013Ajiran Road",
+   "location_confidence": "street",
+   "radius_m": 150.0,
+   "centroid": [
+    3.51799,
+    6.44701
+   ],
+   "dist_lagoon_sea_m": 1570.0,
+   "metrics": {
+    "fabdem": {
+     "hand_min": {
+      "value": 0.0,
+      "control_percentile": 0.4746,
+      "percentile_local": 0.4731
+     },
+     "dep_share_050": {
+      "value": 0.0,
+      "control_percentile": 0.0,
+      "percentile_local": 0.0
+     },
+     "acc_log10_max": {
+      "value": 5.207,
+      "control_percentile": 0.9754,
+      "percentile_local": 0.9615
+     },
+     "tpi_min": {
+      "value": -0.07,
+      "control_percentile": 0.9611,
+      "percentile_local": 0.9583
+     },
+     "elev_min": {
+      "value": 0.0,
+      "control_percentile": 0.0,
+      "percentile_local": 0.0
+     },
+     "hand_min_025": {
+      "value": 0.0,
+      "control_percentile": 0.5846,
+      "percentile_local": 0.6018
+     },
+     "hand_min_4": {
+      "value": 0.0,
+      "control_percentile": 0.3424,
+      "percentile_local": 0.3581
+     },
+     "dep_share_025": {
+      "value": 0.0,
+      "control_percentile": 0.0,
+      "percentile_local": 0.0
+     },
+     "dep_share_100": {
+      "value": 0.0,
+      "control_percentile": 0.0,
+      "percentile_local": 0.0
+     },
+     "elev_median": {
+      "value": 0.0,
+      "control_percentile": 0.0,
+      "percentile_local": 0.0
+     },
+     "elev_point": {
+      "value": 0.0,
+      "control_percentile": 0.0,
+      "percentile_local": 0.0
+     }
+    },
+    "glo30": {
+     "hand_min": {
+      "value": -0.177,
+      "control_percentile": 0.768,
+      "percentile_local": 0.8261
+     },
+     "dep_share_050": {
+      "value": 0.012,
+      "control_percentile": 0.1675,
+      "percentile_local": 0.1282
+     },
+     "acc_log10_max": {
+      "value": 1.929,
+      "control_percentile": 0.05,
+      "percentile_local": 0.0544
+     },
+     "tpi_min": {
+      "value": -1.259,
+      "control_percentile": 0.9242,
+      "percentile_local": 0.9415
+     },
+     "elev_min": {
+      "value": 0.95,
+      "control_percentile": 0.0825,
+      "percentile_local": 0.2397
+     },
+     "hand_min_025": {
+      "value": -0.498,
+      "control_percentile": 0.7614,
+      "percentile_local": 0.7873
+     },
+     "hand_min_4": {
+      "value": null,
+      "control_percentile": null,
+      "percentile_local": null
+     },
+     "dep_share_025": {
+      "value": 0.333,
+      "control_percentile": 0.8718,
+      "percentile_local": 0.7885
+     },
+     "dep_share_100": {
+      "value": 0.0,
+      "control_percentile": 0.0,
+      "percentile_local": 0.0
+     },
+     "elev_median": {
+      "value": 1.339,
+      "control_percentile": 0.0163,
+      "percentile_local": 0.0556
+     },
+     "elev_point": {
+      "value": 1.537,
+      "control_percentile": 0.0282,
+      "percentile_local": 0.0952
+     }
+    }
+   }
+  },
+  {
+   "site_id": "olopomeji",
+   "structure_name": "Olopo Meji / Alapomeji section of Iyana Oworo (approach to Third Mainland Bridge)",
+   "location_confidence": "street",
+   "radius_m": 150.0,
+   "centroid": [
+    3.39341,
+    6.54975
+   ],
+   "dist_lagoon_sea_m": 1409.0,
+   "metrics": {
+    "fabdem": {
+     "hand_min": {
+      "value": 10.143,
+      "control_percentile": 0.9817,
+      "percentile_local": 0.9896
+     },
+     "dep_share_050": {
+      "value": 0.0,
+      "control_percentile": 0.0,
+      "percentile_local": 0.0
+     },
+     "acc_log10_max": {
+      "value": 2.679,
+      "control_percentile": 0.1619,
+      "percentile_local": 0.173
+     },
+     "tpi_min": {
+      "value": 0.456,
+      "control_percentile": 0.9869,
+      "percentile_local": 0.992
+     },
+     "elev_min": {
+      "value": 15.745,
+      "control_percentile": 0.4163,
+      "percentile_local": 0.6587
+     },
+     "hand_min_025": {
+      "value": 0.0,
+      "control_percentile": 0.5846,
+      "percentile_local": 0.6018
+     },
+     "hand_min_4": {
+      "value": 11.56,
+      "control_percentile": 0.9358,
+      "percentile_local": 0.9468
+     },
+     "dep_share_025": {
+      "value": 0.0,
+      "control_percentile": 0.0,
+      "percentile_local": 0.0
+     },
+     "dep_share_100": {
+      "value": 0.0,
+      "control_percentile": 0.0,
+      "percentile_local": 0.0
+     },
+     "elev_median": {
+      "value": 21.838,
+      "control_percentile": 0.3952,
+      "percentile_local": 0.6083
+     },
+     "elev_point": {
+      "value": 21.537,
+      "control_percentile": 0.3937,
+      "percentile_local": 0.6016
+     }
+    },
+    "glo30": {
+     "hand_min": {
+      "value": 16.304,
+      "control_percentile": 0.9928,
+      "percentile_local": 0.9964
+     },
+     "dep_share_050": {
+      "value": 0.0,
+      "control_percentile": 0.0,
+      "percentile_local": 0.0
+     },
+     "acc_log10_max": {
+      "value": 2.71,
+      "control_percentile": 0.1306,
+      "percentile_local": 0.144
+     },
+     "tpi_min": {
+      "value": -1.205,
+      "control_percentile": 0.9258,
+      "percentile_local": 0.9447
+     },
+     "elev_min": {
+      "value": 21.975,
+      "control_percentile": 0.5075,
+      "percentile_local": 0.7313
+     },
+     "hand_min_025": {
+      "value": 0.0,
+      "control_percentile": 0.8861,
+      "percentile_local": 0.9187
+     },
+     "hand_min_4": {
+      "value": 16.304,
+      "control_percentile": 0.9632,
+      "percentile_local": 0.9741
+     },
+     "dep_share_025": {
+      "value": 0.037,
+      "control_percentile": 0.1718,
+      "percentile_local": 0.1175
+     },
+     "dep_share_100": {
+      "value": 0.0,
+      "control_percentile": 0.0,
+      "percentile_local": 0.0
+     },
+     "elev_median": {
+      "value": 25.323,
+      "control_percentile": 0.4333,
+      "percentile_local": 0.6361
+     },
+     "elev_point": {
+      "value": 26.625,
+      "control_percentile": 0.4512,
+      "percentile_local": 0.6492
+     }
+    }
+   }
+  },
+  {
+   "site_id": "ikorodu-dammed",
+   "structure_name": "Ikorodu drainage works \u2014 Gberigbe Road outfall channel (One Fold / Ijede corridor); contractor and official channel number not_found in Wahab's statement",
+   "location_confidence": "neighbourhood",
+   "radius_m": 750.0,
+   "centroid": [
+    3.60698,
+    6.58328
+   ],
+   "dist_lagoon_sea_m": 2258.0,
+   "metrics": {
+    "fabdem": {
+     "hand_min": {
+      "value": -1.337,
+      "control_percentile": 0.035,
+      "percentile_local": 0.0418
+     },
+     "dep_share_050": {
+      "value": 0.252,
+      "control_percentile": 0.9825,
+      "percentile_local": 0.9837
+     },
+     "acc_log10_max": {
+      "value": 3.191,
+      "control_percentile": 0.3234,
+      "percentile_local": 0.323
+     },
+     "tpi_min": {
+      "value": -3.522,
+      "control_percentile": 0.2815,
+      "percentile_local": 0.2779
+     },
+     "elev_min": {
+      "value": 33.986,
+      "control_percentile": 0.6675,
+      "percentile_local": 0.8452
+     },
+     "hand_min_025": {
+      "value": -1.337,
+      "control_percentile": 0.0334,
+      "percentile_local": 0.0353
+     },
+     "hand_min_4": {
+      "value": -1.944,
+      "control_percentile": 0.0277,
+      "percentile_local": 0.026
+     },
+     "dep_share_025": {
+      "value": 0.284,
+      "control_percentile": 0.9738,
+      "percentile_local": 0.9798
+     },
+     "dep_share_100": {
+      "value": 0.183,
+      "control_percentile": 0.9849,
+      "percentile_local": 0.9857
+     },
+     "elev_median": {
+      "value": 38.07,
+      "control_percentile": 0.6087,
+      "percentile_local": 0.8012
+     },
+     "elev_point": {
+      "value": 36.265,
+      "control_percentile": 0.598,
+      "percentile_local": 0.7746
+     }
+    },
+    "glo30": {
+     "hand_min": {
+      "value": -2.99,
+      "control_percentile": 0.0818,
+      "percentile_local": 0.0834
+     },
+     "dep_share_050": {
+      "value": 0.328,
+      "control_percentile": 0.9214,
+      "percentile_local": 0.8992
+     },
+     "acc_log10_max": {
+      "value": 3.503,
+      "control_percentile": 0.4496,
+      "percentile_local": 0.4329
+     },
+     "tpi_min": {
+      "value": -5.249,
+      "control_percentile": 0.2819,
+      "percentile_local": 0.2967
+     },
+     "elev_min": {
+      "value": 32.248,
+      "control_percentile": 0.6492,
+      "percentile_local": 0.8266
+     },
+     "hand_min_025": {
+      "value": -2.99,
+      "control_percentile": 0.0742,
+      "percentile_local": 0.0786
+     },
+     "hand_min_4": {
+      "value": -2.922,
+      "control_percentile": 0.092,
+      "percentile_local": 0.07
+     },
+     "dep_share_025": {
+      "value": 0.391,
+      "control_percentile": 0.9111,
+      "percentile_local": 0.8504
+     },
+     "dep_share_100": {
+      "value": 0.237,
+      "control_percentile": 0.9409,
+      "percentile_local": 0.9571
+     },
+     "elev_median": {
+      "value": 38.653,
+      "control_percentile": 0.6016,
+      "percentile_local": 0.7933
+     },
+     "elev_point": {
+      "value": 35.792,
+      "control_percentile": 0.577,
+      "percentile_local": 0.7536
+     }
+    }
+   }
+  },
+  {
+   "site_id": "agric-bridge",
+   "structure_name": "AFA Bridge on Agric\u2013Isawo Road (old Afa Bridge / Afa River crossing); contractor named as HiTech Construction in one outlet",
+   "location_confidence": "street",
+   "radius_m": 150.0,
+   "centroid": [
+    3.48353,
+    6.63054
+   ],
+   "dist_lagoon_sea_m": 2411.0,
+   "metrics": {
+    "fabdem": {
+     "hand_min": {
+      "value": 15.148,
+      "control_percentile": 0.9881,
+      "percentile_local": 0.9948
+     },
+     "dep_share_050": {
+      "value": 0.0,
+      "control_percentile": 0.0,
+      "percentile_local": 0.0
+     },
+     "acc_log10_max": {
+      "value": 1.949,
+      "control_percentile": 0.0742,
+      "percentile_local": 0.0738
+     },
+     "tpi_min": {
+      "value": -0.726,
+      "control_percentile": 0.8468,
+      "percentile_local": 0.8156
+     },
+     "elev_min": {
+      "value": 43.738,
+      "control_percentile": 0.7619,
+      "percentile_local": 0.9611
+     },
+     "hand_min_025": {
+      "value": 3.133,
+      "control_percentile": 0.9801,
+      "percentile_local": 0.9889
+     },
+     "hand_min_4": {
+      "value": 27.752,
+      "control_percentile": 0.9832,
+      "percentile_local": 0.9944
+     },
+     "dep_share_025": {
+      "value": 0.0,
+      "control_percentile": 0.0,
+      "percentile_local": 0.0
+     },
+     "dep_share_100": {
+      "value": 0.0,
+      "control_percentile": 0.0,
+      "percentile_local": 0.0
+     },
+     "elev_median": {
+      "value": 46.421,
+      "control_percentile": 0.7,
+      "percentile_local": 0.9238
+     },
+     "elev_point": {
+      "value": 47.477,
+      "control_percentile": 0.7139,
+      "percentile_local": 0.9349
+     }
+    },
+    "glo30": {
+     "hand_min": {
+      "value": 1.041,
+      "control_percentile": 0.9054,
+      "percentile_local": 0.9345
+     },
+     "dep_share_050": {
+      "value": 0.0,
+      "control_percentile": 0.0,
+      "percentile_local": 0.0
+     },
+     "acc_log10_max": {
+      "value": 2.367,
+      "control_percentile": 0.0909,
+      "percentile_local": 0.096
+     },
+     "tpi_min": {
+      "value": -1.15,
+      "control_percentile": 0.9293,
+      "percentile_local": 0.9467
+     },
+     "elev_min": {
+      "value": 44.914,
+      "control_percentile": 0.7683,
+      "percentile_local": 0.971
+     },
+     "hand_min_025": {
+      "value": -0.399,
+      "control_percentile": 0.7948,
+      "percentile_local": 0.8103
+     },
+     "hand_min_4": {
+      "value": 1.041,
+      "control_percentile": 0.7483,
+      "percentile_local": 0.8202
+     },
+     "dep_share_025": {
+      "value": 0.062,
+      "control_percentile": 0.2806,
+      "percentile_local": 0.2032
+     },
+     "dep_share_100": {
+      "value": 0.0,
+      "control_percentile": 0.0,
+      "percentile_local": 0.0
+     },
+     "elev_median": {
+      "value": 47.141,
+      "control_percentile": 0.6984,
+      "percentile_local": 0.9198
+     },
+     "elev_point": {
+      "value": 48.91,
+      "control_percentile": 0.7127,
+      "percentile_local": 0.9373
+     }
+    }
+   }
+  },
+  {
+   "site_id": "ijede-drain",
+   "structure_name": "Drainage project from Oko Ope to Abule Eko, Ijede (Gberigbe outfall / Palm Avenue collector also named on the 7 Aug tour)",
+   "location_confidence": "neighbourhood",
+   "radius_m": 750.0,
+   "centroid": [
+    3.60532,
+    6.58192
+   ],
+   "dist_lagoon_sea_m": 2188.0,
+   "metrics": {
+    "fabdem": {
+     "hand_min": {
+      "value": -0.353,
+      "control_percentile": 0.1347,
+      "percentile_local": 0.1358
+     },
+     "dep_share_050": {
+      "value": 0.202,
+      "control_percentile": 0.977,
+      "percentile_local": 0.9782
+     },
+     "acc_log10_max": {
+      "value": 3.148,
+      "control_percentile": 0.3016,
+      "percentile_local": 0.3052
+     },
+     "tpi_min": {
+      "value": -3.522,
+      "control_percentile": 0.2815,
+      "percentile_local": 0.2779
+     },
+     "elev_min": {
+      "value": 33.986,
+      "control_percentile": 0.6675,
+      "percentile_local": 0.8452
+     },
+     "hand_min_025": {
+      "value": -0.353,
+      "control_percentile": 0.1311,
+      "percentile_local": 0.135
+     },
+     "hand_min_4": {
+      "value": -1.944,
+      "control_percentile": 0.0277,
+      "percentile_local": 0.026
+     },
+     "dep_share_025": {
+      "value": 0.229,
+      "control_percentile": 0.9655,
+      "percentile_local": 0.9726
+     },
+     "dep_share_100": {
+      "value": 0.142,
+      "control_percentile": 0.981,
+      "percentile_local": 0.9798
+     },
+     "elev_median": {
+      "value": 37.877,
+      "control_percentile": 0.6075,
+      "percentile_local": 0.798
+     },
+     "elev_point": {
+      "value": 38.37,
+      "control_percentile": 0.6143,
+      "percentile_local": 0.8091
+     }
+    },
+    "glo30": {
+     "hand_min": {
+      "value": -2.99,
+      "control_percentile": 0.0818,
+      "percentile_local": 0.0834
+     },
+     "dep_share_050": {
+      "value": 0.285,
+      "control_percentile": 0.8952,
+      "percentile_local": 0.8595
+     },
+     "acc_log10_max": {
+      "value": 3.615,
+      "control_percentile": 0.5151,
+      "percentile_local": 0.4909
+     },
+     "tpi_min": {
+      "value": -5.249,
+      "control_percentile": 0.2819,
+      "percentile_local": 0.2967
+     },
+     "elev_min": {
+      "value": 32.248,
+      "control_percentile": 0.6492,
+      "percentile_local": 0.8266
+     },
+     "hand_min_025": {
+      "value": -2.99,
+      "control_percentile": 0.0742,
+      "percentile_local": 0.0786
+     },
+     "hand_min_4": {
+      "value": -2.922,
+      "control_percentile": 0.092,
+      "percentile_local": 0.07
+     },
+     "dep_share_025": {
+      "value": 0.349,
+      "control_percentile": 0.8873,
+      "percentile_local": 0.8135
+     },
+     "dep_share_100": {
+      "value": 0.196,
+      "control_percentile": 0.9155,
+      "percentile_local": 0.929
+     },
+     "elev_median": {
+      "value": 38.461,
+      "control_percentile": 0.6,
+      "percentile_local": 0.7913
+     },
+     "elev_point": {
+      "value": 38.826,
+      "control_percentile": 0.6087,
+      "percentile_local": 0.7956
+     }
+    }
+   }
+  },
+  {
+   "site_id": "oko-oba-canal",
+   "structure_name": "Oko-Oba Canal Channel, Agege (behind Abimbola Awoniyi/Awoliyi Estate by Agric Road; OSM bridges on Agric Road and Akinsegun Street)",
+   "location_confidence": "exact",
+   "radius_m": 150.0,
+   "centroid": [
+    3.31522,
+    6.65247
+   ],
+   "dist_lagoon_sea_m": 13492.0,
+   "metrics": {
+    "fabdem": {
+     "hand_min": {
+      "value": 20.605,
+      "control_percentile": 0.9932,
+      "percentile_local": 0.9976
+     },
+     "dep_share_050": {
+      "value": 0.0,
+      "control_percentile": 0.0,
+      "percentile_local": 0.0
+     },
+     "acc_log10_max": {
+      "value": 2.185,
+      "control_percentile": 0.0984,
+      "percentile_local": 0.0984
+     },
+     "tpi_min": {
+      "value": 0.077,
+      "control_percentile": 0.9754,
+      "percentile_local": 0.9755
+     },
+     "elev_min": {
+      "value": 35.259,
+      "control_percentile": 0.6845,
+      "percentile_local": 0.8623
+     },
+     "hand_min_025": {
+      "value": 7.624,
+      "control_percentile": 0.9921,
+      "percentile_local": 0.9972
+     },
+     "hand_min_4": {
+      "value": 20.605,
+      "control_percentile": 0.9687,
+      "percentile_local": 0.9816
+     },
+     "dep_share_025": {
+      "value": 0.0,
+      "control_percentile": 0.0,
+      "percentile_local": 0.0
+     },
+     "dep_share_100": {
+      "value": 0.0,
+      "control_percentile": 0.0,
+      "percentile_local": 0.0
+     },
+     "elev_median": {
+      "value": 37.183,
+      "control_percentile": 0.6032,
+      "percentile_local": 0.7865
+     },
+     "elev_point": {
+      "value": 36.902,
+      "control_percentile": 0.6032,
+      "percentile_local": 0.7829
+     }
+    },
+    "glo30": {
+     "hand_min": {
+      "value": -0.525,
+      "control_percentile": 0.6512,
+      "percentile_local": 0.6716
+     },
+     "dep_share_050": {
+      "value": 0.074,
+      "control_percentile": 0.5246,
+      "percentile_local": 0.4254
+     },
+     "acc_log10_max": {
+      "value": 3.61,
+      "control_percentile": 0.5111,
+      "percentile_local": 0.4889
+     },
+     "tpi_min": {
+      "value": -0.76,
+      "control_percentile": 0.9536,
+      "percentile_local": 0.9679
+     },
+     "elev_min": {
+      "value": 37.305,
+      "control_percentile": 0.7056,
+      "percentile_local": 0.8929
+     },
+     "hand_min_025": {
+      "value": -0.525,
+      "control_percentile": 0.7547,
+      "percentile_local": 0.7774
+     },
+     "hand_min_4": {
+      "value": -0.582,
+      "control_percentile": 0.4794,
+      "percentile_local": 0.4236
+     },
+     "dep_share_025": {
+      "value": 0.148,
+      "control_percentile": 0.5687,
+      "percentile_local": 0.4825
+     },
+     "dep_share_100": {
+      "value": 0.0,
+      "control_percentile": 0.0,
+      "percentile_local": 0.0
+     },
+     "elev_median": {
+      "value": 39.807,
+      "control_percentile": 0.6139,
+      "percentile_local": 0.8127
+     },
+     "elev_point": {
+      "value": 40.722,
+      "control_percentile": 0.6282,
+      "percentile_local": 0.8317
+     }
+    }
+   }
+  },
+  {
+   "site_id": "alapere-ogudu",
+   "structure_name": "Lagos\u2013Ibadan Expressway / Ogudu Road at Alapere (Heyden filling station) inwards Ogudu Car Wash",
+   "location_confidence": "street",
+   "radius_m": 150.0,
+   "centroid": [
+    3.39088,
+    6.58146
+   ],
+   "dist_lagoon_sea_m": 2034.0,
+   "metrics": {
+    "fabdem": {
+     "hand_min": {
+      "value": 0.0,
+      "control_percentile": 0.4746,
+      "percentile_local": 0.4731
+     },
+     "dep_share_050": {
+      "value": 0.0,
+      "control_percentile": 0.0,
+      "percentile_local": 0.0
+     },
+     "acc_log10_max": {
+      "value": 5.021,
+      "control_percentile": 0.9567,
+      "percentile_local": 0.8861
+     },
+     "tpi_min": {
+      "value": -0.148,
+      "control_percentile": 0.9551,
+      "percentile_local": 0.9447
+     },
+     "elev_min": {
+      "value": 7.544,
+      "control_percentile": 0.3254,
+      "percentile_local": 0.4873
+     },
+     "hand_min_025": {
+      "value": 0.0,
+      "control_percentile": 0.5846,
+      "percentile_local": 0.6018
+     },
+     "hand_min_4": {
+      "value": 0.0,
+      "control_percentile": 0.3424,
+      "percentile_local": 0.3581
+     },
+     "dep_share_025": {
+      "value": 0.0,
+      "control_percentile": 0.0,
+      "percentile_local": 0.0
+     },
+     "dep_share_100": {
+      "value": 0.0,
+      "control_percentile": 0.0,
+      "percentile_local": 0.0
+     },
+     "elev_median": {
+      "value": 7.71,
+      "control_percentile": 0.2647,
+      "percentile_local": 0.4091
+     },
+     "elev_point": {
+      "value": 7.684,
+      "control_percentile": 0.2563,
+      "percentile_local": 0.398
+     }
+    },
+    "glo30": {
+     "hand_min": {
+      "value": -0.262,
+      "control_percentile": 0.7461,
+      "percentile_local": 0.7983
+     },
+     "dep_share_050": {
+      "value": 0.0,
+      "control_percentile": 0.0,
+      "percentile_local": 0.0
+     },
+     "acc_log10_max": {
+      "value": 5.415,
+      "control_percentile": 0.9548,
+      "percentile_local": 0.8829
+     },
+     "tpi_min": {
+      "value": -0.848,
+      "control_percentile": 0.9508,
+      "percentile_local": 0.9651
+     },
+     "elev_min": {
+      "value": 7.715,
+      "control_percentile": 0.3262,
+      "percentile_local": 0.496
+     },
+     "hand_min_025": {
+      "value": -0.262,
+      "control_percentile": 0.8368,
+      "percentile_local": 0.8615
+     },
+     "hand_min_4": {
+      "value": -0.262,
+      "control_percentile": 0.5826,
+      "percentile_local": 0.6006
+     },
+     "dep_share_025": {
+      "value": 0.123,
+      "control_percentile": 0.5028,
+      "percentile_local": 0.4131
+     },
+     "dep_share_100": {
+      "value": 0.0,
+      "control_percentile": 0.0,
+      "percentile_local": 0.0
+     },
+     "elev_median": {
+      "value": 8.3,
+      "control_percentile": 0.2548,
+      "percentile_local": 0.3956
+     },
+     "elev_point": {
+      "value": 7.909,
+      "control_percentile": 0.2361,
+      "percentile_local": 0.3619
+     }
+    }
+   }
+  },
+  {
+   "site_id": "marina-drainage",
+   "structure_name": "Marina Road, Lagos Island (Kakawa junction toward Marina / Cathedral axis)",
+   "location_confidence": "street",
+   "radius_m": 150.0,
+   "centroid": [
+    3.38409,
+    6.45421
+   ],
+   "dist_lagoon_sea_m": 1398.0,
+   "metrics": {
+    "fabdem": {
+     "hand_min": {
+      "value": 0.02,
+      "control_percentile": 0.7814,
+      "percentile_local": 0.8248
+     },
+     "dep_share_050": {
+      "value": 0.0,
+      "control_percentile": 0.0,
+      "percentile_local": 0.0
+     },
+     "acc_log10_max": {
+      "value": 2.021,
+      "control_percentile": 0.0817,
+      "percentile_local": 0.0849
+     },
+     "tpi_min": {
+      "value": -0.22,
+      "control_percentile": 0.9436,
+      "percentile_local": 0.9342
+     },
+     "elev_min": {
+      "value": 0.82,
+      "control_percentile": 0.0671,
+      "percentile_local": 0.221
+     },
+     "hand_min_025": {
+      "value": 0.02,
+      "control_percentile": 0.8896,
+      "percentile_local": 0.9039
+     },
+     "hand_min_4": {
+      "value": 0.921,
+      "control_percentile": 0.6889,
+      "percentile_local": 0.7827
+     },
+     "dep_share_025": {
+      "value": 0.0,
+      "control_percentile": 0.0,
+      "percentile_local": 0.0
+     },
+     "dep_share_100": {
+      "value": 0.0,
+      "control_percentile": 0.0,
+      "percentile_local": 0.0
+     },
+     "elev_median": {
+      "value": 0.953,
+      "control_percentile": 0.0317,
+      "percentile_local": 0.1575
+     },
+     "elev_point": {
+      "value": 0.953,
+      "control_percentile": 0.0325,
+      "percentile_local": 0.1556
+     }
+    },
+    "glo30": {
+     "hand_min": {
+      "value": -0.244,
+      "control_percentile": 0.7513,
+      "percentile_local": 0.8038
+     },
+     "dep_share_050": {
+      "value": 0.309,
+      "control_percentile": 0.9091,
+      "percentile_local": 0.8806
+     },
+     "acc_log10_max": {
+      "value": 3.524,
+      "control_percentile": 0.4643,
+      "percentile_local": 0.4456
+     },
+     "tpi_min": {
+      "value": -1.244,
+      "control_percentile": 0.9246,
+      "percentile_local": 0.9419
+     },
+     "elev_min": {
+      "value": 0.624,
+      "control_percentile": 0.0544,
+      "percentile_local": 0.1798
+     },
+     "hand_min_025": {
+      "value": -0.244,
+      "control_percentile": 0.84,
+      "percentile_local": 0.8683
+     },
+     "hand_min_4": {
+      "value": -0.085,
+      "control_percentile": 0.6367,
+      "percentile_local": 0.6866
+     },
+     "dep_share_025": {
+      "value": 0.716,
+      "control_percentile": 0.9829,
+      "percentile_local": 0.9698
+     },
+     "dep_share_100": {
+      "value": 0.0,
+      "control_percentile": 0.0,
+      "percentile_local": 0.0
+     },
+     "elev_median": {
+      "value": 0.879,
+      "control_percentile": 0.006,
+      "percentile_local": 0.0218
+     },
+     "elev_point": {
+      "value": 0.707,
+      "control_percentile": 0.0036,
+      "percentile_local": 0.0099
+     }
+    }
+   }
+  },
+  {
+   "site_id": "lekki-epe-rehab",
+   "structure_name": "Lekki\u2013Epe Expressway (Abraham Adesanya\u2013Sangotedo\u2013Majek\u2013Awoyaya)",
+   "location_confidence": "street",
+   "radius_m": 150.0,
+   "centroid": [
+    3.64495,
+    6.4684
+   ],
+   "dist_lagoon_sea_m": 4848.0,
+   "metrics": {
+    "fabdem": {
+     "hand_min": {
+      "value": 0.0,
+      "control_percentile": 0.4746,
+      "percentile_local": 0.4731
+     },
+     "dep_share_050": {
+      "value": 0.0,
+      "control_percentile": 0.0,
+      "percentile_local": 0.0
+     },
+     "acc_log10_max": {
+      "value": 3.41,
+      "control_percentile": 0.4385,
+      "percentile_local": 0.4488
+     },
+     "tpi_min": {
+      "value": -1.123,
+      "control_percentile": 0.7316,
+      "percentile_local": 0.7322
+     },
+     "elev_min": {
+      "value": 5.034,
+      "control_percentile": 0.2706,
+      "percentile_local": 0.369
+     },
+     "hand_min_025": {
+      "value": 0.0,
+      "control_percentile": 0.5846,
+      "percentile_local": 0.6018
+     },
+     "hand_min_4": {
+      "value": 1.722,
+      "control_percentile": 0.745,
+      "percentile_local": 0.8327
+     },
+     "dep_share_025": {
+      "value": 0.0,
+      "control_percentile": 0.0,
+      "percentile_local": 0.0
+     },
+     "dep_share_100": {
+      "value": 0.0,
+      "control_percentile": 0.0,
+      "percentile_local": 0.0
+     },
+     "elev_median": {
+      "value": 5.14,
+      "control_percentile": 0.1889,
+      "percentile_local": 0.2968
+     },
+     "elev_point": {
+      "value": 5.102,
+      "control_percentile": 0.1845,
+      "percentile_local": 0.2865
+     }
+    },
+    "glo30": {
+     "hand_min": {
+      "value": -1.172,
+      "control_percentile": 0.3572,
+      "percentile_local": 0.3745
+     },
+     "dep_share_050": {
+      "value": 0.136,
+      "control_percentile": 0.6829,
+      "percentile_local": 0.6167
+     },
+     "acc_log10_max": {
+      "value": 3.521,
+      "control_percentile": 0.4643,
+      "percentile_local": 0.4452
+     },
+     "tpi_min": {
+      "value": -2.724,
+      "control_percentile": 0.7582,
+      "percentile_local": 0.7787
+     },
+     "elev_min": {
+      "value": 3.682,
+      "control_percentile": 0.1817,
+      "percentile_local": 0.3286
+     },
+     "hand_min_025": {
+      "value": -1.172,
+      "control_percentile": 0.3859,
+      "percentile_local": 0.4389
+     },
+     "hand_min_4": {
+      "value": -1.172,
+      "control_percentile": 0.2865,
+      "percentile_local": 0.2629
+     },
+     "dep_share_025": {
+      "value": 0.198,
+      "control_percentile": 0.6794,
+      "percentile_local": 0.5988
+     },
+     "dep_share_100": {
+      "value": 0.062,
+      "control_percentile": 0.7048,
+      "percentile_local": 0.7448
+     },
+     "elev_median": {
+      "value": 5.63,
+      "control_percentile": 0.1675,
+      "percentile_local": 0.2651
+     },
+     "elev_point": {
+      "value": 4.935,
+      "control_percentile": 0.1242,
+      "percentile_local": 0.1996
+     }
+    }
+   }
+  },
+  {
+   "site_id": "labora",
+   "structure_name": "Labora new residential site, Abijo GRA, Ibeju-Lekki (no mapped drain; OSM has no Labora)",
+   "location_confidence": "neighbourhood",
+   "radius_m": 750.0,
+   "centroid": [
+    3.66628,
+    6.45031
+   ],
+   "dist_lagoon_sea_m": 2820.0,
+   "metrics": {
+    "fabdem": {
+     "hand_min": {
+      "value": -0.034,
+      "control_percentile": 0.3672,
+      "percentile_local": 0.3202
+     },
+     "dep_share_050": {
+      "value": 0.0,
+      "control_percentile": 0.0,
+      "percentile_local": 0.0
+     },
+     "acc_log10_max": {
+      "value": 6.053,
+      "control_percentile": 1.0,
+      "percentile_local": 0.9944
+     },
+     "tpi_min": {
+      "value": -1.704,
+      "control_percentile": 0.5633,
+      "percentile_local": 0.5465
+     },
+     "elev_min": {
+      "value": 0.0,
+      "control_percentile": 0.0,
+      "percentile_local": 0.0
+     },
+     "hand_min_025": {
+      "value": -0.034,
+      "control_percentile": 0.3948,
+      "percentile_local": 0.3529
+     },
+     "hand_min_4": {
+      "value": 0.0,
+      "control_percentile": 0.3424,
+      "percentile_local": 0.3581
+     },
+     "dep_share_025": {
+      "value": 0.0,
+      "control_percentile": 0.0,
+      "percentile_local": 0.0
+     },
+     "dep_share_100": {
+      "value": 0.0,
+      "control_percentile": 0.0,
+      "percentile_local": 0.0
+     },
+     "elev_median": {
+      "value": 0.825,
+      "control_percentile": 0.0286,
+      "percentile_local": 0.1361
+     },
+     "elev_point": {
+      "value": 0.89,
+      "control_percentile": 0.0313,
+      "percentile_local": 0.1476
+     }
+    },
+    "glo30": {
+     "hand_min": {
+      "value": -0.452,
+      "control_percentile": 0.6806,
+      "percentile_local": 0.7017
+     },
+     "dep_share_050": {
+      "value": 0.01,
+      "control_percentile": 0.1528,
+      "percentile_local": 0.1187
+     },
+     "acc_log10_max": {
+      "value": 4.152,
+      "control_percentile": 0.7401,
+      "percentile_local": 0.6996
+     },
+     "tpi_min": {
+      "value": -2.282,
+      "control_percentile": 0.8206,
+      "percentile_local": 0.8456
+     },
+     "elev_min": {
+      "value": 0.465,
+      "control_percentile": 0.0151,
+      "percentile_local": 0.0484
+     },
+     "hand_min_025": {
+      "value": -0.699,
+      "control_percentile": 0.6574,
+      "percentile_local": 0.6933
+     },
+     "hand_min_4": {
+      "value": -0.304,
+      "control_percentile": 0.5646,
+      "percentile_local": 0.5752
+     },
+     "dep_share_025": {
+      "value": 0.182,
+      "control_percentile": 0.6524,
+      "percentile_local": 0.5651
+     },
+     "dep_share_100": {
+      "value": 0.0,
+      "control_percentile": 0.0,
+      "percentile_local": 0.0
+     },
+     "elev_median": {
+      "value": 0.926,
+      "control_percentile": 0.0071,
+      "percentile_local": 0.029
+     },
+     "elev_point": {
+      "value": 0.774,
+      "control_percentile": 0.0071,
+      "percentile_local": 0.027
+     }
+    }
+   }
+  },
+  {
+   "site_id": "ibeju-lekki-expy",
+   "structure_name": "Lekki\u2013Epe / Ibeju-Lekki Expressway roadside drains (Ibeju-Lekki stretch)",
+   "location_confidence": "street",
+   "radius_m": 150.0,
+   "centroid": [
+    3.82768,
+    6.47686
+   ],
+   "dist_lagoon_sea_m": 4232.0,
+   "metrics": {
+    "fabdem": {
+     "hand_min": {
+      "value": 0.0,
+      "control_percentile": 0.4746,
+      "percentile_local": 0.4731
+     },
+     "dep_share_050": {
+      "value": 0.0,
+      "control_percentile": 0.0,
+      "percentile_local": 0.0
+     },
+     "acc_log10_max": {
+      "value": 3.11,
+      "control_percentile": 0.2869,
+      "percentile_local": 0.2992
+     },
+     "tpi_min": {
+      "value": -0.844,
+      "control_percentile": 0.8126,
+      "percentile_local": 0.7915
+     },
+     "elev_min": {
+      "value": 11.868,
+      "control_percentile": 0.3833,
+      "percentile_local": 0.5944
+     },
+     "hand_min_025": {
+      "value": 0.0,
+      "control_percentile": 0.5846,
+      "percentile_local": 0.6018
+     },
+     "hand_min_4": {
+      "value": 7.531,
+      "control_percentile": 0.9018,
+      "percentile_local": 0.9228
+     },
+     "dep_share_025": {
+      "value": 0.0,
+      "control_percentile": 0.0,
+      "percentile_local": 0.0
+     },
+     "dep_share_100": {
+      "value": 0.0,
+      "control_percentile": 0.0,
+      "percentile_local": 0.0
+     },
+     "elev_median": {
+      "value": 12.68,
+      "control_percentile": 0.3159,
+      "percentile_local": 0.4964
+     },
+     "elev_point": {
+      "value": 12.62,
+      "control_percentile": 0.3103,
+      "percentile_local": 0.496
+     }
+    },
+    "glo30": {
+     "hand_min": {
+      "value": -0.8,
+      "control_percentile": 0.5213,
+      "percentile_local": 0.5377
+     },
+     "dep_share_050": {
+      "value": 0.111,
+      "control_percentile": 0.6306,
+      "percentile_local": 0.5437
+     },
+     "acc_log10_max": {
+      "value": 3.775,
+      "control_percentile": 0.5952,
+      "percentile_local": 0.5706
+     },
+     "tpi_min": {
+      "value": -3.119,
+      "control_percentile": 0.68,
+      "percentile_local": 0.6776
+     },
+     "elev_min": {
+      "value": 12.607,
+      "control_percentile": 0.3913,
+      "percentile_local": 0.6036
+     },
+     "hand_min_025": {
+      "value": -0.8,
+      "control_percentile": 0.5943,
+      "percentile_local": 0.6444
+     },
+     "hand_min_4": {
+      "value": -0.8,
+      "control_percentile": 0.4202,
+      "percentile_local": 0.3544
+     },
+     "dep_share_025": {
+      "value": 0.123,
+      "control_percentile": 0.5028,
+      "percentile_local": 0.4131
+     },
+     "dep_share_100": {
+      "value": 0.037,
+      "control_percentile": 0.6214,
+      "percentile_local": 0.646
+     },
+     "elev_median": {
+      "value": 14.859,
+      "control_percentile": 0.3171,
+      "percentile_local": 0.4952
+     },
+     "elev_point": {
+      "value": 14.061,
+      "control_percentile": 0.3016,
+      "percentile_local": 0.4825
+     }
+    }
+   }
+  },
+  {
+   "site_id": "sangotedo-channel-notices",
+   "structure_name": "System 63b drainage channel, Sangotedo (Eti-Osa), at Lagos Business School; centreline not in OSM",
+   "location_confidence": "street",
+   "radius_m": 150.0,
+   "centroid": [
+    3.60357,
+    6.47129
+   ],
+   "dist_lagoon_sea_m": 3355.0,
+   "metrics": {
+    "fabdem": {
+     "hand_min": {
+      "value": 0.573,
+      "control_percentile": 0.8629,
+      "percentile_local": 0.8965
+     },
+     "dep_share_050": {
+      "value": 0.0,
+      "control_percentile": 0.0,
+      "percentile_local": 0.0
+     },
+     "acc_log10_max": {
+      "value": 1.886,
+      "control_percentile": 0.0722,
+      "percentile_local": 0.0663
+     },
+     "tpi_min": {
+      "value": 0.034,
+      "control_percentile": 0.9718,
+      "percentile_local": 0.9731
+     },
+     "elev_min": {
+      "value": 4.479,
+      "control_percentile": 0.2143,
+      "percentile_local": 0.3397
+     },
+     "hand_min_025": {
+      "value": 0.573,
+      "control_percentile": 0.9293,
+      "percentile_local": 0.942
+     },
+     "hand_min_4": {
+      "value": 0.573,
+      "control_percentile": 0.6383,
+      "percentile_local": 0.7315
+     },
+     "dep_share_025": {
+      "value": 0.0,
+      "control_percentile": 0.0,
+      "percentile_local": 0.0
+     },
+     "dep_share_100": {
+      "value": 0.0,
+      "control_percentile": 0.0,
+      "percentile_local": 0.0
+     },
+     "elev_median": {
+      "value": 4.895,
+      "control_percentile": 0.1762,
+      "percentile_local": 0.2881
+     },
+     "elev_point": {
+      "value": 4.962,
+      "control_percentile": 0.1802,
+      "percentile_local": 0.2825
+     }
+    },
+    "glo30": {
+     "hand_min": {
+      "value": 0.808,
+      "control_percentile": 0.8979,
+      "percentile_local": 0.9297
+     },
+     "dep_share_050": {
+      "value": 0.16,
+      "control_percentile": 0.7345,
+      "percentile_local": 0.6726
+     },
+     "acc_log10_max": {
+      "value": 1.982,
+      "control_percentile": 0.0571,
+      "percentile_local": 0.0583
+     },
+     "tpi_min": {
+      "value": -1.215,
+      "control_percentile": 0.9254,
+      "percentile_local": 0.9443
+     },
+     "elev_min": {
+      "value": 5.286,
+      "control_percentile": 0.2937,
+      "percentile_local": 0.4325
+     },
+     "hand_min_025": {
+      "value": 2.052,
+      "control_percentile": 0.9754,
+      "percentile_local": 0.9897
+     },
+     "hand_min_4": {
+      "value": 0.808,
+      "control_percentile": 0.7351,
+      "percentile_local": 0.8079
+     },
+     "dep_share_025": {
+      "value": 0.296,
+      "control_percentile": 0.8313,
+      "percentile_local": 0.7468
+     },
+     "dep_share_100": {
+      "value": 0.037,
+      "control_percentile": 0.6214,
+      "percentile_local": 0.646
+     },
+     "elev_median": {
+      "value": 8.107,
+      "control_percentile": 0.2528,
+      "percentile_local": 0.3889
+     },
+     "elev_point": {
+      "value": 9.623,
+      "control_percentile": 0.2548,
+      "percentile_local": 0.4048
+     }
+    }
+   }
+  }
+ ]
+}

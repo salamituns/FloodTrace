@@ -197,11 +197,12 @@ export function MapView() {
     ];
   }, [sites, selectedSiteId, selectSite]);
 
-  // Fly to a site when it's selected.
+  // Fly to a site when it's selected, and keep it in view when "Open event" switches to Incident mode (wider there, so
+  // the event's reports around the site stay visible).
   useEffect(() => {
     const site = sites?.find((x) => x.site_id === selectedSiteId);
-    if (mode !== 'sites' || !site) return;
-    mapRef.current?.fitBounds(siteBounds(site), { padding: 80, maxZoom: 16, duration: 900 });
+    if (!site) return;
+    mapRef.current?.fitBounds(siteBounds(site), { padding: 80, maxZoom: mode === 'sites' ? 16 : 14, duration: 900 });
   }, [mode, sites, selectedSiteId]);
 
   const eventLayers = useMemo(() => {

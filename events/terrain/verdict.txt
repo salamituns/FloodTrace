@@ -1,0 +1,14 @@
+task 24b terrain check (fairer controls) - verdict: pass (decided by the 'local' design on FABDEM)
+per-design verdicts (rule fixed before results; meta.verdict_rule in events/terrain_check.json):
+  builtup_only   FABDEM: mixed - 1/4 primary metrics significant after Holm in the all-points subset, 2/4 in the >2 km subset [all: tpi_min; >2 km: acc_log10_max, tpi_min]
+  builtup_only   GLO-30: fail - 0/4 primary metrics significant after Holm in the all-points subset, 1/4 in the >2 km subset
+  matched_water  FABDEM: mixed - 1/4 primary metrics significant after Holm in the all-points subset, 2/4 in the >2 km subset [all: tpi_min; >2 km: acc_log10_max, tpi_min]
+  matched_water  GLO-30: fail - 0/4 primary metrics significant after Holm in the all-points subset, 1/4 in the >2 km subset
+  local          FABDEM: pass  <- DECIDES - 2/4 primary metrics significant after Holm in the all-points subset, 2/4 in the >2 km subset [all: hand_min, tpi_min; >2 km: hand_min, acc_log10_max]
+  local          GLO-30: fail - 0/4 primary metrics significant after Holm in the all-points subset, 2/4 in the >2 km subset
+
+Verdict: pass (decided by the 'local' design on FABDEM). Asked directly - within its own 1-3 km neighbourhood, is the flooded spot lower or wetter than equally built-up places - 2 of the 4 primary metrics are significant after Holm correction: min HAND (Holm p=0.002, diff -0.018), TPI (Holm p=0.035, diff -0.211).
+In DEM terms the neighbourhood gaps are small: min HAND differs by -0.02 m and min TPI by -0.21 m - only -0.01 and -0.11 times the ~2 m DEM vertical error - while depression share is +0.000 and flow accumulation +0.03 log10 cells higher; elevation is no longer a primary metric because AOI-wide elevation mostly separates the low coastal city from the Ogun/Epe/Badagry hinterland rather than local lows.
+Design comparison on FABDEM: builtup_only mixed (1/4 significant); matched_water mixed (1/4 significant); local pass (2/4 significant) - so the Task 24 'pass' survives controls that also match distance to water and the point's own neighbourhood.
+The >2 km-from-water subset (n=95) has 2 of those significant after Holm, so tide cannot be the whole explanation; every per-design verdict is recorded in meta.verdicts.
+FABDEM V1-2 (bare earth) came from the verified Hugging Face mirror links-ads/fabdem-v12 after data.bris refused every request; the GLO-30 comparison disagrees (its local-design verdict is fail).

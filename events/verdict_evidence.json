@@ -1,0 +1,362 @@
+{
+  "meta": {
+    "task": "25-verdict-evidence",
+    "compiled_at": "2026-10-18T14:20:00Z",
+    "searched_until": "2026-10-18",
+    "method": "Open-source research only (Task 03 rules): official MoE/Office of Drainage Services/Lagos infrastructure statements and news for agungi-collector and agric-bridge. Quotes ≤ 25 words, verbatim. 'not found' used instead of inference. Photos and video described, not downloaded. Esri World Imagery Wayback: load_releases() from waybackconfig.json then identify() at each site query_point (pipeline/site_imagery.py); chips not fetched. Nine releases dated after 2025-11-20 (ids 13192, 22252, 64001, 22869, 49059, 10842, 32246, 26334, 63116; last 2026-09-24) still draw Agungi 2024-11-30 and Agric 2025-04-30 at chip zoom.",
+    "notes": [
+      "Do not equate MoE 28 Jun 2026 'major drainage infrastructure … over two years ago' with the Agungi Road collector announced 27 Jun 2024: the 2026 text never names that collector, a size, a contractor or a completion date.",
+      "Wahab 1 Jul 2026 said an unnamed Ikorodu contractor 'dammed the downstream'; the article does not name AFA Bridge or Agric–Isawo Road.",
+      "National Daily 5 Aug 2025 body did not render on scrape; used as headline_only from the page meta description.",
+      "TVC 'yielding results' circulated as social video only; no full news transcript found."
+    ],
+    "sources": [
+      {
+        "url": "https://moelagos.gov.ng/flooding-lagos-to-construct-additional-drainage-collector-on-agungi-to-bring-relief/",
+        "publisher": "Lagos State Ministry of the Environment and Water Resources",
+        "date": "2024-06-27",
+        "read_status": "read"
+      },
+      {
+        "url": "https://www.vanguardngr.com/2024/06/48hrs-rainfall-agungi-lekki-environs-in-lagos-submerge-in-flood/",
+        "publisher": "Vanguard",
+        "date": "2024-06-27",
+        "read_status": "read"
+      },
+      {
+        "url": "https://www.arise.tv/lagos-floods-rainwater-slow-to-recede-due-to-high-tide-says-environment-commissioner-wahab/",
+        "publisher": "Arise News",
+        "date": "2024-07-04",
+        "read_status": "read"
+      },
+      {
+        "url": "https://moelagos.gov.ng/lagos-to-remove-illegal-structures-blocking-drainage-channels-on-agungi-and-ajiran/",
+        "publisher": "Lagos State Ministry of the Environment and Water Resources",
+        "date": "2026-06-28",
+        "read_status": "read"
+      },
+      {
+        "url": "https://www.channelstv.com/2026/06/29/lagos-orders-demolition-of-structures-on-drainages-in-agungi-others/",
+        "publisher": "Channels Television",
+        "date": "2026-06-29",
+        "read_status": "read"
+      },
+      {
+        "url": "https://dailypost.ng/2026/06/29/lagos-to-demolish-structures-blocking-drainage-channels-in-lekki/",
+        "publisher": "Daily Post",
+        "date": "2026-06-29",
+        "read_status": "read"
+      },
+      {
+        "url": "https://www.vanguardngr.com/2026/07/lagos-submerged-as-floods-sack-homes-paralyse-traffic-halts-businesses/",
+        "publisher": "Vanguard",
+        "date": "2026-07-01",
+        "read_status": "read"
+      },
+      {
+        "url": "https://guardian.ng/news/nigeria/metro/flooding-we-live-in-lekki-to-compete-with-our-peers-but-its-not-worth-the-stress-anymore-residents/",
+        "publisher": "The Guardian Nigeria",
+        "date": "2025-10-05",
+        "read_status": "read"
+      },
+      {
+        "url": "https://www.facebook.com/tvcnewsng/posts/video-flood-control-efforts-in-ajiran-agungi-yielding-results-commissionerthe-co/1456054986555635/",
+        "publisher": "TVC News (Facebook)",
+        "date": null,
+        "read_status": "headline_only"
+      },
+      {
+        "url": "https://www.theimpactnewspaper.com/2025/10/23/hitech-begins-clearing-of-igbe-laara-axis-for-construction-work/",
+        "publisher": "The Impact Newspaper",
+        "date": "2025-10-23",
+        "read_status": "read"
+      },
+      {
+        "url": "https://collaborativemedia.wscij.org/residents-groan-as-lagos-road-targeted-for-completion-within-20-weeks-enters-8-years/",
+        "publisher": "Collaborative Media (WSCIJ)",
+        "date": "2024-05-27",
+        "read_status": "read"
+      },
+      {
+        "url": "https://fij.ng/article/reporters-diary-a-trip-through-flooded-afa-bridge-in-ikorodu/",
+        "publisher": "Foundation for Investigative Journalism",
+        "date": "2025-08-05",
+        "read_status": "read"
+      },
+      {
+        "url": "https://nationaldailyng.com/incomplete-bridge-project-on-agric-isawo-road-sparks-outrage-flood-cuts-off-ikorodu-community/",
+        "publisher": "National Daily",
+        "date": "2025-08-05",
+        "read_status": "headline_only"
+      },
+      {
+        "url": "https://oia.osu.edu/news/2025/09/29/documenting-floods-and-building-resilience-lagos",
+        "publisher": "Ohio State University Office of International Affairs",
+        "date": "2025-09-29",
+        "read_status": "read"
+      },
+      {
+        "url": "https://punchng.com/lasg-opens-ikorodu-bridge-to-traffic/",
+        "publisher": "Punch",
+        "date": "2026-09-09",
+        "read_status": "read"
+      },
+      {
+        "url": "https://allafrica.com/stories/202609090267.html",
+        "publisher": "Premium Times via allAfrica",
+        "date": "2026-09-09",
+        "read_status": "read"
+      }
+    ]
+  },
+  "sites": {
+    "agungi-collector": {
+      "findings": [
+        {
+          "question": "When was the existing collector built, and to what size?",
+          "answer": "not found. No official or news source gives a construction year, contract, or dimensions for the existing Agungi Road collector. Wahab (27 Jun 2024) called it too small; on 4 Jul 2024 he said Agungi/Osapa already had two collectors (a primary discharging via Chevron Road to the lagoon, plus a secondary) and that a further secondary collector was the planned fix. Local government is named as the original provider, without a date.",
+          "confidence": "high",
+          "sources": [
+            {
+              "url": "https://moelagos.gov.ng/flooding-lagos-to-construct-additional-drainage-collector-on-agungi-to-bring-relief/",
+              "publisher": "Lagos State Ministry of the Environment and Water Resources",
+              "date": "2024-06-27",
+              "quote": "the collector they have there is too small to Serve the volume of Storm water"
+            },
+            {
+              "url": "https://www.arise.tv/lagos-floods-rainwater-slow-to-recede-due-to-high-tide-says-environment-commissioner-wahab/",
+              "publisher": "Arise News",
+              "date": "2024-07-04",
+              "quote": "The development of Agungi road has outweighed the drainage system that was put in place by the local government."
+            },
+            {
+              "url": "https://www.arise.tv/lagos-floods-rainwater-slow-to-recede-due-to-high-tide-says-environment-commissioner-wahab/",
+              "publisher": "Arise News",
+              "date": "2024-07-04",
+              "quote": "For Osapa London and Agungi, there are two collectors serving them."
+            }
+          ]
+        },
+        {
+          "question": "Has a new or larger collector been started or finished since 27 Jun 2024? Give dates, contractor and where.",
+          "answer": "not found as a named Agungi Road collector job. Wahab announced a bigger/new collector along Agungi Road on 27 Jun 2024 with no contractor, start date or size. On 4 Jul 2024 he said the planned work was a secondary collector discharging into the Chevron-axis primary. On 28 Jun 2026 MoE said flooding persisted in Agungi 'despite the completion of major drainage infrastructure in the area over two years ago' without naming the Agungi Road collector, a contractor or a completion date. Esri Wayback releases through 24 Sep 2026 still draw 30 Nov 2024 imagery at the site (no later acquisition).",
+          "confidence": "medium",
+          "sources": [
+            {
+              "url": "https://moelagos.gov.ng/flooding-lagos-to-construct-additional-drainage-collector-on-agungi-to-bring-relief/",
+              "publisher": "Lagos State Ministry of the Environment and Water Resources",
+              "date": "2024-06-27",
+              "quote": "the area needs a new collector that will take the water from the road into the lagoon"
+            },
+            {
+              "url": "https://www.arise.tv/lagos-floods-rainwater-slow-to-recede-due-to-high-tide-says-environment-commissioner-wahab/",
+              "publisher": "Arise News",
+              "date": "2024-07-04",
+              "quote": "the solution to this problem would be for us to put a secondary collector."
+            },
+            {
+              "url": "https://moelagos.gov.ng/lagos-to-remove-illegal-structures-blocking-drainage-channels-on-agungi-and-ajiran/",
+              "publisher": "Lagos State Ministry of the Environment and Water Resources",
+              "date": "2026-06-28",
+              "quote": "despite the completion of major drainage infrastructure in the area over two years ago"
+            }
+          ]
+        },
+        {
+          "question": "What did the Jun 2026 demolitions on Agungi/Ajiran actually remove, and was the Ajiran outfall reopened?",
+          "answer": "Order documented; execution and a reopened outfall not independently confirmed. After a 28 Jun 2026 tour, Wahab said a land-owning family had blocked the Ajiran outfall into the lagoon and directed that it be reopened immediately; he also ordered removal of illegal structures on canal/drainage right of way in Agungi, Ajiran and Ikota, and of unapproved reclamation at Megamond Estate on the Ikota River (Ikota, not Agungi). MoE photos show officials at Chevron Drive and Megamound, not demolition in progress. Channels (29 Jun) and Daily Post repeat the order. Vanguard (1 Jul) has Wahab saying removal/opening to the lagoon would start 'immediately' and that officials would return during the week; no later read news report confirms what was pulled down or that the outfall was open. TVC social video headlines 'yielding results' and a 48–72 hour discharge claim (headline_only).",
+          "confidence": "medium",
+          "sources": [
+            {
+              "url": "https://moelagos.gov.ng/lagos-to-remove-illegal-structures-blocking-drainage-channels-on-agungi-and-ajiran/",
+              "publisher": "Lagos State Ministry of the Environment and Water Resources",
+              "date": "2026-06-28",
+              "quote": "a land-owning family was discovered to have blocked the Ajiran outfall channel"
+            },
+            {
+              "url": "https://moelagos.gov.ng/lagos-to-remove-illegal-structures-blocking-drainage-channels-on-agungi-and-ajiran/",
+              "publisher": "Lagos State Ministry of the Environment and Water Resources",
+              "date": "2026-06-28",
+              "quote": "We have therefore directed that it be reopened immediately in the overriding public interest"
+            },
+            {
+              "url": "https://www.channelstv.com/2026/06/29/lagos-orders-demolition-of-structures-on-drainages-in-agungi-others/",
+              "publisher": "Channels Television",
+              "date": "2026-06-29",
+              "quote": "ordered the immediate demolition of illegal structures built on drainage channels and canal rights of way"
+            },
+            {
+              "url": "https://www.vanguardngr.com/2026/07/lagos-submerged-as-floods-sack-homes-paralyse-traffic-halts-businesses/",
+              "publisher": "Vanguard",
+              "date": "2026-07-01",
+              "quote": "We will come back during the week to see the level of work that has been done."
+            },
+            {
+              "url": "https://www.facebook.com/tvcnewsng/posts/video-flood-control-efforts-in-ajiran-agungi-yielding-results-commissionerthe-co/1456054986555635/",
+              "publisher": "TVC News (Facebook)",
+              "date": null,
+              "quote": "Flood Control Efforts in Ajiran, Agungi Yielding Results"
+            }
+          ]
+        },
+        {
+          "question": "Did Agungi flood again in 2025 or 2026? Give dates, depth notes and sources.",
+          "answer": "Yes, at least once with a date in 2025; 2026 is reported as recurring without a measured depth. Guardian (5 Oct 2025) places roasted-plantain seller Abiola Adekoya of Agungi Ajiran in the 23 Sep 2025 Eti-Osa flood; she slipped into a manhole (no water-depth figure for Agungi streets). MoE (28 Jun 2026) cites 'persistent reports of flooding in Agungi' as the reason for the inspection, without a flood date or depth. Vanguard (1 Jul 2026) covers a 30 Jun 2026 citywide flood (Lekki–Epe Expressway among others) and Wahab’s Agungi/Ajiran encroachment remarks; it does not describe Agungi street depths. No Agungi-specific 2025 wet-season depth (knee/waist) found.",
+          "confidence": "medium",
+          "sources": [
+            {
+              "url": "https://guardian.ng/news/nigeria/metro/flooding-we-live-in-lekki-to-compete-with-our-peers-but-its-not-worth-the-stress-anymore-residents/",
+              "publisher": "The Guardian Nigeria",
+              "date": "2025-10-05",
+              "quote": "Mrs Abiola Adekoya, a resident of Agungi Ajiran, Lekki, woke up on September 23"
+            },
+            {
+              "url": "https://moelagos.gov.ng/lagos-to-remove-illegal-structures-blocking-drainage-channels-on-agungi-and-ajiran/",
+              "publisher": "Lagos State Ministry of the Environment and Water Resources",
+              "date": "2026-06-28",
+              "quote": "The inspection followed persistent reports of flooding in Agungi"
+            },
+            {
+              "url": "https://www.vanguardngr.com/2026/07/lagos-submerged-as-floods-sack-homes-paralyse-traffic-halts-businesses/",
+              "publisher": "Vanguard",
+              "date": "2026-07-01",
+              "quote": "Wahab cited areas around the Lekki axis, particularly Agungi"
+            }
+          ]
+        }
+      ],
+      "new_wayback": [],
+      "draft_verdict": "Wahab’s 2024 claim that Agungi’s roadside collector was too small, and that local-government drainage had been outgrown, is stated but unmeasured: no build year or size was published. A new Agungi Road collector was announced, not documented as started or finished; 2026 officials instead blamed a blocked Ajiran outfall and claimed unnamed 'major drainage' was already complete, while Agungi still flooded (23 Sep 2025; recurring reports into Jun 2026). Imagery through the 24 Sep 2026 Wayback release still shows the 30 Nov 2024 scene, so this record cannot show a larger collector or a reopened outfall on the ground."
+    },
+    "agric-bridge": {
+      "findings": [
+        {
+          "question": "When did construction start?",
+          "answer": "No official start date for the elevated AFA Bridge itself was found. Collaborative Media (27 May 2024) says the Agric–Isawo road-and-bridge job was awarded to Hi-Tech Construction Company in 2018 (Impact, 23 Oct 2025, says the Igbogbo–Bola Tinubu–Igbe Laara road started December 2017). Governor’s spokesman Gboyega Akosile said HiTech would resume Agric–Isawo work on 21 Oct 2019. FIJ (5 Aug 2025) says HiTech had been building the road for over five years and the new elevated deck beside the old low bridge was still unfinished. National Daily (headline_only) calls it a five-year delay on a HiTech elevated bridge. Impact (22–23 Oct 2025) found the Afa bridge 'left unattended for years' and workers installing iron around pillars after a contract review paid in 2025.",
+          "confidence": "medium",
+          "sources": [
+            {
+              "url": "https://collaborativemedia.wscij.org/residents-groan-as-lagos-road-targeted-for-completion-within-20-weeks-enters-8-years/",
+              "publisher": "Collaborative Media (WSCIJ)",
+              "date": "2024-05-27",
+              "quote": "The construction of the Agric-Isawo Road was awarded to Hi-Tech Construction Company in 2018."
+            },
+            {
+              "url": "https://fij.ng/article/reporters-diary-a-trip-through-flooded-afa-bridge-in-ikorodu/",
+              "publisher": "Foundation for Investigative Journalism",
+              "date": "2025-08-05",
+              "quote": "has been constructing the road for over five years, using interlocking concrete block pavement"
+            },
+            {
+              "url": "https://nationaldailyng.com/incomplete-bridge-project-on-agric-isawo-road-sparks-outrage-flood-cuts-off-ikorodu-community/",
+              "publisher": "National Daily",
+              "date": "2025-08-05",
+              "quote": "five-year delay in completing a new elevated bridge being constructed by HiTech Construction"
+            },
+            {
+              "url": "https://www.theimpactnewspaper.com/2025/10/23/hitech-begins-clearing-of-igbe-laara-axis-for-construction-work/",
+              "publisher": "The Impact Newspaper",
+              "date": "2025-10-23",
+              "quote": "at the Afa bridge which has been left unattended for years"
+            }
+          ]
+        },
+        {
+          "question": "Did the works narrow, dam or divert the Afa river/channel? Look for coffer dams, temporary crossings, or spoil in the channel.",
+          "answer": "Coffer dam at AFA: not found by name. FIJ (5 Aug 2025) saw an unfinished elevated deck beside the old ground-level bridge, contractor-built wooden staircases as a pedestrian bypass, and two excavators on the river bank that 'had not succeeded in diverting the water'; the old deck was under brown flood extending several metres on both sides, with vehicles stranded. That is a reporter seeing diversion plant, not a named coffer dam or spoil survey. Collaborative Media (2024) quotes a HiTech finance staffer on soil/extension problems at Odo-Afa, not damming. Wahab (1 Jul 2026) said an unnamed Ikorodu contractor 'dammed the downstream' during unspecified works; that article does not name AFA or Agric–Isawo.",
+          "confidence": "medium",
+          "sources": [
+            {
+              "url": "https://fij.ng/article/reporters-diary-a-trip-through-flooded-afa-bridge-in-ikorodu/",
+              "publisher": "Foundation for Investigative Journalism",
+              "date": "2025-08-05",
+              "quote": "the contractor is building an elevated bridge beside the old, ground-level bridge"
+            },
+            {
+              "url": "https://fij.ng/article/reporters-diary-a-trip-through-flooded-afa-bridge-in-ikorodu/",
+              "publisher": "Foundation for Investigative Journalism",
+              "date": "2025-08-05",
+              "quote": "the excavators were still at the site because they had not succeeded in diverting the water"
+            },
+            {
+              "url": "https://www.vanguardngr.com/2026/07/lagos-submerged-as-floods-sack-homes-paralyse-traffic-halts-businesses/",
+              "publisher": "Vanguard",
+              "date": "2026-07-01",
+              "quote": "the contractor had been on site and dammed the downstream to allow the construction to go on"
+            }
+          ]
+        },
+        {
+          "question": "Did residents or officials report flooding at the site in 2024, 2025 or 2026, before and after the inbound opening (8 Sep 2026)?",
+          "answer": "Before opening: yes in 2025, and as a recurring wet-season problem in 2024 reporting; a dated 2024 flood day at the old Afa Bridge was not found. Collaborative Media (27 May 2024) records residents using canoes at the unfinished crossing when it rains. FIJ (5 Aug 2025) and OSU (29 Sep 2025) document the 3–4 Aug 2025 overflow: old Afa Bridge on Agric–Isawo Road impassable; pedestrians on wooden stairs; some wading with trousers above the knees; vehicles immobile in brown water. Punch/allAfrica: inbound AFA carriageway opened 8 Sep 2026 so commuters could avoid the floodplain; CDC secretary Abiodun Sunday said 'no more wallowing through floodwater'. After 8 Sep 2026: no news report found of a later flood at this crossing. Esri Wayback through 24 Sep 2026 still draws 30 Apr 2025, so the opened inbound deck is not in those chips.",
+          "confidence": "high",
+          "sources": [
+            {
+              "url": "https://collaborativemedia.wscij.org/residents-groan-as-lagos-road-targeted-for-completion-within-20-weeks-enters-8-years/",
+              "publisher": "Collaborative Media (WSCIJ)",
+              "date": "2024-05-27",
+              "quote": "Whenever it rains some people will come with canoes to cross the river"
+            },
+            {
+              "url": "https://fij.ng/article/reporters-diary-a-trip-through-flooded-afa-bridge-in-ikorodu/",
+              "publisher": "Foundation for Investigative Journalism",
+              "date": "2025-08-05",
+              "quote": "caused a river to flood the old Afa Bridge on Agric-Isawo Road"
+            },
+            {
+              "url": "https://fij.ng/article/reporters-diary-a-trip-through-flooded-afa-bridge-in-ikorodu/",
+              "publisher": "Foundation for Investigative Journalism",
+              "date": "2025-08-05",
+              "quote": "walking through the flood with trousers rolled up above their knees"
+            },
+            {
+              "url": "https://oia.osu.edu/news/2025/09/29/documenting-floods-and-building-resilience-lagos",
+              "publisher": "Ohio State University Office of International Affairs",
+              "date": "2025-09-29",
+              "quote": "floodwaters swallowed the Agric and Ijede communities of Ikorodu on August 4, 2025"
+            },
+            {
+              "url": "https://punchng.com/lasg-opens-ikorodu-bridge-to-traffic/",
+              "publisher": "Punch",
+              "date": "2026-09-09",
+              "quote": "the inbound section of AFA Bridge on Agric-Isawo Road has been opened to traffic"
+            },
+            {
+              "url": "https://punchng.com/lasg-opens-ikorodu-bridge-to-traffic/",
+              "publisher": "Punch",
+              "date": "2026-09-09",
+              "quote": "No more wallowing through floodwater. No more climbing the staircase to get to the bridge deck"
+            }
+          ]
+        },
+        {
+          "question": "Did anyone official answer the obstruction claim?",
+          "answer": "not found as an answer to the Agric/AFA construction-worsened-the-flood claim. OSU (29 Sep 2025) records residents blaming 'bridge construction in Agric'; no MoE, Works or governor statement found that accepts or rejects that causal claim. Daramola (8 Sep 2026) treated the problem as motorists having to drive the floodplain and said the inbound deck ended that, while outbound works continued; he did not discuss channel blockage. Wahab’s 1 Jul 2026 'dammed the downstream' remark is about an unnamed Ikorodu contractor and is not tied in that article to AFA Bridge.",
+          "confidence": "high",
+          "sources": [
+            {
+              "url": "https://oia.osu.edu/news/2025/09/29/documenting-floods-and-building-resilience-lagos",
+              "publisher": "Ohio State University Office of International Affairs",
+              "date": "2025-09-29",
+              "quote": "bridge construction in Agric and an abandoned drainage system in Ijede, worsened the impacts of heavy rain"
+            },
+            {
+              "url": "https://punchng.com/lasg-opens-ikorodu-bridge-to-traffic/",
+              "publisher": "Punch",
+              "date": "2026-09-09",
+              "quote": "It's bye to driving through the floodplain"
+            },
+            {
+              "url": "https://allafrica.com/stories/202609090267.html",
+              "publisher": "Premium Times via allAfrica",
+              "date": "2026-09-09",
+              "quote": "motorists to use the elevated section of the bridge while construction continues on the outbound carriageway"
+            }
+          ]
+        }
+      ],
+      "new_wayback": [],
+      "draft_verdict": "The resident claim that Agric bridge works worsened the August 2025 flood sits beside a long, unfinished HiTech job (award about 2018; elevated deck still incomplete in August 2025) and a reporter seeing excavators fail to divert Afa water, plus the old low bridge under flood. That is not the same as proof the works dammed or narrowed the channel: no coffer dam is named, and no official answered the obstruction claim (Daramola only said inbound traffic could leave the floodplain after 8 Sep 2026). Post-opening flooding at the crossing, and any change after that date on Wayback, are not shown."
+    }
+  }
+}

@@ -171,6 +171,17 @@ different city each year, which is why rain alone didn't explain flood days. Rea
    accumulation. Test whether the ~200 evidence points fall in modelled sinks and paths more than matched random points. Passing
    this is what earns the app the right to look forward. Lagos is flat and DEM vertical error is ~2 m, so rank sites
    relatively; never predict depths.
+   **Result (Tasks 24/24b, 2026-10-18): no usable terrain signal at 30 m.** On FABDEM (bare earth, from the Hugging Face
+   mirror `links-ads/fabdem-v12` because data.bris refused every request; CC BY-NC-SA) with neighbourhood controls
+   (1–3 km, equally built-up), the pre-set rule technically passes: min HAND (Holm p = 0.002) and TPI (p = 0.035). But the
+   effects are 0.02 m and 0.21 m, which is 1% and 11% of the ~2 m DEM error. Min HAND sits at ~0 for 78% of windows, so it
+   barely discriminates: 59% of flooded spots sit below their neighbours' median, where chance alone gives 50%. GLO-30
+   fails the same test, and depression share and flow accumulation show nothing. The 17 m elevation gap in the first run
+   was geography: the coastal city against the Ogun/Epe hinterland. My mistake was a rule with no minimum effect size.
+   Reading: at 30 m, terrain can't say which spot in a neighbourhood floods. That fits the cause position (drainage
+   decides where), so a site-level forecast shouldn't rest on these DEMs. Revisit only with better elevation data
+   (LiDAR or a city DTM, none public) or a much larger event set (step 1). Outputs: `events/terrain_check.json`,
+   `events/drainage_sites_terrain.json`, `events/terrain/`.
 6. *Storm replay.* Run past IMERG storms over present conditions (the 2011 storm on 2025 Lagos) and over hypothetical fixes
    (the 2024 storm with the Agungi collector built). This is the most direct use of the principle.
 7. *Per-site flood odds.* P(flood | rain intensity, site drainage state: blocked / built-over / fixed). It needs many more

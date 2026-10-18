@@ -93,7 +93,12 @@ Seed promises (from Tasks 17/19, to be verified and extended):
 - App: Sites mode, site list, site page (verdict, evidence chain, floods → open event, before/after slider with close-ups,
   S2 and Open Buildings sparklines, promises), multi-year timeline, `#site=` links. Checked in the browser; no console errors.
 - Known nuances: the System 156 excavation's "due" date is a *start* date ("from Saturday"); it reads overdue because full
-  excavation isn't visible by Nov 2024, and would also be overdue under the 12-month grace. "Open event" doesn't yet fly to
-  the site in Incident mode. Sites mode loads sites.json once and doesn't retry after a failed fetch (reload the page).
-- Next: verdicts for the other 11 sites as evidence allows; imagery updates when Wayback adds late-2025/2026 imagery
-  (Ikorodu, Ijede, Agungi demolitions); "Open event" should centre on the site.
+  excavation isn't visible by Nov 2024, and would also be overdue under the 12-month grace.
+- Fixed 2026-10-18: "Open event" keeps the site in view in Incident mode (max zoom 14). The sites loader retries three times
+  with backoff (it treats an HTML response as a failure) and then shows a Retry button.
+- 2026-10-18: verdicts for agungi-collector (weak) and agric-bridge (weak) from Task 25 (`events/verdict_evidence.json`; key
+  quotes re-checked verbatim). Wahab's 1 Jul 2026 "dammed the downstream" refers to an unnamed Ikorodu drainage contractor,
+  not the AFA bridge, so it is not used for agric-bridge. Esri Wayback through the 24 Sep 2026 release still has nothing newer
+  than Nov 2024 (Agungi) or Apr 2025 (Agric).
+- Next: verdicts for the other 9 sites as evidence allows; imagery updates when Wayback adds late-2025/2026 imagery
+  (Ikorodu, Ijede, Agungi demolitions, AFA inbound deck).

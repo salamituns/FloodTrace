@@ -89,8 +89,8 @@
             "2026": 0.0537
           }
         },
-        "stale": null,
-        "summary": null,
+        "stale": false,
+        "summary": "Bridge corridor and earthworks beside the old low Afa crossing by Apr 2025 (works since about 2018); no building beside the river; no imagery after the Aug 2025 flood.",
         "wayback": [
           {
             "acq_date": "1999-01-15",
@@ -179,7 +179,13 @@
       "site_id": "agric-bridge",
       "structure_name": "AFA Bridge on Agric–Isawo Road (old Afa Bridge / Afa River crossing); contractor named as HiTech Construction in one outlet",
       "structure_type": "bridge",
-      "verdict": null
+      "verdict": {
+        "confidence": "weak",
+        "reviewed_at": "2026-10-18",
+        "reviewed_by": "Claude (FloodTrace reviewer)",
+        "stale": false,
+        "text": "A resident blamed the AFA bridge works for worsening the Aug 2025 flood. The works were real and long-running (awarded about 2018; the new elevated deck was still unfinished in Aug 2025), and imagery shows the corridor and earthworks in place by Apr 2025. But nothing shows them blocking the Afa river: no coffer dam is named, a reporter on 5 Aug 2025 saw the old low bridge overtopped and excavators failing to divert the water, and no official answered the claim. The crossing flooded in the rain before the works too (canoes, 2024). The inbound deck opened on 8 Sep 2026; no later flood or imagery yet."
+      }
     },
     {
       "aliases": [
@@ -215,8 +221,8 @@
             "2026": 0.0487
           }
         },
-        "stale": null,
-        "summary": null,
+        "stale": false,
+        "summary": "Gradual infill along Agungi–Ajiran Road (0.9% → 3.4% built within 10 m, 2016–23) and a new estate at the lagoon end; the collector itself isn't visible, and no works show by Nov 2024.",
         "wayback": [
           {
             "acq_date": "2010-02-06",
@@ -376,7 +382,13 @@
       "site_id": "agungi-collector",
       "structure_name": "Agungi Road collector (existing, to lagoon); Agungi–Ajiran Road",
       "structure_type": "collector",
-      "verdict": null
+      "verdict": {
+        "confidence": "weak",
+        "reviewed_at": "2026-10-18",
+        "reviewed_by": "Claude (FloodTrace reviewer)",
+        "stale": false,
+        "text": "The Environment Commissioner said in 2024 that Agungi's road collector was too small and that development had outgrown the drainage, but no size or build date was ever published, so the claim can't be measured. Building within 10 m of the road corridor rose from 0.9% (2016) to 3.4% (2023), above 71% of comparable channels, and imagery shows infill and a new estate at the lagoon end: consistent with the claim, not proof of it. The promised new collector is not documented as started, and imagery stops at Nov 2024. Agungi flooded again in Sep 2025, and by Jun 2026 the state was blaming a blocked Ajiran outfall instead, while saying unnamed 'major drainage' had been finished."
+      }
     },
     {
       "aliases": [

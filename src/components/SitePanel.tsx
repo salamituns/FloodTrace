@@ -316,7 +316,12 @@ export function SitePanel() {
   const site = loaded?.sites.find((s) => s.site_id === selectedId);
   return (
     <aside className="right right--sites">
-      {!loaded && <section className="card"><p className="empty">{error ? `Could not load sites: ${error}` : 'Loading sites…'}</p></section>}
+      {!loaded && (
+        <section className="card">
+          <p className="empty">{error ? `Could not load sites: ${error}` : 'Loading sites…'}</p>
+          {error && <button className="link" onClick={() => useStore.getState().setSites(null)}>Retry</button>}
+        </section>
+      )}
       {loaded && !site && <SiteList sites={loaded.sites} promises={loaded.promises} />}
       {loaded && site && <SiteDetail site={site} promises={loaded.promises} />}
     </aside>
