@@ -135,3 +135,9 @@ even without an event folder.
   in 2 episodes), 21 promoted.
 - **Reviewer fix: riverine trigger.** A bare "Ogun River" in the text is often a place ("Ogun River plains at Isheri"),
   and that made the 4 Jul 2020 weekend downpour a river flood. The river name now has to sit near overflow wording.
+- **2018 done.** 11 days, including 3 found only by the dry-season check (Feb–Mar). The catalog has 69 days (63 rain,
+  6 river), 22 promoted. Reviewer call on r2018-003 (Alagbado, 29 Mar): Vanguard (NAN) reports two pupils "picked up dead
+  in the flood", attributed only to unnamed witnesses, while the police PRO (Punch) says they fell into a septic tank.
+  `who_reported` is null, so the claim doesn't promote; the conflict is noted on the report.
+- **The rain-gauge check is shelved.** The only GHCN-Daily station in Lagos (NIM00065201, Murtala Muhammed airport) has
+  precipitation for 40–69 days a year since 2010, and only 2 of the 12 low-rain flood dates. It can't settle the question.

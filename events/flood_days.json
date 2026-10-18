@@ -26,8 +26,11 @@
       "rule": "riverine flood days less than 21 days apart share one episode_id (ep-<first date>-riverine); reports keep their own dates. Pluvial and lagoon days are not grouped (episode_id null).",
       "fields": "areas are the union over the episode's days; deaths_note is the first that exists (earliest day); n_outlets is distinct publishers over all the episode's reports; promote applies the day promotion rule over all the episode's reports."
     },
-    "generated_at": "2026-10-18T22:14:06Z",
+    "generated_at": "2026-10-18T23:04:38Z",
     "sources": [
+      {
+        "path": "events/intake/reports_2018.json"
+      },
       {
         "path": "events/intake/reports_2019.json"
       },
@@ -54,6 +57,442 @@
       }
     ],
     "search_coverage": [
+      {
+        "year_month": "2018-01",
+        "outlets": {
+          "note": "out-of-season check; pass 1 not run"
+        },
+        "hits_screened": 4,
+        "kept": 0,
+        "excluded": 1,
+        "minutes": 6,
+        "pass2": {
+          "queries": [
+            "flood Lagos January 2018",
+            "\"Lagos flood\" dead OR died OR drowned OR killed OR \"swept away\" OR bodies 2018",
+            "\"Oyan Dam\" Lagos 2018",
+            "\"Ogun River\" overflow Lagos"
+          ],
+          "outlets": {
+            "Anadolu": "year_query_is_national_niger_benue_not_lagos_street",
+            "Punch": "reached_no_jan_flood_day",
+            "EnviroNews": "july_2017_lekki_fear_excluded"
+          },
+          "hits_screened": 4,
+          "kept": 0,
+          "excluded": 1,
+          "minutes": 8
+        },
+        "n_queries": 1
+      },
+      {
+        "year_month": "2018-02",
+        "outlets": {
+          "note": "out-of-season check; pass 1 not run"
+        },
+        "hits_screened": 6,
+        "kept": 0,
+        "excluded": 0,
+        "minutes": 5,
+        "pass2": {
+          "queries": [
+            "flood Lagos February 2018",
+            "flood sacks Irepodun Dopemu 2018",
+            "flood Lagos site:bbc.com/pidgin February 2018",
+            "\"Lagos flood\" dead OR died OR drowned OR killed OR \"swept away\" OR bodies 2018",
+            "\"Oyan Dam\" Lagos 2018"
+          ],
+          "outlets": {
+            "Vanguard": "irepodun_dopemu_kept",
+            "BBC Pidgin": "igbo_efon_osapa_kept",
+            "Anadolu": "year_query_is_national_niger_benue_not_lagos_street"
+          },
+          "hits_screened": 8,
+          "kept": 2,
+          "excluded": 0,
+          "minutes": 18
+        },
+        "n_queries": 1
+      },
+      {
+        "year_month": "2018-03",
+        "outlets": {
+          "note": "out-of-season check; pass 1 not run"
+        },
+        "hits_screened": 5,
+        "kept": 0,
+        "excluded": 1,
+        "minutes": 5,
+        "pass2": {
+          "queries": [
+            "flood Lagos March 2018",
+            "\"Lagos flood\" dead OR died OR drowned OR killed OR \"swept away\" OR bodies 2018",
+            "2 students Alagbado flood Lagos March 2018"
+          ],
+          "outlets": {
+            "Vanguard": "alagbado_two_students_kept",
+            "Punch": "septic_tank_omikunle_ijaiye_not_kept_as_flood_report",
+            "BBC Pidgin": "osapa_canal_clearing_followup_not_new_day",
+            "Anadolu": "year_query_is_national_niger_benue_not_lagos_street"
+          },
+          "hits_screened": 8,
+          "kept": 1,
+          "excluded": 2,
+          "minutes": 20
+        },
+        "n_queries": 1
+      },
+      {
+        "year_month": "2018-04",
+        "outlets": {
+          "Punch": "reached_editorial_letter_not_day",
+          "Vanguard": "reached_waste_warning_excluded",
+          "Guardian NG": "reached_alapere_ongoing_complaint_excluded",
+          "Premium Times": "reached_no_qualifying_day",
+          "Channels TV": "reached_no_qualifying_day",
+          "TVC": "reached_no_qualifying_day",
+          "Daily Trust": "reached_no_qualifying_day",
+          "BBC Pidgin": "reached_no_qualifying_day",
+          "Nairametrics": "reached_no_qualifying_day",
+          "X:LASEMA": "not_reached",
+          "X:Lagos_MoE": "not_reached",
+          "X:NEMA": "not_reached"
+        },
+        "hits_screened": 12,
+        "kept": 0,
+        "excluded": 4,
+        "minutes": 22,
+        "pass2": {
+          "queries": [
+            "\"Lagos flood\" dead OR died OR drowned OR killed OR \"swept away\" OR bodies 2018",
+            "\"Oyan Dam\" Lagos 2018",
+            "\"Ogun River\" overflow Lagos",
+            "\"Lagos lagoon\" overflow",
+            "\"release of water\" Lagos",
+            "Isheri OR Ajegunle OR \"Owode Onirin\" OR Agboyi flood 2018"
+          ],
+          "outlets": {
+            "Anadolu": "year_query_is_national_niger_benue_not_lagos_street",
+            "Guardian NG": "alapere_whenever_it_rains_excluded"
+          },
+          "hits_screened": 5,
+          "kept": 0,
+          "excluded": 1,
+          "minutes": 8
+        },
+        "n_queries": 4
+      },
+      {
+        "year_month": "2018-05",
+        "outlets": {
+          "Punch": "reached_nihsa_outlook_and_waste_letter_excluded",
+          "Vanguard": "reached_outlook_and_makoko_not_street_day",
+          "Guardian NG": "reached_nihsa_outlook_excluded",
+          "Premium Times": "reached_no_qualifying_day",
+          "Channels TV": "reached",
+          "TVC": "reached_no_qualifying_day",
+          "Daily Trust": "reached_nihsa_outlook_excluded",
+          "BBC Pidgin": "reached_no_qualifying_day",
+          "Nairametrics": "reached_no_qualifying_day",
+          "X:LASEMA": "not_reached",
+          "X:Lagos_MoE": "not_reached",
+          "X:NEMA": "not_reached"
+        },
+        "hits_screened": 14,
+        "kept": 1,
+        "excluded": 5,
+        "minutes": 28,
+        "pass2": {
+          "queries": [
+            "\"Lagos flood\" dead OR died OR drowned OR killed OR \"swept away\" OR bodies 2018",
+            "\"Oyan Dam\" Lagos 2018",
+            "\"Ogun River\" overflow Lagos",
+            "\"Lagos lagoon\" overflow",
+            "\"release of water\" Lagos",
+            "Isheri OR Ajegunle OR \"Owode Onirin\" OR Agboyi flood 2018"
+          ],
+          "outlets": {
+            "Anadolu": "year_query_is_national_niger_benue_not_lagos_street",
+            "Channels TV": "already_pass1_25_may"
+          },
+          "hits_screened": 4,
+          "kept": 0,
+          "excluded": 0,
+          "minutes": 8
+        },
+        "n_queries": 4
+      },
+      {
+        "year_month": "2018-06",
+        "outlets": {
+          "Punch": "reached",
+          "Vanguard": "reached_chevy_view_fear_and_eko_atlantic_surge_excluded",
+          "Guardian NG": "reached_ajao_estate_potholes_whenever_it_rains_excluded",
+          "Premium Times": "reached_no_qualifying_day",
+          "Channels TV": "reached_no_qualifying_day",
+          "TVC": "reached_no_qualifying_day",
+          "Daily Trust": "reached_no_qualifying_day",
+          "BBC Pidgin": "reached_plastic_pollution_feature_excluded",
+          "Nairametrics": "reached_no_qualifying_day",
+          "X:LASEMA": "not_reached",
+          "X:Lagos_MoE": "not_reached",
+          "X:NEMA": "not_reached"
+        },
+        "hits_screened": 16,
+        "kept": 1,
+        "excluded": 5,
+        "minutes": 30,
+        "pass2": {
+          "queries": [
+            "\"Lagos flood\" dead OR died OR drowned OR killed OR \"swept away\" OR bodies 2018",
+            "\"Oyan Dam\" Lagos 2018",
+            "\"Ogun River\" overflow Lagos",
+            "\"Lagos lagoon\" overflow",
+            "\"release of water\" Lagos",
+            "Isheri OR Ajegunle OR \"Owode Onirin\" OR Agboyi flood 2018"
+          ],
+          "outlets": {
+            "Anadolu": "year_query_is_national_niger_benue_not_lagos_street",
+            "Punch": "itedo_already_pass1"
+          },
+          "hits_screened": 4,
+          "kept": 0,
+          "excluded": 0,
+          "minutes": 8
+        },
+        "n_queries": 4
+      },
+      {
+        "year_month": "2018-07",
+        "outlets": {
+          "Punch": "reached_drainage_clearing_and_environmentalist_excluded",
+          "Vanguard": "reached_allays_fears_and_abeokuta_oyan_ogun_deaths_excluded",
+          "Guardian NG": "reached_national_peak_not_dated_lagos_day",
+          "Premium Times": "reached_no_qualifying_day",
+          "Channels TV": "reached_no_qualifying_day",
+          "TVC": "reached_no_qualifying_day",
+          "Daily Trust": "reached_no_qualifying_day",
+          "BBC Pidgin": "reached_no_qualifying_day",
+          "Nairametrics": "reached_no_qualifying_day",
+          "X:LASEMA": "not_reached",
+          "X:Lagos_MoE": "not_reached",
+          "X:NEMA": "not_reached"
+        },
+        "hits_screened": 14,
+        "kept": 0,
+        "excluded": 6,
+        "minutes": 24,
+        "pass2": {
+          "queries": [
+            "\"Lagos flood\" dead OR died OR drowned OR killed OR \"swept away\" OR bodies 2018",
+            "\"Oyan Dam\" Lagos 2018",
+            "\"Ogun River\" overflow Lagos",
+            "\"Lagos lagoon\" overflow",
+            "\"release of water\" Lagos",
+            "Isheri OR Ajegunle OR \"Owode Onirin\" OR Agboyi flood 2018",
+            "Oyan Dam flood July 2018 Abeokuta"
+          ],
+          "outlets": {
+            "Anadolu": "year_query_is_national_niger_benue_not_lagos_street",
+            "Vanguard": "abeokuta_13_jul_is_ogun_excluded",
+            "The Nation": "not_task26_ogun_toddler_lead"
+          },
+          "hits_screened": 6,
+          "kept": 0,
+          "excluded": 2,
+          "minutes": 10
+        },
+        "n_queries": 4
+      },
+      {
+        "year_month": "2018-08",
+        "outlets": {
+          "Punch": "reached",
+          "Vanguard": "reached_ikotun_canal_sos_whenever_it_rains_excluded",
+          "Guardian NG": "reached_no_qualifying_day",
+          "Premium Times": "reached_no_qualifying_day",
+          "Channels TV": "reached_no_qualifying_day",
+          "TVC": "reached_no_qualifying_day",
+          "Daily Trust": "reached_no_qualifying_day",
+          "BBC Pidgin": "reached",
+          "Nairametrics": "reached_no_qualifying_day",
+          "X:LASEMA": "not_reached",
+          "X:Lagos_MoE": "not_reached",
+          "X:NEMA": "not_reached"
+        },
+        "hits_screened": 12,
+        "kept": 2,
+        "excluded": 3,
+        "minutes": 26,
+        "pass2": {
+          "queries": [
+            "\"Lagos flood\" dead OR died OR drowned OR killed OR \"swept away\" OR bodies 2018",
+            "\"Oyan Dam\" Lagos 2018",
+            "\"Ogun River\" overflow Lagos",
+            "\"Lagos lagoon\" overflow",
+            "\"release of water\" Lagos",
+            "Isheri OR Ajegunle OR \"Owode Onirin\" OR Agboyi flood 2018"
+          ],
+          "outlets": {
+            "Anadolu": "year_query_is_national_niger_benue_not_lagos_street",
+            "Punch": "ilubirin_boat_capsize_not_flood_death"
+          },
+          "hits_screened": 5,
+          "kept": 0,
+          "excluded": 2,
+          "minutes": 10
+        },
+        "n_queries": 4
+      },
+      {
+        "year_month": "2018-09",
+        "outlets": {
+          "Punch": "reached",
+          "Vanguard": "reached",
+          "Guardian NG": "reached",
+          "Premium Times": "reached_no_qualifying_day",
+          "Channels TV": "reached_no_sept_keep",
+          "TVC": "reached_no_qualifying_day",
+          "Daily Trust": "reached",
+          "BBC Pidgin": "reached_no_qualifying_day",
+          "Nairametrics": "reached_no_qualifying_day",
+          "X:LASEMA": "not_reached",
+          "X:Lagos_MoE": "not_reached",
+          "X:NEMA": "not_reached"
+        },
+        "hits_screened": 22,
+        "kept": 6,
+        "excluded": 6,
+        "minutes": 42,
+        "pass2": {
+          "queries": [
+            "\"Lagos flood\" dead OR died OR drowned OR killed OR \"swept away\" OR bodies 2018",
+            "\"Oyan Dam\" Lagos 2018",
+            "\"Ogun River\" overflow Lagos",
+            "\"Lagos lagoon\" overflow",
+            "\"release of water\" Lagos",
+            "Isheri OR Ajegunle OR \"Owode Onirin\" OR Agboyi flood 2018"
+          ],
+          "outlets": {
+            "Anadolu": "year_query_is_national_108_dead_not_lagos_street",
+            "Punch": "flash_flood_video_headline_only_excluded; ibeju_already_pass1"
+          },
+          "hits_screened": 6,
+          "kept": 0,
+          "excluded": 2,
+          "minutes": 10
+        },
+        "n_queries": 5
+      },
+      {
+        "year_month": "2018-10",
+        "outlets": {
+          "Punch": "reached",
+          "Vanguard": "reached_assembly_ifako_death_no_dated_street_excluded",
+          "Guardian NG": "reached_no_oct_street_day_kept",
+          "Premium Times": "reached_no_qualifying_day",
+          "Channels TV": "reached",
+          "TVC": "reached_no_qualifying_day",
+          "Daily Trust": "reached_no_qualifying_day",
+          "BBC Pidgin": "reached_no_qualifying_day",
+          "Nairametrics": "reached_no_qualifying_day",
+          "X:LASEMA": "not_reached",
+          "X:Lagos_MoE": "not_reached",
+          "X:NEMA": "not_reached"
+        },
+        "hits_screened": 16,
+        "kept": 2,
+        "excluded": 5,
+        "minutes": 32,
+        "pass2": {
+          "queries": [
+            "\"Lagos flood\" dead OR died OR drowned OR killed OR \"swept away\" OR bodies 2018",
+            "\"Oyan Dam\" Lagos 2018",
+            "\"Ogun River\" overflow Lagos",
+            "\"Lagos lagoon\" overflow",
+            "\"release of water\" Lagos",
+            "Isheri OR Ajegunle OR \"Owode Onirin\" OR Agboyi flood 2018",
+            "Ifako Ijaiye flood death 2018"
+          ],
+          "outlets": {
+            "Anadolu": "year_query_is_national_niger_benue_not_lagos_street",
+            "Vanguard": "makinde_ifako_one_dead_no_date_excluded",
+            "Punch": "agiliti_ajegunle_undated_feature_excluded; aboru_already_pass1"
+          },
+          "hits_screened": 8,
+          "kept": 0,
+          "excluded": 3,
+          "minutes": 12
+        },
+        "n_queries": 4
+      },
+      {
+        "year_month": "2018-11",
+        "outlets": {
+          "Punch": "reached_ikorodu_roads_lament_not_dated_flood_day",
+          "Vanguard": "reached_no_qualifying_day",
+          "Guardian NG": "reached_no_qualifying_day",
+          "Premium Times": "reached_no_qualifying_day",
+          "Channels TV": "reached_no_qualifying_day",
+          "TVC": "reached_no_qualifying_day",
+          "Daily Trust": "reached_no_qualifying_day",
+          "BBC Pidgin": "reached_no_qualifying_day",
+          "Nairametrics": "reached_no_qualifying_day",
+          "X:LASEMA": "not_reached",
+          "X:Lagos_MoE": "not_reached",
+          "X:NEMA": "not_reached"
+        },
+        "hits_screened": 8,
+        "kept": 0,
+        "excluded": 1,
+        "minutes": 16,
+        "pass2": {
+          "queries": [
+            "\"Lagos flood\" dead OR died OR drowned OR killed OR \"swept away\" OR bodies 2018",
+            "\"Oyan Dam\" Lagos 2018",
+            "\"Ogun River\" overflow Lagos",
+            "\"Lagos lagoon\" overflow",
+            "\"release of water\" Lagos",
+            "Isheri OR Ajegunle OR \"Owode Onirin\" OR Agboyi flood 2018"
+          ],
+          "outlets": {
+            "Anadolu": "year_query_is_national_niger_benue_not_lagos_street",
+            "Punch": "no_nov_death_or_river_day"
+          },
+          "hits_screened": 3,
+          "kept": 0,
+          "excluded": 0,
+          "minutes": 6
+        },
+        "n_queries": 2
+      },
+      {
+        "year_month": "2018-12",
+        "outlets": {
+          "note": "out-of-season check; pass 1 not run"
+        },
+        "hits_screened": 3,
+        "kept": 0,
+        "excluded": 0,
+        "minutes": 4,
+        "pass2": {
+          "queries": [
+            "flood Lagos December 2018",
+            "\"Lagos flood\" dead OR died OR drowned OR killed OR \"swept away\" OR bodies 2018",
+            "\"Oyan Dam\" Lagos 2018",
+            "\"Ogun River\" overflow Lagos"
+          ],
+          "outlets": {
+            "Anadolu": "year_query_is_national_niger_benue_not_lagos_street",
+            "Punch": "reached_no_dec_flood_day"
+          },
+          "hits_screened": 3,
+          "kept": 0,
+          "excluded": 0,
+          "minutes": 6
+        },
+        "n_queries": 1
+      },
       {
         "year_month": "2019-01",
         "outlets": {
@@ -3420,6 +3859,1266 @@
     }
   },
   "days": [
+    {
+      "date": "2018-02-10",
+      "areas": [
+        {
+          "name": "Irepodun Street, Dopemu",
+          "lon": 3.3031094,
+          "lat": 6.620407,
+          "confidence": "street",
+          "geocoded_from": null,
+          "display_name": "Irepodun Street, Dopemu, Alagba, Agege, Lagos, 100276, Nigeria"
+        },
+        {
+          "name": "Lagos-Abeokuta Expressway",
+          "lon": 3.2779096,
+          "lat": 6.6666387,
+          "confidence": "street",
+          "geocoded_from": null,
+          "display_name": "Lagos-Abeokuta Expressway, Alagbado, Abule Egba, Alimosho, Lagos, 100314, Nigeria"
+        },
+        {
+          "name": "Olalabi Street",
+          "lon": null,
+          "lat": null,
+          "confidence": null,
+          "geocoded_from": null,
+          "display_name": null
+        }
+      ],
+      "n_sources": 1,
+      "n_outlets": 1,
+      "impacts": [
+        "Saturday early-morning downpour: flood took over homes at No. 4 Irepodun Street after a fence collapsed. Children carried to safety. Shops on Lagos-Abeokuta Expressway submerged (bags of beans, yam flour, rice). No death reported."
+      ],
+      "causes": [
+        "construction",
+        "heavy_rain"
+      ],
+      "flood_type": "pluvial",
+      "flood_type_reports": {
+        "pluvial": 1,
+        "riverine": 0,
+        "lagoon": 0
+      },
+      "episode_id": null,
+      "rain": {
+        "date_covered": true,
+        "aoi_mean_mm": 1.03,
+        "wettest_cell": {
+          "id": "c6.55N3.35E",
+          "mm": 10.22,
+          "place": "Mushin"
+        },
+        "cells_ge_50mm": 0,
+        "pop_weighted_rain_mm": 4.27,
+        "area_cells": {
+          "Irepodun Street, Dopemu": {
+            "cell_id": "c6.65N3.35E",
+            "place": "Ojodu Berger",
+            "total_mm": 7.35
+          },
+          "Lagos-Abeokuta Expressway": {
+            "cell_id": "c6.65N3.25E",
+            "place": "Alimosho / Ipaja",
+            "total_mm": 5.07
+          }
+        },
+        "local": {
+          "n_areas_geocoded": 2,
+          "n_cells": 2,
+          "flood_day": {
+            "date": "2018-02-10",
+            "max_total_mm": 7.35,
+            "median_total_mm": 6.21
+          },
+          "previous_day": {
+            "date": "2018-02-09",
+            "max_total_mm": 4.99,
+            "median_total_mm": 4.16
+          },
+          "local_max_2d_mm": 10.67,
+          "max_30min_mm_h_2d": 3.4
+        }
+      },
+      "candidate_rank": null,
+      "tier_a_event_id": null,
+      "promote": false,
+      "promote_reasons": [],
+      "deaths_note": null,
+      "deaths_review": [
+        {
+          "id": "r2018-001",
+          "matched": "death"
+        }
+      ],
+      "reports": [
+        {
+          "url": "https://www.vanguardngr.com/2018/02/flood-sacks-irepodun-street-residents-lagos-abeokuta-expressway-traders/",
+          "publisher": "Vanguard",
+          "published_at": "2018-02-10T00:00:00+01:00",
+          "read_status": "read",
+          "date": "2018-02-10",
+          "date_confidence": "exact",
+          "quote": "The residents of Irepodun Street in Dopemu area of Lagos wailed loudly as flood from Saturday\u2019s early morning downpour took over their homes.",
+          "causes": [
+            "construction",
+            "heavy_rain"
+          ],
+          "cause_attributed_by": "resident",
+          "cause_who": "Olaiya Oyewole-Musilu, resident, No. 4 Irepodun Street",
+          "cause_quote": "the ongoing construction which blocked the original water channel, thereby diverting flood to a fence behind their house"
+        }
+      ]
+    },
+    {
+      "date": "2018-02-26",
+      "areas": [
+        {
+          "name": "Igbo-Efon, Lekki-Epe Expressway",
+          "lon": 3.5195992,
+          "lat": 6.4383304,
+          "confidence": "street",
+          "geocoded_from": null,
+          "display_name": "Lekki-Epe Expressway, Igbo-Efon, Lekki Peninsula II, Eti Osa, Lagos, 101244, Nigeria"
+        },
+        {
+          "name": "Osapa London",
+          "lon": 3.5083077,
+          "lat": 6.4445362,
+          "confidence": "area",
+          "geocoded_from": null,
+          "display_name": "Osapa London, Jakande, Eti Osa, Lagos, 101244, Nigeria"
+        }
+      ],
+      "n_sources": 1,
+      "n_outlets": 1,
+      "impacts": [
+        "Rain that fell around publication: water filled houses at Igbo-Efon; residents hired pumps. Water covered gutters on Lekki-Epe Expressway; people built monkey bridges. Osapa London canal blocked by water hyacinth; nearby houses flooded. Cars spoiled; some houses rebuilt higher. No death reported."
+      ],
+      "causes": [
+        "blocked_drainage",
+        "canal_overflow",
+        "heavy_rain"
+      ],
+      "flood_type": "pluvial",
+      "flood_type_reports": {
+        "pluvial": 1,
+        "riverine": 0,
+        "lagoon": 0
+      },
+      "episode_id": null,
+      "rain": {
+        "date_covered": true,
+        "aoi_mean_mm": 9.16,
+        "wettest_cell": {
+          "id": "c6.45N3.55E",
+          "mm": 28.88,
+          "place": "Ajah"
+        },
+        "cells_ge_50mm": 0,
+        "pop_weighted_rain_mm": 11.05,
+        "area_cells": {
+          "Igbo-Efon, Lekki-Epe Expressway": {
+            "cell_id": "c6.45N3.55E",
+            "place": "Ajah",
+            "total_mm": 28.88
+          },
+          "Osapa London": {
+            "cell_id": "c6.45N3.55E",
+            "place": "Ajah",
+            "total_mm": 28.88
+          }
+        },
+        "local": {
+          "n_areas_geocoded": 2,
+          "n_cells": 1,
+          "flood_day": {
+            "date": "2018-02-26",
+            "max_total_mm": 28.88,
+            "median_total_mm": 28.88
+          },
+          "previous_day": {
+            "date": "2018-02-25",
+            "max_total_mm": 0.04,
+            "median_total_mm": 0.04
+          },
+          "local_max_2d_mm": 28.92,
+          "max_30min_mm_h_2d": 12.75
+        }
+      },
+      "candidate_rank": null,
+      "tier_a_event_id": null,
+      "promote": false,
+      "promote_reasons": [],
+      "deaths_note": null,
+      "deaths_review": [
+        {
+          "id": "r2018-002",
+          "matched": "death"
+        }
+      ],
+      "reports": [
+        {
+          "url": "https://www.bbc.com/pidgin/tori-43204030",
+          "publisher": "BBC Pidgin",
+          "published_at": "2018-02-26T00:00:00+01:00",
+          "read_status": "read",
+          "date": "2018-02-26",
+          "date_confidence": "approx",
+          "quote": "For Igbo-Efon side for Lekki-Epe expressway, people don begin pump water comot for dia compound as water full dia house",
+          "causes": [
+            "blocked_drainage",
+            "canal_overflow",
+            "heavy_rain"
+          ],
+          "cause_attributed_by": "resident",
+          "cause_who": "Ike Onyenokwe, chairman, Osapa London residents association",
+          "cause_quote": "di main palava na di grass and sand wey don block canal and di fact say government neva complete di canal"
+        }
+      ]
+    },
+    {
+      "date": "2018-03-29",
+      "areas": [
+        {
+          "name": "Casso Bus Stop, Lagos/Abeokuta Expressway, Alagbado",
+          "lon": 3.2557698,
+          "lat": 6.6597047,
+          "confidence": "neighbourhood",
+          "geocoded_from": "Alagbado",
+          "display_name": "Alagbado, Alimosho, Lagos, 100276, Nigeria"
+        }
+      ],
+      "n_sources": 1,
+      "n_outlets": 1,
+      "impacts": [
+        "Thursday afternoon heavy rain: heavy flooding. Two male students of a private secondary school found floating on water at Casso Bus Stop; okada riders took them to a private hospital, Brought In Dead. Relatives wailing at the hospital."
+      ],
+      "causes": [
+        "heavy_rain"
+      ],
+      "flood_type": "pluvial",
+      "flood_type_reports": {
+        "pluvial": 1,
+        "riverine": 0,
+        "lagoon": 0
+      },
+      "episode_id": null,
+      "rain": {
+        "date_covered": true,
+        "aoi_mean_mm": 5.76,
+        "wettest_cell": {
+          "id": "c6.75N3.35E",
+          "mm": 39.78,
+          "place": "Mowe / Ibafo"
+        },
+        "cells_ge_50mm": 0,
+        "pop_weighted_rain_mm": 7.01,
+        "area_cells": {
+          "Casso Bus Stop, Lagos/Abeokuta Expressway, Alagbado": {
+            "cell_id": "c6.65N3.25E",
+            "place": "Alimosho / Ipaja",
+            "total_mm": 9.91
+          }
+        },
+        "local": {
+          "n_areas_geocoded": 1,
+          "n_cells": 1,
+          "flood_day": {
+            "date": "2018-03-29",
+            "max_total_mm": 9.91,
+            "median_total_mm": 9.91
+          },
+          "previous_day": {
+            "date": "2018-03-28",
+            "max_total_mm": 0.17,
+            "median_total_mm": 0.17
+          },
+          "local_max_2d_mm": 10.08,
+          "max_30min_mm_h_2d": 6.05
+        }
+      },
+      "candidate_rank": 151,
+      "tier_a_event_id": null,
+      "promote": false,
+      "promote_reasons": [],
+      "deaths_note": null,
+      "deaths_review": [],
+      "reports": [
+        {
+          "url": "https://www.vanguardngr.com/2018/03/2-students-found-floating-water-alagbado-lagos-heavy-rain/",
+          "publisher": "Vanguard",
+          "published_at": "2018-03-30T00:00:00+01:00",
+          "read_status": "read",
+          "date": "2018-03-29",
+          "date_confidence": "day",
+          "quote": "Two male students of a private secondary school were picked up dead in the flood after a heavy rain",
+          "causes": [
+            "heavy_rain"
+          ],
+          "cause_attributed_by": "journalist",
+          "cause_who": null,
+          "cause_quote": "There was heavy rain in the area in the afternoon which resulted in heavy flooding."
+        }
+      ]
+    },
+    {
+      "date": "2018-05-25",
+      "areas": [
+        {
+          "name": "Ketu",
+          "lon": 3.3917483,
+          "lat": 6.5928001,
+          "confidence": "area",
+          "geocoded_from": null,
+          "display_name": "Ketu, Kosofe, Lagos, 100247, Nigeria"
+        },
+        {
+          "name": "Bariga",
+          "lon": 3.3880365,
+          "lat": 6.5407282,
+          "confidence": "area",
+          "geocoded_from": null,
+          "display_name": "Bariga, Shomolu, Lagos, 100233, Nigeria"
+        },
+        {
+          "name": "Ojota",
+          "lon": 3.3791462,
+          "lat": 6.5870705,
+          "confidence": "area",
+          "geocoded_from": null,
+          "display_name": "Ojota, Ketu, Kosofe, Lagos, 100212, Nigeria"
+        }
+      ],
+      "n_sources": 1,
+      "n_outlets": 1,
+      "impacts": [
+        "Friday early-morning downpour lasting several hours: flooded streets in Ketu, Bariga and Ojota. Motorists parked or crawled; commuters trekked. Traffic gridlock. No death reported."
+      ],
+      "causes": [
+        "blocked_drainage",
+        "heavy_rain"
+      ],
+      "flood_type": "pluvial",
+      "flood_type_reports": {
+        "pluvial": 1,
+        "riverine": 0,
+        "lagoon": 0
+      },
+      "episode_id": null,
+      "rain": {
+        "date_covered": true,
+        "aoi_mean_mm": 13.3,
+        "wettest_cell": {
+          "id": "c6.65N3.55E",
+          "mm": 24.1,
+          "place": "Ikorodu"
+        },
+        "cells_ge_50mm": 0,
+        "pop_weighted_rain_mm": 17.13,
+        "area_cells": {
+          "Ketu": {
+            "cell_id": "c6.55N3.35E",
+            "place": "Mushin",
+            "total_mm": 18.94
+          },
+          "Bariga": {
+            "cell_id": "c6.55N3.35E",
+            "place": "Mushin",
+            "total_mm": 18.94
+          },
+          "Ojota": {
+            "cell_id": "c6.55N3.35E",
+            "place": "Mushin",
+            "total_mm": 18.94
+          }
+        },
+        "local": {
+          "n_areas_geocoded": 3,
+          "n_cells": 1,
+          "flood_day": {
+            "date": "2018-05-25",
+            "max_total_mm": 18.94,
+            "median_total_mm": 18.94
+          },
+          "previous_day": {
+            "date": "2018-05-24",
+            "max_total_mm": 0.0,
+            "median_total_mm": 0.0
+          },
+          "local_max_2d_mm": 18.94,
+          "max_30min_mm_h_2d": 5.51
+        }
+      },
+      "candidate_rank": null,
+      "tier_a_event_id": null,
+      "promote": false,
+      "promote_reasons": [],
+      "deaths_note": null,
+      "deaths_review": [
+        {
+          "id": "r2018-004",
+          "matched": "death"
+        }
+      ],
+      "reports": [
+        {
+          "url": "https://www.channelstv.com/2018/05/25/flood-hits-lagos-after-early-morning-downpour/",
+          "publisher": "Channels TV",
+          "published_at": "2018-05-25T00:00:00+01:00",
+          "read_status": "read",
+          "date": "2018-05-25",
+          "date_confidence": "exact",
+          "quote": "Residents of the affected areas of the commercial city woke up to flooded streets especially in areas like Ketu, Bariga and Ojota",
+          "causes": [
+            "blocked_drainage",
+            "heavy_rain"
+          ],
+          "cause_attributed_by": "resident",
+          "cause_who": null,
+          "cause_quote": "The flooding according to the residents is because of drainages blocked majorly with plastic wastes."
+        }
+      ]
+    },
+    {
+      "date": "2018-06-06",
+      "areas": [
+        {
+          "name": "Itedo Grammar School, Lekki Phase 1",
+          "lon": 3.5182848,
+          "lat": 6.4325432,
+          "confidence": "neighbourhood",
+          "geocoded_from": "Lekki Phase 1",
+          "display_name": "southlake homes phase 1, Igbo-Efon, Lekki Peninsula II, Eti Osa, Lagos, Nigeria"
+        }
+      ],
+      "n_sources": 1,
+      "n_outlets": 1,
+      "impacts": [
+        "Wednesday: Cool FM video showed water taking over classroom corridors at Itedo Grammar School, Lekki Phase 1; students sweeping water. No death reported."
+      ],
+      "causes": [],
+      "flood_type": "pluvial",
+      "flood_type_reports": {
+        "pluvial": 1,
+        "riverine": 0,
+        "lagoon": 0
+      },
+      "episode_id": null,
+      "rain": {
+        "date_covered": true,
+        "aoi_mean_mm": 9.13,
+        "wettest_cell": {
+          "id": "c6.45N3.85E",
+          "mm": 30.19,
+          "place": "Ibeju"
+        },
+        "cells_ge_50mm": 0,
+        "pop_weighted_rain_mm": 8.12,
+        "area_cells": {
+          "Itedo Grammar School, Lekki Phase 1": {
+            "cell_id": "c6.45N3.55E",
+            "place": "Ajah",
+            "total_mm": 18.6
+          }
+        },
+        "local": {
+          "n_areas_geocoded": 1,
+          "n_cells": 1,
+          "flood_day": {
+            "date": "2018-06-06",
+            "max_total_mm": 18.6,
+            "median_total_mm": 18.6
+          },
+          "previous_day": {
+            "date": "2018-06-05",
+            "max_total_mm": 0.0,
+            "median_total_mm": 0.0
+          },
+          "local_max_2d_mm": 18.6,
+          "max_30min_mm_h_2d": 8.76
+        }
+      },
+      "candidate_rank": null,
+      "tier_a_event_id": null,
+      "promote": false,
+      "promote_reasons": [],
+      "deaths_note": null,
+      "deaths_review": [
+        {
+          "id": "r2018-005",
+          "matched": "death"
+        }
+      ],
+      "reports": [
+        {
+          "url": "https://punchng.com/video-nigerians-react-as-flood-overruns-primary-school-in-affluent-lekki/",
+          "publisher": "Punch",
+          "published_at": "2018-06-07T17:14:00+01:00",
+          "read_status": "read",
+          "date": "2018-06-06",
+          "date_confidence": "day",
+          "quote": "The video showed the flooded school and students, who were trying to sweep away the water, that had taken over the corridors of their classrooms.",
+          "causes": [],
+          "cause_attributed_by": "journalist",
+          "cause_who": null,
+          "cause_quote": null
+        }
+      ]
+    },
+    {
+      "date": "2018-08-13",
+      "areas": [
+        {
+          "name": "Prince Kazeem Eletu Way, Jakande, Lekki",
+          "lon": 3.4704698,
+          "lat": 6.4413987,
+          "confidence": "neighbourhood",
+          "geocoded_from": "Lekki",
+          "display_name": "Lekki Phase I, Eti Osa, Lagos, 101244, Nigeria"
+        },
+        {
+          "name": "Jakande, Lekki",
+          "lon": 3.5173489,
+          "lat": 6.4325134,
+          "confidence": "area",
+          "geocoded_from": null,
+          "display_name": "southlake homes phase 3, Lekki, Igbo-Efon, Lekki Peninsula II, Eti Osa, Lagos, Nigeria"
+        }
+      ],
+      "n_sources": 2,
+      "n_outlets": 2,
+      "impacts": [
+        "Monday rain: street flooded at Prince Kazeem Eletu Way, Jakande, Lekki (photos/videos from Wale Alakija). No death reported.",
+        "Monday: heavy water covered streets in Jakande, Lekki after serious rain. Traffic as roads filled with water. No death reported."
+      ],
+      "causes": [
+        "heavy_rain"
+      ],
+      "flood_type": "pluvial",
+      "flood_type_reports": {
+        "pluvial": 2,
+        "riverine": 0,
+        "lagoon": 0
+      },
+      "episode_id": null,
+      "rain": {
+        "date_covered": true,
+        "aoi_mean_mm": 40.24,
+        "wettest_cell": {
+          "id": "c6.65N3.75E",
+          "mm": 71.15,
+          "place": "Imota"
+        },
+        "cells_ge_50mm": 29,
+        "pop_weighted_rain_mm": 41.24,
+        "area_cells": {
+          "Prince Kazeem Eletu Way, Jakande, Lekki": {
+            "cell_id": "c6.45N3.45E",
+            "place": "Ikoyi",
+            "total_mm": 51.48
+          },
+          "Jakande, Lekki": {
+            "cell_id": "c6.45N3.55E",
+            "place": "Ajah",
+            "total_mm": 64.76
+          }
+        },
+        "local": {
+          "n_areas_geocoded": 2,
+          "n_cells": 2,
+          "flood_day": {
+            "date": "2018-08-13",
+            "max_total_mm": 64.76,
+            "median_total_mm": 58.12
+          },
+          "previous_day": {
+            "date": "2018-08-12",
+            "max_total_mm": 0.05,
+            "median_total_mm": 0.03
+          },
+          "local_max_2d_mm": 64.81,
+          "max_30min_mm_h_2d": 9.44
+        }
+      },
+      "candidate_rank": 186,
+      "tier_a_event_id": null,
+      "promote": false,
+      "promote_reasons": [],
+      "deaths_note": null,
+      "deaths_review": [
+        {
+          "id": "r2018-006",
+          "matched": "death"
+        },
+        {
+          "id": "r2018-007",
+          "matched": "death"
+        }
+      ],
+      "reports": [
+        {
+          "url": "https://punchng.com/videos-floods-sack-lekki-road-as-lagos-is-drenched-by-rains/",
+          "publisher": "Punch",
+          "published_at": "2018-08-13T14:18:00+01:00",
+          "read_status": "read",
+          "date": "2018-08-13",
+          "date_confidence": "exact",
+          "quote": "Twitter user, Wale Alakija, has shared videos and photos of a street in Jakande, Lekki, Lagos flooded after Monday\u2019s rain.",
+          "causes": [
+            "heavy_rain"
+          ],
+          "cause_attributed_by": "journalist",
+          "cause_who": null,
+          "cause_quote": "a street in Jakande, Lekki, Lagos flooded after Monday\u2019s rain"
+        },
+        {
+          "url": "https://www.bbc.com/pidgin/tori-45174613",
+          "publisher": "BBC Pidgin",
+          "published_at": "2018-08-13T00:00:00+01:00",
+          "read_status": "read",
+          "date": "2018-08-13",
+          "date_confidence": "exact",
+          "quote": "Heavy water cover streets for Jakande area of Lekki, Lagos on Monday afta serious rain wey fall.",
+          "causes": [
+            "heavy_rain"
+          ],
+          "cause_attributed_by": "journalist",
+          "cause_who": null,
+          "cause_quote": "Heavy water cover streets for Jakande area of Lekki, Lagos on Monday afta serious rain wey fall."
+        }
+      ]
+    },
+    {
+      "date": "2018-09-07",
+      "areas": [
+        {
+          "name": "Oke-Afa by Asolo Bus Stop, Isawo Road, Ikorodu",
+          "lon": null,
+          "lat": null,
+          "confidence": null,
+          "geocoded_from": null,
+          "display_name": null
+        },
+        {
+          "name": "Isawo",
+          "lon": null,
+          "lat": null,
+          "confidence": null,
+          "geocoded_from": null,
+          "display_name": null
+        },
+        {
+          "name": "Igbo Olomu",
+          "lon": null,
+          "lat": null,
+          "confidence": null,
+          "geocoded_from": null,
+          "display_name": null
+        }
+      ],
+      "n_sources": 2,
+      "n_outlets": 2,
+      "impacts": [
+        "Friday early-morning three-hour downpour: Agric-Isawo-Arepo Road impassable; Isawo, Igbo Olomu and Arepo cut off. Commuters waded; some paid N100\u2013N150 to be carried across, including pregnant women. Fares rose (resident: N750 vs N200). No death reported.",
+        "Early-morning three-hour downpour: flooded Agric-Isawo-Arepo Road cut off Isawo, Igbo Olomu and Arepo. Commuters waded; N100\u2013N150 to be carried across. No death reported."
+      ],
+      "causes": [
+        "heavy_rain"
+      ],
+      "flood_type": "pluvial",
+      "flood_type_reports": {
+        "pluvial": 2,
+        "riverine": 0,
+        "lagoon": 0
+      },
+      "episode_id": null,
+      "rain": {
+        "date_covered": true,
+        "aoi_mean_mm": 31.98,
+        "wettest_cell": {
+          "id": "c6.55N2.95E",
+          "mm": 91.03,
+          "place": "Badagry"
+        },
+        "cells_ge_50mm": 21,
+        "pop_weighted_rain_mm": 44.63,
+        "area_cells": {},
+        "local": null
+      },
+      "candidate_rank": 23,
+      "tier_a_event_id": null,
+      "promote": false,
+      "promote_reasons": [],
+      "deaths_note": null,
+      "deaths_review": [
+        {
+          "id": "r2018-008",
+          "matched": "death"
+        },
+        {
+          "id": "r2018-009",
+          "matched": "death"
+        }
+      ],
+      "reports": [
+        {
+          "url": "https://guardian.ng/news/downpour-3-communities-cut-off-in-lagos/",
+          "publisher": "Guardian NG",
+          "published_at": "2018-09-07T16:27:00+01:00",
+          "read_status": "read",
+          "date": "2018-09-07",
+          "date_confidence": "exact",
+          "quote": "coming out or going into the three communities of Isawo, Igbo Olomu and Arepo because of the flooded road",
+          "causes": [
+            "heavy_rain"
+          ],
+          "cause_attributed_by": "journalist",
+          "cause_who": null,
+          "cause_quote": "early morning three-hour downpour which had rendered the road leading to the area impassable"
+        },
+        {
+          "url": "https://www.vanguardngr.com/2018/09/downpour-cuts-off-3-communities-in-lagos-state/",
+          "publisher": "Vanguard",
+          "published_at": "2018-09-07T00:00:00+01:00",
+          "read_status": "read",
+          "date": "2018-09-07",
+          "date_confidence": "exact",
+          "quote": "cut off following early morning three-hour downpour which had rendered the road leading to the area impassable",
+          "causes": [
+            "heavy_rain"
+          ],
+          "cause_attributed_by": "journalist",
+          "cause_who": null,
+          "cause_quote": "early morning three-hour downpour which had rendered the road leading to the area impassable"
+        }
+      ]
+    },
+    {
+      "date": "2018-09-08",
+      "areas": [
+        {
+          "name": "Kajola, Ibeju-Lekki",
+          "lon": 3.8082323,
+          "lat": 6.4706069,
+          "confidence": "neighbourhood",
+          "geocoded_from": "Ibeju-Lekki",
+          "display_name": "Ibeju-Lekki, Ibeju Lekki, Lagos, Nigeria"
+        },
+        {
+          "name": "Majek first-gate",
+          "lon": null,
+          "lat": null,
+          "confidence": null,
+          "geocoded_from": null,
+          "display_name": null
+        },
+        {
+          "name": "Lakowe",
+          "lon": 3.7318468,
+          "lat": 6.467313,
+          "confidence": "area",
+          "geocoded_from": null,
+          "display_name": "Lakowe, Awoyaya, Ibeju Lekki, Lagos, Nigeria"
+        },
+        {
+          "name": "Eleko",
+          "lon": 3.845665,
+          "lat": 6.4751555,
+          "confidence": "area",
+          "geocoded_from": null,
+          "display_name": "Eleko, Ibeju Lekki, Lagos, Nigeria"
+        },
+        {
+          "name": "Oribanwa",
+          "lon": null,
+          "lat": null,
+          "confidence": null,
+          "geocoded_from": null,
+          "display_name": null
+        },
+        {
+          "name": "Awoyaya",
+          "lon": 3.7045571,
+          "lat": 6.4697148,
+          "confidence": "area",
+          "geocoded_from": null,
+          "display_name": "Awoyaya, Ibeju Lekki, Lagos, Nigeria"
+        }
+      ],
+      "n_sources": 3,
+      "n_outlets": 3,
+      "impacts": [
+        "Saturday early-morning downpour: roads and homes flooded in Ibeju-Lekki. Valuables worth millions of naira destroyed (Balogun). Hospitality and other businesses affected. No death reported.",
+        "Saturday early hours: persistent rainfall and poor drainage flooded roads and homes. Valuables worth millions of naira lost. No death reported.",
+        "Saturday early hours: persistent rainfall and poor drainage flooded roads and homes. Valuables worth millions of naira lost. No death reported."
+      ],
+      "causes": [
+        "drainage_capacity",
+        "heavy_rain"
+      ],
+      "flood_type": "pluvial",
+      "flood_type_reports": {
+        "pluvial": 3,
+        "riverine": 0,
+        "lagoon": 0
+      },
+      "episode_id": null,
+      "rain": {
+        "date_covered": true,
+        "aoi_mean_mm": 15.25,
+        "wettest_cell": {
+          "id": "c6.55N3.35E",
+          "mm": 28.52,
+          "place": "Mushin"
+        },
+        "cells_ge_50mm": 0,
+        "pop_weighted_rain_mm": 21.16,
+        "area_cells": {
+          "Kajola, Ibeju-Lekki": {
+            "cell_id": "c6.45N3.85E",
+            "place": "Ibeju",
+            "total_mm": 19.65
+          },
+          "Lakowe": {
+            "cell_id": "c6.45N3.75E",
+            "place": "Sangotedo",
+            "total_mm": 21.51
+          },
+          "Eleko": {
+            "cell_id": "c6.45N3.85E",
+            "place": "Ibeju",
+            "total_mm": 19.65
+          },
+          "Awoyaya": {
+            "cell_id": "c6.45N3.75E",
+            "place": "Sangotedo",
+            "total_mm": 21.51
+          }
+        },
+        "local": {
+          "n_areas_geocoded": 4,
+          "n_cells": 2,
+          "flood_day": {
+            "date": "2018-09-08",
+            "max_total_mm": 21.51,
+            "median_total_mm": 20.58
+          },
+          "previous_day": {
+            "date": "2018-09-07",
+            "max_total_mm": 6.72,
+            "median_total_mm": 5.88
+          },
+          "local_max_2d_mm": 28.23,
+          "max_30min_mm_h_2d": 7.41
+        }
+      },
+      "candidate_rank": 23,
+      "tier_a_event_id": null,
+      "promote": true,
+      "promote_reasons": [
+        "three_independent_outlets (3)"
+      ],
+      "deaths_note": null,
+      "deaths_review": [
+        {
+          "id": "r2018-010",
+          "matched": "death"
+        },
+        {
+          "id": "r2018-011",
+          "matched": "death"
+        },
+        {
+          "id": "r2018-012",
+          "matched": "death"
+        }
+      ],
+      "reports": [
+        {
+          "url": "https://punchng.com/ibeju-lekki-residents-lose-valuables-to-flood/",
+          "publisher": "Punch",
+          "published_at": "2018-09-08T22:34:00+01:00",
+          "read_status": "read",
+          "date": "2018-09-08",
+          "date_confidence": "exact",
+          "quote": "the early morning downpour left several roads and homes in the area flooded",
+          "causes": [
+            "heavy_rain",
+            "drainage_capacity"
+          ],
+          "cause_attributed_by": "journalist",
+          "cause_who": null,
+          "cause_quote": "flood caused by persistent rainfall, coupled with poor drainage facilities in the community"
+        },
+        {
+          "url": "https://dailytrust.com/millions-lost-in-ibeju-lekki-flood/",
+          "publisher": "Daily Trust",
+          "published_at": "2018-09-08T16:00:29+01:00",
+          "read_status": "read",
+          "date": "2018-09-08",
+          "date_confidence": "exact",
+          "quote": "the early morning downpour left several roads and homes in the area flooded",
+          "causes": [
+            "heavy_rain",
+            "drainage_capacity"
+          ],
+          "cause_attributed_by": "journalist",
+          "cause_who": null,
+          "cause_quote": "flood from persistent rainfall since the early hours, coupled with the poor drainage facilities in the community"
+        },
+        {
+          "url": "https://guardian.ng/news/ibeju-lekki-residents-lose-valuables-worth-millions-to-flood/",
+          "publisher": "Guardian NG",
+          "published_at": "2018-09-08T16:16:00+01:00",
+          "read_status": "read",
+          "date": "2018-09-08",
+          "date_confidence": "exact",
+          "quote": "the early morning downpour left several roads and homes in the area flooded",
+          "causes": [
+            "heavy_rain",
+            "drainage_capacity"
+          ],
+          "cause_attributed_by": "journalist",
+          "cause_who": null,
+          "cause_quote": "flood from persistent rainfall since the early hours, coupled with the poor drainage facilities in the community"
+        }
+      ]
+    },
+    {
+      "date": "2018-09-18",
+      "areas": [
+        {
+          "name": "Apongbon, Lagos Island",
+          "lon": 3.3897024,
+          "lat": 6.4545947,
+          "confidence": "neighbourhood",
+          "geocoded_from": "Lagos Island",
+          "display_name": "Lagos Island, Lagos, 100242, Nigeria"
+        }
+      ],
+      "n_sources": 1,
+      "n_outlets": 1,
+      "impacts": [
+        "Tuesday (photo caption 'yesterday' on 19 Sep): vehicles wading through flood at Apongbon, Lagos Island. No Lagos death in this piece."
+      ],
+      "causes": [],
+      "flood_type": "pluvial",
+      "flood_type_reports": {
+        "pluvial": 1,
+        "riverine": 0,
+        "lagoon": 0
+      },
+      "episode_id": null,
+      "rain": {
+        "date_covered": true,
+        "aoi_mean_mm": 7.2,
+        "wettest_cell": {
+          "id": "c6.65N2.75E",
+          "mm": 16.05,
+          "place": "Seme border"
+        },
+        "cells_ge_50mm": 0,
+        "pop_weighted_rain_mm": 7.52,
+        "area_cells": {
+          "Apongbon, Lagos Island": {
+            "cell_id": "c6.45N3.35E",
+            "place": "Apapa",
+            "total_mm": 8.64
+          }
+        },
+        "local": {
+          "n_areas_geocoded": 1,
+          "n_cells": 1,
+          "flood_day": {
+            "date": "2018-09-18",
+            "max_total_mm": 8.64,
+            "median_total_mm": 8.64
+          },
+          "previous_day": {
+            "date": "2018-09-17",
+            "max_total_mm": 0.92,
+            "median_total_mm": 0.92
+          },
+          "local_max_2d_mm": 9.56,
+          "max_30min_mm_h_2d": 4.74
+        }
+      },
+      "candidate_rank": null,
+      "tier_a_event_id": null,
+      "promote": false,
+      "promote_reasons": [],
+      "deaths_note": null,
+      "deaths_review": [
+        {
+          "id": "r2018-013",
+          "matched": "death"
+        }
+      ],
+      "reports": [
+        {
+          "url": "https://guardian.ng/news/disease-outbreak-looms-as-floods-spread/",
+          "publisher": "Guardian NG",
+          "published_at": "2018-09-19T05:25:00+01:00",
+          "read_status": "read",
+          "date": "2018-09-18",
+          "date_confidence": "day",
+          "quote": "Vehicles wading through flood at Apongbon Area of Lagos Island \u2026yesterday.",
+          "causes": [],
+          "cause_attributed_by": "journalist",
+          "cause_who": null,
+          "cause_quote": null
+        }
+      ]
+    },
+    {
+      "date": "2018-10-10",
+      "areas": [
+        {
+          "name": "Surulere",
+          "lon": 3.3571159,
+          "lat": 6.5008027,
+          "confidence": "area",
+          "geocoded_from": null,
+          "display_name": "Surulere, Lagos, 102215, Nigeria"
+        },
+        {
+          "name": "Aguda",
+          "lon": 3.3540057,
+          "lat": 6.634641,
+          "confidence": "area",
+          "geocoded_from": null,
+          "display_name": "Aguda, Ikeja, Lagos, 100248, Nigeria"
+        },
+        {
+          "name": "Adelabu",
+          "lon": null,
+          "lat": null,
+          "confidence": null,
+          "geocoded_from": null,
+          "display_name": null
+        },
+        {
+          "name": "Berger",
+          "lon": 3.3685088,
+          "lat": 6.6415639,
+          "confidence": "area",
+          "geocoded_from": null,
+          "display_name": "Ojodu Berger, Ikeja, Lagos, 100248, Nigeria"
+        }
+      ],
+      "n_sources": 1,
+      "n_outlets": 1,
+      "impacts": [
+        "Wednesday morning heavy downpour: major roads filled with flood in Surulere, Aguda, Adelabu and Berger. Residents of Surulere and Aguda woke to flooded homes and streets; cars struggling. Traffic; motorists stranded. No death reported."
+      ],
+      "causes": [
+        "blocked_drainage",
+        "heavy_rain"
+      ],
+      "flood_type": "pluvial",
+      "flood_type_reports": {
+        "pluvial": 1,
+        "riverine": 0,
+        "lagoon": 0
+      },
+      "episode_id": null,
+      "rain": {
+        "date_covered": true,
+        "aoi_mean_mm": 12.63,
+        "wettest_cell": {
+          "id": "c6.45N3.35E",
+          "mm": 34.18,
+          "place": "Apapa"
+        },
+        "cells_ge_50mm": 0,
+        "pop_weighted_rain_mm": 20.85,
+        "area_cells": {
+          "Surulere": {
+            "cell_id": "c6.55N3.35E",
+            "place": "Mushin",
+            "total_mm": 23.62
+          },
+          "Aguda": {
+            "cell_id": "c6.65N3.35E",
+            "place": "Ojodu Berger",
+            "total_mm": 19.43
+          },
+          "Berger": {
+            "cell_id": "c6.65N3.35E",
+            "place": "Ojodu Berger",
+            "total_mm": 19.43
+          }
+        },
+        "local": {
+          "n_areas_geocoded": 3,
+          "n_cells": 2,
+          "flood_day": {
+            "date": "2018-10-10",
+            "max_total_mm": 23.62,
+            "median_total_mm": 21.52
+          },
+          "previous_day": {
+            "date": "2018-10-09",
+            "max_total_mm": 2.18,
+            "median_total_mm": 1.64
+          },
+          "local_max_2d_mm": 24.71,
+          "max_30min_mm_h_2d": 9.08
+        }
+      },
+      "candidate_rank": null,
+      "tier_a_event_id": null,
+      "promote": false,
+      "promote_reasons": [],
+      "deaths_note": null,
+      "deaths_review": [
+        {
+          "id": "r2018-014",
+          "matched": "death"
+        }
+      ],
+      "reports": [
+        {
+          "url": "https://www.channelstv.com/2018/10/10/flood-traffic-hit-lagos-after-early-morning-downpour/",
+          "publisher": "Channels TV",
+          "published_at": "2018-10-10T00:00:00+01:00",
+          "read_status": "read",
+          "date": "2018-10-10",
+          "date_confidence": "exact",
+          "quote": "Residents of Surulere, Aguda, woke up to flooded homes and streets and cars were seen struggling to pull through the flood.",
+          "causes": [
+            "blocked_drainage",
+            "heavy_rain"
+          ],
+          "cause_attributed_by": "journalist",
+          "cause_who": null,
+          "cause_quote": "heavy traffic in the Berger axis due to the flooded road as the drainage was blocked with plastic wastage"
+        }
+      ]
+    },
+    {
+      "date": "2018-10-29",
+      "areas": [
+        {
+          "name": "Aboru Road, Iyana-Ipaja, Alimosho",
+          "lon": 3.2782319,
+          "lat": 6.630026,
+          "confidence": "neighbourhood",
+          "geocoded_from": "Alimosho",
+          "display_name": "Alimosho, Abule Egba, Alimosho, Lagos, 100276, Nigeria"
+        },
+        {
+          "name": "Abule Egba",
+          "lon": 3.3046224,
+          "lat": 6.6478943,
+          "confidence": "area",
+          "geocoded_from": null,
+          "display_name": "Abule Egba, Alimosho, Lagos, 101232, Nigeria"
+        },
+        {
+          "name": "Abattoir, Agege",
+          "lon": 3.3203386,
+          "lat": 6.6229165,
+          "confidence": "neighbourhood",
+          "geocoded_from": "Agege",
+          "display_name": "Agege, Akowonjo, Agege, Lagos, 101232, Nigeria"
+        }
+      ],
+      "n_sources": 1,
+      "n_outlets": 1,
+      "impacts": [
+        "Rain Sunday night to Monday morning: flood at Aboru. Fences pulled down; Aboru Road filled with mud and garbage. Egbodhoroma: water to window level of a one-storey building, ground-floor tenants gone. Furniture shop materials, machines and generator destroyed (Gift Wejem). Residents still evacuating water at 11 a.m. No death reported."
+      ],
+      "causes": [
+        "canal_overflow",
+        "drainage_capacity",
+        "heavy_rain"
+      ],
+      "flood_type": "pluvial",
+      "flood_type_reports": {
+        "pluvial": 1,
+        "riverine": 0,
+        "lagoon": 0
+      },
+      "episode_id": null,
+      "rain": {
+        "date_covered": true,
+        "aoi_mean_mm": 55.08,
+        "wettest_cell": {
+          "id": "c6.55N2.75E",
+          "mm": 78.58,
+          "place": "Seme border"
+        },
+        "cells_ge_50mm": 47,
+        "pop_weighted_rain_mm": 68.37,
+        "area_cells": {
+          "Aboru Road, Iyana-Ipaja, Alimosho": {
+            "cell_id": "c6.65N3.25E",
+            "place": "Alimosho / Ipaja",
+            "total_mm": 70.09
+          },
+          "Abule Egba": {
+            "cell_id": "c6.65N3.35E",
+            "place": "Ojodu Berger",
+            "total_mm": 74.33
+          },
+          "Abattoir, Agege": {
+            "cell_id": "c6.65N3.35E",
+            "place": "Ojodu Berger",
+            "total_mm": 74.33
+          }
+        },
+        "local": {
+          "n_areas_geocoded": 3,
+          "n_cells": 2,
+          "flood_day": {
+            "date": "2018-10-29",
+            "max_total_mm": 74.33,
+            "median_total_mm": 72.21
+          },
+          "previous_day": {
+            "date": "2018-10-28",
+            "max_total_mm": 6.13,
+            "median_total_mm": 5.94
+          },
+          "local_max_2d_mm": 80.46,
+          "max_30min_mm_h_2d": 26.93
+        }
+      },
+      "candidate_rank": 50,
+      "tier_a_event_id": null,
+      "promote": false,
+      "promote_reasons": [],
+      "deaths_note": null,
+      "deaths_review": [
+        {
+          "id": "r2018-015",
+          "matched": "death"
+        }
+      ],
+      "reports": [
+        {
+          "url": "https://punchng.com/aboru-residents-groan-as-flood-wreaks-havoc-across-lagos/",
+          "publisher": "Punch",
+          "published_at": "2018-10-29T13:08:00+01:00",
+          "read_status": "read",
+          "date": "2018-10-29",
+          "date_confidence": "exact",
+          "quote": "the water spilled over to the window level of my one storey building and pulled down my fence",
+          "causes": [
+            "heavy_rain",
+            "drainage_capacity",
+            "canal_overflow"
+          ],
+          "cause_attributed_by": "resident",
+          "cause_who": "Gift Wejem, furniture maker, Aboru",
+          "cause_quote": "The problem is flood and the increasing volume of water that is channeled here. The bridge we have here is not a bridge."
+        }
+      ]
+    },
     {
       "date": "2019-05-20",
       "areas": [
