@@ -1,0 +1,2 @@
+events/drainage_sites/**/*.jpg filter=lfs diff=lfs merge=lfs -text
+events/drainage_sites/**/*.png filter=lfs diff=lfs merge=lfs -text
