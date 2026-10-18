@@ -1,0 +1,442 @@
+{
+  "meta": {
+    "compiled_at": "2026-10-18T17:30:00Z",
+    "task": "26-news-sweep-pilot",
+    "coverage": "wet-season months Apr–Nov for pilot years 2019 and 2023",
+    "districts_searched": [
+      "Alimosho",
+      "Ajeromi-Ifelodun",
+      "Kosofe",
+      "Mushin",
+      "Oshodi-Isolo",
+      "Ojo",
+      "Ikorodu",
+      "Surulere",
+      "Agege",
+      "Ifako-Ijaiye",
+      "Somolu",
+      "Amuwo-Odofin",
+      "Lagos Mainland",
+      "Ikeja",
+      "Eti-Osa"
+    ],
+    "notes": "One entry per year-month. Hits screened are unique URLs opened or read from title/snippet for that month. Kept counts match reports_*.json. A month with kept=0 is a recorded search, not missing work."
+  },
+  "entries": [
+    {
+      "year_month": "2019-04",
+      "queries": [
+        "flood Lagos site:punchng.com",
+        "flood Lagos site:vanguardngr.com",
+        "flood Lagos site:guardian.ng",
+        "flood Lagos site:premiumtimesng.com",
+        "flood Lagos site:channelstv.com",
+        "flood Lagos site:dailytrust.com",
+        "flood Lagos site:bbc.com/pidgin",
+        "flood Lagos site:nairametrics.com",
+        "flood Lagos site:tvcnews.tv",
+        "flood Alimosho OR Ikeja OR Surulere OR Ikorodu OR Lekki Lagos 2019 site:vanguardngr.com/2019"
+      ],
+      "tbs": "cdr:1,cd_min:04/01/2019,cd_max:11/30/2019 (year-wide, then month-filtered)",
+      "outlets": {
+        "Punch": "reached",
+        "Vanguard": "reached",
+        "Guardian NG": "reached",
+        "Premium Times": "reached",
+        "Channels TV": "reached",
+        "TVC": "reached_no_lagos_flood",
+        "Daily Trust": "reached",
+        "BBC Pidgin": "reached",
+        "Nairametrics": "reached_no_qualifying",
+        "X:LASEMA": "not_reached",
+        "X:Lagos_MoE": "not_reached",
+        "X:NEMA": "not_reached"
+      },
+      "hits_screened": 12,
+      "kept": 0,
+      "excluded": 0,
+      "minutes": 12
+    },
+    {
+      "year_month": "2019-05",
+      "queries": [
+        "flood Lagos site:channelstv.com",
+        "flood Lagos site:punchng.com",
+        "flood Lagos site:guardian.ng"
+      ],
+      "outlets": {
+        "Punch": "reached",
+        "Vanguard": "reached",
+        "Guardian NG": "reached",
+        "Premium Times": "reached",
+        "Channels TV": "reached",
+        "TVC": "reached_no_lagos_flood",
+        "Daily Trust": "reached",
+        "BBC Pidgin": "reached",
+        "Nairametrics": "reached_no_qualifying",
+        "X:LASEMA": "not_reached",
+        "X:Lagos_MoE": "not_reached",
+        "X:NEMA": "not_reached"
+      },
+      "hits_screened": 18,
+      "kept": 3,
+      "excluded": 0,
+      "minutes": 28
+    },
+    {
+      "year_month": "2019-06",
+      "queries": [
+        "flood Lagos site:dailytrust.com",
+        "Lagos flood June OR August OR April 2019"
+      ],
+      "outlets": {
+        "Punch": "reached",
+        "Vanguard": "reached",
+        "Guardian NG": "reached",
+        "Premium Times": "reached",
+        "Channels TV": "reached",
+        "TVC": "reached_no_lagos_flood",
+        "Daily Trust": "reached",
+        "BBC Pidgin": "reached",
+        "Nairametrics": "reached_no_qualifying",
+        "X:LASEMA": "not_reached",
+        "X:Lagos_MoE": "not_reached",
+        "X:NEMA": "not_reached"
+      },
+      "hits_screened": 8,
+      "kept": 1,
+      "excluded": 0,
+      "minutes": 15
+    },
+    {
+      "year_month": "2019-07",
+      "queries": [
+        "flood Lagos site:vanguardngr.com/2019",
+        "flood Lagos site:dailytrust.com"
+      ],
+      "outlets": {
+        "Punch": "reached",
+        "Vanguard": "reached",
+        "Guardian NG": "reached",
+        "Premium Times": "reached",
+        "Channels TV": "reached",
+        "TVC": "reached_no_lagos_flood",
+        "Daily Trust": "reached",
+        "BBC Pidgin": "reached",
+        "Nairametrics": "reached_no_qualifying",
+        "X:LASEMA": "not_reached",
+        "X:Lagos_MoE": "not_reached",
+        "X:NEMA": "not_reached"
+      },
+      "hits_screened": 14,
+      "kept": 2,
+      "excluded": 1,
+      "minutes": 22
+    },
+    {
+      "year_month": "2019-08",
+      "queries": [
+        "flood Lagos site:vanguardngr.com/2019/08",
+        "We're set to tackle flood in Lagos State LASEMA"
+      ],
+      "outlets": {
+        "Punch": "reached",
+        "Vanguard": "reached",
+        "Guardian NG": "reached",
+        "Premium Times": "reached",
+        "Channels TV": "reached",
+        "TVC": "reached_no_lagos_flood",
+        "Daily Trust": "reached",
+        "BBC Pidgin": "reached",
+        "Nairametrics": "reached_no_qualifying",
+        "X:LASEMA": "not_reached",
+        "X:Lagos_MoE": "not_reached",
+        "X:NEMA": "not_reached"
+      },
+      "hits_screened": 6,
+      "kept": 0,
+      "excluded": 1,
+      "minutes": 10
+    },
+    {
+      "year_month": "2019-09",
+      "queries": [
+        "flood Agege Lagos 2019 site:dailytrust.com",
+        "flood Lagos site:guardian.ng"
+      ],
+      "outlets": {
+        "Punch": "reached",
+        "Vanguard": "reached",
+        "Guardian NG": "reached",
+        "Premium Times": "reached",
+        "Channels TV": "reached",
+        "TVC": "reached_no_lagos_flood",
+        "Daily Trust": "reached",
+        "BBC Pidgin": "reached",
+        "Nairametrics": "reached_no_qualifying",
+        "X:LASEMA": "not_reached",
+        "X:Lagos_MoE": "not_reached",
+        "X:NEMA": "not_reached"
+      },
+      "hits_screened": 7,
+      "kept": 1,
+      "excluded": 0,
+      "minutes": 12
+    },
+    {
+      "year_month": "2019-10",
+      "queries": [
+        "flood Lagos site:punchng.com",
+        "flood Lagos site:guardian.ng",
+        "flood Lagos site:vanguardngr.com/2019/10",
+        "flood Lagos site:bbc.com/pidgin",
+        "flood Alimosho OR Ikorodu OR Lekki Lagos 2019"
+      ],
+      "outlets": {
+        "Punch": "reached",
+        "Vanguard": "reached",
+        "Guardian NG": "reached",
+        "Premium Times": "reached_partially_blocked",
+        "Channels TV": "reached",
+        "TVC": "reached_no_lagos_flood",
+        "Daily Trust": "reached",
+        "BBC Pidgin": "reached",
+        "Nairametrics": "reached_no_qualifying",
+        "X:LASEMA": "not_reached",
+        "X:Lagos_MoE": "not_reached",
+        "X:NEMA": "not_reached"
+      },
+      "hits_screened": 24,
+      "kept": 7,
+      "excluded": 2,
+      "minutes": 45
+    },
+    {
+      "year_month": "2019-11",
+      "queries": [
+        "flood Lagos site:guardian.ng",
+        "flood Isolo OR Ago Palace Lagos 2019"
+      ],
+      "outlets": {
+        "Punch": "reached",
+        "Vanguard": "reached",
+        "Guardian NG": "reached",
+        "Premium Times": "reached",
+        "Channels TV": "reached",
+        "TVC": "reached_no_lagos_flood",
+        "Daily Trust": "reached",
+        "BBC Pidgin": "reached",
+        "Nairametrics": "reached_no_qualifying",
+        "X:LASEMA": "not_reached",
+        "X:Lagos_MoE": "not_reached",
+        "X:NEMA": "not_reached"
+      },
+      "hits_screened": 5,
+      "kept": 1,
+      "excluded": 1,
+      "minutes": 10
+    },
+    {
+      "year_month": "2023-04",
+      "queries": [
+        "Lagos flood site:vanguardngr.com/2023",
+        "flood Lagos site:punchng.com/2023"
+      ],
+      "outlets": {
+        "Punch": "reached",
+        "Vanguard": "reached",
+        "Guardian NG": "reached",
+        "Premium Times": "reached_partially_blocked",
+        "Channels TV": "reached",
+        "TVC": "reached_no_qualifying",
+        "Daily Trust": "reached",
+        "BBC Pidgin": "reached_no_qualifying",
+        "Nairametrics": "reached_alerts_only",
+        "X:LASEMA": "not_reached",
+        "X:Lagos_MoE": "not_reached",
+        "X:NEMA": "not_reached"
+      },
+      "hits_screened": 10,
+      "kept": 2,
+      "excluded": 0,
+      "minutes": 18
+    },
+    {
+      "year_month": "2023-05",
+      "queries": [
+        "Lagos flood 2023 site:dailytrust.com",
+        "Lagos flood May 2023"
+      ],
+      "outlets": {
+        "Punch": "reached",
+        "Vanguard": "reached",
+        "Guardian NG": "reached",
+        "Premium Times": "reached_partially_blocked",
+        "Channels TV": "reached",
+        "TVC": "reached_no_qualifying",
+        "Daily Trust": "reached",
+        "BBC Pidgin": "reached_no_qualifying",
+        "Nairametrics": "reached_alerts_only",
+        "X:LASEMA": "not_reached",
+        "X:Lagos_MoE": "not_reached",
+        "X:NEMA": "not_reached"
+      },
+      "hits_screened": 6,
+      "kept": 0,
+      "excluded": 1,
+      "minutes": 12
+    },
+    {
+      "year_month": "2023-06",
+      "queries": [
+        "Lagos flood June 2023 site:punchng.com",
+        "Orile Agege canal flood 2023"
+      ],
+      "outlets": {
+        "Punch": "reached",
+        "Vanguard": "reached",
+        "Guardian NG": "reached",
+        "Premium Times": "reached_partially_blocked",
+        "Channels TV": "reached",
+        "TVC": "reached_no_qualifying",
+        "Daily Trust": "reached",
+        "BBC Pidgin": "reached_no_qualifying",
+        "Nairametrics": "reached_alerts_only",
+        "X:LASEMA": "not_reached",
+        "X:Lagos_MoE": "not_reached",
+        "X:NEMA": "not_reached"
+      },
+      "hits_screened": 8,
+      "kept": 1,
+      "excluded": 0,
+      "minutes": 16
+    },
+    {
+      "year_month": "2023-07",
+      "queries": [
+        "Lagos flood July 2023 site:vanguardngr.com OR site:punchng.com OR site:guardian.ng OR site:channelstv.com"
+      ],
+      "outlets": {
+        "Punch": "reached",
+        "Vanguard": "reached",
+        "Guardian NG": "reached",
+        "Premium Times": "reached_partially_blocked",
+        "Channels TV": "reached",
+        "TVC": "reached_no_qualifying",
+        "Daily Trust": "reached",
+        "BBC Pidgin": "reached_no_qualifying",
+        "Nairametrics": "reached_alerts_only",
+        "X:LASEMA": "not_reached",
+        "X:Lagos_MoE": "not_reached",
+        "X:NEMA": "not_reached"
+      },
+      "hits_screened": 9,
+      "kept": 0,
+      "excluded": 0,
+      "minutes": 12
+    },
+    {
+      "year_month": "2023-08",
+      "queries": [
+        "Lagos flood August 2023",
+        "Lagos issues flood alert site:channelstv.com/2023",
+        "site:nairametrics.com/2023 flood Lagos"
+      ],
+      "outlets": {
+        "Punch": "reached",
+        "Vanguard": "reached",
+        "Guardian NG": "reached",
+        "Premium Times": "reached_partially_blocked",
+        "Channels TV": "reached",
+        "TVC": "reached_no_qualifying",
+        "Daily Trust": "reached",
+        "BBC Pidgin": "reached_no_qualifying",
+        "Nairametrics": "reached_alerts_only",
+        "X:LASEMA": "not_reached",
+        "X:Lagos_MoE": "not_reached",
+        "X:NEMA": "not_reached"
+      },
+      "hits_screened": 11,
+      "kept": 0,
+      "excluded": 3,
+      "minutes": 14
+    },
+    {
+      "year_month": "2023-09",
+      "queries": [
+        "Lagos flood site:vanguardngr.com/2023/09",
+        "Lagos flood 2023 site:dailytrust.com",
+        "Lagos flood 2023 site:premiumtimesng.com",
+        "flood Alimosho OR Ikeja OR Surulere OR Ikorodu OR Lekki Lagos 2023 site:vanguardngr.com/2023"
+      ],
+      "outlets": {
+        "Punch": "reached",
+        "Vanguard": "reached",
+        "Guardian NG": "reached",
+        "Premium Times": "reached_partially_blocked",
+        "Channels TV": "reached",
+        "TVC": "reached_no_qualifying",
+        "Daily Trust": "reached",
+        "BBC Pidgin": "reached_no_qualifying",
+        "Nairametrics": "reached_alerts_only",
+        "X:LASEMA": "not_reached",
+        "X:Lagos_MoE": "not_reached",
+        "X:NEMA": "not_reached"
+      },
+      "hits_screened": 20,
+      "kept": 5,
+      "excluded": 2,
+      "minutes": 35
+    },
+    {
+      "year_month": "2023-10",
+      "queries": [
+        "Lagos flood site:vanguardngr.com/2023/10",
+        "Lagos flood October 2023 site:channelstv.com/2023",
+        "Lagos flood October OR November 2023 site:guardian.ng"
+      ],
+      "outlets": {
+        "Punch": "reached",
+        "Vanguard": "reached",
+        "Guardian NG": "reached",
+        "Premium Times": "reached_partially_blocked",
+        "Channels TV": "reached",
+        "TVC": "reached_no_qualifying",
+        "Daily Trust": "reached",
+        "BBC Pidgin": "reached_no_qualifying",
+        "Nairametrics": "reached_alerts_only",
+        "X:LASEMA": "not_reached",
+        "X:Lagos_MoE": "not_reached",
+        "X:NEMA": "not_reached"
+      },
+      "hits_screened": 10,
+      "kept": 0,
+      "excluded": 3,
+      "minutes": 14
+    },
+    {
+      "year_month": "2023-11",
+      "queries": [
+        "Lagos flood November 2023 site:vanguardngr.com OR site:punchng.com OR site:guardian.ng"
+      ],
+      "outlets": {
+        "Punch": "reached",
+        "Vanguard": "reached",
+        "Guardian NG": "reached",
+        "Premium Times": "reached_partially_blocked",
+        "Channels TV": "reached",
+        "TVC": "reached_no_qualifying",
+        "Daily Trust": "reached",
+        "BBC Pidgin": "reached_no_qualifying",
+        "Nairametrics": "reached_alerts_only",
+        "X:LASEMA": "not_reached",
+        "X:Lagos_MoE": "not_reached",
+        "X:NEMA": "not_reached"
+      },
+      "hits_screened": 4,
+      "kept": 0,
+      "excluded": 0,
+      "minutes": 8
+    }
+  ]
+}

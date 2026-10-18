@@ -1,0 +1,285 @@
+{
+  "meta": {
+    "compiled_at": "2026-10-18T17:30:00Z",
+    "year": 2023,
+    "task": "26-news-sweep-pilot",
+    "method": "News-first sweep of wet-season months (Apr–Nov). Per-outlet site: queries for flood+Lagos (including site:…/2023 URL filters), plus flood+district for the 15 largest Lagos LGAs. Qualifying reports name a Lagos State place and a date, and describe water on streets or in homes. Quotes ≤25 words, verbatim. Dates, numbers and quotes are only those in the source. Areas left as named; not geocoded.",
+    "districts_searched": [
+      "Alimosho",
+      "Ajeromi-Ifelodun",
+      "Kosofe",
+      "Mushin",
+      "Oshodi-Isolo",
+      "Ojo",
+      "Ikorodu",
+      "Surulere",
+      "Agege",
+      "Ifako-Ijaiye",
+      "Somolu",
+      "Amuwo-Odofin",
+      "Lagos Mainland",
+      "Ikeja",
+      "Eti-Osa"
+    ],
+    "outlets": [
+      "Punch",
+      "Vanguard",
+      "Guardian NG",
+      "Premium Times",
+      "Channels TV",
+      "TVC",
+      "Daily Trust",
+      "BBC Pidgin",
+      "Nairametrics"
+    ],
+    "notes": [
+      "Generic date-range search leaked 2025–2026 stories; 2023 kept only from year-in-URL hits or a readable published_at in 2023.",
+      "Premium Times 2023 Lagos flood pages (e.g. 8–16 Sept round-up; Lagos Island markets) were blocked on fetch.",
+      "X accounts of LASEMA, Lagos MoE and NEMA: no dated 2023 flood posts reached.",
+      "Nairametrics and Channels 2023 hits were mostly alerts, not qualifying observed floods."
+    ]
+  },
+  "reports": [
+    {
+      "id": "r2023-001",
+      "date": "2023-04-24",
+      "date_confidence": "day",
+      "areas": [
+        "Odo Iya-Alaro Bridge inward Ojota"
+      ],
+      "impacts": "LASTMA official Lateef Kabir dislodged rain flood from the main carriageway into open drains after heavy gridlock on the bridge inward Ojota.",
+      "quote": "dislodging rain floods into open drains on the main carriageway, Odo Iya-Alaro Bridge inward Ojota, Lagos",
+      "causes": ["heavy_rain"],
+      "cause_quote": "dislodging rain floods into open drains on the main carriageway",
+      "cause_attributed_by": "official",
+      "cause_who": "Taofiq Adebayo, Director, Public Affairs and Enlightenment, LASTMA",
+      "url": "https://www.vanguardngr.com/2023/04/lagos-traffic-lastma-dislodges-flood-into-open-drains/",
+      "publisher": "Vanguard",
+      "published_at": "2023-04-24T00:00:00+01:00",
+      "read_status": "read"
+    },
+    {
+      "id": "r2023-002",
+      "date": "2023-04-27",
+      "date_confidence": "exact",
+      "areas": [
+        "Babs Animashaun Road, Surulere",
+        "NPC premises, Surulere",
+        "NYSC Lagos State Secretariat, Surulere"
+      ],
+      "impacts": "Rain about 11.30 a.m. to 1.00 p.m. Thursday flooded NPC and NYSC premises. Workers and visitors waded through flood after it subsided. Staff said flooding continues despite rehabilitation of Babs Animashaun Road; offices sit close to a canal.",
+      "quote": "When the rain subsided, workers and visitors were seen wading through the flood.",
+      "causes": ["heavy_rain", "canal_overflow"],
+      "cause_quote": "We are located close to a canal, which makes it worse.",
+      "cause_attributed_by": "resident",
+      "cause_who": "unnamed NPC/NYSC worker",
+      "url": "https://www.vanguardngr.com/2023/04/flood-takes-over-npc-nysc-premises-in-lagos/",
+      "publisher": "Vanguard",
+      "published_at": "2023-04-27T00:00:00+01:00",
+      "read_status": "read"
+    },
+    {
+      "id": "r2023-003",
+      "date": "2023-06-20",
+      "date_confidence": "approx",
+      "areas": [
+        "Oko-Oba",
+        "Orile-Agege",
+        "Ladoje Primary School",
+        "Ogundele Street"
+      ],
+      "impacts": "Feature published 5 Aug 2023: a June video showed pupils walking a slippery path home after a downpour; the headmistress sent video of the flood. Sports pavilion launched 20 May 2023 was submerged by canal flood barely a month later. Parents wait across the water until it subsides before children leave school. 2022 deaths on this canal are not this year's flood day.",
+      "quote": "I'm the headmistress of this place. I'm also a parent. I'm sending the video to our bosses so that they can see the flood.",
+      "causes": ["canal_overflow", "construction", "drainage_capacity"],
+      "cause_quote": "Houses were demolished in the name of constructing the water channel and bridges",
+      "cause_attributed_by": "resident",
+      "cause_who": "Henry, resident",
+      "url": "https://punchng.com/flooding-lagos-communities-where-residents-dread-rain-over-abandoned-canals/",
+      "publisher": "Punch",
+      "published_at": "2023-08-05T06:12:00+01:00",
+      "read_status": "read"
+    },
+    {
+      "id": "r2023-004",
+      "date": "2023-09-16",
+      "date_confidence": "exact",
+      "areas": [
+        "Trade Fair axis, Lagos-Badagry Expressway",
+        "Abule-Ado",
+        "Barracks, Ojo",
+        "Mowo",
+        "Ikoga",
+        "Ansarudeen",
+        "Ajara-Vetho",
+        "Aghelaso",
+        "Zogakome"
+      ],
+      "impacts": "Saturday morning rain from 5.00 a.m. for hours; flood blocked Trade Fair axis; passengers trekked from Abule-Ado to Barracks in Ojo; vehicles trapped. NAN: floods also affected Badagry communities Mowo, Ikoga, Ansarudeen, Ajara-Vetho, Aghelaso and Zogakome.",
+      "quote": "Hundreds of motorists and passengers going to Mile 2 were on Saturday stranded as flood from a morning downpour disrupted free movement",
+      "causes": ["heavy_rain", "blocked_drainage", "construction"],
+      "cause_quote": "The drainage is blocked by plastics and nylon preventing the passage of the water.",
+      "cause_attributed_by": "resident",
+      "cause_who": "Ibironke Adegboyega, trader",
+      "url": "https://www.vanguardngr.com/2023/09/downpour-leaves-lagos-badagry-expressway-flooded-residents-groan/",
+      "publisher": "Vanguard",
+      "published_at": "2023-09-16T00:00:00+01:00",
+      "read_status": "read"
+    },
+    {
+      "id": "r2023-005",
+      "date": "2023-09-16",
+      "date_confidence": "exact",
+      "areas": [
+        "Alimosho",
+        "Agege",
+        "Ikeja",
+        "Ikotun Market Road, Igando-Ikotun",
+        "Oko Filling bus stop, LASU–Igando Expressway"
+      ],
+      "impacts": "Early-morning Saturday downpour; flood took over major areas; residents in Alimosho, Agege and Ikeja bailed storm water from houses; flood later receded. Motorists said flood takes over Oko Filling bus stop on LASU–Igando Expressway whenever it rains.",
+      "quote": "Some residents in affected areas in Alimosho, Agege, Ikeja, were seen bailing out storm water from their houses.",
+      "causes": ["heavy_rain"],
+      "cause_quote": "flood took over major areas of the Lagos metropolis following early morning downpour",
+      "cause_attributed_by": "journalist",
+      "cause_who": null,
+      "url": "https://www.vanguardngr.com/2023/09/downpour-lagos-postpones-3rd-mainland-bridge-repairs-floods-sack-communities-motorists-stranded/",
+      "publisher": "Vanguard",
+      "published_at": "2023-09-16T00:00:00+01:00",
+      "read_status": "read"
+    },
+    {
+      "id": "r2023-006",
+      "date": "2023-09-16",
+      "date_confidence": "exact",
+      "areas": [
+        "Ile Epo Bus Stop canal, Alimosho",
+        "Papa Ashafa, Orile-Agege",
+        "Fashola community, Orile-Agege",
+        "Ago-Palace, Isolo"
+      ],
+      "impacts": "Rain about 2am–2pm Saturday. Motorcycle rider Mr Abe swept away on Ile Epo Bus Stop canal (NEMA SW coordinator Ibrahim Farinloye). Houses, offices and roads submerged in Papa Ashafa and Fashola. NEMA: immediate succour to about 200 people in Orile Agege that afternoon; DG Mustapha Ahmed ordered relief for people in four churches. Ago-Palace residents battling flood water in homes.",
+      "quote": "Several houses, office premises and roads were submerged in the flood.",
+      "causes": ["heavy_rain", "canal_overflow", "drainage_capacity"],
+      "cause_quote": "primarily due to an inadequate drainage system",
+      "cause_attributed_by": "journalist",
+      "cause_who": null,
+      "url": "https://www.vanguardngr.com/2023/09/photos-cyclist-drowns-200-displaced-as-downpour-wreaks-havoc-on-lagos-communities/",
+      "publisher": "Vanguard",
+      "published_at": "2023-09-16T00:00:00+01:00",
+      "read_status": "read"
+    },
+    {
+      "id": "r2023-007",
+      "date": "2023-09-16",
+      "date_confidence": "exact",
+      "areas": [
+        "Oko-baba, Agege",
+        "Egbede",
+        "Ikotun",
+        "Ajegunle",
+        "Ojo",
+        "Ijanikin",
+        "Alaba International market",
+        "Ajangbadi",
+        "Etegbi",
+        "Orile Agege"
+      ],
+      "impacts": "Early-morning rain submerged houses; residents bailed water; flood overflowed drains into houses; some fences and gates destroyed; some families temporarily relocated. NEMA Farinloye: assistance to about 200 people in Orile Agege that afternoon; helping reconstruct a collapsed fence.",
+      "quote": "Flooding caused by the heavy rainfall has submerged a number of houses in the affected areas.",
+      "causes": ["heavy_rain", "canal_overflow"],
+      "cause_quote": "Residents, who live close to canals, appealed to the state governor, Babajide Sanwo-Olu, to come to their aid by dredging the canals.",
+      "cause_attributed_by": "journalist",
+      "cause_who": null,
+      "url": "https://dailytrust.com/flood-submerges-houses-destroys-property-in-lagos/",
+      "publisher": "Daily Trust",
+      "published_at": "2023-09-16T13:05:59+01:00",
+      "read_status": "read"
+    },
+    {
+      "id": "r2023-008",
+      "date": "2023-09-16",
+      "date_confidence": "exact",
+      "areas": [
+        "Papa Ashafa, Orile-Agege",
+        "Ile Epo Busstop canals, Alimosho"
+      ],
+      "impacts": "Published Sunday 17 Sept: heavy flood swept away a commercial motorcycle at Papa Ashafa yesterday; rider Mr Abe, per NEMA's Ibrahim Farinlonye. Third Mainland Bridge palliative works postponed because of Saturday downpour.",
+      "quote": "In Lagos, a heavy flood swept away a commercial motorcycle at Papa Ashafa in Orile Agege area of Lagos State yesterday.",
+      "causes": ["heavy_rain"],
+      "cause_quote": "Floods due to torrential rainfalls have left many across the country in gruelling situations.",
+      "cause_attributed_by": "journalist",
+      "cause_who": null,
+      "url": "https://www.vanguardngr.com/2023/09/floods-wreak-havoc-in-lagos-delta-anambra-sweep-away-motorcyclist/",
+      "publisher": "Vanguard",
+      "published_at": "2023-09-17T00:00:00+01:00",
+      "read_status": "read"
+    }
+  ],
+  "excluded": [
+    {
+      "url": "https://www.vanguardngr.com/2023/03/lagos-to-witness-high-rainfall-with-flash-flood-govt-alerts-residents/",
+      "publisher": "Vanguard",
+      "reason": "seasonal rainfall forecast / flash-flood alert, not an observed flood"
+    },
+    {
+      "url": "https://www.vanguardngr.com/2023/08/red-alert-apapa-eti-osa-ojo-ikeja-surulere-others-to-experience-flooding/",
+      "publisher": "Vanguard",
+      "reason": "flood alert for 14–18 Aug 2023, not a qualifying observed report"
+    },
+    {
+      "url": "https://nairametrics.com/2023/08/16/lagos-issues-heavy-rainfall-flood-alert-for-ikoyi-eti-osa-ikeja-lagos-island-apapa-others-this-week/",
+      "publisher": "Nairametrics",
+      "reason": "rainfall/flood alert"
+    },
+    {
+      "url": "https://www.channelstv.com/2023/08/16/lagos-issues-flood-alert-for-eti-osa-ojo-badagry-ikeja-ikoyi/",
+      "publisher": "Channels Television",
+      "reason": "flood alert"
+    },
+    {
+      "url": "https://www.channelstv.com/2023/09/03/flood-lagos-alerts-residents-of-lekki-ajah-meiran-ajegunle-others/",
+      "publisher": "Channels Television",
+      "reason": "flood alert"
+    },
+    {
+      "url": "https://www.vanguardngr.com/2023/09/fresh-flood-alert-lagos-orders-residents-of-alagbole-meiran-kara-others-to-relocate/",
+      "publisher": "Vanguard",
+      "reason": "relocation order / dam-release warning, not observed street/home flooding"
+    },
+    {
+      "url": "https://www.channelstv.com/2023/10/18/flood-lagos-govt-orders-residents-of-alagbole-meiran-kara-others-to-relocate/",
+      "publisher": "Channels Television",
+      "reason": "Ogun River downstream relocation order"
+    },
+    {
+      "url": "https://www.vanguardngr.com/2023/10/no-cause-for-flood-alarm-over-dam-water-release-lagos-govt/",
+      "publisher": "Vanguard",
+      "reason": "official reassurance, not a flood report"
+    },
+    {
+      "url": "https://www.vanguardngr.com/2023/10/flood-lagos-issues-7-day-quit-notices-to-dodan-barrack-lekkis-squatters/",
+      "publisher": "Vanguard",
+      "reason": "quit notice on drainage channels, not a dated flood observation"
+    },
+    {
+      "url": "https://dailytrust.com/rainfall-436-families-displaced-228-houses-destroyed-in-lagos/",
+      "publisher": "Daily Trust",
+      "reason": "NEMA assessment of 1 and 15 May 2023 framed as wind/rain storm damage to buildings, not water on streets or in homes"
+    },
+    {
+      "url": "https://punchng.com/flooding-lagos-communities-where-residents-dread-rain-over-abandoned-canals/",
+      "publisher": "Punch",
+      "reason": "2022 Orile-Agege canal deaths and Eid sweep kept out of 2023; only the June 2023 school/pavilion flooding was kept (r2023-003)"
+    },
+    {
+      "url": "https://www.premiumtimesng.com/regional/ssouth-west/627100-residents-count-losses-as-flooding-wreaks-havoc-across-lagos.html",
+      "publisher": "Premium Times",
+      "reason": "title/snippet point to 8–16 Sept 2023 flooding; full page blocked"
+    },
+    {
+      "url": "https://www.premiumtimesng.com/news/top-news/632044-flood-lagos-government-to-demolish-two-popular-markets.html",
+      "publisher": "Premium Times",
+      "reason": "full page blocked; cannot verify flood day from readable text"
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "meta": {
+    "fixture": true,
+    "note": "Synthetic reports for exercising pipeline/intake/merge.py (Task 27) while the Task 26 pilot files do not exist yet. Dates are real calendar days so the rain signature join works; quotes, impacts, publishers and URLs are synthetic. Area names are real Lagos places so geocoding is exercised. Do not treat any content here as a real flood report.",
+    "schema": "docs/tasks/26-news-sweep-pilot.md"
+  },
+  "reports": [
+    {
+      "date": "2023-06-04",
+      "date_confidence": "exact",
+      "areas": ["Ikorodu", "Lekki"],
+      "impacts": "[fixture] Homes flooded along the lagoon front; two dead (NEMA); vehicles submerged.",
+      "quote": "[fixture] Water entered homes before dawn and did not recede for hours.",
+      "causes": ["heavy_rain"],
+      "cause_quote": "[fixture] The intensity of the rain overwhelmed the city.",
+      "cause_attributed_by": "official",
+      "cause_who": "[fixture] NEMA spokesperson",
+      "url": "https://example.com/floodtrace-fixture/report-1",
+      "publisher": "Example Punch",
+      "published_at": "2023-06-04T18:30:00+01:00",
+      "read_status": "fixture"
+    },
+    {
+      "date": "2023-06-04",
+      "date_confidence": "exact",
+      "areas": ["Lekki"],
+      "impacts": "[fixture] Streets turned into rivers; shops shut for the day.",
+      "quote": "[fixture] Residents waded through waist-deep water on the expressway service lane.",
+      "causes": ["blocked_drainage"],
+      "cause_quote": "[fixture] Refuse dumped in the drainage channel blocked the flow.",
+      "cause_attributed_by": "journalist",
+      "cause_who": null,
+      "url": "https://example.com/floodtrace-fixture/report-2",
+      "publisher": "Example Vanguard",
+      "published_at": "2023-06-05T07:10:00+01:00",
+      "read_status": "fixture"
+    },
+    {
+      "date": "2023-06-05",
+      "date_confidence": "approx",
+      "areas": ["Badagry"],
+      "impacts": "[fixture] Floodwater covered the market road; traders lost stock.",
+      "quote": "[fixture] The market road was under water most of the morning.",
+      "causes": [],
+      "cause_quote": null,
+      "cause_attributed_by": null,
+      "cause_who": null,
+      "url": "https://example.com/floodtrace-fixture/report-3",
+      "publisher": "Example Daily Trust",
+      "published_at": "2023-06-08T09:45:00+01:00",
+      "read_status": "fixture"
+    }
+  ]
+}
