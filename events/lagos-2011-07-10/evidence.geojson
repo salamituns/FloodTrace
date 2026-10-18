@@ -1,0 +1,2225 @@
+{
+ "type": "FeatureCollection",
+ "meta": {
+  "compiled_at": "2026-10-17T20:34:35Z",
+  "method": "Read named 2011 sources; one point per (source, location); Nominatim geocode inside AOI bbox, 1 req/s; manual neighbourhood centre only if Nominatim missed or matched the wrong district. Wayback not required for live pages.",
+  "notes": "Quotes are verbatim excerpts ≤ 25 words. Ibadan death figures on ReliefWeb omitted (not Lagos). Katsina deaths on Solar Daily/AFP omitted. IFRC Denro/Akute/Alagbole omitted (Ogun outskirts). Allen Avenue deaths are generator fumes after rain, not drowning. Ajegunle, Ajeromi (28 families) kept separate from Ajegunle, Ikorodu. Vanguard 12 Jul marks the Alagbado wall death unconfirmed; 15 Jul reports a fence death in Akera, Alagbado. News Ghana is a 2012 recall of 10 July 2011. No locations, times, numbers or quotes were inferred beyond the text.",
+  "unresolved": [],
+  "bbox": [
+   2.7,
+   6.38,
+   4.35,
+   6.75
+  ],
+  "feature_count": 65,
+  "omitted": [
+   "Ibadan / Oyo deaths (ReliefWeb Gov't of Nigeria 30 Aug 2011)",
+   "Katsina nine deaths (AFP via Solar Daily)",
+   "Denro, Akute, Alagbole bridge (IFRC; outskirts of Lagos State)",
+   "ThisDay 15 Jul 2011 (cited in papers; page not readable)",
+   "Punch 2011 archive (no matching article found)"
+  ],
+  "review": {
+   "reviewed_at": "2026-10-17",
+   "by": "Claude (lead agent)",
+   "notes": "Geocoding spot-checked (two Ajegunles distinct; Lekki = peninsula). Quotes verified verbatim for Vanguard, Al Jazeera, AFP/Solar Daily; IFRC/ReliefWeb and News Ghana unverifiable from here. IFRC \"started about 5 a.m.\" is consistent with IMERG (Ikeja 6.7 mm/h at 05:00) but unverified."
+  },
+  "citywide_cause_statements": [
+   {
+    "source_id": "vanguard-2011-07-15",
+    "url": "https://www.vanguardngr.com/2011/07/lagos-floods-residents-senate-blame-fashola-jonathan/",
+    "who": "Dr Regina Folorunsho, Assistant Director, Nigerian Institute for Oceanography and Marine Research",
+    "date": "2011-07-15",
+    "causes": [
+     "heavy_rain"
+    ],
+    "cause_quote": "The exact amount of the rain that fell on Sunday was meant for a whole month",
+    "cause_attributed_by": "expert"
+   }
+  ],
+  "cause_tagging": "Task 15: tagged only explicit attributions. Fashola's canal-building eviction warning not treated as a cause of this flood. Bodies recovered from canals and 'overflow of water' not tagged canal_overflow.",
+  "cause_summary": {
+   "heavy_rain": {
+    "official": 0,
+    "journalist": 6,
+    "resident": 0,
+    "expert": 1,
+    "total": 7
+   },
+   "lagoon_tide": {
+    "official": 1,
+    "journalist": 0,
+    "resident": 0,
+    "expert": 0,
+    "total": 1
+   }
+  }
+ },
+ "features": [
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     3.313058,
+     6.616358
+    ]
+   },
+   "properties": {
+    "id": "ev-001",
+    "kind": "news_report",
+    "source_id": "vanguard-2011-07-12",
+    "source_url": "https://www.vanguardngr.com/2011/07/lagos-flood-kills-25/",
+    "publisher": "Vanguard",
+    "published_at": "2011-07-12T00:34:35+00:00",
+    "observed_at": "2011-07-10T12:00:00+01:00",
+    "time_confidence": "day",
+    "location_name": "Dopemu",
+    "location_confidence": "neighbourhood",
+    "geocode_method": "nominatim:Dopemu, Agege, Lagos",
+    "claim": "Corpses recovered from canal after Sunday rain; 25 citywide including 11 children.",
+    "depth_note": null,
+    "quote": "The corpses were recovered from two canals at Dopemu and Aboru",
+    "verified": false,
+    "read_status": "read",
+    "quote_check": "verbatim match on source page (one quote per publisher spot-checked)",
+    "causes": [],
+    "cause_quote": null,
+    "cause_attributed_by": null,
+    "cause_who": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     3.288,
+     6.642
+    ]
+   },
+   "properties": {
+    "id": "ev-002",
+    "kind": "news_report",
+    "source_id": "vanguard-2011-07-12",
+    "source_url": "https://www.vanguardngr.com/2011/07/lagos-flood-kills-25/",
+    "publisher": "Vanguard",
+    "published_at": "2011-07-12T00:34:35+00:00",
+    "observed_at": "2011-07-11T06:00:00+01:00",
+    "time_confidence": "approx",
+    "location_name": "Aboru community, Agbado-Okeodo LCDA",
+    "location_confidence": "neighbourhood",
+    "geocode_method": "manual: neighbourhood centre for Aboru, Lagos",
+    "claim": "Three bodies removed Monday morning; suspected drowned in Sunday rain.",
+    "depth_note": null,
+    "quote": "three dead bodies suspected to have drowned as a result of the previous day's rainfall were removed at Aboru community",
+    "verified": false,
+    "read_status": "read",
+    "quote_check": "verbatim match on source page (one quote per publisher spot-checked)",
+    "causes": [
+     "heavy_rain"
+    ],
+    "cause_quote": "three dead bodies suspected to have drowned as a result of the previous day's rainfall",
+    "cause_attributed_by": "journalist",
+    "cause_who": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     3.285,
+     6.658
+    ]
+   },
+   "properties": {
+    "id": "ev-003",
+    "kind": "news_report",
+    "source_id": "vanguard-2011-07-12",
+    "source_url": "https://www.vanguardngr.com/2011/07/lagos-flood-kills-25/",
+    "publisher": "Vanguard",
+    "published_at": "2011-07-12T00:34:35+00:00",
+    "observed_at": "2011-07-10T12:00:00+01:00",
+    "time_confidence": "day",
+    "location_name": "Agbado-Oke Odo LCDA",
+    "location_confidence": "lga",
+    "geocode_method": "manual: neighbourhood centre for Agbado-Oke Odo, Lagos",
+    "claim": "Named with old Alimosho as area of canal body recoveries.",
+    "depth_note": null,
+    "quote": "two canals at Dopemu and Aboru, in old Alimosho Local Government Area and Agbado-Oke Odo",
+    "verified": false,
+    "read_status": "read",
+    "quote_check": "verbatim match on source page (one quote per publisher spot-checked)",
+    "causes": [],
+    "cause_quote": null,
+    "cause_attributed_by": null,
+    "cause_who": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     3.342,
+     6.632
+    ]
+   },
+   "properties": {
+    "id": "ev-004",
+    "kind": "news_report",
+    "source_id": "vanguard-2011-07-12",
+    "source_url": "https://www.vanguardngr.com/2011/07/lagos-flood-kills-25/",
+    "publisher": "Vanguard",
+    "published_at": "2011-07-12T00:34:35+00:00",
+    "observed_at": "2011-07-11T12:00:00+01:00",
+    "time_confidence": "day",
+    "location_name": "Mobil Filling Station, Ogba",
+    "location_confidence": "neighbourhood",
+    "geocode_method": "manual: neighbourhood centre for Mobil Filling Station, Ogba, Lagos",
+    "claim": "Company fence collapsed due to flood; Fashola inspected.",
+    "depth_note": null,
+    "quote": "Mobil Filling Station, Ogba, where the fence of a company collapsed due to flood",
+    "verified": false,
+    "read_status": "read",
+    "quote_check": "verbatim match on source page (one quote per publisher spot-checked)",
+    "causes": [],
+    "cause_quote": null,
+    "cause_attributed_by": null,
+    "cause_who": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     3.338,
+     6.638
+    ]
+   },
+   "properties": {
+    "id": "ev-005",
+    "kind": "news_report",
+    "source_id": "vanguard-2011-07-12",
+    "source_url": "https://www.vanguardngr.com/2011/07/lagos-flood-kills-25/",
+    "publisher": "Vanguard",
+    "published_at": "2011-07-12T00:34:35+00:00",
+    "observed_at": "2011-07-11T12:00:00+01:00",
+    "time_confidence": "day",
+    "location_name": "Odejobi Street off Iju Road, Agege",
+    "location_confidence": "street",
+    "geocode_method": "manual: neighbourhood centre for Odejobi Street, Iju, Agege, Lagos",
+    "claim": "Among worst-hit streets Fashola inspected on Monday.",
+    "depth_note": null,
+    "quote": "Some of the worst-hit areas which Fashola inspected included: Mobil Filling Station, Ogba",
+    "verified": false,
+    "read_status": "read",
+    "quote_check": "verbatim match on source page (one quote per publisher spot-checked)",
+    "causes": [],
+    "cause_quote": null,
+    "cause_attributed_by": null,
+    "cause_who": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     3.308,
+     6.618
+    ]
+   },
+   "properties": {
+    "id": "ev-006",
+    "kind": "news_report",
+    "source_id": "vanguard-2011-07-12",
+    "source_url": "https://www.vanguardngr.com/2011/07/lagos-flood-kills-25/",
+    "publisher": "Vanguard",
+    "published_at": "2011-07-12T00:34:35+00:00",
+    "observed_at": "2011-07-11T12:00:00+01:00",
+    "time_confidence": "day",
+    "location_name": "Abattoir canal, Orile-Agege",
+    "location_confidence": "neighbourhood",
+    "geocode_method": "manual: neighbourhood centre for Abattoir canal, Orile-Agege, Lagos",
+    "claim": "Among worst-hit sites on the governor's inspection.",
+    "depth_note": null,
+    "quote": "Abattoir canal in Orile-Agege Local Government Area",
+    "verified": false,
+    "read_status": "read",
+    "quote_check": "verbatim match on source page (one quote per publisher spot-checked)",
+    "causes": [],
+    "cause_quote": null,
+    "cause_attributed_by": null,
+    "cause_who": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     3.285,
+     6.635
+    ]
+   },
+   "properties": {
+    "id": "ev-007",
+    "kind": "news_report",
+    "source_id": "vanguard-2011-07-12",
+    "source_url": "https://www.vanguardngr.com/2011/07/lagos-flood-kills-25/",
+    "publisher": "Vanguard",
+    "published_at": "2011-07-12T00:34:35+00:00",
+    "observed_at": "2011-07-10T12:00:00+01:00",
+    "time_confidence": "day",
+    "location_name": "Obadeyi Busstop, Abeokuta–Lagos Expressway",
+    "location_confidence": "neighbourhood",
+    "geocode_method": "manual: neighbourhood centre for Obadeyi, Abeokuta Expressway, Lagos",
+    "claim": "Failed portion of the expressway; Fashola said the road was virtually lost.",
+    "depth_note": null,
+    "quote": "Abeokuta – Lagos Expressway failed portion of the road at Obadeyi Busstop",
+    "verified": false,
+    "read_status": "read",
+    "quote_check": "verbatim match on source page (one quote per publisher spot-checked)",
+    "causes": [],
+    "cause_quote": null,
+    "cause_attributed_by": null,
+    "cause_who": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     3.297339,
+     6.61731
+    ]
+   },
+   "properties": {
+    "id": "ev-008",
+    "kind": "news_report",
+    "source_id": "vanguard-2011-07-12",
+    "source_url": "https://www.vanguardngr.com/2011/07/lagos-flood-kills-25/",
+    "publisher": "Vanguard",
+    "published_at": "2011-07-12T00:34:35+00:00",
+    "observed_at": "2011-07-10T12:00:00+01:00",
+    "time_confidence": "day",
+    "location_name": "Aboru canal, Iyana-Ipaja end of Abeokuta-Lagos Expressway",
+    "location_confidence": "neighbourhood",
+    "geocode_method": "nominatim:Iyana-Ipaja, Lagos",
+    "claim": "Aboru canal at the Iyana-Ipaja end listed among worst-hit sites.",
+    "depth_note": null,
+    "quote": "Aboru canal, at Iyana-Ipaja end of Abeokuta-Lagos Expressway among others",
+    "verified": false,
+    "read_status": "read",
+    "quote_check": "verbatim match on source page (one quote per publisher spot-checked)",
+    "causes": [],
+    "cause_quote": null,
+    "cause_attributed_by": null,
+    "cause_who": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     3.428052,
+     6.452343
+    ]
+   },
+   "properties": {
+    "id": "ev-009",
+    "kind": "news_report",
+    "source_id": "vanguard-2011-07-12",
+    "source_url": "https://www.vanguardngr.com/2011/07/lagos-flood-kills-25/",
+    "publisher": "Vanguard",
+    "published_at": "2011-07-12T00:34:35+00:00",
+    "observed_at": "2011-07-10T12:00:00+01:00",
+    "time_confidence": "day",
+    "location_name": "Ikoyi",
+    "location_confidence": "neighbourhood",
+    "geocode_method": "nominatim:Ikoyi, Lagos",
+    "claim": "High-brow area affected; vehicles, office and household property destroyed.",
+    "depth_note": null,
+    "quote": "The flood also affected high brow areas including Ikoyi, Victoria Island and Apapa",
+    "verified": false,
+    "read_status": "read",
+    "quote_check": "verbatim match on source page (one quote per publisher spot-checked)",
+    "causes": [],
+    "cause_quote": null,
+    "cause_attributed_by": null,
+    "cause_who": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     3.42599,
+     6.430028
+    ]
+   },
+   "properties": {
+    "id": "ev-010",
+    "kind": "news_report",
+    "source_id": "vanguard-2011-07-12",
+    "source_url": "https://www.vanguardngr.com/2011/07/lagos-flood-kills-25/",
+    "publisher": "Vanguard",
+    "published_at": "2011-07-12T00:34:35+00:00",
+    "observed_at": "2011-07-10T12:00:00+01:00",
+    "time_confidence": "day",
+    "location_name": "Victoria Island",
+    "location_confidence": "neighbourhood",
+    "geocode_method": "nominatim:Victoria Island, Lagos",
+    "claim": "High-brow area affected; vehicles and household property destroyed.",
+    "depth_note": null,
+    "quote": "The flood also affected high brow areas including Ikoyi, Victoria Island and Apapa",
+    "verified": false,
+    "read_status": "read",
+    "quote_check": "verbatim match on source page (one quote per publisher spot-checked)",
+    "causes": [],
+    "cause_quote": null,
+    "cause_attributed_by": null,
+    "cause_who": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     3.362237,
+     6.446905
+    ]
+   },
+   "properties": {
+    "id": "ev-011",
+    "kind": "news_report",
+    "source_id": "vanguard-2011-07-12",
+    "source_url": "https://www.vanguardngr.com/2011/07/lagos-flood-kills-25/",
+    "publisher": "Vanguard",
+    "published_at": "2011-07-12T00:34:35+00:00",
+    "observed_at": "2011-07-10T12:00:00+01:00",
+    "time_confidence": "day",
+    "location_name": "Apapa",
+    "location_confidence": "neighbourhood",
+    "geocode_method": "nominatim:Apapa, Lagos",
+    "claim": "High-brow area affected; vehicles and household property destroyed.",
+    "depth_note": null,
+    "quote": "The flood also affected high brow areas including Ikoyi, Victoria Island and Apapa",
+    "verified": false,
+    "read_status": "read",
+    "quote_check": "verbatim match on source page (one quote per publisher spot-checked)",
+    "causes": [],
+    "cause_quote": null,
+    "cause_attributed_by": null,
+    "cause_who": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     3.415,
+     6.428
+    ]
+   },
+   "properties": {
+    "id": "ev-012",
+    "kind": "news_report",
+    "source_id": "vanguard-2011-07-12",
+    "source_url": "https://www.vanguardngr.com/2011/07/lagos-flood-kills-25/",
+    "publisher": "Vanguard",
+    "published_at": "2011-07-12T00:34:35+00:00",
+    "observed_at": "2011-07-10T12:00:00+01:00",
+    "time_confidence": "day",
+    "location_name": "Silver-Bird Communications, Lekki",
+    "location_confidence": "neighbourhood",
+    "geocode_method": "manual: neighbourhood centre for Silverbird, Lekki, Lagos",
+    "claim": "Premises submerged; television transmission disrupted temporarily.",
+    "depth_note": "premises submerged",
+    "quote": "The premises of Silver-Bird Communications, Lekki in Lagos Island and Channels Television",
+    "verified": false,
+    "read_status": "read",
+    "quote_check": "verbatim match on source page (one quote per publisher spot-checked)",
+    "causes": [],
+    "cause_quote": null,
+    "cause_attributed_by": null,
+    "cause_who": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     3.268,
+     6.645
+    ]
+   },
+   "properties": {
+    "id": "ev-013",
+    "kind": "news_report",
+    "source_id": "vanguard-2011-07-12",
+    "source_url": "https://www.vanguardngr.com/2011/07/lagos-flood-kills-25/",
+    "publisher": "Vanguard",
+    "published_at": "2011-07-12T00:34:35+00:00",
+    "observed_at": "2011-07-10T12:00:00+01:00",
+    "time_confidence": "day",
+    "location_name": "Channels Television, Isheri North",
+    "location_confidence": "neighbourhood",
+    "geocode_method": "manual: neighbourhood centre for Isheri North, Lagos",
+    "claim": "Premises submerged along Lagos-Ibadan Expressway; transmission disrupted.",
+    "depth_note": "premises submerged",
+    "quote": "Channels Television, Isheri North, along Lagos Ibadan Expressway were submerged by the flood",
+    "verified": false,
+    "read_status": "read",
+    "quote_check": "verbatim match on source page (one quote per publisher spot-checked)",
+    "causes": [],
+    "cause_quote": null,
+    "cause_attributed_by": null,
+    "cause_who": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     3.315,
+     6.612
+    ]
+   },
+   "properties": {
+    "id": "ev-014",
+    "kind": "news_report",
+    "source_id": "vanguard-2011-07-12",
+    "source_url": "https://www.vanguardngr.com/2011/07/lagos-flood-kills-25/",
+    "publisher": "Vanguard",
+    "published_at": "2011-07-12T00:34:35+00:00",
+    "observed_at": "2011-07-11T12:00:00+01:00",
+    "time_confidence": "day",
+    "location_name": "16, Adesokan Street, Dopemu, Agege",
+    "location_confidence": "street",
+    "geocode_method": "manual: neighbourhood centre for Adesokan Street, Dopemu, Lagos",
+    "claim": "Fire service recovered 22-year-old Muri Olanrewaju from a flooded sewage tank.",
+    "depth_note": null,
+    "quote": "removed the corpse of a 22-year old Muri Olanrewaju who died inside a sewage tank",
+    "verified": false,
+    "read_status": "read",
+    "quote_check": "verbatim match on source page (one quote per publisher spot-checked)",
+    "causes": [],
+    "cause_quote": null,
+    "cause_attributed_by": null,
+    "cause_who": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     3.25577,
+     6.659705
+    ]
+   },
+   "properties": {
+    "id": "ev-015",
+    "kind": "news_report",
+    "source_id": "vanguard-2011-07-12",
+    "source_url": "https://www.vanguardngr.com/2011/07/lagos-flood-kills-25/",
+    "publisher": "Vanguard",
+    "published_at": "2011-07-12T00:34:35+00:00",
+    "observed_at": "2011-07-10T21:00:00+01:00",
+    "time_confidence": "approx",
+    "location_name": "Akara, Alagbado",
+    "location_confidence": "neighbourhood",
+    "geocode_method": "nominatim:Alagbado, Lagos",
+    "claim": "Unconfirmed report: young man about 25 killed when a wall fell Sunday night.",
+    "depth_note": null,
+    "quote": "unconfirmed report in Akara area of Alagbado, had it that a yet to be identified young man",
+    "verified": false,
+    "read_status": "read",
+    "quote_check": "verbatim match on source page (one quote per publisher spot-checked)",
+    "causes": [],
+    "cause_quote": null,
+    "cause_attributed_by": null,
+    "cause_who": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     3.33351,
+     6.448156
+    ]
+   },
+   "properties": {
+    "id": "ev-016",
+    "kind": "news_report",
+    "source_id": "vanguard-2011-07-12",
+    "source_url": "https://www.vanguardngr.com/2011/07/lagos-flood-kills-25/",
+    "publisher": "Vanguard",
+    "published_at": "2011-07-12T00:34:35+00:00",
+    "observed_at": "2011-07-10T12:00:00+01:00",
+    "time_confidence": "day",
+    "location_name": "Ajegunle",
+    "location_confidence": "neighbourhood",
+    "geocode_method": "nominatim:Ajegunle, Ajeromi-Ifelodun, Lagos",
+    "claim": "Over 28 families homeless; four buildings caved in; no life lost there.",
+    "depth_note": null,
+    "quote": "over twenty-eight families have been rendered homeless, as four buildings",
+    "verified": false,
+    "read_status": "read",
+    "quote_check": "verbatim match on source page (one quote per publisher spot-checked)",
+    "causes": [],
+    "cause_quote": null,
+    "cause_attributed_by": null,
+    "cause_who": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     3.341,
+     6.454
+    ]
+   },
+   "properties": {
+    "id": "ev-017",
+    "kind": "news_report",
+    "source_id": "vanguard-2011-07-12",
+    "source_url": "https://www.vanguardngr.com/2011/07/lagos-flood-kills-25/",
+    "publisher": "Vanguard",
+    "published_at": "2011-07-12T00:34:35+00:00",
+    "observed_at": "2011-07-10T18:30:00+01:00",
+    "time_confidence": "exact",
+    "location_name": "Number 8 Okatapo street, Ajegunle",
+    "location_confidence": "street",
+    "geocode_method": "manual: neighbourhood centre for Okatapo Street, Ajegunle, Lagos",
+    "claim": "Building caved in about 6.30pm Sunday.",
+    "depth_note": null,
+    "quote": "Number 8 Okatapo street, according to report, caved in at about 6.30pm, Sunday",
+    "verified": false,
+    "read_status": "read",
+    "quote_check": "verbatim match on source page (one quote per publisher spot-checked)",
+    "causes": [],
+    "cause_quote": null,
+    "cause_attributed_by": null,
+    "cause_who": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     3.341,
+     6.454
+    ]
+   },
+   "properties": {
+    "id": "ev-018",
+    "kind": "news_report",
+    "source_id": "vanguard-2011-07-12",
+    "source_url": "https://www.vanguardngr.com/2011/07/lagos-flood-kills-25/",
+    "publisher": "Vanguard",
+    "published_at": "2011-07-12T00:34:35+00:00",
+    "observed_at": "2011-07-11T07:30:00+01:00",
+    "time_confidence": "approx",
+    "location_name": "Number 4A Okatapo street, Ajegunle",
+    "location_confidence": "street",
+    "geocode_method": "manual: neighbourhood centre for Okatapo Street, Ajegunle, Lagos",
+    "claim": "Part of 4A collapsed about 7.30am Monday.",
+    "depth_note": null,
+    "quote": "part of number 4A collapsed yesterday at about 7.30am",
+    "verified": false,
+    "read_status": "read",
+    "quote_check": "verbatim match on source page (one quote per publisher spot-checked)",
+    "causes": [],
+    "cause_quote": null,
+    "cause_attributed_by": null,
+    "cause_who": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     3.341,
+     6.454
+    ]
+   },
+   "properties": {
+    "id": "ev-019",
+    "kind": "news_report",
+    "source_id": "vanguard-2011-07-12",
+    "source_url": "https://www.vanguardngr.com/2011/07/lagos-flood-kills-25/",
+    "publisher": "Vanguard",
+    "published_at": "2011-07-12T00:34:35+00:00",
+    "observed_at": "2011-07-11T16:00:00+01:00",
+    "time_confidence": "approx",
+    "location_name": "Number 7 Okatapo street and Young lane, Ajegunle",
+    "location_confidence": "street",
+    "geocode_method": "manual: neighbourhood centre for Young Lane, Ajegunle, Lagos",
+    "claim": "Numbers 7 and Young lane caved in about 4pm Monday.",
+    "depth_note": null,
+    "quote": "At about 4pm, numbers 7 and that on Young lane also caved in",
+    "verified": false,
+    "read_status": "read",
+    "quote_check": "verbatim match on source page (one quote per publisher spot-checked)",
+    "causes": [],
+    "cause_quote": null,
+    "cause_attributed_by": null,
+    "cause_who": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     3.32,
+     6.535
+    ]
+   },
+   "properties": {
+    "id": "ev-020",
+    "kind": "news_report",
+    "source_id": "vanguard-2011-07-12",
+    "source_url": "https://www.vanguardngr.com/2011/07/lagos-flood-kills-25/",
+    "publisher": "Vanguard",
+    "published_at": "2011-07-12T00:34:35+00:00",
+    "observed_at": "2011-07-10T23:00:00+01:00",
+    "time_confidence": "approx",
+    "location_name": "Jakande estate, Oke-Afa Isolo",
+    "location_confidence": "neighbourhood",
+    "geocode_method": "manual: neighbourhood centre for Jakande Estate, Isolo, Lagos",
+    "claim": "Woman and 11-month-old baby carried by flood Sunday night; residents rescued them.",
+    "depth_note": null,
+    "quote": "a woman and her eleven-month -old baby escaped death by the whiskers Sunday night",
+    "verified": false,
+    "read_status": "read",
+    "quote_check": "verbatim match on source page (one quote per publisher spot-checked)",
+    "causes": [],
+    "cause_quote": null,
+    "cause_attributed_by": null,
+    "cause_who": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     3.348,
+     6.452
+    ]
+   },
+   "properties": {
+    "id": "ev-021",
+    "kind": "news_report",
+    "source_id": "vanguard-2011-07-12",
+    "source_url": "https://www.vanguardngr.com/2011/07/lagos-flood-kills-25/",
+    "publisher": "Vanguard",
+    "published_at": "2011-07-12T00:34:35+00:00",
+    "observed_at": "2011-07-11T12:00:00+01:00",
+    "time_confidence": "day",
+    "location_name": "Olodi Apapa",
+    "location_confidence": "neighbourhood",
+    "geocode_method": "manual: neighbourhood centre for Olodi Apapa, Lagos",
+    "claim": "Residents sacked from homes; still bailing water from apartments.",
+    "depth_note": null,
+    "quote": "a visit to Olodi Apapa and Ajegunle areas of Lagos, revealed the sufferings",
+    "verified": false,
+    "read_status": "read",
+    "quote_check": "verbatim match on source page (one quote per publisher spot-checked)",
+    "causes": [],
+    "cause_quote": null,
+    "cause_attributed_by": null,
+    "cause_who": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     3.341,
+     6.454
+    ]
+   },
+   "properties": {
+    "id": "ev-022",
+    "kind": "news_report",
+    "source_id": "vanguard-2011-07-12",
+    "source_url": "https://www.vanguardngr.com/2011/07/lagos-flood-kills-25/",
+    "publisher": "Vanguard",
+    "published_at": "2011-07-12T00:34:35+00:00",
+    "observed_at": "2011-07-11T12:00:00+01:00",
+    "time_confidence": "day",
+    "location_name": "Mustapha, Lawani, Rashidi, Apana, Babatunde, Isikalu lane, Ajegunle",
+    "location_confidence": "street",
+    "geocode_method": "manual: neighbourhood centre for Mustapha Street, Ajegunle, Lagos",
+    "claim": "Named streets most affected; residents bailing water from apartments.",
+    "depth_note": null,
+    "quote": "Mustapha, Lawani, Rashidi, Apana, Babatunde,Isikalu lane among other streets were most affected",
+    "verified": false,
+    "read_status": "read",
+    "quote_check": "verbatim match on source page (one quote per publisher spot-checked)",
+    "causes": [],
+    "cause_quote": null,
+    "cause_attributed_by": null,
+    "cause_who": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     3.308,
+     6.618
+    ]
+   },
+   "properties": {
+    "id": "ev-023",
+    "kind": "news_report",
+    "source_id": "vanguard-2011-07-12",
+    "source_url": "https://www.vanguardngr.com/2011/07/lagos-flood-kills-25/",
+    "publisher": "Vanguard",
+    "published_at": "2011-07-12T00:34:35+00:00",
+    "observed_at": "2011-07-10T12:00:00+01:00",
+    "time_confidence": "day",
+    "location_name": "Orile",
+    "location_confidence": "neighbourhood",
+    "geocode_method": "manual: neighbourhood centre for Orile-Agege, Lagos",
+    "claim": "Most shanties around Orile completely brought down by the rain.",
+    "depth_note": null,
+    "quote": "Most shanties around Orile and Oyingbo were completely brought down by the rain",
+    "verified": false,
+    "read_status": "read",
+    "quote_check": "verbatim match on source page (one quote per publisher spot-checked)",
+    "causes": [
+     "heavy_rain"
+    ],
+    "cause_quote": "Most shanties around Orile and Oyingbo were completely brought down by the rain",
+    "cause_attributed_by": "journalist",
+    "cause_who": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     3.383,
+     6.478
+    ]
+   },
+   "properties": {
+    "id": "ev-024",
+    "kind": "news_report",
+    "source_id": "vanguard-2011-07-12",
+    "source_url": "https://www.vanguardngr.com/2011/07/lagos-flood-kills-25/",
+    "publisher": "Vanguard",
+    "published_at": "2011-07-12T00:34:35+00:00",
+    "observed_at": "2011-07-10T12:00:00+01:00",
+    "time_confidence": "day",
+    "location_name": "Oyingbo",
+    "location_confidence": "neighbourhood",
+    "geocode_method": "manual: neighbourhood centre for Oyingbo, Lagos",
+    "claim": "Most shanties around Oyingbo completely brought down by the rain.",
+    "depth_note": null,
+    "quote": "Most shanties around Orile and Oyingbo were completely brought down by the rain",
+    "verified": false,
+    "read_status": "read",
+    "quote_check": "verbatim match on source page (one quote per publisher spot-checked)",
+    "causes": [
+     "heavy_rain"
+    ],
+    "cause_quote": "Most shanties around Orile and Oyingbo were completely brought down by the rain",
+    "cause_attributed_by": "journalist",
+    "cause_who": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     3.320339,
+     6.622916
+    ]
+   },
+   "properties": {
+    "id": "ev-025",
+    "kind": "official_statement",
+    "source_id": "vanguard-2011-07-12",
+    "source_url": "https://www.vanguardngr.com/2011/07/lagos-flood-kills-25/",
+    "publisher": "Vanguard",
+    "published_at": "2011-07-12T00:34:35+00:00",
+    "observed_at": "2011-07-11T12:00:00+01:00",
+    "time_confidence": "day",
+    "location_name": "Agege",
+    "location_confidence": "neighbourhood",
+    "geocode_method": "nominatim:Agege, Lagos",
+    "claim": "Fashola inspected flood-prone Agege; warned occupants of canal buildings to leave.",
+    "depth_note": null,
+    "quote": "we are coming to take possession, we are not going to risk human lives anymore",
+    "verified": false,
+    "read_status": "read",
+    "quote_check": "verbatim match on source page (one quote per publisher spot-checked)",
+    "causes": [],
+    "cause_quote": null,
+    "cause_attributed_by": null,
+    "cause_who": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     3.345,
+     6.468
+    ]
+   },
+   "properties": {
+    "id": "ev-026",
+    "kind": "news_photo",
+    "source_id": "vanguard-2011-07-15",
+    "source_url": "https://www.vanguardngr.com/2011/07/lagos-floods-residents-senate-blame-fashola-jonathan/",
+    "publisher": "Vanguard",
+    "published_at": "2011-07-15T18:04:27+00:00",
+    "observed_at": "2011-07-10T12:00:00+01:00",
+    "time_confidence": "day",
+    "location_name": "Apapa/Oshodi Expressway",
+    "location_confidence": "street",
+    "geocode_method": "manual: neighbourhood centre for Apapa-Oshodi Expressway, Lagos",
+    "claim": "Expressway flooded after heavy downpour; traffic build-ups for motorists.",
+    "depth_note": null,
+    "quote": "Apapa/Oshodi Expressway flooded due to heavy down pour thereby causing traffic buildups",
+    "verified": false,
+    "read_status": "read",
+    "quote_check": "verbatim match on source page (one quote per publisher spot-checked)",
+    "causes": [
+     "heavy_rain"
+    ],
+    "cause_quote": "Apapa/Oshodi Expressway flooded due to heavy down pour thereby causing traffic buildups",
+    "cause_attributed_by": "journalist",
+    "cause_who": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     3.42599,
+     6.430028
+    ]
+   },
+   "properties": {
+    "id": "ev-027",
+    "kind": "news_report",
+    "source_id": "vanguard-2011-07-15",
+    "source_url": "https://www.vanguardngr.com/2011/07/lagos-floods-residents-senate-blame-fashola-jonathan/",
+    "publisher": "Vanguard",
+    "published_at": "2011-07-15T18:04:27+00:00",
+    "observed_at": "2011-07-10T12:00:00+01:00",
+    "time_confidence": "day",
+    "location_name": "Victoria Island",
+    "location_confidence": "neighbourhood",
+    "geocode_method": "nominatim:Victoria Island, Lagos",
+    "claim": "High-brow Victoria Island and Lekki also flooded that Sunday.",
+    "depth_note": null,
+    "quote": "the government did not even come to the aid of the high brow Victoria Island and Lekki",
+    "verified": false,
+    "read_status": "read",
+    "quote_check": "verbatim match on source page (one quote per publisher spot-checked)",
+    "causes": [],
+    "cause_quote": null,
+    "cause_attributed_by": null,
+    "cause_who": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     3.47047,
+     6.441399
+    ]
+   },
+   "properties": {
+    "id": "ev-028",
+    "kind": "news_report",
+    "source_id": "vanguard-2011-07-15",
+    "source_url": "https://www.vanguardngr.com/2011/07/lagos-floods-residents-senate-blame-fashola-jonathan/",
+    "publisher": "Vanguard",
+    "published_at": "2011-07-15T18:04:27+00:00",
+    "observed_at": "2011-07-10T12:00:00+01:00",
+    "time_confidence": "day",
+    "location_name": "Lekki",
+    "location_confidence": "lga",
+    "geocode_method": "nominatim:Lekki, Lagos",
+    "claim": "Lekki flooded that Sunday with Victoria Island.",
+    "depth_note": null,
+    "quote": "the high brow Victoria Island and Lekki, described by CNN as the most expensive slum",
+    "verified": false,
+    "read_status": "read",
+    "quote_check": "verbatim match on source page (one quote per publisher spot-checked)",
+    "causes": [],
+    "cause_quote": null,
+    "cause_attributed_by": null,
+    "cause_who": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     3.285,
+     6.658
+    ]
+   },
+   "properties": {
+    "id": "ev-029",
+    "kind": "news_report",
+    "source_id": "vanguard-2011-07-15",
+    "source_url": "https://www.vanguardngr.com/2011/07/lagos-floods-residents-senate-blame-fashola-jonathan/",
+    "publisher": "Vanguard",
+    "published_at": "2011-07-15T18:04:27+00:00",
+    "observed_at": "2011-07-10T12:00:00+01:00",
+    "time_confidence": "day",
+    "location_name": "Agbado Oke-Odo LCDA",
+    "location_confidence": "lga",
+    "geocode_method": "manual: neighbourhood centre for Agbado-Oke Odo, Lagos",
+    "claim": "Vice chairman: at least 10 drowned in a canal, including a woman and infant.",
+    "depth_note": null,
+    "quote": "at least 10 persons drowned in a canal because they could not distinguish between the roads",
+    "verified": false,
+    "read_status": "read",
+    "quote_check": "verbatim match on source page (one quote per publisher spot-checked)",
+    "causes": [],
+    "cause_quote": null,
+    "cause_attributed_by": null,
+    "cause_who": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     3.320339,
+     6.622916
+    ]
+   },
+   "properties": {
+    "id": "ev-030",
+    "kind": "news_report",
+    "source_id": "vanguard-2011-07-15",
+    "source_url": "https://www.vanguardngr.com/2011/07/lagos-floods-residents-senate-blame-fashola-jonathan/",
+    "publisher": "Vanguard",
+    "published_at": "2011-07-15T18:04:27+00:00",
+    "observed_at": "2011-07-10T12:00:00+01:00",
+    "time_confidence": "day",
+    "location_name": "Agege",
+    "location_confidence": "neighbourhood",
+    "geocode_method": "nominatim:Agege, Lagos",
+    "claim": "Thousands sacked from homes by overflow of water.",
+    "depth_note": null,
+    "quote": "Thousands of others were sacked from their homes by the overflow of water in Agege, Agbado",
+    "verified": false,
+    "read_status": "read",
+    "quote_check": "verbatim match on source page (one quote per publisher spot-checked)",
+    "causes": [],
+    "cause_quote": null,
+    "cause_attributed_by": null,
+    "cause_who": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     3.289491,
+     6.663602
+    ]
+   },
+   "properties": {
+    "id": "ev-031",
+    "kind": "news_report",
+    "source_id": "vanguard-2011-07-15",
+    "source_url": "https://www.vanguardngr.com/2011/07/lagos-floods-residents-senate-blame-fashola-jonathan/",
+    "publisher": "Vanguard",
+    "published_at": "2011-07-15T18:04:27+00:00",
+    "observed_at": "2011-07-10T12:00:00+01:00",
+    "time_confidence": "day",
+    "location_name": "Ijaiye",
+    "location_confidence": "neighbourhood",
+    "geocode_method": "nominatim:Ijaiye, Lagos",
+    "claim": "Named among areas where thousands were sacked from homes.",
+    "depth_note": null,
+    "quote": "overflow of water in Agege, Agbado, Ijaiye, Aboru, Ojota, Ketu, and Apapa",
+    "verified": false,
+    "read_status": "read",
+    "quote_check": "verbatim match on source page (one quote per publisher spot-checked)",
+    "causes": [],
+    "cause_quote": null,
+    "cause_attributed_by": null,
+    "cause_who": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     3.288,
+     6.642
+    ]
+   },
+   "properties": {
+    "id": "ev-032",
+    "kind": "news_report",
+    "source_id": "vanguard-2011-07-15",
+    "source_url": "https://www.vanguardngr.com/2011/07/lagos-floods-residents-senate-blame-fashola-jonathan/",
+    "publisher": "Vanguard",
+    "published_at": "2011-07-15T18:04:27+00:00",
+    "observed_at": "2011-07-10T12:00:00+01:00",
+    "time_confidence": "day",
+    "location_name": "Aboru",
+    "location_confidence": "neighbourhood",
+    "geocode_method": "manual: neighbourhood centre for Aboru, Lagos",
+    "claim": "Named among areas where thousands were sacked from homes.",
+    "depth_note": null,
+    "quote": "overflow of water in Agege, Agbado, Ijaiye, Aboru, Ojota, Ketu, and Apapa",
+    "verified": false,
+    "read_status": "read",
+    "quote_check": "verbatim match on source page (one quote per publisher spot-checked)",
+    "causes": [],
+    "cause_quote": null,
+    "cause_attributed_by": null,
+    "cause_who": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     3.379146,
+     6.587071
+    ]
+   },
+   "properties": {
+    "id": "ev-033",
+    "kind": "news_report",
+    "source_id": "vanguard-2011-07-15",
+    "source_url": "https://www.vanguardngr.com/2011/07/lagos-floods-residents-senate-blame-fashola-jonathan/",
+    "publisher": "Vanguard",
+    "published_at": "2011-07-15T18:04:27+00:00",
+    "observed_at": "2011-07-10T12:00:00+01:00",
+    "time_confidence": "day",
+    "location_name": "Ojota",
+    "location_confidence": "neighbourhood",
+    "geocode_method": "nominatim:Ojota, Lagos",
+    "claim": "Named among areas where thousands were sacked from homes.",
+    "depth_note": null,
+    "quote": "overflow of water in Agege, Agbado, Ijaiye, Aboru, Ojota, Ketu, and Apapa",
+    "verified": false,
+    "read_status": "read",
+    "quote_check": "verbatim match on source page (one quote per publisher spot-checked)",
+    "causes": [],
+    "cause_quote": null,
+    "cause_attributed_by": null,
+    "cause_who": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     3.391748,
+     6.5928
+    ]
+   },
+   "properties": {
+    "id": "ev-034",
+    "kind": "news_report",
+    "source_id": "vanguard-2011-07-15",
+    "source_url": "https://www.vanguardngr.com/2011/07/lagos-floods-residents-senate-blame-fashola-jonathan/",
+    "publisher": "Vanguard",
+    "published_at": "2011-07-15T18:04:27+00:00",
+    "observed_at": "2011-07-10T12:00:00+01:00",
+    "time_confidence": "day",
+    "location_name": "Ketu",
+    "location_confidence": "neighbourhood",
+    "geocode_method": "nominatim:Ketu, Lagos",
+    "claim": "Named among areas where thousands were sacked from homes.",
+    "depth_note": null,
+    "quote": "overflow of water in Agege, Agbado, Ijaiye, Aboru, Ojota, Ketu, and Apapa",
+    "verified": false,
+    "read_status": "read",
+    "quote_check": "verbatim match on source page (one quote per publisher spot-checked)",
+    "causes": [],
+    "cause_quote": null,
+    "cause_attributed_by": null,
+    "cause_who": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     3.362237,
+     6.446905
+    ]
+   },
+   "properties": {
+    "id": "ev-035",
+    "kind": "news_report",
+    "source_id": "vanguard-2011-07-15",
+    "source_url": "https://www.vanguardngr.com/2011/07/lagos-floods-residents-senate-blame-fashola-jonathan/",
+    "publisher": "Vanguard",
+    "published_at": "2011-07-15T18:04:27+00:00",
+    "observed_at": "2011-07-10T12:00:00+01:00",
+    "time_confidence": "day",
+    "location_name": "Apapa",
+    "location_confidence": "neighbourhood",
+    "geocode_method": "nominatim:Apapa, Lagos",
+    "claim": "Named among areas where thousands were sacked from homes.",
+    "depth_note": null,
+    "quote": "overflow of water in Agege, Agbado, Ijaiye, Aboru, Ojota, Ketu, and Apapa",
+    "verified": false,
+    "read_status": "read",
+    "quote_check": "verbatim match on source page (one quote per publisher spot-checked)",
+    "causes": [],
+    "cause_quote": null,
+    "cause_attributed_by": null,
+    "cause_who": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     3.328,
+     6.65
+    ]
+   },
+   "properties": {
+    "id": "ev-036",
+    "kind": "news_report",
+    "source_id": "vanguard-2011-07-15",
+    "source_url": "https://www.vanguardngr.com/2011/07/lagos-floods-residents-senate-blame-fashola-jonathan/",
+    "publisher": "Vanguard",
+    "published_at": "2011-07-15T18:04:27+00:00",
+    "observed_at": "2011-07-10T12:00:00+01:00",
+    "time_confidence": "day",
+    "location_name": "Utility Street, Ifako Ijaiye",
+    "location_confidence": "street",
+    "geocode_method": "manual: neighbourhood centre for Utility Street, Ifako-Ijaiye, Lagos",
+    "claim": "A building collapsed and buried a teenager in the rubble.",
+    "depth_note": null,
+    "quote": "A building on Utility Street in Ifako Ijaiye Council collapsed and buried a teenager",
+    "verified": false,
+    "read_status": "read",
+    "quote_check": "verbatim match on source page (one quote per publisher spot-checked)",
+    "causes": [],
+    "cause_quote": null,
+    "cause_attributed_by": null,
+    "cause_who": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     3.255,
+     6.672
+    ]
+   },
+   "properties": {
+    "id": "ev-037",
+    "kind": "news_report",
+    "source_id": "vanguard-2011-07-15",
+    "source_url": "https://www.vanguardngr.com/2011/07/lagos-floods-residents-senate-blame-fashola-jonathan/",
+    "publisher": "Vanguard",
+    "published_at": "2011-07-15T18:04:27+00:00",
+    "observed_at": "2011-07-10T12:00:00+01:00",
+    "time_confidence": "day",
+    "location_name": "Akera, Alagbado",
+    "location_confidence": "neighbourhood",
+    "geocode_method": "manual: neighbourhood centre for Akera, Alagbado, Lagos",
+    "claim": "A man died instantly when a fence fell on him.",
+    "depth_note": null,
+    "quote": "In Akera, Alagbado, a man died instantly when a fence fell on him",
+    "verified": false,
+    "read_status": "read",
+    "quote_check": "verbatim match on source page (one quote per publisher spot-checked)",
+    "causes": [],
+    "cause_quote": null,
+    "cause_attributed_by": null,
+    "cause_who": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     3.315,
+     6.612
+    ]
+   },
+   "properties": {
+    "id": "ev-038",
+    "kind": "news_report",
+    "source_id": "vanguard-2011-07-15",
+    "source_url": "https://www.vanguardngr.com/2011/07/lagos-floods-residents-senate-blame-fashola-jonathan/",
+    "publisher": "Vanguard",
+    "published_at": "2011-07-15T18:04:27+00:00",
+    "observed_at": "2011-07-11T08:00:00+01:00",
+    "time_confidence": "approx",
+    "location_name": "16, Adesokan Street, Dopemu",
+    "location_confidence": "street",
+    "geocode_method": "manual: neighbourhood centre for Adesokan Street, Dopemu, Lagos",
+    "claim": "Corpse of 22-year-old Muri Olanrewaju retrieved Monday morning from a sewage cistern.",
+    "depth_note": null,
+    "quote": "The corpse of a 22-year-old boy, Muri Olanrewaju, was retrieved on Monday morning",
+    "verified": false,
+    "read_status": "read",
+    "quote_check": "verbatim match on source page (one quote per publisher spot-checked)",
+    "causes": [],
+    "cause_quote": null,
+    "cause_attributed_by": null,
+    "cause_who": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     3.352064,
+     6.601432
+    ]
+   },
+   "properties": {
+    "id": "ev-039",
+    "kind": "news_report",
+    "source_id": "vanguard-2011-07-15",
+    "source_url": "https://www.vanguardngr.com/2011/07/lagos-floods-residents-senate-blame-fashola-jonathan/",
+    "publisher": "Vanguard",
+    "published_at": "2011-07-15T18:04:27+00:00",
+    "observed_at": "2011-07-10T21:00:00+01:00",
+    "time_confidence": "approx",
+    "location_name": "Allen Avenue, Ikeja",
+    "location_confidence": "street",
+    "geocode_method": "nominatim:Allen Avenue, Ikeja, Lagos",
+    "claim": "Five girls, including a three-month-old, died of generator fumes after rain trapped them.",
+    "depth_note": null,
+    "quote": "Five girls, one of them a three-month-old baby, were found dead in a restaurant on Allen Avenue",
+    "verified": false,
+    "read_status": "read",
+    "quote_check": "verbatim match on source page (one quote per publisher spot-checked)",
+    "causes": [],
+    "cause_quote": null,
+    "cause_attributed_by": null,
+    "cause_who": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     3.338,
+     6.638
+    ]
+   },
+   "properties": {
+    "id": "ev-040",
+    "kind": "news_report",
+    "source_id": "vanguard-2011-07-15",
+    "source_url": "https://www.vanguardngr.com/2011/07/lagos-floods-residents-senate-blame-fashola-jonathan/",
+    "publisher": "Vanguard",
+    "published_at": "2011-07-15T18:04:27+00:00",
+    "observed_at": "2011-07-10T23:00:00+01:00",
+    "time_confidence": "approx",
+    "location_name": "10, Odejobi Street, Iju",
+    "location_confidence": "street",
+    "geocode_method": "manual: neighbourhood centre for Odejobi Street, Iju, Agege, Lagos",
+    "claim": "Rooms taken over by flood; household slept at church at Cement Bus stop.",
+    "depth_note": null,
+    "quote": "The rooms were taken over by flood; we were scared because the rain did not stop until about 11 p.m.",
+    "verified": false,
+    "read_status": "read",
+    "quote_check": "verbatim match on source page (one quote per publisher spot-checked)",
+    "causes": [],
+    "cause_quote": null,
+    "cause_attributed_by": null,
+    "cause_who": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     3.392,
+     6.592
+    ]
+   },
+   "properties": {
+    "id": "ev-041",
+    "kind": "news_report",
+    "source_id": "vanguard-2011-07-15",
+    "source_url": "https://www.vanguardngr.com/2011/07/lagos-floods-residents-senate-blame-fashola-jonathan/",
+    "publisher": "Vanguard",
+    "published_at": "2011-07-15T18:04:27+00:00",
+    "observed_at": "2011-07-10T19:00:00+01:00",
+    "time_confidence": "approx",
+    "location_name": "Alapere, Ketu",
+    "location_confidence": "neighbourhood",
+    "geocode_method": "manual: neighbourhood centre for Alapere, Ketu, Lagos",
+    "claim": "One-room apartment overtaken by flood about 7 p.m. Sunday.",
+    "depth_note": null,
+    "quote": "meet her one-room apartment in Alapere, Ketu overtaken by flood",
+    "verified": false,
+    "read_status": "read",
+    "quote_check": "verbatim match on source page (one quote per publisher spot-checked)",
+    "causes": [],
+    "cause_quote": null,
+    "cause_attributed_by": null,
+    "cause_who": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     3.32,
+     6.535
+    ]
+   },
+   "properties": {
+    "id": "ev-042",
+    "kind": "news_report",
+    "source_id": "vanguard-2011-07-15",
+    "source_url": "https://www.vanguardngr.com/2011/07/lagos-floods-residents-senate-blame-fashola-jonathan/",
+    "publisher": "Vanguard",
+    "published_at": "2011-07-15T18:04:27+00:00",
+    "observed_at": "2011-07-10T12:00:00+01:00",
+    "time_confidence": "day",
+    "location_name": "Jakande Estate, Isolo",
+    "location_confidence": "neighbourhood",
+    "geocode_method": "manual: neighbourhood centre for Jakande Estate, Isolo, Lagos",
+    "claim": "Resident spent six hours Ojota to Anthony; flood at Ketu described as scary.",
+    "depth_note": null,
+    "quote": "I drove from my house on Jakande Estate, Isolo to Mile 12 around 3 p.m.",
+    "verified": false,
+    "read_status": "read",
+    "quote_check": "verbatim match on source page (one quote per publisher spot-checked)",
+    "causes": [],
+    "cause_quote": null,
+    "cause_attributed_by": null,
+    "cause_who": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     3.351293,
+     6.508763
+    ]
+   },
+   "properties": {
+    "id": "ev-043",
+    "kind": "news_report",
+    "source_id": "vanguard-2011-07-15",
+    "source_url": "https://www.vanguardngr.com/2011/07/lagos-floods-residents-senate-blame-fashola-jonathan/",
+    "publisher": "Vanguard",
+    "published_at": "2011-07-15T18:04:27+00:00",
+    "observed_at": "2011-07-10T12:00:00+01:00",
+    "time_confidence": "day",
+    "location_name": "Ajao Street, Surulere",
+    "location_confidence": "street",
+    "geocode_method": "nominatim:Ajao Street, Surulere, Lagos",
+    "claim": "Street flooded; vehicular movement obstructed.",
+    "depth_note": null,
+    "quote": "In Surulere, streets such as Ajao, Randle and Ojuelegba were flooded",
+    "verified": false,
+    "read_status": "read",
+    "quote_check": "verbatim match on source page (one quote per publisher spot-checked)",
+    "causes": [],
+    "cause_quote": null,
+    "cause_attributed_by": null,
+    "cause_who": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     3.356958,
+     6.508462
+    ]
+   },
+   "properties": {
+    "id": "ev-044",
+    "kind": "news_report",
+    "source_id": "vanguard-2011-07-15",
+    "source_url": "https://www.vanguardngr.com/2011/07/lagos-floods-residents-senate-blame-fashola-jonathan/",
+    "publisher": "Vanguard",
+    "published_at": "2011-07-15T18:04:27+00:00",
+    "observed_at": "2011-07-10T12:00:00+01:00",
+    "time_confidence": "day",
+    "location_name": "Randle, Surulere",
+    "location_confidence": "street",
+    "geocode_method": "nominatim:Randle Avenue, Surulere, Lagos",
+    "claim": "Street flooded; vehicular movement obstructed.",
+    "depth_note": null,
+    "quote": "In Surulere, streets such as Ajao, Randle and Ojuelegba were flooded",
+    "verified": false,
+    "read_status": "read",
+    "quote_check": "verbatim match on source page (one quote per publisher spot-checked)",
+    "causes": [],
+    "cause_quote": null,
+    "cause_attributed_by": null,
+    "cause_who": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     3.364,
+     6.509
+    ]
+   },
+   "properties": {
+    "id": "ev-045",
+    "kind": "news_report",
+    "source_id": "vanguard-2011-07-15",
+    "source_url": "https://www.vanguardngr.com/2011/07/lagos-floods-residents-senate-blame-fashola-jonathan/",
+    "publisher": "Vanguard",
+    "published_at": "2011-07-15T18:04:27+00:00",
+    "observed_at": "2011-07-10T12:00:00+01:00",
+    "time_confidence": "day",
+    "location_name": "Ojuelegba, Surulere",
+    "location_confidence": "neighbourhood",
+    "geocode_method": "manual: neighbourhood centre for Ojuelegba, Surulere, Lagos",
+    "claim": "Street flooded; vehicular movement obstructed.",
+    "depth_note": null,
+    "quote": "In Surulere, streets such as Ajao, Randle and Ojuelegba were flooded",
+    "verified": false,
+    "read_status": "read",
+    "quote_check": "verbatim match on source page (one quote per publisher spot-checked)",
+    "causes": [],
+    "cause_quote": null,
+    "cause_attributed_by": null,
+    "cause_who": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     3.285,
+     6.658
+    ]
+   },
+   "properties": {
+    "id": "ev-046",
+    "kind": "news_report",
+    "source_id": "vanguard-2011-07-15",
+    "source_url": "https://www.vanguardngr.com/2011/07/lagos-floods-residents-senate-blame-fashola-jonathan/",
+    "publisher": "Vanguard",
+    "published_at": "2011-07-15T18:04:27+00:00",
+    "observed_at": "2011-07-10T12:00:00+01:00",
+    "time_confidence": "day",
+    "location_name": "Akinola, Agbado-Oke Odo LCDA",
+    "location_confidence": "neighbourhood",
+    "geocode_method": "manual: neighbourhood centre for Akinola, Agbado-Oke Odo, Lagos",
+    "claim": "Residents along the canal bailed flood water from houses.",
+    "depth_note": null,
+    "quote": "In Akinola and Alabede under the Agbado-Oke Odo Local Council Development Area",
+    "verified": false,
+    "read_status": "read",
+    "quote_check": "verbatim match on source page (one quote per publisher spot-checked)",
+    "causes": [],
+    "cause_quote": null,
+    "cause_attributed_by": null,
+    "cause_who": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     3.285,
+     6.658
+    ]
+   },
+   "properties": {
+    "id": "ev-047",
+    "kind": "news_report",
+    "source_id": "vanguard-2011-07-15",
+    "source_url": "https://www.vanguardngr.com/2011/07/lagos-floods-residents-senate-blame-fashola-jonathan/",
+    "publisher": "Vanguard",
+    "published_at": "2011-07-15T18:04:27+00:00",
+    "observed_at": "2011-07-10T12:00:00+01:00",
+    "time_confidence": "day",
+    "location_name": "Alabede, Agbado-Oke Odo LCDA",
+    "location_confidence": "neighbourhood",
+    "geocode_method": "manual: neighbourhood centre for Alabede, Agbado-Oke Odo, Lagos",
+    "claim": "Residents along the canal bailed flood water from houses.",
+    "depth_note": null,
+    "quote": "In Akinola and Alabede under the Agbado-Oke Odo Local Council Development Area",
+    "verified": false,
+    "read_status": "read",
+    "quote_check": "verbatim match on source page (one quote per publisher spot-checked)",
+    "causes": [],
+    "cause_quote": null,
+    "cause_attributed_by": null,
+    "cause_who": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     3.344553,
+     6.602666
+    ]
+   },
+   "properties": {
+    "id": "ev-048",
+    "kind": "news_report",
+    "source_id": "vanguard-2011-07-15",
+    "source_url": "https://www.vanguardngr.com/2011/07/lagos-floods-residents-senate-blame-fashola-jonathan/",
+    "publisher": "Vanguard",
+    "published_at": "2011-07-15T18:04:27+00:00",
+    "observed_at": "2011-07-10T12:00:00+01:00",
+    "time_confidence": "day",
+    "location_name": "Awolowo Way, Ikeja",
+    "location_confidence": "street",
+    "geocode_method": "nominatim:Awolowo Way, Ikeja, Lagos",
+    "claim": "Listed among other affected areas.",
+    "depth_note": null,
+    "quote": "Other affected areas include Awolowo Way in Ikeja, some parts of Oshodi, Ejigbo",
+    "verified": false,
+    "read_status": "read",
+    "quote_check": "verbatim match on source page (one quote per publisher spot-checked)",
+    "causes": [],
+    "cause_quote": null,
+    "cause_attributed_by": null,
+    "cause_who": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     3.349442,
+     6.557025
+    ]
+   },
+   "properties": {
+    "id": "ev-049",
+    "kind": "news_report",
+    "source_id": "vanguard-2011-07-15",
+    "source_url": "https://www.vanguardngr.com/2011/07/lagos-floods-residents-senate-blame-fashola-jonathan/",
+    "publisher": "Vanguard",
+    "published_at": "2011-07-15T18:04:27+00:00",
+    "observed_at": "2011-07-10T12:00:00+01:00",
+    "time_confidence": "day",
+    "location_name": "Oshodi",
+    "location_confidence": "neighbourhood",
+    "geocode_method": "nominatim:Oshodi, Lagos",
+    "claim": "Some parts of Oshodi listed among affected areas.",
+    "depth_note": null,
+    "quote": "Other affected areas include Awolowo Way in Ikeja, some parts of Oshodi, Ejigbo",
+    "verified": false,
+    "read_status": "read",
+    "quote_check": "verbatim match on source page (one quote per publisher spot-checked)",
+    "causes": [],
+    "cause_quote": null,
+    "cause_attributed_by": null,
+    "cause_who": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     3.293436,
+     6.549451
+    ]
+   },
+   "properties": {
+    "id": "ev-050",
+    "kind": "news_report",
+    "source_id": "vanguard-2011-07-15",
+    "source_url": "https://www.vanguardngr.com/2011/07/lagos-floods-residents-senate-blame-fashola-jonathan/",
+    "publisher": "Vanguard",
+    "published_at": "2011-07-15T18:04:27+00:00",
+    "observed_at": "2011-07-10T12:00:00+01:00",
+    "time_confidence": "day",
+    "location_name": "Ejigbo",
+    "location_confidence": "neighbourhood",
+    "geocode_method": "nominatim:Ejigbo, Lagos",
+    "claim": "Listed among other affected areas.",
+    "depth_note": null,
+    "quote": "Other affected areas include Awolowo Way in Ikeja, some parts of Oshodi, Ejigbo",
+    "verified": false,
+    "read_status": "read",
+    "quote_check": "verbatim match on source page (one quote per publisher spot-checked)",
+    "causes": [],
+    "cause_quote": null,
+    "cause_attributed_by": null,
+    "cause_who": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     3.414886,
+     6.60855
+    ]
+   },
+   "properties": {
+    "id": "ev-051",
+    "kind": "news_report",
+    "source_id": "vanguard-2011-07-15",
+    "source_url": "https://www.vanguardngr.com/2011/07/lagos-floods-residents-senate-blame-fashola-jonathan/",
+    "publisher": "Vanguard",
+    "published_at": "2011-07-15T18:04:27+00:00",
+    "observed_at": "2011-07-10T12:00:00+01:00",
+    "time_confidence": "day",
+    "location_name": "Owode Onirin",
+    "location_confidence": "neighbourhood",
+    "geocode_method": "nominatim:Owode Onirin, Lagos",
+    "claim": "Listed among other affected areas.",
+    "depth_note": null,
+    "quote": "Owode Onirin and Ajegunle in Ikorodu",
+    "verified": false,
+    "read_status": "read",
+    "quote_check": "verbatim match on source page (one quote per publisher spot-checked)",
+    "causes": [],
+    "cause_quote": null,
+    "cause_attributed_by": null,
+    "cause_who": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     3.508,
+     6.618
+    ]
+   },
+   "properties": {
+    "id": "ev-052",
+    "kind": "news_report",
+    "source_id": "vanguard-2011-07-15",
+    "source_url": "https://www.vanguardngr.com/2011/07/lagos-floods-residents-senate-blame-fashola-jonathan/",
+    "publisher": "Vanguard",
+    "published_at": "2011-07-15T18:04:27+00:00",
+    "observed_at": "2011-07-10T12:00:00+01:00",
+    "time_confidence": "day",
+    "location_name": "Ajegunle in Ikorodu",
+    "location_confidence": "neighbourhood",
+    "geocode_method": "manual: neighbourhood centre for Ajegunle, Ikorodu, Lagos",
+    "claim": "Ikorodu Ajegunle listed among other affected areas (not Ajeromi Ajegunle).",
+    "depth_note": null,
+    "quote": "Owode Onirin and Ajegunle in Ikorodu",
+    "verified": false,
+    "read_status": "read",
+    "quote_check": "verbatim match on source page (one quote per publisher spot-checked)",
+    "causes": [],
+    "cause_quote": null,
+    "cause_attributed_by": null,
+    "cause_who": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     3.255,
+     6.672
+    ]
+   },
+   "properties": {
+    "id": "ev-053",
+    "kind": "news_report",
+    "source_id": "vanguard-2011-07-15",
+    "source_url": "https://www.vanguardngr.com/2011/07/lagos-floods-residents-senate-blame-fashola-jonathan/",
+    "publisher": "Vanguard",
+    "published_at": "2011-07-15T18:04:27+00:00",
+    "observed_at": "2011-07-10T12:00:00+01:00",
+    "time_confidence": "approx",
+    "location_name": "Casso area of Alagbado",
+    "location_confidence": "neighbourhood",
+    "geocode_method": "manual: neighbourhood centre for Casso, Alagbado, Lagos",
+    "claim": "Water on the street above kneecap level in the evening.",
+    "depth_note": "above kneecap level",
+    "quote": "the water level on his street as in the evening was above kneel cap level",
+    "verified": false,
+    "read_status": "read",
+    "quote_check": "verbatim match on source page (one quote per publisher spot-checked)",
+    "causes": [],
+    "cause_quote": null,
+    "cause_attributed_by": null,
+    "cause_who": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     3.394179,
+     6.455057
+    ]
+   },
+   "properties": {
+    "id": "ev-054",
+    "kind": "official_statement",
+    "source_id": "vanguard-2011-07-15",
+    "source_url": "https://www.vanguardngr.com/2011/07/lagos-floods-residents-senate-blame-fashola-jonathan/",
+    "publisher": "Vanguard",
+    "published_at": "2011-07-15T18:04:27+00:00",
+    "observed_at": "2011-07-10T12:00:00+01:00",
+    "time_confidence": "day",
+    "location_name": "Lagos channels / lagoon",
+    "location_confidence": "lga",
+    "geocode_method": "nominatim:Lagos, Nigeria",
+    "claim": "Tunji Bello: channels locked by high tide in the Atlantic and Lagoon.",
+    "depth_note": null,
+    "quote": "the channels that are meant to discharge water from the roads and drainages are completely locked",
+    "verified": false,
+    "read_status": "read",
+    "quote_check": "verbatim match on source page (one quote per publisher spot-checked)",
+    "causes": [
+     "lagoon_tide"
+    ],
+    "cause_quote": "the channels that are meant to discharge water from the roads and drainages are completely locked",
+    "cause_attributed_by": "official",
+    "cause_who": "Tunji Bello, Commissioner for Environment"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     3.394179,
+     6.455057
+    ]
+   },
+   "properties": {
+    "id": "ev-055",
+    "kind": "news_report",
+    "source_id": "aljazeera-2011-07-13",
+    "source_url": "https://www.aljazeera.com/news/2011/7/13/flash-flooding-hits-lagos",
+    "publisher": "Al Jazeera",
+    "published_at": "2011-07-13T14:09:35+00:00",
+    "observed_at": "2011-07-10T12:00:00+01:00",
+    "time_confidence": "day",
+    "location_name": "Lagos",
+    "location_confidence": "lga",
+    "geocode_method": "nominatim:Lagos, Nigeria",
+    "claim": "At least 20 died in Lagos; water knee high in many places.",
+    "depth_note": "knee high in many places",
+    "quote": "Worst hit is Lagos where at least 20 people have died so far",
+    "verified": false,
+    "read_status": "read",
+    "quote_check": "verbatim match on source page (one quote per publisher spot-checked)",
+    "causes": [],
+    "cause_quote": null,
+    "cause_attributed_by": null,
+    "cause_who": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     3.394179,
+     6.455057
+    ]
+   },
+   "properties": {
+    "id": "ev-056",
+    "kind": "official_statement",
+    "source_id": "solardaily-2011-07-11",
+    "source_url": "https://www.solardaily.com/reports/Floods_kill_at_least_20_in_Nigerias_largest_city_999.html",
+    "publisher": "AFP / Solar Daily",
+    "published_at": "2011-07-12T00:00:00+00:00",
+    "observed_at": "2011-07-10T12:00:00+01:00",
+    "time_confidence": "day",
+    "location_name": "Lagos",
+    "location_confidence": "lga",
+    "geocode_method": "nominatim:Lagos, Nigeria",
+    "claim": "NEMA: not less than 20 killed including children on Sunday; Adebiyi had a partial 18.",
+    "depth_note": null,
+    "quote": "Not less than 20 people including children were killed in the Lagos flooding on Sunday",
+    "verified": false,
+    "read_status": "read",
+    "original_url": "https://www.solardaily.com/reports/Floods_kill_at_least_20_in_Nigerias_largest_city_999.html",
+    "quote_check": "verbatim match on source page (one quote per publisher spot-checked)",
+    "causes": [],
+    "cause_quote": null,
+    "cause_attributed_by": null,
+    "cause_who": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     3.394179,
+     6.455057
+    ]
+   },
+   "properties": {
+    "id": "ev-057",
+    "kind": "news_report",
+    "source_id": "reliefweb-2011",
+    "source_url": "https://reliefweb.int/disaster/ff-2011-000088-nga",
+    "publisher": "ReliefWeb / IFRC",
+    "published_at": null,
+    "observed_at": "2011-07-10T05:00:00+01:00",
+    "time_confidence": "day",
+    "location_name": "Lagos State",
+    "location_confidence": "lga",
+    "geocode_method": "nominatim:Lagos, Nigeria",
+    "claim": "IFRC: 17-hour downpour 10–14 July 2011 caused severe flooding in Lagos State.",
+    "depth_note": null,
+    "quote": "A 17-hour continuous and heavy downpour of rains that occurred in Lagos State",
+    "verified": false,
+    "read_status": "read",
+    "quote_check": "not verifiable (publisher blocks automated access / API requires approval)",
+    "causes": [
+     "heavy_rain"
+    ],
+    "cause_quote": "A 17-hour continuous and heavy downpour of rains that occurred in Lagos State",
+    "cause_attributed_by": "journalist",
+    "cause_who": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     3.394179,
+     6.455057
+    ]
+   },
+   "properties": {
+    "id": "ev-058",
+    "kind": "news_report",
+    "source_id": "ifrc-dref-2011-07-25",
+    "source_url": "https://reliefweb.int/report/nigeria/nigeria-flash-floods-dref-operation-n%C2%B0-mdrng010",
+    "publisher": "IFRC",
+    "published_at": "2011-07-25T00:00:00+00:00",
+    "observed_at": "2011-07-10T05:00:00+01:00",
+    "time_confidence": "approx",
+    "location_name": "Lagos metropolis",
+    "location_confidence": "lga",
+    "geocode_method": "nominatim:Lagos, Nigeria",
+    "claim": "Rain from about 5 a.m. 10 July lasting 17 hours; media said 20 dead by 11 July.",
+    "depth_note": null,
+    "quote": "A heavy downpour that started about 5 a.m. in the early hours of 10 July, 2011 and lasting 17 hours",
+    "verified": false,
+    "read_status": "read",
+    "original_url": "https://reliefweb.int/attachments/5f8cfd60-44c4-3174-a3ef-c42d1d84bd67/MDRNG010.pdf",
+    "quote_check": "not verifiable (publisher blocks automated access / API requires approval)",
+    "causes": [
+     "heavy_rain"
+    ],
+    "cause_quote": "A heavy downpour that started about 5 a.m. in the early hours of 10 July, 2011 and lasting 17 hours",
+    "cause_attributed_by": "journalist",
+    "cause_who": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     3.323,
+     6.625
+    ]
+   },
+   "properties": {
+    "id": "ev-059",
+    "kind": "news_report",
+    "source_id": "ifrc-dref-2011-07-25",
+    "source_url": "https://reliefweb.int/report/nigeria/nigeria-flash-floods-dref-operation-n%C2%B0-mdrng010",
+    "publisher": "IFRC",
+    "published_at": "2011-07-25T00:00:00+00:00",
+    "observed_at": "2011-07-10T12:00:00+01:00",
+    "time_confidence": "day",
+    "location_name": "Oniwaya, Agege",
+    "location_confidence": "neighbourhood",
+    "geocode_method": "manual: neighbourhood centre for Oniwaya, Agege, Lagos",
+    "claim": "NRCS: building collapse in Oniwaya area of Agege.",
+    "depth_note": null,
+    "quote": "collapse of building in areas like Oniwaya area of Agege, Gbagada/Oworonshoki, Aboru",
+    "verified": false,
+    "read_status": "read",
+    "original_url": "https://reliefweb.int/attachments/5f8cfd60-44c4-3174-a3ef-c42d1d84bd67/MDRNG010.pdf",
+    "quote_check": "not verifiable (publisher blocks automated access / API requires approval)",
+    "causes": [],
+    "cause_quote": null,
+    "cause_attributed_by": null,
+    "cause_who": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     3.383621,
+     6.558073
+    ]
+   },
+   "properties": {
+    "id": "ev-060",
+    "kind": "news_report",
+    "source_id": "ifrc-dref-2011-07-25",
+    "source_url": "https://reliefweb.int/report/nigeria/nigeria-flash-floods-dref-operation-n%C2%B0-mdrng010",
+    "publisher": "IFRC",
+    "published_at": "2011-07-25T00:00:00+00:00",
+    "observed_at": "2011-07-10T12:00:00+01:00",
+    "time_confidence": "day",
+    "location_name": "Gbagada/Oworonshoki",
+    "location_confidence": "neighbourhood",
+    "geocode_method": "nominatim:Gbagada, Lagos",
+    "claim": "NRCS: building collapse in Gbagada/Oworonshoki.",
+    "depth_note": null,
+    "quote": "collapse of building in areas like Oniwaya area of Agege, Gbagada/Oworonshoki, Aboru",
+    "verified": false,
+    "read_status": "read",
+    "original_url": "https://reliefweb.int/attachments/5f8cfd60-44c4-3174-a3ef-c42d1d84bd67/MDRNG010.pdf",
+    "quote_check": "not verifiable (publisher blocks automated access / API requires approval)",
+    "causes": [],
+    "cause_quote": null,
+    "cause_attributed_by": null,
+    "cause_who": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     3.405,
+     6.555
+    ]
+   },
+   "properties": {
+    "id": "ev-061",
+    "kind": "news_report",
+    "source_id": "ifrc-dref-2011-07-25",
+    "source_url": "https://reliefweb.int/report/nigeria/nigeria-flash-floods-dref-operation-n%C2%B0-mdrng010",
+    "publisher": "IFRC",
+    "published_at": "2011-07-25T00:00:00+00:00",
+    "observed_at": "2011-07-10T12:00:00+01:00",
+    "time_confidence": "day",
+    "location_name": "Oworonshoki",
+    "location_confidence": "neighbourhood",
+    "geocode_method": "manual: neighbourhood centre for Oworonshoki, Lagos",
+    "claim": "Paired with Gbagada among areas of building collapse.",
+    "depth_note": null,
+    "quote": "collapse of building in areas like Oniwaya area of Agege, Gbagada/Oworonshoki, Aboru",
+    "verified": false,
+    "read_status": "read",
+    "original_url": "https://reliefweb.int/attachments/5f8cfd60-44c4-3174-a3ef-c42d1d84bd67/MDRNG010.pdf",
+    "quote_check": "not verifiable (publisher blocks automated access / API requires approval)",
+    "causes": [],
+    "cause_quote": null,
+    "cause_attributed_by": null,
+    "cause_who": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     3.288,
+     6.642
+    ]
+   },
+   "properties": {
+    "id": "ev-062",
+    "kind": "news_report",
+    "source_id": "ifrc-dref-2011-07-25",
+    "source_url": "https://reliefweb.int/report/nigeria/nigeria-flash-floods-dref-operation-n%C2%B0-mdrng010",
+    "publisher": "IFRC",
+    "published_at": "2011-07-25T00:00:00+00:00",
+    "observed_at": "2011-07-10T12:00:00+01:00",
+    "time_confidence": "day",
+    "location_name": "Aboru",
+    "location_confidence": "neighbourhood",
+    "geocode_method": "manual: neighbourhood centre for Aboru, Lagos",
+    "claim": "NRCS: building collapse among other areas including Aboru.",
+    "depth_note": null,
+    "quote": "collapse of building in areas like Oniwaya area of Agege, Gbagada/Oworonshoki, Aboru",
+    "verified": false,
+    "read_status": "read",
+    "original_url": "https://reliefweb.int/attachments/5f8cfd60-44c4-3174-a3ef-c42d1d84bd67/MDRNG010.pdf",
+    "quote_check": "not verifiable (publisher blocks automated access / API requires approval)",
+    "causes": [],
+    "cause_quote": null,
+    "cause_attributed_by": null,
+    "cause_who": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     3.342,
+     6.632
+    ]
+   },
+   "properties": {
+    "id": "ev-063",
+    "kind": "news_report",
+    "source_id": "newsghana-2011",
+    "source_url": "https://www.newsghana.com.gh/lagos-to-experience-week-long-rainfall/",
+    "publisher": "News Ghana / Daily Times",
+    "published_at": "2012-06-24T11:31:26+00:00",
+    "observed_at": "2011-07-10T12:00:00+01:00",
+    "time_confidence": "day",
+    "location_name": "Ogba",
+    "location_confidence": "neighbourhood",
+    "geocode_method": "manual: neighbourhood centre for Ogba, Ikeja, Lagos",
+    "claim": "Recall of 10 July 2011: houses in Ogba heavily flooded after rain over 15 hours.",
+    "depth_note": null,
+    "quote": "houses in places such as Ogba, Agege, Lekki, and others, were heavily flooded",
+    "verified": false,
+    "read_status": "read",
+    "quote_check": "not verifiable (publisher blocks automated access / API requires approval)",
+    "causes": [],
+    "cause_quote": null,
+    "cause_attributed_by": null,
+    "cause_who": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     3.320339,
+     6.622916
+    ]
+   },
+   "properties": {
+    "id": "ev-064",
+    "kind": "news_report",
+    "source_id": "newsghana-2011",
+    "source_url": "https://www.newsghana.com.gh/lagos-to-experience-week-long-rainfall/",
+    "publisher": "News Ghana / Daily Times",
+    "published_at": "2012-06-24T11:31:26+00:00",
+    "observed_at": "2011-07-10T12:00:00+01:00",
+    "time_confidence": "day",
+    "location_name": "Agege",
+    "location_confidence": "neighbourhood",
+    "geocode_method": "nominatim:Agege, Lagos",
+    "claim": "Recall of 10 July 2011: houses in Agege heavily flooded.",
+    "depth_note": null,
+    "quote": "houses in places such as Ogba, Agege, Lekki, and others, were heavily flooded",
+    "verified": false,
+    "read_status": "read",
+    "quote_check": "not verifiable (publisher blocks automated access / API requires approval)",
+    "causes": [],
+    "cause_quote": null,
+    "cause_attributed_by": null,
+    "cause_who": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     3.47047,
+     6.441399
+    ]
+   },
+   "properties": {
+    "id": "ev-065",
+    "kind": "news_report",
+    "source_id": "newsghana-2011",
+    "source_url": "https://www.newsghana.com.gh/lagos-to-experience-week-long-rainfall/",
+    "publisher": "News Ghana / Daily Times",
+    "published_at": "2012-06-24T11:31:26+00:00",
+    "observed_at": "2011-07-10T12:00:00+01:00",
+    "time_confidence": "day",
+    "location_name": "Lekki",
+    "location_confidence": "lga",
+    "geocode_method": "nominatim:Lekki, Lagos",
+    "claim": "Recall of 10 July 2011: houses in Lekki heavily flooded.",
+    "depth_note": null,
+    "quote": "houses in places such as Ogba, Agege, Lekki, and others, were heavily flooded",
+    "verified": false,
+    "read_status": "read",
+    "quote_check": "not verifiable (publisher blocks automated access / API requires approval)",
+    "causes": [],
+    "cause_quote": null,
+    "cause_attributed_by": null,
+    "cause_who": null
+   }
+  }
+ ]
+}

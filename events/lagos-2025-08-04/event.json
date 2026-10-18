@@ -1,0 +1,106 @@
+{
+  "id": "lagos-2025-08-04",
+  "name": "Lagos Flood Aug 2025",
+  "timezone": "Africa/Lagos",
+  "window": {
+    "start": "2025-07-28T00:00:00+01:00",
+    "end": "2025-08-11T00:00:00+01:00"
+  },
+  "focus": {
+    "start": "2025-08-03T12:00:00+01:00",
+    "end": "2025-08-05T12:00:00+01:00"
+  },
+  "aoi": {
+    "name": "Lagos metropolitan",
+    "bbox": [
+      2.7,
+      6.38,
+      4.35,
+      6.75
+    ],
+    "points": {
+      "lekki": [
+        3.52,
+        6.44
+      ],
+      "lagos_island": [
+        3.4,
+        6.45
+      ],
+      "ikeja": [
+        3.35,
+        6.6
+      ],
+      "ibeju_lekki": [
+        3.95,
+        6.47
+      ],
+      "apapa": [
+        3.35,
+        6.45
+      ],
+      "offshore_tide": [
+        3.52,
+        6.4
+      ],
+      "ikorodu": [
+        3.5,
+        6.62
+      ]
+    }
+  },
+  "cause_prelim": "~13 h of overnight rain (19:30 3 Aug → ~08:30 4 Aug) on dry ground (7–13 mm prior week); AOI mean peak 7.9 mm/h at 01:30, cells to 31 mm/h; 120–160 mm over Lekki/Lagos Island/Ikorodu. The 01:30 peak coincided with a weak high tide (0.10 m) — little tidal contribution. Duration matches Wahab's '12 hours' (IMERG + EOT20)",
+  "open_questions": [
+    "ClimaMeter's 191 deaths is unverified against Nigerian reporting — not used",
+    "Only Sentinel-1 pass (S1A, 3 Aug 06:30) is ~13 h before the rain — usable only as a dry 'before' image",
+    "Ijede/Ikorodu flooding may involve lagoon backwater from the Lagos Lagoon's north shore — not modelled",
+    "Media evidence: 16 of 22 quotes unverifiable (Guardian NG / Channels TV block automated checks)"
+  ],
+  "key_events": [
+    {
+      "id": "rain-onset",
+      "name": "Rain begins, east (Epe/Lekki) moving west (IMERG)",
+      "time": "2025-08-03T19:30:00+01:00",
+      "time_confidence": "approx",
+      "source": "imerg"
+    },
+    {
+      "id": "core-1",
+      "name": "Peak: 31 mm/h over Lekki, AOI mean 7.9 mm/h (IMERG)",
+      "time": "2025-08-04T01:30:00+01:00",
+      "time_confidence": "exact",
+      "source": "imerg"
+    },
+    {
+      "id": "core-2",
+      "name": "Second core 30 mm/h, east Lagos Lagoon (IMERG)",
+      "time": "2025-08-04T05:00:00+01:00",
+      "time_confidence": "exact",
+      "source": "imerg"
+    },
+    {
+      "id": "rain-end",
+      "name": "Rain eases below 3 mm/h AOI mean (IMERG)",
+      "time": "2025-08-04T08:30:00+01:00",
+      "time_confidence": "approx",
+      "source": "imerg"
+    },
+    {
+      "id": "wahab",
+      "name": "Wahab: 12 hours of intense rainfall, more expected",
+      "time": "2025-08-04T12:00:00+01:00",
+      "time_confidence": "day",
+      "source": "punch-2025-08-04"
+    }
+  ],
+  "sources": {
+    "punch-2025-08-04": "https://punchng.com/lagos-urges-calm-as-heavy-rainfall-persists/",
+    "osu-2025-09-29": "https://oia.osu.edu/news/2025/09/29/documenting-floods-and-building-resilience-lagos",
+    "vanguard-x-2025-08-04": "https://x.com/vanguardngrnews/status/1952406403252924608",
+    "punch-2025-08-12": "https://punchng.com/lasg-blames-blocked-waterway-for-ikorodu-flooding/",
+    "guardian-2025-08-05": "https://guardian.ng/news/nigeria/metro/ajah-ijede-lekki-others-submerged-after-downpour-in-lagos/",
+    "channelstv-2025-08-04": "https://www.channelstv.com/2025/08/04/lagos-communities-flooded-vehicles-submerged-after-marathon-rainfall/",
+    "vanguard-2025-08-30": "https://www.vanguardngr.com/2025/08/ijede-ikorodu-flood-victims-get-relief-materials/",
+    "guardian-2025-08-08": "https://guardian.ng/news/nigeria/metro/lasg-officials-inspect-ikorodu-drainage-project-allay-residents-fear-on-flash-flooding/"
+  }
+}

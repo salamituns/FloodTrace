@@ -1,0 +1,5775 @@
+{
+ "meta": {
+  "generated": "2026-10-17T23:46:51Z",
+  "task": "18 - dated before/after imagery and OSM context for the blamed drainage sites",
+  "attribution": "Esri World Imagery Wayback; imagery (c) Esri, Maxar, Earthstar Geographics and the GIS User Community",
+  "imagery": {
+   "service": "Esri World Imagery Wayback (public, no login)",
+   "releases_config": "https://s3-us-west-2.amazonaws.com/config.maptiles.arcgis.com/waybackconfig.json",
+   "tile_url_pattern": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/{release}/{z}/{y}/{x}",
+   "release_vs_acquisition": "release date != acquisition date; for every release the release's own metadata layer was queried (identify) at the site point to get the real acquisition date (SRC_DATE), source and resolution of the raster drawn at the chip zoom; releases deduped by acquisition date",
+   "chip": "point: 500 x 500 m; line: bbox + 150 m; JPEG q85; marked copy = site geometry drawn as a thin outline. Point chips and station detail chips are native z18 (17 or lower when tiles are missing). Whole-corridor chips for lines are rendered at the highest zoom that fits 1200 px and downscaled to that cap, so long corridors are layout-level overviews; lines whose bbox + pad exceeds 1400 m additionally get native-z18 500 x 500 m detail chips at their start/mid/end stations, on the anchor dates only",
+   "dates_selected": "every distinct acquisition date up to 10 per site: the closest date either side of the event date and of each image_windows bound, then an even spread",
+   "cloud_note": "'brightness' is a cloud/haze heuristic (fraction of near-white pixels), not an interpretation"
+  },
+  "osm": {
+   "source": "OpenStreetMap via Overpass, current data (not historical)",
+   "licence": "ODbL (OpenStreetMap contributors)",
+   "radius_m": 300.0,
+   "setback_note": "building count/area within 5/10/20 m of a mapped waterway is a setback proxy, NOT the legal setback"
+  }
+ },
+ "sites": [
+  {
+   "site_id": "agric-bridge",
+   "site_source": "events/drainage_sites.json",
+   "event_id": "lagos-2025-08-04",
+   "event_date": "2025-08-04",
+   "claim": "Bridge construction at Agric, Ikorodu.",
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      3.48551,
+      6.62583
+     ],
+     [
+      3.48365,
+      6.62893
+     ],
+     [
+      3.48229,
+      6.63553
+     ]
+    ]
+   },
+   "query_point": [
+    3.483335,
+    6.63046
+   ],
+   "image_windows": {
+    "before": [
+     "2019-08-01",
+     "2020-12-31"
+    ],
+    "after": [
+     "2025-08-04",
+     "2026-09-30"
+    ]
+   },
+   "gaps": [
+    "1999-01-15: tiles missing at z17; corridor chip rendered at z13 (19.3 m/px)",
+    "no tiles at z17-z12 for acquisition 2010-02-06 in any release carrying it",
+    "no imagery on or after the event 2025-08-04 (latest acquisition 2025-04-30)"
+   ],
+   "chip_window": "line bbox + 150 m (656 x 1373 m)",
+   "n_releases_checked": 197,
+   "release_metadata_issues": null,
+   "n_distinct_acq_dates": 7,
+   "all_acq_dates": [
+    {
+     "acq_date": "1999-01-15",
+     "first_release": 10,
+     "first_release_date": "2014-02-20",
+     "n_releases_carrying_it": 55
+    },
+    {
+     "acq_date": "2010-02-06",
+     "first_release": 239,
+     "first_release_date": "2018-11-07",
+     "n_releases_carrying_it": 18
+    },
+    {
+     "acq_date": "2013-01-01",
+     "first_release": 784,
+     "first_release_date": "2017-03-15",
+     "n_releases_carrying_it": 28
+    },
+    {
+     "acq_date": "2015-12-08",
+     "first_release": 2168,
+     "first_release_date": "2018-09-06",
+     "n_releases_carrying_it": 3
+    },
+    {
+     "acq_date": "2018-12-24",
+     "first_release": 119,
+     "first_release_date": "2019-12-12",
+     "n_releases_carrying_it": 40
+    },
+    {
+     "acq_date": "2020-01-03",
+     "first_release": 1034,
+     "first_release_date": "2022-06-08",
+     "n_releases_carrying_it": 43
+    },
+    {
+     "acq_date": "2025-04-30",
+     "first_release": 10842,
+     "first_release_date": "2025-11-20",
+     "n_releases_carrying_it": 10
+    }
+   ],
+   "selected_dates": [
+    "1999-01-15",
+    "2010-02-06",
+    "2013-01-01",
+    "2015-12-08",
+    "2018-12-24",
+    "2020-01-03",
+    "2025-04-30"
+   ],
+   "corridor_zoom": 17,
+   "images": [
+    {
+     "acq_date": "1999-01-15",
+     "release": 10,
+     "release_date": "2014-02-20",
+     "first_release": 10,
+     "n_releases_carrying_date": 55,
+     "source": "Terracolor / TerraColor / Earthstar Geographics",
+     "sensor": "Terracolor",
+     "resolution_m": 15.0,
+     "zoom": 13,
+     "gsd_m": 19.3,
+     "size_px": [
+      34,
+      72
+     ],
+     "downscaled_from_px": null,
+     "chip_window": "line bbox + 150 m (656 x 1373 m)",
+     "file": "events/drainage_sites/agric-bridge/1999-01-15.jpg",
+     "marked_file": "events/drainage_sites/agric-bridge/1999-01-15_marked.jpg",
+     "brightness": {
+      "mean_luminance": 0.452,
+      "bright_frac": 0.0
+     },
+     "detail_chips": [],
+     "label": "1999-01-15 z13 Terracolor 15m"
+    },
+    {
+     "acq_date": "2013-01-01",
+     "release": 29387,
+     "release_date": "2017-03-15",
+     "first_release": 784,
+     "n_releases_carrying_date": 28,
+     "source": "GE01 / Vivid - Africa / DigitalGlobe",
+     "sensor": "GE01",
+     "resolution_m": 0.46,
+     "zoom": 17,
+     "gsd_m": 1.19,
+     "size_px": [
+      553,
+      1165
+     ],
+     "downscaled_from_px": null,
+     "chip_window": "line bbox + 150 m (656 x 1373 m)",
+     "file": "events/drainage_sites/agric-bridge/2013-01-01.jpg",
+     "marked_file": "events/drainage_sites/agric-bridge/2013-01-01_marked.jpg",
+     "brightness": {
+      "mean_luminance": 0.389,
+      "bright_frac": 0.0
+     },
+     "detail_chips": [],
+     "label": "2013-01-01 z17 GE01 0.46m"
+    },
+    {
+     "acq_date": "2015-12-08",
+     "release": 2168,
+     "release_date": "2018-09-06",
+     "first_release": 2168,
+     "n_releases_carrying_date": 3,
+     "source": "WV02 / Vivid / DigitalGlobe",
+     "sensor": "WV02",
+     "resolution_m": 0.5,
+     "zoom": 17,
+     "gsd_m": 1.19,
+     "size_px": [
+      553,
+      1165
+     ],
+     "downscaled_from_px": null,
+     "chip_window": "line bbox + 150 m (656 x 1373 m)",
+     "file": "events/drainage_sites/agric-bridge/2015-12-08.jpg",
+     "marked_file": "events/drainage_sites/agric-bridge/2015-12-08_marked.jpg",
+     "brightness": {
+      "mean_luminance": 0.448,
+      "bright_frac": 0.0
+     },
+     "detail_chips": [],
+     "label": "2015-12-08 z17 WV02 0.5m"
+    },
+    {
+     "acq_date": "2018-12-24",
+     "release": 4756,
+     "release_date": "2019-12-12",
+     "first_release": 119,
+     "n_releases_carrying_date": 40,
+     "source": "WV04 / Metro / DigitalGlobe",
+     "sensor": "WV04",
+     "resolution_m": 0.31,
+     "zoom": 17,
+     "gsd_m": 1.19,
+     "size_px": [
+      553,
+      1165
+     ],
+     "downscaled_from_px": null,
+     "chip_window": "line bbox + 150 m (656 x 1373 m)",
+     "file": "events/drainage_sites/agric-bridge/2018-12-24.jpg",
+     "marked_file": "events/drainage_sites/agric-bridge/2018-12-24_marked.jpg",
+     "brightness": {
+      "mean_luminance": 0.602,
+      "bright_frac": 0.0
+     },
+     "detail_chips": [],
+     "label": "2018-12-24 z17 WV04 0.31m"
+    },
+    {
+     "acq_date": "2020-01-03",
+     "release": 44710,
+     "release_date": "2022-06-08",
+     "first_release": 1034,
+     "n_releases_carrying_date": 43,
+     "source": "WV03 / Vivid Advanced / Maxar",
+     "sensor": "WV03",
+     "resolution_m": 0.31,
+     "zoom": 17,
+     "gsd_m": 1.19,
+     "size_px": [
+      553,
+      1165
+     ],
+     "downscaled_from_px": null,
+     "chip_window": "line bbox + 150 m (656 x 1373 m)",
+     "file": "events/drainage_sites/agric-bridge/2020-01-03.jpg",
+     "marked_file": "events/drainage_sites/agric-bridge/2020-01-03_marked.jpg",
+     "brightness": {
+      "mean_luminance": 0.483,
+      "bright_frac": 0.0
+     },
+     "detail_chips": [],
+     "label": "2020-01-03 z17 WV03 0.31m"
+    },
+    {
+     "acq_date": "2025-04-30",
+     "release": 51127,
+     "release_date": "2025-11-20",
+     "first_release": 10842,
+     "n_releases_carrying_date": 10,
+     "source": "LG01 / Vivid Advanced / Vantor",
+     "sensor": "LG01",
+     "resolution_m": 0.34,
+     "zoom": 17,
+     "gsd_m": 1.19,
+     "size_px": [
+      553,
+      1165
+     ],
+     "downscaled_from_px": null,
+     "chip_window": "line bbox + 150 m (656 x 1373 m)",
+     "file": "events/drainage_sites/agric-bridge/2025-04-30.jpg",
+     "marked_file": "events/drainage_sites/agric-bridge/2025-04-30_marked.jpg",
+     "brightness": {
+      "mean_luminance": 0.466,
+      "bright_frac": 0.001
+     },
+     "detail_chips": [],
+     "label": "2025-04-30 z17 LG01 0.34m"
+    }
+   ],
+   "contact_sheet": "events/drainage_sites/agric-bridge/contact_sheet.jpg",
+   "osm": {
+    "source": "OpenStreetMap via Overpass (current data, not historical)",
+    "licence": "ODbL (OpenStreetMap contributors)",
+    "radius_m": 300.0,
+    "overpass_queries_used": 1,
+    "n_ways_fetched": 2658,
+    "geojson_building_note": null,
+    "drain_length_m": 64.7,
+    "drain_length_by_type_m": {
+     "drain": 64.7
+    },
+    "n_waterway_ways": 1,
+    "n_waterway_ways_with_culvert_tag": 0,
+    "n_other_culvert_tagged_ways": 0,
+    "buildings": {
+     "n": 1456,
+     "area_m2": 237193.3
+    },
+    "buildings_within_5m": {
+     "n": 0,
+     "area_m2": 0
+    },
+    "buildings_within_10m": {
+     "n": 0,
+     "area_m2": 0
+    },
+    "buildings_within_20m": {
+     "n": 2,
+     "area_m2": 194.6
+    },
+    "setback_proxy_note": "Distance of a building footprint to a mapped waterway (drain/canal/stream/river/ditch) within 300 m of the site.  This is a setback proxy, NOT the legal setback; drains not mapped in OSM are invisible to it.",
+    "bridges": [
+     {
+      "name": null,
+      "highway": "footway",
+      "bridge": "yes",
+      "construction": null,
+      "building": null
+     },
+     {
+      "name": null,
+      "highway": "footway",
+      "bridge": "yes",
+      "construction": null,
+      "building": null
+     },
+     {
+      "name": null,
+      "highway": "footway",
+      "bridge": "yes",
+      "construction": null,
+      "building": null
+     }
+    ],
+    "construction_ways": [],
+    "geojson": "events/drainage_sites/agric-bridge/osm.geojson"
+   }
+  },
+  {
+   "site_id": "agungi-collector",
+   "site_source": "events/drainage_sites.json",
+   "event_id": "lagos-2024-07-03",
+   "event_date": "2024-07-03",
+   "claim": "Collector too small; Agungi road development outgrew the drainage.",
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      3.5163,
+      6.43829
+     ],
+     [
+      3.51604,
+      6.4422
+     ],
+     [
+      3.51712,
+      6.446
+     ],
+     [
+      3.51883,
+      6.44871
+     ],
+     [
+      3.52071,
+      6.45562
+     ]
+    ]
+   },
+   "query_point": [
+    3.517786,
+    6.447056
+   ],
+   "image_windows": {
+    "before": [
+     "2021-06-01",
+     "2024-05-31"
+    ],
+    "after": [
+     "2024-06-27",
+     "2025-01-31"
+    ]
+   },
+   "gaps": [
+    "no imagery within a year before the event (nearest 2020-04-05, 1550 days before)"
+   ],
+   "chip_window": "line bbox + 150 m (817 x 2216 m)",
+   "n_releases_checked": 197,
+   "release_metadata_issues": null,
+   "n_distinct_acq_dates": 6,
+   "all_acq_dates": [
+    {
+     "acq_date": "2010-02-06",
+     "first_release": 10,
+     "first_release_date": "2014-02-20",
+     "n_releases_carrying_it": 73
+    },
+    {
+     "acq_date": "2013-01-01",
+     "first_release": 784,
+     "first_release_date": "2017-03-15",
+     "n_releases_carrying_it": 28
+    },
+    {
+     "acq_date": "2015-12-08",
+     "first_release": 2168,
+     "first_release_date": "2018-09-06",
+     "n_releases_carrying_it": 3
+    },
+    {
+     "acq_date": "2018-12-24",
+     "first_release": 119,
+     "first_release_date": "2019-12-12",
+     "n_releases_carrying_it": 40
+    },
+    {
+     "acq_date": "2020-04-05",
+     "first_release": 1034,
+     "first_release_date": "2022-06-08",
+     "n_releases_carrying_it": 43
+    },
+    {
+     "acq_date": "2024-11-30",
+     "first_release": 10842,
+     "first_release_date": "2025-11-20",
+     "n_releases_carrying_it": 10
+    }
+   ],
+   "selected_dates": [
+    "2010-02-06",
+    "2013-01-01",
+    "2015-12-08",
+    "2018-12-24",
+    "2020-04-05",
+    "2024-11-30"
+   ],
+   "corridor_zoom": 16,
+   "stations": [
+    {
+     "name": "start",
+     "lon": 3.5163,
+     "lat": 6.43829
+    },
+    {
+     "name": "mid",
+     "lon": 3.517786,
+     "lat": 6.447056
+    },
+    {
+     "name": "end",
+     "lon": 3.52071,
+     "lat": 6.45562
+    }
+   ],
+   "station_note": "line bbox + pad > 1400 m: native-z18 500 x 500 m detail chips at the start/mid/end stations on the anchor dates (nearest date either side of the event and of each image_windows bound), plus the whole-corridor chip per date",
+   "images": [
+    {
+     "acq_date": "2010-02-06",
+     "release": 10,
+     "release_date": "2014-02-20",
+     "first_release": 10,
+     "n_releases_carrying_date": 73,
+     "source": "WV02 / DigitalGlobe",
+     "sensor": "WV02",
+     "resolution_m": 0.5,
+     "zoom": 16,
+     "gsd_m": 2.37,
+     "size_px": [
+      344,
+      940
+     ],
+     "downscaled_from_px": null,
+     "chip_window": "line bbox + 150 m (817 x 2216 m)",
+     "file": "events/drainage_sites/agungi-collector/2010-02-06.jpg",
+     "marked_file": "events/drainage_sites/agungi-collector/2010-02-06_marked.jpg",
+     "brightness": {
+      "mean_luminance": 0.352,
+      "bright_frac": 0.0
+     },
+     "detail_chips": [],
+     "label": "2010-02-06 z16 WV02 0.5m"
+    },
+    {
+     "acq_date": "2013-01-01",
+     "release": 29387,
+     "release_date": "2017-03-15",
+     "first_release": 784,
+     "n_releases_carrying_date": 28,
+     "source": "GE01 / Vivid - Africa / DigitalGlobe",
+     "sensor": "GE01",
+     "resolution_m": 0.46,
+     "zoom": 16,
+     "gsd_m": 2.37,
+     "size_px": [
+      344,
+      940
+     ],
+     "downscaled_from_px": null,
+     "chip_window": "line bbox + 150 m (817 x 2216 m)",
+     "file": "events/drainage_sites/agungi-collector/2013-01-01.jpg",
+     "marked_file": "events/drainage_sites/agungi-collector/2013-01-01_marked.jpg",
+     "brightness": {
+      "mean_luminance": 0.416,
+      "bright_frac": 0.0
+     },
+     "detail_chips": [],
+     "label": "2013-01-01 z16 GE01 0.46m"
+    },
+    {
+     "acq_date": "2015-12-08",
+     "release": 2168,
+     "release_date": "2018-09-06",
+     "first_release": 2168,
+     "n_releases_carrying_date": 3,
+     "source": "WV02 / Vivid / DigitalGlobe",
+     "sensor": "WV02",
+     "resolution_m": 0.5,
+     "zoom": 16,
+     "gsd_m": 2.37,
+     "size_px": [
+      344,
+      940
+     ],
+     "downscaled_from_px": null,
+     "chip_window": "line bbox + 150 m (817 x 2216 m)",
+     "file": "events/drainage_sites/agungi-collector/2015-12-08.jpg",
+     "marked_file": "events/drainage_sites/agungi-collector/2015-12-08_marked.jpg",
+     "brightness": {
+      "mean_luminance": 0.433,
+      "bright_frac": 0.001
+     },
+     "detail_chips": [],
+     "label": "2015-12-08 z16 WV02 0.5m"
+    },
+    {
+     "acq_date": "2018-12-24",
+     "release": 4756,
+     "release_date": "2019-12-12",
+     "first_release": 119,
+     "n_releases_carrying_date": 40,
+     "source": "WV04 / Metro / DigitalGlobe",
+     "sensor": "WV04",
+     "resolution_m": 0.31,
+     "zoom": 16,
+     "gsd_m": 2.37,
+     "size_px": [
+      344,
+      940
+     ],
+     "downscaled_from_px": null,
+     "chip_window": "line bbox + 150 m (817 x 2216 m)",
+     "file": "events/drainage_sites/agungi-collector/2018-12-24.jpg",
+     "marked_file": "events/drainage_sites/agungi-collector/2018-12-24_marked.jpg",
+     "brightness": {
+      "mean_luminance": 0.647,
+      "bright_frac": 0.0
+     },
+     "detail_chips": [],
+     "label": "2018-12-24 z16 WV04 0.31m"
+    },
+    {
+     "acq_date": "2020-04-05",
+     "release": 44710,
+     "release_date": "2022-06-08",
+     "first_release": 1034,
+     "n_releases_carrying_date": 43,
+     "source": "WV02 / Vivid Advanced / Maxar",
+     "sensor": "WV02",
+     "resolution_m": 0.5,
+     "zoom": 16,
+     "gsd_m": 2.37,
+     "size_px": [
+      344,
+      940
+     ],
+     "downscaled_from_px": null,
+     "chip_window": "line bbox + 150 m (817 x 2216 m)",
+     "file": "events/drainage_sites/agungi-collector/2020-04-05.jpg",
+     "marked_file": "events/drainage_sites/agungi-collector/2020-04-05_marked.jpg",
+     "brightness": {
+      "mean_luminance": 0.483,
+      "bright_frac": 0.007
+     },
+     "detail_chips": [
+      {
+       "station": "start",
+       "lon": 3.5163,
+       "lat": 6.43829,
+       "zoom": 18,
+       "gsd_m": 0.59,
+       "size_px": [
+        842,
+        848
+       ],
+       "file": "events/drainage_sites/agungi-collector/2020-04-05_detail1.jpg",
+       "marked_file": "events/drainage_sites/agungi-collector/2020-04-05_detail1_marked.jpg"
+      },
+      {
+       "station": "mid",
+       "lon": 3.517786,
+       "lat": 6.447056,
+       "zoom": 18,
+       "gsd_m": 0.59,
+       "size_px": [
+        842,
+        849
+       ],
+       "file": "events/drainage_sites/agungi-collector/2020-04-05_detail2.jpg",
+       "marked_file": "events/drainage_sites/agungi-collector/2020-04-05_detail2_marked.jpg"
+      },
+      {
+       "station": "end",
+       "lon": 3.52071,
+       "lat": 6.45562,
+       "zoom": 18,
+       "gsd_m": 0.59,
+       "size_px": [
+        842,
+        848
+       ],
+       "file": "events/drainage_sites/agungi-collector/2020-04-05_detail3.jpg",
+       "marked_file": "events/drainage_sites/agungi-collector/2020-04-05_detail3_marked.jpg"
+      }
+     ],
+     "label": "2020-04-05 z16 WV02 0.5m"
+    },
+    {
+     "acq_date": "2024-11-30",
+     "release": 51127,
+     "release_date": "2025-11-20",
+     "first_release": 10842,
+     "n_releases_carrying_date": 10,
+     "source": "WV03 / Vivid Advanced / Vantor",
+     "sensor": "WV03",
+     "resolution_m": 0.31,
+     "zoom": 16,
+     "gsd_m": 2.37,
+     "size_px": [
+      344,
+      940
+     ],
+     "downscaled_from_px": null,
+     "chip_window": "line bbox + 150 m (817 x 2216 m)",
+     "file": "events/drainage_sites/agungi-collector/2024-11-30.jpg",
+     "marked_file": "events/drainage_sites/agungi-collector/2024-11-30_marked.jpg",
+     "brightness": {
+      "mean_luminance": 0.484,
+      "bright_frac": 0.014
+     },
+     "detail_chips": [
+      {
+       "station": "start",
+       "lon": 3.5163,
+       "lat": 6.43829,
+       "zoom": 18,
+       "gsd_m": 0.59,
+       "size_px": [
+        842,
+        848
+       ],
+       "file": "events/drainage_sites/agungi-collector/2024-11-30_detail1.jpg",
+       "marked_file": "events/drainage_sites/agungi-collector/2024-11-30_detail1_marked.jpg"
+      },
+      {
+       "station": "mid",
+       "lon": 3.517786,
+       "lat": 6.447056,
+       "zoom": 18,
+       "gsd_m": 0.59,
+       "size_px": [
+        842,
+        849
+       ],
+       "file": "events/drainage_sites/agungi-collector/2024-11-30_detail2.jpg",
+       "marked_file": "events/drainage_sites/agungi-collector/2024-11-30_detail2_marked.jpg"
+      },
+      {
+       "station": "end",
+       "lon": 3.52071,
+       "lat": 6.45562,
+       "zoom": 18,
+       "gsd_m": 0.59,
+       "size_px": [
+        842,
+        848
+       ],
+       "file": "events/drainage_sites/agungi-collector/2024-11-30_detail3.jpg",
+       "marked_file": "events/drainage_sites/agungi-collector/2024-11-30_detail3_marked.jpg"
+      }
+     ],
+     "label": "2024-11-30 z16 WV03 0.31m"
+    }
+   ],
+   "contact_sheet": "events/drainage_sites/agungi-collector/contact_sheet.jpg",
+   "osm": {
+    "source": "OpenStreetMap via Overpass (current data, not historical)",
+    "licence": "ODbL (OpenStreetMap contributors)",
+    "radius_m": 300.0,
+    "overpass_queries_used": 1,
+    "n_ways_fetched": 3422,
+    "geojson_building_note": null,
+    "drain_length_m": 1809.8,
+    "drain_length_by_type_m": {
+     "drain": 1809.8
+    },
+    "n_waterway_ways": 4,
+    "n_waterway_ways_with_culvert_tag": 1,
+    "n_other_culvert_tagged_ways": 0,
+    "buildings": {
+     "n": 1860,
+     "area_m2": 409885.5
+    },
+    "buildings_within_5m": {
+     "n": 9,
+     "area_m2": 1129.8
+    },
+    "buildings_within_10m": {
+     "n": 31,
+     "area_m2": 6535.7
+    },
+    "buildings_within_20m": {
+     "n": 74,
+     "area_m2": 16888.9
+    },
+    "setback_proxy_note": "Distance of a building footprint to a mapped waterway (drain/canal/stream/river/ditch) within 300 m of the site.  This is a setback proxy, NOT the legal setback; drains not mapped in OSM are invisible to it.",
+    "bridges": [
+     {
+      "name": null,
+      "highway": "tertiary",
+      "bridge": "yes",
+      "construction": null,
+      "building": null
+     },
+     {
+      "name": null,
+      "highway": "footway",
+      "bridge": "yes",
+      "construction": null,
+      "building": null
+     },
+     {
+      "name": "Agungi Ajiran Road",
+      "highway": "tertiary",
+      "bridge": "yes",
+      "construction": null,
+      "building": null
+     },
+     {
+      "name": null,
+      "highway": "residential",
+      "bridge": "yes",
+      "construction": null,
+      "building": null
+     },
+     {
+      "name": null,
+      "highway": "residential",
+      "bridge": "yes",
+      "construction": null,
+      "building": null
+     },
+     {
+      "name": null,
+      "highway": "residential",
+      "bridge": "yes",
+      "construction": null,
+      "building": null
+     }
+    ],
+    "construction_ways": [
+     {
+      "name": "Lekki Regional Road",
+      "highway": "construction",
+      "bridge": null,
+      "construction": "motorway",
+      "building": null
+     }
+    ],
+    "geojson": "events/drainage_sites/agungi-collector/osm.geojson"
+   }
+  },
+  {
+   "site_id": "alapere-ogudu",
+   "site_source": "events/drainage_sites.json",
+   "event_id": "lagos-2021-07-16",
+   "event_date": "2021-07-16",
+   "claim": "Construction at Alapere inwards Ogudu Car Wash.",
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      3.392,
+      6.592
+     ],
+     [
+      3.38851,
+      6.57772
+     ],
+     [
+      3.39547,
+      6.57317
+     ]
+    ]
+   },
+   "query_point": [
+    3.389268,
+    6.580821
+   ],
+   "image_windows": {
+    "before": [
+     "2018-07-01",
+     "2021-01-31"
+    ],
+    "after": [
+     "2021-07-16",
+     "2022-01-16"
+    ]
+   },
+   "gaps": [
+    "no tiles at z16-z12 for acquisition 2010-02-06 in any release carrying it",
+    "no imagery within a year after the event (nearest 2025-05-15, 1399 days after)"
+   ],
+   "chip_window": "line bbox + 150 m (1070 x 2382 m)",
+   "n_releases_checked": 197,
+   "release_metadata_issues": null,
+   "n_distinct_acq_dates": 7,
+   "all_acq_dates": [
+    {
+     "acq_date": "2010-02-06",
+     "first_release": 239,
+     "first_release_date": "2018-11-07",
+     "n_releases_carrying_it": 18
+    },
+    {
+     "acq_date": "2012-05-01",
+     "first_release": 10,
+     "first_release_date": "2014-02-20",
+     "n_releases_carrying_it": 55
+    },
+    {
+     "acq_date": "2012-12-23",
+     "first_release": 784,
+     "first_release_date": "2017-03-15",
+     "n_releases_carrying_it": 28
+    },
+    {
+     "acq_date": "2015-12-08",
+     "first_release": 2168,
+     "first_release_date": "2018-09-06",
+     "n_releases_carrying_it": 3
+    },
+    {
+     "acq_date": "2018-12-28",
+     "first_release": 119,
+     "first_release_date": "2019-12-12",
+     "n_releases_carrying_it": 40
+    },
+    {
+     "acq_date": "2021-05-23",
+     "first_release": 1034,
+     "first_release_date": "2022-06-08",
+     "n_releases_carrying_it": 43
+    },
+    {
+     "acq_date": "2025-05-15",
+     "first_release": 10842,
+     "first_release_date": "2025-11-20",
+     "n_releases_carrying_it": 10
+    }
+   ],
+   "selected_dates": [
+    "2010-02-06",
+    "2012-05-01",
+    "2012-12-23",
+    "2015-12-08",
+    "2018-12-28",
+    "2021-05-23",
+    "2025-05-15"
+   ],
+   "corridor_zoom": 16,
+   "stations": [
+    {
+     "name": "start",
+     "lon": 3.392,
+     "lat": 6.592
+    },
+    {
+     "name": "mid",
+     "lon": 3.389268,
+     "lat": 6.580821
+    },
+    {
+     "name": "end",
+     "lon": 3.39547,
+     "lat": 6.57317
+    }
+   ],
+   "station_note": "line bbox + pad > 1400 m: native-z18 500 x 500 m detail chips at the start/mid/end stations on the anchor dates (nearest date either side of the event and of each image_windows bound), plus the whole-corridor chip per date",
+   "images": [
+    {
+     "acq_date": "2012-05-01",
+     "release": 10,
+     "release_date": "2014-02-20",
+     "first_release": 10,
+     "n_releases_carrying_date": 55,
+     "source": "WV02 / DigitalGlobe",
+     "sensor": "WV02",
+     "resolution_m": 0.5,
+     "zoom": 16,
+     "gsd_m": 2.37,
+     "size_px": [
+      451,
+      1011
+     ],
+     "downscaled_from_px": null,
+     "chip_window": "line bbox + 150 m (1070 x 2382 m)",
+     "file": "events/drainage_sites/alapere-ogudu/2012-05-01.jpg",
+     "marked_file": "events/drainage_sites/alapere-ogudu/2012-05-01_marked.jpg",
+     "brightness": {
+      "mean_luminance": 0.544,
+      "bright_frac": 0.035
+     },
+     "detail_chips": [],
+     "label": "2012-05-01 z16 WV02 0.5m"
+    },
+    {
+     "acq_date": "2012-12-23",
+     "release": 29387,
+     "release_date": "2017-03-15",
+     "first_release": 784,
+     "n_releases_carrying_date": 28,
+     "source": "WV02 / Vivid - Africa / DigitalGlobe",
+     "sensor": "WV02",
+     "resolution_m": 0.5,
+     "zoom": 16,
+     "gsd_m": 2.37,
+     "size_px": [
+      451,
+      1011
+     ],
+     "downscaled_from_px": null,
+     "chip_window": "line bbox + 150 m (1070 x 2382 m)",
+     "file": "events/drainage_sites/alapere-ogudu/2012-12-23.jpg",
+     "marked_file": "events/drainage_sites/alapere-ogudu/2012-12-23_marked.jpg",
+     "brightness": {
+      "mean_luminance": 0.354,
+      "bright_frac": 0.0
+     },
+     "detail_chips": [],
+     "label": "2012-12-23 z16 WV02 0.5m"
+    },
+    {
+     "acq_date": "2015-12-08",
+     "release": 2168,
+     "release_date": "2018-09-06",
+     "first_release": 2168,
+     "n_releases_carrying_date": 3,
+     "source": "WV02 / Vivid / DigitalGlobe",
+     "sensor": "WV02",
+     "resolution_m": 0.5,
+     "zoom": 16,
+     "gsd_m": 2.37,
+     "size_px": [
+      451,
+      1011
+     ],
+     "downscaled_from_px": null,
+     "chip_window": "line bbox + 150 m (1070 x 2382 m)",
+     "file": "events/drainage_sites/alapere-ogudu/2015-12-08.jpg",
+     "marked_file": "events/drainage_sites/alapere-ogudu/2015-12-08_marked.jpg",
+     "brightness": {
+      "mean_luminance": 0.433,
+      "bright_frac": 0.001
+     },
+     "detail_chips": [
+      {
+       "station": "start",
+       "lon": 3.392,
+       "lat": 6.592,
+       "zoom": 17,
+       "gsd_m": 1.19,
+       "size_px": [
+        421,
+        424
+       ],
+       "file": "events/drainage_sites/alapere-ogudu/2015-12-08_detail1.jpg",
+       "marked_file": "events/drainage_sites/alapere-ogudu/2015-12-08_detail1_marked.jpg"
+      },
+      {
+       "station": "mid",
+       "lon": 3.389268,
+       "lat": 6.580821,
+       "zoom": 17,
+       "gsd_m": 1.19,
+       "size_px": [
+        421,
+        424
+       ],
+       "file": "events/drainage_sites/alapere-ogudu/2015-12-08_detail2.jpg",
+       "marked_file": "events/drainage_sites/alapere-ogudu/2015-12-08_detail2_marked.jpg"
+      },
+      {
+       "station": "end",
+       "lon": 3.39547,
+       "lat": 6.57317,
+       "zoom": 17,
+       "gsd_m": 1.19,
+       "size_px": [
+        421,
+        424
+       ],
+       "file": "events/drainage_sites/alapere-ogudu/2015-12-08_detail3.jpg",
+       "marked_file": "events/drainage_sites/alapere-ogudu/2015-12-08_detail3_marked.jpg"
+      }
+     ],
+     "label": "2015-12-08 z16 WV02 0.5m"
+    },
+    {
+     "acq_date": "2018-12-28",
+     "release": 4756,
+     "release_date": "2019-12-12",
+     "first_release": 119,
+     "n_releases_carrying_date": 40,
+     "source": "WV03_VNIR / Metro / DigitalGlobe",
+     "sensor": "WV03_VNIR",
+     "resolution_m": 0.31,
+     "zoom": 16,
+     "gsd_m": 2.37,
+     "size_px": [
+      451,
+      1011
+     ],
+     "downscaled_from_px": null,
+     "chip_window": "line bbox + 150 m (1070 x 2382 m)",
+     "file": "events/drainage_sites/alapere-ogudu/2018-12-28.jpg",
+     "marked_file": "events/drainage_sites/alapere-ogudu/2018-12-28_marked.jpg",
+     "brightness": {
+      "mean_luminance": 0.578,
+      "bright_frac": 0.0
+     },
+     "detail_chips": [
+      {
+       "station": "start",
+       "lon": 3.392,
+       "lat": 6.592,
+       "zoom": 18,
+       "gsd_m": 0.59,
+       "size_px": [
+        843,
+        848
+       ],
+       "file": "events/drainage_sites/alapere-ogudu/2018-12-28_detail1.jpg",
+       "marked_file": "events/drainage_sites/alapere-ogudu/2018-12-28_detail1_marked.jpg"
+      },
+      {
+       "station": "mid",
+       "lon": 3.389268,
+       "lat": 6.580821,
+       "zoom": 18,
+       "gsd_m": 0.59,
+       "size_px": [
+        843,
+        848
+       ],
+       "file": "events/drainage_sites/alapere-ogudu/2018-12-28_detail2.jpg",
+       "marked_file": "events/drainage_sites/alapere-ogudu/2018-12-28_detail2_marked.jpg"
+      },
+      {
+       "station": "end",
+       "lon": 3.39547,
+       "lat": 6.57317,
+       "zoom": 18,
+       "gsd_m": 0.59,
+       "size_px": [
+        843,
+        849
+       ],
+       "file": "events/drainage_sites/alapere-ogudu/2018-12-28_detail3.jpg",
+       "marked_file": "events/drainage_sites/alapere-ogudu/2018-12-28_detail3_marked.jpg"
+      }
+     ],
+     "label": "2018-12-28 z16 WV03_VNIR 0.31m"
+    },
+    {
+     "acq_date": "2021-05-23",
+     "release": 44710,
+     "release_date": "2022-06-08",
+     "first_release": 1034,
+     "n_releases_carrying_date": 43,
+     "source": "WV03 / Vivid Advanced / Maxar",
+     "sensor": "WV03",
+     "resolution_m": 0.31,
+     "zoom": 16,
+     "gsd_m": 2.37,
+     "size_px": [
+      451,
+      1011
+     ],
+     "downscaled_from_px": null,
+     "chip_window": "line bbox + 150 m (1070 x 2382 m)",
+     "file": "events/drainage_sites/alapere-ogudu/2021-05-23.jpg",
+     "marked_file": "events/drainage_sites/alapere-ogudu/2021-05-23_marked.jpg",
+     "brightness": {
+      "mean_luminance": 0.422,
+      "bright_frac": 0.002
+     },
+     "detail_chips": [
+      {
+       "station": "start",
+       "lon": 3.392,
+       "lat": 6.592,
+       "zoom": 18,
+       "gsd_m": 0.59,
+       "size_px": [
+        843,
+        848
+       ],
+       "file": "events/drainage_sites/alapere-ogudu/2021-05-23_detail1.jpg",
+       "marked_file": "events/drainage_sites/alapere-ogudu/2021-05-23_detail1_marked.jpg"
+      },
+      {
+       "station": "mid",
+       "lon": 3.389268,
+       "lat": 6.580821,
+       "zoom": 18,
+       "gsd_m": 0.59,
+       "size_px": [
+        843,
+        848
+       ],
+       "file": "events/drainage_sites/alapere-ogudu/2021-05-23_detail2.jpg",
+       "marked_file": "events/drainage_sites/alapere-ogudu/2021-05-23_detail2_marked.jpg"
+      },
+      {
+       "station": "end",
+       "lon": 3.39547,
+       "lat": 6.57317,
+       "zoom": 18,
+       "gsd_m": 0.59,
+       "size_px": [
+        843,
+        849
+       ],
+       "file": "events/drainage_sites/alapere-ogudu/2021-05-23_detail3.jpg",
+       "marked_file": "events/drainage_sites/alapere-ogudu/2021-05-23_detail3_marked.jpg"
+      }
+     ],
+     "label": "2021-05-23 z16 WV03 0.31m"
+    },
+    {
+     "acq_date": "2025-05-15",
+     "release": 51127,
+     "release_date": "2025-11-20",
+     "first_release": 10842,
+     "n_releases_carrying_date": 10,
+     "source": "LG04 / Vivid Advanced / Vantor",
+     "sensor": "LG04",
+     "resolution_m": 0.34,
+     "zoom": 16,
+     "gsd_m": 2.37,
+     "size_px": [
+      451,
+      1011
+     ],
+     "downscaled_from_px": null,
+     "chip_window": "line bbox + 150 m (1070 x 2382 m)",
+     "file": "events/drainage_sites/alapere-ogudu/2025-05-15.jpg",
+     "marked_file": "events/drainage_sites/alapere-ogudu/2025-05-15_marked.jpg",
+     "brightness": {
+      "mean_luminance": 0.431,
+      "bright_frac": 0.0
+     },
+     "detail_chips": [
+      {
+       "station": "start",
+       "lon": 3.392,
+       "lat": 6.592,
+       "zoom": 18,
+       "gsd_m": 0.59,
+       "size_px": [
+        843,
+        848
+       ],
+       "file": "events/drainage_sites/alapere-ogudu/2025-05-15_detail1.jpg",
+       "marked_file": "events/drainage_sites/alapere-ogudu/2025-05-15_detail1_marked.jpg"
+      },
+      {
+       "station": "mid",
+       "lon": 3.389268,
+       "lat": 6.580821,
+       "zoom": 18,
+       "gsd_m": 0.59,
+       "size_px": [
+        843,
+        848
+       ],
+       "file": "events/drainage_sites/alapere-ogudu/2025-05-15_detail2.jpg",
+       "marked_file": "events/drainage_sites/alapere-ogudu/2025-05-15_detail2_marked.jpg"
+      },
+      {
+       "station": "end",
+       "lon": 3.39547,
+       "lat": 6.57317,
+       "zoom": 18,
+       "gsd_m": 0.59,
+       "size_px": [
+        843,
+        849
+       ],
+       "file": "events/drainage_sites/alapere-ogudu/2025-05-15_detail3.jpg",
+       "marked_file": "events/drainage_sites/alapere-ogudu/2025-05-15_detail3_marked.jpg"
+      }
+     ],
+     "label": "2025-05-15 z16 LG04 0.34m"
+    }
+   ],
+   "contact_sheet": "events/drainage_sites/alapere-ogudu/contact_sheet.jpg",
+   "osm": {
+    "source": "OpenStreetMap via Overpass (current data, not historical)",
+    "licence": "ODbL (OpenStreetMap contributors)",
+    "radius_m": 300.0,
+    "overpass_queries_used": 1,
+    "n_ways_fetched": 2986,
+    "geojson_building_note": null,
+    "drain_length_m": 2871.9,
+    "drain_length_by_type_m": {
+     "stream": 1994.6,
+     "drain": 877.3
+    },
+    "n_waterway_ways": 4,
+    "n_waterway_ways_with_culvert_tag": 0,
+    "n_other_culvert_tagged_ways": 0,
+    "buildings": {
+     "n": 923,
+     "area_m2": 210761.8
+    },
+    "buildings_within_5m": {
+     "n": 14,
+     "area_m2": 2453.6
+    },
+    "buildings_within_10m": {
+     "n": 55,
+     "area_m2": 8253.4
+    },
+    "buildings_within_20m": {
+     "n": 141,
+     "area_m2": 22440.7
+    },
+    "setback_proxy_note": "Distance of a building footprint to a mapped waterway (drain/canal/stream/river/ditch) within 300 m of the site.  This is a setback proxy, NOT the legal setback; drains not mapped in OSM are invisible to it.",
+    "bridges": [
+     {
+      "name": "Agboyi Road",
+      "highway": "secondary",
+      "bridge": "yes",
+      "construction": null,
+      "building": null
+     },
+     {
+      "name": "Third Axial Road",
+      "highway": "motorway",
+      "bridge": "yes",
+      "construction": null,
+      "building": null
+     },
+     {
+      "name": "Third Axial Road",
+      "highway": "motorway",
+      "bridge": "yes",
+      "construction": null,
+      "building": null
+     },
+     {
+      "name": "Third Axial Road",
+      "highway": "motorway",
+      "bridge": "yes",
+      "construction": null,
+      "building": null
+     },
+     {
+      "name": "Third Axial Road",
+      "highway": "motorway",
+      "bridge": "yes",
+      "construction": null,
+      "building": null
+     },
+     {
+      "name": null,
+      "highway": "residential",
+      "bridge": "yes",
+      "construction": null,
+      "building": null
+     },
+     {
+      "name": null,
+      "highway": "tertiary",
+      "bridge": "yes",
+      "construction": null,
+      "building": null
+     },
+     {
+      "name": null,
+      "highway": "tertiary",
+      "bridge": "yes",
+      "construction": null,
+      "building": null
+     },
+     {
+      "name": null,
+      "highway": "footway",
+      "bridge": "yes",
+      "construction": null,
+      "building": null
+     },
+     {
+      "name": null,
+      "highway": "tertiary",
+      "bridge": "yes",
+      "construction": null,
+      "building": null
+     },
+     {
+      "name": null,
+      "highway": "residential",
+      "bridge": "yes",
+      "construction": null,
+      "building": null
+     },
+     {
+      "name": null,
+      "highway": "residential",
+      "bridge": "yes",
+      "construction": null,
+      "building": null
+     },
+     {
+      "name": null,
+      "highway": "residential",
+      "bridge": "yes",
+      "construction": null,
+      "building": null
+     },
+     {
+      "name": null,
+      "highway": "footway",
+      "bridge": "yes",
+      "construction": null,
+      "building": null
+     },
+     {
+      "name": null,
+      "highway": "residential",
+      "bridge": "yes",
+      "construction": null,
+      "building": null
+     },
+     {
+      "name": null,
+      "highway": "footway",
+      "bridge": "yes",
+      "construction": null,
+      "building": null
+     },
+     {
+      "name": null,
+      "highway": "residential",
+      "bridge": "yes",
+      "construction": null,
+      "building": null
+     },
+     {
+      "name": null,
+      "highway": "footway",
+      "bridge": "yes",
+      "construction": null,
+      "building": null
+     },
+     {
+      "name": null,
+      "highway": "footway",
+      "bridge": "yes",
+      "construction": null,
+      "building": null
+     },
+     {
+      "name": null,
+      "highway": "residential",
+      "bridge": "yes",
+      "construction": null,
+      "building": null
+     }
+    ],
+    "construction_ways": [],
+    "geojson": "events/drainage_sites/alapere-ogudu/osm.geojson"
+   }
+  },
+  {
+   "site_id": "alpha-beach-156",
+   "site_source": "events/drainage_sites.json",
+   "event_id": "lagos-2024-07-03",
+   "event_date": "2024-07-03",
+   "claim": "Buildings/developers blocked System 156 on the Alpha Beach Road corridor (Wahab).",
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      3.51093,
+      6.42707
+     ],
+     [
+      3.51089,
+      6.43028
+     ],
+     [
+      3.51146,
+      6.43312
+     ],
+     [
+      3.51134,
+      6.43592
+     ],
+     [
+      3.50836,
+      6.43994
+     ],
+     [
+      3.50257,
+      6.44421
+     ]
+    ]
+   },
+   "query_point": [
+    3.510361,
+    6.437241
+   ],
+   "image_windows": {
+    "before": [
+     "2021-06-01",
+     "2024-05-31"
+    ],
+    "after": [
+     "2024-06-27",
+     "2024-12-31"
+    ]
+   },
+   "gaps": [
+    "1999-01-15: tiles missing at z16; corridor chip rendered at z13 (18.9 m/px)",
+    "no tiles at z16-z12 for acquisition 2010-02-06 in any release carrying it",
+    "no imagery within a year before the event (nearest 2020-04-05, 1550 days before)"
+   ],
+   "chip_window": "line bbox + 150 m (1283 x 2195 m)",
+   "n_releases_checked": 197,
+   "release_metadata_issues": null,
+   "n_distinct_acq_dates": 7,
+   "all_acq_dates": [
+    {
+     "acq_date": "1999-01-15",
+     "first_release": 10,
+     "first_release_date": "2014-02-20",
+     "n_releases_carrying_it": 55
+    },
+    {
+     "acq_date": "2010-02-06",
+     "first_release": 239,
+     "first_release_date": "2018-11-07",
+     "n_releases_carrying_it": 18
+    },
+    {
+     "acq_date": "2012-12-23",
+     "first_release": 784,
+     "first_release_date": "2017-03-15",
+     "n_releases_carrying_it": 28
+    },
+    {
+     "acq_date": "2015-12-08",
+     "first_release": 2168,
+     "first_release_date": "2018-09-06",
+     "n_releases_carrying_it": 3
+    },
+    {
+     "acq_date": "2018-12-24",
+     "first_release": 119,
+     "first_release_date": "2019-12-12",
+     "n_releases_carrying_it": 40
+    },
+    {
+     "acq_date": "2020-04-05",
+     "first_release": 1034,
+     "first_release_date": "2022-06-08",
+     "n_releases_carrying_it": 43
+    },
+    {
+     "acq_date": "2024-11-30",
+     "first_release": 10842,
+     "first_release_date": "2025-11-20",
+     "n_releases_carrying_it": 10
+    }
+   ],
+   "selected_dates": [
+    "1999-01-15",
+    "2010-02-06",
+    "2012-12-23",
+    "2015-12-08",
+    "2018-12-24",
+    "2020-04-05",
+    "2024-11-30"
+   ],
+   "corridor_zoom": 16,
+   "stations": [
+    {
+     "name": "start",
+     "lon": 3.51093,
+     "lat": 6.42707
+    },
+    {
+     "name": "mid",
+     "lon": 3.510361,
+     "lat": 6.437241
+    },
+    {
+     "name": "end",
+     "lon": 3.50257,
+     "lat": 6.44421
+    }
+   ],
+   "station_note": "line bbox + pad > 1400 m: native-z18 500 x 500 m detail chips at the start/mid/end stations on the anchor dates (nearest date either side of the event and of each image_windows bound), plus the whole-corridor chip per date",
+   "images": [
+    {
+     "acq_date": "1999-01-15",
+     "release": 10,
+     "release_date": "2014-02-20",
+     "first_release": 10,
+     "n_releases_carrying_date": 55,
+     "source": "Terracolor / TerraColor / Earthstar Geographics",
+     "sensor": "Terracolor",
+     "resolution_m": 15.0,
+     "zoom": 13,
+     "gsd_m": 18.87,
+     "size_px": [
+      68,
+      117
+     ],
+     "downscaled_from_px": null,
+     "chip_window": "line bbox + 150 m (1283 x 2195 m)",
+     "file": "events/drainage_sites/alpha-beach-156/1999-01-15.jpg",
+     "marked_file": "events/drainage_sites/alpha-beach-156/1999-01-15_marked.jpg",
+     "brightness": {
+      "mean_luminance": 0.267,
+      "bright_frac": 0.0
+     },
+     "detail_chips": [],
+     "label": "1999-01-15 z13 Terracolor 15m"
+    },
+    {
+     "acq_date": "2012-12-23",
+     "release": 29387,
+     "release_date": "2017-03-15",
+     "first_release": 784,
+     "n_releases_carrying_date": 28,
+     "source": "WV02 / Vivid - Africa / DigitalGlobe",
+     "sensor": "WV02",
+     "resolution_m": 0.5,
+     "zoom": 16,
+     "gsd_m": 2.37,
+     "size_px": [
+      541,
+      931
+     ],
+     "downscaled_from_px": null,
+     "chip_window": "line bbox + 150 m (1283 x 2195 m)",
+     "file": "events/drainage_sites/alpha-beach-156/2012-12-23.jpg",
+     "marked_file": "events/drainage_sites/alpha-beach-156/2012-12-23_marked.jpg",
+     "brightness": {
+      "mean_luminance": 0.388,
+      "bright_frac": 0.001
+     },
+     "detail_chips": [],
+     "label": "2012-12-23 z16 WV02 0.5m"
+    },
+    {
+     "acq_date": "2015-12-08",
+     "release": 2168,
+     "release_date": "2018-09-06",
+     "first_release": 2168,
+     "n_releases_carrying_date": 3,
+     "source": "WV02 / Vivid / DigitalGlobe",
+     "sensor": "WV02",
+     "resolution_m": 0.5,
+     "zoom": 16,
+     "gsd_m": 2.37,
+     "size_px": [
+      541,
+      931
+     ],
+     "downscaled_from_px": null,
+     "chip_window": "line bbox + 150 m (1283 x 2195 m)",
+     "file": "events/drainage_sites/alpha-beach-156/2015-12-08.jpg",
+     "marked_file": "events/drainage_sites/alpha-beach-156/2015-12-08_marked.jpg",
+     "brightness": {
+      "mean_luminance": 0.432,
+      "bright_frac": 0.003
+     },
+     "detail_chips": [],
+     "label": "2015-12-08 z16 WV02 0.5m"
+    },
+    {
+     "acq_date": "2018-12-24",
+     "release": 4756,
+     "release_date": "2019-12-12",
+     "first_release": 119,
+     "n_releases_carrying_date": 40,
+     "source": "WV04 / Metro / DigitalGlobe",
+     "sensor": "WV04",
+     "resolution_m": 0.31,
+     "zoom": 16,
+     "gsd_m": 2.37,
+     "size_px": [
+      541,
+      931
+     ],
+     "downscaled_from_px": null,
+     "chip_window": "line bbox + 150 m (1283 x 2195 m)",
+     "file": "events/drainage_sites/alpha-beach-156/2018-12-24.jpg",
+     "marked_file": "events/drainage_sites/alpha-beach-156/2018-12-24_marked.jpg",
+     "brightness": {
+      "mean_luminance": 0.661,
+      "bright_frac": 0.001
+     },
+     "detail_chips": [],
+     "label": "2018-12-24 z16 WV04 0.31m"
+    },
+    {
+     "acq_date": "2020-04-05",
+     "release": 44710,
+     "release_date": "2022-06-08",
+     "first_release": 1034,
+     "n_releases_carrying_date": 43,
+     "source": "WV02 / Vivid Advanced / Maxar",
+     "sensor": "WV02",
+     "resolution_m": 0.5,
+     "zoom": 16,
+     "gsd_m": 2.37,
+     "size_px": [
+      541,
+      931
+     ],
+     "downscaled_from_px": null,
+     "chip_window": "line bbox + 150 m (1283 x 2195 m)",
+     "file": "events/drainage_sites/alpha-beach-156/2020-04-05.jpg",
+     "marked_file": "events/drainage_sites/alpha-beach-156/2020-04-05_marked.jpg",
+     "brightness": {
+      "mean_luminance": 0.49,
+      "bright_frac": 0.009
+     },
+     "detail_chips": [
+      {
+       "station": "start",
+       "lon": 3.51093,
+       "lat": 6.42707,
+       "zoom": 18,
+       "gsd_m": 0.59,
+       "size_px": [
+        842,
+        848
+       ],
+       "file": "events/drainage_sites/alpha-beach-156/2020-04-05_detail1.jpg",
+       "marked_file": "events/drainage_sites/alpha-beach-156/2020-04-05_detail1_marked.jpg"
+      },
+      {
+       "station": "mid",
+       "lon": 3.510361,
+       "lat": 6.437241,
+       "zoom": 18,
+       "gsd_m": 0.59,
+       "size_px": [
+        843,
+        848
+       ],
+       "file": "events/drainage_sites/alpha-beach-156/2020-04-05_detail2.jpg",
+       "marked_file": "events/drainage_sites/alpha-beach-156/2020-04-05_detail2_marked.jpg"
+      },
+      {
+       "station": "end",
+       "lon": 3.50257,
+       "lat": 6.44421,
+       "zoom": 18,
+       "gsd_m": 0.59,
+       "size_px": [
+        843,
+        849
+       ],
+       "file": "events/drainage_sites/alpha-beach-156/2020-04-05_detail3.jpg",
+       "marked_file": "events/drainage_sites/alpha-beach-156/2020-04-05_detail3_marked.jpg"
+      }
+     ],
+     "label": "2020-04-05 z16 WV02 0.5m"
+    },
+    {
+     "acq_date": "2024-11-30",
+     "release": 51127,
+     "release_date": "2025-11-20",
+     "first_release": 10842,
+     "n_releases_carrying_date": 10,
+     "source": "WV03 / Vivid Advanced / Vantor",
+     "sensor": "WV03",
+     "resolution_m": 0.31,
+     "zoom": 16,
+     "gsd_m": 2.37,
+     "size_px": [
+      541,
+      931
+     ],
+     "downscaled_from_px": null,
+     "chip_window": "line bbox + 150 m (1283 x 2195 m)",
+     "file": "events/drainage_sites/alpha-beach-156/2024-11-30.jpg",
+     "marked_file": "events/drainage_sites/alpha-beach-156/2024-11-30_marked.jpg",
+     "brightness": {
+      "mean_luminance": 0.495,
+      "bright_frac": 0.017
+     },
+     "detail_chips": [
+      {
+       "station": "start",
+       "lon": 3.51093,
+       "lat": 6.42707,
+       "zoom": 18,
+       "gsd_m": 0.59,
+       "size_px": [
+        842,
+        848
+       ],
+       "file": "events/drainage_sites/alpha-beach-156/2024-11-30_detail1.jpg",
+       "marked_file": "events/drainage_sites/alpha-beach-156/2024-11-30_detail1_marked.jpg"
+      },
+      {
+       "station": "mid",
+       "lon": 3.510361,
+       "lat": 6.437241,
+       "zoom": 18,
+       "gsd_m": 0.59,
+       "size_px": [
+        843,
+        848
+       ],
+       "file": "events/drainage_sites/alpha-beach-156/2024-11-30_detail2.jpg",
+       "marked_file": "events/drainage_sites/alpha-beach-156/2024-11-30_detail2_marked.jpg"
+      },
+      {
+       "station": "end",
+       "lon": 3.50257,
+       "lat": 6.44421,
+       "zoom": 18,
+       "gsd_m": 0.59,
+       "size_px": [
+        843,
+        849
+       ],
+       "file": "events/drainage_sites/alpha-beach-156/2024-11-30_detail3.jpg",
+       "marked_file": "events/drainage_sites/alpha-beach-156/2024-11-30_detail3_marked.jpg"
+      }
+     ],
+     "label": "2024-11-30 z16 WV03 0.31m"
+    }
+   ],
+   "contact_sheet": "events/drainage_sites/alpha-beach-156/contact_sheet.jpg",
+   "osm": {
+    "source": "OpenStreetMap via Overpass (current data, not historical)",
+    "licence": "ODbL (OpenStreetMap contributors)",
+    "radius_m": 300.0,
+    "overpass_queries_used": 1,
+    "n_ways_fetched": 7052,
+    "geojson_building_note": "osm.geojson holds only buildings within 50 m of a mapped waterway (316 of 2178 within 300 m of the site) to keep the file small; the counts and areas in this summary cover all of them",
+    "drain_length_m": 3101.2,
+    "drain_length_by_type_m": {
+     "drain": 2118.1,
+     "ditch": 983.1
+    },
+    "n_waterway_ways": 12,
+    "n_waterway_ways_with_culvert_tag": 3,
+    "n_other_culvert_tagged_ways": 0,
+    "buildings": {
+     "n": 2178,
+     "area_m2": 373785.4
+    },
+    "buildings_within_5m": {
+     "n": 18,
+     "area_m2": 1398.5
+    },
+    "buildings_within_10m": {
+     "n": 33,
+     "area_m2": 5192.5
+    },
+    "buildings_within_20m": {
+     "n": 124,
+     "area_m2": 35405.1
+    },
+    "setback_proxy_note": "Distance of a building footprint to a mapped waterway (drain/canal/stream/river/ditch) within 300 m of the site.  This is a setback proxy, NOT the legal setback; drains not mapped in OSM are invisible to it.",
+    "bridges": [
+     {
+      "name": "Hon. Yaya Dosunmu Way",
+      "highway": "secondary",
+      "bridge": "yes",
+      "construction": null,
+      "building": null
+     },
+     {
+      "name": "Lekki-Epe Expressway",
+      "highway": "trunk",
+      "bridge": "yes",
+      "construction": null,
+      "building": null
+     },
+     {
+      "name": "Lekki-Epe Expressway",
+      "highway": "trunk",
+      "bridge": "yes",
+      "construction": null,
+      "building": null
+     },
+     {
+      "name": null,
+      "highway": "footway",
+      "bridge": "yes",
+      "construction": null,
+      "building": null
+     },
+     {
+      "name": null,
+      "highway": "footway",
+      "bridge": "yes",
+      "construction": null,
+      "building": null
+     },
+     {
+      "name": null,
+      "highway": "service",
+      "bridge": "yes",
+      "construction": null,
+      "building": null
+     },
+     {
+      "name": null,
+      "highway": "footway",
+      "bridge": "yes",
+      "construction": null,
+      "building": null
+     }
+    ],
+    "construction_ways": [
+     {
+      "name": null,
+      "highway": null,
+      "bridge": null,
+      "construction": null,
+      "building": "construction"
+     },
+     {
+      "name": null,
+      "highway": null,
+      "bridge": null,
+      "construction": null,
+      "building": "construction"
+     },
+     {
+      "name": null,
+      "highway": null,
+      "bridge": null,
+      "construction": null,
+      "building": "construction"
+     },
+     {
+      "name": null,
+      "highway": null,
+      "bridge": null,
+      "construction": null,
+      "building": "construction"
+     },
+     {
+      "name": null,
+      "highway": null,
+      "bridge": null,
+      "construction": null,
+      "building": "construction"
+     },
+     {
+      "name": null,
+      "highway": null,
+      "bridge": null,
+      "construction": null,
+      "building": "construction"
+     },
+     {
+      "name": null,
+      "highway": null,
+      "bridge": null,
+      "construction": null,
+      "building": "construction"
+     },
+     {
+      "name": null,
+      "highway": null,
+      "bridge": null,
+      "construction": null,
+      "building": "construction"
+     },
+     {
+      "name": null,
+      "highway": null,
+      "bridge": null,
+      "construction": null,
+      "building": "construction"
+     },
+     {
+      "name": null,
+      "highway": null,
+      "bridge": null,
+      "construction": null,
+      "building": "construction"
+     },
+     {
+      "name": null,
+      "highway": null,
+      "bridge": null,
+      "construction": null,
+      "building": "construction"
+     },
+     {
+      "name": null,
+      "highway": "construction",
+      "bridge": null,
+      "construction": "motorway",
+      "building": null
+     },
+     {
+      "name": null,
+      "highway": "construction",
+      "bridge": null,
+      "construction": "motorway",
+      "building": null
+     },
+     {
+      "name": null,
+      "highway": "construction",
+      "bridge": null,
+      "construction": "motorway",
+      "building": null
+     },
+     {
+      "name": null,
+      "highway": "construction",
+      "bridge": null,
+      "construction": "motorway",
+      "building": null
+     },
+     {
+      "name": null,
+      "highway": "construction",
+      "bridge": null,
+      "construction": "motorway",
+      "building": null
+     }
+    ],
+    "geojson": "events/drainage_sites/alpha-beach-156/osm.geojson"
+   }
+  },
+  {
+   "site_id": "ibeju-lekki-expy",
+   "site_source": "events/drainage_sites.json",
+   "event_id": "lagos-2024-07-03",
+   "event_date": "2024-07-03",
+   "claim": "Blocked drains on the Ibeju-Lekki Expressway.",
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      3.77479,
+      6.47438
+     ],
+     [
+      3.80013,
+      6.47136
+     ],
+     [
+      3.88043,
+      6.48486
+     ]
+    ]
+   },
+   "query_point": [
+    3.827697,
+    6.475995
+   ],
+   "image_windows": {
+    "before": [
+     "2021-07-01",
+     "2024-03-31"
+    ],
+    "after": [
+     "2024-07-03",
+     "2025-01-03"
+    ]
+   },
+   "gaps": [
+    "1999-01-15: tiles missing at z14; corridor chip rendered at z13 (19.0 m/px)"
+   ],
+   "chip_window": "line bbox + 150 m (11985 x 1793 m)",
+   "n_releases_checked": 197,
+   "release_metadata_issues": null,
+   "n_distinct_acq_dates": 7,
+   "all_acq_dates": [
+    {
+     "acq_date": "1999-01-15",
+     "first_release": 10,
+     "first_release_date": "2014-02-20",
+     "n_releases_carrying_it": 55
+    },
+    {
+     "acq_date": "2011-01-10",
+     "first_release": 784,
+     "first_release_date": "2017-03-15",
+     "n_releases_carrying_it": 28
+    },
+    {
+     "acq_date": "2014-12-31",
+     "first_release": 119,
+     "first_release_date": "2018-09-06",
+     "n_releases_carrying_it": 36
+    },
+    {
+     "acq_date": "2018-01-27",
+     "first_release": 1034,
+     "first_release_date": "2020-11-18",
+     "n_releases_carrying_it": 43
+    },
+    {
+     "acq_date": "2019-01-10",
+     "first_release": 13851,
+     "first_release_date": "2022-07-21",
+     "n_releases_carrying_it": 8
+    },
+    {
+     "acq_date": "2023-12-25",
+     "first_release": 6543,
+     "first_release_date": "2024-06-06",
+     "n_releases_carrying_it": 23
+    },
+    {
+     "acq_date": "2024-11-30",
+     "first_release": 10842,
+     "first_release_date": "2026-05-28",
+     "n_releases_carrying_it": 4
+    }
+   ],
+   "selected_dates": [
+    "1999-01-15",
+    "2011-01-10",
+    "2014-12-31",
+    "2018-01-27",
+    "2019-01-10",
+    "2023-12-25",
+    "2024-11-30"
+   ],
+   "corridor_zoom": 14,
+   "stations": [
+    {
+     "name": "start",
+     "lon": 3.77479,
+     "lat": 6.47438
+    },
+    {
+     "name": "mid",
+     "lon": 3.827697,
+     "lat": 6.475995
+    },
+    {
+     "name": "end",
+     "lon": 3.88043,
+     "lat": 6.48486
+    }
+   ],
+   "station_note": "line bbox + pad > 1400 m: native-z18 500 x 500 m detail chips at the start/mid/end stations on the anchor dates (nearest date either side of the event and of each image_windows bound), plus the whole-corridor chip per date",
+   "images": [
+    {
+     "acq_date": "1999-01-15",
+     "release": 10,
+     "release_date": "2014-02-20",
+     "first_release": 10,
+     "n_releases_carrying_date": 55,
+     "source": "Terracolor / TerraColor / Earthstar Geographics",
+     "sensor": "Terracolor",
+     "resolution_m": 15.0,
+     "zoom": 13,
+     "gsd_m": 18.99,
+     "size_px": [
+      631,
+      95
+     ],
+     "downscaled_from_px": null,
+     "chip_window": "line bbox + 150 m (11985 x 1793 m)",
+     "file": "events/drainage_sites/ibeju-lekki-expy/1999-01-15.jpg",
+     "marked_file": "events/drainage_sites/ibeju-lekki-expy/1999-01-15_marked.jpg",
+     "brightness": {
+      "mean_luminance": 0.273,
+      "bright_frac": 0.0
+     },
+     "detail_chips": [],
+     "label": "1999-01-15 z13 Terracolor 15m"
+    },
+    {
+     "acq_date": "2011-01-10",
+     "release": 29387,
+     "release_date": "2017-03-15",
+     "first_release": 784,
+     "n_releases_carrying_date": 28,
+     "source": "WV02 / Vivid - Africa / DigitalGlobe",
+     "sensor": "WV02",
+     "resolution_m": 0.5,
+     "zoom": 14,
+     "gsd_m": 9.99,
+     "size_px": [
+      1200,
+      181
+     ],
+     "downscaled_from_px": [
+      1262,
+      190
+     ],
+     "chip_window": "line bbox + 150 m (11985 x 1793 m)",
+     "file": "events/drainage_sites/ibeju-lekki-expy/2011-01-10.jpg",
+     "marked_file": "events/drainage_sites/ibeju-lekki-expy/2011-01-10_marked.jpg",
+     "brightness": {
+      "mean_luminance": 0.506,
+      "bright_frac": 0.158
+     },
+     "detail_chips": [],
+     "label": "2011-01-10 z14 WV02 0.5m"
+    },
+    {
+     "acq_date": "2014-12-31",
+     "release": 2168,
+     "release_date": "2018-09-06",
+     "first_release": 119,
+     "n_releases_carrying_date": 36,
+     "source": "WV02 / Vivid / DigitalGlobe",
+     "sensor": "WV02",
+     "resolution_m": 0.5,
+     "zoom": 14,
+     "gsd_m": 9.99,
+     "size_px": [
+      1200,
+      181
+     ],
+     "downscaled_from_px": [
+      1262,
+      190
+     ],
+     "chip_window": "line bbox + 150 m (11985 x 1793 m)",
+     "file": "events/drainage_sites/ibeju-lekki-expy/2014-12-31.jpg",
+     "marked_file": "events/drainage_sites/ibeju-lekki-expy/2014-12-31_marked.jpg",
+     "brightness": {
+      "mean_luminance": 0.5,
+      "bright_frac": 0.132
+     },
+     "detail_chips": [],
+     "label": "2014-12-31 z14 WV02 0.5m"
+    },
+    {
+     "acq_date": "2018-01-27",
+     "release": 45441,
+     "release_date": "2022-08-31",
+     "first_release": 1034,
+     "n_releases_carrying_date": 43,
+     "source": "WV02 / Vivid / Maxar",
+     "sensor": "WV02",
+     "resolution_m": 0.5,
+     "zoom": 14,
+     "gsd_m": 9.99,
+     "size_px": [
+      1200,
+      181
+     ],
+     "downscaled_from_px": [
+      1262,
+      190
+     ],
+     "chip_window": "line bbox + 150 m (11985 x 1793 m)",
+     "file": "events/drainage_sites/ibeju-lekki-expy/2018-01-27.jpg",
+     "marked_file": "events/drainage_sites/ibeju-lekki-expy/2018-01-27_marked.jpg",
+     "brightness": {
+      "mean_luminance": 0.426,
+      "bright_frac": 0.0
+     },
+     "detail_chips": [],
+     "label": "2018-01-27 z14 WV02 0.5m"
+    },
+    {
+     "acq_date": "2019-01-10",
+     "release": 56102,
+     "release_date": "2023-12-07",
+     "first_release": 13851,
+     "n_releases_carrying_date": 8,
+     "source": "WV02 / Vivid / Maxar",
+     "sensor": "WV02",
+     "resolution_m": 0.5,
+     "zoom": 14,
+     "gsd_m": 9.99,
+     "size_px": [
+      1200,
+      181
+     ],
+     "downscaled_from_px": [
+      1262,
+      190
+     ],
+     "chip_window": "line bbox + 150 m (11985 x 1793 m)",
+     "file": "events/drainage_sites/ibeju-lekki-expy/2019-01-10.jpg",
+     "marked_file": "events/drainage_sites/ibeju-lekki-expy/2019-01-10_marked.jpg",
+     "brightness": {
+      "mean_luminance": 0.429,
+      "bright_frac": 0.0
+     },
+     "detail_chips": [
+      {
+       "station": "start",
+       "lon": 3.77479,
+       "lat": 6.47438,
+       "zoom": 18,
+       "gsd_m": 0.59,
+       "size_px": [
+        842,
+        849
+       ],
+       "file": "events/drainage_sites/ibeju-lekki-expy/2019-01-10_detail1.jpg",
+       "marked_file": "events/drainage_sites/ibeju-lekki-expy/2019-01-10_detail1_marked.jpg"
+      },
+      {
+       "station": "mid",
+       "lon": 3.827697,
+       "lat": 6.475995,
+       "zoom": 18,
+       "gsd_m": 0.59,
+       "size_px": [
+        843,
+        849
+       ],
+       "file": "events/drainage_sites/ibeju-lekki-expy/2019-01-10_detail2.jpg",
+       "marked_file": "events/drainage_sites/ibeju-lekki-expy/2019-01-10_detail2_marked.jpg"
+      },
+      {
+       "station": "end",
+       "lon": 3.88043,
+       "lat": 6.48486,
+       "zoom": 18,
+       "gsd_m": 0.59,
+       "size_px": [
+        843,
+        848
+       ],
+       "file": "events/drainage_sites/ibeju-lekki-expy/2019-01-10_detail3.jpg",
+       "marked_file": "events/drainage_sites/ibeju-lekki-expy/2019-01-10_detail3_marked.jpg"
+      }
+     ],
+     "label": "2019-01-10 z14 WV02 0.5m"
+    },
+    {
+     "acq_date": "2023-12-25",
+     "release": 12428,
+     "release_date": "2024-06-06",
+     "first_release": 6543,
+     "n_releases_carrying_date": 23,
+     "source": "WV02 / Vivid / Maxar",
+     "sensor": "WV02",
+     "resolution_m": 0.5,
+     "zoom": 14,
+     "gsd_m": 9.99,
+     "size_px": [
+      1200,
+      181
+     ],
+     "downscaled_from_px": [
+      1262,
+      190
+     ],
+     "chip_window": "line bbox + 150 m (11985 x 1793 m)",
+     "file": "events/drainage_sites/ibeju-lekki-expy/2023-12-25.jpg",
+     "marked_file": "events/drainage_sites/ibeju-lekki-expy/2023-12-25_marked.jpg",
+     "brightness": {
+      "mean_luminance": 0.43,
+      "bright_frac": 0.0
+     },
+     "detail_chips": [
+      {
+       "station": "start",
+       "lon": 3.77479,
+       "lat": 6.47438,
+       "zoom": 18,
+       "gsd_m": 0.59,
+       "size_px": [
+        842,
+        849
+       ],
+       "file": "events/drainage_sites/ibeju-lekki-expy/2023-12-25_detail1.jpg",
+       "marked_file": "events/drainage_sites/ibeju-lekki-expy/2023-12-25_detail1_marked.jpg"
+      },
+      {
+       "station": "mid",
+       "lon": 3.827697,
+       "lat": 6.475995,
+       "zoom": 18,
+       "gsd_m": 0.59,
+       "size_px": [
+        843,
+        849
+       ],
+       "file": "events/drainage_sites/ibeju-lekki-expy/2023-12-25_detail2.jpg",
+       "marked_file": "events/drainage_sites/ibeju-lekki-expy/2023-12-25_detail2_marked.jpg"
+      },
+      {
+       "station": "end",
+       "lon": 3.88043,
+       "lat": 6.48486,
+       "zoom": 18,
+       "gsd_m": 0.59,
+       "size_px": [
+        843,
+        848
+       ],
+       "file": "events/drainage_sites/ibeju-lekki-expy/2023-12-25_detail3.jpg",
+       "marked_file": "events/drainage_sites/ibeju-lekki-expy/2023-12-25_detail3_marked.jpg"
+      }
+     ],
+     "label": "2023-12-25 z14 WV02 0.5m"
+    },
+    {
+     "acq_date": "2024-11-30",
+     "release": 10842,
+     "release_date": "2026-05-28",
+     "first_release": 10842,
+     "n_releases_carrying_date": 4,
+     "source": "WV03 / Vivid / Vantor",
+     "sensor": "WV03",
+     "resolution_m": 0.31,
+     "zoom": 14,
+     "gsd_m": 9.99,
+     "size_px": [
+      1200,
+      181
+     ],
+     "downscaled_from_px": [
+      1262,
+      190
+     ],
+     "chip_window": "line bbox + 150 m (11985 x 1793 m)",
+     "file": "events/drainage_sites/ibeju-lekki-expy/2024-11-30.jpg",
+     "marked_file": "events/drainage_sites/ibeju-lekki-expy/2024-11-30_marked.jpg",
+     "brightness": {
+      "mean_luminance": 0.429,
+      "bright_frac": 0.0
+     },
+     "detail_chips": [
+      {
+       "station": "start",
+       "lon": 3.77479,
+       "lat": 6.47438,
+       "zoom": 18,
+       "gsd_m": 0.59,
+       "size_px": [
+        842,
+        849
+       ],
+       "file": "events/drainage_sites/ibeju-lekki-expy/2024-11-30_detail1.jpg",
+       "marked_file": "events/drainage_sites/ibeju-lekki-expy/2024-11-30_detail1_marked.jpg"
+      },
+      {
+       "station": "mid",
+       "lon": 3.827697,
+       "lat": 6.475995,
+       "zoom": 18,
+       "gsd_m": 0.59,
+       "size_px": [
+        843,
+        849
+       ],
+       "file": "events/drainage_sites/ibeju-lekki-expy/2024-11-30_detail2.jpg",
+       "marked_file": "events/drainage_sites/ibeju-lekki-expy/2024-11-30_detail2_marked.jpg"
+      },
+      {
+       "station": "end",
+       "lon": 3.88043,
+       "lat": 6.48486,
+       "zoom": 18,
+       "gsd_m": 0.59,
+       "size_px": [
+        843,
+        848
+       ],
+       "file": "events/drainage_sites/ibeju-lekki-expy/2024-11-30_detail3.jpg",
+       "marked_file": "events/drainage_sites/ibeju-lekki-expy/2024-11-30_detail3_marked.jpg"
+      }
+     ],
+     "label": "2024-11-30 z14 WV03 0.31m"
+    }
+   ],
+   "contact_sheet": "events/drainage_sites/ibeju-lekki-expy/contact_sheet.jpg",
+   "osm": {
+    "source": "OpenStreetMap via Overpass (current data, not historical)",
+    "licence": "ODbL (OpenStreetMap contributors)",
+    "radius_m": 300.0,
+    "overpass_queries_used": 1,
+    "n_ways_fetched": 16147,
+    "geojson_building_note": "osm.geojson holds only buildings within 50 m of a mapped waterway (0 of 4966 within 300 m of the site) to keep the file small; the counts and areas in this summary cover all of them",
+    "drain_length_m": 0,
+    "drain_length_by_type_m": {},
+    "n_waterway_ways": 0,
+    "n_waterway_ways_with_culvert_tag": 0,
+    "n_other_culvert_tagged_ways": 0,
+    "buildings": {
+     "n": 4966,
+     "area_m2": 900622.9
+    },
+    "buildings_within_5m": {
+     "n": 0,
+     "area_m2": 0.0,
+     "note": "no mapped waterway within 300 m"
+    },
+    "buildings_within_10m": {
+     "n": 0,
+     "area_m2": 0.0,
+     "note": "no mapped waterway within 300 m"
+    },
+    "buildings_within_20m": {
+     "n": 0,
+     "area_m2": 0.0,
+     "note": "no mapped waterway within 300 m"
+    },
+    "setback_proxy_note": "Distance of a building footprint to a mapped waterway (drain/canal/stream/river/ditch) within 300 m of the site.  This is a setback proxy, NOT the legal setback; drains not mapped in OSM are invisible to it.",
+    "bridges": [],
+    "construction_ways": [
+     {
+      "name": null,
+      "highway": null,
+      "bridge": null,
+      "construction": null,
+      "building": "construction"
+     },
+     {
+      "name": null,
+      "highway": null,
+      "bridge": null,
+      "construction": null,
+      "building": "construction"
+     },
+     {
+      "name": null,
+      "highway": null,
+      "bridge": null,
+      "construction": "yes",
+      "building": null
+     },
+     {
+      "name": null,
+      "highway": null,
+      "bridge": null,
+      "construction": "yes",
+      "building": null
+     },
+     {
+      "name": null,
+      "highway": null,
+      "bridge": null,
+      "construction": null,
+      "building": "construction"
+     },
+     {
+      "name": null,
+      "highway": null,
+      "bridge": null,
+      "construction": null,
+      "building": "construction"
+     },
+     {
+      "name": null,
+      "highway": null,
+      "bridge": null,
+      "construction": null,
+      "building": "construction"
+     },
+     {
+      "name": null,
+      "highway": null,
+      "bridge": null,
+      "construction": null,
+      "building": "construction"
+     },
+     {
+      "name": null,
+      "highway": null,
+      "bridge": null,
+      "construction": null,
+      "building": "construction"
+     },
+     {
+      "name": null,
+      "highway": null,
+      "bridge": null,
+      "construction": null,
+      "building": "construction"
+     },
+     {
+      "name": null,
+      "highway": null,
+      "bridge": null,
+      "construction": null,
+      "building": "construction"
+     },
+     {
+      "name": null,
+      "highway": null,
+      "bridge": null,
+      "construction": null,
+      "building": "construction"
+     },
+     {
+      "name": null,
+      "highway": null,
+      "bridge": null,
+      "construction": null,
+      "building": "construction"
+     },
+     {
+      "name": null,
+      "highway": null,
+      "bridge": null,
+      "construction": null,
+      "building": "construction"
+     },
+     {
+      "name": null,
+      "highway": null,
+      "bridge": null,
+      "construction": null,
+      "building": "construction"
+     },
+     {
+      "name": null,
+      "highway": null,
+      "bridge": null,
+      "construction": null,
+      "building": "construction"
+     },
+     {
+      "name": null,
+      "highway": null,
+      "bridge": null,
+      "construction": null,
+      "building": "construction"
+     },
+     {
+      "name": null,
+      "highway": null,
+      "bridge": null,
+      "construction": null,
+      "building": "construction"
+     },
+     {
+      "name": null,
+      "highway": null,
+      "bridge": null,
+      "construction": null,
+      "building": "construction"
+     },
+     {
+      "name": null,
+      "highway": null,
+      "bridge": null,
+      "construction": null,
+      "building": "construction"
+     },
+     {
+      "name": null,
+      "highway": null,
+      "bridge": null,
+      "construction": null,
+      "building": "construction"
+     },
+     {
+      "name": null,
+      "highway": null,
+      "bridge": null,
+      "construction": null,
+      "building": "construction"
+     },
+     {
+      "name": null,
+      "highway": null,
+      "bridge": null,
+      "construction": null,
+      "building": "construction"
+     },
+     {
+      "name": null,
+      "highway": null,
+      "bridge": null,
+      "construction": null,
+      "building": "construction"
+     },
+     {
+      "name": null,
+      "highway": null,
+      "bridge": null,
+      "construction": null,
+      "building": "construction"
+     },
+     {
+      "name": null,
+      "highway": null,
+      "bridge": null,
+      "construction": null,
+      "building": "construction"
+     },
+     {
+      "name": null,
+      "highway": null,
+      "bridge": null,
+      "construction": null,
+      "building": "construction"
+     },
+     {
+      "name": null,
+      "highway": null,
+      "bridge": null,
+      "construction": null,
+      "building": "construction"
+     },
+     {
+      "name": null,
+      "highway": null,
+      "bridge": null,
+      "construction": null,
+      "building": "construction"
+     },
+     {
+      "name": null,
+      "highway": null,
+      "bridge": null,
+      "construction": null,
+      "building": "construction"
+     },
+     {
+      "more": 156
+     }
+    ],
+    "geojson": "events/drainage_sites/ibeju-lekki-expy/osm.geojson"
+   }
+  },
+  {
+   "site_id": "ijede-drain",
+   "site_source": "events/drainage_sites.json",
+   "event_id": "lagos-2025-08-04",
+   "event_date": "2025-08-04",
+   "claim": "Abandoned drainage system at Ijede.",
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      3.588,
+      6.568
+     ],
+     [
+      3.59186,
+      6.56558
+     ],
+     [
+      3.6218,
+      6.60122
+     ]
+    ]
+   },
+   "query_point": [
+    3.605365,
+    6.581656
+   ],
+   "image_windows": {
+    "before": [
+     "2023-08-01",
+     "2025-01-31"
+    ],
+    "after": [
+     "2025-08-04",
+     "2026-02-04"
+    ]
+   },
+   "gaps": [
+    "no tiles at z15-z12 for acquisition 2018-12-24 in any release carrying it",
+    "no imagery on or after the event 2025-08-04 (latest acquisition 2024-11-30)"
+   ],
+   "chip_window": "line bbox + 150 m (4038 x 4241 m)",
+   "n_releases_checked": 197,
+   "release_metadata_issues": null,
+   "n_distinct_acq_dates": 5,
+   "all_acq_dates": [
+    {
+     "acq_date": "2012-05-06",
+     "first_release": 10,
+     "first_release_date": "2014-02-20",
+     "n_releases_carrying_it": 55
+    },
+    {
+     "acq_date": "2013-01-01",
+     "first_release": 239,
+     "first_release_date": "2017-03-15",
+     "n_releases_carrying_it": 49
+    },
+    {
+     "acq_date": "2018-12-24",
+     "first_release": 119,
+     "first_release_date": "2019-12-12",
+     "n_releases_carrying_it": 40
+    },
+    {
+     "acq_date": "2021-05-23",
+     "first_release": 1034,
+     "first_release_date": "2022-06-08",
+     "n_releases_carrying_it": 43
+    },
+    {
+     "acq_date": "2024-11-30",
+     "first_release": 10842,
+     "first_release_date": "2025-11-20",
+     "n_releases_carrying_it": 10
+    }
+   ],
+   "selected_dates": [
+    "2012-05-06",
+    "2013-01-01",
+    "2018-12-24",
+    "2021-05-23",
+    "2024-11-30"
+   ],
+   "corridor_zoom": 15,
+   "stations": [
+    {
+     "name": "start",
+     "lon": 3.588,
+     "lat": 6.568
+    },
+    {
+     "name": "mid",
+     "lon": 3.605365,
+     "lat": 6.581656
+    },
+    {
+     "name": "end",
+     "lon": 3.6218,
+     "lat": 6.60122
+    }
+   ],
+   "station_note": "line bbox + pad > 1400 m: native-z18 500 x 500 m detail chips at the start/mid/end stations on the anchor dates (nearest date either side of the event and of each image_windows bound), plus the whole-corridor chip per date",
+   "images": [
+    {
+     "acq_date": "2012-05-06",
+     "release": 10,
+     "release_date": "2014-02-20",
+     "first_release": 10,
+     "n_releases_carrying_date": 55,
+     "source": "QB02 / DigitalGlobe",
+     "sensor": "QB02",
+     "resolution_m": 0.6,
+     "zoom": 15,
+     "gsd_m": 4.74,
+     "size_px": [
+      851,
+      900
+     ],
+     "downscaled_from_px": null,
+     "chip_window": "line bbox + 150 m (4038 x 4241 m)",
+     "file": "events/drainage_sites/ijede-drain/2012-05-06.jpg",
+     "marked_file": "events/drainage_sites/ijede-drain/2012-05-06_marked.jpg",
+     "brightness": {
+      "mean_luminance": 0.407,
+      "bright_frac": 0.0
+     },
+     "detail_chips": [],
+     "label": "2012-05-06 z15 QB02 0.6m"
+    },
+    {
+     "acq_date": "2013-01-01",
+     "release": 29387,
+     "release_date": "2017-03-15",
+     "first_release": 239,
+     "n_releases_carrying_date": 49,
+     "source": "GE01 / Vivid - Africa / DigitalGlobe",
+     "sensor": "GE01",
+     "resolution_m": 0.46,
+     "zoom": 15,
+     "gsd_m": 4.74,
+     "size_px": [
+      851,
+      900
+     ],
+     "downscaled_from_px": null,
+     "chip_window": "line bbox + 150 m (4038 x 4241 m)",
+     "file": "events/drainage_sites/ijede-drain/2013-01-01.jpg",
+     "marked_file": "events/drainage_sites/ijede-drain/2013-01-01_marked.jpg",
+     "brightness": {
+      "mean_luminance": 0.326,
+      "bright_frac": 0.0
+     },
+     "detail_chips": [],
+     "label": "2013-01-01 z15 GE01 0.46m"
+    },
+    {
+     "acq_date": "2021-05-23",
+     "release": 13851,
+     "release_date": "2022-07-21",
+     "first_release": 1034,
+     "n_releases_carrying_date": 43,
+     "source": "WV03 / Vivid / Maxar",
+     "sensor": "WV03",
+     "resolution_m": 0.31,
+     "zoom": 15,
+     "gsd_m": 4.74,
+     "size_px": [
+      851,
+      900
+     ],
+     "downscaled_from_px": null,
+     "chip_window": "line bbox + 150 m (4038 x 4241 m)",
+     "file": "events/drainage_sites/ijede-drain/2021-05-23.jpg",
+     "marked_file": "events/drainage_sites/ijede-drain/2021-05-23_marked.jpg",
+     "brightness": {
+      "mean_luminance": 0.38,
+      "bright_frac": 0.0
+     },
+     "detail_chips": [
+      {
+       "station": "start",
+       "lon": 3.588,
+       "lat": 6.568,
+       "zoom": 18,
+       "gsd_m": 0.59,
+       "size_px": [
+        843,
+        848
+       ],
+       "file": "events/drainage_sites/ijede-drain/2021-05-23_detail1.jpg",
+       "marked_file": "events/drainage_sites/ijede-drain/2021-05-23_detail1_marked.jpg"
+      },
+      {
+       "station": "mid",
+       "lon": 3.605365,
+       "lat": 6.581656,
+       "zoom": 18,
+       "gsd_m": 0.59,
+       "size_px": [
+        843,
+        848
+       ],
+       "file": "events/drainage_sites/ijede-drain/2021-05-23_detail2.jpg",
+       "marked_file": "events/drainage_sites/ijede-drain/2021-05-23_detail2_marked.jpg"
+      },
+      {
+       "station": "end",
+       "lon": 3.6218,
+       "lat": 6.60122,
+       "zoom": 18,
+       "gsd_m": 0.59,
+       "size_px": [
+        843,
+        848
+       ],
+       "file": "events/drainage_sites/ijede-drain/2021-05-23_detail3.jpg",
+       "marked_file": "events/drainage_sites/ijede-drain/2021-05-23_detail3_marked.jpg"
+      }
+     ],
+     "label": "2021-05-23 z15 WV03 0.31m"
+    },
+    {
+     "acq_date": "2024-11-30",
+     "release": 51127,
+     "release_date": "2025-11-20",
+     "first_release": 10842,
+     "n_releases_carrying_date": 10,
+     "source": "WV03 / Vivid / Vantor",
+     "sensor": "WV03",
+     "resolution_m": 0.31,
+     "zoom": 15,
+     "gsd_m": 4.74,
+     "size_px": [
+      851,
+      900
+     ],
+     "downscaled_from_px": null,
+     "chip_window": "line bbox + 150 m (4038 x 4241 m)",
+     "file": "events/drainage_sites/ijede-drain/2024-11-30.jpg",
+     "marked_file": "events/drainage_sites/ijede-drain/2024-11-30_marked.jpg",
+     "brightness": {
+      "mean_luminance": 0.386,
+      "bright_frac": 0.0
+     },
+     "detail_chips": [
+      {
+       "station": "start",
+       "lon": 3.588,
+       "lat": 6.568,
+       "zoom": 18,
+       "gsd_m": 0.59,
+       "size_px": [
+        843,
+        848
+       ],
+       "file": "events/drainage_sites/ijede-drain/2024-11-30_detail1.jpg",
+       "marked_file": "events/drainage_sites/ijede-drain/2024-11-30_detail1_marked.jpg"
+      },
+      {
+       "station": "mid",
+       "lon": 3.605365,
+       "lat": 6.581656,
+       "zoom": 18,
+       "gsd_m": 0.59,
+       "size_px": [
+        843,
+        848
+       ],
+       "file": "events/drainage_sites/ijede-drain/2024-11-30_detail2.jpg",
+       "marked_file": "events/drainage_sites/ijede-drain/2024-11-30_detail2_marked.jpg"
+      },
+      {
+       "station": "end",
+       "lon": 3.6218,
+       "lat": 6.60122,
+       "zoom": 18,
+       "gsd_m": 0.59,
+       "size_px": [
+        843,
+        848
+       ],
+       "file": "events/drainage_sites/ijede-drain/2024-11-30_detail3.jpg",
+       "marked_file": "events/drainage_sites/ijede-drain/2024-11-30_detail3_marked.jpg"
+      }
+     ],
+     "label": "2024-11-30 z15 WV03 0.31m"
+    }
+   ],
+   "contact_sheet": "events/drainage_sites/ijede-drain/contact_sheet.jpg",
+   "osm": {
+    "source": "OpenStreetMap via Overpass (current data, not historical)",
+    "licence": "ODbL (OpenStreetMap contributors)",
+    "radius_m": 300.0,
+    "overpass_queries_used": 1,
+    "n_ways_fetched": 13737,
+    "geojson_building_note": null,
+    "drain_length_m": 0,
+    "drain_length_by_type_m": {},
+    "n_waterway_ways": 0,
+    "n_waterway_ways_with_culvert_tag": 0,
+    "n_other_culvert_tagged_ways": 0,
+    "buildings": {
+     "n": 1566,
+     "area_m2": 222371.9
+    },
+    "buildings_within_5m": {
+     "n": 0,
+     "area_m2": 0.0,
+     "note": "no mapped waterway within 300 m"
+    },
+    "buildings_within_10m": {
+     "n": 0,
+     "area_m2": 0.0,
+     "note": "no mapped waterway within 300 m"
+    },
+    "buildings_within_20m": {
+     "n": 0,
+     "area_m2": 0.0,
+     "note": "no mapped waterway within 300 m"
+    },
+    "setback_proxy_note": "Distance of a building footprint to a mapped waterway (drain/canal/stream/river/ditch) within 300 m of the site.  This is a setback proxy, NOT the legal setback; drains not mapped in OSM are invisible to it.",
+    "bridges": [
+     {
+      "name": null,
+      "highway": "unclassified",
+      "bridge": "yes",
+      "construction": null,
+      "building": null
+     }
+    ],
+    "construction_ways": [],
+    "geojson": "events/drainage_sites/ijede-drain/osm.geojson"
+   }
+  },
+  {
+   "site_id": "ikorodu-dammed",
+   "site_source": "events/drainage_sites.json",
+   "event_id": "lagos-2025-08-04",
+   "event_date": "2025-08-04",
+   "claim": "A contractor dammed the downstream of a waterway for construction: which waterway, which project, which contractor.",
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      3.6218,
+      6.60122
+     ],
+     [
+      3.607,
+      6.583
+     ],
+     [
+      3.59186,
+      6.56558
+     ]
+    ]
+   },
+   "query_point": [
+    3.607124,
+    6.583153
+   ],
+   "image_windows": {
+    "before": [
+     "2024-08-01",
+     "2025-01-31"
+    ],
+    "after": [
+     "2025-08-04",
+     "2026-02-04"
+    ]
+   },
+   "gaps": [
+    "no tiles at z15-z12 for acquisition 2018-12-24 in any release carrying it",
+    "no imagery on or after the event 2025-08-04 (latest acquisition 2024-11-30)"
+   ],
+   "chip_window": "line bbox + 150 m (3611 x 4241 m)",
+   "n_releases_checked": 197,
+   "release_metadata_issues": null,
+   "n_distinct_acq_dates": 5,
+   "all_acq_dates": [
+    {
+     "acq_date": "2012-05-06",
+     "first_release": 10,
+     "first_release_date": "2014-02-20",
+     "n_releases_carrying_it": 55
+    },
+    {
+     "acq_date": "2013-01-01",
+     "first_release": 239,
+     "first_release_date": "2017-03-15",
+     "n_releases_carrying_it": 49
+    },
+    {
+     "acq_date": "2018-12-24",
+     "first_release": 119,
+     "first_release_date": "2019-12-12",
+     "n_releases_carrying_it": 40
+    },
+    {
+     "acq_date": "2021-05-23",
+     "first_release": 1034,
+     "first_release_date": "2022-06-08",
+     "n_releases_carrying_it": 43
+    },
+    {
+     "acq_date": "2024-11-30",
+     "first_release": 10842,
+     "first_release_date": "2025-11-20",
+     "n_releases_carrying_it": 10
+    }
+   ],
+   "selected_dates": [
+    "2012-05-06",
+    "2013-01-01",
+    "2018-12-24",
+    "2021-05-23",
+    "2024-11-30"
+   ],
+   "corridor_zoom": 15,
+   "stations": [
+    {
+     "name": "start",
+     "lon": 3.6218,
+     "lat": 6.60122
+    },
+    {
+     "name": "mid",
+     "lon": 3.607124,
+     "lat": 6.583153
+    },
+    {
+     "name": "end",
+     "lon": 3.59186,
+     "lat": 6.56558
+    }
+   ],
+   "station_note": "line bbox + pad > 1400 m: native-z18 500 x 500 m detail chips at the start/mid/end stations on the anchor dates (nearest date either side of the event and of each image_windows bound), plus the whole-corridor chip per date",
+   "images": [
+    {
+     "acq_date": "2012-05-06",
+     "release": 10,
+     "release_date": "2014-02-20",
+     "first_release": 10,
+     "n_releases_carrying_date": 55,
+     "source": "QB02 / DigitalGlobe",
+     "sensor": "QB02",
+     "resolution_m": 0.6,
+     "zoom": 15,
+     "gsd_m": 4.75,
+     "size_px": [
+      761,
+      900
+     ],
+     "downscaled_from_px": null,
+     "chip_window": "line bbox + 150 m (3611 x 4241 m)",
+     "file": "events/drainage_sites/ikorodu-dammed/2012-05-06.jpg",
+     "marked_file": "events/drainage_sites/ikorodu-dammed/2012-05-06_marked.jpg",
+     "brightness": {
+      "mean_luminance": 0.403,
+      "bright_frac": 0.0
+     },
+     "detail_chips": [],
+     "label": "2012-05-06 z15 QB02 0.6m"
+    },
+    {
+     "acq_date": "2013-01-01",
+     "release": 29387,
+     "release_date": "2017-03-15",
+     "first_release": 239,
+     "n_releases_carrying_date": 49,
+     "source": "GE01 / Vivid - Africa / DigitalGlobe",
+     "sensor": "GE01",
+     "resolution_m": 0.46,
+     "zoom": 15,
+     "gsd_m": 4.75,
+     "size_px": [
+      761,
+      900
+     ],
+     "downscaled_from_px": null,
+     "chip_window": "line bbox + 150 m (3611 x 4241 m)",
+     "file": "events/drainage_sites/ikorodu-dammed/2013-01-01.jpg",
+     "marked_file": "events/drainage_sites/ikorodu-dammed/2013-01-01_marked.jpg",
+     "brightness": {
+      "mean_luminance": 0.319,
+      "bright_frac": 0.0
+     },
+     "detail_chips": [],
+     "label": "2013-01-01 z15 GE01 0.46m"
+    },
+    {
+     "acq_date": "2021-05-23",
+     "release": 13851,
+     "release_date": "2022-07-21",
+     "first_release": 1034,
+     "n_releases_carrying_date": 43,
+     "source": "WV03 / Vivid / Maxar",
+     "sensor": "WV03",
+     "resolution_m": 0.31,
+     "zoom": 15,
+     "gsd_m": 4.75,
+     "size_px": [
+      761,
+      900
+     ],
+     "downscaled_from_px": null,
+     "chip_window": "line bbox + 150 m (3611 x 4241 m)",
+     "file": "events/drainage_sites/ikorodu-dammed/2021-05-23.jpg",
+     "marked_file": "events/drainage_sites/ikorodu-dammed/2021-05-23_marked.jpg",
+     "brightness": {
+      "mean_luminance": 0.374,
+      "bright_frac": 0.0
+     },
+     "detail_chips": [
+      {
+       "station": "start",
+       "lon": 3.6218,
+       "lat": 6.60122,
+       "zoom": 18,
+       "gsd_m": 0.59,
+       "size_px": [
+        843,
+        848
+       ],
+       "file": "events/drainage_sites/ikorodu-dammed/2021-05-23_detail1.jpg",
+       "marked_file": "events/drainage_sites/ikorodu-dammed/2021-05-23_detail1_marked.jpg"
+      },
+      {
+       "station": "mid",
+       "lon": 3.607124,
+       "lat": 6.583153,
+       "zoom": 18,
+       "gsd_m": 0.59,
+       "size_px": [
+        843,
+        849
+       ],
+       "file": "events/drainage_sites/ikorodu-dammed/2021-05-23_detail2.jpg",
+       "marked_file": "events/drainage_sites/ikorodu-dammed/2021-05-23_detail2_marked.jpg"
+      },
+      {
+       "station": "end",
+       "lon": 3.59186,
+       "lat": 6.56558,
+       "zoom": 18,
+       "gsd_m": 0.59,
+       "size_px": [
+        843,
+        848
+       ],
+       "file": "events/drainage_sites/ikorodu-dammed/2021-05-23_detail3.jpg",
+       "marked_file": "events/drainage_sites/ikorodu-dammed/2021-05-23_detail3_marked.jpg"
+      }
+     ],
+     "label": "2021-05-23 z15 WV03 0.31m"
+    },
+    {
+     "acq_date": "2024-11-30",
+     "release": 51127,
+     "release_date": "2025-11-20",
+     "first_release": 10842,
+     "n_releases_carrying_date": 10,
+     "source": "WV03 / Vivid / Vantor",
+     "sensor": "WV03",
+     "resolution_m": 0.31,
+     "zoom": 15,
+     "gsd_m": 4.75,
+     "size_px": [
+      761,
+      900
+     ],
+     "downscaled_from_px": null,
+     "chip_window": "line bbox + 150 m (3611 x 4241 m)",
+     "file": "events/drainage_sites/ikorodu-dammed/2024-11-30.jpg",
+     "marked_file": "events/drainage_sites/ikorodu-dammed/2024-11-30_marked.jpg",
+     "brightness": {
+      "mean_luminance": 0.379,
+      "bright_frac": 0.0
+     },
+     "detail_chips": [
+      {
+       "station": "start",
+       "lon": 3.6218,
+       "lat": 6.60122,
+       "zoom": 18,
+       "gsd_m": 0.59,
+       "size_px": [
+        843,
+        848
+       ],
+       "file": "events/drainage_sites/ikorodu-dammed/2024-11-30_detail1.jpg",
+       "marked_file": "events/drainage_sites/ikorodu-dammed/2024-11-30_detail1_marked.jpg"
+      },
+      {
+       "station": "mid",
+       "lon": 3.607124,
+       "lat": 6.583153,
+       "zoom": 18,
+       "gsd_m": 0.59,
+       "size_px": [
+        843,
+        849
+       ],
+       "file": "events/drainage_sites/ikorodu-dammed/2024-11-30_detail2.jpg",
+       "marked_file": "events/drainage_sites/ikorodu-dammed/2024-11-30_detail2_marked.jpg"
+      },
+      {
+       "station": "end",
+       "lon": 3.59186,
+       "lat": 6.56558,
+       "zoom": 18,
+       "gsd_m": 0.59,
+       "size_px": [
+        843,
+        848
+       ],
+       "file": "events/drainage_sites/ikorodu-dammed/2024-11-30_detail3.jpg",
+       "marked_file": "events/drainage_sites/ikorodu-dammed/2024-11-30_detail3_marked.jpg"
+      }
+     ],
+     "label": "2024-11-30 z15 WV03 0.31m"
+    }
+   ],
+   "contact_sheet": "events/drainage_sites/ikorodu-dammed/contact_sheet.jpg",
+   "osm": {
+    "source": "OpenStreetMap via Overpass (current data, not historical)",
+    "licence": "ODbL (OpenStreetMap contributors)",
+    "radius_m": 300.0,
+    "overpass_queries_used": 1,
+    "n_ways_fetched": 11935,
+    "geojson_building_note": null,
+    "drain_length_m": 0,
+    "drain_length_by_type_m": {},
+    "n_waterway_ways": 0,
+    "n_waterway_ways_with_culvert_tag": 0,
+    "n_other_culvert_tagged_ways": 0,
+    "buildings": {
+     "n": 1518,
+     "area_m2": 206773.4
+    },
+    "buildings_within_5m": {
+     "n": 0,
+     "area_m2": 0.0,
+     "note": "no mapped waterway within 300 m"
+    },
+    "buildings_within_10m": {
+     "n": 0,
+     "area_m2": 0.0,
+     "note": "no mapped waterway within 300 m"
+    },
+    "buildings_within_20m": {
+     "n": 0,
+     "area_m2": 0.0,
+     "note": "no mapped waterway within 300 m"
+    },
+    "setback_proxy_note": "Distance of a building footprint to a mapped waterway (drain/canal/stream/river/ditch) within 300 m of the site.  This is a setback proxy, NOT the legal setback; drains not mapped in OSM are invisible to it.",
+    "bridges": [
+     {
+      "name": null,
+      "highway": "unclassified",
+      "bridge": "yes",
+      "construction": null,
+      "building": null
+     }
+    ],
+    "construction_ways": [],
+    "geojson": "events/drainage_sites/ikorodu-dammed/osm.geojson"
+   }
+  },
+  {
+   "site_id": "labora",
+   "site_source": "events/drainage_sites.json",
+   "event_id": "lagos-2024-07-03",
+   "event_date": "2024-07-03",
+   "claim": "New site with no drainage.",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     3.92,
+     6.48
+    ]
+   },
+   "query_point": [
+    3.92,
+    6.48
+   ],
+   "image_windows": {
+    "before": [
+     "2021-07-01",
+     "2024-03-31"
+    ],
+    "after": [
+     "2024-07-03",
+     "2025-01-03"
+    ]
+   },
+   "gaps": [
+    "2011-12-31: tiles missing at z18; corridor chip rendered at z17 (1.2 m/px)",
+    "2012-01-07: tiles missing at z18; corridor chip rendered at z17 (1.2 m/px)",
+    "2014-12-31: tiles missing at z18; corridor chip rendered at z17 (1.2 m/px)",
+    "no imagery on or after the event 2024-07-03 (latest acquisition 2023-12-25)"
+   ],
+   "chip_window": "500 x 500 m",
+   "n_releases_checked": 197,
+   "release_metadata_issues": null,
+   "n_distinct_acq_dates": 5,
+   "all_acq_dates": [
+    {
+     "acq_date": "2011-12-31",
+     "first_release": 10,
+     "first_release_date": "2014-02-20",
+     "n_releases_carrying_it": 55
+    },
+    {
+     "acq_date": "2012-01-07",
+     "first_release": 784,
+     "first_release_date": "2017-03-15",
+     "n_releases_carrying_it": 28
+    },
+    {
+     "acq_date": "2014-12-31",
+     "first_release": 119,
+     "first_release_date": "2018-09-06",
+     "n_releases_carrying_it": 36
+    },
+    {
+     "acq_date": "2019-01-10",
+     "first_release": 1034,
+     "first_release_date": "2020-11-18",
+     "n_releases_carrying_it": 51
+    },
+    {
+     "acq_date": "2023-12-25",
+     "first_release": 6543,
+     "first_release_date": "2024-06-06",
+     "n_releases_carrying_it": 27
+    }
+   ],
+   "selected_dates": [
+    "2011-12-31",
+    "2012-01-07",
+    "2014-12-31",
+    "2019-01-10",
+    "2023-12-25"
+   ],
+   "corridor_zoom": null,
+   "images": [
+    {
+     "acq_date": "2011-12-31",
+     "release": 10,
+     "release_date": "2014-02-20",
+     "first_release": 10,
+     "n_releases_carrying_date": 55,
+     "source": "QB02 / DigitalGlobe",
+     "sensor": "QB02",
+     "resolution_m": 0.6,
+     "zoom": 17,
+     "gsd_m": 1.19,
+     "size_px": [
+      421,
+      425
+     ],
+     "downscaled_from_px": null,
+     "chip_window": "500 x 500 m",
+     "file": "events/drainage_sites/labora/2011-12-31.jpg",
+     "marked_file": "events/drainage_sites/labora/2011-12-31_marked.jpg",
+     "brightness": {
+      "mean_luminance": 0.449,
+      "bright_frac": 0.0
+     },
+     "detail_chips": [],
+     "label": "2011-12-31 z17 QB02 0.6m"
+    },
+    {
+     "acq_date": "2012-01-07",
+     "release": 29387,
+     "release_date": "2017-03-15",
+     "first_release": 784,
+     "n_releases_carrying_date": 28,
+     "source": "GE01 / Vivid - Africa / DigitalGlobe",
+     "sensor": "GE01",
+     "resolution_m": 0.46,
+     "zoom": 17,
+     "gsd_m": 1.19,
+     "size_px": [
+      421,
+      425
+     ],
+     "downscaled_from_px": null,
+     "chip_window": "500 x 500 m",
+     "file": "events/drainage_sites/labora/2012-01-07.jpg",
+     "marked_file": "events/drainage_sites/labora/2012-01-07_marked.jpg",
+     "brightness": {
+      "mean_luminance": 0.246,
+      "bright_frac": 0.0
+     },
+     "detail_chips": [],
+     "label": "2012-01-07 z17 GE01 0.46m"
+    },
+    {
+     "acq_date": "2014-12-31",
+     "release": 2168,
+     "release_date": "2018-09-06",
+     "first_release": 119,
+     "n_releases_carrying_date": 36,
+     "source": "WV02 / Vivid / DigitalGlobe",
+     "sensor": "WV02",
+     "resolution_m": 0.5,
+     "zoom": 17,
+     "gsd_m": 1.19,
+     "size_px": [
+      421,
+      425
+     ],
+     "downscaled_from_px": null,
+     "chip_window": "500 x 500 m",
+     "file": "events/drainage_sites/labora/2014-12-31.jpg",
+     "marked_file": "events/drainage_sites/labora/2014-12-31_marked.jpg",
+     "brightness": {
+      "mean_luminance": 0.296,
+      "bright_frac": 0.0
+     },
+     "detail_chips": [],
+     "label": "2014-12-31 z17 WV02 0.5m"
+    },
+    {
+     "acq_date": "2019-01-10",
+     "release": 45441,
+     "release_date": "2022-08-31",
+     "first_release": 1034,
+     "n_releases_carrying_date": 51,
+     "source": "WV02 / Vivid / Maxar",
+     "sensor": "WV02",
+     "resolution_m": 0.5,
+     "zoom": 18,
+     "gsd_m": 0.59,
+     "size_px": [
+      842,
+      848
+     ],
+     "downscaled_from_px": null,
+     "chip_window": "500 x 500 m",
+     "file": "events/drainage_sites/labora/2019-01-10.jpg",
+     "marked_file": "events/drainage_sites/labora/2019-01-10_marked.jpg",
+     "brightness": {
+      "mean_luminance": 0.292,
+      "bright_frac": 0.0
+     },
+     "detail_chips": [],
+     "label": "2019-01-10 z18 WV02 0.5m"
+    },
+    {
+     "acq_date": "2023-12-25",
+     "release": 12428,
+     "release_date": "2024-06-06",
+     "first_release": 6543,
+     "n_releases_carrying_date": 27,
+     "source": "WV02 / Vivid / Maxar",
+     "sensor": "WV02",
+     "resolution_m": 0.5,
+     "zoom": 18,
+     "gsd_m": 0.59,
+     "size_px": [
+      842,
+      848
+     ],
+     "downscaled_from_px": null,
+     "chip_window": "500 x 500 m",
+     "file": "events/drainage_sites/labora/2023-12-25.jpg",
+     "marked_file": "events/drainage_sites/labora/2023-12-25_marked.jpg",
+     "brightness": {
+      "mean_luminance": 0.284,
+      "bright_frac": 0.0
+     },
+     "detail_chips": [],
+     "label": "2023-12-25 z18 WV02 0.5m"
+    }
+   ],
+   "contact_sheet": "events/drainage_sites/labora/contact_sheet.jpg",
+   "osm": {
+    "source": "OpenStreetMap via Overpass (current data, not historical)",
+    "licence": "ODbL (OpenStreetMap contributors)",
+    "radius_m": 300.0,
+    "overpass_queries_used": 1,
+    "n_ways_fetched": 0,
+    "geojson_building_note": null,
+    "drain_length_m": 0,
+    "drain_length_by_type_m": {},
+    "n_waterway_ways": 0,
+    "n_waterway_ways_with_culvert_tag": 0,
+    "n_other_culvert_tagged_ways": 0,
+    "buildings": {
+     "n": 0,
+     "area_m2": 0
+    },
+    "buildings_within_5m": {
+     "n": 0,
+     "area_m2": 0.0,
+     "note": "no mapped waterway within 300 m"
+    },
+    "buildings_within_10m": {
+     "n": 0,
+     "area_m2": 0.0,
+     "note": "no mapped waterway within 300 m"
+    },
+    "buildings_within_20m": {
+     "n": 0,
+     "area_m2": 0.0,
+     "note": "no mapped waterway within 300 m"
+    },
+    "setback_proxy_note": "Distance of a building footprint to a mapped waterway (drain/canal/stream/river/ditch) within 300 m of the site.  This is a setback proxy, NOT the legal setback; drains not mapped in OSM are invisible to it.",
+    "bridges": [],
+    "construction_ways": [],
+    "geojson": "events/drainage_sites/labora/osm.geojson"
+   }
+  },
+  {
+   "site_id": "lekki-epe-rehab",
+   "site_source": "events/drainage_sites.json",
+   "event_id": "lagos-2024-07-03",
+   "event_date": "2024-07-03",
+   "claim": "Road rehabilitation works at Sangotedo, Awoyaya, Majek, Abraham Adesanya.",
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      3.58428,
+      6.46956
+     ],
+     [
+      3.60575,
+      6.47505
+     ],
+     [
+      3.63558,
+      6.47102
+     ],
+     [
+      3.68,
+      6.46
+     ],
+     [
+      3.70456,
+      6.46971
+     ]
+    ]
+   },
+   "query_point": [
+    3.645244,
+    6.468622
+   ],
+   "image_windows": {
+    "before": [
+     "2021-07-01",
+     "2024-03-31"
+    ],
+    "after": [
+     "2024-07-03",
+     "2025-01-03"
+    ]
+   },
+   "gaps": [
+    "no tiles at z13-z12 for acquisition 2012-05-06 in any release carrying it",
+    "2018-12-24: no whole-corridor mosaic (the low-zoom raster at the site midpoint is a different acquisition; long corridors mix imagery blocks at corridor zoom) - station detail chips cover the anchor stations",
+    "no imagery within a year before the event (nearest 2018-12-24, 2018 days before)"
+   ],
+   "chip_window": "line bbox + 150 m (13605 x 1964 m)",
+   "n_releases_checked": 197,
+   "release_metadata_issues": null,
+   "n_distinct_acq_dates": 4,
+   "all_acq_dates": [
+    {
+     "acq_date": "2012-05-06",
+     "first_release": 10,
+     "first_release_date": "2014-02-20",
+     "n_releases_carrying_it": 55
+    },
+    {
+     "acq_date": "2013-01-01",
+     "first_release": 239,
+     "first_release_date": "2017-03-15",
+     "n_releases_carrying_it": 49
+    },
+    {
+     "acq_date": "2018-12-24",
+     "first_release": 119,
+     "first_release_date": "2019-12-12",
+     "n_releases_carrying_it": 83
+    },
+    {
+     "acq_date": "2024-11-30",
+     "first_release": 10842,
+     "first_release_date": "2025-11-20",
+     "n_releases_carrying_it": 10
+    }
+   ],
+   "selected_dates": [
+    "2012-05-06",
+    "2013-01-01",
+    "2018-12-24",
+    "2024-11-30"
+   ],
+   "corridor_zoom": 13,
+   "stations": [
+    {
+     "name": "start",
+     "lon": 3.58428,
+     "lat": 6.46956
+    },
+    {
+     "name": "mid",
+     "lon": 3.645244,
+     "lat": 6.468622
+    },
+    {
+     "name": "end",
+     "lon": 3.70456,
+     "lat": 6.46971
+    }
+   ],
+   "station_note": "line bbox + pad > 1400 m: native-z18 500 x 500 m detail chips at the start/mid/end stations on the anchor dates (nearest date either side of the event and of each image_windows bound), plus the whole-corridor chip per date",
+   "images": [
+    {
+     "acq_date": "2013-01-01",
+     "release": 4383,
+     "release_date": "2019-03-13",
+     "first_release": 239,
+     "n_releases_carrying_date": 49,
+     "source": "GE01 / Vivid / DigitalGlobe",
+     "sensor": "GE01",
+     "resolution_m": 0.46,
+     "zoom": 13,
+     "gsd_m": 18.97,
+     "size_px": [
+      717,
+      104
+     ],
+     "downscaled_from_px": null,
+     "chip_window": "line bbox + 150 m (13605 x 1964 m)",
+     "file": "events/drainage_sites/lekki-epe-rehab/2013-01-01.jpg",
+     "marked_file": "events/drainage_sites/lekki-epe-rehab/2013-01-01_marked.jpg",
+     "brightness": {
+      "mean_luminance": 0.379,
+      "bright_frac": 0.0
+     },
+     "detail_chips": [],
+     "label": "2013-01-01 z13 GE01 0.46m"
+    },
+    {
+     "acq_date": "2018-12-24",
+     "file": null,
+     "marked_file": null,
+     "chip_window": "line bbox + 150 m (13605 x 1964 m)",
+     "detail_chips": [
+      {
+       "station": "start",
+       "lon": 3.58428,
+       "lat": 6.46956,
+       "zoom": 18,
+       "gsd_m": 0.59,
+       "size_px": [
+        843,
+        848
+       ],
+       "file": "events/drainage_sites/lekki-epe-rehab/2018-12-24_detail1.jpg",
+       "marked_file": "events/drainage_sites/lekki-epe-rehab/2018-12-24_detail1_marked.jpg"
+      },
+      {
+       "station": "mid",
+       "lon": 3.645244,
+       "lat": 6.468622,
+       "zoom": 18,
+       "gsd_m": 0.59,
+       "size_px": [
+        843,
+        849
+       ],
+       "file": "events/drainage_sites/lekki-epe-rehab/2018-12-24_detail2.jpg",
+       "marked_file": "events/drainage_sites/lekki-epe-rehab/2018-12-24_detail2_marked.jpg"
+      },
+      {
+       "station": "end",
+       "lon": 3.70456,
+       "lat": 6.46971,
+       "zoom": 18,
+       "gsd_m": 0.59,
+       "size_px": [
+        842,
+        849
+       ],
+       "file": "events/drainage_sites/lekki-epe-rehab/2018-12-24_detail3.jpg",
+       "marked_file": "events/drainage_sites/lekki-epe-rehab/2018-12-24_detail3_marked.jpg"
+      }
+     ]
+    },
+    {
+     "acq_date": "2024-11-30",
+     "release": 51127,
+     "release_date": "2025-11-20",
+     "first_release": 10842,
+     "n_releases_carrying_date": 10,
+     "source": "WV03 / Vivid / Vantor",
+     "sensor": "WV03",
+     "resolution_m": 0.31,
+     "zoom": 13,
+     "gsd_m": 18.97,
+     "size_px": [
+      717,
+      104
+     ],
+     "downscaled_from_px": null,
+     "chip_window": "line bbox + 150 m (13605 x 1964 m)",
+     "file": "events/drainage_sites/lekki-epe-rehab/2024-11-30.jpg",
+     "marked_file": "events/drainage_sites/lekki-epe-rehab/2024-11-30_marked.jpg",
+     "brightness": {
+      "mean_luminance": 0.433,
+      "bright_frac": 0.0
+     },
+     "detail_chips": [
+      {
+       "station": "start",
+       "lon": 3.58428,
+       "lat": 6.46956,
+       "zoom": 18,
+       "gsd_m": 0.59,
+       "size_px": [
+        843,
+        848
+       ],
+       "file": "events/drainage_sites/lekki-epe-rehab/2024-11-30_detail1.jpg",
+       "marked_file": "events/drainage_sites/lekki-epe-rehab/2024-11-30_detail1_marked.jpg"
+      },
+      {
+       "station": "mid",
+       "lon": 3.645244,
+       "lat": 6.468622,
+       "zoom": 18,
+       "gsd_m": 0.59,
+       "size_px": [
+        843,
+        849
+       ],
+       "file": "events/drainage_sites/lekki-epe-rehab/2024-11-30_detail2.jpg",
+       "marked_file": "events/drainage_sites/lekki-epe-rehab/2024-11-30_detail2_marked.jpg"
+      },
+      {
+       "station": "end",
+       "lon": 3.70456,
+       "lat": 6.46971,
+       "zoom": 18,
+       "gsd_m": 0.59,
+       "size_px": [
+        842,
+        849
+       ],
+       "file": "events/drainage_sites/lekki-epe-rehab/2024-11-30_detail3.jpg",
+       "marked_file": "events/drainage_sites/lekki-epe-rehab/2024-11-30_detail3_marked.jpg"
+      }
+     ],
+     "label": "2024-11-30 z13 WV03 0.31m"
+    }
+   ],
+   "contact_sheet": "events/drainage_sites/lekki-epe-rehab/contact_sheet.jpg",
+   "osm": {
+    "source": "OpenStreetMap via Overpass (current data, not historical)",
+    "licence": "ODbL (OpenStreetMap contributors)",
+    "radius_m": 300.0,
+    "overpass_queries_used": 1,
+    "n_ways_fetched": 17595,
+    "geojson_building_note": "osm.geojson holds only buildings within 50 m of a mapped waterway (18 of 5545 within 300 m of the site) to keep the file small; the counts and areas in this summary cover all of them",
+    "drain_length_m": 498.3,
+    "drain_length_by_type_m": {
+     "stream": 498.3
+    },
+    "n_waterway_ways": 1,
+    "n_waterway_ways_with_culvert_tag": 0,
+    "n_other_culvert_tagged_ways": 0,
+    "buildings": {
+     "n": 5545,
+     "area_m2": 992823.9
+    },
+    "buildings_within_5m": {
+     "n": 0,
+     "area_m2": 0
+    },
+    "buildings_within_10m": {
+     "n": 1,
+     "area_m2": 149.0
+    },
+    "buildings_within_20m": {
+     "n": 6,
+     "area_m2": 1326.3
+    },
+    "setback_proxy_note": "Distance of a building footprint to a mapped waterway (drain/canal/stream/river/ditch) within 300 m of the site.  This is a setback proxy, NOT the legal setback; drains not mapped in OSM are invisible to it.",
+    "bridges": [
+     {
+      "name": "Lekki-Epe Expressway",
+      "highway": "trunk",
+      "bridge": "yes",
+      "construction": null,
+      "building": null
+     },
+     {
+      "name": "Lekki-Epe Expressway",
+      "highway": "trunk",
+      "bridge": "yes",
+      "construction": null,
+      "building": null
+     },
+     {
+      "name": null,
+      "highway": "path",
+      "bridge": "yes",
+      "construction": null,
+      "building": null
+     }
+    ],
+    "construction_ways": [
+     {
+      "name": null,
+      "highway": null,
+      "bridge": null,
+      "construction": null,
+      "building": "construction"
+     },
+     {
+      "name": null,
+      "highway": null,
+      "bridge": null,
+      "construction": null,
+      "building": "construction"
+     },
+     {
+      "name": null,
+      "highway": null,
+      "bridge": null,
+      "construction": null,
+      "building": "construction"
+     },
+     {
+      "name": null,
+      "highway": null,
+      "bridge": null,
+      "construction": null,
+      "building": "construction"
+     },
+     {
+      "name": null,
+      "highway": null,
+      "bridge": null,
+      "construction": null,
+      "building": "construction"
+     },
+     {
+      "name": null,
+      "highway": null,
+      "bridge": null,
+      "construction": null,
+      "building": "construction"
+     },
+     {
+      "name": null,
+      "highway": null,
+      "bridge": null,
+      "construction": null,
+      "building": "construction"
+     },
+     {
+      "name": null,
+      "highway": null,
+      "bridge": null,
+      "construction": null,
+      "building": "construction"
+     },
+     {
+      "name": null,
+      "highway": null,
+      "bridge": null,
+      "construction": null,
+      "building": "construction"
+     },
+     {
+      "name": null,
+      "highway": null,
+      "bridge": null,
+      "construction": null,
+      "building": "construction"
+     },
+     {
+      "name": null,
+      "highway": null,
+      "bridge": null,
+      "construction": null,
+      "building": "construction"
+     },
+     {
+      "name": null,
+      "highway": null,
+      "bridge": null,
+      "construction": null,
+      "building": "construction"
+     },
+     {
+      "name": null,
+      "highway": null,
+      "bridge": null,
+      "construction": null,
+      "building": "construction"
+     },
+     {
+      "name": null,
+      "highway": null,
+      "bridge": null,
+      "construction": null,
+      "building": "construction"
+     },
+     {
+      "name": null,
+      "highway": null,
+      "bridge": null,
+      "construction": null,
+      "building": "construction"
+     },
+     {
+      "name": null,
+      "highway": null,
+      "bridge": null,
+      "construction": null,
+      "building": "construction"
+     },
+     {
+      "name": null,
+      "highway": null,
+      "bridge": null,
+      "construction": null,
+      "building": "construction"
+     },
+     {
+      "name": null,
+      "highway": null,
+      "bridge": null,
+      "construction": null,
+      "building": "construction"
+     },
+     {
+      "name": null,
+      "highway": null,
+      "bridge": null,
+      "construction": null,
+      "building": "construction"
+     },
+     {
+      "name": null,
+      "highway": null,
+      "bridge": null,
+      "construction": null,
+      "building": "construction"
+     },
+     {
+      "name": null,
+      "highway": null,
+      "bridge": null,
+      "construction": null,
+      "building": "construction"
+     },
+     {
+      "name": null,
+      "highway": null,
+      "bridge": null,
+      "construction": null,
+      "building": "construction"
+     },
+     {
+      "name": null,
+      "highway": null,
+      "bridge": null,
+      "construction": null,
+      "building": "construction"
+     },
+     {
+      "name": null,
+      "highway": null,
+      "bridge": null,
+      "construction": null,
+      "building": "construction"
+     },
+     {
+      "name": null,
+      "highway": null,
+      "bridge": null,
+      "construction": null,
+      "building": "construction"
+     },
+     {
+      "name": null,
+      "highway": null,
+      "bridge": null,
+      "construction": null,
+      "building": "construction"
+     },
+     {
+      "name": null,
+      "highway": null,
+      "bridge": null,
+      "construction": null,
+      "building": "construction"
+     },
+     {
+      "name": null,
+      "highway": null,
+      "bridge": null,
+      "construction": null,
+      "building": "construction"
+     },
+     {
+      "name": null,
+      "highway": null,
+      "bridge": null,
+      "construction": null,
+      "building": "construction"
+     },
+     {
+      "name": null,
+      "highway": null,
+      "bridge": null,
+      "construction": null,
+      "building": "construction"
+     },
+     {
+      "more": 64
+     }
+    ],
+    "geojson": "events/drainage_sites/lekki-epe-rehab/osm.geojson"
+   }
+  },
+  {
+   "site_id": "marina-drainage",
+   "site_source": "events/drainage_sites.json",
+   "event_id": "lagos-2021-07-16",
+   "event_date": "2021-07-16",
+   "claim": "Marina has 'no drainage system'.",
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      3.38873,
+      6.45211
+     ],
+     [
+      3.38196,
+      6.45461
+     ],
+     [
+      3.38065,
+      6.45757
+     ]
+    ]
+   },
+   "query_point": [
+    3.383827,
+    6.453921
+   ],
+   "image_windows": {
+    "before": [
+     "2018-07-01",
+     "2021-01-16"
+    ],
+    "after": [
+     "2021-07-16",
+     "2022-01-16"
+    ]
+   },
+   "gaps": [
+    "no tiles at z17-z12 for acquisition 2010-02-06 in any release carrying it",
+    "2012-05-01: tiles missing at z17; corridor chip rendered at z16 (2.4 m/px)",
+    "no imagery within a year after the event (nearest 2025-05-15, 1399 days after)"
+   ],
+   "chip_window": "line bbox + 150 m (1194 x 904 m)",
+   "n_releases_checked": 197,
+   "release_metadata_issues": null,
+   "n_distinct_acq_dates": 7,
+   "all_acq_dates": [
+    {
+     "acq_date": "2010-02-06",
+     "first_release": 239,
+     "first_release_date": "2018-11-07",
+     "n_releases_carrying_it": 18
+    },
+    {
+     "acq_date": "2012-05-01",
+     "first_release": 10,
+     "first_release_date": "2014-02-20",
+     "n_releases_carrying_it": 55
+    },
+    {
+     "acq_date": "2012-12-23",
+     "first_release": 784,
+     "first_release_date": "2017-03-15",
+     "n_releases_carrying_it": 28
+    },
+    {
+     "acq_date": "2015-12-08",
+     "first_release": 2168,
+     "first_release_date": "2018-09-06",
+     "n_releases_carrying_it": 3
+    },
+    {
+     "acq_date": "2018-12-28",
+     "first_release": 119,
+     "first_release_date": "2019-12-12",
+     "n_releases_carrying_it": 40
+    },
+    {
+     "acq_date": "2021-05-23",
+     "first_release": 1034,
+     "first_release_date": "2022-06-08",
+     "n_releases_carrying_it": 43
+    },
+    {
+     "acq_date": "2025-05-15",
+     "first_release": 10842,
+     "first_release_date": "2025-11-20",
+     "n_releases_carrying_it": 10
+    }
+   ],
+   "selected_dates": [
+    "2010-02-06",
+    "2012-05-01",
+    "2012-12-23",
+    "2015-12-08",
+    "2018-12-28",
+    "2021-05-23",
+    "2025-05-15"
+   ],
+   "corridor_zoom": 17,
+   "images": [
+    {
+     "acq_date": "2012-05-01",
+     "release": 10,
+     "release_date": "2014-02-20",
+     "first_release": 10,
+     "n_releases_carrying_date": 55,
+     "source": "WV02 / DigitalGlobe",
+     "sensor": "WV02",
+     "resolution_m": 0.5,
+     "zoom": 16,
+     "gsd_m": 2.38,
+     "size_px": [
+      502,
+      383
+     ],
+     "downscaled_from_px": null,
+     "chip_window": "line bbox + 150 m (1194 x 904 m)",
+     "file": "events/drainage_sites/marina-drainage/2012-05-01.jpg",
+     "marked_file": "events/drainage_sites/marina-drainage/2012-05-01_marked.jpg",
+     "brightness": {
+      "mean_luminance": 0.43,
+      "bright_frac": 0.001
+     },
+     "detail_chips": [],
+     "label": "2012-05-01 z16 WV02 0.5m"
+    },
+    {
+     "acq_date": "2012-12-23",
+     "release": 29387,
+     "release_date": "2017-03-15",
+     "first_release": 784,
+     "n_releases_carrying_date": 28,
+     "source": "WV02 / Vivid - Africa / DigitalGlobe",
+     "sensor": "WV02",
+     "resolution_m": 0.5,
+     "zoom": 17,
+     "gsd_m": 1.19,
+     "size_px": [
+      1006,
+      767
+     ],
+     "downscaled_from_px": null,
+     "chip_window": "line bbox + 150 m (1194 x 904 m)",
+     "file": "events/drainage_sites/marina-drainage/2012-12-23.jpg",
+     "marked_file": "events/drainage_sites/marina-drainage/2012-12-23_marked.jpg",
+     "brightness": {
+      "mean_luminance": 0.368,
+      "bright_frac": 0.0
+     },
+     "detail_chips": [],
+     "label": "2012-12-23 z17 WV02 0.5m"
+    },
+    {
+     "acq_date": "2015-12-08",
+     "release": 2168,
+     "release_date": "2018-09-06",
+     "first_release": 2168,
+     "n_releases_carrying_date": 3,
+     "source": "WV02 / Vivid / DigitalGlobe",
+     "sensor": "WV02",
+     "resolution_m": 0.5,
+     "zoom": 17,
+     "gsd_m": 1.19,
+     "size_px": [
+      1006,
+      767
+     ],
+     "downscaled_from_px": null,
+     "chip_window": "line bbox + 150 m (1194 x 904 m)",
+     "file": "events/drainage_sites/marina-drainage/2015-12-08.jpg",
+     "marked_file": "events/drainage_sites/marina-drainage/2015-12-08_marked.jpg",
+     "brightness": {
+      "mean_luminance": 0.371,
+      "bright_frac": 0.0
+     },
+     "detail_chips": [],
+     "label": "2015-12-08 z17 WV02 0.5m"
+    },
+    {
+     "acq_date": "2018-12-28",
+     "release": 4756,
+     "release_date": "2019-12-12",
+     "first_release": 119,
+     "n_releases_carrying_date": 40,
+     "source": "WV03_VNIR / Metro / DigitalGlobe",
+     "sensor": "WV03_VNIR",
+     "resolution_m": 0.31,
+     "zoom": 17,
+     "gsd_m": 1.19,
+     "size_px": [
+      1006,
+      767
+     ],
+     "downscaled_from_px": null,
+     "chip_window": "line bbox + 150 m (1194 x 904 m)",
+     "file": "events/drainage_sites/marina-drainage/2018-12-28.jpg",
+     "marked_file": "events/drainage_sites/marina-drainage/2018-12-28_marked.jpg",
+     "brightness": {
+      "mean_luminance": 0.447,
+      "bright_frac": 0.0
+     },
+     "detail_chips": [],
+     "label": "2018-12-28 z17 WV03_VNIR 0.31m"
+    },
+    {
+     "acq_date": "2021-05-23",
+     "release": 44710,
+     "release_date": "2022-06-08",
+     "first_release": 1034,
+     "n_releases_carrying_date": 43,
+     "source": "WV03 / Vivid Advanced / Maxar",
+     "sensor": "WV03",
+     "resolution_m": 0.31,
+     "zoom": 17,
+     "gsd_m": 1.19,
+     "size_px": [
+      1006,
+      767
+     ],
+     "downscaled_from_px": null,
+     "chip_window": "line bbox + 150 m (1194 x 904 m)",
+     "file": "events/drainage_sites/marina-drainage/2021-05-23.jpg",
+     "marked_file": "events/drainage_sites/marina-drainage/2021-05-23_marked.jpg",
+     "brightness": {
+      "mean_luminance": 0.389,
+      "bright_frac": 0.004
+     },
+     "detail_chips": [],
+     "label": "2021-05-23 z17 WV03 0.31m"
+    },
+    {
+     "acq_date": "2025-05-15",
+     "release": 51127,
+     "release_date": "2025-11-20",
+     "first_release": 10842,
+     "n_releases_carrying_date": 10,
+     "source": "LG04 / Vivid Advanced / Vantor",
+     "sensor": "LG04",
+     "resolution_m": 0.34,
+     "zoom": 17,
+     "gsd_m": 1.19,
+     "size_px": [
+      1006,
+      767
+     ],
+     "downscaled_from_px": null,
+     "chip_window": "line bbox + 150 m (1194 x 904 m)",
+     "file": "events/drainage_sites/marina-drainage/2025-05-15.jpg",
+     "marked_file": "events/drainage_sites/marina-drainage/2025-05-15_marked.jpg",
+     "brightness": {
+      "mean_luminance": 0.387,
+      "bright_frac": 0.0
+     },
+     "detail_chips": [],
+     "label": "2025-05-15 z17 LG04 0.34m"
+    }
+   ],
+   "contact_sheet": "events/drainage_sites/marina-drainage/contact_sheet.jpg",
+   "osm": {
+    "source": "OpenStreetMap via Overpass (current data, not historical)",
+    "licence": "ODbL (OpenStreetMap contributors)",
+    "radius_m": 300.0,
+    "overpass_queries_used": 1,
+    "n_ways_fetched": 1414,
+    "geojson_building_note": null,
+    "drain_length_m": 0,
+    "drain_length_by_type_m": {},
+    "n_waterway_ways": 0,
+    "n_waterway_ways_with_culvert_tag": 0,
+    "n_other_culvert_tagged_ways": 0,
+    "buildings": {
+     "n": 507,
+     "area_m2": 175950.5
+    },
+    "buildings_within_5m": {
+     "n": 0,
+     "area_m2": 0.0,
+     "note": "no mapped waterway within 300 m"
+    },
+    "buildings_within_10m": {
+     "n": 0,
+     "area_m2": 0.0,
+     "note": "no mapped waterway within 300 m"
+    },
+    "buildings_within_20m": {
+     "n": 0,
+     "area_m2": 0.0,
+     "note": "no mapped waterway within 300 m"
+    },
+    "setback_proxy_note": "Distance of a building footprint to a mapped waterway (drain/canal/stream/river/ditch) within 300 m of the site.  This is a setback proxy, NOT the legal setback; drains not mapped in OSM are invisible to it.",
+    "bridges": [
+     {
+      "name": "Eko Bridge",
+      "highway": "motorway",
+      "bridge": "yes",
+      "construction": null,
+      "building": null
+     },
+     {
+      "name": "Apogbon Bridge",
+      "highway": "motorway",
+      "bridge": "yes",
+      "construction": null,
+      "building": null
+     },
+     {
+      "name": null,
+      "highway": "motorway_link",
+      "bridge": "yes",
+      "construction": null,
+      "building": null
+     },
+     {
+      "name": "New Marina Road",
+      "highway": "motorway_link",
+      "bridge": "yes",
+      "construction": null,
+      "building": null
+     },
+     {
+      "name": "Apogbon Bridge",
+      "highway": "motorway",
+      "bridge": "yes",
+      "construction": null,
+      "building": null
+     },
+     {
+      "name": "Adeniji Adele Road",
+      "highway": "primary",
+      "bridge": "yes",
+      "construction": null,
+      "building": null
+     },
+     {
+      "name": null,
+      "highway": "motorway_link",
+      "bridge": "yes",
+      "construction": null,
+      "building": null
+     },
+     {
+      "name": null,
+      "highway": "motorway_link",
+      "bridge": "yes",
+      "construction": null,
+      "building": null
+     },
+     {
+      "name": "Eko Bridge",
+      "highway": "motorway",
+      "bridge": "yes",
+      "construction": null,
+      "building": null
+     },
+     {
+      "name": "New Marina Road",
+      "highway": "motorway",
+      "bridge": "yes",
+      "construction": null,
+      "building": null
+     },
+     {
+      "name": null,
+      "highway": "footway",
+      "bridge": "yes",
+      "construction": null,
+      "building": null
+     },
+     {
+      "name": null,
+      "highway": "footway",
+      "bridge": "yes",
+      "construction": null,
+      "building": null
+     },
+     {
+      "name": "LRMT Blue Line",
+      "highway": null,
+      "bridge": "viaduct",
+      "construction": null,
+      "building": null
+     },
+     {
+      "name": null,
+      "highway": "footway",
+      "bridge": "yes",
+      "construction": null,
+      "building": null
+     },
+     {
+      "name": "LRMT Blue Line",
+      "highway": null,
+      "bridge": "viaduct",
+      "construction": null,
+      "building": null
+     }
+    ],
+    "construction_ways": [],
+    "geojson": "events/drainage_sites/marina-drainage/osm.geojson"
+   }
+  },
+  {
+   "site_id": "oko-oba-canal",
+   "site_source": "events/drainage_sites.json",
+   "event_id": "lagos-2022-07-08",
+   "event_date": "2022-07-08",
+   "claim": "Canal by old Oko-Oba Road (Agege) overflowed; was it under works?",
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      3.31171,
+      6.6322
+     ],
+     [
+      3.31248,
+      6.63609
+     ],
+     [
+      3.31312,
+      6.64095
+     ],
+     [
+      3.31578,
+      6.64514
+     ]
+    ]
+   },
+   "query_point": [
+    3.312865,
+    6.639015
+   ],
+   "image_windows": {
+    "before": [
+     "2019-07-01",
+     "2022-03-31"
+    ],
+    "after": [
+     "2022-07-09",
+     "2023-01-31"
+    ]
+   },
+   "gaps": [
+    "no tiles at z16-z12 for acquisition 2010-02-06 in any release carrying it",
+    "no imagery within a year before the event (nearest 2021-05-23, 411 days before)",
+    "no imagery within a year after the event (nearest 2025-05-15, 1042 days after)"
+   ],
+   "chip_window": "line bbox + 150 m (750 x 1731 m)",
+   "n_releases_checked": 197,
+   "release_metadata_issues": null,
+   "n_distinct_acq_dates": 7,
+   "all_acq_dates": [
+    {
+     "acq_date": "2010-02-06",
+     "first_release": 239,
+     "first_release_date": "2018-11-07",
+     "n_releases_carrying_it": 18
+    },
+    {
+     "acq_date": "2012-05-01",
+     "first_release": 10,
+     "first_release_date": "2014-02-20",
+     "n_releases_carrying_it": 55
+    },
+    {
+     "acq_date": "2013-12-19",
+     "first_release": 784,
+     "first_release_date": "2017-03-15",
+     "n_releases_carrying_it": 28
+    },
+    {
+     "acq_date": "2015-12-08",
+     "first_release": 2168,
+     "first_release_date": "2018-09-06",
+     "n_releases_carrying_it": 3
+    },
+    {
+     "acq_date": "2018-12-28",
+     "first_release": 119,
+     "first_release_date": "2019-12-12",
+     "n_releases_carrying_it": 40
+    },
+    {
+     "acq_date": "2021-05-23",
+     "first_release": 1034,
+     "first_release_date": "2022-06-08",
+     "n_releases_carrying_it": 43
+    },
+    {
+     "acq_date": "2025-05-15",
+     "first_release": 10842,
+     "first_release_date": "2025-11-20",
+     "n_releases_carrying_it": 10
+    }
+   ],
+   "selected_dates": [
+    "2010-02-06",
+    "2012-05-01",
+    "2013-12-19",
+    "2015-12-08",
+    "2018-12-28",
+    "2021-05-23",
+    "2025-05-15"
+   ],
+   "corridor_zoom": 16,
+   "stations": [
+    {
+     "name": "start",
+     "lon": 3.31171,
+     "lat": 6.6322
+    },
+    {
+     "name": "mid",
+     "lon": 3.312865,
+     "lat": 6.639015
+    },
+    {
+     "name": "end",
+     "lon": 3.31578,
+     "lat": 6.64514
+    }
+   ],
+   "station_note": "line bbox + pad > 1400 m: native-z18 500 x 500 m detail chips at the start/mid/end stations on the anchor dates (nearest date either side of the event and of each image_windows bound), plus the whole-corridor chip per date",
+   "images": [
+    {
+     "acq_date": "2012-05-01",
+     "release": 10,
+     "release_date": "2014-02-20",
+     "first_release": 10,
+     "n_releases_carrying_date": 55,
+     "source": "WV02 / DigitalGlobe",
+     "sensor": "WV02",
+     "resolution_m": 0.5,
+     "zoom": 16,
+     "gsd_m": 2.37,
+     "size_px": [
+      316,
+      734
+     ],
+     "downscaled_from_px": null,
+     "chip_window": "line bbox + 150 m (750 x 1731 m)",
+     "file": "events/drainage_sites/oko-oba-canal/2012-05-01.jpg",
+     "marked_file": "events/drainage_sites/oko-oba-canal/2012-05-01_marked.jpg",
+     "brightness": {
+      "mean_luminance": 0.626,
+      "bright_frac": 0.167
+     },
+     "detail_chips": [],
+     "label": "2012-05-01 z16 WV02 0.5m"
+    },
+    {
+     "acq_date": "2013-12-19",
+     "release": 29387,
+     "release_date": "2017-03-15",
+     "first_release": 784,
+     "n_releases_carrying_date": 28,
+     "source": "WV02 / Vivid - Africa / DigitalGlobe",
+     "sensor": "WV02",
+     "resolution_m": 0.5,
+     "zoom": 16,
+     "gsd_m": 2.37,
+     "size_px": [
+      316,
+      734
+     ],
+     "downscaled_from_px": null,
+     "chip_window": "line bbox + 150 m (750 x 1731 m)",
+     "file": "events/drainage_sites/oko-oba-canal/2013-12-19.jpg",
+     "marked_file": "events/drainage_sites/oko-oba-canal/2013-12-19_marked.jpg",
+     "brightness": {
+      "mean_luminance": 0.423,
+      "bright_frac": 0.0
+     },
+     "detail_chips": [],
+     "label": "2013-12-19 z16 WV02 0.5m"
+    },
+    {
+     "acq_date": "2015-12-08",
+     "release": 2168,
+     "release_date": "2018-09-06",
+     "first_release": 2168,
+     "n_releases_carrying_date": 3,
+     "source": "WV02 / Vivid / DigitalGlobe",
+     "sensor": "WV02",
+     "resolution_m": 0.5,
+     "zoom": 16,
+     "gsd_m": 2.37,
+     "size_px": [
+      316,
+      734
+     ],
+     "downscaled_from_px": null,
+     "chip_window": "line bbox + 150 m (750 x 1731 m)",
+     "file": "events/drainage_sites/oko-oba-canal/2015-12-08.jpg",
+     "marked_file": "events/drainage_sites/oko-oba-canal/2015-12-08_marked.jpg",
+     "brightness": {
+      "mean_luminance": 0.387,
+      "bright_frac": 0.0
+     },
+     "detail_chips": [],
+     "label": "2015-12-08 z16 WV02 0.5m"
+    },
+    {
+     "acq_date": "2018-12-28",
+     "release": 4756,
+     "release_date": "2019-12-12",
+     "first_release": 119,
+     "n_releases_carrying_date": 40,
+     "source": "WV03_VNIR / Metro / DigitalGlobe",
+     "sensor": "WV03_VNIR",
+     "resolution_m": 0.31,
+     "zoom": 16,
+     "gsd_m": 2.37,
+     "size_px": [
+      316,
+      734
+     ],
+     "downscaled_from_px": null,
+     "chip_window": "line bbox + 150 m (750 x 1731 m)",
+     "file": "events/drainage_sites/oko-oba-canal/2018-12-28.jpg",
+     "marked_file": "events/drainage_sites/oko-oba-canal/2018-12-28_marked.jpg",
+     "brightness": {
+      "mean_luminance": 0.614,
+      "bright_frac": 0.0
+     },
+     "detail_chips": [
+      {
+       "station": "start",
+       "lon": 3.31171,
+       "lat": 6.6322,
+       "zoom": 18,
+       "gsd_m": 0.59,
+       "size_px": [
+        843,
+        848
+       ],
+       "file": "events/drainage_sites/oko-oba-canal/2018-12-28_detail1.jpg",
+       "marked_file": "events/drainage_sites/oko-oba-canal/2018-12-28_detail1_marked.jpg"
+      },
+      {
+       "station": "mid",
+       "lon": 3.312865,
+       "lat": 6.639015,
+       "zoom": 18,
+       "gsd_m": 0.59,
+       "size_px": [
+        843,
+        848
+       ],
+       "file": "events/drainage_sites/oko-oba-canal/2018-12-28_detail2.jpg",
+       "marked_file": "events/drainage_sites/oko-oba-canal/2018-12-28_detail2_marked.jpg"
+      },
+      {
+       "station": "end",
+       "lon": 3.31578,
+       "lat": 6.64514,
+       "zoom": 18,
+       "gsd_m": 0.59,
+       "size_px": [
+        843,
+        849
+       ],
+       "file": "events/drainage_sites/oko-oba-canal/2018-12-28_detail3.jpg",
+       "marked_file": "events/drainage_sites/oko-oba-canal/2018-12-28_detail3_marked.jpg"
+      }
+     ],
+     "label": "2018-12-28 z16 WV03_VNIR 0.31m"
+    },
+    {
+     "acq_date": "2021-05-23",
+     "release": 44710,
+     "release_date": "2022-06-08",
+     "first_release": 1034,
+     "n_releases_carrying_date": 43,
+     "source": "WV03 / Vivid Advanced / Maxar",
+     "sensor": "WV03",
+     "resolution_m": 0.31,
+     "zoom": 16,
+     "gsd_m": 2.37,
+     "size_px": [
+      316,
+      734
+     ],
+     "downscaled_from_px": null,
+     "chip_window": "line bbox + 150 m (750 x 1731 m)",
+     "file": "events/drainage_sites/oko-oba-canal/2021-05-23.jpg",
+     "marked_file": "events/drainage_sites/oko-oba-canal/2021-05-23_marked.jpg",
+     "brightness": {
+      "mean_luminance": 0.439,
+      "bright_frac": 0.001
+     },
+     "detail_chips": [
+      {
+       "station": "start",
+       "lon": 3.31171,
+       "lat": 6.6322,
+       "zoom": 18,
+       "gsd_m": 0.59,
+       "size_px": [
+        843,
+        848
+       ],
+       "file": "events/drainage_sites/oko-oba-canal/2021-05-23_detail1.jpg",
+       "marked_file": "events/drainage_sites/oko-oba-canal/2021-05-23_detail1_marked.jpg"
+      },
+      {
+       "station": "mid",
+       "lon": 3.312865,
+       "lat": 6.639015,
+       "zoom": 18,
+       "gsd_m": 0.59,
+       "size_px": [
+        843,
+        848
+       ],
+       "file": "events/drainage_sites/oko-oba-canal/2021-05-23_detail2.jpg",
+       "marked_file": "events/drainage_sites/oko-oba-canal/2021-05-23_detail2_marked.jpg"
+      },
+      {
+       "station": "end",
+       "lon": 3.31578,
+       "lat": 6.64514,
+       "zoom": 18,
+       "gsd_m": 0.59,
+       "size_px": [
+        843,
+        849
+       ],
+       "file": "events/drainage_sites/oko-oba-canal/2021-05-23_detail3.jpg",
+       "marked_file": "events/drainage_sites/oko-oba-canal/2021-05-23_detail3_marked.jpg"
+      }
+     ],
+     "label": "2021-05-23 z16 WV03 0.31m"
+    },
+    {
+     "acq_date": "2025-05-15",
+     "release": 51127,
+     "release_date": "2025-11-20",
+     "first_release": 10842,
+     "n_releases_carrying_date": 10,
+     "source": "LG04 / Vivid Advanced / Vantor",
+     "sensor": "LG04",
+     "resolution_m": 0.34,
+     "zoom": 16,
+     "gsd_m": 2.37,
+     "size_px": [
+      316,
+      734
+     ],
+     "downscaled_from_px": null,
+     "chip_window": "line bbox + 150 m (750 x 1731 m)",
+     "file": "events/drainage_sites/oko-oba-canal/2025-05-15.jpg",
+     "marked_file": "events/drainage_sites/oko-oba-canal/2025-05-15_marked.jpg",
+     "brightness": {
+      "mean_luminance": 0.436,
+      "bright_frac": 0.002
+     },
+     "detail_chips": [
+      {
+       "station": "start",
+       "lon": 3.31171,
+       "lat": 6.6322,
+       "zoom": 18,
+       "gsd_m": 0.59,
+       "size_px": [
+        843,
+        848
+       ],
+       "file": "events/drainage_sites/oko-oba-canal/2025-05-15_detail1.jpg",
+       "marked_file": "events/drainage_sites/oko-oba-canal/2025-05-15_detail1_marked.jpg"
+      },
+      {
+       "station": "mid",
+       "lon": 3.312865,
+       "lat": 6.639015,
+       "zoom": 18,
+       "gsd_m": 0.59,
+       "size_px": [
+        843,
+        848
+       ],
+       "file": "events/drainage_sites/oko-oba-canal/2025-05-15_detail2.jpg",
+       "marked_file": "events/drainage_sites/oko-oba-canal/2025-05-15_detail2_marked.jpg"
+      },
+      {
+       "station": "end",
+       "lon": 3.31578,
+       "lat": 6.64514,
+       "zoom": 18,
+       "gsd_m": 0.59,
+       "size_px": [
+        843,
+        849
+       ],
+       "file": "events/drainage_sites/oko-oba-canal/2025-05-15_detail3.jpg",
+       "marked_file": "events/drainage_sites/oko-oba-canal/2025-05-15_detail3_marked.jpg"
+      }
+     ],
+     "label": "2025-05-15 z16 LG04 0.34m"
+    }
+   ],
+   "contact_sheet": "events/drainage_sites/oko-oba-canal/contact_sheet.jpg",
+   "osm": {
+    "source": "OpenStreetMap via Overpass (current data, not historical)",
+    "licence": "ODbL (OpenStreetMap contributors)",
+    "radius_m": 300.0,
+    "overpass_queries_used": 1,
+    "n_ways_fetched": 5091,
+    "geojson_building_note": "osm.geojson holds only buildings within 50 m of a mapped waterway (0 of 2958 within 300 m of the site) to keep the file small; the counts and areas in this summary cover all of them",
+    "drain_length_m": 0,
+    "drain_length_by_type_m": {},
+    "n_waterway_ways": 0,
+    "n_waterway_ways_with_culvert_tag": 0,
+    "n_other_culvert_tagged_ways": 0,
+    "buildings": {
+     "n": 2958,
+     "area_m2": 460079.3
+    },
+    "buildings_within_5m": {
+     "n": 0,
+     "area_m2": 0.0,
+     "note": "no mapped waterway within 300 m"
+    },
+    "buildings_within_10m": {
+     "n": 0,
+     "area_m2": 0.0,
+     "note": "no mapped waterway within 300 m"
+    },
+    "buildings_within_20m": {
+     "n": 0,
+     "area_m2": 0.0,
+     "note": "no mapped waterway within 300 m"
+    },
+    "setback_proxy_note": "Distance of a building footprint to a mapped waterway (drain/canal/stream/river/ditch) within 300 m of the site.  This is a setback proxy, NOT the legal setback; drains not mapped in OSM are invisible to it.",
+    "bridges": [
+     {
+      "name": "Alexander Street",
+      "highway": "residential",
+      "bridge": "yes",
+      "construction": null,
+      "building": null
+     },
+     {
+      "name": null,
+      "highway": "residential",
+      "bridge": "yes",
+      "construction": null,
+      "building": null
+     }
+    ],
+    "construction_ways": [
+     {
+      "name": null,
+      "highway": null,
+      "bridge": null,
+      "construction": null,
+      "building": "construction"
+     },
+     {
+      "name": null,
+      "highway": null,
+      "bridge": null,
+      "construction": null,
+      "building": "construction"
+     },
+     {
+      "name": null,
+      "highway": null,
+      "bridge": null,
+      "construction": null,
+      "building": "construction"
+     },
+     {
+      "name": null,
+      "highway": null,
+      "bridge": null,
+      "construction": null,
+      "building": "construction"
+     }
+    ],
+    "geojson": "events/drainage_sites/oko-oba-canal/osm.geojson"
+   }
+  },
+  {
+   "site_id": "olopomeji",
+   "site_source": "events/drainage_sites.json",
+   "event_id": "lagos-2024-07-03",
+   "event_date": "2024-07-03",
+   "claim": "Water paths at Olopomeji blocked by refuse (which Olopomeji: Ebute Metta/Yaba?).",
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      3.40639,
+      6.54849
+     ],
+     [
+      3.40171,
+      6.54951
+     ],
+     [
+      3.39739,
+      6.55149
+     ],
+     [
+      3.39443,
+      6.55064
+     ],
+     [
+      3.3802,
+      6.5483
+     ]
+    ]
+   },
+   "query_point": [
+    3.393542,
+    6.550494
+   ],
+   "image_windows": {
+    "before": [
+     "2021-07-01",
+     "2024-06-30"
+    ],
+    "after": [
+     "2024-07-03",
+     "2024-12-31"
+    ]
+   },
+   "gaps": [
+    "no tiles at z15-z12 for acquisition 2010-02-06 in any release carrying it",
+    "no tiles at z15-z12 for acquisition 2018-12-28 in any release carrying it",
+    "no imagery within a year before the event (nearest 2021-05-23, 1137 days before)"
+   ],
+   "chip_window": "line bbox + 150 m (3197 x 653 m)",
+   "n_releases_checked": 197,
+   "release_metadata_issues": null,
+   "n_distinct_acq_dates": 7,
+   "all_acq_dates": [
+    {
+     "acq_date": "2010-02-06",
+     "first_release": 239,
+     "first_release_date": "2018-11-07",
+     "n_releases_carrying_it": 18
+    },
+    {
+     "acq_date": "2012-05-01",
+     "first_release": 10,
+     "first_release_date": "2014-02-20",
+     "n_releases_carrying_it": 55
+    },
+    {
+     "acq_date": "2012-12-23",
+     "first_release": 784,
+     "first_release_date": "2017-03-15",
+     "n_releases_carrying_it": 28
+    },
+    {
+     "acq_date": "2015-12-08",
+     "first_release": 2168,
+     "first_release_date": "2018-09-06",
+     "n_releases_carrying_it": 3
+    },
+    {
+     "acq_date": "2018-12-28",
+     "first_release": 119,
+     "first_release_date": "2019-12-12",
+     "n_releases_carrying_it": 40
+    },
+    {
+     "acq_date": "2021-05-23",
+     "first_release": 1034,
+     "first_release_date": "2022-06-08",
+     "n_releases_carrying_it": 43
+    },
+    {
+     "acq_date": "2025-05-15",
+     "first_release": 10842,
+     "first_release_date": "2025-11-20",
+     "n_releases_carrying_it": 10
+    }
+   ],
+   "selected_dates": [
+    "2010-02-06",
+    "2012-05-01",
+    "2012-12-23",
+    "2015-12-08",
+    "2018-12-28",
+    "2021-05-23",
+    "2025-05-15"
+   ],
+   "corridor_zoom": 15,
+   "stations": [
+    {
+     "name": "start",
+     "lon": 3.40639,
+     "lat": 6.54849
+    },
+    {
+     "name": "mid",
+     "lon": 3.393542,
+     "lat": 6.550494
+    },
+    {
+     "name": "end",
+     "lon": 3.3802,
+     "lat": 6.5483
+    }
+   ],
+   "station_note": "line bbox + pad > 1400 m: native-z18 500 x 500 m detail chips at the start/mid/end stations on the anchor dates (nearest date either side of the event and of each image_windows bound), plus the whole-corridor chip per date",
+   "images": [
+    {
+     "acq_date": "2012-05-01",
+     "release": 10,
+     "release_date": "2014-02-20",
+     "first_release": 10,
+     "n_releases_carrying_date": 55,
+     "source": "WV02 / DigitalGlobe",
+     "sensor": "WV02",
+     "resolution_m": 0.5,
+     "zoom": 15,
+     "gsd_m": 4.75,
+     "size_px": [
+      673,
+      138
+     ],
+     "downscaled_from_px": null,
+     "chip_window": "line bbox + 150 m (3197 x 653 m)",
+     "file": "events/drainage_sites/olopomeji/2012-05-01.jpg",
+     "marked_file": "events/drainage_sites/olopomeji/2012-05-01_marked.jpg",
+     "brightness": {
+      "mean_luminance": 0.547,
+      "bright_frac": 0.033
+     },
+     "detail_chips": [],
+     "label": "2012-05-01 z15 WV02 0.5m"
+    },
+    {
+     "acq_date": "2012-12-23",
+     "release": 29387,
+     "release_date": "2017-03-15",
+     "first_release": 784,
+     "n_releases_carrying_date": 28,
+     "source": "WV02 / Vivid - Africa / DigitalGlobe",
+     "sensor": "WV02",
+     "resolution_m": 0.5,
+     "zoom": 15,
+     "gsd_m": 4.75,
+     "size_px": [
+      673,
+      138
+     ],
+     "downscaled_from_px": null,
+     "chip_window": "line bbox + 150 m (3197 x 653 m)",
+     "file": "events/drainage_sites/olopomeji/2012-12-23.jpg",
+     "marked_file": "events/drainage_sites/olopomeji/2012-12-23_marked.jpg",
+     "brightness": {
+      "mean_luminance": 0.387,
+      "bright_frac": 0.0
+     },
+     "detail_chips": [],
+     "label": "2012-12-23 z15 WV02 0.5m"
+    },
+    {
+     "acq_date": "2015-12-08",
+     "release": 2168,
+     "release_date": "2018-09-06",
+     "first_release": 2168,
+     "n_releases_carrying_date": 3,
+     "source": "WV02 / Vivid / DigitalGlobe",
+     "sensor": "WV02",
+     "resolution_m": 0.5,
+     "zoom": 15,
+     "gsd_m": 4.75,
+     "size_px": [
+      673,
+      138
+     ],
+     "downscaled_from_px": null,
+     "chip_window": "line bbox + 150 m (3197 x 653 m)",
+     "file": "events/drainage_sites/olopomeji/2015-12-08.jpg",
+     "marked_file": "events/drainage_sites/olopomeji/2015-12-08_marked.jpg",
+     "brightness": {
+      "mean_luminance": 0.431,
+      "bright_frac": 0.001
+     },
+     "detail_chips": [],
+     "label": "2015-12-08 z15 WV02 0.5m"
+    },
+    {
+     "acq_date": "2021-05-23",
+     "release": 13851,
+     "release_date": "2022-07-21",
+     "first_release": 1034,
+     "n_releases_carrying_date": 43,
+     "source": "WV03 / Vivid / Maxar",
+     "sensor": "WV03",
+     "resolution_m": 0.31,
+     "zoom": 15,
+     "gsd_m": 4.75,
+     "size_px": [
+      673,
+      138
+     ],
+     "downscaled_from_px": null,
+     "chip_window": "line bbox + 150 m (3197 x 653 m)",
+     "file": "events/drainage_sites/olopomeji/2021-05-23.jpg",
+     "marked_file": "events/drainage_sites/olopomeji/2021-05-23_marked.jpg",
+     "brightness": {
+      "mean_luminance": 0.459,
+      "bright_frac": 0.002
+     },
+     "detail_chips": [
+      {
+       "station": "start",
+       "lon": 3.40639,
+       "lat": 6.54849,
+       "zoom": 18,
+       "gsd_m": 0.59,
+       "size_px": [
+        842,
+        849
+       ],
+       "file": "events/drainage_sites/olopomeji/2021-05-23_detail1.jpg",
+       "marked_file": "events/drainage_sites/olopomeji/2021-05-23_detail1_marked.jpg"
+      },
+      {
+       "station": "mid",
+       "lon": 3.393542,
+       "lat": 6.550494,
+       "zoom": 18,
+       "gsd_m": 0.59,
+       "size_px": [
+        842,
+        849
+       ],
+       "file": "events/drainage_sites/olopomeji/2021-05-23_detail2.jpg",
+       "marked_file": "events/drainage_sites/olopomeji/2021-05-23_detail2_marked.jpg"
+      },
+      {
+       "station": "end",
+       "lon": 3.3802,
+       "lat": 6.5483,
+       "zoom": 18,
+       "gsd_m": 0.59,
+       "size_px": [
+        842,
+        848
+       ],
+       "file": "events/drainage_sites/olopomeji/2021-05-23_detail3.jpg",
+       "marked_file": "events/drainage_sites/olopomeji/2021-05-23_detail3_marked.jpg"
+      }
+     ],
+     "label": "2021-05-23 z15 WV03 0.31m"
+    },
+    {
+     "acq_date": "2025-05-15",
+     "release": 64001,
+     "release_date": "2026-02-26",
+     "first_release": 10842,
+     "n_releases_carrying_date": 10,
+     "source": "LG04 / Vivid Advanced / Vantor",
+     "sensor": "LG04",
+     "resolution_m": 0.34,
+     "zoom": 15,
+     "gsd_m": 4.75,
+     "size_px": [
+      673,
+      138
+     ],
+     "downscaled_from_px": null,
+     "chip_window": "line bbox + 150 m (3197 x 653 m)",
+     "file": "events/drainage_sites/olopomeji/2025-05-15.jpg",
+     "marked_file": "events/drainage_sites/olopomeji/2025-05-15_marked.jpg",
+     "brightness": {
+      "mean_luminance": 0.463,
+      "bright_frac": 0.0
+     },
+     "detail_chips": [
+      {
+       "station": "start",
+       "lon": 3.40639,
+       "lat": 6.54849,
+       "zoom": 18,
+       "gsd_m": 0.59,
+       "size_px": [
+        842,
+        849
+       ],
+       "file": "events/drainage_sites/olopomeji/2025-05-15_detail1.jpg",
+       "marked_file": "events/drainage_sites/olopomeji/2025-05-15_detail1_marked.jpg"
+      },
+      {
+       "station": "mid",
+       "lon": 3.393542,
+       "lat": 6.550494,
+       "zoom": 18,
+       "gsd_m": 0.59,
+       "size_px": [
+        842,
+        849
+       ],
+       "file": "events/drainage_sites/olopomeji/2025-05-15_detail2.jpg",
+       "marked_file": "events/drainage_sites/olopomeji/2025-05-15_detail2_marked.jpg"
+      },
+      {
+       "station": "end",
+       "lon": 3.3802,
+       "lat": 6.5483,
+       "zoom": 18,
+       "gsd_m": 0.59,
+       "size_px": [
+        842,
+        848
+       ],
+       "file": "events/drainage_sites/olopomeji/2025-05-15_detail3.jpg",
+       "marked_file": "events/drainage_sites/olopomeji/2025-05-15_detail3_marked.jpg"
+      }
+     ],
+     "label": "2025-05-15 z15 LG04 0.34m"
+    }
+   ],
+   "contact_sheet": "events/drainage_sites/olopomeji/contact_sheet.jpg",
+   "osm": {
+    "source": "OpenStreetMap via Overpass (current data, not historical)",
+    "licence": "ODbL (OpenStreetMap contributors)",
+    "radius_m": 300.0,
+    "overpass_queries_used": 1,
+    "n_ways_fetched": 3145,
+    "geojson_building_note": null,
+    "drain_length_m": 2072.9,
+    "drain_length_by_type_m": {
+     "stream": 852.9,
+     "drain": 1220.0
+    },
+    "n_waterway_ways": 5,
+    "n_waterway_ways_with_culvert_tag": 0,
+    "n_other_culvert_tagged_ways": 0,
+    "buildings": {
+     "n": 1907,
+     "area_m2": 429634.8
+    },
+    "buildings_within_5m": {
+     "n": 3,
+     "area_m2": 1047.1
+    },
+    "buildings_within_10m": {
+     "n": 19,
+     "area_m2": 2697.3
+    },
+    "buildings_within_20m": {
+     "n": 49,
+     "area_m2": 8731.8
+    },
+    "setback_proxy_note": "Distance of a building footprint to a mapped waterway (drain/canal/stream/river/ditch) within 300 m of the site.  This is a setback proxy, NOT the legal setback; drains not mapped in OSM are invisible to it.",
+    "bridges": [
+     {
+      "name": null,
+      "highway": "footway",
+      "bridge": "yes",
+      "construction": null,
+      "building": null
+     },
+     {
+      "name": null,
+      "highway": "footway",
+      "bridge": "yes",
+      "construction": null,
+      "building": null
+     },
+     {
+      "name": null,
+      "highway": "primary_link",
+      "bridge": "yes",
+      "construction": null,
+      "building": null
+     },
+     {
+      "name": "Diya Street",
+      "highway": "secondary",
+      "bridge": "yes",
+      "construction": null,
+      "building": null
+     },
+     {
+      "name": "Diya Street",
+      "highway": "primary",
+      "bridge": "yes",
+      "construction": null,
+      "building": null
+     },
+     {
+      "name": null,
+      "highway": "motorway_link",
+      "bridge": "yes",
+      "construction": null,
+      "building": null
+     },
+     {
+      "name": null,
+      "highway": "motorway_link",
+      "bridge": "yes",
+      "construction": null,
+      "building": null
+     },
+     {
+      "name": null,
+      "highway": "motorway_link",
+      "bridge": "yes",
+      "construction": null,
+      "building": null
+     },
+     {
+      "name": null,
+      "highway": "motorway_link",
+      "bridge": "yes",
+      "construction": null,
+      "building": null
+     },
+     {
+      "name": null,
+      "highway": "motorway_link",
+      "bridge": "yes",
+      "construction": null,
+      "building": null
+     },
+     {
+      "name": null,
+      "highway": "motorway_link",
+      "bridge": "yes",
+      "construction": null,
+      "building": null
+     },
+     {
+      "name": null,
+      "highway": "residential",
+      "bridge": "yes",
+      "construction": null,
+      "building": null
+     },
+     {
+      "name": null,
+      "highway": "residential",
+      "bridge": "yes",
+      "construction": null,
+      "building": null
+     },
+     {
+      "name": "Adetoke Street",
+      "highway": "residential",
+      "bridge": "yes",
+      "construction": null,
+      "building": null
+     },
+     {
+      "name": "Apapa-Oworonshoki Expressway",
+      "highway": "primary",
+      "bridge": "yes",
+      "construction": null,
+      "building": null
+     },
+     {
+      "name": null,
+      "highway": "residential",
+      "bridge": "yes",
+      "construction": null,
+      "building": null
+     },
+     {
+      "name": "Apapa-Oworonshoki Expressway",
+      "highway": "primary",
+      "bridge": "yes",
+      "construction": null,
+      "building": null
+     },
+     {
+      "name": "Apapa-Oworonsoki Expressway",
+      "highway": "motorway",
+      "bridge": "yes",
+      "construction": null,
+      "building": null
+     },
+     {
+      "name": "Apapa-Oworonsoki Expressway",
+      "highway": "motorway",
+      "bridge": "yes",
+      "construction": null,
+      "building": null
+     },
+     {
+      "name": null,
+      "highway": "residential",
+      "bridge": "yes",
+      "construction": null,
+      "building": null
+     },
+     {
+      "name": null,
+      "highway": "residential",
+      "bridge": "yes",
+      "construction": null,
+      "building": null
+     },
+     {
+      "name": null,
+      "highway": "footway",
+      "bridge": "yes",
+      "construction": null,
+      "building": null
+     },
+     {
+      "name": "Oluwaseun Street",
+      "highway": "residential",
+      "bridge": "yes",
+      "construction": null,
+      "building": null
+     },
+     {
+      "name": null,
+      "highway": "residential",
+      "bridge": "yes",
+      "construction": null,
+      "building": null
+     },
+     {
+      "name": null,
+      "highway": "footway",
+      "bridge": "yes",
+      "construction": null,
+      "building": null
+     }
+    ],
+    "construction_ways": [],
+    "geojson": "events/drainage_sites/olopomeji/osm.geojson"
+   }
+  },
+  {
+   "site_id": "sangotedo-channel-notices",
+   "site_source": "events/drainage_sites.json",
+   "event_id": "lagos-2024-07-03",
+   "event_date": "2024-07-03",
+   "claim": "Added: Wahab served 14-day abatement / 48-hour contravention notices for buildings on drainage channels in Sangotedo (Lekki), 23 Jun 2024.",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     3.63558,
+     6.47102
+    ]
+   },
+   "query_point": [
+    3.63558,
+    6.47102
+   ],
+   "image_windows": {
+    "before": [
+     "2021-06-01",
+     "2024-06-22"
+    ],
+    "after": [
+     "2024-06-23",
+     "2024-12-31"
+    ]
+   },
+   "gaps": [
+    "2012-05-06: tiles missing at z18; corridor chip rendered at z17 (1.2 m/px)",
+    "2013-01-01: tiles missing at z18; corridor chip rendered at z17 (1.2 m/px)",
+    "no imagery within a year before the event (nearest 2019-04-02, 1919 days before)"
+   ],
+   "chip_window": "500 x 500 m",
+   "n_releases_checked": 197,
+   "release_metadata_issues": null,
+   "n_distinct_acq_dates": 5,
+   "all_acq_dates": [
+    {
+     "acq_date": "2012-05-06",
+     "first_release": 10,
+     "first_release_date": "2014-02-20",
+     "n_releases_carrying_it": 55
+    },
+    {
+     "acq_date": "2013-01-01",
+     "first_release": 239,
+     "first_release_date": "2017-03-15",
+     "n_releases_carrying_it": 49
+    },
+    {
+     "acq_date": "2018-12-24",
+     "first_release": 119,
+     "first_release_date": "2019-12-12",
+     "n_releases_carrying_it": 40
+    },
+    {
+     "acq_date": "2019-04-02",
+     "first_release": 1034,
+     "first_release_date": "2022-06-08",
+     "n_releases_carrying_it": 43
+    },
+    {
+     "acq_date": "2024-11-30",
+     "first_release": 10842,
+     "first_release_date": "2025-11-20",
+     "n_releases_carrying_it": 10
+    }
+   ],
+   "selected_dates": [
+    "2012-05-06",
+    "2013-01-01",
+    "2018-12-24",
+    "2019-04-02",
+    "2024-11-30"
+   ],
+   "corridor_zoom": null,
+   "images": [
+    {
+     "acq_date": "2012-05-06",
+     "release": 10,
+     "release_date": "2014-02-20",
+     "first_release": 10,
+     "n_releases_carrying_date": 55,
+     "source": "QB02 / DigitalGlobe",
+     "sensor": "QB02",
+     "resolution_m": 0.6,
+     "zoom": 17,
+     "gsd_m": 1.19,
+     "size_px": [
+      421,
+      424
+     ],
+     "downscaled_from_px": null,
+     "chip_window": "500 x 500 m",
+     "file": "events/drainage_sites/sangotedo-channel-notices/2012-05-06.jpg",
+     "marked_file": "events/drainage_sites/sangotedo-channel-notices/2012-05-06_marked.jpg",
+     "brightness": {
+      "mean_luminance": 0.488,
+      "bright_frac": 0.004
+     },
+     "detail_chips": [],
+     "label": "2012-05-06 z17 QB02 0.6m"
+    },
+    {
+     "acq_date": "2013-01-01",
+     "release": 29387,
+     "release_date": "2017-03-15",
+     "first_release": 239,
+     "n_releases_carrying_date": 49,
+     "source": "GE01 / Vivid - Africa / DigitalGlobe",
+     "sensor": "GE01",
+     "resolution_m": 0.46,
+     "zoom": 17,
+     "gsd_m": 1.19,
+     "size_px": [
+      421,
+      424
+     ],
+     "downscaled_from_px": null,
+     "chip_window": "500 x 500 m",
+     "file": "events/drainage_sites/sangotedo-channel-notices/2013-01-01.jpg",
+     "marked_file": "events/drainage_sites/sangotedo-channel-notices/2013-01-01_marked.jpg",
+     "brightness": {
+      "mean_luminance": 0.476,
+      "bright_frac": 0.001
+     },
+     "detail_chips": [],
+     "label": "2013-01-01 z17 GE01 0.46m"
+    },
+    {
+     "acq_date": "2018-12-24",
+     "release": 4756,
+     "release_date": "2019-12-12",
+     "first_release": 119,
+     "n_releases_carrying_date": 40,
+     "source": "WV04 / Metro / DigitalGlobe",
+     "sensor": "WV04",
+     "resolution_m": 0.31,
+     "zoom": 18,
+     "gsd_m": 0.59,
+     "size_px": [
+      843,
+      848
+     ],
+     "downscaled_from_px": null,
+     "chip_window": "500 x 500 m",
+     "file": "events/drainage_sites/sangotedo-channel-notices/2018-12-24.jpg",
+     "marked_file": "events/drainage_sites/sangotedo-channel-notices/2018-12-24_marked.jpg",
+     "brightness": {
+      "mean_luminance": 0.628,
+      "bright_frac": 0.0
+     },
+     "detail_chips": [],
+     "label": "2018-12-24 z18 WV04 0.31m"
+    },
+    {
+     "acq_date": "2019-04-02",
+     "release": 44710,
+     "release_date": "2022-06-08",
+     "first_release": 1034,
+     "n_releases_carrying_date": 43,
+     "source": "WV02 / Vivid Advanced / Maxar",
+     "sensor": "WV02",
+     "resolution_m": 0.5,
+     "zoom": 18,
+     "gsd_m": 0.59,
+     "size_px": [
+      843,
+      848
+     ],
+     "downscaled_from_px": null,
+     "chip_window": "500 x 500 m",
+     "file": "events/drainage_sites/sangotedo-channel-notices/2019-04-02.jpg",
+     "marked_file": "events/drainage_sites/sangotedo-channel-notices/2019-04-02_marked.jpg",
+     "brightness": {
+      "mean_luminance": 0.508,
+      "bright_frac": 0.003
+     },
+     "detail_chips": [],
+     "label": "2019-04-02 z18 WV02 0.5m"
+    },
+    {
+     "acq_date": "2024-11-30",
+     "release": 51127,
+     "release_date": "2025-11-20",
+     "first_release": 10842,
+     "n_releases_carrying_date": 10,
+     "source": "WV03 / Vivid Advanced / Vantor",
+     "sensor": "WV03",
+     "resolution_m": 0.31,
+     "zoom": 18,
+     "gsd_m": 0.59,
+     "size_px": [
+      843,
+      848
+     ],
+     "downscaled_from_px": null,
+     "chip_window": "500 x 500 m",
+     "file": "events/drainage_sites/sangotedo-channel-notices/2024-11-30.jpg",
+     "marked_file": "events/drainage_sites/sangotedo-channel-notices/2024-11-30_marked.jpg",
+     "brightness": {
+      "mean_luminance": 0.496,
+      "bright_frac": 0.005
+     },
+     "detail_chips": [],
+     "label": "2024-11-30 z18 WV03 0.31m"
+    }
+   ],
+   "contact_sheet": "events/drainage_sites/sangotedo-channel-notices/contact_sheet.jpg",
+   "osm": {
+    "source": "OpenStreetMap via Overpass (current data, not historical)",
+    "licence": "ODbL (OpenStreetMap contributors)",
+    "radius_m": 300.0,
+    "overpass_queries_used": 1,
+    "n_ways_fetched": 464,
+    "geojson_building_note": null,
+    "drain_length_m": 0,
+    "drain_length_by_type_m": {},
+    "n_waterway_ways": 0,
+    "n_waterway_ways_with_culvert_tag": 0,
+    "n_other_culvert_tagged_ways": 0,
+    "buildings": {
+     "n": 314,
+     "area_m2": 54442.0
+    },
+    "buildings_within_5m": {
+     "n": 0,
+     "area_m2": 0.0,
+     "note": "no mapped waterway within 300 m"
+    },
+    "buildings_within_10m": {
+     "n": 0,
+     "area_m2": 0.0,
+     "note": "no mapped waterway within 300 m"
+    },
+    "buildings_within_20m": {
+     "n": 0,
+     "area_m2": 0.0,
+     "note": "no mapped waterway within 300 m"
+    },
+    "setback_proxy_note": "Distance of a building footprint to a mapped waterway (drain/canal/stream/river/ditch) within 300 m of the site.  This is a setback proxy, NOT the legal setback; drains not mapped in OSM are invisible to it.",
+    "bridges": [],
+    "construction_ways": [],
+    "geojson": "events/drainage_sites/sangotedo-channel-notices/osm.geojson"
+   }
+  }
+ ]
+}

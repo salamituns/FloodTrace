@@ -1,0 +1,708 @@
+{
+  "meta": {
+    "compiled_at": "2026-10-17T14:34:01Z",
+    "method": "Top 20 catalog_candidates.json by rank; web/news search \u00b11 day; Punch, Vanguard, Guardian, ThisDay, Premium Times, Channels, Daily Trust, BBC, Reuters/AFP, CNN, ReliefWeb, FloodList, DFO, Wikipedia, LASEMA/MoE, NEMA. Read pages when reachable; headline_only when blocked or snippet-only.",
+    "notes": [
+      "Accuracy over coverage: rain_no_flood_reported when no dated flood story was found, not when rain was light.",
+      "Dartmouth Flood Observatory site search did not return usable Lagos event pages for these dates.",
+      "EM-DAT was not accessible as a public browse for these dates.",
+      "Do not treat ClimaMeter\u2019s 191 deaths (Aug 2025) as fact; Punch\u2019s same-day story reports no such toll.",
+      "Do not treat Watchers 2017 \u201c20 dead in Lagos\u201d as Lagos deaths; the numbered household is Suleja/Tafa, Niger State.",
+      "Existing events/lagos-2011-07-10 was not modified.",
+      "Task 11 (2026-10-17): appended 10 pwr-rank records; recheck objects on 2016-10-07 and 2023-06-06; existing Task 08 fields not rewritten."
+    ]
+  },
+  "candidates": [
+    {
+      "start": "2011-07-10",
+      "end": "2011-07-10",
+      "rank": 1,
+      "verdict": "confirmed_flood",
+      "summary": "Sunday 10 July 2011: ~15\u201320 h rain flooded Lagos; Vanguard reported 25 bodies including 11 children; Al Jazeera said at least 20 died in Lagos.",
+      "areas": [
+        "Dopemu",
+        "Aboru",
+        "Agbado-Oke Odo",
+        "Ogba",
+        "Agege",
+        "Orile-Agege",
+        "Iyana-Ipaja",
+        "Ikoyi",
+        "Victoria Island",
+        "Apapa",
+        "Lekki",
+        "Ajegunle",
+        "Jakande Estate Oke-Afa Isolo"
+      ],
+      "impacts": "Vanguard (12 Jul 2011): 25 corpses recovered including 11 children; property 'worth several billions of Naira' destroyed; 28 families homeless in Ajegunle after four buildings caved in. Al Jazeera: at least 20 dead in Lagos; at least 29 nationwide. ReliefWeb/IFRC: 17-hour rain 10\u201314 July. Do not mix ReliefWeb Ibadan death figures with Lagos.",
+      "official_statements": [
+        {
+          "who": "Governor Babatunde Fashola",
+          "what": "inspection; canal buildings to be cleared",
+          "quote": "we are coming to take possession, we are not going to risk human lives anymore"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Lagos flood kills 25",
+          "url": "https://www.vanguardngr.com/2011/07/lagos-flood-kills-25/",
+          "publisher": "Vanguard",
+          "published_at": "2011-07-12T00:34:35+00:00",
+          "read_status": "read"
+        },
+        {
+          "title": "Flash flooding hits Lagos",
+          "url": "https://www.aljazeera.com/news/2011/7/13/flash-flooding-hits-lagos",
+          "publisher": "Al Jazeera",
+          "published_at": "2011-07-13T14:09:35",
+          "read_status": "read"
+        },
+        {
+          "title": "Nigeria: Floods - Jul 2011",
+          "url": "https://reliefweb.int/disaster/ff-2011-000088-nga",
+          "publisher": "ReliefWeb",
+          "published_at": null,
+          "read_status": "read"
+        }
+      ],
+      "suggested_event_id": "lagos-2011-07-10",
+      "date_mismatch": "Reports date the rain Sunday 10 July (into Monday 11); IFRC window 10\u201314 July."
+    },
+    {
+      "start": "2022-07-08",
+      "end": "2022-07-09",
+      "rank": 2,
+      "verdict": "confirmed_flood",
+      "summary": "NEMA: two-day rain Friday 8\u2013Saturday 9 July 2022 flooded Alimosho; seven died (three siblings, four adults); eight rescued. Vanguard also notes rain into Sunday 10.",
+      "areas": [
+        "Oke Isagun",
+        "Agbado Oke",
+        "Oko LCDA",
+        "Alimosho"
+      ],
+      "impacts": "NEMA via Channels TV: seven dead (Michael 18, Elizabeth 17, Timi 14 plus four adults); eight lives saved. Four other siblings in the same community swept away and rescued.",
+      "official_statements": [
+        {
+          "who": "Ibrahim Farinloye, NEMA SW coordinator",
+          "what": "post-emergency assessment of 8\u20139 July rain",
+          "quote": "seven people \u2013 three children of the same parent and four adults \u2013 died as a result of the flooding"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Lagos Flood Killed Three Siblings, Four Adults \u2013 NEMA",
+          "url": "https://www.channelstv.com/2022/07/13/lagos-flood-killed-three-siblings-four-adults-nema/",
+          "publisher": "Channels TV",
+          "published_at": "2022-07-13T21:09:13+00:00",
+          "read_status": "read"
+        },
+        {
+          "title": "Jandor\u2019s comical ignorance on Lagos floods",
+          "url": "https://www.vanguardngr.com/2022/07/jandors-comical-ignorance-on-lagos-floods/",
+          "publisher": "Vanguard",
+          "published_at": "2022-07-15T03:10:00+00:00",
+          "read_status": "read"
+        }
+      ],
+      "suggested_event_id": "lagos-2022-07-08",
+      "date_mismatch": "IMERG candidate ends 9 July; Vanguard describes rain Friday 8 through Sunday 10."
+    },
+    {
+      "start": "2023-06-06",
+      "end": "2023-06-08",
+      "rank": 3,
+      "verdict": "rain_no_flood_reported",
+      "summary": "IMERG shows a three-day burst; Punch/Guardian/ThisDay/Wikipedia 2023-flood pages found for this window name no Lagos street flooding on 6\u20138 June.",
+      "date_mismatch": "Nearby Lagos flood copy is later (e.g. Punch 17 Sep 2023 Friday\u2013Saturday rain), outside \u00b11 day.",
+      "suggested_event_id": null,
+      "impacts": null,
+      "areas": [],
+      "official_statements": [],
+      "sources": [],
+      "recheck": {
+        "checked_at": "2026-10-17T17:20:49Z",
+        "verdict": "rain_no_flood_reported",
+        "summary": "\u00b12-day recheck (4\u201310 June 2023) found flood alerts and later 2023 copy, not a dated 6\u20138 June Lagos street flood. Wikipedia 2023 floods does not name this window.",
+        "sources": [
+          {
+            "title": "2023 Nigeria floods",
+            "url": "https://en.wikipedia.org/wiki/2023_Nigeria_floods",
+            "publisher": "Wikipedia",
+            "published_at": null,
+            "read_status": "headline_only"
+          },
+          {
+            "title": "Lagos issues flood alert over updated 2023 water releases forecast",
+            "url": "https://guardian.ng/news/lagos-issues-flood-alert-over-updated-2023-water-releases-forecast/",
+            "publisher": "The Guardian NG",
+            "published_at": "2023-09-04",
+            "read_status": "headline_only"
+          }
+        ],
+        "searched": [
+          "Punch, Vanguard, Guardian NG, ThisDay, Premium Times, Channels, Daily Trust, BBC Pidgin, Reuters/AFP, ReliefWeb, FloodList, Wikipedia, LASEMA/NEMA/NiHSA",
+          "X/Twitter and YouTube: hits were 2026 June 30 floods or undated clips, not 6\u20138 June 2023",
+          "Nairaland used as lead only; no dated 6\u20138 June 2023 Lagos flood thread found",
+          "Pidgin/Yoruba queries did not date a 6\u20138 June 2023 Lagos flood",
+          "Nearby dated Lagos flood copy remains Punch 17 Sep 2023 (outside \u00b12 days)"
+        ],
+        "verdict_changed": false,
+        "why": "Still no source that dates flooding in Lagos to 4\u201310 June 2023."
+      }
+    },
+    {
+      "start": "2007-06-02",
+      "end": "2007-06-02",
+      "rank": 4,
+      "verdict": "rain_no_flood_reported",
+      "summary": "No Punch, Vanguard, BBC, Reuters, ReliefWeb or FloodList item found describing Lagos flooding on 1\u20133 June 2007.",
+      "suggested_event_id": null,
+      "date_mismatch": null,
+      "impacts": null,
+      "areas": [],
+      "official_statements": [],
+      "sources": []
+    },
+    {
+      "start": "2016-10-07",
+      "end": "2016-10-09",
+      "rank": 5,
+      "verdict": "rain_no_flood_reported",
+      "summary": "No dated Lagos flood report found for 6\u201310 October 2016 in the outlets searched.",
+      "suggested_event_id": null,
+      "date_mismatch": null,
+      "impacts": null,
+      "areas": [],
+      "official_statements": [],
+      "sources": [],
+      "recheck": {
+        "checked_at": "2026-10-17T17:20:49Z",
+        "verdict": "rain_no_flood_reported",
+        "summary": "\u00b12-day recheck still found no dated Lagos flood story for 5\u201311 Oct 2016. Nairaland rain thread is 28 Aug 2016; Oct 18 2016 flood copy is Ibadan.",
+        "sources": [
+          {
+            "title": "HEAVY RAIN DOWNPOUR IN LAGOS: What Is The Situation Of Things In Your Area?",
+            "url": "https://www.nairaland.com/3314659/heavy-rain-downpour-lagos-what",
+            "publisher": "Nairaland",
+            "published_at": "2016-08-28T04:06:16Z",
+            "read_status": "read"
+          },
+          {
+            "title": "Heavy Rainfall Causes Massive Flooding In Ibadan (photos/videos)",
+            "url": "https://www.nairaland.com/3415751/heavy-rainfall-causes-massive-flooding",
+            "publisher": "Nairaland",
+            "published_at": null,
+            "read_status": "headline_only"
+          }
+        ],
+        "searched": [
+          "Punch, Vanguard, Guardian NG, Channels, BBC Pidgin, Reuters, ReliefWeb, FloodList, Wikipedia, LASEMA/NEMA/NiHSA, DFO",
+          "Nairaland (lead only): Lagos rain thread dated 28 Aug 2016, outside \u00b12 days of 7\u20139 Oct",
+          "Nairaland Ibadan flood 18 Oct 2016 \u2014 not Lagos, outside window",
+          "X/Twitter and YouTube queries returned undated or later floods; none dated 5\u201311 Oct 2016 Lagos",
+          "Pidgin/Yoruba queries did not surface a dated 7\u20139 Oct 2016 Lagos flood story"
+        ],
+        "verdict_changed": false,
+        "why": "No readable source dates Lagos street flooding to 5\u201311 October 2016."
+      }
+    },
+    {
+      "start": "2007-08-31",
+      "end": "2007-09-01",
+      "rank": 6,
+      "verdict": "rain_no_flood_reported",
+      "summary": "No Lagos flood report found for 30 August\u20132 September 2007 in the archives searched.",
+      "suggested_event_id": null,
+      "date_mismatch": null,
+      "impacts": null,
+      "areas": [],
+      "official_statements": [],
+      "sources": []
+    },
+    {
+      "start": "2010-09-23",
+      "end": "2010-09-24",
+      "rank": 7,
+      "verdict": "rain_no_flood_reported",
+      "summary": "No Lagos flood report found for 22\u201325 September 2010 in the archives searched.",
+      "suggested_event_id": null,
+      "date_mismatch": null,
+      "impacts": null,
+      "areas": [],
+      "official_statements": [],
+      "sources": []
+    },
+    {
+      "start": "2025-08-04",
+      "end": "2025-08-04",
+      "rank": 8,
+      "verdict": "confirmed_flood",
+      "summary": "Night of 3\u20134 August 2025 rain; Punch quotes Wahab on 12-hour downpour and flash-flood risk. Contemporaneous reports name Ijede/Agric, Ikorodu flooding. ClimaMeter 191 deaths not used (unverified vs Punch).",
+      "areas": [
+        "Ijede",
+        "Agric",
+        "Ikorodu"
+      ],
+      "impacts": "Homes and vehicles submerged in Ijede/Agric, Ikorodu (Ohio State recap; Vanguard video/X). No verified death toll in Punch. ClimaMeter\u2019s 191 individuals is not repeated here \u2014 Punch does not report it.",
+      "official_statements": [
+        {
+          "who": "Tokunbo Wahab, Lagos Environment Commissioner",
+          "what": "X statement after ~12 h rain",
+          "quote": "Over the past 12 hours, Lagos has experienced intense rainfall, and more is expected in the coming days"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Lagos urges calm as heavy rainfall persists",
+          "url": "https://punchng.com/lagos-urges-calm-as-heavy-rainfall-persists/",
+          "publisher": "Punch",
+          "published_at": "2025-08-04T14:23:00+00:00",
+          "read_status": "read"
+        },
+        {
+          "title": "Documenting floods and building resilience in Lagos",
+          "url": "https://oia.osu.edu/news/2025/09/29/documenting-floods-and-building-resilience-lagos",
+          "publisher": "Ohio State University OIA",
+          "published_at": "2025-09-29",
+          "read_status": "headline_only"
+        },
+        {
+          "title": "VIDEO: Lagos Residents cry out as flood in Ijede, Ikorodu",
+          "url": "https://x.com/vanguardngrnews/status/1952406403252924608",
+          "publisher": "Vanguard (X)",
+          "published_at": "2025-08-04",
+          "read_status": "headline_only"
+        }
+      ],
+      "suggested_event_id": "lagos-2025-08-04",
+      "date_mismatch": "Rain began night of 3 August; IMERG candidate is 4 August. Within \u00b11 day."
+    },
+    {
+      "start": "2025-10-05",
+      "end": "2025-10-05",
+      "rank": 9,
+      "verdict": "rain_no_flood_reported",
+      "summary": "No article found that dates Lagos street flooding to 4\u20136 October 2025. Sanwo-Olu\u2019s 3,000 displaced figure is January\u2013October 2025 cumulative, not this day.",
+      "sources": [
+        {
+          "title": "Floods displace 3000, affect 57000 in Lagos, says Sanwo-Olu",
+          "url": "https://punchng.com/floods-displace-3000-affect-57000-in-lagos-says-sanwo-olu/",
+          "publisher": "Punch",
+          "published_at": null,
+          "read_status": "headline_only"
+        }
+      ],
+      "date_mismatch": "Governor statement around 6 Oct 2025 covers Jan\u2013Oct season totals, not 5 Oct specifically.",
+      "suggested_event_id": null,
+      "impacts": null,
+      "areas": [],
+      "official_statements": []
+    },
+    {
+      "start": "2006-06-29",
+      "end": "2006-06-30",
+      "rank": 10,
+      "verdict": "rain_no_flood_reported",
+      "summary": "No Lagos flood report found for 28 June\u20131 July 2006 in the archives searched.",
+      "suggested_event_id": null,
+      "date_mismatch": null,
+      "impacts": null,
+      "areas": [],
+      "official_statements": [],
+      "sources": []
+    },
+    {
+      "start": "2012-04-16",
+      "end": "2012-04-17",
+      "rank": 11,
+      "verdict": "rain_no_flood_reported",
+      "summary": "No Lagos flood report found for 15\u201318 April 2012 in the archives searched.",
+      "suggested_event_id": null,
+      "date_mismatch": null,
+      "impacts": null,
+      "areas": [],
+      "official_statements": [],
+      "sources": []
+    },
+    {
+      "start": "2008-07-15",
+      "end": "2008-07-15",
+      "rank": 12,
+      "verdict": "rain_no_flood_reported",
+      "summary": "No Lagos flood report found for 14\u201316 July 2008 in the archives searched.",
+      "suggested_event_id": null,
+      "date_mismatch": null,
+      "impacts": null,
+      "areas": [],
+      "official_statements": [],
+      "sources": []
+    },
+    {
+      "start": "2014-05-11",
+      "end": "2014-05-11",
+      "rank": 13,
+      "verdict": "rain_no_flood_reported",
+      "summary": "No Lagos flood report found for 10\u201312 May 2014. Adjacent IMERG candidate on 13\u201314 May is a separate rain spell, also without a flood story found.",
+      "suggested_event_id": null,
+      "date_mismatch": null,
+      "impacts": null,
+      "areas": [],
+      "official_statements": [],
+      "sources": []
+    },
+    {
+      "start": "2025-07-03",
+      "end": "2025-07-04",
+      "rank": 14,
+      "verdict": "rain_no_flood_reported",
+      "summary": "No Lagos flood report found for 2\u20135 July 2025 (distinct from the well-documented 3 July 2024 event).",
+      "suggested_event_id": null,
+      "date_mismatch": null,
+      "impacts": null,
+      "areas": [],
+      "official_statements": [],
+      "sources": []
+    },
+    {
+      "start": "2014-05-13",
+      "end": "2014-05-14",
+      "rank": 15,
+      "verdict": "rain_no_flood_reported",
+      "summary": "No Lagos flood report found for 12\u201315 May 2014.",
+      "suggested_event_id": null,
+      "date_mismatch": null,
+      "impacts": null,
+      "areas": [],
+      "official_statements": [],
+      "sources": []
+    },
+    {
+      "start": "2005-06-11",
+      "end": "2005-06-12",
+      "rank": 16,
+      "verdict": "rain_no_flood_reported",
+      "summary": "No Lagos flood report found for 10\u201313 June 2005 in ReliefWeb, BBC or Nigerian paper searches.",
+      "suggested_event_id": null,
+      "date_mismatch": null,
+      "impacts": null,
+      "areas": [],
+      "official_statements": [],
+      "sources": []
+    },
+    {
+      "start": "2021-10-17",
+      "end": "2021-10-18",
+      "rank": 17,
+      "verdict": "rain_no_flood_reported",
+      "summary": "2021 Lagos flood literature found (PreventionWeb/ReliefWeb) refers to July 2021, not 17\u201318 October.",
+      "sources": [
+        {
+          "title": "Lagos floods - Interconnected Disaster Risks 2021/2022",
+          "url": "https://reliefweb.int/report/nigeria/technical-report-lagos-floods-interconnected-disaster-risks-20212022",
+          "publisher": "ReliefWeb / UNDRR",
+          "published_at": null,
+          "read_status": "headline_only"
+        }
+      ],
+      "date_mismatch": "Published 2021 flood accounts centre on July, outside this October window.",
+      "suggested_event_id": null,
+      "impacts": null,
+      "areas": [],
+      "official_statements": []
+    },
+    {
+      "start": "2019-01-29",
+      "end": "2019-01-30",
+      "rank": 18,
+      "verdict": "rain_no_flood_reported",
+      "summary": "Dry-season IMERG burst; no flood report found for 28\u201331 January 2019 in Lagos.",
+      "suggested_event_id": null,
+      "date_mismatch": null,
+      "impacts": null,
+      "areas": [],
+      "official_statements": [],
+      "sources": []
+    },
+    {
+      "start": "2016-09-05",
+      "end": "2016-09-06",
+      "rank": 19,
+      "verdict": "rain_no_flood_reported",
+      "summary": "No Lagos flood report found for 4\u20137 September 2016.",
+      "suggested_event_id": null,
+      "date_mismatch": null,
+      "impacts": null,
+      "areas": [],
+      "official_statements": [],
+      "sources": []
+    },
+    {
+      "start": "2017-07-05",
+      "end": "2017-07-06",
+      "rank": 20,
+      "verdict": "likely_flood",
+      "summary": "PM News 7 July: Lagos warned residents after incessant rain (within \u00b11 day). Documented street flooding is Saturday 8 July in Lekki/Victoria Island (CNN), two days after the IMERG window.",
+      "areas": [
+        "Lekki",
+        "Victoria Island",
+        "Chevron Drive",
+        "Ahmadu Bello Way"
+      ],
+      "impacts": "CNN: homes flooded, cars submerged in Lekki and Victoria Island on Saturday morning; no Lagos death toll in CNN. Watchers\u2019 \u201cat least 20 dead in capital Lagos\u201d mixes Niger State (Suleja/Tafa) household deaths \u2014 not used as a Lagos figure.",
+      "official_statements": [
+        {
+          "who": "Dr Samuel Adejare, Lagos Environment Commissioner",
+          "what": "7 July appeal after heavy rain",
+          "quote": "we strongly advise those who live in lowland and close to water bodies to move upland"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Heavy rainfall: Lagos appeals to residents in flood-prone areas to relocate",
+          "url": "https://www.pmnewsnigeria.com/2017/07/07/heavy-rainfall-lagos-appeals-residents-flood-prone-areas-relocate/",
+          "publisher": "P.M. News",
+          "published_at": "2017-07-07",
+          "read_status": "read"
+        },
+        {
+          "title": "Lagos floods: Heavy rain, storms cause chaos",
+          "url": "https://www.cnn.com/2017/07/09/africa/lagos-flood-storms",
+          "publisher": "CNN",
+          "published_at": "2017-07-09T12:28:22Z",
+          "read_status": "read"
+        },
+        {
+          "title": "Massive floods leave at least 20 dead in capital Lagos, Nigeria",
+          "url": "https://watchers.news/2017/07/11/nigeria-lagos-flood-july-2017/",
+          "publisher": "The Watchers",
+          "published_at": "2017-07-11T14:04:00+00:00",
+          "read_status": "read"
+        }
+      ],
+      "date_mismatch": "IMERG peak 5\u20136 July; PM News warning 7 July (\u00b11); CNN street flooding Saturday 8 July (outside \u00b11 of this candidate). A separate event id would fit lagos-2017-07-08.",
+      "suggested_event_id": null
+    },
+    {
+      "start": "2012-09-26",
+      "end": "2012-09-27",
+      "rank": 17,
+      "pwr_rank": 9,
+      "verdict": "rain_no_flood_reported",
+      "summary": "Heavy rain over Festac cell; 2012 Nigeria flood pages for late September name Anambra/riverine states, not Lagos streets. Guardian Lagos flood cited is 3 July 2012.",
+      "date_mismatch": "Wikipedia 2012 floods cite Lagos rain 3 July 2012, outside \u00b11 of 26\u201327 Sep.",
+      "sources": [
+        {
+          "title": "2012 Nigeria floods",
+          "url": "https://en.wikipedia.org/wiki/2012_Nigeria_floods",
+          "publisher": "Wikipedia",
+          "published_at": null,
+          "read_status": "read"
+        }
+      ],
+      "suggested_event_id": null,
+      "impacts": null,
+      "areas": [],
+      "official_statements": []
+    },
+    {
+      "start": "2018-05-03",
+      "end": "2018-05-05",
+      "rank": 23,
+      "pwr_rank": 10,
+      "verdict": "rain_no_flood_reported",
+      "summary": "Wettest cell at Seme border. No Punch, Vanguard, Channels, BBC Pidgin, FloodList or ReliefWeb story dated Lagos flooding 2\u20136 May 2018.",
+      "suggested_event_id": null,
+      "date_mismatch": null,
+      "impacts": null,
+      "areas": [],
+      "official_statements": [],
+      "sources": []
+    },
+    {
+      "start": "2018-06-30",
+      "end": "2018-07-01",
+      "rank": 47,
+      "pwr_rank": 11,
+      "verdict": "rain_no_flood_reported",
+      "summary": "Alimosho/Ipaja cell wet. Search hits were 2026 June 30 Lagos floods or 2018 riverine/Katsina copy, not a dated 30 Jun\u20131 Jul 2018 Lagos street flood.",
+      "date_mismatch": "Do not use 30 June 2026 Channels/Punch flood stories for this 2018 candidate.",
+      "sources": [
+        {
+          "title": "Nigeria flood 2018: More than 100 pipo don die",
+          "url": "https://www.bbc.com/pidgin/tori-45545287",
+          "publisher": "BBC Pidgin",
+          "published_at": null,
+          "read_status": "headline_only"
+        }
+      ],
+      "suggested_event_id": null,
+      "impacts": null,
+      "areas": [],
+      "official_statements": []
+    },
+    {
+      "start": "2009-07-10",
+      "end": "2009-07-12",
+      "rank": 27,
+      "pwr_rank": 14,
+      "verdict": "rain_no_flood_reported",
+      "summary": "Agbowa-Ikosi cell wet. Archives searched (Punch, Vanguard, BBC, ReliefWeb, FloodList) did not yield a Lagos flood story dated 9\u201313 July 2009.",
+      "date_mismatch": "July 10 flood histories found are 2011, not 2009.",
+      "suggested_event_id": null,
+      "impacts": null,
+      "areas": [],
+      "official_statements": [],
+      "sources": []
+    },
+    {
+      "start": "2014-05-05",
+      "end": "2014-05-06",
+      "rank": 39,
+      "pwr_rank": 17,
+      "verdict": "rain_no_flood_reported",
+      "summary": "Epe cell wet. No dated Lagos flood report found for 4\u20137 May 2014 in the outlets searched.",
+      "suggested_event_id": null,
+      "date_mismatch": null,
+      "impacts": null,
+      "areas": [],
+      "official_statements": [],
+      "sources": []
+    },
+    {
+      "start": "2002-09-18",
+      "end": "2002-09-19",
+      "rank": 51,
+      "pwr_rank": 18,
+      "verdict": "rain_no_flood_reported",
+      "summary": "Epe cell wet. IRIN Atlantic overflow in Lagos is 21 May 2002, not 18\u201319 September. No Sept 2002 Lagos street-flood story found.",
+      "date_mismatch": "The New Humanitarian 22 May 2002 coastal overflow is outside \u00b11 of this candidate.",
+      "sources": [
+        {
+          "title": "Atlantic overflows Lagos shore, floods streets",
+          "url": "https://www.thenewhumanitarian.org/news/2002/05/22",
+          "publisher": "The New Humanitarian / IRIN",
+          "published_at": "2002-05-22",
+          "read_status": "headline_only"
+        }
+      ],
+      "suggested_event_id": null,
+      "impacts": null,
+      "areas": [],
+      "official_statements": []
+    },
+    {
+      "start": "2008-06-06",
+      "end": "2008-06-08",
+      "rank": 46,
+      "pwr_rank": 19,
+      "verdict": "rain_no_flood_reported",
+      "summary": "Kosofe cell wet. No Punch, Vanguard, BBC, ReliefWeb or FloodList item found describing Lagos flooding on 5\u20139 June 2008.",
+      "suggested_event_id": null,
+      "date_mismatch": null,
+      "impacts": null,
+      "areas": [],
+      "official_statements": [],
+      "sources": []
+    },
+    {
+      "start": "2018-09-06",
+      "end": "2018-09-07",
+      "rank": 69,
+      "pwr_rank": 23,
+      "verdict": "rain_no_flood_reported",
+      "summary": "Mushin cell wet. 2018 flood round-ups found (BBC Pidgin, Vanguard 141 lives) are nationwide/riverine, not a dated 6\u20137 Sep Lagos street flood.",
+      "sources": [
+        {
+          "title": "RAINS OF FURY: Nigeria loses 141 lives to rainstorm, flood in 2018",
+          "url": "https://www.vanguardngr.com/2018/08/rains-of-fury-nigeria-loses-141-lives-to-rainstorm-flood-in-2018/",
+          "publisher": "Vanguard",
+          "published_at": null,
+          "read_status": "headline_only"
+        }
+      ],
+      "suggested_event_id": null,
+      "date_mismatch": null,
+      "impacts": null,
+      "areas": [],
+      "official_statements": []
+    },
+    {
+      "start": "2023-07-22",
+      "end": "2023-07-23",
+      "rank": 42,
+      "pwr_rank": 24,
+      "verdict": "rain_no_flood_reported",
+      "summary": "Epe cell wet. No dated Lagos flood story found for 21\u201324 July 2023. 2023 Lagos flood pages found are alerts or later dates.",
+      "date_mismatch": "Guardian Lagos flood alert 4 Sep 2023 is outside \u00b11 of 22\u201323 July.",
+      "suggested_event_id": null,
+      "impacts": null,
+      "areas": [],
+      "official_statements": [],
+      "sources": []
+    },
+    {
+      "start": "2021-07-16",
+      "end": "2021-07-16",
+      "rank": 87,
+      "pwr_rank": 25,
+      "verdict": "confirmed_flood",
+      "summary": "Friday 16 July 2021: ~4 h rain flooded Lagos Island/Marina car parks, Lekki, Jakande Estate, Ajah, Awoyaya. NiMet called it expected; FloodList reported no casualties.",
+      "areas": [
+        "Marina",
+        "Lagos Island",
+        "Adeniji-Adele",
+        "Jakande Estate Lekki",
+        "Awoyaya",
+        "Lekki Phase 1",
+        "Ajah",
+        "Oshodi",
+        "Ikeja"
+      ],
+      "impacts": "Punch: households in Jakande Estate temporarily displaced (Nicholas family three nights). FloodList: no reports of casualties or displacements citywide; considerable vehicle damage; social-media depths \u201cup to 50cm\u201d. NiMet: 125 mm Oshodi and 66 mm Ikeja on 15 July at agency stations.",
+      "official_statements": [
+        {
+          "who": "Muntari Yusuf Ibrahim, NiMet",
+          "what": "statement after 16 July rain",
+          "quote": "the eventual heavy rainfall that occurred in Lagos state on the 16th of July 2021 was expected"
+        },
+        {
+          "who": "Gbenga Omotosho, Lagos Information Commissioner",
+          "what": "Punch interview; flash flood vs Europe",
+          "quote": "When you go to Germany, you will see that what we have here is a flash flood"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Vehicles Submerged On Lagos Island Amid Heavy Rainfall",
+          "url": "https://www.channelstv.com/2021/07/16/vehicles-submerged-on-lagos-island-amid-heavy-downpour/",
+          "publisher": "Channels TV",
+          "published_at": "2021-07-16T18:00:45+00:00",
+          "read_status": "read"
+        },
+        {
+          "title": "Rains pound Europe, US, China, houses submerged, cars washed away, over 200 killed",
+          "url": "https://punchng.com/rains-pound-europe-us-china-houses-submerged-cars-washed-away-over-200-killed/",
+          "publisher": "Punch",
+          "published_at": "2021-07-24T02:16:06+00:00",
+          "read_status": "read"
+        },
+        {
+          "title": "NIMET: Lagos flood highly unfortunate but expected",
+          "url": "https://www.thecable.ng/nimet-lagos-flood-highly-unfortunate-but-expected/",
+          "publisher": "TheCable",
+          "published_at": "2021-07-21T19:43:47+00:00",
+          "read_status": "read"
+        },
+        {
+          "title": "Nigeria \u2013 Hundreds of Homes Damaged by Floods in Taraba State",
+          "url": "https://floodlist.com/africa/nigeria-floods-taraba-july-2021",
+          "publisher": "FloodList",
+          "published_at": "2021-07-20",
+          "read_status": "read"
+        }
+      ],
+      "suggested_event_id": "lagos-2021-07-16",
+      "date_mismatch": "NiMet station totals 125 mm (Oshodi) and 66 mm (Ikeja) are for 15 July; flooding reported Friday 16 July."
+    }
+  ]
+}

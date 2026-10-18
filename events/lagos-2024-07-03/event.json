@@ -1,0 +1,108 @@
+{
+  "id": "lagos-2024-07-03",
+  "name": "Lagos Flash Flood",
+  "aliases": [
+    "2024 Lekki flood"
+  ],
+  "timezone": "Africa/Lagos",
+  "window": {
+    "start": "2024-06-25T00:00:00+01:00",
+    "end": "2024-07-08T00:00:00+01:00"
+  },
+  "focus": {
+    "start": "2024-07-02T18:00:00+01:00",
+    "end": "2024-07-04T18:00:00+01:00"
+  },
+  "aoi": {
+    "name": "Lagos metropolitan",
+    "bbox": [
+      2.7,
+      6.38,
+      4.35,
+      6.75
+    ],
+    "points": {
+      "lekki": [
+        3.52,
+        6.44
+      ],
+      "lagos_island": [
+        3.4,
+        6.45
+      ],
+      "ikeja": [
+        3.35,
+        6.6
+      ],
+      "ibeju_lekki": [
+        3.95,
+        6.47
+      ],
+      "offshore_tide": [
+        3.52,
+        6.4
+      ]
+    }
+  },
+  "sar": {
+    "collection": "sentinel-1-rtc",
+    "pre": "S1A_IW_GRDH_1SDV_20240621T053018_20240621T053047_054417_069F0A_rtc",
+    "during": "S1A_IW_GRDH_1SDV_20240703T053017_20240703T053046_054592_06A521_rtc",
+    "post": "S1A_IW_GRDH_1SDV_20240715T053017_20240715T053046_054767_06AB2E_rtc"
+  },
+  "key_events": [
+    {
+      "id": "antecedent",
+      "name": "48-hour rain floods Agungi/Lekki",
+      "time": "2024-06-27T12:00:00+01:00",
+      "time_confidence": "day",
+      "source": "vanguard-2024-06-27"
+    },
+    {
+      "id": "rain-onset",
+      "name": "Heavy rain begins",
+      "time": "2024-07-03T03:00:00+01:00",
+      "time_confidence": "approx",
+      "source": "thisday-2024-07-03"
+    },
+    {
+      "id": "sar-pass",
+      "name": "Sentinel-1A radar pass",
+      "time": "2024-07-03T06:30:17+01:00",
+      "time_confidence": "exact",
+      "source": "copernicus-s1a-20240703"
+    },
+    {
+      "id": "official-statement",
+      "name": "Commissioner cites rain intensity + lagoon tide",
+      "time": "2024-07-03T09:00:00+01:00",
+      "time_confidence": "day",
+      "source": "thisday-2024-07-03"
+    },
+    {
+      "id": "daily-trust-report",
+      "name": "Ibeju-Lekki homes submerged (report)",
+      "time": "2024-07-03T13:05:19+01:00",
+      "time_confidence": "exact",
+      "source": "dailytrust-2024-07-03"
+    }
+  ],
+  "sources": {
+    "vanguard-2024-06-27": "https://www.vanguardngr.com/2024/06/48hrs-rainfall-agungi-lekki-environs-in-lagos-submerge-in-flood/",
+    "thisday-2024-07-03": "https://www.thisdaylive.com/index.php/2024/07/03/torrential-rain-causes-widespread-flooding-in-lagos/",
+    "dailytrust-2024-07-03": "https://dailytrust.com/flood-takes-over-houses-roads-in-lagos/",
+    "thecable-2024-07-03": "https://www.thecable.ng/photos-commuters-stranded-homes-submerged-as-flood-ravages-lagos/",
+    "bbcpidgin-2024-07-03": "https://www.bbc.com/pidgin/articles/czvxdzwr97go",
+    "dailypost-2024-07-03": "https://dailypost.ng/2024/07/03/flood-takes-over-residential-areas-in-ibeju-lekki-video/",
+    "punch-2024-07-07": "https://punchng.com/10-hour-rainfall-lekki-ikoyi-residents-flee-luxury-mansions-as-flood-ravages-homes-streets/",
+    "copernicus-s1a-20240703": "S1A_IW_GRDH_1SDV_20240703T053017_20240703T053046_054592_06A521_9E4B.SAFE",
+    "channelstv-2024-07-03": "https://www.channelstv.com/2024/07/03/lagos-calls-for-calm-after-wednesdays-torrential-rainfall/",
+    "arise-2024-07-04": "https://www.arise.tv/lagos-floods-rainwater-slow-to-recede-due-to-high-tide-says-environment-commissioner-wahab/"
+  },
+  "cause_prelim": "Intense rain on saturated ground (IMERG core 19–31 mm/h over Apapa/Mile 2, 06:00–08:30); tidal lock unlikely for the morning, possible for the afternoon",
+  "open_questions": [
+    "Lagoon water level on 3 Jul 2024 (no public gauge) — decides the tidal-lock question",
+    "Was the lagoon baseline already raised by a week of rain? (ThisDay 4 Jul: lagoon rising \"since last week\")",
+    "IMERG shows ~22 mm/h over Lekki/Lagos Island on 2 Jul 11:00–15:30 but no flood report found for that day"
+  ]
+}

@@ -1,0 +1,509 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://floodtrace.local/pipeline/schemas/sites.schema.json",
+  "title": "FloodTrace events/sites.json",
+  "description": "Built by pipeline/build_sites.py (Task 23, docs/SITES_PLAN.md). Never hand-edited except for the reviewer fields: verdict and change.summary.",
+  "type": "object",
+  "required": [
+    "meta",
+    "sites"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "meta": {
+      "type": "object"
+    },
+    "sites": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/site"
+      }
+    }
+  },
+  "$defs": {
+    "site": {
+      "type": "object",
+      "required": [
+        "site_id",
+        "name",
+        "aliases",
+        "structure_name",
+        "structure_type",
+        "geometry",
+        "location_confidence",
+        "located_how",
+        "flood_radius_m",
+        "floods",
+        "claims",
+        "change",
+        "promise_ids",
+        "verdict"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "site_id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string",
+          "description": "Short human name, e.g. 'Alpha Beach – System 156'."
+        },
+        "aliases": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "location_names of matched evidence features."
+        },
+        "structure_name": {
+          "type": "string"
+        },
+        "structure_type": {
+          "enum": [
+            "channel",
+            "collector",
+            "canal",
+            "bridge",
+            "road",
+            "area"
+          ]
+        },
+        "geometry": {
+          "$ref": "#/$defs/geometry"
+        },
+        "location_confidence": {
+          "type": "string"
+        },
+        "located_how": {
+          "type": "string"
+        },
+        "flood_radius_m": {
+          "type": "number",
+          "description": "Match radius for floods/claims: 400 m, or 600 m for LineStrings longer than 2 km."
+        },
+        "floods": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/flood"
+          }
+        },
+        "claims": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/claim"
+          }
+        },
+        "change": {
+          "$ref": "#/$defs/change"
+        },
+        "promise_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "verdict": {
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "$ref": "#/$defs/verdict"
+            }
+          ]
+        }
+      }
+    },
+    "geometry": {
+      "type": "object",
+      "required": [
+        "type",
+        "coordinates"
+      ],
+      "properties": {
+        "type": {
+          "enum": [
+            "Point",
+            "LineString"
+          ]
+        },
+        "coordinates": {
+          "type": "array"
+        }
+      }
+    },
+    "flood": {
+      "type": "object",
+      "required": [
+        "event_id",
+        "date",
+        "evidence_ids",
+        "n_reports",
+        "nearest_m"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "event_id": {
+          "type": "string"
+        },
+        "date": {
+          "type": "string",
+          "description": "Event date (events/catalog.json)."
+        },
+        "evidence_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "n_reports": {
+          "type": "integer"
+        },
+        "nearest_m": {
+          "type": "number",
+          "description": "Distance from the site geometry to the nearest matched evidence point."
+        }
+      }
+    },
+    "claim": {
+      "type": "object",
+      "required": [
+        "claim_id",
+        "event_id",
+        "cause",
+        "attributed_by",
+        "who",
+        "quote",
+        "source_id",
+        "url",
+        "date",
+        "evidence_status",
+        "status_note"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "claim_id": {
+          "type": "string",
+          "description": "<site_id>-<event_id>-<evidence_id>; evidence ids are unique per event only."
+        },
+        "event_id": {
+          "type": "string"
+        },
+        "cause": {
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "attributed_by": {
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "who": {
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "quote": {
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "source_id": {
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "url": {
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "date": {
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "evidence_status": {
+          "enum": [
+            "supports",
+            "weak",
+            "inconclusive",
+            "contradicts",
+            "not_checked",
+            "no_imagery_after"
+          ]
+        },
+        "status_note": {
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        }
+      }
+    },
+    "change": {
+      "type": "object",
+      "required": [
+        "wayback",
+        "s2_wet_season",
+        "buildings_0_10m",
+        "summary",
+        "stale"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "wayback": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/wayback_image"
+          }
+        },
+        "s2_wet_season": {
+          "type": "object",
+          "required": [
+            "aoi",
+            "by_year"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "aoi": {
+              "type": "string",
+              "description": "AOI used from drainage_sites_s2.json (alpha-beach-156 uses the __south AOI)."
+            },
+            "by_year": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "number"
+              },
+              "description": "May–Oct median vegfrac per year."
+            }
+          }
+        },
+        "buildings_0_10m": {
+          "type": "object",
+          "required": [
+            "by_year",
+            "matched_pct",
+            "matched_n",
+            "excluded"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "by_year": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "number"
+              },
+              "description": "Built fraction 0–10 m from the channel, 2016–2023."
+            },
+            "matched_pct": {
+              "oneOf": [
+                {
+                  "type": "null"
+                },
+                {
+                  "type": "integer"
+                }
+              ],
+              "description": "Percent of matched baseline segments whose 2016→2023 change is below the site's."
+            },
+            "matched_n": {
+              "oneOf": [
+                {
+                  "type": "null"
+                },
+                {
+                  "type": "integer"
+                }
+              ]
+            },
+            "excluded": {
+              "oneOf": [
+                {
+                  "type": "null"
+                },
+                {
+                  "type": "string"
+                }
+              ]
+            }
+          }
+        },
+        "summary": {
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "type": "string"
+            }
+          ],
+          "description": "One sentence, written by a reviewer."
+        },
+        "stale": {
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "type": "boolean"
+            }
+          ],
+          "description": "True when the numbers under the summary changed since it was written; null when there is no summary."
+        }
+      }
+    },
+    "wayback_image": {
+      "type": "object",
+      "required": [
+        "acq_date",
+        "file",
+        "marked_file",
+        "resolution_m",
+        "detail_chips"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "acq_date": {
+          "type": "string"
+        },
+        "file": {
+          "type": "string"
+        },
+        "marked_file": {
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "resolution_m": {
+          "type": "number",
+          "description": "Source imagery resolution; the app hides coarse fallbacks (e.g. 15 m)."
+        },
+        "detail_chips": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/detail_chip"
+          }
+        }
+      }
+    },
+    "detail_chip": {
+      "type": "object",
+      "required": [
+        "station",
+        "file",
+        "marked_file",
+        "resolution_m"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "station": {
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "file": {
+          "type": "string"
+        },
+        "marked_file": {
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "resolution_m": {
+          "type": "number",
+          "description": "Inherited from the parent acquisition (chips are crops of the same image)."
+        }
+      }
+    },
+    "verdict": {
+      "type": "object",
+      "required": [
+        "text",
+        "confidence",
+        "reviewed_by",
+        "reviewed_at",
+        "stale"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "text": {
+          "type": "string"
+        },
+        "confidence": {
+          "enum": [
+            "strong",
+            "moderate",
+            "weak",
+            "none"
+          ]
+        },
+        "reviewed_by": {
+          "type": "string"
+        },
+        "reviewed_at": {
+          "type": "string"
+        },
+        "stale": {
+          "type": "boolean",
+          "description": "True when the numbers under this verdict changed since it was written."
+        }
+      }
+    }
+  }
+}

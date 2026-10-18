@@ -1,0 +1,117 @@
+{
+  "meta": {
+    "product": "GPM_3IMERGHH",
+    "version": "07",
+    "licence": "NASA open data",
+    "retrieved_at": "2026-10-17T15:00:15Z",
+    "units": {
+      "intensity": "mm/h",
+      "totals": "mm"
+    },
+    "notes": [
+      "totals cover 30-min intervals in (t_max - duration, t_max]",
+      "antecedent_7d covers [focus.start - 7 days, focus.start)",
+      "onset: first half-hour >= 2.0 mm/h after 12 steps (6 h) below 0.5 mm/h; onset_time is the last qualifying onset at or before focus.end",
+      "satellite estimate; ~10 km cells smooth point intensities"
+    ]
+  },
+  "points": {
+    "lekki": {
+      "max_intensity_mm_per_h": 28.35,
+      "max_time": "2011-07-03T03:00:00+01:00",
+      "totals_mm": {
+        "1h": 21.12,
+        "3h": 23.22,
+        "6h": 23.22,
+        "24h": 23.22
+      },
+      "antecedent_7d_mm": 120.03,
+      "onset_time": "2011-07-09T08:30:00+01:00",
+      "onsets_all": [
+        "2011-07-04T01:00:00+01:00",
+        "2011-07-08T05:00:00+01:00",
+        "2011-07-09T08:30:00+01:00",
+        "2011-07-15T21:00:00+01:00"
+      ]
+    },
+    "lagos_island": {
+      "max_intensity_mm_per_h": 44.29,
+      "max_time": "2011-07-10T09:30:00+01:00",
+      "totals_mm": {
+        "1h": 35.8,
+        "3h": 56.65,
+        "6h": 58.35,
+        "24h": 63.5
+      },
+      "antecedent_7d_mm": 77.79,
+      "onset_time": "2011-07-04T01:00:00+01:00",
+      "onsets_all": [
+        "2011-07-04T01:00:00+01:00"
+      ]
+    },
+    "ikeja": {
+      "max_intensity_mm_per_h": 24.03,
+      "max_time": "2011-07-14T03:30:00+01:00",
+      "totals_mm": {
+        "1h": 14.66,
+        "3h": 16.78,
+        "6h": 16.87,
+        "24h": 17.44
+      },
+      "antecedent_7d_mm": 78.64,
+      "onset_time": "2011-07-06T17:00:00+01:00",
+      "onsets_all": [
+        "2011-07-05T16:00:00+01:00",
+        "2011-07-06T17:00:00+01:00",
+        "2011-07-15T17:00:00+01:00"
+      ]
+    },
+    "ibeju_lekki": {
+      "max_intensity_mm_per_h": 24.41,
+      "max_time": "2011-07-03T03:30:00+01:00",
+      "totals_mm": {
+        "1h": 21.97,
+        "3h": 38.71,
+        "6h": 38.87,
+        "24h": 38.87
+      },
+      "antecedent_7d_mm": 113.77,
+      "onset_time": "2011-07-08T04:00:00+01:00",
+      "onsets_all": [
+        "2011-07-05T19:30:00+01:00",
+        "2011-07-07T03:00:00+01:00",
+        "2011-07-08T04:00:00+01:00",
+        "2011-07-15T08:30:00+01:00",
+        "2011-07-16T20:00:00+01:00"
+      ]
+    },
+    "apapa": {
+      "max_intensity_mm_per_h": 42.83,
+      "max_time": "2011-07-10T09:30:00+01:00",
+      "totals_mm": {
+        "1h": 34.42,
+        "3h": 52.48,
+        "6h": 54.11,
+        "24h": 57.73
+      },
+      "antecedent_7d_mm": 69.39,
+      "onset_time": "2011-07-07T04:30:00+01:00",
+      "onsets_all": [
+        "2011-07-07T04:30:00+01:00"
+      ]
+    }
+  },
+  "aoi_mean": {
+    "max_intensity_mm_per_h": 11.98,
+    "max_time": "2011-07-10T10:00:00+01:00",
+    "totals_mm": {
+      "1h": 9.97,
+      "3h": 26.3,
+      "6h": 32.45,
+      "24h": 40.34
+    },
+    "antecedent_7d_mm": 97.98,
+    "onset_time": null,
+    "onsets_all": []
+  }
+}

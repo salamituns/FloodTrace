@@ -1,0 +1,115 @@
+{
+  "id": "lagos-2021-07-16",
+  "name": "Lagos Island Flood 2021",
+  "timezone": "Africa/Lagos",
+  "window": {
+    "start": "2021-07-09T00:00:00+01:00",
+    "end": "2021-07-23T00:00:00+01:00"
+  },
+  "focus": {
+    "start": "2021-07-15T06:00:00+01:00",
+    "end": "2021-07-17T06:00:00+01:00"
+  },
+  "aoi": {
+    "name": "Lagos metropolitan",
+    "bbox": [
+      2.7,
+      6.38,
+      4.35,
+      6.75
+    ],
+    "points": {
+      "lekki": [
+        3.52,
+        6.44
+      ],
+      "lagos_island": [
+        3.4,
+        6.45
+      ],
+      "ikeja": [
+        3.35,
+        6.6
+      ],
+      "ibeju_lekki": [
+        3.95,
+        6.47
+      ],
+      "apapa": [
+        3.35,
+        6.45
+      ],
+      "offshore_tide": [
+        3.52,
+        6.4
+      ],
+      "oshodi": [
+        3.35,
+        6.55
+      ]
+    }
+  },
+  "cause_prelim": "~12 h of rain (06:00–18:00 Fri 16 Jul), heaviest 10:00–17:00 (AOI mean to 9.9 mm/h at 12:00; 40 mm/h cell over Ikotun/Egbeda at 16:00); ~90–105 mm at every analysis point. The midday peak fell on a falling tide (high 09:00, low 15:00) — like 2024, rain-driven rather than tide-locked (IMERG + EOT20)",
+  "open_questions": [
+    "Media say '~4 h' of rain; IMERG shows ~12 h, with ~6 h of heavy rain — likely the peak period people noticed",
+    "NiMet totals (125 mm Oshodi, 66 mm Ikeja) are dated 15 Jul, but IMERG has only 5–8 mm on 15 Jul and 87–90 mm on 16 Jul — the statement's date likely means the 16th. If so: Oshodi IMERG 90 vs gauge 125 (−28 %), Ikeja 87 vs 66 (+32 %)",
+    "No Sentinel-1 pass during the flood",
+    "Media evidence: 43 of 51 quotes verified"
+  ],
+  "key_events": [
+    {
+      "id": "rain-onset",
+      "name": "Rain begins offshore/east (IMERG)",
+      "time": "2021-07-16T06:00:00+01:00",
+      "time_confidence": "approx",
+      "source": "imerg"
+    },
+    {
+      "id": "core-1",
+      "name": "AOI mean peak 9.9 mm/h, rain over the whole city (IMERG)",
+      "time": "2021-07-16T12:00:00+01:00",
+      "time_confidence": "exact",
+      "source": "imerg"
+    },
+    {
+      "id": "core-2",
+      "name": "Core 40 mm/h over Ikotun/Egbeda, west of Oshodi (IMERG)",
+      "time": "2021-07-16T16:00:00+01:00",
+      "time_confidence": "exact",
+      "source": "imerg"
+    },
+    {
+      "id": "rain-end",
+      "name": "Rain eases (IMERG)",
+      "time": "2021-07-16T18:00:00+01:00",
+      "time_confidence": "approx",
+      "source": "imerg"
+    },
+    {
+      "id": "channels",
+      "name": "Vehicles submerged on Lagos Island (Channels TV)",
+      "time": "2021-07-16T19:00:00+01:00",
+      "time_confidence": "day",
+      "source": "channelstv-2021-07-16"
+    },
+    {
+      "id": "nimet",
+      "name": "NiMet: rainfall 'was expected'",
+      "time": "2021-07-21T12:00:00+01:00",
+      "time_confidence": "day",
+      "source": "thecable-2021-07-21"
+    }
+  ],
+  "sources": {
+    "channelstv-2021-07-16": "https://www.channelstv.com/2021/07/16/vehicles-submerged-on-lagos-island-amid-heavy-downpour/",
+    "punch-2021-07-24": "https://punchng.com/rains-pound-europe-us-china-houses-submerged-cars-washed-away-over-200-killed/",
+    "thecable-2021-07-21": "https://www.thecable.ng/nimet-lagos-flood-highly-unfortunate-but-expected/",
+    "floodlist-2021-07-20": "https://floodlist.com/africa/nigeria-floods-taraba-july-2021",
+    "punch-2021-07-17": "https://punchng.com/flood-fallen-trucks-cause-lagos-gridlock-commuters-stranded/",
+    "nairametrics-2021-07-16": "https://nairametrics.com/2021/07/16/flood-hits-parts-of-lagos-ogun/",
+    "vanguard-2021-07-16": "https://www.vanguardngr.com/2021/07/18-passengers-escape-death-as-boat-capsizes-amid-heavy-rainfall-in-lagos/",
+    "dailytrust-2021-08-21": "https://dailytrust.com/flood-wreaks-havoc-in-5-states-9-dead-hundreds-rendered-homeless/",
+    "channelstv-yt-2021-07-16": "https://www.youtube.com/watch?v=7ZCqbpTTtk0",
+    "punch-x-2021-07-16": "https://x.com/MobilePunch/status/1416140356941455360"
+  }
+}

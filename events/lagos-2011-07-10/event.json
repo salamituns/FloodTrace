@@ -1,0 +1,115 @@
+{
+  "id": "lagos-2011-07-10",
+  "name": "Lagos Flood 2011",
+  "aliases": [
+    "July 2011 Lagos floods"
+  ],
+  "timezone": "Africa/Lagos",
+  "window": {
+    "start": "2011-07-03T00:00:00+01:00",
+    "end": "2011-07-17T00:00:00+01:00"
+  },
+  "focus": {
+    "start": "2011-07-09T18:00:00+01:00",
+    "end": "2011-07-11T18:00:00+01:00"
+  },
+  "aoi": {
+    "name": "Lagos metropolitan",
+    "bbox": [
+      2.7,
+      6.38,
+      4.35,
+      6.75
+    ],
+    "points": {
+      "lekki": [
+        3.52,
+        6.44
+      ],
+      "lagos_island": [
+        3.4,
+        6.45
+      ],
+      "ikeja": [
+        3.35,
+        6.6
+      ],
+      "ibeju_lekki": [
+        3.95,
+        6.47
+      ],
+      "apapa": [
+        3.35,
+        6.45
+      ],
+      "offshore_tide": [
+        3.52,
+        6.4
+      ]
+    }
+  },
+  "cause_prelim": "~16 h of rain (07:00–23:00) with two intense cores (44 mm/h at 09:30, 45.6 mm/h at 17:00); the morning core fell on a rising tide into the 12:00 high — plausible rain–tide compounding (EOT20 + IMERG)",
+  "open_questions": [
+    "No tide data for 2011 from the open model — tidal lock cannot be assessed yet (FES/TPXO need registration)",
+    "No Sentinel-1/2 imagery exists for 2011; Landsat 7 / ENVISAT ASAR not yet checked",
+    "OSM drainage is today's network, not 2011's",
+    "IFRC (unverified here) says rain started ~05:00; IMERG shows Ikeja 6.7 mm/h at 05:00 then the citywide core from 08:00 — consistent",
+    "PM News reported 264 mm of rain (gauge unknown) vs IMERG max cell 213 mm/day — consistent given 10 km smoothing"
+  ],
+  "key_events": [
+    {
+      "id": "rain-onset",
+      "name": "Heavy rain begins (IMERG)",
+      "time": "2011-07-10T07:00:00+01:00",
+      "time_confidence": "approx",
+      "source": "imerg"
+    },
+    {
+      "id": "core-1",
+      "name": "Morning core 44 mm/h, Lagos Island/Apapa (IMERG)",
+      "time": "2011-07-10T09:30:00+01:00",
+      "time_confidence": "exact",
+      "source": "imerg"
+    },
+    {
+      "id": "core-2",
+      "name": "Evening core 45.6 mm/h, Ikeja/Oshodi (IMERG)",
+      "time": "2011-07-10T17:00:00+01:00",
+      "time_confidence": "exact",
+      "source": "imerg"
+    },
+    {
+      "id": "rain-end",
+      "name": "Rain eases below 3 mm/h (IMERG)",
+      "time": "2011-07-10T23:00:00+01:00",
+      "time_confidence": "approx",
+      "source": "imerg"
+    },
+    {
+      "id": "nema-toll",
+      "name": "NEMA: at least 20 killed, incl. children",
+      "time": "2011-07-11T12:00:00+01:00",
+      "time_confidence": "day",
+      "source": "solardaily-2011-07-11"
+    },
+    {
+      "id": "vanguard-25",
+      "name": "Vanguard: 25 bodies recovered, 11 children",
+      "time": "2011-07-12T12:00:00+01:00",
+      "time_confidence": "day",
+      "source": "vanguard-2011-07-12"
+    }
+  ],
+  "sources": {
+    "solardaily-2011-07-11": "https://www.solardaily.com/reports/Floods_kill_at_least_20_in_Nigerias_largest_city_999.html",
+    "vanguard-2011-07-12": "https://www.vanguardngr.com/2011/07/lagos-flood-kills-25/",
+    "aljazeera-2011-07-13": "https://www.aljazeera.com/news/2011/7/13/flash-flooding-hits-lagos",
+    "reliefweb-ff-2011-07": "https://m.reliefweb.int/disaster/8777",
+    "newsghana-2011": "https://www.newsghana.com.gh/lagos-to-experience-week-long-rainfall/",
+    "imerg": "GPM IMERG v07 Final, doi:10.5067/GPM/IMERG/3B-HHR/07",
+    "reliefweb-2011": "https://reliefweb.int/disaster/ff-2011-000088-nga",
+    "vanguard-2011-07-15": "https://www.vanguardngr.com/2011/07/lagos-floods-residents-senate-blame-fashola-jonathan/",
+    "ifrc-dref-2011-07-25": "https://reliefweb.int/report/nigeria/nigeria-flash-floods-dref-operation-n%C2%B0-mdrng010",
+    "pmnews-2011-07-14": "https://pmnewsnigeria.com/2011/07/14/one-month-rain-fell-in-lagos-on-sunday/"
+  }
+}

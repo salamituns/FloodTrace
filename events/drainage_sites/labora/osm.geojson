@@ -1,0 +1,1 @@
+{"type":"FeatureCollection","properties":{"licence":"ODbL (OpenStreetMap contributors)","radius_m":300.0,"note":"current OSM data (not historical), clipped to 300 m around the site geometry"},"features":[{"type":"Feature","properties":{"kind":"site","site_id":"labora"},"geometry":{"type":"Point","coordinates":[3.92,6.48]}}]}

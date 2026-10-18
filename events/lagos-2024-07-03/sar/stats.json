@@ -1,0 +1,117 @@
+{
+  "meta": {
+    "source": "https://planetarycomputer.microsoft.com/api/stac/v1",
+    "collection": "sentinel-1-rtc",
+    "licence": "Copernicus Sentinel data, free/open; processed by Planetary Computer RTC",
+    "retrieved_at": "2026-10-17T04:21:27Z",
+    "crs": "EPSG:32631",
+    "resolution_m": 20.0,
+    "grid_width": 9125,
+    "grid_height": 2056,
+    "note": "classification uses VV; VH was read and speckle-filtered but not used in class rules. surface_wetting is wet soil/surfaces, not flood evidence on its own."
+  },
+  "thresholds": {
+    "water_db": -16.0,
+    "darkening_db": -3.0,
+    "wetting_brighten_db": 3.0,
+    "wetting_pre_min_db": -8.0,
+    "rain_brighten_db": 4.0,
+    "rain_smooth": 9,
+    "speckle_median": 5
+  },
+  "coverage": {
+    "during_fraction": 0.8001,
+    "during_km2": 6004.072,
+    "aoi_km2": 7504.4
+  },
+  "items": {
+    "pre": {
+      "id": "S1A_IW_GRDH_1SDV_20240621T053018_20240621T053047_054417_069F0A_rtc",
+      "datetime": "2024-06-21T05:30:32.943875+00:00",
+      "start_datetime": "2024-06-21 05:30:18.437523+00:00",
+      "sat:relative_orbit": 95
+    },
+    "during": {
+      "id": "S1A_IW_GRDH_1SDV_20240703T053017_20240703T053046_054592_06A521_rtc",
+      "datetime": "2024-07-03T05:30:32.075378+00:00",
+      "start_datetime": "2024-07-03 05:30:17.566088+00:00",
+      "sat:relative_orbit": 95
+    },
+    "post": {
+      "id": "S1A_IW_GRDH_1SDV_20240715T053017_20240715T053046_054767_06AB2E_rtc",
+      "datetime": "2024-07-15T05:30:31.953919+00:00",
+      "start_datetime": "2024-07-15 05:30:17.448459+00:00",
+      "sat:relative_orbit": 95
+    }
+  },
+  "area_km2_aoi": {
+    "none": 5241.5724,
+    "permanent_water": 347.8892,
+    "open_flood": 7.0016,
+    "receded": 2.9904,
+    "surface_wetting": 233.9952,
+    "rain_cell_on_water": 170.6232,
+    "no_data": 1500.328
+  },
+  "area_km2_within_2km": {
+    "lekki": {
+      "none": 12.5872,
+      "permanent_water": 0.0368,
+      "open_flood": 0.0,
+      "receded": 0.0,
+      "surface_wetting": 0.0808,
+      "rain_cell_on_water": 0.0,
+      "no_data": 0.0
+    },
+    "lagos_island": {
+      "none": 10.3708,
+      "permanent_water": 1.6316,
+      "open_flood": 0.0072,
+      "receded": 0.0076,
+      "surface_wetting": 0.6964,
+      "rain_cell_on_water": 0.0,
+      "no_data": 0.0
+    },
+    "ikeja": {
+      "none": 10.0908,
+      "permanent_water": 0.0,
+      "open_flood": 0.0,
+      "receded": 0.0,
+      "surface_wetting": 2.6208,
+      "rain_cell_on_water": 0.0,
+      "no_data": 0.0
+    },
+    "ibeju_lekki": {
+      "none": 12.7032,
+      "permanent_water": 0.0,
+      "open_flood": 0.0,
+      "receded": 0.0,
+      "surface_wetting": 0.0,
+      "rain_cell_on_water": 0.0,
+      "no_data": 0.0
+    },
+    "offshore_tide": {
+      "none": 12.3208,
+      "permanent_water": 0.3908,
+      "open_flood": 0.0,
+      "receded": 0.0,
+      "surface_wetting": 0.0,
+      "rain_cell_on_water": 0.0,
+      "no_data": 0.0
+    }
+  },
+  "polygons": {
+    "flood": {
+      "written": 114,
+      "dropped_lt_0_5_ha": 892
+    },
+    "wetting": {
+      "written": 7274,
+      "dropped_lt_0_5_ha": 39515
+    },
+    "rain_cells": {
+      "written": 162,
+      "dropped_lt_5_ha": 502
+    }
+  }
+}

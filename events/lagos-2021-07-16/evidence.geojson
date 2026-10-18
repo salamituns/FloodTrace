@@ -1,0 +1,1784 @@
+{
+ "type": "FeatureCollection",
+ "meta": {
+  "compiled_at": "2026-10-17T20:34:35Z",
+  "method": "Read named 2021 sources; one point per (source, location); pipeline/geocode.py inside AOI bbox, 1 req/s; manual neighbourhood centre only if Nominatim missed or matched the wrong district.",
+  "notes": "Quotes are verbatim excerpts ≤ 25 words. NiMet 125 mm Oshodi / 66 mm Ikeja are dated 15 July in TheCable/Punch (rainfall, not street flood). Magboro (Ogun) omitted. Taraba/Jalingo, Kano, Europe/China deaths in Punch omitted. Daily Trust 8,355 people / 12 LGAs not pinned to a street. NEMA LGA caution list is advisory, not confirmation of flooding. FloodList 50 cm is unlocated social-media depth. Jakande is Eti-Osa/Lekki, not Isolo. No locations, times, numbers or quotes were inferred beyond the text.",
+  "unresolved": [
+   "Oju-Odo and Ekoro placed at Abule Egba/Agege neighbourhood centres (LASTMA named them; Nominatim missed)",
+   "Channels YouTube (Lekki/Marina/Apongbon) headline_only — no transcript",
+   "Punch X photo captions not read",
+   "TheCable 22 Jul expert piece names no streets"
+  ],
+  "bbox": [
+   2.7,
+   6.38,
+   4.35,
+   6.75
+  ],
+  "feature_count": 51,
+  "omitted": [
+   "Magboro, Ogun (Nairametrics; outside Lagos)",
+   "Taraba / Jalingo (FloodList; Punch)",
+   "Kano Kundila (Punch 24 Jul)",
+   "Europe/China/US death tolls (Punch 24 Jul)",
+   "NEMA 13-LGA caution list (Nairametrics; not named as flooded that day)",
+   "Daily Trust NEMA 8,355 people / 12 LGAs (unlocated)",
+   "FloodList social-media 'up to 50cm' (no place named)",
+   "Fallen trucks at Iyana Isolo, Agbara, Oba Akran (Punch 17 Jul; not flood)",
+   "Daily Trust 24 Sep 2025 Lekki article (wrong event)"
+  ],
+  "review": {
+   "reviewed_at": "2026-10-17",
+   "by": "Claude (lead agent)",
+   "notes": "All points inside AOI; same-name places (Jakande Isolo/Lekki, Ajegunle Ajeromi/Ikorodu) kept distinct; Ijede placed in Ijede town (Ikorodu LGA). Quotes verified for every readable publisher; Channels TV, TheCable, Guardian NG unverifiable (blocked)."
+  },
+  "citywide_cause_statements": [
+   {
+    "source_id": "thecable-2021-07-21",
+    "url": "https://www.thecable.ng/nimet-lagos-flood-highly-unfortunate-but-expected/",
+    "who": "Muntari Yusuf Ibrahim, NiMet",
+    "date": "2021-07-21",
+    "causes": [
+     "heavy_rain"
+    ],
+    "cause_quote": "The heavy rain that occurred on the 16th of July 2021 in Lagos state and environs",
+    "cause_attributed_by": "official"
+   },
+   {
+    "source_id": "punch-2021-07-17",
+    "url": "https://punchng.com/flood-fallen-trucks-cause-lagos-gridlock-commuters-stranded/",
+    "who": null,
+    "date": "2021-07-17",
+    "causes": [
+     "heavy_rain"
+    ],
+    "cause_quote": "several highways were flooded due to downpours that fell for about four hours",
+    "cause_attributed_by": "journalist"
+   }
+  ],
+  "cause_tagging": "Task 15: LASTMA 'due to the flash floods' traffic notes not tagged as flood causes. NiMet station totals (ev-025/026) are rainfall observations, not location attributions. Daily Trust 21 Aug 'low-lying areas' is descriptive, not causal.",
+  "cause_summary": {
+   "heavy_rain": {
+    "official": 3,
+    "journalist": 4,
+    "resident": 0,
+    "expert": 0,
+    "total": 7
+   },
+   "drainage_capacity": {
+    "official": 0,
+    "journalist": 0,
+    "resident": 1,
+    "expert": 0,
+    "total": 1
+   },
+   "construction": {
+    "official": 1,
+    "journalist": 0,
+    "resident": 0,
+    "expert": 0,
+    "total": 1
+   }
+  }
+ },
+ "features": [
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     3.394,
+     6.454
+    ]
+   },
+   "properties": {
+    "id": "ev-001",
+    "kind": "news_report",
+    "source_id": "channelstv-2021-07-16",
+    "source_url": "https://www.channelstv.com/2021/07/16/vehicles-submerged-on-lagos-island-amid-heavy-downpour/",
+    "publisher": "Channels TV",
+    "published_at": "2021-07-16T18:00:45+00:00",
+    "observed_at": "2021-07-16T12:00:00+01:00",
+    "time_confidence": "day",
+    "location_name": "Marina axis of Lagos Island",
+    "location_confidence": "neighbourhood",
+    "geocode_method": "manual: neighbourhood centre for Marina, Lagos Island",
+    "claim": "Vehicles submerged in car parks; rain lasted hours on Friday.",
+    "depth_note": "vehicles submerged",
+    "quote": "Several vehicles were submerged underwater in parks at the popular Marina axis",
+    "read_status": "read",
+    "quote_check": "not verifiable (publisher blocks automated access)",
+    "verified": false,
+    "causes": [],
+    "cause_quote": null,
+    "cause_attributed_by": null,
+    "cause_who": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     3.5080182,
+     6.4344194
+    ]
+   },
+   "properties": {
+    "id": "ev-002",
+    "kind": "news_report",
+    "source_id": "punch-2021-07-24",
+    "source_url": "https://punchng.com/rains-pound-europe-us-china-houses-submerged-cars-washed-away-over-200-killed/",
+    "publisher": "Punch",
+    "published_at": "2021-07-24T02:16:06+00:00",
+    "observed_at": "2021-07-16T12:00:00+01:00",
+    "time_confidence": "approx",
+    "read_status": "read",
+    "quote_check": "verbatim match on source page (one quote per publisher spot-checked)",
+    "location_name": "Jakande Estate, Lekki",
+    "location_confidence": "neighbourhood",
+    "geocode_method": "nominatim:Jakande, Eti-Osa, Lagos",
+    "claim": "Households temporarily displaced Friday; belongings submerged.",
+    "depth_note": "room filled with water",
+    "quote": "households temporarily displaced by floods that rocked Jakande Estate and other parts of Lekki",
+    "verified": false,
+    "causes": [],
+    "cause_quote": null,
+    "cause_attributed_by": null,
+    "cause_who": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     3.508,
+     6.434
+    ]
+   },
+   "properties": {
+    "id": "ev-003",
+    "kind": "news_report",
+    "source_id": "punch-2021-07-24",
+    "source_url": "https://punchng.com/rains-pound-europe-us-china-houses-submerged-cars-washed-away-over-200-killed/",
+    "publisher": "Punch",
+    "published_at": "2021-07-24T02:16:06+00:00",
+    "observed_at": "2021-07-16T12:00:00+01:00",
+    "time_confidence": "approx",
+    "read_status": "read",
+    "quote_check": "verbatim match on source page (one quote per publisher spot-checked)",
+    "location_name": "Oba Elegushi New Market, Jakande Estate",
+    "location_confidence": "neighbourhood",
+    "geocode_method": "manual: neighbourhood centre for Oba Elegushi New Market, Jakande, Lekki",
+    "claim": "Water gushed from the floor; family slept in flooded room three days.",
+    "depth_note": "pool of water",
+    "quote": "The water was just gushing out from the floor. It spoiled a lot of things",
+    "verified": false,
+    "causes": [],
+    "cause_quote": null,
+    "cause_attributed_by": null,
+    "cause_who": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     3.7045571,
+     6.4697148
+    ]
+   },
+   "properties": {
+    "id": "ev-004",
+    "kind": "news_report",
+    "source_id": "punch-2021-07-24",
+    "source_url": "https://punchng.com/rains-pound-europe-us-china-houses-submerged-cars-washed-away-over-200-killed/",
+    "publisher": "Punch",
+    "published_at": "2021-07-24T02:16:06+00:00",
+    "observed_at": "2021-07-16T12:00:00+01:00",
+    "time_confidence": "approx",
+    "read_status": "read",
+    "quote_check": "verbatim match on source page (one quote per publisher spot-checked)",
+    "location_name": "Awoyaya",
+    "location_confidence": "neighbourhood",
+    "geocode_method": "nominatim:Awoyaya, Ibeju-Lekki, Lagos",
+    "claim": "Named among worst-hit island locations after about four hours of rain.",
+    "depth_note": null,
+    "quote": "Worst hit were locations on the island, including Jakande Estate, Awoyaya, Lekki Phase 1",
+    "verified": false,
+    "causes": [],
+    "cause_quote": null,
+    "cause_attributed_by": null,
+    "cause_who": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     3.4704698,
+     6.4413987
+    ]
+   },
+   "properties": {
+    "id": "ev-005",
+    "kind": "news_report",
+    "source_id": "punch-2021-07-24",
+    "source_url": "https://punchng.com/rains-pound-europe-us-china-houses-submerged-cars-washed-away-over-200-killed/",
+    "publisher": "Punch",
+    "published_at": "2021-07-24T02:16:06+00:00",
+    "observed_at": "2021-07-16T12:00:00+01:00",
+    "time_confidence": "approx",
+    "read_status": "read",
+    "quote_check": "verbatim match on source page (one quote per publisher spot-checked)",
+    "location_name": "Lekki Phase 1",
+    "location_confidence": "neighbourhood",
+    "geocode_method": "nominatim:Lekki, Eti-Osa, Lagos (Phase I alias)",
+    "claim": "Named among worst-hit island locations after Friday rain.",
+    "depth_note": null,
+    "quote": "Worst hit were locations on the island, including Jakande Estate, Awoyaya, Lekki Phase 1",
+    "verified": false,
+    "causes": [],
+    "cause_quote": null,
+    "cause_attributed_by": null,
+    "cause_who": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     3.5623861,
+     6.4694716
+    ]
+   },
+   "properties": {
+    "id": "ev-006",
+    "kind": "news_report",
+    "source_id": "punch-2021-07-24",
+    "source_url": "https://punchng.com/rains-pound-europe-us-china-houses-submerged-cars-washed-away-over-200-killed/",
+    "publisher": "Punch",
+    "published_at": "2021-07-24T02:16:06+00:00",
+    "observed_at": "2021-07-16T12:00:00+01:00",
+    "time_confidence": "approx",
+    "read_status": "read",
+    "quote_check": "verbatim match on source page (one quote per publisher spot-checked)",
+    "location_name": "Ajah",
+    "location_confidence": "neighbourhood",
+    "geocode_method": "nominatim:Ajah, Lagos",
+    "claim": "Named among worst-hit island locations after Friday rain.",
+    "depth_note": null,
+    "quote": "including Jakande Estate, Awoyaya, Lekki Phase 1, Ajah and Marina",
+    "verified": false,
+    "causes": [],
+    "cause_quote": null,
+    "cause_attributed_by": null,
+    "cause_who": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     3.394,
+     6.454
+    ]
+   },
+   "properties": {
+    "id": "ev-007",
+    "kind": "news_report",
+    "source_id": "punch-2021-07-24",
+    "source_url": "https://punchng.com/rains-pound-europe-us-china-houses-submerged-cars-washed-away-over-200-killed/",
+    "publisher": "Punch",
+    "published_at": "2021-07-24T02:16:06+00:00",
+    "observed_at": "2021-07-16T12:00:00+01:00",
+    "time_confidence": "approx",
+    "read_status": "read",
+    "quote_check": "verbatim match on source page (one quote per publisher spot-checked)",
+    "location_name": "Marina car parks",
+    "location_confidence": "neighbourhood",
+    "geocode_method": "manual: neighbourhood centre for Marina, Lagos Island",
+    "claim": "Tens of vehicles in car parks submerged.",
+    "depth_note": "vehicles submerged",
+    "quote": "Marina, where tens of vehicles in car parks were submerged",
+    "verified": false,
+    "causes": [],
+    "cause_quote": null,
+    "cause_attributed_by": null,
+    "cause_who": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     3.397992,
+     6.4566011
+    ]
+   },
+   "properties": {
+    "id": "ev-008",
+    "kind": "news_report",
+    "source_id": "punch-2021-07-24",
+    "source_url": "https://punchng.com/rains-pound-europe-us-china-houses-submerged-cars-washed-away-over-200-killed/",
+    "publisher": "Punch",
+    "published_at": "2021-07-24T02:16:06+00:00",
+    "observed_at": "2021-07-16T12:00:00+01:00",
+    "time_confidence": "approx",
+    "read_status": "read",
+    "quote_check": "verbatim match on source page (one quote per publisher spot-checked)",
+    "location_name": "Adeniji-Adele",
+    "location_confidence": "street",
+    "geocode_method": "nominatim:Adeniji Adele Road, Lagos",
+    "claim": "Many areas flooded; several vehicles submerged.",
+    "depth_note": "vehicles submerged",
+    "quote": "Many areas in Adeniji-Adele were flooded. Several vehicles were also submerged.",
+    "verified": false,
+    "causes": [],
+    "cause_quote": null,
+    "cause_attributed_by": null,
+    "cause_who": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     3.394,
+     6.454
+    ]
+   },
+   "properties": {
+    "id": "ev-009",
+    "kind": "official_statement",
+    "source_id": "punch-2021-07-24",
+    "source_url": "https://punchng.com/rains-pound-europe-us-china-houses-submerged-cars-washed-away-over-200-killed/",
+    "publisher": "Punch",
+    "published_at": "2021-07-24T02:16:06+00:00",
+    "observed_at": "2021-07-16T12:00:00+01:00",
+    "time_confidence": "day",
+    "location_name": "Lagos Marina on Victoria Island",
+    "location_confidence": "neighbourhood",
+    "geocode_method": "manual: neighbourhood centre for Marina, Lagos Island",
+    "claim": "NiMet: flash flood episodes especially over Lagos Marina on Victoria Island.",
+    "depth_note": null,
+    "quote": "caused flash flood episodes, especially over the Lagos Marina on Victoria Island",
+    "read_status": "read",
+    "quote_check": "verbatim match on source page (one quote per publisher spot-checked)",
+    "verified": false,
+    "causes": [
+     "heavy_rain"
+    ],
+    "cause_quote": "caused flash flood episodes, especially over the Lagos Marina on Victoria Island",
+    "cause_attributed_by": "official",
+    "cause_who": "NiMet"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     3.4314373,
+     6.4559959
+    ]
+   },
+   "properties": {
+    "id": "ev-010",
+    "kind": "official_statement",
+    "source_id": "punch-2021-07-17",
+    "source_url": "https://punchng.com/flood-fallen-trucks-cause-lagos-gridlock-commuters-stranded/",
+    "publisher": "Punch",
+    "published_at": "2021-07-17T08:04:49+00:00",
+    "observed_at": "2021-07-16T18:03:00+01:00",
+    "time_confidence": "exact",
+    "read_status": "read",
+    "quote_check": "verbatim match on source page (one quote per publisher spot-checked)",
+    "location_name": "Alfred Rewane Road, Ikoyi",
+    "location_confidence": "street",
+    "geocode_method": "nominatim:Alfred Rewane Road, Ikoyi, Lagos",
+    "claim": "LASTMA 6.03pm video: road flooded; vehicles waded; people trekked.",
+    "depth_note": "vehicles waded through the water",
+    "quote": "Alfred Rewane Road, Ikoyi, was flooded, leading to a traffic snarl",
+    "verified": false,
+    "causes": [],
+    "cause_quote": null,
+    "cause_attributed_by": null,
+    "cause_who": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     3.394,
+     6.454
+    ]
+   },
+   "properties": {
+    "id": "ev-011",
+    "kind": "news_report",
+    "source_id": "punch-2021-07-17",
+    "source_url": "https://punchng.com/flood-fallen-trucks-cause-lagos-gridlock-commuters-stranded/",
+    "publisher": "Punch",
+    "published_at": "2021-07-17T08:04:49+00:00",
+    "observed_at": "2021-07-16T12:00:00+01:00",
+    "time_confidence": "day",
+    "read_status": "read",
+    "quote_check": "verbatim match on source page (one quote per publisher spot-checked)",
+    "location_name": "Marina car parks",
+    "location_confidence": "neighbourhood",
+    "geocode_method": "manual: neighbourhood centre for Marina, Lagos Island",
+    "claim": "Vehicles in car parks engulfed; traffic on the island.",
+    "depth_note": "vehicles engulfed",
+    "quote": "Marina, where vehicles in car parks were engulfed in water",
+    "verified": false,
+    "causes": [],
+    "cause_quote": null,
+    "cause_attributed_by": null,
+    "cause_who": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     3.4704698,
+     6.4413987
+    ]
+   },
+   "properties": {
+    "id": "ev-012",
+    "kind": "news_report",
+    "source_id": "punch-2021-07-17",
+    "source_url": "https://punchng.com/flood-fallen-trucks-cause-lagos-gridlock-commuters-stranded/",
+    "publisher": "Punch",
+    "published_at": "2021-07-17T08:04:49+00:00",
+    "observed_at": "2021-07-16T12:00:00+01:00",
+    "time_confidence": "day",
+    "read_status": "read",
+    "quote_check": "verbatim match on source page (one quote per publisher spot-checked)",
+    "location_name": "Lekki Phase 1 inwards Sandfill",
+    "location_confidence": "neighbourhood",
+    "geocode_method": "nominatim:Lekki, Eti-Osa, Lagos (Phase I alias)",
+    "claim": "Named among flooded island areas that caused traffic.",
+    "depth_note": null,
+    "quote": "Lekki Phase 1 inwards Sandfill, Maroko inwards Chisco, Law School down to Bonny Camp",
+    "verified": false,
+    "causes": [],
+    "cause_quote": null,
+    "cause_attributed_by": null,
+    "cause_who": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     3.4551385,
+     6.4288783
+    ]
+   },
+   "properties": {
+    "id": "ev-013",
+    "kind": "news_report",
+    "source_id": "punch-2021-07-17",
+    "source_url": "https://punchng.com/flood-fallen-trucks-cause-lagos-gridlock-commuters-stranded/",
+    "publisher": "Punch",
+    "published_at": "2021-07-17T08:04:49+00:00",
+    "observed_at": "2021-07-16T12:00:00+01:00",
+    "time_confidence": "day",
+    "read_status": "read",
+    "quote_check": "verbatim match on source page (one quote per publisher spot-checked)",
+    "location_name": "Maroko inwards Chisco",
+    "location_confidence": "neighbourhood",
+    "geocode_method": "nominatim:Maroko, Lagos",
+    "claim": "Named among flooded island areas that caused traffic.",
+    "depth_note": null,
+    "quote": "Lekki Phase 1 inwards Sandfill, Maroko inwards Chisco, Law School down to Bonny Camp",
+    "verified": false,
+    "causes": [],
+    "cause_quote": null,
+    "cause_attributed_by": null,
+    "cause_who": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     3.412,
+     6.433
+    ]
+   },
+   "properties": {
+    "id": "ev-014",
+    "kind": "news_report",
+    "source_id": "punch-2021-07-17",
+    "source_url": "https://punchng.com/flood-fallen-trucks-cause-lagos-gridlock-commuters-stranded/",
+    "publisher": "Punch",
+    "published_at": "2021-07-17T08:04:49+00:00",
+    "observed_at": "2021-07-16T12:00:00+01:00",
+    "time_confidence": "day",
+    "read_status": "read",
+    "quote_check": "verbatim match on source page (one quote per publisher spot-checked)",
+    "location_name": "Law School down to Bonny Camp Roundabout",
+    "location_confidence": "street",
+    "geocode_method": "manual: neighbourhood centre for Nigerian Law School, Victoria Island",
+    "claim": "Named among flooded island areas that caused traffic.",
+    "depth_note": null,
+    "quote": "Maroko inwards Chisco, Law School down to Bonny Camp Roundabout, Apogbon, among others",
+    "verified": false,
+    "causes": [],
+    "cause_quote": null,
+    "cause_attributed_by": null,
+    "cause_who": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     3.386,
+     6.453
+    ]
+   },
+   "properties": {
+    "id": "ev-015",
+    "kind": "news_report",
+    "source_id": "punch-2021-07-17",
+    "source_url": "https://punchng.com/flood-fallen-trucks-cause-lagos-gridlock-commuters-stranded/",
+    "publisher": "Punch",
+    "published_at": "2021-07-17T08:04:49+00:00",
+    "observed_at": "2021-07-16T12:00:00+01:00",
+    "time_confidence": "day",
+    "read_status": "read",
+    "quote_check": "verbatim match on source page (one quote per publisher spot-checked)",
+    "location_name": "Apogbon",
+    "location_confidence": "neighbourhood",
+    "geocode_method": "manual: neighbourhood centre for Apongbon, Lagos Island",
+    "claim": "Named among flooded island areas that caused traffic.",
+    "depth_note": null,
+    "quote": "Law School down to Bonny Camp Roundabout, Apogbon, among others",
+    "verified": false,
+    "causes": [],
+    "cause_quote": null,
+    "cause_attributed_by": null,
+    "cause_who": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     3.4239778,
+     6.4307853
+    ]
+   },
+   "properties": {
+    "id": "ev-016",
+    "kind": "official_statement",
+    "source_id": "punch-2021-07-17",
+    "source_url": "https://punchng.com/flood-fallen-trucks-cause-lagos-gridlock-commuters-stranded/",
+    "publisher": "Punch",
+    "published_at": "2021-07-17T08:04:49+00:00",
+    "observed_at": "2021-07-16T14:00:00+01:00",
+    "time_confidence": "approx",
+    "read_status": "read",
+    "quote_check": "verbatim match on source page (one quote per publisher spot-checked)",
+    "location_name": "Akin Adesola inwards Law School",
+    "location_confidence": "street",
+    "geocode_method": "nominatim:Akin Adesola Street, Lagos",
+    "claim": "LASTMA ~2pm: standstill due to flash floods.",
+    "depth_note": null,
+    "quote": "Akin Adesola inwards Law School at the moment (around 2pm) is on standstill due to the flash floods",
+    "verified": false,
+    "causes": [],
+    "cause_quote": null,
+    "cause_attributed_by": null,
+    "cause_who": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     3.4219484,
+     6.437491
+    ]
+   },
+   "properties": {
+    "id": "ev-017",
+    "kind": "official_statement",
+    "source_id": "punch-2021-07-17",
+    "source_url": "https://punchng.com/flood-fallen-trucks-cause-lagos-gridlock-commuters-stranded/",
+    "publisher": "Punch",
+    "published_at": "2021-07-17T08:04:49+00:00",
+    "observed_at": "2021-07-16T14:00:00+01:00",
+    "time_confidence": "approx",
+    "read_status": "read",
+    "quote_check": "verbatim match on source page (one quote per publisher spot-checked)",
+    "location_name": "Ozumba Mbadiwe (Law School Area)",
+    "location_confidence": "street",
+    "geocode_method": "nominatim:Ozumba Mbadiwe Avenue, Lagos",
+    "claim": "LASTMA: slow movement after the downpour.",
+    "depth_note": null,
+    "quote": "Slow movement at Ozumba Mbadiwe (Law School Area) as a result of the downpour",
+    "verified": false,
+    "causes": [
+     "heavy_rain"
+    ],
+    "cause_quote": "Slow movement at Ozumba Mbadiwe (Law School Area) as a result of the downpour",
+    "cause_attributed_by": "official",
+    "cause_who": "LASTMA"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     3.394,
+     6.454
+    ]
+   },
+   "properties": {
+    "id": "ev-018",
+    "kind": "news_report",
+    "source_id": "punch-2021-07-17",
+    "source_url": "https://punchng.com/flood-fallen-trucks-cause-lagos-gridlock-commuters-stranded/",
+    "publisher": "Punch",
+    "published_at": "2021-07-17T08:04:49+00:00",
+    "observed_at": "2021-07-16T12:00:00+01:00",
+    "time_confidence": "day",
+    "read_status": "read",
+    "quote_check": "verbatim match on source page (one quote per publisher spot-checked)",
+    "location_name": "Marina Road",
+    "location_confidence": "street",
+    "geocode_method": "manual: neighbourhood centre for Marina, Lagos Island",
+    "claim": "Motorist: highway blocked by flooding; no drainage system.",
+    "depth_note": null,
+    "quote": "as a result of the flooding caused by no drainage system",
+    "verified": false,
+    "causes": [
+     "drainage_capacity"
+    ],
+    "cause_quote": "as a result of the flooding caused by no drainage system",
+    "cause_attributed_by": "resident",
+    "cause_who": "Okechukwu Chuckwu, motorist"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     3.3339925,
+     6.5849062
+    ]
+   },
+   "properties": {
+    "id": "ev-019",
+    "kind": "official_statement",
+    "source_id": "punch-2021-07-17",
+    "source_url": "https://punchng.com/flood-fallen-trucks-cause-lagos-gridlock-commuters-stranded/",
+    "publisher": "Punch",
+    "published_at": "2021-07-17T08:04:49+00:00",
+    "observed_at": "2021-07-16T12:00:00+01:00",
+    "time_confidence": "day",
+    "read_status": "read",
+    "quote_check": "verbatim match on source page (one quote per publisher spot-checked)",
+    "location_name": "service lane inwards Airport",
+    "location_confidence": "street",
+    "geocode_method": "nominatim:Airport Road, Oshodi, Lagos",
+    "claim": "LASTMA: service lane towards airport seriously flooded.",
+    "depth_note": null,
+    "quote": "the service lane inwards Airport was seriously flooded",
+    "verified": false,
+    "causes": [],
+    "cause_quote": null,
+    "cause_attributed_by": null,
+    "cause_who": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     3.287,
+     6.61
+    ]
+   },
+   "properties": {
+    "id": "ev-020",
+    "kind": "official_statement",
+    "source_id": "punch-2021-07-17",
+    "source_url": "https://punchng.com/flood-fallen-trucks-cause-lagos-gridlock-commuters-stranded/",
+    "publisher": "Punch",
+    "published_at": "2021-07-17T08:04:49+00:00",
+    "observed_at": "2021-07-16T16:00:00+01:00",
+    "time_confidence": "approx",
+    "read_status": "read",
+    "quote_check": "verbatim match on source page (one quote per publisher spot-checked)",
+    "location_name": "Oluwaga / Church Roundabout",
+    "location_confidence": "neighbourhood",
+    "geocode_method": "manual: neighbourhood centre for Oluwaga, Iyana-Ipaja, Lagos",
+    "claim": "LASTMA ~4pm: slow movement from flash flood.",
+    "depth_note": null,
+    "quote": "Movement linking Oluwaga is slow opposite PHCN installation inwards Church Roundabout as a result of flash flood",
+    "verified": false,
+    "causes": [],
+    "cause_quote": null,
+    "cause_attributed_by": null,
+    "cause_who": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     3.305,
+     6.648
+    ]
+   },
+   "properties": {
+    "id": "ev-021",
+    "kind": "official_statement",
+    "source_id": "punch-2021-07-17",
+    "source_url": "https://punchng.com/flood-fallen-trucks-cause-lagos-gridlock-commuters-stranded/",
+    "publisher": "Punch",
+    "published_at": "2021-07-17T08:04:49+00:00",
+    "observed_at": "2021-07-16T16:00:00+01:00",
+    "time_confidence": "approx",
+    "read_status": "read",
+    "quote_check": "verbatim match on source page (one quote per publisher spot-checked)",
+    "location_name": "Oju-Odo",
+    "location_confidence": "neighbourhood",
+    "geocode_method": "manual: neighbourhood centre for Oju-Odo, Abule Egba, Lagos",
+    "claim": "LASTMA: Oju-Odo almost overflowing the bridge.",
+    "depth_note": "almost overflowing the bridge",
+    "quote": "Oju-Odo is almost overflowing the bridge",
+    "verified": false,
+    "causes": [],
+    "cause_quote": null,
+    "cause_attributed_by": null,
+    "cause_who": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     3.312,
+     6.648
+    ]
+   },
+   "properties": {
+    "id": "ev-022",
+    "kind": "official_statement",
+    "source_id": "punch-2021-07-17",
+    "source_url": "https://punchng.com/flood-fallen-trucks-cause-lagos-gridlock-commuters-stranded/",
+    "publisher": "Punch",
+    "published_at": "2021-07-17T08:04:49+00:00",
+    "observed_at": "2021-07-16T16:00:00+01:00",
+    "time_confidence": "approx",
+    "read_status": "read",
+    "quote_check": "verbatim match on source page (one quote per publisher spot-checked)",
+    "location_name": "Ekoro",
+    "location_confidence": "neighbourhood",
+    "geocode_method": "manual: neighbourhood centre for Ekoro, Agege/Abule Egba, Lagos",
+    "claim": "LASTMA: heavy traffic from flash floods; return from Abule-Egba.",
+    "depth_note": null,
+    "quote": "Ekoro is very heavy due to flash floods and the return journey coming from Abule-Egba",
+    "verified": false,
+    "causes": [],
+    "cause_quote": null,
+    "cause_attributed_by": null,
+    "cause_who": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     3.392,
+     6.592
+    ]
+   },
+   "properties": {
+    "id": "ev-023",
+    "kind": "official_statement",
+    "source_id": "punch-2021-07-17",
+    "source_url": "https://punchng.com/flood-fallen-trucks-cause-lagos-gridlock-commuters-stranded/",
+    "publisher": "Punch",
+    "published_at": "2021-07-17T08:04:49+00:00",
+    "observed_at": "2021-07-16T12:00:00+01:00",
+    "time_confidence": "day",
+    "read_status": "read",
+    "quote_check": "verbatim match on source page (one quote per publisher spot-checked)",
+    "location_name": "Alapere inwards Ogudu Car Wash",
+    "location_confidence": "neighbourhood",
+    "geocode_method": "manual: neighbourhood centre for Alapere, Ketu, Lagos",
+    "claim": "LASTMA: flooding and construction; traffic back to Toll-gate.",
+    "depth_note": null,
+    "quote": "Due to flooding and construction at Alapere inwards Ogudu Car Wash",
+    "verified": false,
+    "causes": [
+     "construction"
+    ],
+    "cause_quote": "Due to flooding and construction at Alapere inwards Ogudu Car Wash",
+    "cause_attributed_by": "official",
+    "cause_who": "LASTMA"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     3.420563,
+     6.4424989
+    ]
+   },
+   "properties": {
+    "id": "ev-024",
+    "kind": "news_report",
+    "source_id": "punch-2021-07-17",
+    "source_url": "https://punchng.com/flood-fallen-trucks-cause-lagos-gridlock-commuters-stranded/",
+    "publisher": "Punch",
+    "published_at": "2021-07-17T08:04:49+00:00",
+    "observed_at": "2021-07-16T12:00:00+01:00",
+    "time_confidence": "day",
+    "read_status": "read",
+    "quote_check": "verbatim match on source page (one quote per publisher spot-checked)",
+    "location_name": "Awolowo Road",
+    "location_confidence": "street",
+    "geocode_method": "nominatim:Awolowo Road, Ikoyi, Lagos",
+    "claim": "Snapchat: motorist spent one hour on flooded Awolowo Road.",
+    "depth_note": null,
+    "quote": "I have spent one hour on Awolowo Road and I’m still counting",
+    "verified": false,
+    "causes": [],
+    "cause_quote": null,
+    "cause_attributed_by": null,
+    "cause_who": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     3.3494422,
+     6.5570254
+    ]
+   },
+   "properties": {
+    "id": "ev-025",
+    "kind": "official_statement",
+    "source_id": "thecable-2021-07-21",
+    "source_url": "https://www.thecable.ng/nimet-lagos-flood-highly-unfortunate-but-expected/",
+    "publisher": "TheCable",
+    "published_at": "2021-07-21T19:43:47+00:00",
+    "observed_at": "2021-07-15T12:00:00+01:00",
+    "time_confidence": "day",
+    "location_name": "Oshodi weather station",
+    "location_confidence": "neighbourhood",
+    "geocode_method": "nominatim:Oshodi, Lagos",
+    "claim": "NiMet: 125 mm rainfall recorded (dated 15 July in the statement).",
+    "depth_note": null,
+    "quote": "125 millimeter (mm) and 66mm of rainfall recorded at Oshodi and Ikeja weather stations",
+    "read_status": "read",
+    "quote_check": "not verifiable (publisher blocks automated access)",
+    "verified": false,
+    "causes": [],
+    "cause_quote": null,
+    "cause_attributed_by": null,
+    "cause_who": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     3.3515981,
+     6.601627
+    ]
+   },
+   "properties": {
+    "id": "ev-026",
+    "kind": "official_statement",
+    "source_id": "thecable-2021-07-21",
+    "source_url": "https://www.thecable.ng/nimet-lagos-flood-highly-unfortunate-but-expected/",
+    "publisher": "TheCable",
+    "published_at": "2021-07-21T19:43:47+00:00",
+    "observed_at": "2021-07-15T12:00:00+01:00",
+    "time_confidence": "day",
+    "location_name": "Ikeja weather station",
+    "location_confidence": "lga",
+    "geocode_method": "nominatim:Ikeja, Lagos",
+    "claim": "NiMet: 66 mm rainfall recorded (dated 15 July in the statement).",
+    "depth_note": null,
+    "quote": "125 millimeter (mm) and 66mm of rainfall recorded at Oshodi and Ikeja weather stations",
+    "read_status": "read",
+    "quote_check": "not verifiable (publisher blocks automated access)",
+    "verified": false,
+    "causes": [],
+    "cause_quote": null,
+    "cause_attributed_by": null,
+    "cause_who": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     3.4704698,
+     6.4413987
+    ]
+   },
+   "properties": {
+    "id": "ev-027",
+    "kind": "news_photo",
+    "source_id": "floodlist-2021-07-20",
+    "source_url": "https://floodlist.com/africa/nigeria-floods-taraba-july-2021",
+    "publisher": "FloodList",
+    "published_at": "2021-07-20T00:00:00+00:00",
+    "observed_at": "2021-07-16T12:00:00+01:00",
+    "time_confidence": "day",
+    "read_status": "read",
+    "quote_check": "verbatim match on source page (one quote per publisher spot-checked)",
+    "location_name": "Lekki",
+    "location_confidence": "lga",
+    "geocode_method": "nominatim:Lekki, Eti-Osa, Lagos",
+    "claim": "Republished Punch photos: flood and gridlock from Lekki to Oshodi.",
+    "depth_note": null,
+    "quote": "PHOTOS: From Lekki To Oshodi, Flood, Traffic Gridlock Take Over Lagos",
+    "verified": false,
+    "causes": [],
+    "cause_quote": null,
+    "cause_attributed_by": null,
+    "cause_who": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     3.3494422,
+     6.5570254
+    ]
+   },
+   "properties": {
+    "id": "ev-028",
+    "kind": "news_photo",
+    "source_id": "floodlist-2021-07-20",
+    "source_url": "https://floodlist.com/africa/nigeria-floods-taraba-july-2021",
+    "publisher": "FloodList",
+    "published_at": "2021-07-20T00:00:00+00:00",
+    "observed_at": "2021-07-16T12:00:00+01:00",
+    "time_confidence": "day",
+    "read_status": "read",
+    "quote_check": "verbatim match on source page (one quote per publisher spot-checked)",
+    "location_name": "Oshodi",
+    "location_confidence": "neighbourhood",
+    "geocode_method": "nominatim:Oshodi, Lagos",
+    "claim": "Republished Punch photos: flood and gridlock from Lekki to Oshodi.",
+    "depth_note": null,
+    "quote": "PHOTOS: From Lekki To Oshodi, Flood, Traffic Gridlock Take Over Lagos",
+    "verified": false,
+    "causes": [],
+    "cause_quote": null,
+    "cause_attributed_by": null,
+    "cause_who": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     3.394,
+     6.454
+    ]
+   },
+   "properties": {
+    "id": "ev-029",
+    "kind": "news_report",
+    "source_id": "nairametrics-2021-07-16",
+    "source_url": "https://nairametrics.com/2021/07/16/flood-hits-parts-of-lagos-ogun/",
+    "publisher": "Nairametrics",
+    "published_at": "2021-07-16T17:50:31+00:00",
+    "observed_at": "2021-07-16T12:00:00+01:00",
+    "time_confidence": "day",
+    "read_status": "read",
+    "quote_check": "verbatim match on source page (one quote per publisher spot-checked)",
+    "depth_note": null,
+    "quote": "Some of the affected areas are Marina, Lekki, Agege, Iju Road, Victoria Island, Oshodi, Ilupeju, Ogudu, Ketu",
+    "location_name": "Marina",
+    "location_confidence": "neighbourhood",
+    "geocode_method": "manual: neighbourhood centre for Marina, Lagos Island",
+    "claim": "Named among Friday flood-affected areas.",
+    "verified": false,
+    "causes": [],
+    "cause_quote": null,
+    "cause_attributed_by": null,
+    "cause_who": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     3.4704698,
+     6.4413987
+    ]
+   },
+   "properties": {
+    "id": "ev-030",
+    "kind": "news_report",
+    "source_id": "nairametrics-2021-07-16",
+    "source_url": "https://nairametrics.com/2021/07/16/flood-hits-parts-of-lagos-ogun/",
+    "publisher": "Nairametrics",
+    "published_at": "2021-07-16T17:50:31+00:00",
+    "observed_at": "2021-07-16T12:00:00+01:00",
+    "time_confidence": "day",
+    "read_status": "read",
+    "quote_check": "verbatim match on source page (one quote per publisher spot-checked)",
+    "depth_note": null,
+    "quote": "Some of the affected areas are Marina, Lekki, Agege, Iju Road, Victoria Island, Oshodi, Ilupeju, Ogudu, Ketu",
+    "location_name": "Lekki",
+    "location_confidence": "lga",
+    "geocode_method": "nominatim:Lekki, Eti-Osa, Lagos",
+    "claim": "Named among Friday flood-affected areas.",
+    "verified": false,
+    "causes": [],
+    "cause_quote": null,
+    "cause_attributed_by": null,
+    "cause_who": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     3.3203386,
+     6.6229165
+    ]
+   },
+   "properties": {
+    "id": "ev-031",
+    "kind": "news_report",
+    "source_id": "nairametrics-2021-07-16",
+    "source_url": "https://nairametrics.com/2021/07/16/flood-hits-parts-of-lagos-ogun/",
+    "publisher": "Nairametrics",
+    "published_at": "2021-07-16T17:50:31+00:00",
+    "observed_at": "2021-07-16T12:00:00+01:00",
+    "time_confidence": "day",
+    "read_status": "read",
+    "quote_check": "verbatim match on source page (one quote per publisher spot-checked)",
+    "depth_note": null,
+    "quote": "Some of the affected areas are Marina, Lekki, Agege, Iju Road, Victoria Island, Oshodi, Ilupeju, Ogudu, Ketu",
+    "location_name": "Agege",
+    "location_confidence": "neighbourhood",
+    "geocode_method": "nominatim:Agege, Lagos",
+    "claim": "Named among Friday flood-affected areas.",
+    "verified": false,
+    "causes": [],
+    "cause_quote": null,
+    "cause_attributed_by": null,
+    "cause_who": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     3.3233387,
+     6.6484769
+    ]
+   },
+   "properties": {
+    "id": "ev-032",
+    "kind": "news_report",
+    "source_id": "nairametrics-2021-07-16",
+    "source_url": "https://nairametrics.com/2021/07/16/flood-hits-parts-of-lagos-ogun/",
+    "publisher": "Nairametrics",
+    "published_at": "2021-07-16T17:50:31+00:00",
+    "observed_at": "2021-07-16T12:00:00+01:00",
+    "time_confidence": "day",
+    "read_status": "read",
+    "quote_check": "verbatim match on source page (one quote per publisher spot-checked)",
+    "depth_note": null,
+    "quote": "Some of the affected areas are Marina, Lekki, Agege, Iju Road, Victoria Island, Oshodi, Ilupeju, Ogudu, Ketu",
+    "location_name": "Iju Road",
+    "location_confidence": "street",
+    "geocode_method": "nominatim:Iju Road, Lagos",
+    "claim": "Named among Friday flood-affected areas.",
+    "verified": false,
+    "causes": [],
+    "cause_quote": null,
+    "cause_attributed_by": null,
+    "cause_who": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     3.4259904,
+     6.4300279
+    ]
+   },
+   "properties": {
+    "id": "ev-033",
+    "kind": "news_report",
+    "source_id": "nairametrics-2021-07-16",
+    "source_url": "https://nairametrics.com/2021/07/16/flood-hits-parts-of-lagos-ogun/",
+    "publisher": "Nairametrics",
+    "published_at": "2021-07-16T17:50:31+00:00",
+    "observed_at": "2021-07-16T12:00:00+01:00",
+    "time_confidence": "day",
+    "read_status": "read",
+    "quote_check": "verbatim match on source page (one quote per publisher spot-checked)",
+    "depth_note": null,
+    "quote": "Some of the affected areas are Marina, Lekki, Agege, Iju Road, Victoria Island, Oshodi, Ilupeju, Ogudu, Ketu",
+    "location_name": "Victoria Island",
+    "location_confidence": "neighbourhood",
+    "geocode_method": "nominatim:Victoria Island, Lagos",
+    "claim": "Named among Friday flood-affected areas.",
+    "verified": false,
+    "causes": [],
+    "cause_quote": null,
+    "cause_attributed_by": null,
+    "cause_who": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     3.3494422,
+     6.5570254
+    ]
+   },
+   "properties": {
+    "id": "ev-034",
+    "kind": "news_report",
+    "source_id": "nairametrics-2021-07-16",
+    "source_url": "https://nairametrics.com/2021/07/16/flood-hits-parts-of-lagos-ogun/",
+    "publisher": "Nairametrics",
+    "published_at": "2021-07-16T17:50:31+00:00",
+    "observed_at": "2021-07-16T12:00:00+01:00",
+    "time_confidence": "day",
+    "read_status": "read",
+    "quote_check": "verbatim match on source page (one quote per publisher spot-checked)",
+    "depth_note": null,
+    "quote": "Some of the affected areas are Marina, Lekki, Agege, Iju Road, Victoria Island, Oshodi, Ilupeju, Ogudu, Ketu",
+    "location_name": "Oshodi",
+    "location_confidence": "neighbourhood",
+    "geocode_method": "nominatim:Oshodi, Lagos",
+    "claim": "Named among Friday flood-affected areas.",
+    "verified": false,
+    "causes": [],
+    "cause_quote": null,
+    "cause_attributed_by": null,
+    "cause_who": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     3.3592829,
+     6.5550545
+    ]
+   },
+   "properties": {
+    "id": "ev-035",
+    "kind": "news_report",
+    "source_id": "nairametrics-2021-07-16",
+    "source_url": "https://nairametrics.com/2021/07/16/flood-hits-parts-of-lagos-ogun/",
+    "publisher": "Nairametrics",
+    "published_at": "2021-07-16T17:50:31+00:00",
+    "observed_at": "2021-07-16T12:00:00+01:00",
+    "time_confidence": "day",
+    "read_status": "read",
+    "quote_check": "verbatim match on source page (one quote per publisher spot-checked)",
+    "depth_note": null,
+    "quote": "Some of the affected areas are Marina, Lekki, Agege, Iju Road, Victoria Island, Oshodi, Ilupeju, Ogudu, Ketu",
+    "location_name": "Ilupeju",
+    "location_confidence": "neighbourhood",
+    "geocode_method": "nominatim:Ilupeju, Lagos",
+    "claim": "Named among Friday flood-affected areas.",
+    "verified": false,
+    "causes": [],
+    "cause_quote": null,
+    "cause_attributed_by": null,
+    "cause_who": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     3.3905268,
+     6.5750008
+    ]
+   },
+   "properties": {
+    "id": "ev-036",
+    "kind": "news_report",
+    "source_id": "nairametrics-2021-07-16",
+    "source_url": "https://nairametrics.com/2021/07/16/flood-hits-parts-of-lagos-ogun/",
+    "publisher": "Nairametrics",
+    "published_at": "2021-07-16T17:50:31+00:00",
+    "observed_at": "2021-07-16T12:00:00+01:00",
+    "time_confidence": "day",
+    "read_status": "read",
+    "quote_check": "verbatim match on source page (one quote per publisher spot-checked)",
+    "depth_note": null,
+    "quote": "Some of the affected areas are Marina, Lekki, Agege, Iju Road, Victoria Island, Oshodi, Ilupeju, Ogudu, Ketu",
+    "location_name": "Ogudu",
+    "location_confidence": "neighbourhood",
+    "geocode_method": "nominatim:Ogudu, Lagos",
+    "claim": "Named among Friday flood-affected areas.",
+    "verified": false,
+    "causes": [],
+    "cause_quote": null,
+    "cause_attributed_by": null,
+    "cause_who": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     3.3917483,
+     6.5928001
+    ]
+   },
+   "properties": {
+    "id": "ev-037",
+    "kind": "news_report",
+    "source_id": "nairametrics-2021-07-16",
+    "source_url": "https://nairametrics.com/2021/07/16/flood-hits-parts-of-lagos-ogun/",
+    "publisher": "Nairametrics",
+    "published_at": "2021-07-16T17:50:31+00:00",
+    "observed_at": "2021-07-16T12:00:00+01:00",
+    "time_confidence": "day",
+    "read_status": "read",
+    "quote_check": "verbatim match on source page (one quote per publisher spot-checked)",
+    "depth_note": null,
+    "quote": "Some of the affected areas are Marina, Lekki, Agege, Iju Road, Victoria Island, Oshodi, Ilupeju, Ogudu, Ketu",
+    "location_name": "Ketu",
+    "location_confidence": "neighbourhood",
+    "geocode_method": "nominatim:Ketu, Lagos",
+    "claim": "Named among Friday flood-affected areas.",
+    "verified": false,
+    "causes": [],
+    "cause_quote": null,
+    "cause_attributed_by": null,
+    "cause_who": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     3.424,
+     6.443
+    ]
+   },
+   "properties": {
+    "id": "ev-038",
+    "kind": "news_report",
+    "source_id": "vanguard-2021-07-16",
+    "source_url": "https://www.vanguardngr.com/2021/07/18-passengers-escape-death-as-boat-capsizes-amid-heavy-rainfall-in-lagos/",
+    "publisher": "Vanguard",
+    "published_at": "2021-07-16T19:59:00+00:00",
+    "observed_at": "2021-07-16T14:00:00+01:00",
+    "time_confidence": "exact",
+    "location_name": "Five Cowries Terminal, Ikoyi",
+    "location_confidence": "point",
+    "geocode_method": "manual: neighbourhood centre for Five Cowries Terminal, Falomo, Lagos",
+    "claim": "18 passengers rescued after boat capsized amid rain and high waves.",
+    "depth_note": null,
+    "quote": "the boat enroute Badagry suddenly stopped midway five minutes after cruising out of Five Cowries Terminal, Ikoyi",
+    "read_status": "read",
+    "quote_check": "verbatim match on source page (one quote per publisher spot-checked)",
+    "verified": false,
+    "causes": [],
+    "cause_quote": null,
+    "cause_attributed_by": null,
+    "cause_who": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     3.394,
+     6.454
+    ]
+   },
+   "properties": {
+    "id": "ev-039",
+    "kind": "news_report",
+    "source_id": "dailytrust-2021-08-21",
+    "source_url": "https://dailytrust.com/flood-wreaks-havoc-in-5-states-9-dead-hundreds-rendered-homeless/",
+    "publisher": "Daily Trust",
+    "published_at": "2021-08-21T03:36:23+01:00",
+    "observed_at": "2021-07-16T12:00:00+01:00",
+    "time_confidence": "approx",
+    "read_status": "read",
+    "quote_check": "verbatim match on source page (one quote per publisher spot-checked)",
+    "depth_note": null,
+    "location_name": "Marina",
+    "location_confidence": "neighbourhood",
+    "geocode_method": "manual: neighbourhood centre for Marina, Lagos Island",
+    "claim": "Named among areas mainly affected on 16 July.",
+    "quote": "Areas mainly affected are Marina, Victoria Island and Ajah.",
+    "verified": false,
+    "causes": [],
+    "cause_quote": null,
+    "cause_attributed_by": null,
+    "cause_who": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     3.4259904,
+     6.4300279
+    ]
+   },
+   "properties": {
+    "id": "ev-040",
+    "kind": "news_report",
+    "source_id": "dailytrust-2021-08-21",
+    "source_url": "https://dailytrust.com/flood-wreaks-havoc-in-5-states-9-dead-hundreds-rendered-homeless/",
+    "publisher": "Daily Trust",
+    "published_at": "2021-08-21T03:36:23+01:00",
+    "observed_at": "2021-07-16T12:00:00+01:00",
+    "time_confidence": "approx",
+    "read_status": "read",
+    "quote_check": "verbatim match on source page (one quote per publisher spot-checked)",
+    "depth_note": null,
+    "location_name": "Victoria Island",
+    "location_confidence": "neighbourhood",
+    "geocode_method": "nominatim:Victoria Island, Lagos",
+    "claim": "Named among areas mainly affected on 16 July.",
+    "quote": "Areas mainly affected are Marina, Victoria Island and Ajah.",
+    "verified": false,
+    "causes": [],
+    "cause_quote": null,
+    "cause_attributed_by": null,
+    "cause_who": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     3.5623861,
+     6.4694716
+    ]
+   },
+   "properties": {
+    "id": "ev-041",
+    "kind": "news_report",
+    "source_id": "dailytrust-2021-08-21",
+    "source_url": "https://dailytrust.com/flood-wreaks-havoc-in-5-states-9-dead-hundreds-rendered-homeless/",
+    "publisher": "Daily Trust",
+    "published_at": "2021-08-21T03:36:23+01:00",
+    "observed_at": "2021-07-16T12:00:00+01:00",
+    "time_confidence": "approx",
+    "read_status": "read",
+    "quote_check": "verbatim match on source page (one quote per publisher spot-checked)",
+    "depth_note": null,
+    "location_name": "Ajah",
+    "location_confidence": "neighbourhood",
+    "geocode_method": "nominatim:Ajah, Lagos",
+    "claim": "Named among areas mainly affected on 16 July.",
+    "quote": "Areas mainly affected are Marina, Victoria Island and Ajah.",
+    "verified": false,
+    "causes": [],
+    "cause_quote": null,
+    "cause_attributed_by": null,
+    "cause_who": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     3.452867,
+     6.4642221
+    ]
+   },
+   "properties": {
+    "id": "ev-042",
+    "kind": "news_report",
+    "source_id": "dailytrust-2021-08-21",
+    "source_url": "https://dailytrust.com/flood-wreaks-havoc-in-5-states-9-dead-hundreds-rendered-homeless/",
+    "publisher": "Daily Trust",
+    "published_at": "2021-08-21T03:36:23+01:00",
+    "observed_at": "2021-07-16T12:00:00+01:00",
+    "time_confidence": "approx",
+    "read_status": "read",
+    "quote_check": "verbatim match on source page (one quote per publisher spot-checked)",
+    "depth_note": null,
+    "location_name": "Banana Island",
+    "location_confidence": "neighbourhood",
+    "geocode_method": "nominatim:Banana Island, Lagos",
+    "claim": "Named among low-lying areas affected on 16 July.",
+    "quote": "low-lying areas like Banana Island and Park View Estate, Victoria Island, Lekki, Ajah, Apapa and Ikeja",
+    "verified": false,
+    "causes": [],
+    "cause_quote": null,
+    "cause_attributed_by": null,
+    "cause_who": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     3.4426058,
+     6.4624174
+    ]
+   },
+   "properties": {
+    "id": "ev-043",
+    "kind": "news_report",
+    "source_id": "dailytrust-2021-08-21",
+    "source_url": "https://dailytrust.com/flood-wreaks-havoc-in-5-states-9-dead-hundreds-rendered-homeless/",
+    "publisher": "Daily Trust",
+    "published_at": "2021-08-21T03:36:23+01:00",
+    "observed_at": "2021-07-16T12:00:00+01:00",
+    "time_confidence": "approx",
+    "read_status": "read",
+    "quote_check": "verbatim match on source page (one quote per publisher spot-checked)",
+    "depth_note": null,
+    "location_name": "Park View Estate",
+    "location_confidence": "neighbourhood",
+    "geocode_method": "nominatim:Parkview Estate, Ikoyi",
+    "claim": "Named among low-lying areas affected on 16 July.",
+    "quote": "low-lying areas like Banana Island and Park View Estate, Victoria Island, Lekki, Ajah, Apapa and Ikeja",
+    "verified": false,
+    "causes": [],
+    "cause_quote": null,
+    "cause_attributed_by": null,
+    "cause_who": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     3.4704698,
+     6.4413987
+    ]
+   },
+   "properties": {
+    "id": "ev-044",
+    "kind": "news_report",
+    "source_id": "dailytrust-2021-08-21",
+    "source_url": "https://dailytrust.com/flood-wreaks-havoc-in-5-states-9-dead-hundreds-rendered-homeless/",
+    "publisher": "Daily Trust",
+    "published_at": "2021-08-21T03:36:23+01:00",
+    "observed_at": "2021-07-16T12:00:00+01:00",
+    "time_confidence": "approx",
+    "read_status": "read",
+    "quote_check": "verbatim match on source page (one quote per publisher spot-checked)",
+    "depth_note": null,
+    "location_name": "Lekki",
+    "location_confidence": "lga",
+    "geocode_method": "nominatim:Lekki, Eti-Osa, Lagos",
+    "claim": "Named among low-lying areas affected on 16 July.",
+    "quote": "low-lying areas like Banana Island and Park View Estate, Victoria Island, Lekki, Ajah, Apapa and Ikeja",
+    "verified": false,
+    "causes": [],
+    "cause_quote": null,
+    "cause_attributed_by": null,
+    "cause_who": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     3.362237,
+     6.4469046
+    ]
+   },
+   "properties": {
+    "id": "ev-045",
+    "kind": "news_report",
+    "source_id": "dailytrust-2021-08-21",
+    "source_url": "https://dailytrust.com/flood-wreaks-havoc-in-5-states-9-dead-hundreds-rendered-homeless/",
+    "publisher": "Daily Trust",
+    "published_at": "2021-08-21T03:36:23+01:00",
+    "observed_at": "2021-07-16T12:00:00+01:00",
+    "time_confidence": "approx",
+    "read_status": "read",
+    "quote_check": "verbatim match on source page (one quote per publisher spot-checked)",
+    "depth_note": null,
+    "location_name": "Apapa",
+    "location_confidence": "lga",
+    "geocode_method": "nominatim:Apapa, Lagos",
+    "claim": "Named among low-lying areas affected on 16 July.",
+    "quote": "low-lying areas like Banana Island and Park View Estate, Victoria Island, Lekki, Ajah, Apapa and Ikeja",
+    "verified": false,
+    "causes": [],
+    "cause_quote": null,
+    "cause_attributed_by": null,
+    "cause_who": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     3.3515981,
+     6.601627
+    ]
+   },
+   "properties": {
+    "id": "ev-046",
+    "kind": "news_report",
+    "source_id": "dailytrust-2021-08-21",
+    "source_url": "https://dailytrust.com/flood-wreaks-havoc-in-5-states-9-dead-hundreds-rendered-homeless/",
+    "publisher": "Daily Trust",
+    "published_at": "2021-08-21T03:36:23+01:00",
+    "observed_at": "2021-07-16T12:00:00+01:00",
+    "time_confidence": "approx",
+    "read_status": "read",
+    "quote_check": "verbatim match on source page (one quote per publisher spot-checked)",
+    "depth_note": null,
+    "location_name": "Ikeja",
+    "location_confidence": "lga",
+    "geocode_method": "nominatim:Ikeja, Lagos",
+    "claim": "Named among low-lying areas affected on 16 July.",
+    "quote": "low-lying areas like Banana Island and Park View Estate, Victoria Island, Lekki, Ajah, Apapa and Ikeja",
+    "verified": false,
+    "causes": [],
+    "cause_quote": null,
+    "cause_attributed_by": null,
+    "cause_who": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     3.4704698,
+     6.4413987
+    ]
+   },
+   "properties": {
+    "id": "ev-047",
+    "kind": "video",
+    "source_id": "channelstv-yt-2021-07-16",
+    "source_url": "https://www.youtube.com/watch?v=7ZCqbpTTtk0",
+    "publisher": "Channels TV",
+    "published_at": "2021-07-16T00:00:00+01:00",
+    "observed_at": "2021-07-16T12:00:00+01:00",
+    "time_confidence": "day",
+    "read_status": "headline_only",
+    "quote": null,
+    "depth_note": null,
+    "quote_check": null,
+    "location_name": "Lekki",
+    "location_confidence": "lga",
+    "geocode_method": "nominatim:Lekki, Eti-Osa, Lagos",
+    "claim": "Video title: Lekki, Marina, Apongbon submerged after downpour.",
+    "verified": false,
+    "causes": [
+     "heavy_rain"
+    ],
+    "cause_quote": "Lekki, Marina, Apongbon submerged after downpour",
+    "cause_attributed_by": "journalist",
+    "cause_who": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     3.394,
+     6.454
+    ]
+   },
+   "properties": {
+    "id": "ev-048",
+    "kind": "video",
+    "source_id": "channelstv-yt-2021-07-16",
+    "source_url": "https://www.youtube.com/watch?v=7ZCqbpTTtk0",
+    "publisher": "Channels TV",
+    "published_at": "2021-07-16T00:00:00+01:00",
+    "observed_at": "2021-07-16T12:00:00+01:00",
+    "time_confidence": "day",
+    "read_status": "headline_only",
+    "quote": null,
+    "depth_note": null,
+    "quote_check": null,
+    "location_name": "Marina",
+    "location_confidence": "neighbourhood",
+    "geocode_method": "manual: neighbourhood centre for Marina, Lagos Island",
+    "claim": "Video title: Lekki, Marina, Apongbon submerged after downpour.",
+    "verified": false,
+    "causes": [
+     "heavy_rain"
+    ],
+    "cause_quote": "Lekki, Marina, Apongbon submerged after downpour",
+    "cause_attributed_by": "journalist",
+    "cause_who": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     3.386,
+     6.453
+    ]
+   },
+   "properties": {
+    "id": "ev-049",
+    "kind": "video",
+    "source_id": "channelstv-yt-2021-07-16",
+    "source_url": "https://www.youtube.com/watch?v=7ZCqbpTTtk0",
+    "publisher": "Channels TV",
+    "published_at": "2021-07-16T00:00:00+01:00",
+    "observed_at": "2021-07-16T12:00:00+01:00",
+    "time_confidence": "day",
+    "read_status": "headline_only",
+    "quote": null,
+    "depth_note": null,
+    "quote_check": null,
+    "location_name": "Apongbon",
+    "location_confidence": "neighbourhood",
+    "geocode_method": "manual: neighbourhood centre for Apongbon, Lagos Island",
+    "claim": "Video title: Lekki, Marina, Apongbon submerged after downpour.",
+    "verified": false,
+    "causes": [
+     "heavy_rain"
+    ],
+    "cause_quote": "Lekki, Marina, Apongbon submerged after downpour",
+    "cause_attributed_by": "journalist",
+    "cause_who": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     3.4704698,
+     6.4413987
+    ]
+   },
+   "properties": {
+    "id": "ev-050",
+    "kind": "social_post",
+    "source_id": "punch-x-2021-07-16",
+    "source_url": "https://x.com/MobilePunch/status/1416140356941455360",
+    "publisher": "Punch (X)",
+    "published_at": "2021-07-16T00:00:00+01:00",
+    "observed_at": "2021-07-16T12:00:00+01:00",
+    "time_confidence": "day",
+    "read_status": "headline_only",
+    "quote": null,
+    "depth_note": null,
+    "quote_check": null,
+    "location_name": "Lekki",
+    "location_confidence": "lga",
+    "geocode_method": "nominatim:Lekki, Eti-Osa, Lagos",
+    "claim": "Headline: flood and traffic gridlock from Lekki to Oshodi.",
+    "verified": false,
+    "causes": [],
+    "cause_quote": null,
+    "cause_attributed_by": null,
+    "cause_who": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     3.3494422,
+     6.5570254
+    ]
+   },
+   "properties": {
+    "id": "ev-051",
+    "kind": "social_post",
+    "source_id": "punch-x-2021-07-16",
+    "source_url": "https://x.com/MobilePunch/status/1416140356941455360",
+    "publisher": "Punch (X)",
+    "published_at": "2021-07-16T00:00:00+01:00",
+    "observed_at": "2021-07-16T12:00:00+01:00",
+    "time_confidence": "day",
+    "read_status": "headline_only",
+    "quote": null,
+    "depth_note": null,
+    "quote_check": null,
+    "location_name": "Oshodi",
+    "location_confidence": "neighbourhood",
+    "geocode_method": "nominatim:Oshodi, Lagos",
+    "claim": "Headline: flood and traffic gridlock from Lekki to Oshodi.",
+    "verified": false,
+    "causes": [],
+    "cause_quote": null,
+    "cause_attributed_by": null,
+    "cause_who": null
+   }
+  }
+ ]
+}

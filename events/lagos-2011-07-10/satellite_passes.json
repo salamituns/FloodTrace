@@ -1,0 +1,19 @@
+{
+  "meta": {
+    "source_url": [
+      "https://catalogue.dataspace.copernicus.eu/odata/v1/Products?$filter=Collection/Name%20eq%20%27SENTINEL-1%27%20and%20contains%28Name%2C%27GRDH%27%29%20and%20OData.CSC.Intersects%28area%3Dgeography%27SRID%3D4326%3BPOLYGON%28%282.7%206.38%2C4.35%206.38%2C4.35%206.75%2C2.7%206.75%2C2.7%206.38%29%29%27%29%20and%20ContentDate/Start%20ge%202011-06-18T23%3A00%3A00.000Z%20and%20ContentDate/Start%20le%202011-07-30T23%3A00%3A00.000Z&$expand=Attributes&$orderby=ContentDate/Start&$top=100&$skip=0",
+      "https://catalogue.dataspace.copernicus.eu/odata/v1/Products?$filter=Collection/Name%20eq%20%27SENTINEL-2%27%20and%20contains%28Name%2C%27L2A%27%29%20and%20OData.CSC.Intersects%28area%3Dgeography%27SRID%3D4326%3BPOLYGON%28%282.7%206.38%2C4.35%206.38%2C4.35%206.75%2C2.7%206.75%2C2.7%206.38%29%29%27%29%20and%20ContentDate/Start%20ge%202011-06-18T23%3A00%3A00.000Z%20and%20ContentDate/Start%20le%202011-07-30T23%3A00%3A00.000Z&$expand=Attributes&$orderby=ContentDate/Start&$top=100&$skip=0"
+    ],
+    "retrieved_at": "2026-10-17T14:26:35Z",
+    "units": {
+      "cloud_cover": "percent"
+    },
+    "licence": "free/open",
+    "window_extended": {
+      "start": "2011-06-18T23:00:00.000Z",
+      "end": "2011-07-30T23:00:00.000Z"
+    },
+    "record_count": 0
+  },
+  "products": []
+}

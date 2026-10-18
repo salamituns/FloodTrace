@@ -1,0 +1,2315 @@
+{
+  "meta": {
+    "event_dates_from": "events/catalog.json",
+    "event_ids": [
+      "lagos-2011-07-10",
+      "lagos-2021-07-16",
+      "lagos-2022-07-08",
+      "lagos-2024-07-03",
+      "lagos-2025-08-04"
+    ],
+    "generated_by": "pipeline/build_sites.py",
+    "inputs": {
+      "events/catalog.json": "2057fe9c791d7edbefb1f05404803bf2853d27d264e16c29bb53cbb48b7b2d00",
+      "events/drainage_sites.json": "209314e752392414997854c288bd096d75bcac2793571a2056fb16bf1a31a788",
+      "events/drainage_sites_buildings.json": "897d11a39599e2a92e4650a10a7631792c8fa3aae4085b9df5ae93b3f8d7ab5b",
+      "events/drainage_sites_imagery.json": "52f2b104da8a08086522d10f66cc193dc26077ab3fc08da739494dcc5bf61dfb",
+      "events/drainage_sites_s2.json": "7b1f87378a5c67825d7f4790b1bd3a690edb0a7c28ea7261d6825d9756c91369",
+      "events/lagos-2011-07-10/dossier.md": "80921301a0cafbf7e294dc2f076b724788cde30d0f413c9352385bfc8cbbc191",
+      "events/lagos-2011-07-10/evidence.geojson": "b66fec94b44804483a9588c94f07c98fc2bf4f38a75e880d2944d10278ef2d8e",
+      "events/lagos-2021-07-16/dossier.md": "afdf78f162c681c8673e7b72f5e381764edb3436ce9904fd3bf79a2d89b980a7",
+      "events/lagos-2021-07-16/evidence.geojson": "c4b087fcba4228ec92446bdf013cabd229935e7896bac32f194ba8b242756e22",
+      "events/lagos-2022-07-08/dossier.md": "30f9d5285ffd5f11ad33f2d86ecd06bef8303466f7250a054a8690c7e3f9b3ee",
+      "events/lagos-2022-07-08/evidence.geojson": "4f2ec0f4859ba48dda753cd9ab90b9602cab75ca0c0c4c2d96c3a44f30e9e9ee",
+      "events/lagos-2024-07-03/dossier.md": "362a6374197f2d5c5700ce6c4be22b64d4490c3d257f196f1763c09125b3e809",
+      "events/lagos-2024-07-03/evidence.geojson": "bb1f8217c05c266e07c497ab1aa0e7cdd6577aa838939555a3f995c57200b0a9",
+      "events/lagos-2025-08-04/dossier.md": "27489a87b451335245bae1097e9ad870f3d4cdd1088610477cd4bd8196be941c",
+      "events/lagos-2025-08-04/evidence.geojson": "2c8cee8fd275cfa07f493a2e83ea707faef5670491897ea86a828de051f2224b",
+      "events/promises.json": "ad04e289208b374d831cf2d29bcab9e46ece8ad35cb06dd6b56dec929f496e96"
+    },
+    "notes": [
+      "Deterministic: sorted keys and lists, no timestamps; identical inputs give identical bytes.",
+      "Reviewer fields (verdict, change.summary) are carried from the previous events/sites.json by site_id; verdict.stale / change.stale flag a run whose underlying numbers changed. stale stays true until the reviewer clears it and the numbers hold steady.",
+      "meta.citywide_cause_statements are citywide and are never attached to a site.",
+      "Wayback detail chips inherit their acquisition's resolution_m (crops of the same image); the app hides coarse fallbacks (e.g. 15 m).",
+      "When events/promises.json appears (Task 22), re-run this script to fill promise_ids."
+    ],
+    "promises_present": true,
+    "rules": {
+      "buildings_match": "baseline segments whose 2016 20–50 m built fraction is within ±max(0.05, 0.5 × the site's); matched_pct = percent of matched segments whose 2016→2023 0–10 m change is below the site's",
+      "claims": "the site's evidence_ids plus matched features with human causes; evidence_status parsed from the event dossier's Cause (preliminary) section",
+      "evidence_status_tokens": {
+        "contradicts": "contradicts",
+        "imagery inconclusive": "inconclusive",
+        "imagery supports": "supports",
+        "no imagery after event": "no_imagery_after",
+        "not checked": "not_checked",
+        "weak support": "weak"
+      },
+      "floods": "per event, evidence features within flood_radius_m of the site geometry (400 m; 600 m for LineStrings longer than 2 km), excluding location_confidence 'lga'; includes events other than the site's own",
+      "human_causes": "all cause tags except: canal_overflow, heavy_rain, lagoon_tide, low_lying_terrain",
+      "s2_wet_season": "per-year median of May–Oct monthly vegfrac for the recorded AOI (step-detector output not used)"
+    },
+    "schema": "pipeline/schemas/sites.schema.json",
+    "site_count": 13,
+    "task": "23-build-sites (docs/tasks/23-build-sites.md)"
+  },
+  "sites": [
+    {
+      "aliases": [
+        "Agric, Ikorodu"
+      ],
+      "change": {
+        "buildings_0_10m": {
+          "by_year": {
+            "2016": 0.0,
+            "2017": 0.0,
+            "2018": 0.0,
+            "2019": 0.0,
+            "2020": 0.0,
+            "2021": 0.0,
+            "2022": 0.0,
+            "2023": 0.0
+          },
+          "excluded": null,
+          "matched_n": 20,
+          "matched_pct": 25
+        },
+        "s2_wet_season": {
+          "aoi": "agric-bridge",
+          "by_year": {
+            "2018": 0.0202,
+            "2019": 0.011,
+            "2020": 0.0202,
+            "2021": 0.0336,
+            "2022": 0.0302,
+            "2023": 0.045,
+            "2024": 0.0426,
+            "2025": 0.0419,
+            "2026": 0.0537
+          }
+        },
+        "stale": null,
+        "summary": null,
+        "wayback": [
+          {
+            "acq_date": "1999-01-15",
+            "detail_chips": [],
+            "file": "events/drainage_sites/agric-bridge/1999-01-15.jpg",
+            "marked_file": "events/drainage_sites/agric-bridge/1999-01-15_marked.jpg",
+            "resolution_m": 15.0
+          },
+          {
+            "acq_date": "2013-01-01",
+            "detail_chips": [],
+            "file": "events/drainage_sites/agric-bridge/2013-01-01.jpg",
+            "marked_file": "events/drainage_sites/agric-bridge/2013-01-01_marked.jpg",
+            "resolution_m": 0.46
+          },
+          {
+            "acq_date": "2015-12-08",
+            "detail_chips": [],
+            "file": "events/drainage_sites/agric-bridge/2015-12-08.jpg",
+            "marked_file": "events/drainage_sites/agric-bridge/2015-12-08_marked.jpg",
+            "resolution_m": 0.5
+          },
+          {
+            "acq_date": "2018-12-24",
+            "detail_chips": [],
+            "file": "events/drainage_sites/agric-bridge/2018-12-24.jpg",
+            "marked_file": "events/drainage_sites/agric-bridge/2018-12-24_marked.jpg",
+            "resolution_m": 0.31
+          },
+          {
+            "acq_date": "2020-01-03",
+            "detail_chips": [],
+            "file": "events/drainage_sites/agric-bridge/2020-01-03.jpg",
+            "marked_file": "events/drainage_sites/agric-bridge/2020-01-03_marked.jpg",
+            "resolution_m": 0.31
+          },
+          {
+            "acq_date": "2025-04-30",
+            "detail_chips": [],
+            "file": "events/drainage_sites/agric-bridge/2025-04-30.jpg",
+            "marked_file": "events/drainage_sites/agric-bridge/2025-04-30_marked.jpg",
+            "resolution_m": 0.34
+          }
+        ]
+      },
+      "claims": [
+        {
+          "attributed_by": "resident",
+          "cause": "construction",
+          "claim_id": "agric-bridge-lagos-2025-08-04-ev-001",
+          "date": "2025-09-29",
+          "event_id": "lagos-2025-08-04",
+          "evidence_status": "supports",
+          "quote": "bridge construction in Agric and an abandoned drainage system in Ijede, worsened the impacts of heavy rain",
+          "source_id": "osu-2025-09-29",
+          "status_note": "2020-01 → 2025-04: corridor and earthworks in place before the flood; no post-flood image yet",
+          "url": "https://oia.osu.edu/news/2025/09/29/documenting-floods-and-building-resilience-lagos",
+          "who": null
+        }
+      ],
+      "flood_radius_m": 400.0,
+      "floods": [],
+      "geometry": {
+        "coordinates": [
+          [
+            3.48551,
+            6.62583
+          ],
+          [
+            3.48365,
+            6.62893
+          ],
+          [
+            3.48229,
+            6.63553
+          ]
+        ],
+        "type": "LineString"
+      },
+      "located_how": "Nominatim: Agric BRT bus stop 3.48393, 6.62541 on BRT lane, Ologode. OSM Owutu–Isawo Road (way 1434016884) starts at 3.48551, 6.62583. Punch 9 Sep 2026 names 'AFA Bridge on Agric-Isawo Road'. National Daily (5 Aug 2025) places the old Afa Bridge on Agric–Isawo Road where Afa River overflowed. Line is that OSM road segment from Agric north toward Isawo.",
+      "location_confidence": "street",
+      "name": "Agric – AFA Bridge",
+      "promise_ids": [
+        "agric-bridge-build-202609"
+      ],
+      "site_id": "agric-bridge",
+      "structure_name": "AFA Bridge on Agric–Isawo Road (old Afa Bridge / Afa River crossing); contractor named as HiTech Construction in one outlet",
+      "structure_type": "bridge",
+      "verdict": null
+    },
+    {
+      "aliases": [
+        "Agungi"
+      ],
+      "change": {
+        "buildings_0_10m": {
+          "by_year": {
+            "2016": 0.0088,
+            "2017": 0.0224,
+            "2018": 0.0123,
+            "2019": 0.0303,
+            "2020": 0.029,
+            "2021": 0.0386,
+            "2022": 0.0303,
+            "2023": 0.0342
+          },
+          "excluded": null,
+          "matched_n": 14,
+          "matched_pct": 71
+        },
+        "s2_wet_season": {
+          "aoi": "agungi-collector",
+          "by_year": {
+            "2018": 0.0694,
+            "2019": 0.0512,
+            "2020": 0.0602,
+            "2021": 0.0413,
+            "2022": 0.0444,
+            "2023": 0.0484,
+            "2024": 0.0607,
+            "2025": 0.0412,
+            "2026": 0.0487
+          }
+        },
+        "stale": null,
+        "summary": null,
+        "wayback": [
+          {
+            "acq_date": "2010-02-06",
+            "detail_chips": [],
+            "file": "events/drainage_sites/agungi-collector/2010-02-06.jpg",
+            "marked_file": "events/drainage_sites/agungi-collector/2010-02-06_marked.jpg",
+            "resolution_m": 0.5
+          },
+          {
+            "acq_date": "2013-01-01",
+            "detail_chips": [],
+            "file": "events/drainage_sites/agungi-collector/2013-01-01.jpg",
+            "marked_file": "events/drainage_sites/agungi-collector/2013-01-01_marked.jpg",
+            "resolution_m": 0.46
+          },
+          {
+            "acq_date": "2015-12-08",
+            "detail_chips": [],
+            "file": "events/drainage_sites/agungi-collector/2015-12-08.jpg",
+            "marked_file": "events/drainage_sites/agungi-collector/2015-12-08_marked.jpg",
+            "resolution_m": 0.5
+          },
+          {
+            "acq_date": "2018-12-24",
+            "detail_chips": [],
+            "file": "events/drainage_sites/agungi-collector/2018-12-24.jpg",
+            "marked_file": "events/drainage_sites/agungi-collector/2018-12-24_marked.jpg",
+            "resolution_m": 0.31
+          },
+          {
+            "acq_date": "2020-04-05",
+            "detail_chips": [
+              {
+                "file": "events/drainage_sites/agungi-collector/2020-04-05_detail1.jpg",
+                "marked_file": "events/drainage_sites/agungi-collector/2020-04-05_detail1_marked.jpg",
+                "resolution_m": 0.5,
+                "station": "start"
+              },
+              {
+                "file": "events/drainage_sites/agungi-collector/2020-04-05_detail2.jpg",
+                "marked_file": "events/drainage_sites/agungi-collector/2020-04-05_detail2_marked.jpg",
+                "resolution_m": 0.5,
+                "station": "mid"
+              },
+              {
+                "file": "events/drainage_sites/agungi-collector/2020-04-05_detail3.jpg",
+                "marked_file": "events/drainage_sites/agungi-collector/2020-04-05_detail3_marked.jpg",
+                "resolution_m": 0.5,
+                "station": "end"
+              }
+            ],
+            "file": "events/drainage_sites/agungi-collector/2020-04-05.jpg",
+            "marked_file": "events/drainage_sites/agungi-collector/2020-04-05_marked.jpg",
+            "resolution_m": 0.5
+          },
+          {
+            "acq_date": "2024-11-30",
+            "detail_chips": [
+              {
+                "file": "events/drainage_sites/agungi-collector/2024-11-30_detail1.jpg",
+                "marked_file": "events/drainage_sites/agungi-collector/2024-11-30_detail1_marked.jpg",
+                "resolution_m": 0.31,
+                "station": "start"
+              },
+              {
+                "file": "events/drainage_sites/agungi-collector/2024-11-30_detail2.jpg",
+                "marked_file": "events/drainage_sites/agungi-collector/2024-11-30_detail2_marked.jpg",
+                "resolution_m": 0.31,
+                "station": "mid"
+              },
+              {
+                "file": "events/drainage_sites/agungi-collector/2024-11-30_detail3.jpg",
+                "marked_file": "events/drainage_sites/agungi-collector/2024-11-30_detail3_marked.jpg",
+                "resolution_m": 0.31,
+                "station": "end"
+              }
+            ],
+            "file": "events/drainage_sites/agungi-collector/2024-11-30.jpg",
+            "marked_file": "events/drainage_sites/agungi-collector/2024-11-30_marked.jpg",
+            "resolution_m": 0.31
+          }
+        ]
+      },
+      "claims": [
+        {
+          "attributed_by": "official",
+          "cause": "drainage_capacity",
+          "claim_id": "agungi-collector-lagos-2024-07-03-ev-001",
+          "date": "2024-06-27",
+          "event_id": "lagos-2024-07-03",
+          "evidence_status": "inconclusive",
+          "quote": "the collector they have there is too small to serve the volume of storm water",
+          "source_id": "vanguard-2024-06-27",
+          "status_note": "weak support: infill and a new estate at the lagoon end; collector itself not visible",
+          "url": "https://www.vanguardngr.com/2024/06/48hrs-rainfall-agungi-lekki-environs-in-lagos-submerge-in-flood/",
+          "who": "Tokunbo Wahab, Commissioner for Environment and Water Resources"
+        },
+        {
+          "attributed_by": "official",
+          "cause": "drainage_capacity",
+          "claim_id": "agungi-collector-lagos-2024-07-03-ev-064",
+          "date": "2024-07-04",
+          "event_id": "lagos-2024-07-03",
+          "evidence_status": "inconclusive",
+          "quote": "The development of Agungi road has outweighed the drainage system that was put in place by the local government.",
+          "source_id": "arise-2024-07-04",
+          "status_note": "weak support: infill and a new estate at the lagoon end; collector itself not visible",
+          "url": "https://www.arise.tv/lagos-floods-rainwater-slow-to-recede-due-to-high-tide-says-environment-commissioner-wahab/",
+          "who": "Tokunbo Wahab, Commissioner for Environment and Water Resources"
+        }
+      ],
+      "flood_radius_m": 600.0,
+      "floods": [
+        {
+          "date": "2024-07-03",
+          "event_id": "lagos-2024-07-03",
+          "evidence_ids": [
+            "ev-001",
+            "ev-064"
+          ],
+          "n_reports": 2,
+          "nearest_m": 33.7
+        }
+      ],
+      "geometry": {
+        "coordinates": [
+          [
+            3.5163,
+            6.43829
+          ],
+          [
+            3.51604,
+            6.4422
+          ],
+          [
+            3.51712,
+            6.446
+          ],
+          [
+            3.51883,
+            6.44871
+          ],
+          [
+            3.52071,
+            6.45562
+          ]
+        ],
+        "type": "LineString"
+      },
+      "located_how": "Nominatim: Agungi suburb 3.51811, 6.44700; OSM way 785691910/193596805 'Agungi Ajiran Road' runs from ~6.438 toward the lagoon at ~6.456. Wahab: new collector to take water 'from the road into the lagoon' along the Agungi stretch. Line is that OSM tertiary.",
+      "location_confidence": "street",
+      "name": "Agungi – Collector",
+      "promise_ids": [
+        "agungi-collector-build-202406",
+        "agungi-collector-demolish-202606"
+      ],
+      "site_id": "agungi-collector",
+      "structure_name": "Agungi Road collector (existing, to lagoon); Agungi–Ajiran Road",
+      "structure_type": "collector",
+      "verdict": null
+    },
+    {
+      "aliases": [
+        "Alapere inwards Ogudu Car Wash",
+        "Alapere, Ketu",
+        "Ketu",
+        "Ogudu"
+      ],
+      "change": {
+        "buildings_0_10m": {
+          "by_year": {
+            "2016": 0.0623,
+            "2017": 0.046,
+            "2018": 0.0454,
+            "2019": 0.0561,
+            "2020": 0.0431,
+            "2021": 0.0488,
+            "2022": 0.0406,
+            "2023": 0.046
+          },
+          "excluded": null,
+          "matched_n": 13,
+          "matched_pct": 0
+        },
+        "s2_wet_season": {
+          "aoi": "alapere-ogudu",
+          "by_year": {
+            "2018": 0.1277,
+            "2019": 0.102,
+            "2020": 0.1123,
+            "2021": 0.0806,
+            "2022": 0.3582,
+            "2023": 0.1102,
+            "2024": 0.0594,
+            "2025": 0.0879,
+            "2026": 0.1505
+          }
+        },
+        "stale": null,
+        "summary": null,
+        "wayback": [
+          {
+            "acq_date": "2012-05-01",
+            "detail_chips": [],
+            "file": "events/drainage_sites/alapere-ogudu/2012-05-01.jpg",
+            "marked_file": "events/drainage_sites/alapere-ogudu/2012-05-01_marked.jpg",
+            "resolution_m": 0.5
+          },
+          {
+            "acq_date": "2012-12-23",
+            "detail_chips": [],
+            "file": "events/drainage_sites/alapere-ogudu/2012-12-23.jpg",
+            "marked_file": "events/drainage_sites/alapere-ogudu/2012-12-23_marked.jpg",
+            "resolution_m": 0.5
+          },
+          {
+            "acq_date": "2015-12-08",
+            "detail_chips": [
+              {
+                "file": "events/drainage_sites/alapere-ogudu/2015-12-08_detail1.jpg",
+                "marked_file": "events/drainage_sites/alapere-ogudu/2015-12-08_detail1_marked.jpg",
+                "resolution_m": 0.5,
+                "station": "start"
+              },
+              {
+                "file": "events/drainage_sites/alapere-ogudu/2015-12-08_detail2.jpg",
+                "marked_file": "events/drainage_sites/alapere-ogudu/2015-12-08_detail2_marked.jpg",
+                "resolution_m": 0.5,
+                "station": "mid"
+              },
+              {
+                "file": "events/drainage_sites/alapere-ogudu/2015-12-08_detail3.jpg",
+                "marked_file": "events/drainage_sites/alapere-ogudu/2015-12-08_detail3_marked.jpg",
+                "resolution_m": 0.5,
+                "station": "end"
+              }
+            ],
+            "file": "events/drainage_sites/alapere-ogudu/2015-12-08.jpg",
+            "marked_file": "events/drainage_sites/alapere-ogudu/2015-12-08_marked.jpg",
+            "resolution_m": 0.5
+          },
+          {
+            "acq_date": "2018-12-28",
+            "detail_chips": [
+              {
+                "file": "events/drainage_sites/alapere-ogudu/2018-12-28_detail1.jpg",
+                "marked_file": "events/drainage_sites/alapere-ogudu/2018-12-28_detail1_marked.jpg",
+                "resolution_m": 0.31,
+                "station": "start"
+              },
+              {
+                "file": "events/drainage_sites/alapere-ogudu/2018-12-28_detail2.jpg",
+                "marked_file": "events/drainage_sites/alapere-ogudu/2018-12-28_detail2_marked.jpg",
+                "resolution_m": 0.31,
+                "station": "mid"
+              },
+              {
+                "file": "events/drainage_sites/alapere-ogudu/2018-12-28_detail3.jpg",
+                "marked_file": "events/drainage_sites/alapere-ogudu/2018-12-28_detail3_marked.jpg",
+                "resolution_m": 0.31,
+                "station": "end"
+              }
+            ],
+            "file": "events/drainage_sites/alapere-ogudu/2018-12-28.jpg",
+            "marked_file": "events/drainage_sites/alapere-ogudu/2018-12-28_marked.jpg",
+            "resolution_m": 0.31
+          },
+          {
+            "acq_date": "2021-05-23",
+            "detail_chips": [
+              {
+                "file": "events/drainage_sites/alapere-ogudu/2021-05-23_detail1.jpg",
+                "marked_file": "events/drainage_sites/alapere-ogudu/2021-05-23_detail1_marked.jpg",
+                "resolution_m": 0.31,
+                "station": "start"
+              },
+              {
+                "file": "events/drainage_sites/alapere-ogudu/2021-05-23_detail2.jpg",
+                "marked_file": "events/drainage_sites/alapere-ogudu/2021-05-23_detail2_marked.jpg",
+                "resolution_m": 0.31,
+                "station": "mid"
+              },
+              {
+                "file": "events/drainage_sites/alapere-ogudu/2021-05-23_detail3.jpg",
+                "marked_file": "events/drainage_sites/alapere-ogudu/2021-05-23_detail3_marked.jpg",
+                "resolution_m": 0.31,
+                "station": "end"
+              }
+            ],
+            "file": "events/drainage_sites/alapere-ogudu/2021-05-23.jpg",
+            "marked_file": "events/drainage_sites/alapere-ogudu/2021-05-23_marked.jpg",
+            "resolution_m": 0.31
+          },
+          {
+            "acq_date": "2025-05-15",
+            "detail_chips": [
+              {
+                "file": "events/drainage_sites/alapere-ogudu/2025-05-15_detail1.jpg",
+                "marked_file": "events/drainage_sites/alapere-ogudu/2025-05-15_detail1_marked.jpg",
+                "resolution_m": 0.34,
+                "station": "start"
+              },
+              {
+                "file": "events/drainage_sites/alapere-ogudu/2025-05-15_detail2.jpg",
+                "marked_file": "events/drainage_sites/alapere-ogudu/2025-05-15_detail2_marked.jpg",
+                "resolution_m": 0.34,
+                "station": "mid"
+              },
+              {
+                "file": "events/drainage_sites/alapere-ogudu/2025-05-15_detail3.jpg",
+                "marked_file": "events/drainage_sites/alapere-ogudu/2025-05-15_detail3_marked.jpg",
+                "resolution_m": 0.34,
+                "station": "end"
+              }
+            ],
+            "file": "events/drainage_sites/alapere-ogudu/2025-05-15.jpg",
+            "marked_file": "events/drainage_sites/alapere-ogudu/2025-05-15_marked.jpg",
+            "resolution_m": 0.34
+          }
+        ]
+      },
+      "claims": [
+        {
+          "attributed_by": "official",
+          "cause": "construction",
+          "claim_id": "alapere-ogudu-lagos-2021-07-16-ev-023",
+          "date": "2021-07-17",
+          "event_id": "lagos-2021-07-16",
+          "evidence_status": "inconclusive",
+          "quote": "Due to flooding and construction at Alapere inwards Ogudu Car Wash",
+          "source_id": "punch-2021-07-17",
+          "status_note": "road-works claim; no named canal",
+          "url": "https://punchng.com/flood-fallen-trucks-cause-lagos-gridlock-commuters-stranded/",
+          "who": "LASTMA"
+        }
+      ],
+      "flood_radius_m": 600.0,
+      "floods": [
+        {
+          "date": "2011-07-10",
+          "event_id": "lagos-2011-07-10",
+          "evidence_ids": [
+            "ev-034",
+            "ev-041"
+          ],
+          "n_reports": 2,
+          "nearest_m": 0.0
+        },
+        {
+          "date": "2021-07-16",
+          "event_id": "lagos-2021-07-16",
+          "evidence_ids": [
+            "ev-023",
+            "ev-036",
+            "ev-037"
+          ],
+          "n_reports": 3,
+          "nearest_m": 0.0
+        }
+      ],
+      "geometry": {
+        "coordinates": [
+          [
+            3.392,
+            6.592
+          ],
+          [
+            3.38851,
+            6.57772
+          ],
+          [
+            3.39547,
+            6.57317
+          ]
+        ],
+        "type": "LineString"
+      },
+      "located_how": "LASTMA (Punch/ThisDay 17 Jul 2021): 'flooding and construction at Alapere inwards Ogudu Car Wash', traffic back to Toll-gate. LASTMA Facebook same wording with 'Alapere (Heyden filling station)'. Evidence neighbourhood 3.392, 6.592. OSM Ogudu Road 221600790 from ~3.380, 6.588 toward 3.395, 6.573 (Ogudu). Nominatim Ogudu suburb 3.39053, 6.57500. Line: Alapere evidence point along Ogudu Road toward Ogudu. Project name not_found.",
+      "location_confidence": "street",
+      "name": "Alapere–Ogudu",
+      "promise_ids": [],
+      "site_id": "alapere-ogudu",
+      "structure_name": "Lagos–Ibadan Expressway / Ogudu Road at Alapere (Heyden filling station) inwards Ogudu Car Wash",
+      "structure_type": "road",
+      "verdict": null
+    },
+    {
+      "aliases": [
+        "Alpha Beach Road",
+        "Jakande",
+        "Jakande Estate, Lekki",
+        "Oba Elegushi New Market, Jakande Estate"
+      ],
+      "change": {
+        "buildings_0_10m": {
+          "by_year": {
+            "2016": 0.0362,
+            "2017": 0.036,
+            "2018": 0.0344,
+            "2019": 0.0579,
+            "2020": 0.0656,
+            "2021": 0.0716,
+            "2022": 0.0892,
+            "2023": 0.0937
+          },
+          "excluded": null,
+          "matched_n": 17,
+          "matched_pct": 88
+        },
+        "s2_wet_season": {
+          "aoi": "alpha-beach-156__south",
+          "by_year": {
+            "2018": 0.3819,
+            "2019": 0.3226,
+            "2020": 0.2779,
+            "2021": 0.2514,
+            "2022": 0.1716,
+            "2023": 0.1803,
+            "2024": 0.1191,
+            "2025": 0.0836,
+            "2026": 0.1648
+          }
+        },
+        "stale": false,
+        "summary": "South end: wetland and informal settlement cleared (vegetation 0.38 → 0.17, 2018–22) and built on beside the channel (3.6% → 9.4% within 10 m, 2016–23). Open channel intact at the expressway and in the estates.",
+        "wayback": [
+          {
+            "acq_date": "1999-01-15",
+            "detail_chips": [],
+            "file": "events/drainage_sites/alpha-beach-156/1999-01-15.jpg",
+            "marked_file": "events/drainage_sites/alpha-beach-156/1999-01-15_marked.jpg",
+            "resolution_m": 15.0
+          },
+          {
+            "acq_date": "2012-12-23",
+            "detail_chips": [],
+            "file": "events/drainage_sites/alpha-beach-156/2012-12-23.jpg",
+            "marked_file": "events/drainage_sites/alpha-beach-156/2012-12-23_marked.jpg",
+            "resolution_m": 0.5
+          },
+          {
+            "acq_date": "2015-12-08",
+            "detail_chips": [],
+            "file": "events/drainage_sites/alpha-beach-156/2015-12-08.jpg",
+            "marked_file": "events/drainage_sites/alpha-beach-156/2015-12-08_marked.jpg",
+            "resolution_m": 0.5
+          },
+          {
+            "acq_date": "2018-12-24",
+            "detail_chips": [],
+            "file": "events/drainage_sites/alpha-beach-156/2018-12-24.jpg",
+            "marked_file": "events/drainage_sites/alpha-beach-156/2018-12-24_marked.jpg",
+            "resolution_m": 0.31
+          },
+          {
+            "acq_date": "2020-04-05",
+            "detail_chips": [
+              {
+                "file": "events/drainage_sites/alpha-beach-156/2020-04-05_detail1.jpg",
+                "marked_file": "events/drainage_sites/alpha-beach-156/2020-04-05_detail1_marked.jpg",
+                "resolution_m": 0.5,
+                "station": "start"
+              },
+              {
+                "file": "events/drainage_sites/alpha-beach-156/2020-04-05_detail2.jpg",
+                "marked_file": "events/drainage_sites/alpha-beach-156/2020-04-05_detail2_marked.jpg",
+                "resolution_m": 0.5,
+                "station": "mid"
+              },
+              {
+                "file": "events/drainage_sites/alpha-beach-156/2020-04-05_detail3.jpg",
+                "marked_file": "events/drainage_sites/alpha-beach-156/2020-04-05_detail3_marked.jpg",
+                "resolution_m": 0.5,
+                "station": "end"
+              }
+            ],
+            "file": "events/drainage_sites/alpha-beach-156/2020-04-05.jpg",
+            "marked_file": "events/drainage_sites/alpha-beach-156/2020-04-05_marked.jpg",
+            "resolution_m": 0.5
+          },
+          {
+            "acq_date": "2024-11-30",
+            "detail_chips": [
+              {
+                "file": "events/drainage_sites/alpha-beach-156/2024-11-30_detail1.jpg",
+                "marked_file": "events/drainage_sites/alpha-beach-156/2024-11-30_detail1_marked.jpg",
+                "resolution_m": 0.31,
+                "station": "start"
+              },
+              {
+                "file": "events/drainage_sites/alpha-beach-156/2024-11-30_detail2.jpg",
+                "marked_file": "events/drainage_sites/alpha-beach-156/2024-11-30_detail2_marked.jpg",
+                "resolution_m": 0.31,
+                "station": "mid"
+              },
+              {
+                "file": "events/drainage_sites/alpha-beach-156/2024-11-30_detail3.jpg",
+                "marked_file": "events/drainage_sites/alpha-beach-156/2024-11-30_detail3_marked.jpg",
+                "resolution_m": 0.31,
+                "station": "end"
+              }
+            ],
+            "file": "events/drainage_sites/alpha-beach-156/2024-11-30.jpg",
+            "marked_file": "events/drainage_sites/alpha-beach-156/2024-11-30_marked.jpg",
+            "resolution_m": 0.31
+          }
+        ]
+      },
+      "claims": [
+        {
+          "attributed_by": "official",
+          "cause": "setback_encroachment",
+          "claim_id": "alpha-beach-156-lagos-2024-07-03-ev-003",
+          "date": "2024-06-27",
+          "event_id": "lagos-2024-07-03",
+          "evidence_status": "supports",
+          "quote": "people built to block System 156 and some families on this corridor also obliterated with developers",
+          "source_id": "vanguard-2024-06-27",
+          "status_note": "2020-04 → 2024-11: wetland/settlement along the line cleared and sand-filled, new building and estate grid",
+          "url": "https://www.vanguardngr.com/2024/06/48hrs-rainfall-agungi-lekki-environs-in-lagos-submerge-in-flood/",
+          "who": "Tokunbo Wahab, Commissioner for Environment and Water Resources"
+        }
+      ],
+      "flood_radius_m": 600.0,
+      "floods": [
+        {
+          "date": "2021-07-16",
+          "event_id": "lagos-2021-07-16",
+          "evidence_ids": [
+            "ev-002",
+            "ev-003"
+          ],
+          "n_reports": 2,
+          "nearest_m": 373.8
+        },
+        {
+          "date": "2024-07-03",
+          "event_id": "lagos-2024-07-03",
+          "evidence_ids": [
+            "ev-003"
+          ],
+          "n_reports": 1,
+          "nearest_m": 451.5
+        },
+        {
+          "date": "2025-08-04",
+          "event_id": "lagos-2025-08-04",
+          "evidence_ids": [
+            "ev-008"
+          ],
+          "n_reports": 1,
+          "nearest_m": 373.8
+        }
+      ],
+      "geometry": {
+        "coordinates": [
+          [
+            3.51093,
+            6.42707
+          ],
+          [
+            3.51089,
+            6.43028
+          ],
+          [
+            3.51146,
+            6.43312
+          ],
+          [
+            3.51134,
+            6.43592
+          ],
+          [
+            3.50836,
+            6.43994
+          ],
+          [
+            3.50257,
+            6.44421
+          ]
+        ],
+        "type": "LineString"
+      },
+      "located_how": "Official texts place System 156 upstream on Alpha Beach Road, with excavation 'from Alpha Beach to conservation road' and a blockage 'along Alfa Beach behind James Hope University'. OSM has no name 'System 156' or 'Alpha Beach Road'. Overpass returns a continuous unnamed drain/ditch at ~3.511°E from ~6.427–6.444°N, west of Lekki Conservation Centre (OSM ~3.535, 6.443) and of the evidence neighbourhood point (3.515, 6.430). Line is that mapped drain (OSM ways 599933032 + 295026376).",
+      "location_confidence": "street",
+      "name": "Alpha Beach – System 156",
+      "promise_ids": [
+        "alpha-beach-156-dredge-202406",
+        "alpha-beach-156-enforce-202406",
+        "alpha-beach-156-excavate-202406"
+      ],
+      "site_id": "alpha-beach-156",
+      "structure_name": "System 156 (upstream), Alpha Beach Road corridor",
+      "structure_type": "channel",
+      "verdict": {
+        "confidence": "strong",
+        "reviewed_at": "2026-10-17",
+        "reviewed_by": "Claude (FloodTrace reviewer)",
+        "stale": false,
+        "text": "Officials blamed developers for blocking System 156, and three independent records agree. Sentinel-2 shows the land beside the channel's south end losing most of its vegetation in 2021–22. Google Open Buildings shows building within 10 m of the channel rising from 3.6% (2016) to 9.4% (2023), mostly 2019–22, more than 88% of comparable city channels. Wayback imagery shows wetland and informal settlement cleared and sand-filled. All of it predates the July 2024 flood and the state's June 2024 excavation."
+      }
+    },
+    {
+      "aliases": [
+        "Ibeju-Lekki Expressway"
+      ],
+      "change": {
+        "buildings_0_10m": {
+          "by_year": {},
+          "excluded": "no channel line",
+          "matched_n": null,
+          "matched_pct": null
+        },
+        "s2_wet_season": {
+          "aoi": "ibeju-lekki-expy",
+          "by_year": {
+            "2018": 0.4299,
+            "2019": 0.47,
+            "2020": 0.4925,
+            "2021": 0.4473,
+            "2022": 0.4747,
+            "2023": 0.495,
+            "2024": 0.4598,
+            "2025": 0.5137
+          }
+        },
+        "stale": null,
+        "summary": null,
+        "wayback": [
+          {
+            "acq_date": "1999-01-15",
+            "detail_chips": [],
+            "file": "events/drainage_sites/ibeju-lekki-expy/1999-01-15.jpg",
+            "marked_file": "events/drainage_sites/ibeju-lekki-expy/1999-01-15_marked.jpg",
+            "resolution_m": 15.0
+          },
+          {
+            "acq_date": "2011-01-10",
+            "detail_chips": [],
+            "file": "events/drainage_sites/ibeju-lekki-expy/2011-01-10.jpg",
+            "marked_file": "events/drainage_sites/ibeju-lekki-expy/2011-01-10_marked.jpg",
+            "resolution_m": 0.5
+          },
+          {
+            "acq_date": "2014-12-31",
+            "detail_chips": [],
+            "file": "events/drainage_sites/ibeju-lekki-expy/2014-12-31.jpg",
+            "marked_file": "events/drainage_sites/ibeju-lekki-expy/2014-12-31_marked.jpg",
+            "resolution_m": 0.5
+          },
+          {
+            "acq_date": "2018-01-27",
+            "detail_chips": [],
+            "file": "events/drainage_sites/ibeju-lekki-expy/2018-01-27.jpg",
+            "marked_file": "events/drainage_sites/ibeju-lekki-expy/2018-01-27_marked.jpg",
+            "resolution_m": 0.5
+          },
+          {
+            "acq_date": "2019-01-10",
+            "detail_chips": [
+              {
+                "file": "events/drainage_sites/ibeju-lekki-expy/2019-01-10_detail1.jpg",
+                "marked_file": "events/drainage_sites/ibeju-lekki-expy/2019-01-10_detail1_marked.jpg",
+                "resolution_m": 0.5,
+                "station": "start"
+              },
+              {
+                "file": "events/drainage_sites/ibeju-lekki-expy/2019-01-10_detail2.jpg",
+                "marked_file": "events/drainage_sites/ibeju-lekki-expy/2019-01-10_detail2_marked.jpg",
+                "resolution_m": 0.5,
+                "station": "mid"
+              },
+              {
+                "file": "events/drainage_sites/ibeju-lekki-expy/2019-01-10_detail3.jpg",
+                "marked_file": "events/drainage_sites/ibeju-lekki-expy/2019-01-10_detail3_marked.jpg",
+                "resolution_m": 0.5,
+                "station": "end"
+              }
+            ],
+            "file": "events/drainage_sites/ibeju-lekki-expy/2019-01-10.jpg",
+            "marked_file": "events/drainage_sites/ibeju-lekki-expy/2019-01-10_marked.jpg",
+            "resolution_m": 0.5
+          },
+          {
+            "acq_date": "2023-12-25",
+            "detail_chips": [
+              {
+                "file": "events/drainage_sites/ibeju-lekki-expy/2023-12-25_detail1.jpg",
+                "marked_file": "events/drainage_sites/ibeju-lekki-expy/2023-12-25_detail1_marked.jpg",
+                "resolution_m": 0.5,
+                "station": "start"
+              },
+              {
+                "file": "events/drainage_sites/ibeju-lekki-expy/2023-12-25_detail2.jpg",
+                "marked_file": "events/drainage_sites/ibeju-lekki-expy/2023-12-25_detail2_marked.jpg",
+                "resolution_m": 0.5,
+                "station": "mid"
+              },
+              {
+                "file": "events/drainage_sites/ibeju-lekki-expy/2023-12-25_detail3.jpg",
+                "marked_file": "events/drainage_sites/ibeju-lekki-expy/2023-12-25_detail3_marked.jpg",
+                "resolution_m": 0.5,
+                "station": "end"
+              }
+            ],
+            "file": "events/drainage_sites/ibeju-lekki-expy/2023-12-25.jpg",
+            "marked_file": "events/drainage_sites/ibeju-lekki-expy/2023-12-25_marked.jpg",
+            "resolution_m": 0.5
+          },
+          {
+            "acq_date": "2024-11-30",
+            "detail_chips": [
+              {
+                "file": "events/drainage_sites/ibeju-lekki-expy/2024-11-30_detail1.jpg",
+                "marked_file": "events/drainage_sites/ibeju-lekki-expy/2024-11-30_detail1_marked.jpg",
+                "resolution_m": 0.31,
+                "station": "start"
+              },
+              {
+                "file": "events/drainage_sites/ibeju-lekki-expy/2024-11-30_detail2.jpg",
+                "marked_file": "events/drainage_sites/ibeju-lekki-expy/2024-11-30_detail2_marked.jpg",
+                "resolution_m": 0.31,
+                "station": "mid"
+              },
+              {
+                "file": "events/drainage_sites/ibeju-lekki-expy/2024-11-30_detail3.jpg",
+                "marked_file": "events/drainage_sites/ibeju-lekki-expy/2024-11-30_detail3_marked.jpg",
+                "resolution_m": 0.31,
+                "station": "end"
+              }
+            ],
+            "file": "events/drainage_sites/ibeju-lekki-expy/2024-11-30.jpg",
+            "marked_file": "events/drainage_sites/ibeju-lekki-expy/2024-11-30_marked.jpg",
+            "resolution_m": 0.31
+          }
+        ]
+      },
+      "claims": [
+        {
+          "attributed_by": "resident",
+          "cause": "blocked_drainage",
+          "claim_id": "ibeju-lekki-expy-lagos-2024-07-03-ev-022",
+          "date": "2024-07-03",
+          "event_id": "lagos-2024-07-03",
+          "evidence_status": "inconclusive",
+          "quote": "perennial flooding in Ibeju-Lekki Expressway due to blockage of drains in the metropolis",
+          "source_id": "dailytrust-2024-07-03",
+          "status_note": "covered roadside drains",
+          "url": "https://dailytrust.com/flood-takes-over-houses-roads-in-lagos/",
+          "who": "Seyi Arowosaye"
+        }
+      ],
+      "flood_radius_m": 600.0,
+      "floods": [
+        {
+          "date": "2024-07-03",
+          "event_id": "lagos-2024-07-03",
+          "evidence_ids": [
+            "ev-022"
+          ],
+          "n_reports": 1,
+          "nearest_m": 184.5
+        }
+      ],
+      "geometry": {
+        "coordinates": [
+          [
+            3.77479,
+            6.47438
+          ],
+          [
+            3.80013,
+            6.47136
+          ],
+          [
+            3.88043,
+            6.48486
+          ]
+        ],
+        "type": "LineString"
+      },
+      "located_how": "NAN/Daily Trust: Seyi Arowosaye, 'perennial flooding in Ibeju-Lekki Expressway due to blockage of drains'. Evidence Nominatim point 3.808, 6.471. OSM names the road Lekki–Epe Expressway through Ibeju-Lekki (ways 193596810 / 282425755); samples 3.775, 6.474 → 3.800, 6.471 → 3.880, 6.485. Line is that trunk through Ibeju-Lekki, east of Awoyaya.",
+      "location_confidence": "street",
+      "name": "Ibeju-Lekki Expressway Drains",
+      "promise_ids": [],
+      "site_id": "ibeju-lekki-expy",
+      "structure_name": "Lekki–Epe / Ibeju-Lekki Expressway roadside drains (Ibeju-Lekki stretch)",
+      "structure_type": "road",
+      "verdict": null
+    },
+    {
+      "aliases": [
+        "Gberigbe",
+        "Ijede",
+        "Ijede, Ikorodu",
+        "Oko Ope, Ijede"
+      ],
+      "change": {
+        "buildings_0_10m": {
+          "by_year": {
+            "2016": 0.1206,
+            "2017": 0.1279,
+            "2018": 0.1397,
+            "2019": 0.1367,
+            "2020": 0.1376,
+            "2021": 0.1496,
+            "2022": 0.1562,
+            "2023": 0.1575
+          },
+          "excluded": "corridor is not a channel",
+          "matched_n": 15,
+          "matched_pct": 93
+        },
+        "s2_wet_season": {
+          "aoi": "ijede-drain",
+          "by_year": {
+            "2018": 0.583,
+            "2019": 0.5681,
+            "2020": 0.5752,
+            "2021": 0.5333,
+            "2022": 0.5404,
+            "2023": 0.5727,
+            "2024": 0.5579,
+            "2025": 0.505,
+            "2026": 0.56
+          }
+        },
+        "stale": null,
+        "summary": null,
+        "wayback": [
+          {
+            "acq_date": "2012-05-06",
+            "detail_chips": [],
+            "file": "events/drainage_sites/ijede-drain/2012-05-06.jpg",
+            "marked_file": "events/drainage_sites/ijede-drain/2012-05-06_marked.jpg",
+            "resolution_m": 0.6
+          },
+          {
+            "acq_date": "2013-01-01",
+            "detail_chips": [],
+            "file": "events/drainage_sites/ijede-drain/2013-01-01.jpg",
+            "marked_file": "events/drainage_sites/ijede-drain/2013-01-01_marked.jpg",
+            "resolution_m": 0.46
+          },
+          {
+            "acq_date": "2021-05-23",
+            "detail_chips": [
+              {
+                "file": "events/drainage_sites/ijede-drain/2021-05-23_detail1.jpg",
+                "marked_file": "events/drainage_sites/ijede-drain/2021-05-23_detail1_marked.jpg",
+                "resolution_m": 0.31,
+                "station": "start"
+              },
+              {
+                "file": "events/drainage_sites/ijede-drain/2021-05-23_detail2.jpg",
+                "marked_file": "events/drainage_sites/ijede-drain/2021-05-23_detail2_marked.jpg",
+                "resolution_m": 0.31,
+                "station": "mid"
+              },
+              {
+                "file": "events/drainage_sites/ijede-drain/2021-05-23_detail3.jpg",
+                "marked_file": "events/drainage_sites/ijede-drain/2021-05-23_detail3_marked.jpg",
+                "resolution_m": 0.31,
+                "station": "end"
+              }
+            ],
+            "file": "events/drainage_sites/ijede-drain/2021-05-23.jpg",
+            "marked_file": "events/drainage_sites/ijede-drain/2021-05-23_marked.jpg",
+            "resolution_m": 0.31
+          },
+          {
+            "acq_date": "2024-11-30",
+            "detail_chips": [
+              {
+                "file": "events/drainage_sites/ijede-drain/2024-11-30_detail1.jpg",
+                "marked_file": "events/drainage_sites/ijede-drain/2024-11-30_detail1_marked.jpg",
+                "resolution_m": 0.31,
+                "station": "start"
+              },
+              {
+                "file": "events/drainage_sites/ijede-drain/2024-11-30_detail2.jpg",
+                "marked_file": "events/drainage_sites/ijede-drain/2024-11-30_detail2_marked.jpg",
+                "resolution_m": 0.31,
+                "station": "mid"
+              },
+              {
+                "file": "events/drainage_sites/ijede-drain/2024-11-30_detail3.jpg",
+                "marked_file": "events/drainage_sites/ijede-drain/2024-11-30_detail3_marked.jpg",
+                "resolution_m": 0.31,
+                "station": "end"
+              }
+            ],
+            "file": "events/drainage_sites/ijede-drain/2024-11-30.jpg",
+            "marked_file": "events/drainage_sites/ijede-drain/2024-11-30_marked.jpg",
+            "resolution_m": 0.31
+          }
+        ]
+      },
+      "claims": [
+        {
+          "attributed_by": "resident",
+          "cause": "drainage_capacity",
+          "claim_id": "ijede-drain-lagos-2025-08-04-ev-002",
+          "date": "2025-09-29",
+          "event_id": "lagos-2025-08-04",
+          "evidence_status": "no_imagery_after",
+          "quote": "bridge construction in Agric and an abandoned drainage system in Ijede, worsened the impacts of heavy rain",
+          "source_id": "osu-2025-09-29",
+          "status_note": "same Nov 2024 chip, before the works",
+          "url": "https://oia.osu.edu/news/2025/09/29/documenting-floods-and-building-resilience-lagos",
+          "who": null
+        }
+      ],
+      "flood_radius_m": 600.0,
+      "floods": [
+        {
+          "date": "2025-08-04",
+          "event_id": "lagos-2025-08-04",
+          "evidence_ids": [
+            "ev-002",
+            "ev-003",
+            "ev-004",
+            "ev-006",
+            "ev-012",
+            "ev-019",
+            "ev-021",
+            "ev-022"
+          ],
+          "n_reports": 8,
+          "nearest_m": 0.0
+        }
+      ],
+      "geometry": {
+        "coordinates": [
+          [
+            3.588,
+            6.568
+          ],
+          [
+            3.59186,
+            6.56558
+          ],
+          [
+            3.6218,
+            6.60122
+          ]
+        ],
+        "type": "LineString"
+      },
+      "located_how": "Punch 6 Aug: residents name 'abandoned drainage project from Oko Ope down to Abule Eko', unfinished ~four months, parts buried in sand. Evidence: Oko Ope 3.588, 6.568 (manual); Ijede 3.59186, 6.56558 (Nominatim). Abule Eko has no Nominatim hit; Guardian 8 Aug lists Abule-Eko Community on the Gberigbe Road outfall with Oke-Eletu / Ijede. Third vertex is Gberigbe (3.62180, 6.60122) as the official outfall named the next day — neighbourhood, not a surveyed drain.",
+      "location_confidence": "neighbourhood",
+      "name": "Ijede – Oko Ope Drain",
+      "promise_ids": [
+        "ijede-drain-build-202508",
+        "ijede-drain-other-202508"
+      ],
+      "site_id": "ijede-drain",
+      "structure_name": "Drainage project from Oko Ope to Abule Eko, Ijede (Gberigbe outfall / Palm Avenue collector also named on the 7 Aug tour)",
+      "structure_type": "channel",
+      "verdict": null
+    },
+    {
+      "aliases": [
+        "Gberigbe",
+        "Ijede",
+        "Ijede, Ikorodu",
+        "Ikorodu",
+        "Oko Ope, Ijede"
+      ],
+      "change": {
+        "buildings_0_10m": {
+          "by_year": {
+            "2016": 0.1107,
+            "2017": 0.1213,
+            "2018": 0.1289,
+            "2019": 0.1304,
+            "2020": 0.1341,
+            "2021": 0.1441,
+            "2022": 0.1585,
+            "2023": 0.1518
+          },
+          "excluded": "corridor is not a channel",
+          "matched_n": 14,
+          "matched_pct": 100
+        },
+        "s2_wet_season": {
+          "aoi": "ikorodu-dammed",
+          "by_year": {
+            "2018": 0.64,
+            "2019": 0.629,
+            "2020": 0.6246,
+            "2021": 0.5743,
+            "2022": 0.5966,
+            "2023": 0.6121,
+            "2024": 0.6046,
+            "2025": 0.5508,
+            "2026": 0.616
+          }
+        },
+        "stale": null,
+        "summary": null,
+        "wayback": [
+          {
+            "acq_date": "2012-05-06",
+            "detail_chips": [],
+            "file": "events/drainage_sites/ikorodu-dammed/2012-05-06.jpg",
+            "marked_file": "events/drainage_sites/ikorodu-dammed/2012-05-06_marked.jpg",
+            "resolution_m": 0.6
+          },
+          {
+            "acq_date": "2013-01-01",
+            "detail_chips": [],
+            "file": "events/drainage_sites/ikorodu-dammed/2013-01-01.jpg",
+            "marked_file": "events/drainage_sites/ikorodu-dammed/2013-01-01_marked.jpg",
+            "resolution_m": 0.46
+          },
+          {
+            "acq_date": "2021-05-23",
+            "detail_chips": [
+              {
+                "file": "events/drainage_sites/ikorodu-dammed/2021-05-23_detail1.jpg",
+                "marked_file": "events/drainage_sites/ikorodu-dammed/2021-05-23_detail1_marked.jpg",
+                "resolution_m": 0.31,
+                "station": "start"
+              },
+              {
+                "file": "events/drainage_sites/ikorodu-dammed/2021-05-23_detail2.jpg",
+                "marked_file": "events/drainage_sites/ikorodu-dammed/2021-05-23_detail2_marked.jpg",
+                "resolution_m": 0.31,
+                "station": "mid"
+              },
+              {
+                "file": "events/drainage_sites/ikorodu-dammed/2021-05-23_detail3.jpg",
+                "marked_file": "events/drainage_sites/ikorodu-dammed/2021-05-23_detail3_marked.jpg",
+                "resolution_m": 0.31,
+                "station": "end"
+              }
+            ],
+            "file": "events/drainage_sites/ikorodu-dammed/2021-05-23.jpg",
+            "marked_file": "events/drainage_sites/ikorodu-dammed/2021-05-23_marked.jpg",
+            "resolution_m": 0.31
+          },
+          {
+            "acq_date": "2024-11-30",
+            "detail_chips": [
+              {
+                "file": "events/drainage_sites/ikorodu-dammed/2024-11-30_detail1.jpg",
+                "marked_file": "events/drainage_sites/ikorodu-dammed/2024-11-30_detail1_marked.jpg",
+                "resolution_m": 0.31,
+                "station": "start"
+              },
+              {
+                "file": "events/drainage_sites/ikorodu-dammed/2024-11-30_detail2.jpg",
+                "marked_file": "events/drainage_sites/ikorodu-dammed/2024-11-30_detail2_marked.jpg",
+                "resolution_m": 0.31,
+                "station": "mid"
+              },
+              {
+                "file": "events/drainage_sites/ikorodu-dammed/2024-11-30_detail3.jpg",
+                "marked_file": "events/drainage_sites/ikorodu-dammed/2024-11-30_detail3_marked.jpg",
+                "resolution_m": 0.31,
+                "station": "end"
+              }
+            ],
+            "file": "events/drainage_sites/ikorodu-dammed/2024-11-30.jpg",
+            "marked_file": "events/drainage_sites/ikorodu-dammed/2024-11-30_marked.jpg",
+            "resolution_m": 0.31
+          }
+        ]
+      },
+      "claims": [
+        {
+          "attributed_by": "resident",
+          "cause": "drainage_capacity",
+          "claim_id": "ikorodu-dammed-lagos-2025-08-04-ev-002",
+          "date": "2025-09-29",
+          "event_id": "lagos-2025-08-04",
+          "evidence_status": "no_imagery_after",
+          "quote": "bridge construction in Agric and an abandoned drainage system in Ijede, worsened the impacts of heavy rain",
+          "source_id": "osu-2025-09-29",
+          "status_note": "Wayback newest chip Nov 2024, before the ~Feb 2025 start",
+          "url": "https://oia.osu.edu/news/2025/09/29/documenting-floods-and-building-resilience-lagos",
+          "who": null
+        },
+        {
+          "attributed_by": "official",
+          "cause": "construction",
+          "claim_id": "ikorodu-dammed-lagos-2025-08-04-ev-005",
+          "date": "2025-08-11",
+          "event_id": "lagos-2025-08-04",
+          "evidence_status": "no_imagery_after",
+          "quote": "the contractor had been on site and dammed the downstream to allow the construction to go on",
+          "source_id": "punch-2025-08-12",
+          "status_note": "Wayback newest chip Nov 2024, before the ~Feb 2025 start",
+          "url": "https://punchng.com/lasg-blames-blocked-waterway-for-ikorodu-flooding/",
+          "who": "Tokunbo Wahab, Commissioner for Environment and Water Resources"
+        }
+      ],
+      "flood_radius_m": 600.0,
+      "floods": [
+        {
+          "date": "2025-08-04",
+          "event_id": "lagos-2025-08-04",
+          "evidence_ids": [
+            "ev-002",
+            "ev-003",
+            "ev-004",
+            "ev-006",
+            "ev-012",
+            "ev-019",
+            "ev-021",
+            "ev-022"
+          ],
+          "n_reports": 8,
+          "nearest_m": 0.2
+        }
+      ],
+      "geometry": {
+        "coordinates": [
+          [
+            3.6218,
+            6.60122
+          ],
+          [
+            3.607,
+            6.583
+          ],
+          [
+            3.59186,
+            6.56558
+          ]
+        ],
+        "type": "LineString"
+      },
+      "located_how": "Punch 12 Aug 2025 quotes Wahab on an unnamed Ikorodu waterway dammed by 'the contractor' during the 14-hour rain. The 7–8 Aug official tour (Guardian) inspected 'ongoing construction of the Outfall Channel for the ongoing Gberigbe Road Project (One Fold) Outfall' through One Fold, Okeletu, Unity Estate, Gbopa, Abule-Eko (Ijede), plus Palm Avenue collector at Oke-Eletu. Nominatim: Gberigbe 3.62180, 6.60122; Ijede 3.59186, 6.56558. Line is Gberigbe–Ijede, not a surveyed channel centreline. Wahab never names the waterway, project title or firm — those remain not_found.",
+      "location_confidence": "neighbourhood",
+      "name": "Ikorodu – Dammed Waterway",
+      "promise_ids": [
+        "ikorodu-dammed-build-202508"
+      ],
+      "site_id": "ikorodu-dammed",
+      "structure_name": "Ikorodu drainage works — Gberigbe Road outfall channel (One Fold / Ijede corridor); contractor and official channel number not_found in Wahab's statement",
+      "structure_type": "channel",
+      "verdict": null
+    },
+    {
+      "aliases": [
+        "Labora",
+        "Labora area of Ibeju-Lekki"
+      ],
+      "change": {
+        "buildings_0_10m": {
+          "by_year": {},
+          "excluded": "no channel line",
+          "matched_n": null,
+          "matched_pct": null
+        },
+        "s2_wet_season": {
+          "aoi": "labora",
+          "by_year": {
+            "2018": 0.4791,
+            "2019": 0.3873,
+            "2020": 0.4186,
+            "2021": 0.4476,
+            "2022": 0.4083,
+            "2023": 0.423,
+            "2024": 0.4245,
+            "2025": 0.3379,
+            "2026": 0.3932
+          }
+        },
+        "stale": null,
+        "summary": null,
+        "wayback": [
+          {
+            "acq_date": "2011-12-31",
+            "detail_chips": [],
+            "file": "events/drainage_sites/labora/2011-12-31.jpg",
+            "marked_file": "events/drainage_sites/labora/2011-12-31_marked.jpg",
+            "resolution_m": 0.6
+          },
+          {
+            "acq_date": "2012-01-07",
+            "detail_chips": [],
+            "file": "events/drainage_sites/labora/2012-01-07.jpg",
+            "marked_file": "events/drainage_sites/labora/2012-01-07_marked.jpg",
+            "resolution_m": 0.46
+          },
+          {
+            "acq_date": "2014-12-31",
+            "detail_chips": [],
+            "file": "events/drainage_sites/labora/2014-12-31.jpg",
+            "marked_file": "events/drainage_sites/labora/2014-12-31_marked.jpg",
+            "resolution_m": 0.5
+          },
+          {
+            "acq_date": "2019-01-10",
+            "detail_chips": [],
+            "file": "events/drainage_sites/labora/2019-01-10.jpg",
+            "marked_file": "events/drainage_sites/labora/2019-01-10_marked.jpg",
+            "resolution_m": 0.5
+          },
+          {
+            "acq_date": "2023-12-25",
+            "detail_chips": [],
+            "file": "events/drainage_sites/labora/2023-12-25.jpg",
+            "marked_file": "events/drainage_sites/labora/2023-12-25_marked.jpg",
+            "resolution_m": 0.5
+          }
+        ]
+      },
+      "claims": [
+        {
+          "attributed_by": "resident",
+          "cause": "drainage_capacity",
+          "claim_id": "labora-lagos-2024-07-03-ev-021",
+          "date": "2024-07-03",
+          "event_id": "lagos-2024-07-03",
+          "evidence_status": "not_checked",
+          "quote": "I live in a new site where there is no drainage which makes the water run into residential homes",
+          "source_id": "dailytrust-2024-07-03",
+          "status_note": "Task 18 chip was the wrong geocode",
+          "url": "https://dailytrust.com/flood-takes-over-houses-roads-in-lagos/",
+          "who": "Rasheed Ayobami"
+        },
+        {
+          "attributed_by": "resident",
+          "cause": "drainage_capacity",
+          "claim_id": "labora-lagos-2024-07-03-ev-053",
+          "date": "2024-07-03",
+          "event_id": "lagos-2024-07-03",
+          "evidence_status": "not_checked",
+          "quote": "I live in a new site where there is no drainage which makes the water run into residential homes",
+          "source_id": "dailypost-2024-07-03",
+          "status_note": "Task 18 chip was the wrong geocode",
+          "url": "https://dailypost.ng/2024/07/03/flood-takes-over-residential-areas-in-ibeju-lekki-video/",
+          "who": "Rasheed Ayobami"
+        }
+      ],
+      "flood_radius_m": 400.0,
+      "floods": [],
+      "geometry": {
+        "coordinates": [
+          3.66628,
+          6.45031
+        ],
+        "type": "Point"
+      },
+      "located_how": "Daily Trust/NAN: Rasheed Ayobami and Bola Fadugba \"Labora area of Ibeju-Lekki\"; Fadugba relocates to Eputu in the rains. Nominatim \"Labora\" / \"Laboran\" and OSM name=Labora: no hit (same as Task 17). Property listings and Maps places cluster in Abijo GRA, not the Task 03 manual point 3.92, 6.48 (forest, ~28 km east). Community Primary School, Labora, Ibeju-Lekki at Labora ABIJO GRA, 7 Atanda Badmus St (Maps 3.66400, 6.44791); Christ Embassy Church Labora at Abijo GRA after Dog Junction (Maps 3.66856, 6.45271). OSM Abijo G.R.A. Road way 449012161 at 3.67171, 6.45524. Point is the midpoint of the school and church. Eputu (Nominatim 3.71950, 6.47518) is the nearby place Fadugba named as a wet-season move — consistent with Abijo, not eastern Ibeju forest. Not a named collector.",
+      "location_confidence": "neighbourhood",
+      "name": "Labora (Abijo GRA)",
+      "promise_ids": [],
+      "site_id": "labora",
+      "structure_name": "Labora new residential site, Abijo GRA, Ibeju-Lekki (no mapped drain; OSM has no Labora)",
+      "structure_type": "area",
+      "verdict": null
+    },
+    {
+      "aliases": [
+        "Abraham Adesanya",
+        "Awoyaya",
+        "Majek",
+        "Sangotedo"
+      ],
+      "change": {
+        "buildings_0_10m": {
+          "by_year": {
+            "2016": 0.0,
+            "2017": 0.0,
+            "2018": 0.0016,
+            "2019": 0.0127,
+            "2020": 0.0048,
+            "2021": 0.0032,
+            "2022": 0.0127,
+            "2023": 0.0032
+          },
+          "excluded": null,
+          "matched_n": 166,
+          "matched_pct": 99
+        },
+        "s2_wet_season": {
+          "aoi": "lekki-epe-rehab",
+          "by_year": {
+            "2018": 0.3547,
+            "2019": 0.2843,
+            "2020": 0.2802,
+            "2021": 0.2346,
+            "2022": 0.2224,
+            "2023": 0.2774,
+            "2024": 0.2816,
+            "2025": 0.2807,
+            "2026": 0.239
+          }
+        },
+        "stale": null,
+        "summary": null,
+        "wayback": [
+          {
+            "acq_date": "2013-01-01",
+            "detail_chips": [],
+            "file": "events/drainage_sites/lekki-epe-rehab/2013-01-01.jpg",
+            "marked_file": "events/drainage_sites/lekki-epe-rehab/2013-01-01_marked.jpg",
+            "resolution_m": 0.46
+          },
+          {
+            "acq_date": "2024-11-30",
+            "detail_chips": [
+              {
+                "file": "events/drainage_sites/lekki-epe-rehab/2024-11-30_detail1.jpg",
+                "marked_file": "events/drainage_sites/lekki-epe-rehab/2024-11-30_detail1_marked.jpg",
+                "resolution_m": 0.31,
+                "station": "start"
+              },
+              {
+                "file": "events/drainage_sites/lekki-epe-rehab/2024-11-30_detail2.jpg",
+                "marked_file": "events/drainage_sites/lekki-epe-rehab/2024-11-30_detail2_marked.jpg",
+                "resolution_m": 0.31,
+                "station": "mid"
+              },
+              {
+                "file": "events/drainage_sites/lekki-epe-rehab/2024-11-30_detail3.jpg",
+                "marked_file": "events/drainage_sites/lekki-epe-rehab/2024-11-30_detail3_marked.jpg",
+                "resolution_m": 0.31,
+                "station": "end"
+              }
+            ],
+            "file": "events/drainage_sites/lekki-epe-rehab/2024-11-30.jpg",
+            "marked_file": "events/drainage_sites/lekki-epe-rehab/2024-11-30_marked.jpg",
+            "resolution_m": 0.31
+          }
+        ]
+      },
+      "claims": [
+        {
+          "attributed_by": "journalist",
+          "cause": "construction",
+          "claim_id": "lekki-epe-rehab-lagos-2024-07-03-ev-027",
+          "date": "2024-07-03",
+          "event_id": "lagos-2024-07-03",
+          "evidence_status": "inconclusive",
+          "quote": "due to the ongoing rehabilitation road works in the localities",
+          "source_id": "dailytrust-2024-07-03",
+          "status_note": "road-works claim",
+          "url": "https://dailytrust.com/flood-takes-over-houses-roads-in-lagos/",
+          "who": null
+        },
+        {
+          "attributed_by": "journalist",
+          "cause": "construction",
+          "claim_id": "lekki-epe-rehab-lagos-2024-07-03-ev-028",
+          "date": "2024-07-03",
+          "event_id": "lagos-2024-07-03",
+          "evidence_status": "inconclusive",
+          "quote": "due to the ongoing rehabilitation road works in the localities",
+          "source_id": "dailytrust-2024-07-03",
+          "status_note": "road-works claim",
+          "url": "https://dailytrust.com/flood-takes-over-houses-roads-in-lagos/",
+          "who": null
+        },
+        {
+          "attributed_by": "journalist",
+          "cause": "construction",
+          "claim_id": "lekki-epe-rehab-lagos-2024-07-03-ev-029",
+          "date": "2024-07-03",
+          "event_id": "lagos-2024-07-03",
+          "evidence_status": "inconclusive",
+          "quote": "due to the ongoing rehabilitation road works in the localities",
+          "source_id": "dailytrust-2024-07-03",
+          "status_note": "road-works claim",
+          "url": "https://dailytrust.com/flood-takes-over-houses-roads-in-lagos/",
+          "who": null
+        },
+        {
+          "attributed_by": "journalist",
+          "cause": "construction",
+          "claim_id": "lekki-epe-rehab-lagos-2024-07-03-ev-030",
+          "date": "2024-07-03",
+          "event_id": "lagos-2024-07-03",
+          "evidence_status": "inconclusive",
+          "quote": "due to the ongoing rehabilitation road works in the localities",
+          "source_id": "dailytrust-2024-07-03",
+          "status_note": "road-works claim",
+          "url": "https://dailytrust.com/flood-takes-over-houses-roads-in-lagos/",
+          "who": null
+        }
+      ],
+      "flood_radius_m": 600.0,
+      "floods": [
+        {
+          "date": "2021-07-16",
+          "event_id": "lagos-2021-07-16",
+          "evidence_ids": [
+            "ev-004"
+          ],
+          "n_reports": 1,
+          "nearest_m": 0.6
+        },
+        {
+          "date": "2024-07-03",
+          "event_id": "lagos-2024-07-03",
+          "evidence_ids": [
+            "ev-027",
+            "ev-028",
+            "ev-029",
+            "ev-030",
+            "ev-055",
+            "ev-056"
+          ],
+          "n_reports": 6,
+          "nearest_m": 0.0
+        }
+      ],
+      "geometry": {
+        "coordinates": [
+          [
+            3.58428,
+            6.46956
+          ],
+          [
+            3.60575,
+            6.47505
+          ],
+          [
+            3.63558,
+            6.47102
+          ],
+          [
+            3.68,
+            6.46
+          ],
+          [
+            3.70456,
+            6.46971
+          ]
+        ],
+        "type": "LineString"
+      },
+      "located_how": "Daily Trust/NAN 3 Jul 2024: floods on Abraham Adesanya, Awoyaya, Sangotedo and Majek 'due to the ongoing rehabilitation road works'. OSM Lekki–Epe Expressway trunk (ways 564321933, 193596810, 282425755). Nominatim: Abraham Adesanya bus stop on the expressway 3.58428, 6.46956; Sangotedo 3.63558, 6.47102; Awoyaya 3.70456, 6.46971. Majek has no Nominatim hit (Task 03b street/place issue); 3.68, 6.46 is the evidence manual neighbourhood on this corridor. Line follows the expressway through those four named places.",
+      "location_confidence": "street",
+      "name": "Lekki–Epe Expressway",
+      "promise_ids": [],
+      "site_id": "lekki-epe-rehab",
+      "structure_name": "Lekki–Epe Expressway (Abraham Adesanya–Sangotedo–Majek–Awoyaya)",
+      "structure_type": "road",
+      "verdict": null
+    },
+    {
+      "aliases": [
+        "Apogbon",
+        "Apongbon",
+        "Marina Road"
+      ],
+      "change": {
+        "buildings_0_10m": {
+          "by_year": {},
+          "excluded": "no channel line",
+          "matched_n": null,
+          "matched_pct": null
+        },
+        "s2_wet_season": {
+          "aoi": "marina-drainage",
+          "by_year": {
+            "2018": 0.0,
+            "2019": 0.0,
+            "2020": 0.0,
+            "2021": 0.0034,
+            "2022": 0.003,
+            "2023": 0.0034,
+            "2024": 0.0049,
+            "2025": 0.0047,
+            "2026": 0.011
+          }
+        },
+        "stale": null,
+        "summary": null,
+        "wayback": [
+          {
+            "acq_date": "2012-05-01",
+            "detail_chips": [],
+            "file": "events/drainage_sites/marina-drainage/2012-05-01.jpg",
+            "marked_file": "events/drainage_sites/marina-drainage/2012-05-01_marked.jpg",
+            "resolution_m": 0.5
+          },
+          {
+            "acq_date": "2012-12-23",
+            "detail_chips": [],
+            "file": "events/drainage_sites/marina-drainage/2012-12-23.jpg",
+            "marked_file": "events/drainage_sites/marina-drainage/2012-12-23_marked.jpg",
+            "resolution_m": 0.5
+          },
+          {
+            "acq_date": "2015-12-08",
+            "detail_chips": [],
+            "file": "events/drainage_sites/marina-drainage/2015-12-08.jpg",
+            "marked_file": "events/drainage_sites/marina-drainage/2015-12-08_marked.jpg",
+            "resolution_m": 0.5
+          },
+          {
+            "acq_date": "2018-12-28",
+            "detail_chips": [],
+            "file": "events/drainage_sites/marina-drainage/2018-12-28.jpg",
+            "marked_file": "events/drainage_sites/marina-drainage/2018-12-28_marked.jpg",
+            "resolution_m": 0.31
+          },
+          {
+            "acq_date": "2021-05-23",
+            "detail_chips": [],
+            "file": "events/drainage_sites/marina-drainage/2021-05-23.jpg",
+            "marked_file": "events/drainage_sites/marina-drainage/2021-05-23_marked.jpg",
+            "resolution_m": 0.31
+          },
+          {
+            "acq_date": "2025-05-15",
+            "detail_chips": [],
+            "file": "events/drainage_sites/marina-drainage/2025-05-15.jpg",
+            "marked_file": "events/drainage_sites/marina-drainage/2025-05-15_marked.jpg",
+            "resolution_m": 0.34
+          }
+        ]
+      },
+      "claims": [
+        {
+          "attributed_by": "resident",
+          "cause": "drainage_capacity",
+          "claim_id": "marina-drainage-lagos-2021-07-16-ev-018",
+          "date": "2021-07-17",
+          "event_id": "lagos-2021-07-16",
+          "evidence_status": "inconclusive",
+          "quote": "as a result of the flooding caused by no drainage system",
+          "source_id": "punch-2021-07-17",
+          "status_note": "covered/kerbside drains; absence of drainage is not a surface change",
+          "url": "https://punchng.com/flood-fallen-trucks-cause-lagos-gridlock-commuters-stranded/",
+          "who": "Okechukwu Chuckwu, motorist"
+        }
+      ],
+      "flood_radius_m": 400.0,
+      "floods": [
+        {
+          "date": "2021-07-16",
+          "event_id": "lagos-2021-07-16",
+          "evidence_ids": [
+            "ev-015",
+            "ev-049"
+          ],
+          "n_reports": 2,
+          "nearest_m": 12.3
+        }
+      ],
+      "geometry": {
+        "coordinates": [
+          [
+            3.38873,
+            6.45211
+          ],
+          [
+            3.38196,
+            6.45461
+          ],
+          [
+            3.38065,
+            6.45757
+          ]
+        ],
+        "type": "LineString"
+      },
+      "located_how": "Punch 17 Jul 2021: motorist Okechukwu Chuckwu on Marina Road, highway blocked 'as a result of the flooding caused by no drainage system'. LASTMA Facebook: Marina Road from Kakawa junction. Nominatim: Kakawa Street way 828125160 at 3.38873, 6.45211; Marina Road ways 328558542 / 166721549 at ~3.381, 6.455. Line Kakawa → Marina Road.",
+      "location_confidence": "street",
+      "name": "Marina Road",
+      "promise_ids": [],
+      "site_id": "marina-drainage",
+      "structure_name": "Marina Road, Lagos Island (Kakawa junction toward Marina / Cathedral axis)",
+      "structure_type": "road",
+      "verdict": null
+    },
+    {
+      "aliases": [
+        "Ekoro",
+        "old Oko-Oba Road"
+      ],
+      "change": {
+        "buildings_0_10m": {
+          "by_year": {
+            "2016": 0.1273,
+            "2017": 0.1135,
+            "2018": 0.1298,
+            "2019": 0.1273,
+            "2020": 0.1281,
+            "2021": 0.1324,
+            "2022": 0.1488,
+            "2023": 0.1273
+          },
+          "excluded": null,
+          "matched_n": 14,
+          "matched_pct": 21
+        },
+        "s2_wet_season": {
+          "aoi": "oko-oba-canal",
+          "by_year": {
+            "2018": 0.0768,
+            "2019": 0.0,
+            "2020": 0.0398,
+            "2021": 0.1452,
+            "2023": 0.2131,
+            "2024": 0.159,
+            "2025": 0.1136,
+            "2026": 0.1023
+          }
+        },
+        "stale": false,
+        "summary": "Encroachment predates 2016 (~13% built within 10 m, flat through 2023); channel still narrow in May 2025, no widening visible.",
+        "wayback": [
+          {
+            "acq_date": "2012-05-01",
+            "detail_chips": [],
+            "file": "events/drainage_sites/oko-oba-canal/2012-05-01.jpg",
+            "marked_file": "events/drainage_sites/oko-oba-canal/2012-05-01_marked.jpg",
+            "resolution_m": 0.5
+          },
+          {
+            "acq_date": "2013-12-19",
+            "detail_chips": [],
+            "file": "events/drainage_sites/oko-oba-canal/2013-12-19.jpg",
+            "marked_file": "events/drainage_sites/oko-oba-canal/2013-12-19_marked.jpg",
+            "resolution_m": 0.5
+          },
+          {
+            "acq_date": "2015-12-08",
+            "detail_chips": [],
+            "file": "events/drainage_sites/oko-oba-canal/2015-12-08.jpg",
+            "marked_file": "events/drainage_sites/oko-oba-canal/2015-12-08_marked.jpg",
+            "resolution_m": 0.5
+          },
+          {
+            "acq_date": "2018-12-28",
+            "detail_chips": [
+              {
+                "file": "events/drainage_sites/oko-oba-canal/2018-12-28_detail1.jpg",
+                "marked_file": "events/drainage_sites/oko-oba-canal/2018-12-28_detail1_marked.jpg",
+                "resolution_m": 0.31,
+                "station": "start"
+              },
+              {
+                "file": "events/drainage_sites/oko-oba-canal/2018-12-28_detail2.jpg",
+                "marked_file": "events/drainage_sites/oko-oba-canal/2018-12-28_detail2_marked.jpg",
+                "resolution_m": 0.31,
+                "station": "mid"
+              },
+              {
+                "file": "events/drainage_sites/oko-oba-canal/2018-12-28_detail3.jpg",
+                "marked_file": "events/drainage_sites/oko-oba-canal/2018-12-28_detail3_marked.jpg",
+                "resolution_m": 0.31,
+                "station": "end"
+              }
+            ],
+            "file": "events/drainage_sites/oko-oba-canal/2018-12-28.jpg",
+            "marked_file": "events/drainage_sites/oko-oba-canal/2018-12-28_marked.jpg",
+            "resolution_m": 0.31
+          },
+          {
+            "acq_date": "2021-05-23",
+            "detail_chips": [
+              {
+                "file": "events/drainage_sites/oko-oba-canal/2021-05-23_detail1.jpg",
+                "marked_file": "events/drainage_sites/oko-oba-canal/2021-05-23_detail1_marked.jpg",
+                "resolution_m": 0.31,
+                "station": "start"
+              },
+              {
+                "file": "events/drainage_sites/oko-oba-canal/2021-05-23_detail2.jpg",
+                "marked_file": "events/drainage_sites/oko-oba-canal/2021-05-23_detail2_marked.jpg",
+                "resolution_m": 0.31,
+                "station": "mid"
+              },
+              {
+                "file": "events/drainage_sites/oko-oba-canal/2021-05-23_detail3.jpg",
+                "marked_file": "events/drainage_sites/oko-oba-canal/2021-05-23_detail3_marked.jpg",
+                "resolution_m": 0.31,
+                "station": "end"
+              }
+            ],
+            "file": "events/drainage_sites/oko-oba-canal/2021-05-23.jpg",
+            "marked_file": "events/drainage_sites/oko-oba-canal/2021-05-23_marked.jpg",
+            "resolution_m": 0.31
+          },
+          {
+            "acq_date": "2025-05-15",
+            "detail_chips": [
+              {
+                "file": "events/drainage_sites/oko-oba-canal/2025-05-15_detail1.jpg",
+                "marked_file": "events/drainage_sites/oko-oba-canal/2025-05-15_detail1_marked.jpg",
+                "resolution_m": 0.34,
+                "station": "start"
+              },
+              {
+                "file": "events/drainage_sites/oko-oba-canal/2025-05-15_detail2.jpg",
+                "marked_file": "events/drainage_sites/oko-oba-canal/2025-05-15_detail2_marked.jpg",
+                "resolution_m": 0.34,
+                "station": "mid"
+              },
+              {
+                "file": "events/drainage_sites/oko-oba-canal/2025-05-15_detail3.jpg",
+                "marked_file": "events/drainage_sites/oko-oba-canal/2025-05-15_detail3_marked.jpg",
+                "resolution_m": 0.34,
+                "station": "end"
+              }
+            ],
+            "file": "events/drainage_sites/oko-oba-canal/2025-05-15.jpg",
+            "marked_file": "events/drainage_sites/oko-oba-canal/2025-05-15_marked.jpg",
+            "resolution_m": 0.34
+          }
+        ]
+      },
+      "claims": [
+        {
+          "attributed_by": "official",
+          "cause": "construction",
+          "claim_id": "oko-oba-canal-lagos-2022-07-08-ev-014",
+          "date": "2022-07-09",
+          "event_id": "lagos-2022-07-08",
+          "evidence_status": "weak",
+          "quote": "flash flooding wey some areas, especially old Oko-Oba Road, experience na as a result of di ova10 hour-rainfall",
+          "source_id": "bbcpidgin-2022-07-09",
+          "status_note": "matching the state's Oct 2022 \"infringed channel\" notices",
+          "url": "https://www.bbc.com/pidgin/articles/crgw8vrgjdeo",
+          "who": "Tunji Bello, Commissioner for Environment and Water Resources"
+        }
+      ],
+      "flood_radius_m": 400.0,
+      "floods": [
+        {
+          "date": "2021-07-16",
+          "event_id": "lagos-2021-07-16",
+          "evidence_ids": [
+            "ev-022"
+          ],
+          "n_reports": 1,
+          "nearest_m": 281.7
+        }
+      ],
+      "geometry": {
+        "coordinates": [
+          [
+            3.31447,
+            6.64863
+          ],
+          [
+            3.31471,
+            6.64943
+          ],
+          [
+            3.31496,
+            6.64979
+          ],
+          [
+            3.31533,
+            6.6509
+          ],
+          [
+            3.31545,
+            6.65213
+          ],
+          [
+            3.31544,
+            6.65348
+          ],
+          [
+            3.31527,
+            6.6544
+          ],
+          [
+            3.31533,
+            6.65642
+          ]
+        ],
+        "type": "LineString"
+      },
+      "located_how": "BBC Pidgin 9 Jul 2022: 10-hour rain overflowed the Oko-Oba Canal Channel then under expansion; old Oko-Oba Road named. OSM still has no way named Oko-Oba Canal (Nominatim miss; Overpass waterway=* within 800 m of the estate returns none). Guardian/Vanguard 27 Oct 2022 place the viral-flood reach \"behind Abimbola Awoniyi Estate by Agric Road, Oko Oba, Agege\". Maps: Abimbola Awoliyi Estate 3.31209, 6.64853 (Ifako-Ijaiye/Ojokoro). OSM Agric Road (ways 586770836, 4992769) runs east of the estate; way 586770837 is a 15 m bridge on Agric Road at 3.31474, 6.64940, and way 586763553 is a bridge on Akinsegun Street at 3.31552, 6.65149 — the only mapped crossings that can carry the channel. Line is those two bridges extended ~150 m along the same bearing (not Oko Oba Road, which Task 18 imagery showed was the previous line). Canal centreline itself remains unlabelled. | 2026-10-17 (reviewer): channel traced by hand on current Esri World Imagery (z18): an open vegetated channel running S→N from the Agric Road bridge (3.31474, 6.64940) past Abimbola Awoniyi Estate; Task 19 line followed it in the south but veered NE onto streets in the north.",
+      "location_confidence": "exact",
+      "name": "Oko-Oba Canal",
+      "promise_ids": [
+        "oko-oba-canal-demolish-202210",
+        "oko-oba-canal-expand-202207",
+        "oko-oba-canal-expand-202210"
+      ],
+      "site_id": "oko-oba-canal",
+      "structure_name": "Oko-Oba Canal Channel, Agege (behind Abimbola Awoniyi/Awoliyi Estate by Agric Road; OSM bridges on Agric Road and Akinsegun Street)",
+      "structure_type": "canal",
+      "verdict": {
+        "confidence": "moderate",
+        "reviewed_at": "2026-10-17",
+        "reviewed_by": "Claude (FloodTrace reviewer)",
+        "stale": false,
+        "text": "The canal overflowed on 9 Jul 2022 while the state says it was being expanded. On imagery it is a narrow, overgrown open channel with buildings close on both banks: about 13% of the land within 10 m was already built by 2016, unchanged since. That is long-standing encroachment rather than new building, consistent with the state's Oct 2022 'infringed channel' notices. The promised 8 m widening and removal of structures aren't visible by May 2025."
+      }
+    },
+    {
+      "aliases": [
+        "Alapomeji section of Iyana Oworo",
+        "Apapa-Gbagada expressway",
+        "Iyana Oworo linking the Third Mainland",
+        "Iyana oworo",
+        "Iyana-Oworo, Olopo meji area heading to 3rd Mainland Bridge",
+        "Iyana-Oworo-Alapomeji",
+        "Olopo Meji / 3rd mainland bridge",
+        "Olopo Meji inward 3rd Mainland",
+        "Olopomeji"
+      ],
+      "change": {
+        "buildings_0_10m": {
+          "by_year": {
+            "2016": 0.0217,
+            "2017": 0.0232,
+            "2018": 0.0213,
+            "2019": 0.0217,
+            "2020": 0.0306,
+            "2021": 0.0298,
+            "2022": 0.0337,
+            "2023": 0.0341
+          },
+          "excluded": null,
+          "matched_n": 15,
+          "matched_pct": 73
+        },
+        "s2_wet_season": {
+          "aoi": "olopomeji",
+          "by_year": {
+            "2019": 0.0322,
+            "2020": 0.0024,
+            "2021": 0.0902,
+            "2022": 0.0668,
+            "2023": 0.119,
+            "2024": 0.1152,
+            "2025": 0.0786
+          }
+        },
+        "stale": null,
+        "summary": null,
+        "wayback": [
+          {
+            "acq_date": "2012-05-01",
+            "detail_chips": [],
+            "file": "events/drainage_sites/olopomeji/2012-05-01.jpg",
+            "marked_file": "events/drainage_sites/olopomeji/2012-05-01_marked.jpg",
+            "resolution_m": 0.5
+          },
+          {
+            "acq_date": "2012-12-23",
+            "detail_chips": [],
+            "file": "events/drainage_sites/olopomeji/2012-12-23.jpg",
+            "marked_file": "events/drainage_sites/olopomeji/2012-12-23_marked.jpg",
+            "resolution_m": 0.5
+          },
+          {
+            "acq_date": "2015-12-08",
+            "detail_chips": [],
+            "file": "events/drainage_sites/olopomeji/2015-12-08.jpg",
+            "marked_file": "events/drainage_sites/olopomeji/2015-12-08_marked.jpg",
+            "resolution_m": 0.5
+          },
+          {
+            "acq_date": "2021-05-23",
+            "detail_chips": [
+              {
+                "file": "events/drainage_sites/olopomeji/2021-05-23_detail1.jpg",
+                "marked_file": "events/drainage_sites/olopomeji/2021-05-23_detail1_marked.jpg",
+                "resolution_m": 0.31,
+                "station": "start"
+              },
+              {
+                "file": "events/drainage_sites/olopomeji/2021-05-23_detail2.jpg",
+                "marked_file": "events/drainage_sites/olopomeji/2021-05-23_detail2_marked.jpg",
+                "resolution_m": 0.31,
+                "station": "mid"
+              },
+              {
+                "file": "events/drainage_sites/olopomeji/2021-05-23_detail3.jpg",
+                "marked_file": "events/drainage_sites/olopomeji/2021-05-23_detail3_marked.jpg",
+                "resolution_m": 0.31,
+                "station": "end"
+              }
+            ],
+            "file": "events/drainage_sites/olopomeji/2021-05-23.jpg",
+            "marked_file": "events/drainage_sites/olopomeji/2021-05-23_marked.jpg",
+            "resolution_m": 0.31
+          },
+          {
+            "acq_date": "2025-05-15",
+            "detail_chips": [
+              {
+                "file": "events/drainage_sites/olopomeji/2025-05-15_detail1.jpg",
+                "marked_file": "events/drainage_sites/olopomeji/2025-05-15_detail1_marked.jpg",
+                "resolution_m": 0.34,
+                "station": "start"
+              },
+              {
+                "file": "events/drainage_sites/olopomeji/2025-05-15_detail2.jpg",
+                "marked_file": "events/drainage_sites/olopomeji/2025-05-15_detail2_marked.jpg",
+                "resolution_m": 0.34,
+                "station": "mid"
+              },
+              {
+                "file": "events/drainage_sites/olopomeji/2025-05-15_detail3.jpg",
+                "marked_file": "events/drainage_sites/olopomeji/2025-05-15_detail3_marked.jpg",
+                "resolution_m": 0.34,
+                "station": "end"
+              }
+            ],
+            "file": "events/drainage_sites/olopomeji/2025-05-15.jpg",
+            "marked_file": "events/drainage_sites/olopomeji/2025-05-15_marked.jpg",
+            "resolution_m": 0.34
+          }
+        ]
+      },
+      "claims": [
+        {
+          "attributed_by": "official",
+          "cause": "blocked_drainage",
+          "claim_id": "olopomeji-lagos-2024-07-03-ev-061",
+          "date": "2024-07-07",
+          "event_id": "lagos-2024-07-03",
+          "evidence_status": "inconclusive",
+          "quote": "Olopomeji where the water paths had been blocked by refuse and are experiencing flash floods",
+          "source_id": "punch-2024-07-07",
+          "status_note": "refuse in an open path",
+          "url": "https://punchng.com/10-hour-rainfall-lekki-ikoyi-residents-flee-luxury-mansions-as-flood-ravages-homes-streets/",
+          "who": "Tokunbo Wahab, Commissioner for Environment and Water Resources"
+        }
+      ],
+      "flood_radius_m": 600.0,
+      "floods": [
+        {
+          "date": "2024-07-03",
+          "event_id": "lagos-2024-07-03",
+          "evidence_ids": [
+            "ev-005",
+            "ev-019",
+            "ev-020",
+            "ev-044",
+            "ev-046",
+            "ev-048",
+            "ev-049",
+            "ev-061",
+            "ev-062"
+          ],
+          "n_reports": 9,
+          "nearest_m": 101.5
+        }
+      ],
+      "geometry": {
+        "coordinates": [
+          [
+            3.40639,
+            6.54849
+          ],
+          [
+            3.40171,
+            6.54951
+          ],
+          [
+            3.39739,
+            6.55149
+          ],
+          [
+            3.39443,
+            6.55064
+          ],
+          [
+            3.3802,
+            6.5483
+          ]
+        ],
+        "type": "LineString"
+      },
+      "located_how": "Not Ebute Metta or Yaba. Same-day coverage: flood 'from Iyana-Oworo through Olopo Meji towards 3rd Mainland Bridge'; ThisDay/Instagram: 'Olopomeji section of Iyana Oworo'. OSM Oworo Road (ways 134223844, 588314503) plus Apapa–Oworonshoki Expressway at Iyana Oworo (way 134221209). Evidence point 3.399, 6.548 sits on this corridor.",
+      "location_confidence": "street",
+      "name": "Olopo Meji (Iyana Oworo)",
+      "promise_ids": [
+        "olopomeji-maintain-202407"
+      ],
+      "site_id": "olopomeji",
+      "structure_name": "Olopo Meji / Alapomeji section of Iyana Oworo (approach to Third Mainland Bridge)",
+      "structure_type": "road",
+      "verdict": null
+    },
+    {
+      "aliases": [
+        "Sangotedo"
+      ],
+      "change": {
+        "buildings_0_10m": {
+          "by_year": {
+            "2016": 0.0,
+            "2017": 0.0,
+            "2018": 0.0,
+            "2019": 0.0,
+            "2020": 0.0,
+            "2021": 0.0,
+            "2022": 0.0,
+            "2023": 0.0
+          },
+          "excluded": null,
+          "matched_n": 163,
+          "matched_pct": 1
+        },
+        "s2_wet_season": {
+          "aoi": "sangotedo-channel-notices",
+          "by_year": {
+            "2018": 0.4251,
+            "2019": 0.3683,
+            "2020": 0.4188,
+            "2021": 0.4051,
+            "2022": 0.3619,
+            "2023": 0.4767,
+            "2024": 0.4951,
+            "2025": 0.3994,
+            "2026": 0.3966
+          }
+        },
+        "stale": null,
+        "summary": null,
+        "wayback": [
+          {
+            "acq_date": "2012-05-06",
+            "detail_chips": [],
+            "file": "events/drainage_sites/sangotedo-channel-notices/2012-05-06.jpg",
+            "marked_file": "events/drainage_sites/sangotedo-channel-notices/2012-05-06_marked.jpg",
+            "resolution_m": 0.6
+          },
+          {
+            "acq_date": "2013-01-01",
+            "detail_chips": [],
+            "file": "events/drainage_sites/sangotedo-channel-notices/2013-01-01.jpg",
+            "marked_file": "events/drainage_sites/sangotedo-channel-notices/2013-01-01_marked.jpg",
+            "resolution_m": 0.46
+          },
+          {
+            "acq_date": "2018-12-24",
+            "detail_chips": [],
+            "file": "events/drainage_sites/sangotedo-channel-notices/2018-12-24.jpg",
+            "marked_file": "events/drainage_sites/sangotedo-channel-notices/2018-12-24_marked.jpg",
+            "resolution_m": 0.31
+          },
+          {
+            "acq_date": "2019-04-02",
+            "detail_chips": [],
+            "file": "events/drainage_sites/sangotedo-channel-notices/2019-04-02.jpg",
+            "marked_file": "events/drainage_sites/sangotedo-channel-notices/2019-04-02_marked.jpg",
+            "resolution_m": 0.5
+          },
+          {
+            "acq_date": "2024-11-30",
+            "detail_chips": [],
+            "file": "events/drainage_sites/sangotedo-channel-notices/2024-11-30.jpg",
+            "marked_file": "events/drainage_sites/sangotedo-channel-notices/2024-11-30_marked.jpg",
+            "resolution_m": 0.31
+          }
+        ]
+      },
+      "claims": [
+        {
+          "attributed_by": "journalist",
+          "cause": "construction",
+          "claim_id": "sangotedo-channel-notices-lagos-2024-07-03-ev-027",
+          "date": "2024-07-03",
+          "event_id": "lagos-2024-07-03",
+          "evidence_status": "inconclusive",
+          "quote": "due to the ongoing rehabilitation road works in the localities",
+          "source_id": "dailytrust-2024-07-03",
+          "status_note": "channel centreline not in OSM; point moved from the town centroid to LBS",
+          "url": "https://dailytrust.com/flood-takes-over-houses-roads-in-lagos/",
+          "who": null
+        }
+      ],
+      "flood_radius_m": 400.0,
+      "floods": [],
+      "geometry": {
+        "coordinates": [
+          3.60357,
+          6.47129
+        ],
+        "type": "Point"
+      },
+      "located_how": "Independent 24 Jun 2024 quotes Wahab after the 23 Jun tour: notices \"At Sangotedo by Lagos Business School\" for buildings \"lying within the channels\". Nominatim: Lagos Business School (OSM way 539288427) 3.60357, 6.47129 on Lekki–Epe Expressway, address suburb Sangotedo, Eti Osa — ~3.5 km west of the previous town-centroid point (3.63558, 6.47102). Nairametrics 21 Sep 2024 names the follow-up demolition as System 63b, Sangotedo, Eti-Osa; OSM has no name System 63b. Overpass waterway=* within 2 km of LBS returns only an unnamed stream (ways 785343404/406) ~1.2 km north at ~6.482°N — not published as System 63b, so not used as the line. Channel centreline: neighbourhood / not_found beyond the LBS inspection site. Monastery Road canal reports are a different Sangotedo street (~3.643, 6.447) and are not in the 23 Jun notices.",
+      "location_confidence": "street",
+      "name": "Sangotedo – System 63b",
+      "promise_ids": [
+        "sangotedo-channel-notices-demolish-202409",
+        "sangotedo-channel-notices-enforce-202406"
+      ],
+      "site_id": "sangotedo-channel-notices",
+      "structure_name": "System 63b drainage channel, Sangotedo (Eti-Osa), at Lagos Business School; centreline not in OSM",
+      "structure_type": "channel",
+      "verdict": null
+    }
+  ]
+}

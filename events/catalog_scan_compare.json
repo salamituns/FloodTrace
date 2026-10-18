@@ -1,0 +1,7943 @@
+{
+  "meta": {
+    "point_scan": "events/catalog_candidates.json (4 AOI points, Task 06)",
+    "grid_scan": "events/catalog_candidates_grid.json (every AOI cell)",
+    "matching": "candidates correspond when their [start, end] spans overlap; point-scan qualifying days are a subset of grid-scan days, so each point candidate maps into exactly one (possibly longer) grid candidate",
+    "counts": {
+      "point_candidates": 287,
+      "grid_candidates": 641,
+      "matched": 287,
+      "only_grid": 356,
+      "only_point": 0
+    },
+    "retrieved_at": "2026-10-17T16:04:51Z"
+  },
+  "only_grid": [
+    {
+      "rank": 16,
+      "start": "2014-09-16",
+      "end": "2014-09-17",
+      "max_cell": {
+        "id": "c6.55N4.25E",
+        "lon": 4.25,
+        "lat": 6.55,
+        "place": "Epe"
+      },
+      "max_cell_total_mm": 156.65,
+      "max_peak_mm_h": 48.54,
+      "cells_over_threshold": 17,
+      "known_event_id": null
+    },
+    {
+      "rank": 33,
+      "start": "2014-05-19",
+      "end": "2014-05-19",
+      "max_cell": {
+        "id": "c6.75N4.25E",
+        "lon": 4.25,
+        "lat": 6.75,
+        "place": "Epe"
+      },
+      "max_cell_total_mm": 134.55,
+      "max_peak_mm_h": 114.79,
+      "cells_over_threshold": 7,
+      "known_event_id": null
+    },
+    {
+      "rank": 49,
+      "start": "2008-07-07",
+      "end": "2008-07-08",
+      "max_cell": {
+        "id": "c6.45N4.35E",
+        "lon": 4.35,
+        "lat": 6.45,
+        "place": "Epe"
+      },
+      "max_cell_total_mm": 124.22,
+      "max_peak_mm_h": 21.7,
+      "cells_over_threshold": 28,
+      "known_event_id": null
+    },
+    {
+      "rank": 59,
+      "start": "2009-05-08",
+      "end": "2009-05-08",
+      "max_cell": {
+        "id": "c6.45N4.35E",
+        "lon": 4.35,
+        "lat": 6.45,
+        "place": "Epe"
+      },
+      "max_cell_total_mm": 116.48,
+      "max_peak_mm_h": 26.26,
+      "cells_over_threshold": 5,
+      "known_event_id": null
+    },
+    {
+      "rank": 62,
+      "start": "2019-07-11",
+      "end": "2019-07-12",
+      "max_cell": {
+        "id": "c6.45N2.75E",
+        "lon": 2.75,
+        "lat": 6.45,
+        "place": "Seme border"
+      },
+      "max_cell_total_mm": 115.32,
+      "max_peak_mm_h": 29.21,
+      "cells_over_threshold": 4,
+      "known_event_id": null
+    },
+    {
+      "rank": 63,
+      "start": "2011-07-21",
+      "end": "2011-07-21",
+      "max_cell": {
+        "id": "c6.55N4.15E",
+        "lon": 4.15,
+        "lat": 6.55,
+        "place": "Epe"
+      },
+      "max_cell_total_mm": 115.12,
+      "max_peak_mm_h": 26.11,
+      "cells_over_threshold": 9,
+      "known_event_id": null
+    },
+    {
+      "rank": 68,
+      "start": "2023-06-18",
+      "end": "2023-06-19",
+      "max_cell": {
+        "id": "c6.75N4.35E",
+        "lon": 4.35,
+        "lat": 6.75,
+        "place": "Epe"
+      },
+      "max_cell_total_mm": 112.55,
+      "max_peak_mm_h": 46.01,
+      "cells_over_threshold": 15,
+      "known_event_id": null
+    },
+    {
+      "rank": 72,
+      "start": "2006-09-23",
+      "end": "2006-09-25",
+      "max_cell": {
+        "id": "c6.75N3.75E",
+        "lon": 3.75,
+        "lat": 6.75,
+        "place": "Ota"
+      },
+      "max_cell_total_mm": 110.5,
+      "max_peak_mm_h": 34.58,
+      "cells_over_threshold": 4,
+      "known_event_id": null
+    },
+    {
+      "rank": 74,
+      "start": "2021-09-25",
+      "end": "2021-09-25",
+      "max_cell": {
+        "id": "c6.75N3.15E",
+        "lon": 3.15,
+        "lat": 6.75,
+        "place": "Alimosho / Ipaja"
+      },
+      "max_cell_total_mm": 108.95,
+      "max_peak_mm_h": 36.91,
+      "cells_over_threshold": 6,
+      "known_event_id": null
+    },
+    {
+      "rank": 75,
+      "start": "2022-07-04",
+      "end": "2022-07-05",
+      "max_cell": {
+        "id": "c6.75N3.95E",
+        "lon": 3.95,
+        "lat": 6.75,
+        "place": "Agbowa-Ikosi"
+      },
+      "max_cell_total_mm": 108.77,
+      "max_peak_mm_h": 35.93,
+      "cells_over_threshold": 34,
+      "known_event_id": null
+    },
+    {
+      "rank": 83,
+      "start": "2011-09-29",
+      "end": "2011-09-29",
+      "max_cell": {
+        "id": "c6.75N4.35E",
+        "lon": 4.35,
+        "lat": 6.75,
+        "place": "Epe"
+      },
+      "max_cell_total_mm": 106.45,
+      "max_peak_mm_h": 34.45,
+      "cells_over_threshold": 3,
+      "known_event_id": null
+    },
+    {
+      "rank": 94,
+      "start": "2016-05-15",
+      "end": "2016-05-15",
+      "max_cell": {
+        "id": "c6.65N3.05E",
+        "lon": 3.05,
+        "lat": 6.65,
+        "place": "Ijanikin"
+      },
+      "max_cell_total_mm": 103.53,
+      "max_peak_mm_h": 29.72,
+      "cells_over_threshold": 5,
+      "known_event_id": null
+    },
+    {
+      "rank": 97,
+      "start": "2018-05-10",
+      "end": "2018-05-10",
+      "max_cell": {
+        "id": "c6.75N2.85E",
+        "lon": 2.85,
+        "lat": 6.75,
+        "place": "Badagry"
+      },
+      "max_cell_total_mm": 103.01,
+      "max_peak_mm_h": 46.78,
+      "cells_over_threshold": 7,
+      "known_event_id": null
+    },
+    {
+      "rank": 106,
+      "start": "2022-06-09",
+      "end": "2022-06-10",
+      "max_cell": {
+        "id": "c6.75N4.15E",
+        "lon": 4.15,
+        "lat": 6.75,
+        "place": "Epe"
+      },
+      "max_cell_total_mm": 99.8,
+      "max_peak_mm_h": 32.61,
+      "cells_over_threshold": 2,
+      "known_event_id": null
+    },
+    {
+      "rank": 110,
+      "start": "2004-04-06",
+      "end": "2004-04-06",
+      "max_cell": {
+        "id": "c6.75N4.25E",
+        "lon": 4.25,
+        "lat": 6.75,
+        "place": "Epe"
+      },
+      "max_cell_total_mm": 99.24,
+      "max_peak_mm_h": 35.74,
+      "cells_over_threshold": 4,
+      "known_event_id": null
+    },
+    {
+      "rank": 111,
+      "start": "2012-09-22",
+      "end": "2012-09-22",
+      "max_cell": {
+        "id": "c6.75N4.15E",
+        "lon": 4.15,
+        "lat": 6.75,
+        "place": "Epe"
+      },
+      "max_cell_total_mm": 98.84,
+      "max_peak_mm_h": 46.94,
+      "cells_over_threshold": 10,
+      "known_event_id": null
+    },
+    {
+      "rank": 113,
+      "start": "2011-06-21",
+      "end": "2011-06-22",
+      "max_cell": {
+        "id": "c6.65N2.95E",
+        "lon": 2.95,
+        "lat": 6.65,
+        "place": "Badagry"
+      },
+      "max_cell_total_mm": 98.32,
+      "max_peak_mm_h": 31.29,
+      "cells_over_threshold": 12,
+      "known_event_id": null
+    },
+    {
+      "rank": 114,
+      "start": "2002-07-16",
+      "end": "2002-07-17",
+      "max_cell": {
+        "id": "c6.55N4.15E",
+        "lon": 4.15,
+        "lat": 6.55,
+        "place": "Epe"
+      },
+      "max_cell_total_mm": 98.18,
+      "max_peak_mm_h": 50.75,
+      "cells_over_threshold": 3,
+      "known_event_id": null
+    },
+    {
+      "rank": 116,
+      "start": "2021-07-03",
+      "end": "2021-07-03",
+      "max_cell": {
+        "id": "c6.45N2.85E",
+        "lon": 2.85,
+        "lat": 6.45,
+        "place": "Badagry"
+      },
+      "max_cell_total_mm": 98.05,
+      "max_peak_mm_h": 25.33,
+      "cells_over_threshold": 11,
+      "known_event_id": null
+    },
+    {
+      "rank": 123,
+      "start": "2008-06-03",
+      "end": "2008-06-03",
+      "max_cell": {
+        "id": "c6.75N3.75E",
+        "lon": 3.75,
+        "lat": 6.75,
+        "place": "Ota"
+      },
+      "max_cell_total_mm": 95.11,
+      "max_peak_mm_h": 47.32,
+      "cells_over_threshold": 19,
+      "known_event_id": null
+    },
+    {
+      "rank": 125,
+      "start": "2018-06-20",
+      "end": "2018-06-20",
+      "max_cell": {
+        "id": "c6.45N4.35E",
+        "lon": 4.35,
+        "lat": 6.45,
+        "place": "Epe"
+      },
+      "max_cell_total_mm": 94.91,
+      "max_peak_mm_h": 23.74,
+      "cells_over_threshold": 8,
+      "known_event_id": null
+    },
+    {
+      "rank": 127,
+      "start": "2002-04-15",
+      "end": "2002-04-16",
+      "max_cell": {
+        "id": "c6.45N3.25E",
+        "lon": 3.25,
+        "lat": 6.45,
+        "place": "Festac Town"
+      },
+      "max_cell_total_mm": 94.49,
+      "max_peak_mm_h": 32.98,
+      "cells_over_threshold": 8,
+      "known_event_id": null
+    },
+    {
+      "rank": 130,
+      "start": "2022-06-15",
+      "end": "2022-06-15",
+      "max_cell": {
+        "id": "c6.65N2.75E",
+        "lon": 2.75,
+        "lat": 6.65,
+        "place": "Seme border"
+      },
+      "max_cell_total_mm": 93.39,
+      "max_peak_mm_h": 31.85,
+      "cells_over_threshold": 23,
+      "known_event_id": null
+    },
+    {
+      "rank": 136,
+      "start": "2024-06-06",
+      "end": "2024-06-06",
+      "max_cell": {
+        "id": "c6.55N2.75E",
+        "lon": 2.75,
+        "lat": 6.55,
+        "place": "Seme border"
+      },
+      "max_cell_total_mm": 92.54,
+      "max_peak_mm_h": 31.22,
+      "cells_over_threshold": 24,
+      "known_event_id": null
+    },
+    {
+      "rank": 138,
+      "start": "2012-05-25",
+      "end": "2012-05-25",
+      "max_cell": {
+        "id": "c6.75N3.35E",
+        "lon": 3.35,
+        "lat": 6.75,
+        "place": "Mowe / Ibafo"
+      },
+      "max_cell_total_mm": 91.01,
+      "max_peak_mm_h": 42.96,
+      "cells_over_threshold": 5,
+      "known_event_id": null
+    },
+    {
+      "rank": 140,
+      "start": "2003-06-06",
+      "end": "2003-06-06",
+      "max_cell": {
+        "id": "c6.65N3.15E",
+        "lon": 3.15,
+        "lat": 6.65,
+        "place": "Alimosho / Ipaja"
+      },
+      "max_cell_total_mm": 90.86,
+      "max_peak_mm_h": 34.64,
+      "cells_over_threshold": 8,
+      "known_event_id": null
+    },
+    {
+      "rank": 141,
+      "start": "2014-05-27",
+      "end": "2014-05-27",
+      "max_cell": {
+        "id": "c6.55N3.05E",
+        "lon": 3.05,
+        "lat": 6.55,
+        "place": "Ijanikin"
+      },
+      "max_cell_total_mm": 90.67,
+      "max_peak_mm_h": 60.43,
+      "cells_over_threshold": 12,
+      "known_event_id": null
+    },
+    {
+      "rank": 145,
+      "start": "2014-02-25",
+      "end": "2014-02-25",
+      "max_cell": {
+        "id": "c6.45N4.05E",
+        "lon": 4.05,
+        "lat": 6.45,
+        "place": "Lekki Free Zone"
+      },
+      "max_cell_total_mm": 90.16,
+      "max_peak_mm_h": 29.84,
+      "cells_over_threshold": 1,
+      "known_event_id": null
+    },
+    {
+      "rank": 146,
+      "start": "2015-10-31",
+      "end": "2015-10-31",
+      "max_cell": {
+        "id": "c6.75N4.35E",
+        "lon": 4.35,
+        "lat": 6.75,
+        "place": "Epe"
+      },
+      "max_cell_total_mm": 89.88,
+      "max_peak_mm_h": 34.7,
+      "cells_over_threshold": 4,
+      "known_event_id": null
+    },
+    {
+      "rank": 153,
+      "start": "2014-08-29",
+      "end": "2014-08-29",
+      "max_cell": {
+        "id": "c6.45N4.25E",
+        "lon": 4.25,
+        "lat": 6.45,
+        "place": "Lekki Free Zone"
+      },
+      "max_cell_total_mm": 88.04,
+      "max_peak_mm_h": 41.62,
+      "cells_over_threshold": 15,
+      "known_event_id": null
+    },
+    {
+      "rank": 155,
+      "start": "2009-10-26",
+      "end": "2009-10-26",
+      "max_cell": {
+        "id": "c6.65N2.95E",
+        "lon": 2.95,
+        "lat": 6.65,
+        "place": "Badagry"
+      },
+      "max_cell_total_mm": 87.25,
+      "max_peak_mm_h": 27.46,
+      "cells_over_threshold": 1,
+      "known_event_id": null
+    },
+    {
+      "rank": 157,
+      "start": "2004-09-24",
+      "end": "2004-09-24",
+      "max_cell": {
+        "id": "c6.45N4.35E",
+        "lon": 4.35,
+        "lat": 6.45,
+        "place": "Epe"
+      },
+      "max_cell_total_mm": 87.2,
+      "max_peak_mm_h": 25.04,
+      "cells_over_threshold": 8,
+      "known_event_id": null
+    },
+    {
+      "rank": 158,
+      "start": "2022-05-23",
+      "end": "2022-05-23",
+      "max_cell": {
+        "id": "c6.45N4.25E",
+        "lon": 4.25,
+        "lat": 6.45,
+        "place": "Lekki Free Zone"
+      },
+      "max_cell_total_mm": 87.13,
+      "max_peak_mm_h": 24.76,
+      "cells_over_threshold": 3,
+      "known_event_id": null
+    },
+    {
+      "rank": 159,
+      "start": "2012-12-12",
+      "end": "2012-12-12",
+      "max_cell": {
+        "id": "c6.65N3.25E",
+        "lon": 3.25,
+        "lat": 6.65,
+        "place": "Alimosho / Ipaja"
+      },
+      "max_cell_total_mm": 87.08,
+      "max_peak_mm_h": 30.8,
+      "cells_over_threshold": 1,
+      "known_event_id": null
+    },
+    {
+      "rank": 160,
+      "start": "2008-05-02",
+      "end": "2008-05-02",
+      "max_cell": {
+        "id": "c6.65N4.25E",
+        "lon": 4.25,
+        "lat": 6.65,
+        "place": "Epe"
+      },
+      "max_cell_total_mm": 86.92,
+      "max_peak_mm_h": 34.42,
+      "cells_over_threshold": 5,
+      "known_event_id": null
+    },
+    {
+      "rank": 161,
+      "start": "2000-09-10",
+      "end": "2000-09-11",
+      "max_cell": {
+        "id": "c6.55N2.95E",
+        "lon": 2.95,
+        "lat": 6.55,
+        "place": "Badagry"
+      },
+      "max_cell_total_mm": 86.39,
+      "max_peak_mm_h": 40.96,
+      "cells_over_threshold": 8,
+      "known_event_id": null
+    },
+    {
+      "rank": 166,
+      "start": "2006-04-24",
+      "end": "2006-04-24",
+      "max_cell": {
+        "id": "c6.75N3.75E",
+        "lon": 3.75,
+        "lat": 6.75,
+        "place": "Ota"
+      },
+      "max_cell_total_mm": 85.32,
+      "max_peak_mm_h": 34.81,
+      "cells_over_threshold": 2,
+      "known_event_id": null
+    },
+    {
+      "rank": 168,
+      "start": "2020-10-06",
+      "end": "2020-10-06",
+      "max_cell": {
+        "id": "c6.75N4.35E",
+        "lon": 4.35,
+        "lat": 6.75,
+        "place": "Epe"
+      },
+      "max_cell_total_mm": 85.04,
+      "max_peak_mm_h": 39.48,
+      "cells_over_threshold": 8,
+      "known_event_id": null
+    },
+    {
+      "rank": 170,
+      "start": "2011-06-18",
+      "end": "2011-06-18",
+      "max_cell": {
+        "id": "c6.55N3.85E",
+        "lon": 3.85,
+        "lat": 6.55,
+        "place": "Ibeju"
+      },
+      "max_cell_total_mm": 84.75,
+      "max_peak_mm_h": 21.91,
+      "cells_over_threshold": 4,
+      "known_event_id": null
+    },
+    {
+      "rank": 172,
+      "start": "2008-07-21",
+      "end": "2008-07-22",
+      "max_cell": {
+        "id": "c6.45N2.75E",
+        "lon": 2.75,
+        "lat": 6.45,
+        "place": "Seme border"
+      },
+      "max_cell_total_mm": 84.06,
+      "max_peak_mm_h": 61.62,
+      "cells_over_threshold": 7,
+      "known_event_id": null
+    },
+    {
+      "rank": 175,
+      "start": "2026-02-14",
+      "end": "2026-02-14",
+      "max_cell": {
+        "id": "c6.45N2.95E",
+        "lon": 2.95,
+        "lat": 6.45,
+        "place": "Badagry"
+      },
+      "max_cell_total_mm": 82.68,
+      "max_peak_mm_h": 19.37,
+      "cells_over_threshold": 3,
+      "known_event_id": null
+    },
+    {
+      "rank": 176,
+      "start": "2007-07-01",
+      "end": "2007-07-01",
+      "max_cell": {
+        "id": "c6.75N4.05E",
+        "lon": 4.05,
+        "lat": 6.75,
+        "place": "Agbowa-Ikosi"
+      },
+      "max_cell_total_mm": 82.51,
+      "max_peak_mm_h": 36.81,
+      "cells_over_threshold": 25,
+      "known_event_id": null
+    },
+    {
+      "rank": 179,
+      "start": "2007-05-14",
+      "end": "2007-05-15",
+      "max_cell": {
+        "id": "c6.75N3.25E",
+        "lon": 3.25,
+        "lat": 6.75,
+        "place": "Agege"
+      },
+      "max_cell_total_mm": 82.26,
+      "max_peak_mm_h": 34.96,
+      "cells_over_threshold": 2,
+      "known_event_id": null
+    },
+    {
+      "rank": 181,
+      "start": "2023-06-11",
+      "end": "2023-06-11",
+      "max_cell": {
+        "id": "c6.45N4.15E",
+        "lon": 4.15,
+        "lat": 6.45,
+        "place": "Lekki Free Zone"
+      },
+      "max_cell_total_mm": 81.91,
+      "max_peak_mm_h": 36.63,
+      "cells_over_threshold": 3,
+      "known_event_id": null
+    },
+    {
+      "rank": 182,
+      "start": "2025-03-11",
+      "end": "2025-03-12",
+      "max_cell": {
+        "id": "c6.75N2.85E",
+        "lon": 2.85,
+        "lat": 6.75,
+        "place": "Badagry"
+      },
+      "max_cell_total_mm": 81.88,
+      "max_peak_mm_h": 43.24,
+      "cells_over_threshold": 10,
+      "known_event_id": null
+    },
+    {
+      "rank": 185,
+      "start": "2003-05-11",
+      "end": "2003-05-12",
+      "max_cell": {
+        "id": "c6.65N2.95E",
+        "lon": 2.95,
+        "lat": 6.65,
+        "place": "Badagry"
+      },
+      "max_cell_total_mm": 81.58,
+      "max_peak_mm_h": 56.64,
+      "cells_over_threshold": 14,
+      "known_event_id": null
+    },
+    {
+      "rank": 186,
+      "start": "2014-03-11",
+      "end": "2014-03-11",
+      "max_cell": {
+        "id": "c6.75N4.05E",
+        "lon": 4.05,
+        "lat": 6.75,
+        "place": "Agbowa-Ikosi"
+      },
+      "max_cell_total_mm": 81.51,
+      "max_peak_mm_h": 34.78,
+      "cells_over_threshold": 3,
+      "known_event_id": null
+    },
+    {
+      "rank": 192,
+      "start": "2018-08-20",
+      "end": "2018-08-20",
+      "max_cell": {
+        "id": "c6.45N3.25E",
+        "lon": 3.25,
+        "lat": 6.45,
+        "place": "Festac Town"
+      },
+      "max_cell_total_mm": 80.9,
+      "max_peak_mm_h": 29.02,
+      "cells_over_threshold": 14,
+      "known_event_id": null
+    },
+    {
+      "rank": 193,
+      "start": "2012-06-05",
+      "end": "2012-06-05",
+      "max_cell": {
+        "id": "c6.65N3.05E",
+        "lon": 3.05,
+        "lat": 6.65,
+        "place": "Ijanikin"
+      },
+      "max_cell_total_mm": 80.8,
+      "max_peak_mm_h": 32.1,
+      "cells_over_threshold": 13,
+      "known_event_id": null
+    },
+    {
+      "rank": 201,
+      "start": "2005-06-02",
+      "end": "2005-06-02",
+      "max_cell": {
+        "id": "c6.75N3.75E",
+        "lon": 3.75,
+        "lat": 6.75,
+        "place": "Ota"
+      },
+      "max_cell_total_mm": 79.34,
+      "max_peak_mm_h": 38.57,
+      "cells_over_threshold": 7,
+      "known_event_id": null
+    },
+    {
+      "rank": 207,
+      "start": "2025-04-28",
+      "end": "2025-04-28",
+      "max_cell": {
+        "id": "c6.75N4.15E",
+        "lon": 4.15,
+        "lat": 6.75,
+        "place": "Epe"
+      },
+      "max_cell_total_mm": 78.24,
+      "max_peak_mm_h": 27.7,
+      "cells_over_threshold": 4,
+      "known_event_id": null
+    },
+    {
+      "rank": 209,
+      "start": "2016-09-01",
+      "end": "2016-09-01",
+      "max_cell": {
+        "id": "c6.45N4.35E",
+        "lon": 4.35,
+        "lat": 6.45,
+        "place": "Epe"
+      },
+      "max_cell_total_mm": 78.05,
+      "max_peak_mm_h": 18.88,
+      "cells_over_threshold": 4,
+      "known_event_id": null
+    },
+    {
+      "rank": 210,
+      "start": "2013-11-06",
+      "end": "2013-11-06",
+      "max_cell": {
+        "id": "c6.75N3.15E",
+        "lon": 3.15,
+        "lat": 6.75,
+        "place": "Alimosho / Ipaja"
+      },
+      "max_cell_total_mm": 78.03,
+      "max_peak_mm_h": 26.84,
+      "cells_over_threshold": 1,
+      "known_event_id": null
+    },
+    {
+      "rank": 211,
+      "start": "2026-08-07",
+      "end": "2026-08-07",
+      "max_cell": {
+        "id": "c6.45N4.15E",
+        "lon": 4.15,
+        "lat": 6.45,
+        "place": "Lekki Free Zone"
+      },
+      "max_cell_total_mm": 78.01,
+      "max_peak_mm_h": 24.78,
+      "cells_over_threshold": 1,
+      "known_event_id": null
+    },
+    {
+      "rank": 212,
+      "start": "2007-09-11",
+      "end": "2007-09-11",
+      "max_cell": {
+        "id": "c6.65N4.35E",
+        "lon": 4.35,
+        "lat": 6.65,
+        "place": "Epe"
+      },
+      "max_cell_total_mm": 77.92,
+      "max_peak_mm_h": 21.94,
+      "cells_over_threshold": 2,
+      "known_event_id": null
+    },
+    {
+      "rank": 216,
+      "start": "2020-06-22",
+      "end": "2020-06-22",
+      "max_cell": {
+        "id": "c6.45N2.85E",
+        "lon": 2.85,
+        "lat": 6.45,
+        "place": "Badagry"
+      },
+      "max_cell_total_mm": 77.17,
+      "max_peak_mm_h": 18.76,
+      "cells_over_threshold": 6,
+      "known_event_id": null
+    },
+    {
+      "rank": 219,
+      "start": "2011-07-07",
+      "end": "2011-07-07",
+      "max_cell": {
+        "id": "c6.75N4.25E",
+        "lon": 4.25,
+        "lat": 6.75,
+        "place": "Epe"
+      },
+      "max_cell_total_mm": 76.67,
+      "max_peak_mm_h": 23.81,
+      "cells_over_threshold": 9,
+      "known_event_id": null
+    },
+    {
+      "rank": 220,
+      "start": "2026-06-25",
+      "end": "2026-06-25",
+      "max_cell": {
+        "id": "c6.75N3.55E",
+        "lon": 3.55,
+        "lat": 6.75,
+        "place": "Ikorodu"
+      },
+      "max_cell_total_mm": 76.62,
+      "max_peak_mm_h": 31.36,
+      "cells_over_threshold": 12,
+      "known_event_id": null
+    },
+    {
+      "rank": 222,
+      "start": "2009-06-11",
+      "end": "2009-06-11",
+      "max_cell": {
+        "id": "c6.55N4.15E",
+        "lon": 4.15,
+        "lat": 6.55,
+        "place": "Epe"
+      },
+      "max_cell_total_mm": 76.49,
+      "max_peak_mm_h": 20.46,
+      "cells_over_threshold": 7,
+      "known_event_id": null
+    },
+    {
+      "rank": 227,
+      "start": "2004-09-06",
+      "end": "2004-09-06",
+      "max_cell": {
+        "id": "c6.45N3.65E",
+        "lon": 3.65,
+        "lat": 6.45,
+        "place": "Sangotedo"
+      },
+      "max_cell_total_mm": 75.88,
+      "max_peak_mm_h": 20.96,
+      "cells_over_threshold": 6,
+      "known_event_id": null
+    },
+    {
+      "rank": 228,
+      "start": "2022-11-12",
+      "end": "2022-11-12",
+      "max_cell": {
+        "id": "c6.45N2.95E",
+        "lon": 2.95,
+        "lat": 6.45,
+        "place": "Badagry"
+      },
+      "max_cell_total_mm": 75.83,
+      "max_peak_mm_h": 39.29,
+      "cells_over_threshold": 4,
+      "known_event_id": null
+    },
+    {
+      "rank": 231,
+      "start": "2006-05-30",
+      "end": "2006-05-30",
+      "max_cell": {
+        "id": "c6.75N2.75E",
+        "lon": 2.75,
+        "lat": 6.75,
+        "place": "Seme border"
+      },
+      "max_cell_total_mm": 75.67,
+      "max_peak_mm_h": 47.35,
+      "cells_over_threshold": 5,
+      "known_event_id": null
+    },
+    {
+      "rank": 234,
+      "start": "2003-10-05",
+      "end": "2003-10-05",
+      "max_cell": {
+        "id": "c6.55N3.05E",
+        "lon": 3.05,
+        "lat": 6.55,
+        "place": "Ijanikin"
+      },
+      "max_cell_total_mm": 75.58,
+      "max_peak_mm_h": 29.46,
+      "cells_over_threshold": 3,
+      "known_event_id": null
+    },
+    {
+      "rank": 237,
+      "start": "2023-08-01",
+      "end": "2023-08-01",
+      "max_cell": {
+        "id": "c6.65N4.25E",
+        "lon": 4.25,
+        "lat": 6.65,
+        "place": "Epe"
+      },
+      "max_cell_total_mm": 75.34,
+      "max_peak_mm_h": 36.98,
+      "cells_over_threshold": 19,
+      "known_event_id": null
+    },
+    {
+      "rank": 239,
+      "start": "2010-11-20",
+      "end": "2010-11-20",
+      "max_cell": {
+        "id": "c6.55N4.35E",
+        "lon": 4.35,
+        "lat": 6.55,
+        "place": "Epe"
+      },
+      "max_cell_total_mm": 74.98,
+      "max_peak_mm_h": 29.29,
+      "cells_over_threshold": 7,
+      "known_event_id": null
+    },
+    {
+      "rank": 240,
+      "start": "2020-04-22",
+      "end": "2020-04-22",
+      "max_cell": {
+        "id": "c6.65N3.25E",
+        "lon": 3.25,
+        "lat": 6.65,
+        "place": "Alimosho / Ipaja"
+      },
+      "max_cell_total_mm": 74.9,
+      "max_peak_mm_h": 23.35,
+      "cells_over_threshold": 5,
+      "known_event_id": null
+    },
+    {
+      "rank": 241,
+      "start": "2009-07-08",
+      "end": "2009-07-08",
+      "max_cell": {
+        "id": "c6.45N2.75E",
+        "lon": 2.75,
+        "lat": 6.45,
+        "place": "Seme border"
+      },
+      "max_cell_total_mm": 74.59,
+      "max_peak_mm_h": 24.09,
+      "cells_over_threshold": 2,
+      "known_event_id": null
+    },
+    {
+      "rank": 242,
+      "start": "2016-10-02",
+      "end": "2016-10-02",
+      "max_cell": {
+        "id": "c6.45N2.75E",
+        "lon": 2.75,
+        "lat": 6.45,
+        "place": "Seme border"
+      },
+      "max_cell_total_mm": 74.53,
+      "max_peak_mm_h": 17.56,
+      "cells_over_threshold": 3,
+      "known_event_id": null
+    },
+    {
+      "rank": 244,
+      "start": "2006-05-13",
+      "end": "2006-05-13",
+      "max_cell": {
+        "id": "c6.75N3.45E",
+        "lon": 3.45,
+        "lat": 6.75,
+        "place": "Mowe / Ibafo"
+      },
+      "max_cell_total_mm": 74.25,
+      "max_peak_mm_h": 41.52,
+      "cells_over_threshold": 4,
+      "known_event_id": null
+    },
+    {
+      "rank": 247,
+      "start": "2010-07-10",
+      "end": "2010-07-10",
+      "max_cell": {
+        "id": "c6.45N2.75E",
+        "lon": 2.75,
+        "lat": 6.45,
+        "place": "Seme border"
+      },
+      "max_cell_total_mm": 73.77,
+      "max_peak_mm_h": 18.03,
+      "cells_over_threshold": 11,
+      "known_event_id": null
+    },
+    {
+      "rank": 248,
+      "start": "2009-06-15",
+      "end": "2009-06-15",
+      "max_cell": {
+        "id": "c6.65N4.25E",
+        "lon": 4.25,
+        "lat": 6.65,
+        "place": "Epe"
+      },
+      "max_cell_total_mm": 73.66,
+      "max_peak_mm_h": 35.63,
+      "cells_over_threshold": 38,
+      "known_event_id": null
+    },
+    {
+      "rank": 249,
+      "start": "2012-06-17",
+      "end": "2012-06-17",
+      "max_cell": {
+        "id": "c6.65N2.95E",
+        "lon": 2.95,
+        "lat": 6.65,
+        "place": "Badagry"
+      },
+      "max_cell_total_mm": 73.62,
+      "max_peak_mm_h": 25.28,
+      "cells_over_threshold": 2,
+      "known_event_id": null
+    },
+    {
+      "rank": 250,
+      "start": "2006-03-15",
+      "end": "2006-03-15",
+      "max_cell": {
+        "id": "c6.65N3.05E",
+        "lon": 3.05,
+        "lat": 6.65,
+        "place": "Ijanikin"
+      },
+      "max_cell_total_mm": 73.41,
+      "max_peak_mm_h": 24.54,
+      "cells_over_threshold": 6,
+      "known_event_id": null
+    },
+    {
+      "rank": 258,
+      "start": "2013-08-29",
+      "end": "2013-08-29",
+      "max_cell": {
+        "id": "c6.55N4.35E",
+        "lon": 4.35,
+        "lat": 6.55,
+        "place": "Epe"
+      },
+      "max_cell_total_mm": 71.97,
+      "max_peak_mm_h": 28.15,
+      "cells_over_threshold": 18,
+      "known_event_id": null
+    },
+    {
+      "rank": 260,
+      "start": "2009-08-20",
+      "end": "2009-08-20",
+      "max_cell": {
+        "id": "c6.75N4.05E",
+        "lon": 4.05,
+        "lat": 6.75,
+        "place": "Agbowa-Ikosi"
+      },
+      "max_cell_total_mm": 71.93,
+      "max_peak_mm_h": 13.38,
+      "cells_over_threshold": 6,
+      "known_event_id": null
+    },
+    {
+      "rank": 262,
+      "start": "2024-04-30",
+      "end": "2024-04-30",
+      "max_cell": {
+        "id": "c6.65N4.05E",
+        "lon": 4.05,
+        "lat": 6.65,
+        "place": "Epe"
+      },
+      "max_cell_total_mm": 71.56,
+      "max_peak_mm_h": 28.44,
+      "cells_over_threshold": 3,
+      "known_event_id": null
+    },
+    {
+      "rank": 263,
+      "start": "2008-06-17",
+      "end": "2008-06-17",
+      "max_cell": {
+        "id": "c6.45N3.75E",
+        "lon": 3.75,
+        "lat": 6.45,
+        "place": "Sangotedo"
+      },
+      "max_cell_total_mm": 71.52,
+      "max_peak_mm_h": 24.01,
+      "cells_over_threshold": 1,
+      "known_event_id": null
+    },
+    {
+      "rank": 264,
+      "start": "2013-04-26",
+      "end": "2013-04-26",
+      "max_cell": {
+        "id": "c6.45N2.75E",
+        "lon": 2.75,
+        "lat": 6.45,
+        "place": "Seme border"
+      },
+      "max_cell_total_mm": 71.33,
+      "max_peak_mm_h": 39.26,
+      "cells_over_threshold": 15,
+      "known_event_id": null
+    },
+    {
+      "rank": 265,
+      "start": "2010-09-18",
+      "end": "2010-09-19",
+      "max_cell": {
+        "id": "c6.65N4.35E",
+        "lon": 4.35,
+        "lat": 6.65,
+        "place": "Epe"
+      },
+      "max_cell_total_mm": 71.31,
+      "max_peak_mm_h": 27.81,
+      "cells_over_threshold": 2,
+      "known_event_id": null
+    },
+    {
+      "rank": 269,
+      "start": "2012-05-19",
+      "end": "2012-05-19",
+      "max_cell": {
+        "id": "c6.55N4.35E",
+        "lon": 4.35,
+        "lat": 6.55,
+        "place": "Epe"
+      },
+      "max_cell_total_mm": 70.96,
+      "max_peak_mm_h": 24.32,
+      "cells_over_threshold": 2,
+      "known_event_id": null
+    },
+    {
+      "rank": 270,
+      "start": "2007-09-16",
+      "end": "2007-09-16",
+      "max_cell": {
+        "id": "c6.75N3.55E",
+        "lon": 3.55,
+        "lat": 6.75,
+        "place": "Ikorodu"
+      },
+      "max_cell_total_mm": 70.86,
+      "max_peak_mm_h": 19.16,
+      "cells_over_threshold": 5,
+      "known_event_id": null
+    },
+    {
+      "rank": 271,
+      "start": "2012-02-18",
+      "end": "2012-02-18",
+      "max_cell": {
+        "id": "c6.75N3.85E",
+        "lon": 3.85,
+        "lat": 6.75,
+        "place": "Agbowa-Ikosi"
+      },
+      "max_cell_total_mm": 70.81,
+      "max_peak_mm_h": 24.14,
+      "cells_over_threshold": 4,
+      "known_event_id": null
+    },
+    {
+      "rank": 274,
+      "start": "2022-04-18",
+      "end": "2022-04-18",
+      "max_cell": {
+        "id": "c6.75N2.75E",
+        "lon": 2.75,
+        "lat": 6.75,
+        "place": "Seme border"
+      },
+      "max_cell_total_mm": 70.52,
+      "max_peak_mm_h": 23.83,
+      "cells_over_threshold": 12,
+      "known_event_id": null
+    },
+    {
+      "rank": 275,
+      "start": "2003-06-01",
+      "end": "2003-06-01",
+      "max_cell": {
+        "id": "c6.55N3.25E",
+        "lon": 3.25,
+        "lat": 6.55,
+        "place": "Igando"
+      },
+      "max_cell_total_mm": 70.43,
+      "max_peak_mm_h": 28.92,
+      "cells_over_threshold": 3,
+      "known_event_id": null
+    },
+    {
+      "rank": 276,
+      "start": "2017-05-16",
+      "end": "2017-05-16",
+      "max_cell": {
+        "id": "c6.45N4.25E",
+        "lon": 4.25,
+        "lat": 6.45,
+        "place": "Lekki Free Zone"
+      },
+      "max_cell_total_mm": 70.09,
+      "max_peak_mm_h": 11.68,
+      "cells_over_threshold": 5,
+      "known_event_id": null
+    },
+    {
+      "rank": 278,
+      "start": "2008-08-29",
+      "end": "2008-08-29",
+      "max_cell": {
+        "id": "c6.45N4.35E",
+        "lon": 4.35,
+        "lat": 6.45,
+        "place": "Epe"
+      },
+      "max_cell_total_mm": 69.76,
+      "max_peak_mm_h": 11.94,
+      "cells_over_threshold": 5,
+      "known_event_id": null
+    },
+    {
+      "rank": 279,
+      "start": "2007-09-04",
+      "end": "2007-09-04",
+      "max_cell": {
+        "id": "c6.45N4.35E",
+        "lon": 4.35,
+        "lat": 6.45,
+        "place": "Epe"
+      },
+      "max_cell_total_mm": 69.62,
+      "max_peak_mm_h": 28.73,
+      "cells_over_threshold": 9,
+      "known_event_id": null
+    },
+    {
+      "rank": 285,
+      "start": "2018-03-30",
+      "end": "2018-03-30",
+      "max_cell": {
+        "id": "c6.45N3.05E",
+        "lon": 3.05,
+        "lat": 6.45,
+        "place": "Ijanikin"
+      },
+      "max_cell_total_mm": 69.38,
+      "max_peak_mm_h": 25.83,
+      "cells_over_threshold": 12,
+      "known_event_id": null
+    },
+    {
+      "rank": 286,
+      "start": "2004-06-20",
+      "end": "2004-06-20",
+      "max_cell": {
+        "id": "c6.45N4.35E",
+        "lon": 4.35,
+        "lat": 6.45,
+        "place": "Epe"
+      },
+      "max_cell_total_mm": 69.27,
+      "max_peak_mm_h": 29.38,
+      "cells_over_threshold": 2,
+      "known_event_id": null
+    },
+    {
+      "rank": 289,
+      "start": "2016-05-29",
+      "end": "2016-05-29",
+      "max_cell": {
+        "id": "c6.55N3.65E",
+        "lon": 3.65,
+        "lat": 6.55,
+        "place": "Sangotedo"
+      },
+      "max_cell_total_mm": 69.03,
+      "max_peak_mm_h": 40.08,
+      "cells_over_threshold": 7,
+      "known_event_id": null
+    },
+    {
+      "rank": 290,
+      "start": "2001-07-15",
+      "end": "2001-07-15",
+      "max_cell": {
+        "id": "c6.55N4.35E",
+        "lon": 4.35,
+        "lat": 6.55,
+        "place": "Epe"
+      },
+      "max_cell_total_mm": 69.02,
+      "max_peak_mm_h": 19.06,
+      "cells_over_threshold": 5,
+      "known_event_id": null
+    },
+    {
+      "rank": 291,
+      "start": "2010-06-06",
+      "end": "2010-06-06",
+      "max_cell": {
+        "id": "c6.75N3.25E",
+        "lon": 3.25,
+        "lat": 6.75,
+        "place": "Agege"
+      },
+      "max_cell_total_mm": 68.98,
+      "max_peak_mm_h": 43.7,
+      "cells_over_threshold": 9,
+      "known_event_id": null
+    },
+    {
+      "rank": 292,
+      "start": "2010-07-01",
+      "end": "2010-07-01",
+      "max_cell": {
+        "id": "c6.45N4.35E",
+        "lon": 4.35,
+        "lat": 6.45,
+        "place": "Epe"
+      },
+      "max_cell_total_mm": 68.98,
+      "max_peak_mm_h": 23.78,
+      "cells_over_threshold": 3,
+      "known_event_id": null
+    },
+    {
+      "rank": 293,
+      "start": "2003-09-23",
+      "end": "2003-09-23",
+      "max_cell": {
+        "id": "c6.55N3.15E",
+        "lon": 3.15,
+        "lat": 6.55,
+        "place": "Ijanikin"
+      },
+      "max_cell_total_mm": 68.83,
+      "max_peak_mm_h": 37.77,
+      "cells_over_threshold": 10,
+      "known_event_id": null
+    },
+    {
+      "rank": 298,
+      "start": "2010-06-15",
+      "end": "2010-06-15",
+      "max_cell": {
+        "id": "c6.65N4.35E",
+        "lon": 4.35,
+        "lat": 6.65,
+        "place": "Epe"
+      },
+      "max_cell_total_mm": 68.46,
+      "max_peak_mm_h": 31.19,
+      "cells_over_threshold": 7,
+      "known_event_id": null
+    },
+    {
+      "rank": 300,
+      "start": "2011-10-18",
+      "end": "2011-10-18",
+      "max_cell": {
+        "id": "c6.65N4.35E",
+        "lon": 4.35,
+        "lat": 6.65,
+        "place": "Epe"
+      },
+      "max_cell_total_mm": 68.45,
+      "max_peak_mm_h": 23.1,
+      "cells_over_threshold": 5,
+      "known_event_id": null
+    },
+    {
+      "rank": 301,
+      "start": "2000-10-09",
+      "end": "2000-10-09",
+      "max_cell": {
+        "id": "c6.55N4.05E",
+        "lon": 4.05,
+        "lat": 6.55,
+        "place": "Epe"
+      },
+      "max_cell_total_mm": 68.39,
+      "max_peak_mm_h": 24.55,
+      "cells_over_threshold": 7,
+      "known_event_id": null
+    },
+    {
+      "rank": 302,
+      "start": "2005-07-09",
+      "end": "2005-07-09",
+      "max_cell": {
+        "id": "c6.45N4.25E",
+        "lon": 4.25,
+        "lat": 6.45,
+        "place": "Lekki Free Zone"
+      },
+      "max_cell_total_mm": 68.37,
+      "max_peak_mm_h": 29.85,
+      "cells_over_threshold": 7,
+      "known_event_id": null
+    },
+    {
+      "rank": 304,
+      "start": "2026-10-13",
+      "end": "2026-10-13",
+      "max_cell": {
+        "id": "c6.55N4.05E",
+        "lon": 4.05,
+        "lat": 6.55,
+        "place": "Epe"
+      },
+      "max_cell_total_mm": 68.36,
+      "max_peak_mm_h": 34.72,
+      "cells_over_threshold": 4,
+      "known_event_id": null
+    },
+    {
+      "rank": 312,
+      "start": "2011-02-18",
+      "end": "2011-02-19",
+      "max_cell": {
+        "id": "c6.45N2.95E",
+        "lon": 2.95,
+        "lat": 6.45,
+        "place": "Badagry"
+      },
+      "max_cell_total_mm": 67.42,
+      "max_peak_mm_h": 41.72,
+      "cells_over_threshold": 8,
+      "known_event_id": null
+    },
+    {
+      "rank": 313,
+      "start": "2016-11-03",
+      "end": "2016-11-03",
+      "max_cell": {
+        "id": "c6.75N4.15E",
+        "lon": 4.15,
+        "lat": 6.75,
+        "place": "Epe"
+      },
+      "max_cell_total_mm": 67.21,
+      "max_peak_mm_h": 33.44,
+      "cells_over_threshold": 3,
+      "known_event_id": null
+    },
+    {
+      "rank": 317,
+      "start": "2023-07-29",
+      "end": "2023-07-29",
+      "max_cell": {
+        "id": "c6.55N4.05E",
+        "lon": 4.05,
+        "lat": 6.55,
+        "place": "Epe"
+      },
+      "max_cell_total_mm": 66.96,
+      "max_peak_mm_h": 16.11,
+      "cells_over_threshold": 4,
+      "known_event_id": null
+    },
+    {
+      "rank": 323,
+      "start": "2006-06-07",
+      "end": "2006-06-07",
+      "max_cell": {
+        "id": "c6.75N2.95E",
+        "lon": 2.95,
+        "lat": 6.75,
+        "place": "Badagry"
+      },
+      "max_cell_total_mm": 66.49,
+      "max_peak_mm_h": 44.96,
+      "cells_over_threshold": 3,
+      "known_event_id": null
+    },
+    {
+      "rank": 325,
+      "start": "2011-10-22",
+      "end": "2011-10-22",
+      "max_cell": {
+        "id": "c6.45N2.85E",
+        "lon": 2.85,
+        "lat": 6.45,
+        "place": "Badagry"
+      },
+      "max_cell_total_mm": 66.41,
+      "max_peak_mm_h": 31.0,
+      "cells_over_threshold": 26,
+      "known_event_id": null
+    },
+    {
+      "rank": 326,
+      "start": "2014-09-30",
+      "end": "2014-09-30",
+      "max_cell": {
+        "id": "c6.65N2.85E",
+        "lon": 2.85,
+        "lat": 6.65,
+        "place": "Badagry"
+      },
+      "max_cell_total_mm": 66.41,
+      "max_peak_mm_h": 26.83,
+      "cells_over_threshold": 12,
+      "known_event_id": null
+    },
+    {
+      "rank": 327,
+      "start": "2011-04-25",
+      "end": "2011-04-25",
+      "max_cell": {
+        "id": "c6.75N2.75E",
+        "lon": 2.75,
+        "lat": 6.75,
+        "place": "Seme border"
+      },
+      "max_cell_total_mm": 66.39,
+      "max_peak_mm_h": 23.87,
+      "cells_over_threshold": 3,
+      "known_event_id": null
+    },
+    {
+      "rank": 328,
+      "start": "2006-07-06",
+      "end": "2006-07-06",
+      "max_cell": {
+        "id": "c6.55N4.15E",
+        "lon": 4.15,
+        "lat": 6.55,
+        "place": "Epe"
+      },
+      "max_cell_total_mm": 66.38,
+      "max_peak_mm_h": 13.08,
+      "cells_over_threshold": 11,
+      "known_event_id": null
+    },
+    {
+      "rank": 329,
+      "start": "2005-10-08",
+      "end": "2005-10-08",
+      "max_cell": {
+        "id": "c6.65N2.85E",
+        "lon": 2.85,
+        "lat": 6.65,
+        "place": "Badagry"
+      },
+      "max_cell_total_mm": 66.32,
+      "max_peak_mm_h": 20.26,
+      "cells_over_threshold": 1,
+      "known_event_id": null
+    },
+    {
+      "rank": 330,
+      "start": "2013-04-07",
+      "end": "2013-04-07",
+      "max_cell": {
+        "id": "c6.65N4.35E",
+        "lon": 4.35,
+        "lat": 6.65,
+        "place": "Epe"
+      },
+      "max_cell_total_mm": 66.14,
+      "max_peak_mm_h": 30.1,
+      "cells_over_threshold": 2,
+      "known_event_id": null
+    },
+    {
+      "rank": 331,
+      "start": "2019-10-15",
+      "end": "2019-10-15",
+      "max_cell": {
+        "id": "c6.55N4.05E",
+        "lon": 4.05,
+        "lat": 6.55,
+        "place": "Epe"
+      },
+      "max_cell_total_mm": 66.04,
+      "max_peak_mm_h": 39.3,
+      "cells_over_threshold": 5,
+      "known_event_id": null
+    },
+    {
+      "rank": 334,
+      "start": "2012-04-19",
+      "end": "2012-04-19",
+      "max_cell": {
+        "id": "c6.65N4.35E",
+        "lon": 4.35,
+        "lat": 6.65,
+        "place": "Epe"
+      },
+      "max_cell_total_mm": 65.83,
+      "max_peak_mm_h": 33.12,
+      "cells_over_threshold": 8,
+      "known_event_id": null
+    },
+    {
+      "rank": 335,
+      "start": "2025-10-10",
+      "end": "2025-10-10",
+      "max_cell": {
+        "id": "c6.55N4.05E",
+        "lon": 4.05,
+        "lat": 6.55,
+        "place": "Epe"
+      },
+      "max_cell_total_mm": 65.65,
+      "max_peak_mm_h": 31.29,
+      "cells_over_threshold": 5,
+      "known_event_id": null
+    },
+    {
+      "rank": 338,
+      "start": "2003-07-16",
+      "end": "2003-07-16",
+      "max_cell": {
+        "id": "c6.45N2.95E",
+        "lon": 2.95,
+        "lat": 6.45,
+        "place": "Badagry"
+      },
+      "max_cell_total_mm": 65.62,
+      "max_peak_mm_h": 40.18,
+      "cells_over_threshold": 10,
+      "known_event_id": null
+    },
+    {
+      "rank": 339,
+      "start": "2017-10-04",
+      "end": "2017-10-04",
+      "max_cell": {
+        "id": "c6.45N3.25E",
+        "lon": 3.25,
+        "lat": 6.45,
+        "place": "Festac Town"
+      },
+      "max_cell_total_mm": 65.34,
+      "max_peak_mm_h": 29.17,
+      "cells_over_threshold": 1,
+      "known_event_id": null
+    },
+    {
+      "rank": 341,
+      "start": "2023-10-30",
+      "end": "2023-10-31",
+      "max_cell": {
+        "id": "c6.55N3.85E",
+        "lon": 3.85,
+        "lat": 6.55,
+        "place": "Ibeju"
+      },
+      "max_cell_total_mm": 65.0,
+      "max_peak_mm_h": 34.75,
+      "cells_over_threshold": 4,
+      "known_event_id": null
+    },
+    {
+      "rank": 344,
+      "start": "2005-06-30",
+      "end": "2005-06-30",
+      "max_cell": {
+        "id": "c6.45N4.25E",
+        "lon": 4.25,
+        "lat": 6.45,
+        "place": "Lekki Free Zone"
+      },
+      "max_cell_total_mm": 64.65,
+      "max_peak_mm_h": 13.33,
+      "cells_over_threshold": 2,
+      "known_event_id": null
+    },
+    {
+      "rank": 345,
+      "start": "2023-05-22",
+      "end": "2023-05-22",
+      "max_cell": {
+        "id": "c6.75N3.45E",
+        "lon": 3.45,
+        "lat": 6.75,
+        "place": "Mowe / Ibafo"
+      },
+      "max_cell_total_mm": 64.53,
+      "max_peak_mm_h": 24.13,
+      "cells_over_threshold": 2,
+      "known_event_id": null
+    },
+    {
+      "rank": 347,
+      "start": "2011-07-01",
+      "end": "2011-07-01",
+      "max_cell": {
+        "id": "c6.45N3.25E",
+        "lon": 3.25,
+        "lat": 6.45,
+        "place": "Festac Town"
+      },
+      "max_cell_total_mm": 64.17,
+      "max_peak_mm_h": 29.12,
+      "cells_over_threshold": 3,
+      "known_event_id": null
+    },
+    {
+      "rank": 348,
+      "start": "2019-09-19",
+      "end": "2019-09-19",
+      "max_cell": {
+        "id": "c6.55N4.25E",
+        "lon": 4.25,
+        "lat": 6.55,
+        "place": "Epe"
+      },
+      "max_cell_total_mm": 63.96,
+      "max_peak_mm_h": 22.1,
+      "cells_over_threshold": 6,
+      "known_event_id": null
+    },
+    {
+      "rank": 349,
+      "start": "2014-10-18",
+      "end": "2014-10-18",
+      "max_cell": {
+        "id": "c6.45N4.35E",
+        "lon": 4.35,
+        "lat": 6.45,
+        "place": "Epe"
+      },
+      "max_cell_total_mm": 63.84,
+      "max_peak_mm_h": 13.77,
+      "cells_over_threshold": 12,
+      "known_event_id": null
+    },
+    {
+      "rank": 350,
+      "start": "2019-05-26",
+      "end": "2019-05-26",
+      "max_cell": {
+        "id": "c6.45N4.35E",
+        "lon": 4.35,
+        "lat": 6.45,
+        "place": "Epe"
+      },
+      "max_cell_total_mm": 63.66,
+      "max_peak_mm_h": 22.4,
+      "cells_over_threshold": 3,
+      "known_event_id": null
+    },
+    {
+      "rank": 351,
+      "start": "2015-06-28",
+      "end": "2015-06-28",
+      "max_cell": {
+        "id": "c6.65N3.95E",
+        "lon": 3.95,
+        "lat": 6.65,
+        "place": "Agbowa-Ikosi"
+      },
+      "max_cell_total_mm": 63.63,
+      "max_peak_mm_h": 16.56,
+      "cells_over_threshold": 7,
+      "known_event_id": null
+    },
+    {
+      "rank": 352,
+      "start": "2026-05-28",
+      "end": "2026-05-28",
+      "max_cell": {
+        "id": "c6.65N3.75E",
+        "lon": 3.75,
+        "lat": 6.65,
+        "place": "Imota"
+      },
+      "max_cell_total_mm": 63.56,
+      "max_peak_mm_h": 14.91,
+      "cells_over_threshold": 7,
+      "known_event_id": null
+    },
+    {
+      "rank": 353,
+      "start": "2006-05-02",
+      "end": "2006-05-02",
+      "max_cell": {
+        "id": "c6.55N4.35E",
+        "lon": 4.35,
+        "lat": 6.55,
+        "place": "Epe"
+      },
+      "max_cell_total_mm": 63.35,
+      "max_peak_mm_h": 34.0,
+      "cells_over_threshold": 2,
+      "known_event_id": null
+    },
+    {
+      "rank": 354,
+      "start": "2022-09-15",
+      "end": "2022-09-15",
+      "max_cell": {
+        "id": "c6.75N2.85E",
+        "lon": 2.85,
+        "lat": 6.75,
+        "place": "Badagry"
+      },
+      "max_cell_total_mm": 63.13,
+      "max_peak_mm_h": 30.32,
+      "cells_over_threshold": 1,
+      "known_event_id": null
+    },
+    {
+      "rank": 358,
+      "start": "2022-09-12",
+      "end": "2022-09-12",
+      "max_cell": {
+        "id": "c6.75N2.95E",
+        "lon": 2.95,
+        "lat": 6.75,
+        "place": "Badagry"
+      },
+      "max_cell_total_mm": 62.86,
+      "max_peak_mm_h": 21.45,
+      "cells_over_threshold": 11,
+      "known_event_id": null
+    },
+    {
+      "rank": 359,
+      "start": "2012-07-15",
+      "end": "2012-07-15",
+      "max_cell": {
+        "id": "c6.75N3.75E",
+        "lon": 3.75,
+        "lat": 6.75,
+        "place": "Ota"
+      },
+      "max_cell_total_mm": 62.65,
+      "max_peak_mm_h": 25.85,
+      "cells_over_threshold": 3,
+      "known_event_id": null
+    },
+    {
+      "rank": 360,
+      "start": "2008-07-18",
+      "end": "2008-07-18",
+      "max_cell": {
+        "id": "c6.75N3.85E",
+        "lon": 3.85,
+        "lat": 6.75,
+        "place": "Agbowa-Ikosi"
+      },
+      "max_cell_total_mm": 62.61,
+      "max_peak_mm_h": 17.44,
+      "cells_over_threshold": 12,
+      "known_event_id": null
+    },
+    {
+      "rank": 362,
+      "start": "2007-10-23",
+      "end": "2007-10-23",
+      "max_cell": {
+        "id": "c6.75N2.75E",
+        "lon": 2.75,
+        "lat": 6.75,
+        "place": "Seme border"
+      },
+      "max_cell_total_mm": 62.4,
+      "max_peak_mm_h": 44.72,
+      "cells_over_threshold": 8,
+      "known_event_id": null
+    },
+    {
+      "rank": 363,
+      "start": "2000-09-15",
+      "end": "2000-09-15",
+      "max_cell": {
+        "id": "c6.45N3.85E",
+        "lon": 3.85,
+        "lat": 6.45,
+        "place": "Ibeju"
+      },
+      "max_cell_total_mm": 61.85,
+      "max_peak_mm_h": 17.78,
+      "cells_over_threshold": 3,
+      "known_event_id": null
+    },
+    {
+      "rank": 365,
+      "start": "2002-09-05",
+      "end": "2002-09-05",
+      "max_cell": {
+        "id": "c6.75N4.05E",
+        "lon": 4.05,
+        "lat": 6.75,
+        "place": "Agbowa-Ikosi"
+      },
+      "max_cell_total_mm": 61.75,
+      "max_peak_mm_h": 18.97,
+      "cells_over_threshold": 1,
+      "known_event_id": null
+    },
+    {
+      "rank": 366,
+      "start": "2017-06-22",
+      "end": "2017-06-22",
+      "max_cell": {
+        "id": "c6.65N2.95E",
+        "lon": 2.95,
+        "lat": 6.65,
+        "place": "Badagry"
+      },
+      "max_cell_total_mm": 61.68,
+      "max_peak_mm_h": 22.42,
+      "cells_over_threshold": 1,
+      "known_event_id": null
+    },
+    {
+      "rank": 367,
+      "start": "2020-09-22",
+      "end": "2020-09-22",
+      "max_cell": {
+        "id": "c6.45N4.35E",
+        "lon": 4.35,
+        "lat": 6.45,
+        "place": "Epe"
+      },
+      "max_cell_total_mm": 61.68,
+      "max_peak_mm_h": 12.43,
+      "cells_over_threshold": 2,
+      "known_event_id": null
+    },
+    {
+      "rank": 369,
+      "start": "2004-08-28",
+      "end": "2004-08-28",
+      "max_cell": {
+        "id": "c6.75N4.05E",
+        "lon": 4.05,
+        "lat": 6.75,
+        "place": "Agbowa-Ikosi"
+      },
+      "max_cell_total_mm": 61.32,
+      "max_peak_mm_h": 28.74,
+      "cells_over_threshold": 10,
+      "known_event_id": null
+    },
+    {
+      "rank": 370,
+      "start": "2007-10-19",
+      "end": "2007-10-19",
+      "max_cell": {
+        "id": "c6.65N3.75E",
+        "lon": 3.75,
+        "lat": 6.65,
+        "place": "Imota"
+      },
+      "max_cell_total_mm": 61.27,
+      "max_peak_mm_h": 37.88,
+      "cells_over_threshold": 11,
+      "known_event_id": null
+    },
+    {
+      "rank": 371,
+      "start": "2026-06-15",
+      "end": "2026-06-15",
+      "max_cell": {
+        "id": "c6.75N3.45E",
+        "lon": 3.45,
+        "lat": 6.75,
+        "place": "Mowe / Ibafo"
+      },
+      "max_cell_total_mm": 61.27,
+      "max_peak_mm_h": 21.36,
+      "cells_over_threshold": 2,
+      "known_event_id": null
+    },
+    {
+      "rank": 373,
+      "start": "2012-10-06",
+      "end": "2012-10-06",
+      "max_cell": {
+        "id": "c6.45N4.15E",
+        "lon": 4.15,
+        "lat": 6.45,
+        "place": "Lekki Free Zone"
+      },
+      "max_cell_total_mm": 61.19,
+      "max_peak_mm_h": 31.29,
+      "cells_over_threshold": 4,
+      "known_event_id": null
+    },
+    {
+      "rank": 374,
+      "start": "2022-08-26",
+      "end": "2022-08-26",
+      "max_cell": {
+        "id": "c6.45N4.35E",
+        "lon": 4.35,
+        "lat": 6.45,
+        "place": "Epe"
+      },
+      "max_cell_total_mm": 61.16,
+      "max_peak_mm_h": 34.84,
+      "cells_over_threshold": 3,
+      "known_event_id": null
+    },
+    {
+      "rank": 375,
+      "start": "2015-05-31",
+      "end": "2015-05-31",
+      "max_cell": {
+        "id": "c6.45N4.25E",
+        "lon": 4.25,
+        "lat": 6.45,
+        "place": "Lekki Free Zone"
+      },
+      "max_cell_total_mm": 61.08,
+      "max_peak_mm_h": 30.42,
+      "cells_over_threshold": 5,
+      "known_event_id": null
+    },
+    {
+      "rank": 377,
+      "start": "2018-09-10",
+      "end": "2018-09-10",
+      "max_cell": {
+        "id": "c6.75N2.85E",
+        "lon": 2.85,
+        "lat": 6.75,
+        "place": "Badagry"
+      },
+      "max_cell_total_mm": 60.82,
+      "max_peak_mm_h": 18.46,
+      "cells_over_threshold": 3,
+      "known_event_id": null
+    },
+    {
+      "rank": 378,
+      "start": "2010-04-24",
+      "end": "2010-04-24",
+      "max_cell": {
+        "id": "c6.45N4.15E",
+        "lon": 4.15,
+        "lat": 6.45,
+        "place": "Lekki Free Zone"
+      },
+      "max_cell_total_mm": 60.72,
+      "max_peak_mm_h": 29.61,
+      "cells_over_threshold": 4,
+      "known_event_id": null
+    },
+    {
+      "rank": 379,
+      "start": "2019-10-20",
+      "end": "2019-10-20",
+      "max_cell": {
+        "id": "c6.75N2.75E",
+        "lon": 2.75,
+        "lat": 6.75,
+        "place": "Seme border"
+      },
+      "max_cell_total_mm": 60.72,
+      "max_peak_mm_h": 18.17,
+      "cells_over_threshold": 7,
+      "known_event_id": null
+    },
+    {
+      "rank": 382,
+      "start": "2006-05-07",
+      "end": "2006-05-07",
+      "max_cell": {
+        "id": "c6.75N2.95E",
+        "lon": 2.95,
+        "lat": 6.75,
+        "place": "Badagry"
+      },
+      "max_cell_total_mm": 60.49,
+      "max_peak_mm_h": 62.56,
+      "cells_over_threshold": 7,
+      "known_event_id": null
+    },
+    {
+      "rank": 383,
+      "start": "2009-04-26",
+      "end": "2009-04-26",
+      "max_cell": {
+        "id": "c6.75N3.95E",
+        "lon": 3.95,
+        "lat": 6.75,
+        "place": "Agbowa-Ikosi"
+      },
+      "max_cell_total_mm": 60.33,
+      "max_peak_mm_h": 44.49,
+      "cells_over_threshold": 11,
+      "known_event_id": null
+    },
+    {
+      "rank": 384,
+      "start": "2017-04-12",
+      "end": "2017-04-12",
+      "max_cell": {
+        "id": "c6.45N4.35E",
+        "lon": 4.35,
+        "lat": 6.45,
+        "place": "Epe"
+      },
+      "max_cell_total_mm": 60.33,
+      "max_peak_mm_h": 20.55,
+      "cells_over_threshold": 1,
+      "known_event_id": null
+    },
+    {
+      "rank": 386,
+      "start": "2020-09-12",
+      "end": "2020-09-12",
+      "max_cell": {
+        "id": "c6.45N4.15E",
+        "lon": 4.15,
+        "lat": 6.45,
+        "place": "Lekki Free Zone"
+      },
+      "max_cell_total_mm": 60.17,
+      "max_peak_mm_h": 26.99,
+      "cells_over_threshold": 6,
+      "known_event_id": null
+    },
+    {
+      "rank": 387,
+      "start": "2015-03-13",
+      "end": "2015-03-13",
+      "max_cell": {
+        "id": "c6.55N2.95E",
+        "lon": 2.95,
+        "lat": 6.55,
+        "place": "Badagry"
+      },
+      "max_cell_total_mm": 60.16,
+      "max_peak_mm_h": 23.77,
+      "cells_over_threshold": 3,
+      "known_event_id": null
+    },
+    {
+      "rank": 388,
+      "start": "2011-09-01",
+      "end": "2011-09-01",
+      "max_cell": {
+        "id": "c6.45N4.35E",
+        "lon": 4.35,
+        "lat": 6.45,
+        "place": "Epe"
+      },
+      "max_cell_total_mm": 60.16,
+      "max_peak_mm_h": 8.73,
+      "cells_over_threshold": 1,
+      "known_event_id": null
+    },
+    {
+      "rank": 389,
+      "start": "2014-09-26",
+      "end": "2014-09-26",
+      "max_cell": {
+        "id": "c6.55N4.35E",
+        "lon": 4.35,
+        "lat": 6.55,
+        "place": "Epe"
+      },
+      "max_cell_total_mm": 59.84,
+      "max_peak_mm_h": 18.77,
+      "cells_over_threshold": 4,
+      "known_event_id": null
+    },
+    {
+      "rank": 393,
+      "start": "2022-08-30",
+      "end": "2022-08-30",
+      "max_cell": {
+        "id": "c6.75N3.15E",
+        "lon": 3.15,
+        "lat": 6.75,
+        "place": "Alimosho / Ipaja"
+      },
+      "max_cell_total_mm": 59.49,
+      "max_peak_mm_h": 77.96,
+      "cells_over_threshold": 11,
+      "known_event_id": null
+    },
+    {
+      "rank": 394,
+      "start": "2009-06-13",
+      "end": "2009-06-13",
+      "max_cell": {
+        "id": "c6.65N2.75E",
+        "lon": 2.75,
+        "lat": 6.65,
+        "place": "Seme border"
+      },
+      "max_cell_total_mm": 59.47,
+      "max_peak_mm_h": 19.93,
+      "cells_over_threshold": 2,
+      "known_event_id": null
+    },
+    {
+      "rank": 395,
+      "start": "2023-09-02",
+      "end": "2023-09-02",
+      "max_cell": {
+        "id": "c6.45N3.15E",
+        "lon": 3.15,
+        "lat": 6.45,
+        "place": "Ijanikin"
+      },
+      "max_cell_total_mm": 59.46,
+      "max_peak_mm_h": 31.38,
+      "cells_over_threshold": 7,
+      "known_event_id": null
+    },
+    {
+      "rank": 396,
+      "start": "2025-08-30",
+      "end": "2025-08-30",
+      "max_cell": {
+        "id": "c6.75N4.25E",
+        "lon": 4.25,
+        "lat": 6.75,
+        "place": "Epe"
+      },
+      "max_cell_total_mm": 59.42,
+      "max_peak_mm_h": 13.81,
+      "cells_over_threshold": 3,
+      "known_event_id": null
+    },
+    {
+      "rank": 398,
+      "start": "2003-06-17",
+      "end": "2003-06-17",
+      "max_cell": {
+        "id": "c6.65N4.25E",
+        "lon": 4.25,
+        "lat": 6.65,
+        "place": "Epe"
+      },
+      "max_cell_total_mm": 59.34,
+      "max_peak_mm_h": 22.55,
+      "cells_over_threshold": 3,
+      "known_event_id": null
+    },
+    {
+      "rank": 399,
+      "start": "2013-01-27",
+      "end": "2013-01-27",
+      "max_cell": {
+        "id": "c6.45N3.25E",
+        "lon": 3.25,
+        "lat": 6.45,
+        "place": "Festac Town"
+      },
+      "max_cell_total_mm": 59.33,
+      "max_peak_mm_h": 20.92,
+      "cells_over_threshold": 2,
+      "known_event_id": null
+    },
+    {
+      "rank": 400,
+      "start": "2017-08-03",
+      "end": "2017-08-03",
+      "max_cell": {
+        "id": "c6.45N4.35E",
+        "lon": 4.35,
+        "lat": 6.45,
+        "place": "Epe"
+      },
+      "max_cell_total_mm": 59.33,
+      "max_peak_mm_h": 18.47,
+      "cells_over_threshold": 4,
+      "known_event_id": null
+    },
+    {
+      "rank": 401,
+      "start": "2004-08-06",
+      "end": "2004-08-06",
+      "max_cell": {
+        "id": "c6.55N4.35E",
+        "lon": 4.35,
+        "lat": 6.55,
+        "place": "Epe"
+      },
+      "max_cell_total_mm": 59.29,
+      "max_peak_mm_h": 21.9,
+      "cells_over_threshold": 2,
+      "known_event_id": null
+    },
+    {
+      "rank": 402,
+      "start": "2019-04-13",
+      "end": "2019-04-13",
+      "max_cell": {
+        "id": "c6.75N2.95E",
+        "lon": 2.95,
+        "lat": 6.75,
+        "place": "Badagry"
+      },
+      "max_cell_total_mm": 59.28,
+      "max_peak_mm_h": 16.77,
+      "cells_over_threshold": 2,
+      "known_event_id": null
+    },
+    {
+      "rank": 403,
+      "start": "2005-03-26",
+      "end": "2005-03-26",
+      "max_cell": {
+        "id": "c6.65N2.85E",
+        "lon": 2.85,
+        "lat": 6.65,
+        "place": "Badagry"
+      },
+      "max_cell_total_mm": 59.11,
+      "max_peak_mm_h": 19.73,
+      "cells_over_threshold": 2,
+      "known_event_id": null
+    },
+    {
+      "rank": 404,
+      "start": "2011-04-28",
+      "end": "2011-04-28",
+      "max_cell": {
+        "id": "c6.75N4.35E",
+        "lon": 4.35,
+        "lat": 6.75,
+        "place": "Epe"
+      },
+      "max_cell_total_mm": 58.98,
+      "max_peak_mm_h": 42.52,
+      "cells_over_threshold": 5,
+      "known_event_id": null
+    },
+    {
+      "rank": 405,
+      "start": "2008-10-29",
+      "end": "2008-10-29",
+      "max_cell": {
+        "id": "c6.75N3.85E",
+        "lon": 3.85,
+        "lat": 6.75,
+        "place": "Agbowa-Ikosi"
+      },
+      "max_cell_total_mm": 58.92,
+      "max_peak_mm_h": 31.37,
+      "cells_over_threshold": 2,
+      "known_event_id": null
+    },
+    {
+      "rank": 406,
+      "start": "2025-12-11",
+      "end": "2025-12-11",
+      "max_cell": {
+        "id": "c6.45N3.75E",
+        "lon": 3.75,
+        "lat": 6.45,
+        "place": "Sangotedo"
+      },
+      "max_cell_total_mm": 58.75,
+      "max_peak_mm_h": 18.25,
+      "cells_over_threshold": 2,
+      "known_event_id": null
+    },
+    {
+      "rank": 407,
+      "start": "2026-06-28",
+      "end": "2026-06-28",
+      "max_cell": {
+        "id": "c6.45N4.15E",
+        "lon": 4.15,
+        "lat": 6.45,
+        "place": "Lekki Free Zone"
+      },
+      "max_cell_total_mm": 58.5,
+      "max_peak_mm_h": 24.72,
+      "cells_over_threshold": 2,
+      "known_event_id": null
+    },
+    {
+      "rank": 414,
+      "start": "2005-05-05",
+      "end": "2005-05-05",
+      "max_cell": {
+        "id": "c6.55N2.95E",
+        "lon": 2.95,
+        "lat": 6.55,
+        "place": "Badagry"
+      },
+      "max_cell_total_mm": 58.04,
+      "max_peak_mm_h": 21.49,
+      "cells_over_threshold": 5,
+      "known_event_id": null
+    },
+    {
+      "rank": 417,
+      "start": "2022-07-27",
+      "end": "2022-07-27",
+      "max_cell": {
+        "id": "c6.75N4.35E",
+        "lon": 4.35,
+        "lat": 6.75,
+        "place": "Epe"
+      },
+      "max_cell_total_mm": 57.98,
+      "max_peak_mm_h": 16.41,
+      "cells_over_threshold": 6,
+      "known_event_id": null
+    },
+    {
+      "rank": 418,
+      "start": "2008-03-01",
+      "end": "2008-03-01",
+      "max_cell": {
+        "id": "c6.55N4.35E",
+        "lon": 4.35,
+        "lat": 6.55,
+        "place": "Epe"
+      },
+      "max_cell_total_mm": 57.96,
+      "max_peak_mm_h": 27.32,
+      "cells_over_threshold": 1,
+      "known_event_id": null
+    },
+    {
+      "rank": 419,
+      "start": "2006-10-11",
+      "end": "2006-10-11",
+      "max_cell": {
+        "id": "c6.75N3.45E",
+        "lon": 3.45,
+        "lat": 6.75,
+        "place": "Mowe / Ibafo"
+      },
+      "max_cell_total_mm": 57.9,
+      "max_peak_mm_h": 25.4,
+      "cells_over_threshold": 4,
+      "known_event_id": null
+    },
+    {
+      "rank": 420,
+      "start": "2013-11-11",
+      "end": "2013-11-11",
+      "max_cell": {
+        "id": "c6.75N4.25E",
+        "lon": 4.25,
+        "lat": 6.75,
+        "place": "Epe"
+      },
+      "max_cell_total_mm": 57.84,
+      "max_peak_mm_h": 23.98,
+      "cells_over_threshold": 1,
+      "known_event_id": null
+    },
+    {
+      "rank": 421,
+      "start": "2015-10-08",
+      "end": "2015-10-08",
+      "max_cell": {
+        "id": "c6.65N3.05E",
+        "lon": 3.05,
+        "lat": 6.65,
+        "place": "Ijanikin"
+      },
+      "max_cell_total_mm": 57.84,
+      "max_peak_mm_h": 15.01,
+      "cells_over_threshold": 1,
+      "known_event_id": null
+    },
+    {
+      "rank": 427,
+      "start": "2012-10-15",
+      "end": "2012-10-15",
+      "max_cell": {
+        "id": "c6.55N4.25E",
+        "lon": 4.25,
+        "lat": 6.55,
+        "place": "Epe"
+      },
+      "max_cell_total_mm": 57.68,
+      "max_peak_mm_h": 23.53,
+      "cells_over_threshold": 3,
+      "known_event_id": null
+    },
+    {
+      "rank": 428,
+      "start": "2005-05-18",
+      "end": "2005-05-18",
+      "max_cell": {
+        "id": "c6.45N3.15E",
+        "lon": 3.15,
+        "lat": 6.45,
+        "place": "Ijanikin"
+      },
+      "max_cell_total_mm": 57.65,
+      "max_peak_mm_h": 27.46,
+      "cells_over_threshold": 3,
+      "known_event_id": null
+    },
+    {
+      "rank": 429,
+      "start": "2011-05-09",
+      "end": "2011-05-09",
+      "max_cell": {
+        "id": "c6.75N2.75E",
+        "lon": 2.75,
+        "lat": 6.75,
+        "place": "Seme border"
+      },
+      "max_cell_total_mm": 57.57,
+      "max_peak_mm_h": 22.22,
+      "cells_over_threshold": 2,
+      "known_event_id": null
+    },
+    {
+      "rank": 430,
+      "start": "2003-06-03",
+      "end": "2003-06-04",
+      "max_cell": {
+        "id": "c6.45N4.35E",
+        "lon": 4.35,
+        "lat": 6.45,
+        "place": "Epe"
+      },
+      "max_cell_total_mm": 57.54,
+      "max_peak_mm_h": 24.33,
+      "cells_over_threshold": 3,
+      "known_event_id": null
+    },
+    {
+      "rank": 431,
+      "start": "2020-09-09",
+      "end": "2020-09-09",
+      "max_cell": {
+        "id": "c6.75N3.05E",
+        "lon": 3.05,
+        "lat": 6.75,
+        "place": "Alimosho / Ipaja"
+      },
+      "max_cell_total_mm": 57.43,
+      "max_peak_mm_h": 16.92,
+      "cells_over_threshold": 19,
+      "known_event_id": null
+    },
+    {
+      "rank": 432,
+      "start": "2022-06-03",
+      "end": "2022-06-03",
+      "max_cell": {
+        "id": "c6.45N4.25E",
+        "lon": 4.25,
+        "lat": 6.45,
+        "place": "Lekki Free Zone"
+      },
+      "max_cell_total_mm": 57.33,
+      "max_peak_mm_h": 23.14,
+      "cells_over_threshold": 2,
+      "known_event_id": null
+    },
+    {
+      "rank": 433,
+      "start": "2022-07-11",
+      "end": "2022-07-11",
+      "max_cell": {
+        "id": "c6.45N4.35E",
+        "lon": 4.35,
+        "lat": 6.45,
+        "place": "Epe"
+      },
+      "max_cell_total_mm": 57.25,
+      "max_peak_mm_h": 20.04,
+      "cells_over_threshold": 2,
+      "known_event_id": null
+    },
+    {
+      "rank": 434,
+      "start": "2005-04-14",
+      "end": "2005-04-15",
+      "max_cell": {
+        "id": "c6.75N3.35E",
+        "lon": 3.35,
+        "lat": 6.75,
+        "place": "Mowe / Ibafo"
+      },
+      "max_cell_total_mm": 57.22,
+      "max_peak_mm_h": 40.33,
+      "cells_over_threshold": 7,
+      "known_event_id": null
+    },
+    {
+      "rank": 435,
+      "start": "2003-09-18",
+      "end": "2003-09-18",
+      "max_cell": {
+        "id": "c6.75N2.75E",
+        "lon": 2.75,
+        "lat": 6.75,
+        "place": "Seme border"
+      },
+      "max_cell_total_mm": 57.15,
+      "max_peak_mm_h": 23.71,
+      "cells_over_threshold": 4,
+      "known_event_id": null
+    },
+    {
+      "rank": 437,
+      "start": "2013-05-17",
+      "end": "2013-05-18",
+      "max_cell": {
+        "id": "c6.65N2.95E",
+        "lon": 2.95,
+        "lat": 6.65,
+        "place": "Badagry"
+      },
+      "max_cell_total_mm": 57.0,
+      "max_peak_mm_h": 33.89,
+      "cells_over_threshold": 3,
+      "known_event_id": null
+    },
+    {
+      "rank": 440,
+      "start": "2004-10-10",
+      "end": "2004-10-10",
+      "max_cell": {
+        "id": "c6.45N4.15E",
+        "lon": 4.15,
+        "lat": 6.45,
+        "place": "Lekki Free Zone"
+      },
+      "max_cell_total_mm": 56.8,
+      "max_peak_mm_h": 33.89,
+      "cells_over_threshold": 5,
+      "known_event_id": null
+    },
+    {
+      "rank": 441,
+      "start": "2012-06-02",
+      "end": "2012-06-02",
+      "max_cell": {
+        "id": "c6.65N3.05E",
+        "lon": 3.05,
+        "lat": 6.65,
+        "place": "Ijanikin"
+      },
+      "max_cell_total_mm": 56.69,
+      "max_peak_mm_h": 52.24,
+      "cells_over_threshold": 6,
+      "known_event_id": null
+    },
+    {
+      "rank": 442,
+      "start": "2011-10-24",
+      "end": "2011-10-24",
+      "max_cell": {
+        "id": "c6.55N4.25E",
+        "lon": 4.25,
+        "lat": 6.55,
+        "place": "Epe"
+      },
+      "max_cell_total_mm": 56.68,
+      "max_peak_mm_h": 25.17,
+      "cells_over_threshold": 1,
+      "known_event_id": null
+    },
+    {
+      "rank": 443,
+      "start": "2019-07-01",
+      "end": "2019-07-01",
+      "max_cell": {
+        "id": "c6.45N3.75E",
+        "lon": 3.75,
+        "lat": 6.45,
+        "place": "Sangotedo"
+      },
+      "max_cell_total_mm": 56.59,
+      "max_peak_mm_h": 23.41,
+      "cells_over_threshold": 1,
+      "known_event_id": null
+    },
+    {
+      "rank": 444,
+      "start": "2019-06-15",
+      "end": "2019-06-15",
+      "max_cell": {
+        "id": "c6.75N3.15E",
+        "lon": 3.15,
+        "lat": 6.75,
+        "place": "Alimosho / Ipaja"
+      },
+      "max_cell_total_mm": 56.5,
+      "max_peak_mm_h": 18.64,
+      "cells_over_threshold": 1,
+      "known_event_id": null
+    },
+    {
+      "rank": 445,
+      "start": "2013-05-22",
+      "end": "2013-05-22",
+      "max_cell": {
+        "id": "c6.75N3.05E",
+        "lon": 3.05,
+        "lat": 6.75,
+        "place": "Alimosho / Ipaja"
+      },
+      "max_cell_total_mm": 56.47,
+      "max_peak_mm_h": 31.79,
+      "cells_over_threshold": 3,
+      "known_event_id": null
+    },
+    {
+      "rank": 446,
+      "start": "2023-06-15",
+      "end": "2023-06-15",
+      "max_cell": {
+        "id": "c6.45N3.15E",
+        "lon": 3.15,
+        "lat": 6.45,
+        "place": "Ijanikin"
+      },
+      "max_cell_total_mm": 56.44,
+      "max_peak_mm_h": 23.21,
+      "cells_over_threshold": 3,
+      "known_event_id": null
+    },
+    {
+      "rank": 448,
+      "start": "2018-08-24",
+      "end": "2018-08-25",
+      "max_cell": {
+        "id": "c6.45N4.35E",
+        "lon": 4.35,
+        "lat": 6.45,
+        "place": "Epe"
+      },
+      "max_cell_total_mm": 56.42,
+      "max_peak_mm_h": 32.55,
+      "cells_over_threshold": 2,
+      "known_event_id": null
+    },
+    {
+      "rank": 449,
+      "start": "2001-05-09",
+      "end": "2001-05-09",
+      "max_cell": {
+        "id": "c6.45N4.25E",
+        "lon": 4.25,
+        "lat": 6.45,
+        "place": "Lekki Free Zone"
+      },
+      "max_cell_total_mm": 56.3,
+      "max_peak_mm_h": 28.51,
+      "cells_over_threshold": 4,
+      "known_event_id": null
+    },
+    {
+      "rank": 450,
+      "start": "2010-08-12",
+      "end": "2010-08-12",
+      "max_cell": {
+        "id": "c6.75N4.35E",
+        "lon": 4.35,
+        "lat": 6.75,
+        "place": "Epe"
+      },
+      "max_cell_total_mm": 56.15,
+      "max_peak_mm_h": 21.32,
+      "cells_over_threshold": 3,
+      "known_event_id": null
+    },
+    {
+      "rank": 451,
+      "start": "2017-05-31",
+      "end": "2017-05-31",
+      "max_cell": {
+        "id": "c6.45N3.85E",
+        "lon": 3.85,
+        "lat": 6.45,
+        "place": "Ibeju"
+      },
+      "max_cell_total_mm": 55.99,
+      "max_peak_mm_h": 28.35,
+      "cells_over_threshold": 1,
+      "known_event_id": null
+    },
+    {
+      "rank": 453,
+      "start": "2015-07-16",
+      "end": "2015-07-16",
+      "max_cell": {
+        "id": "c6.45N4.25E",
+        "lon": 4.25,
+        "lat": 6.45,
+        "place": "Lekki Free Zone"
+      },
+      "max_cell_total_mm": 55.91,
+      "max_peak_mm_h": 26.29,
+      "cells_over_threshold": 2,
+      "known_event_id": null
+    },
+    {
+      "rank": 454,
+      "start": "2017-07-22",
+      "end": "2017-07-22",
+      "max_cell": {
+        "id": "c6.45N3.05E",
+        "lon": 3.05,
+        "lat": 6.45,
+        "place": "Ijanikin"
+      },
+      "max_cell_total_mm": 55.88,
+      "max_peak_mm_h": 20.6,
+      "cells_over_threshold": 2,
+      "known_event_id": null
+    },
+    {
+      "rank": 455,
+      "start": "2011-06-11",
+      "end": "2011-06-11",
+      "max_cell": {
+        "id": "c6.55N4.35E",
+        "lon": 4.35,
+        "lat": 6.55,
+        "place": "Epe"
+      },
+      "max_cell_total_mm": 55.5,
+      "max_peak_mm_h": 26.82,
+      "cells_over_threshold": 1,
+      "known_event_id": null
+    },
+    {
+      "rank": 456,
+      "start": "2021-09-30",
+      "end": "2021-09-30",
+      "max_cell": {
+        "id": "c6.45N3.75E",
+        "lon": 3.75,
+        "lat": 6.45,
+        "place": "Sangotedo"
+      },
+      "max_cell_total_mm": 55.48,
+      "max_peak_mm_h": 24.55,
+      "cells_over_threshold": 2,
+      "known_event_id": null
+    },
+    {
+      "rank": 458,
+      "start": "2009-02-24",
+      "end": "2009-02-24",
+      "max_cell": {
+        "id": "c6.75N4.25E",
+        "lon": 4.25,
+        "lat": 6.75,
+        "place": "Epe"
+      },
+      "max_cell_total_mm": 55.1,
+      "max_peak_mm_h": 17.04,
+      "cells_over_threshold": 1,
+      "known_event_id": null
+    },
+    {
+      "rank": 459,
+      "start": "2022-05-06",
+      "end": "2022-05-06",
+      "max_cell": {
+        "id": "c6.45N4.15E",
+        "lon": 4.15,
+        "lat": 6.45,
+        "place": "Lekki Free Zone"
+      },
+      "max_cell_total_mm": 54.93,
+      "max_peak_mm_h": 25.25,
+      "cells_over_threshold": 6,
+      "known_event_id": null
+    },
+    {
+      "rank": 460,
+      "start": "2005-05-26",
+      "end": "2005-05-26",
+      "max_cell": {
+        "id": "c6.75N2.75E",
+        "lon": 2.75,
+        "lat": 6.75,
+        "place": "Seme border"
+      },
+      "max_cell_total_mm": 54.8,
+      "max_peak_mm_h": 27.03,
+      "cells_over_threshold": 1,
+      "known_event_id": null
+    },
+    {
+      "rank": 461,
+      "start": "2010-06-25",
+      "end": "2010-06-25",
+      "max_cell": {
+        "id": "c6.45N3.05E",
+        "lon": 3.05,
+        "lat": 6.45,
+        "place": "Ijanikin"
+      },
+      "max_cell_total_mm": 54.77,
+      "max_peak_mm_h": 21.92,
+      "cells_over_threshold": 2,
+      "known_event_id": null
+    },
+    {
+      "rank": 462,
+      "start": "2005-06-09",
+      "end": "2005-06-09",
+      "max_cell": {
+        "id": "c6.65N3.65E",
+        "lon": 3.65,
+        "lat": 6.65,
+        "place": "Ota"
+      },
+      "max_cell_total_mm": 54.61,
+      "max_peak_mm_h": 20.97,
+      "cells_over_threshold": 1,
+      "known_event_id": null
+    },
+    {
+      "rank": 463,
+      "start": "2023-04-23",
+      "end": "2023-04-23",
+      "max_cell": {
+        "id": "c6.45N3.15E",
+        "lon": 3.15,
+        "lat": 6.45,
+        "place": "Ijanikin"
+      },
+      "max_cell_total_mm": 54.48,
+      "max_peak_mm_h": 21.06,
+      "cells_over_threshold": 2,
+      "known_event_id": null
+    },
+    {
+      "rank": 464,
+      "start": "2006-08-26",
+      "end": "2006-08-26",
+      "max_cell": {
+        "id": "c6.75N3.75E",
+        "lon": 3.75,
+        "lat": 6.75,
+        "place": "Ota"
+      },
+      "max_cell_total_mm": 54.47,
+      "max_peak_mm_h": 27.16,
+      "cells_over_threshold": 2,
+      "known_event_id": null
+    },
+    {
+      "rank": 465,
+      "start": "2021-10-22",
+      "end": "2021-10-22",
+      "max_cell": {
+        "id": "c6.75N2.85E",
+        "lon": 2.85,
+        "lat": 6.75,
+        "place": "Badagry"
+      },
+      "max_cell_total_mm": 54.44,
+      "max_peak_mm_h": 27.62,
+      "cells_over_threshold": 1,
+      "known_event_id": null
+    },
+    {
+      "rank": 468,
+      "start": "2026-05-08",
+      "end": "2026-05-08",
+      "max_cell": {
+        "id": "c6.45N3.15E",
+        "lon": 3.15,
+        "lat": 6.45,
+        "place": "Ijanikin"
+      },
+      "max_cell_total_mm": 54.24,
+      "max_peak_mm_h": 20.53,
+      "cells_over_threshold": 1,
+      "known_event_id": null
+    },
+    {
+      "rank": 469,
+      "start": "2008-07-13",
+      "end": "2008-07-13",
+      "max_cell": {
+        "id": "c6.45N3.75E",
+        "lon": 3.75,
+        "lat": 6.45,
+        "place": "Sangotedo"
+      },
+      "max_cell_total_mm": 54.17,
+      "max_peak_mm_h": 21.88,
+      "cells_over_threshold": 1,
+      "known_event_id": null
+    },
+    {
+      "rank": 470,
+      "start": "2005-04-22",
+      "end": "2005-04-22",
+      "max_cell": {
+        "id": "c6.45N2.85E",
+        "lon": 2.85,
+        "lat": 6.45,
+        "place": "Badagry"
+      },
+      "max_cell_total_mm": 54.14,
+      "max_peak_mm_h": 14.6,
+      "cells_over_threshold": 1,
+      "known_event_id": null
+    },
+    {
+      "rank": 471,
+      "start": "2010-10-10",
+      "end": "2010-10-10",
+      "max_cell": {
+        "id": "c6.45N3.65E",
+        "lon": 3.65,
+        "lat": 6.45,
+        "place": "Sangotedo"
+      },
+      "max_cell_total_mm": 54.08,
+      "max_peak_mm_h": 39.85,
+      "cells_over_threshold": 2,
+      "known_event_id": null
+    },
+    {
+      "rank": 472,
+      "start": "2026-07-13",
+      "end": "2026-07-13",
+      "max_cell": {
+        "id": "c6.45N4.15E",
+        "lon": 4.15,
+        "lat": 6.45,
+        "place": "Lekki Free Zone"
+      },
+      "max_cell_total_mm": 54.02,
+      "max_peak_mm_h": 15.9,
+      "cells_over_threshold": 1,
+      "known_event_id": null
+    },
+    {
+      "rank": 473,
+      "start": "2006-09-30",
+      "end": "2006-09-30",
+      "max_cell": {
+        "id": "c6.75N3.55E",
+        "lon": 3.55,
+        "lat": 6.75,
+        "place": "Ikorodu"
+      },
+      "max_cell_total_mm": 53.89,
+      "max_peak_mm_h": 16.1,
+      "cells_over_threshold": 2,
+      "known_event_id": null
+    },
+    {
+      "rank": 474,
+      "start": "2009-05-25",
+      "end": "2009-05-25",
+      "max_cell": {
+        "id": "c6.75N3.75E",
+        "lon": 3.75,
+        "lat": 6.75,
+        "place": "Ota"
+      },
+      "max_cell_total_mm": 53.8,
+      "max_peak_mm_h": 34.38,
+      "cells_over_threshold": 4,
+      "known_event_id": null
+    },
+    {
+      "rank": 475,
+      "start": "2004-06-28",
+      "end": "2004-06-28",
+      "max_cell": {
+        "id": "c6.45N3.85E",
+        "lon": 3.85,
+        "lat": 6.45,
+        "place": "Ibeju"
+      },
+      "max_cell_total_mm": 53.74,
+      "max_peak_mm_h": 23.11,
+      "cells_over_threshold": 2,
+      "known_event_id": null
+    },
+    {
+      "rank": 476,
+      "start": "2006-06-20",
+      "end": "2006-06-20",
+      "max_cell": {
+        "id": "c6.45N3.05E",
+        "lon": 3.05,
+        "lat": 6.45,
+        "place": "Ijanikin"
+      },
+      "max_cell_total_mm": 53.61,
+      "max_peak_mm_h": 41.36,
+      "cells_over_threshold": 5,
+      "known_event_id": null
+    },
+    {
+      "rank": 477,
+      "start": "2008-03-08",
+      "end": "2008-03-09",
+      "max_cell": {
+        "id": "c6.75N4.05E",
+        "lon": 4.05,
+        "lat": 6.75,
+        "place": "Agbowa-Ikosi"
+      },
+      "max_cell_total_mm": 53.58,
+      "max_peak_mm_h": 53.41,
+      "cells_over_threshold": 6,
+      "known_event_id": null
+    },
+    {
+      "rank": 478,
+      "start": "2010-05-20",
+      "end": "2010-05-20",
+      "max_cell": {
+        "id": "c6.75N3.85E",
+        "lon": 3.85,
+        "lat": 6.75,
+        "place": "Agbowa-Ikosi"
+      },
+      "max_cell_total_mm": 53.56,
+      "max_peak_mm_h": 24.94,
+      "cells_over_threshold": 2,
+      "known_event_id": null
+    },
+    {
+      "rank": 479,
+      "start": "2026-06-03",
+      "end": "2026-06-03",
+      "max_cell": {
+        "id": "c6.45N3.75E",
+        "lon": 3.75,
+        "lat": 6.45,
+        "place": "Sangotedo"
+      },
+      "max_cell_total_mm": 53.41,
+      "max_peak_mm_h": 31.35,
+      "cells_over_threshold": 3,
+      "known_event_id": null
+    },
+    {
+      "rank": 480,
+      "start": "2008-09-04",
+      "end": "2008-09-04",
+      "max_cell": {
+        "id": "c6.75N3.45E",
+        "lon": 3.45,
+        "lat": 6.75,
+        "place": "Mowe / Ibafo"
+      },
+      "max_cell_total_mm": 53.41,
+      "max_peak_mm_h": 25.4,
+      "cells_over_threshold": 2,
+      "known_event_id": null
+    },
+    {
+      "rank": 481,
+      "start": "2022-03-12",
+      "end": "2022-03-12",
+      "max_cell": {
+        "id": "c6.75N2.75E",
+        "lon": 2.75,
+        "lat": 6.75,
+        "place": "Seme border"
+      },
+      "max_cell_total_mm": 53.24,
+      "max_peak_mm_h": 22.7,
+      "cells_over_threshold": 3,
+      "known_event_id": null
+    },
+    {
+      "rank": 482,
+      "start": "2007-06-24",
+      "end": "2007-06-24",
+      "max_cell": {
+        "id": "c6.55N3.35E",
+        "lon": 3.35,
+        "lat": 6.55,
+        "place": "Mushin"
+      },
+      "max_cell_total_mm": 53.21,
+      "max_peak_mm_h": 30.16,
+      "cells_over_threshold": 2,
+      "known_event_id": null
+    },
+    {
+      "rank": 483,
+      "start": "2008-06-22",
+      "end": "2008-06-22",
+      "max_cell": {
+        "id": "c6.45N4.25E",
+        "lon": 4.25,
+        "lat": 6.45,
+        "place": "Lekki Free Zone"
+      },
+      "max_cell_total_mm": 53.2,
+      "max_peak_mm_h": 19.42,
+      "cells_over_threshold": 1,
+      "known_event_id": null
+    },
+    {
+      "rank": 484,
+      "start": "2021-05-12",
+      "end": "2021-05-12",
+      "max_cell": {
+        "id": "c6.75N4.15E",
+        "lon": 4.15,
+        "lat": 6.75,
+        "place": "Epe"
+      },
+      "max_cell_total_mm": 53.03,
+      "max_peak_mm_h": 17.09,
+      "cells_over_threshold": 1,
+      "known_event_id": null
+    },
+    {
+      "rank": 485,
+      "start": "2011-06-24",
+      "end": "2011-06-24",
+      "max_cell": {
+        "id": "c6.45N2.75E",
+        "lon": 2.75,
+        "lat": 6.45,
+        "place": "Seme border"
+      },
+      "max_cell_total_mm": 52.96,
+      "max_peak_mm_h": 14.86,
+      "cells_over_threshold": 4,
+      "known_event_id": null
+    },
+    {
+      "rank": 486,
+      "start": "2022-10-09",
+      "end": "2022-10-09",
+      "max_cell": {
+        "id": "c6.65N3.05E",
+        "lon": 3.05,
+        "lat": 6.65,
+        "place": "Ijanikin"
+      },
+      "max_cell_total_mm": 52.84,
+      "max_peak_mm_h": 23.72,
+      "cells_over_threshold": 4,
+      "known_event_id": null
+    },
+    {
+      "rank": 487,
+      "start": "2004-06-14",
+      "end": "2004-06-14",
+      "max_cell": {
+        "id": "c6.65N3.15E",
+        "lon": 3.15,
+        "lat": 6.65,
+        "place": "Alimosho / Ipaja"
+      },
+      "max_cell_total_mm": 52.8,
+      "max_peak_mm_h": 43.1,
+      "cells_over_threshold": 6,
+      "known_event_id": null
+    },
+    {
+      "rank": 488,
+      "start": "2019-04-23",
+      "end": "2019-04-23",
+      "max_cell": {
+        "id": "c6.75N3.85E",
+        "lon": 3.85,
+        "lat": 6.75,
+        "place": "Agbowa-Ikosi"
+      },
+      "max_cell_total_mm": 52.79,
+      "max_peak_mm_h": 31.83,
+      "cells_over_threshold": 1,
+      "known_event_id": null
+    },
+    {
+      "rank": 489,
+      "start": "2021-03-13",
+      "end": "2021-03-13",
+      "max_cell": {
+        "id": "c6.75N3.05E",
+        "lon": 3.05,
+        "lat": 6.75,
+        "place": "Alimosho / Ipaja"
+      },
+      "max_cell_total_mm": 52.79,
+      "max_peak_mm_h": 28.69,
+      "cells_over_threshold": 1,
+      "known_event_id": null
+    },
+    {
+      "rank": 490,
+      "start": "2000-09-13",
+      "end": "2000-09-13",
+      "max_cell": {
+        "id": "c6.45N4.05E",
+        "lon": 4.05,
+        "lat": 6.45,
+        "place": "Lekki Free Zone"
+      },
+      "max_cell_total_mm": 52.75,
+      "max_peak_mm_h": 41.52,
+      "cells_over_threshold": 1,
+      "known_event_id": null
+    },
+    {
+      "rank": 491,
+      "start": "2004-05-31",
+      "end": "2004-05-31",
+      "max_cell": {
+        "id": "c6.55N3.05E",
+        "lon": 3.05,
+        "lat": 6.55,
+        "place": "Ijanikin"
+      },
+      "max_cell_total_mm": 52.73,
+      "max_peak_mm_h": 27.85,
+      "cells_over_threshold": 3,
+      "known_event_id": null
+    },
+    {
+      "rank": 492,
+      "start": "2016-04-09",
+      "end": "2016-04-09",
+      "max_cell": {
+        "id": "c6.65N4.35E",
+        "lon": 4.35,
+        "lat": 6.65,
+        "place": "Epe"
+      },
+      "max_cell_total_mm": 52.69,
+      "max_peak_mm_h": 23.18,
+      "cells_over_threshold": 1,
+      "known_event_id": null
+    },
+    {
+      "rank": 493,
+      "start": "2020-07-08",
+      "end": "2020-07-08",
+      "max_cell": {
+        "id": "c6.45N3.75E",
+        "lon": 3.75,
+        "lat": 6.45,
+        "place": "Sangotedo"
+      },
+      "max_cell_total_mm": 52.63,
+      "max_peak_mm_h": 17.75,
+      "cells_over_threshold": 3,
+      "known_event_id": null
+    },
+    {
+      "rank": 494,
+      "start": "2010-05-17",
+      "end": "2010-05-17",
+      "max_cell": {
+        "id": "c6.45N2.75E",
+        "lon": 2.75,
+        "lat": 6.45,
+        "place": "Seme border"
+      },
+      "max_cell_total_mm": 52.33,
+      "max_peak_mm_h": 37.79,
+      "cells_over_threshold": 2,
+      "known_event_id": null
+    },
+    {
+      "rank": 495,
+      "start": "2010-04-15",
+      "end": "2010-04-15",
+      "max_cell": {
+        "id": "c6.75N2.95E",
+        "lon": 2.95,
+        "lat": 6.75,
+        "place": "Badagry"
+      },
+      "max_cell_total_mm": 52.24,
+      "max_peak_mm_h": 22.73,
+      "cells_over_threshold": 1,
+      "known_event_id": null
+    },
+    {
+      "rank": 498,
+      "start": "2008-04-05",
+      "end": "2008-04-05",
+      "max_cell": {
+        "id": "c6.65N2.95E",
+        "lon": 2.95,
+        "lat": 6.65,
+        "place": "Badagry"
+      },
+      "max_cell_total_mm": 52.02,
+      "max_peak_mm_h": 28.16,
+      "cells_over_threshold": 2,
+      "known_event_id": null
+    },
+    {
+      "rank": 499,
+      "start": "2020-03-24",
+      "end": "2020-03-24",
+      "max_cell": {
+        "id": "c6.55N3.15E",
+        "lon": 3.15,
+        "lat": 6.55,
+        "place": "Ijanikin"
+      },
+      "max_cell_total_mm": 51.95,
+      "max_peak_mm_h": 23.69,
+      "cells_over_threshold": 2,
+      "known_event_id": null
+    },
+    {
+      "rank": 500,
+      "start": "2017-07-03",
+      "end": "2017-07-03",
+      "max_cell": {
+        "id": "c6.45N4.05E",
+        "lon": 4.05,
+        "lat": 6.45,
+        "place": "Lekki Free Zone"
+      },
+      "max_cell_total_mm": 51.93,
+      "max_peak_mm_h": 12.96,
+      "cells_over_threshold": 2,
+      "known_event_id": null
+    },
+    {
+      "rank": 501,
+      "start": "2002-04-13",
+      "end": "2002-04-13",
+      "max_cell": {
+        "id": "c6.75N4.35E",
+        "lon": 4.35,
+        "lat": 6.75,
+        "place": "Epe"
+      },
+      "max_cell_total_mm": 51.71,
+      "max_peak_mm_h": 22.71,
+      "cells_over_threshold": 1,
+      "known_event_id": null
+    },
+    {
+      "rank": 502,
+      "start": "2006-09-03",
+      "end": "2006-09-03",
+      "max_cell": {
+        "id": "c6.45N3.85E",
+        "lon": 3.85,
+        "lat": 6.45,
+        "place": "Ibeju"
+      },
+      "max_cell_total_mm": 51.42,
+      "max_peak_mm_h": 27.71,
+      "cells_over_threshold": 4,
+      "known_event_id": null
+    },
+    {
+      "rank": 503,
+      "start": "2003-07-03",
+      "end": "2003-07-03",
+      "max_cell": {
+        "id": "c6.65N3.95E",
+        "lon": 3.95,
+        "lat": 6.65,
+        "place": "Agbowa-Ikosi"
+      },
+      "max_cell_total_mm": 51.28,
+      "max_peak_mm_h": 22.5,
+      "cells_over_threshold": 1,
+      "known_event_id": null
+    },
+    {
+      "rank": 504,
+      "start": "2011-10-07",
+      "end": "2011-10-07",
+      "max_cell": {
+        "id": "c6.45N2.75E",
+        "lon": 2.75,
+        "lat": 6.45,
+        "place": "Seme border"
+      },
+      "max_cell_total_mm": 51.24,
+      "max_peak_mm_h": 20.37,
+      "cells_over_threshold": 2,
+      "known_event_id": null
+    },
+    {
+      "rank": 505,
+      "start": "2019-05-15",
+      "end": "2019-05-15",
+      "max_cell": {
+        "id": "c6.45N2.75E",
+        "lon": 2.75,
+        "lat": 6.45,
+        "place": "Seme border"
+      },
+      "max_cell_total_mm": 51.18,
+      "max_peak_mm_h": 30.45,
+      "cells_over_threshold": 3,
+      "known_event_id": null
+    },
+    {
+      "rank": 506,
+      "start": "2003-05-17",
+      "end": "2003-05-17",
+      "max_cell": {
+        "id": "c6.75N4.05E",
+        "lon": 4.05,
+        "lat": 6.75,
+        "place": "Agbowa-Ikosi"
+      },
+      "max_cell_total_mm": 51.05,
+      "max_peak_mm_h": 22.22,
+      "cells_over_threshold": 1,
+      "known_event_id": null
+    },
+    {
+      "rank": 508,
+      "start": "2007-05-08",
+      "end": "2007-05-08",
+      "max_cell": {
+        "id": "c6.55N3.05E",
+        "lon": 3.05,
+        "lat": 6.55,
+        "place": "Ijanikin"
+      },
+      "max_cell_total_mm": 50.97,
+      "max_peak_mm_h": 37.03,
+      "cells_over_threshold": 4,
+      "known_event_id": null
+    },
+    {
+      "rank": 509,
+      "start": "2015-05-05",
+      "end": "2015-05-05",
+      "max_cell": {
+        "id": "c6.75N3.55E",
+        "lon": 3.55,
+        "lat": 6.75,
+        "place": "Ikorodu"
+      },
+      "max_cell_total_mm": 50.97,
+      "max_peak_mm_h": 26.57,
+      "cells_over_threshold": 1,
+      "known_event_id": null
+    },
+    {
+      "rank": 510,
+      "start": "2026-05-18",
+      "end": "2026-05-18",
+      "max_cell": {
+        "id": "c6.45N4.05E",
+        "lon": 4.05,
+        "lat": 6.45,
+        "place": "Lekki Free Zone"
+      },
+      "max_cell_total_mm": 50.88,
+      "max_peak_mm_h": 19.14,
+      "cells_over_threshold": 1,
+      "known_event_id": null
+    },
+    {
+      "rank": 511,
+      "start": "2017-09-24",
+      "end": "2017-09-24",
+      "max_cell": {
+        "id": "c6.65N4.15E",
+        "lon": 4.15,
+        "lat": 6.65,
+        "place": "Epe"
+      },
+      "max_cell_total_mm": 50.83,
+      "max_peak_mm_h": 35.54,
+      "cells_over_threshold": 3,
+      "known_event_id": null
+    },
+    {
+      "rank": 512,
+      "start": "2023-06-28",
+      "end": "2023-06-28",
+      "max_cell": {
+        "id": "c6.45N4.35E",
+        "lon": 4.35,
+        "lat": 6.45,
+        "place": "Epe"
+      },
+      "max_cell_total_mm": 50.82,
+      "max_peak_mm_h": 9.69,
+      "cells_over_threshold": 1,
+      "known_event_id": null
+    },
+    {
+      "rank": 513,
+      "start": "2008-05-08",
+      "end": "2008-05-08",
+      "max_cell": {
+        "id": "c6.45N2.85E",
+        "lon": 2.85,
+        "lat": 6.45,
+        "place": "Badagry"
+      },
+      "max_cell_total_mm": 50.75,
+      "max_peak_mm_h": 27.52,
+      "cells_over_threshold": 1,
+      "known_event_id": null
+    },
+    {
+      "rank": 514,
+      "start": "2014-01-24",
+      "end": "2014-01-24",
+      "max_cell": {
+        "id": "c6.65N4.25E",
+        "lon": 4.25,
+        "lat": 6.65,
+        "place": "Epe"
+      },
+      "max_cell_total_mm": 50.67,
+      "max_peak_mm_h": 22.96,
+      "cells_over_threshold": 1,
+      "known_event_id": null
+    },
+    {
+      "rank": 515,
+      "start": "2023-05-18",
+      "end": "2023-05-18",
+      "max_cell": {
+        "id": "c6.45N3.25E",
+        "lon": 3.25,
+        "lat": 6.45,
+        "place": "Festac Town"
+      },
+      "max_cell_total_mm": 50.58,
+      "max_peak_mm_h": 21.81,
+      "cells_over_threshold": 1,
+      "known_event_id": null
+    },
+    {
+      "rank": 516,
+      "start": "2009-06-21",
+      "end": "2009-06-21",
+      "max_cell": {
+        "id": "c6.75N3.65E",
+        "lon": 3.65,
+        "lat": 6.75,
+        "place": "Ota"
+      },
+      "max_cell_total_mm": 50.56,
+      "max_peak_mm_h": 15.28,
+      "cells_over_threshold": 1,
+      "known_event_id": null
+    },
+    {
+      "rank": 517,
+      "start": "2020-06-07",
+      "end": "2020-06-07",
+      "max_cell": {
+        "id": "c6.45N3.35E",
+        "lon": 3.35,
+        "lat": 6.45,
+        "place": "Apapa"
+      },
+      "max_cell_total_mm": 50.54,
+      "max_peak_mm_h": 22.24,
+      "cells_over_threshold": 1,
+      "known_event_id": null
+    },
+    {
+      "rank": 518,
+      "start": "2016-05-25",
+      "end": "2016-05-25",
+      "max_cell": {
+        "id": "c6.75N3.65E",
+        "lon": 3.65,
+        "lat": 6.75,
+        "place": "Ota"
+      },
+      "max_cell_total_mm": 50.5,
+      "max_peak_mm_h": 22.2,
+      "cells_over_threshold": 1,
+      "known_event_id": null
+    },
+    {
+      "rank": 519,
+      "start": "2022-06-26",
+      "end": "2022-06-26",
+      "max_cell": {
+        "id": "c6.45N4.15E",
+        "lon": 4.15,
+        "lat": 6.45,
+        "place": "Lekki Free Zone"
+      },
+      "max_cell_total_mm": 50.43,
+      "max_peak_mm_h": 19.08,
+      "cells_over_threshold": 1,
+      "known_event_id": null
+    },
+    {
+      "rank": 520,
+      "start": "2011-09-27",
+      "end": "2011-09-27",
+      "max_cell": {
+        "id": "c6.55N3.75E",
+        "lon": 3.75,
+        "lat": 6.55,
+        "place": "Imota"
+      },
+      "max_cell_total_mm": 50.43,
+      "max_peak_mm_h": 17.21,
+      "cells_over_threshold": 1,
+      "known_event_id": null
+    },
+    {
+      "rank": 521,
+      "start": "2017-11-18",
+      "end": "2017-11-18",
+      "max_cell": {
+        "id": "c6.75N4.25E",
+        "lon": 4.25,
+        "lat": 6.75,
+        "place": "Epe"
+      },
+      "max_cell_total_mm": 50.4,
+      "max_peak_mm_h": 21.03,
+      "cells_over_threshold": 1,
+      "known_event_id": null
+    },
+    {
+      "rank": 522,
+      "start": "2004-02-15",
+      "end": "2004-02-15",
+      "max_cell": {
+        "id": "c6.65N3.15E",
+        "lon": 3.15,
+        "lat": 6.65,
+        "place": "Alimosho / Ipaja"
+      },
+      "max_cell_total_mm": 50.34,
+      "max_peak_mm_h": 21.94,
+      "cells_over_threshold": 1,
+      "known_event_id": null
+    },
+    {
+      "rank": 523,
+      "start": "2026-06-30",
+      "end": "2026-06-30",
+      "max_cell": {
+        "id": "c6.55N3.05E",
+        "lon": 3.05,
+        "lat": 6.55,
+        "place": "Ijanikin"
+      },
+      "max_cell_total_mm": 50.27,
+      "max_peak_mm_h": 10.37,
+      "cells_over_threshold": 1,
+      "known_event_id": null
+    },
+    {
+      "rank": 524,
+      "start": "2015-06-30",
+      "end": "2015-06-30",
+      "max_cell": {
+        "id": "c6.45N4.35E",
+        "lon": 4.35,
+        "lat": 6.45,
+        "place": "Epe"
+      },
+      "max_cell_total_mm": 50.23,
+      "max_peak_mm_h": 11.98,
+      "cells_over_threshold": 1,
+      "known_event_id": null
+    },
+    {
+      "rank": 525,
+      "start": "2008-05-11",
+      "end": "2008-05-11",
+      "max_cell": {
+        "id": "c6.45N2.75E",
+        "lon": 2.75,
+        "lat": 6.45,
+        "place": "Seme border"
+      },
+      "max_cell_total_mm": 50.18,
+      "max_peak_mm_h": 27.89,
+      "cells_over_threshold": 1,
+      "known_event_id": null
+    },
+    {
+      "rank": 526,
+      "start": "2025-10-01",
+      "end": "2025-10-01",
+      "max_cell": {
+        "id": "c6.55N3.45E",
+        "lon": 3.45,
+        "lat": 6.55,
+        "place": "Kosofe"
+      },
+      "max_cell_total_mm": 50.15,
+      "max_peak_mm_h": 24.27,
+      "cells_over_threshold": 1,
+      "known_event_id": null
+    },
+    {
+      "rank": 527,
+      "start": "2025-05-29",
+      "end": "2025-05-29",
+      "max_cell": {
+        "id": "c6.45N2.85E",
+        "lon": 2.85,
+        "lat": 6.45,
+        "place": "Badagry"
+      },
+      "max_cell_total_mm": 50.06,
+      "max_peak_mm_h": 23.08,
+      "cells_over_threshold": 1,
+      "known_event_id": null
+    },
+    {
+      "rank": 528,
+      "start": "2004-01-21",
+      "end": "2004-01-21",
+      "max_cell": {
+        "id": "c6.55N2.75E",
+        "lon": 2.75,
+        "lat": 6.55,
+        "place": "Seme border"
+      },
+      "max_cell_total_mm": 50.01,
+      "max_peak_mm_h": 31.49,
+      "cells_over_threshold": 1,
+      "known_event_id": null
+    },
+    {
+      "rank": 529,
+      "start": "2019-05-09",
+      "end": "2019-05-09",
+      "max_cell": {
+        "id": "c6.65N3.25E",
+        "lon": 3.25,
+        "lat": 6.65,
+        "place": "Alimosho / Ipaja"
+      },
+      "max_cell_total_mm": 50.01,
+      "max_peak_mm_h": 18.44,
+      "cells_over_threshold": 1,
+      "known_event_id": null
+    },
+    {
+      "rank": 530,
+      "start": "2006-09-21",
+      "end": "2006-09-21",
+      "max_cell": {
+        "id": "c6.45N3.15E",
+        "lon": 3.15,
+        "lat": 6.45,
+        "place": "Ijanikin"
+      },
+      "max_cell_total_mm": 49.89,
+      "max_peak_mm_h": 39.37,
+      "cells_over_threshold": 4,
+      "known_event_id": null
+    },
+    {
+      "rank": 531,
+      "start": "2007-10-13",
+      "end": "2007-10-13",
+      "max_cell": {
+        "id": "c6.45N2.75E",
+        "lon": 2.75,
+        "lat": 6.45,
+        "place": "Seme border"
+      },
+      "max_cell_total_mm": 49.25,
+      "max_peak_mm_h": 41.19,
+      "cells_over_threshold": 5,
+      "known_event_id": null
+    },
+    {
+      "rank": 533,
+      "start": "2003-07-19",
+      "end": "2003-07-19",
+      "max_cell": {
+        "id": "c6.75N3.05E",
+        "lon": 3.05,
+        "lat": 6.75,
+        "place": "Alimosho / Ipaja"
+      },
+      "max_cell_total_mm": 48.97,
+      "max_peak_mm_h": 42.64,
+      "cells_over_threshold": 2,
+      "known_event_id": null
+    },
+    {
+      "rank": 534,
+      "start": "2013-09-28",
+      "end": "2013-09-28",
+      "max_cell": {
+        "id": "c6.65N4.35E",
+        "lon": 4.35,
+        "lat": 6.65,
+        "place": "Epe"
+      },
+      "max_cell_total_mm": 48.73,
+      "max_peak_mm_h": 51.64,
+      "cells_over_threshold": 5,
+      "known_event_id": null
+    },
+    {
+      "rank": 535,
+      "start": "2004-09-18",
+      "end": "2004-09-18",
+      "max_cell": {
+        "id": "c6.45N3.55E",
+        "lon": 3.55,
+        "lat": 6.45,
+        "place": "Ajah"
+      },
+      "max_cell_total_mm": 48.61,
+      "max_peak_mm_h": 31.55,
+      "cells_over_threshold": 3,
+      "known_event_id": null
+    },
+    {
+      "rank": 536,
+      "start": "2023-04-08",
+      "end": "2023-04-08",
+      "max_cell": {
+        "id": "c6.75N4.15E",
+        "lon": 4.15,
+        "lat": 6.75,
+        "place": "Epe"
+      },
+      "max_cell_total_mm": 48.55,
+      "max_peak_mm_h": 31.05,
+      "cells_over_threshold": 2,
+      "known_event_id": null
+    },
+    {
+      "rank": 538,
+      "start": "2006-04-20",
+      "end": "2006-04-20",
+      "max_cell": {
+        "id": "c6.65N4.25E",
+        "lon": 4.25,
+        "lat": 6.65,
+        "place": "Epe"
+      },
+      "max_cell_total_mm": 47.82,
+      "max_peak_mm_h": 55.87,
+      "cells_over_threshold": 2,
+      "known_event_id": null
+    },
+    {
+      "rank": 540,
+      "start": "2022-08-19",
+      "end": "2022-08-19",
+      "max_cell": {
+        "id": "c6.75N3.95E",
+        "lon": 3.95,
+        "lat": 6.75,
+        "place": "Agbowa-Ikosi"
+      },
+      "max_cell_total_mm": 47.75,
+      "max_peak_mm_h": 32.49,
+      "cells_over_threshold": 1,
+      "known_event_id": null
+    },
+    {
+      "rank": 541,
+      "start": "2024-04-21",
+      "end": "2024-04-21",
+      "max_cell": {
+        "id": "c6.75N3.55E",
+        "lon": 3.55,
+        "lat": 6.75,
+        "place": "Ikorodu"
+      },
+      "max_cell_total_mm": 47.61,
+      "max_peak_mm_h": 30.4,
+      "cells_over_threshold": 1,
+      "known_event_id": null
+    },
+    {
+      "rank": 542,
+      "start": "2008-04-17",
+      "end": "2008-04-17",
+      "max_cell": {
+        "id": "c6.75N3.65E",
+        "lon": 3.65,
+        "lat": 6.75,
+        "place": "Ota"
+      },
+      "max_cell_total_mm": 47.41,
+      "max_peak_mm_h": 50.04,
+      "cells_over_threshold": 7,
+      "known_event_id": null
+    },
+    {
+      "rank": 543,
+      "start": "2013-07-24",
+      "end": "2013-07-24",
+      "max_cell": {
+        "id": "c6.45N3.15E",
+        "lon": 3.15,
+        "lat": 6.45,
+        "place": "Ijanikin"
+      },
+      "max_cell_total_mm": 47.41,
+      "max_peak_mm_h": 30.78,
+      "cells_over_threshold": 2,
+      "known_event_id": null
+    },
+    {
+      "rank": 544,
+      "start": "2005-06-05",
+      "end": "2005-06-06",
+      "max_cell": {
+        "id": "c6.75N3.35E",
+        "lon": 3.35,
+        "lat": 6.75,
+        "place": "Mowe / Ibafo"
+      },
+      "max_cell_total_mm": 47.39,
+      "max_peak_mm_h": 34.0,
+      "cells_over_threshold": 4,
+      "known_event_id": null
+    },
+    {
+      "rank": 545,
+      "start": "2002-04-30",
+      "end": "2002-04-30",
+      "max_cell": {
+        "id": "c6.55N4.25E",
+        "lon": 4.25,
+        "lat": 6.55,
+        "place": "Epe"
+      },
+      "max_cell_total_mm": 47.38,
+      "max_peak_mm_h": 59.48,
+      "cells_over_threshold": 4,
+      "known_event_id": null
+    },
+    {
+      "rank": 546,
+      "start": "2007-09-20",
+      "end": "2007-09-20",
+      "max_cell": {
+        "id": "c6.75N3.75E",
+        "lon": 3.75,
+        "lat": 6.75,
+        "place": "Ota"
+      },
+      "max_cell_total_mm": 47.38,
+      "max_peak_mm_h": 30.36,
+      "cells_over_threshold": 1,
+      "known_event_id": null
+    },
+    {
+      "rank": 547,
+      "start": "2011-05-30",
+      "end": "2011-05-30",
+      "max_cell": {
+        "id": "c6.45N3.95E",
+        "lon": 3.95,
+        "lat": 6.45,
+        "place": "Ibeju"
+      },
+      "max_cell_total_mm": 46.95,
+      "max_peak_mm_h": 31.26,
+      "cells_over_threshold": 2,
+      "known_event_id": null
+    },
+    {
+      "rank": 548,
+      "start": "2002-08-20",
+      "end": "2002-08-20",
+      "max_cell": {
+        "id": "c6.75N3.55E",
+        "lon": 3.55,
+        "lat": 6.75,
+        "place": "Ikorodu"
+      },
+      "max_cell_total_mm": 46.68,
+      "max_peak_mm_h": 32.14,
+      "cells_over_threshold": 1,
+      "known_event_id": null
+    },
+    {
+      "rank": 549,
+      "start": "2003-02-21",
+      "end": "2003-02-22",
+      "max_cell": {
+        "id": "c6.45N3.25E",
+        "lon": 3.25,
+        "lat": 6.45,
+        "place": "Festac Town"
+      },
+      "max_cell_total_mm": 46.11,
+      "max_peak_mm_h": 35.86,
+      "cells_over_threshold": 3,
+      "known_event_id": null
+    },
+    {
+      "rank": 550,
+      "start": "2004-03-27",
+      "end": "2004-03-27",
+      "max_cell": {
+        "id": "c6.65N2.75E",
+        "lon": 2.75,
+        "lat": 6.65,
+        "place": "Seme border"
+      },
+      "max_cell_total_mm": 46.09,
+      "max_peak_mm_h": 36.34,
+      "cells_over_threshold": 1,
+      "known_event_id": null
+    },
+    {
+      "rank": 552,
+      "start": "2004-06-09",
+      "end": "2004-06-09",
+      "max_cell": {
+        "id": "c6.45N4.05E",
+        "lon": 4.05,
+        "lat": 6.45,
+        "place": "Lekki Free Zone"
+      },
+      "max_cell_total_mm": 45.66,
+      "max_peak_mm_h": 32.74,
+      "cells_over_threshold": 2,
+      "known_event_id": null
+    },
+    {
+      "rank": 555,
+      "start": "2002-08-30",
+      "end": "2002-08-30",
+      "max_cell": {
+        "id": "c6.55N4.35E",
+        "lon": 4.35,
+        "lat": 6.55,
+        "place": "Epe"
+      },
+      "max_cell_total_mm": 44.66,
+      "max_peak_mm_h": 32.63,
+      "cells_over_threshold": 1,
+      "known_event_id": null
+    },
+    {
+      "rank": 556,
+      "start": "2005-09-26",
+      "end": "2005-09-26",
+      "max_cell": {
+        "id": "c6.75N3.25E",
+        "lon": 3.25,
+        "lat": 6.75,
+        "place": "Agege"
+      },
+      "max_cell_total_mm": 44.56,
+      "max_peak_mm_h": 31.09,
+      "cells_over_threshold": 1,
+      "known_event_id": null
+    },
+    {
+      "rank": 557,
+      "start": "2003-09-27",
+      "end": "2003-09-27",
+      "max_cell": {
+        "id": "c6.45N4.15E",
+        "lon": 4.15,
+        "lat": 6.45,
+        "place": "Lekki Free Zone"
+      },
+      "max_cell_total_mm": 44.51,
+      "max_peak_mm_h": 42.29,
+      "cells_over_threshold": 3,
+      "known_event_id": null
+    },
+    {
+      "rank": 560,
+      "start": "2013-09-08",
+      "end": "2013-09-08",
+      "max_cell": {
+        "id": "c6.75N3.35E",
+        "lon": 3.35,
+        "lat": 6.75,
+        "place": "Mowe / Ibafo"
+      },
+      "max_cell_total_mm": 43.99,
+      "max_peak_mm_h": 32.39,
+      "cells_over_threshold": 1,
+      "known_event_id": null
+    },
+    {
+      "rank": 561,
+      "start": "2023-10-11",
+      "end": "2023-10-11",
+      "max_cell": {
+        "id": "c6.55N3.65E",
+        "lon": 3.65,
+        "lat": 6.55,
+        "place": "Sangotedo"
+      },
+      "max_cell_total_mm": 43.8,
+      "max_peak_mm_h": 33.65,
+      "cells_over_threshold": 2,
+      "known_event_id": null
+    },
+    {
+      "rank": 562,
+      "start": "2023-09-09",
+      "end": "2023-09-09",
+      "max_cell": {
+        "id": "c6.45N2.85E",
+        "lon": 2.85,
+        "lat": 6.45,
+        "place": "Badagry"
+      },
+      "max_cell_total_mm": 43.55,
+      "max_peak_mm_h": 39.98,
+      "cells_over_threshold": 4,
+      "known_event_id": null
+    },
+    {
+      "rank": 563,
+      "start": "2004-08-25",
+      "end": "2004-08-25",
+      "max_cell": {
+        "id": "c6.65N2.75E",
+        "lon": 2.75,
+        "lat": 6.65,
+        "place": "Seme border"
+      },
+      "max_cell_total_mm": 43.48,
+      "max_peak_mm_h": 41.93,
+      "cells_over_threshold": 2,
+      "known_event_id": null
+    },
+    {
+      "rank": 564,
+      "start": "2001-05-15",
+      "end": "2001-05-15",
+      "max_cell": {
+        "id": "c6.55N3.55E",
+        "lon": 3.55,
+        "lat": 6.55,
+        "place": "Ikorodu"
+      },
+      "max_cell_total_mm": 43.25,
+      "max_peak_mm_h": 38.36,
+      "cells_over_threshold": 2,
+      "known_event_id": null
+    },
+    {
+      "rank": 566,
+      "start": "2000-08-01",
+      "end": "2000-08-01",
+      "max_cell": {
+        "id": "c6.55N2.95E",
+        "lon": 2.95,
+        "lat": 6.55,
+        "place": "Badagry"
+      },
+      "max_cell_total_mm": 42.94,
+      "max_peak_mm_h": 38.26,
+      "cells_over_threshold": 4,
+      "known_event_id": null
+    },
+    {
+      "rank": 567,
+      "start": "2018-03-25",
+      "end": "2018-03-25",
+      "max_cell": {
+        "id": "c6.75N4.35E",
+        "lon": 4.35,
+        "lat": 6.75,
+        "place": "Epe"
+      },
+      "max_cell_total_mm": 42.87,
+      "max_peak_mm_h": 34.02,
+      "cells_over_threshold": 1,
+      "known_event_id": null
+    },
+    {
+      "rank": 568,
+      "start": "2007-09-28",
+      "end": "2007-09-28",
+      "max_cell": {
+        "id": "c6.45N4.15E",
+        "lon": 4.15,
+        "lat": 6.45,
+        "place": "Lekki Free Zone"
+      },
+      "max_cell_total_mm": 42.71,
+      "max_peak_mm_h": 33.77,
+      "cells_over_threshold": 1,
+      "known_event_id": null
+    },
+    {
+      "rank": 569,
+      "start": "2002-04-26",
+      "end": "2002-04-26",
+      "max_cell": {
+        "id": "c6.75N2.85E",
+        "lon": 2.85,
+        "lat": 6.75,
+        "place": "Badagry"
+      },
+      "max_cell_total_mm": 42.61,
+      "max_peak_mm_h": 40.76,
+      "cells_over_threshold": 2,
+      "known_event_id": null
+    },
+    {
+      "rank": 570,
+      "start": "2012-04-09",
+      "end": "2012-04-09",
+      "max_cell": {
+        "id": "c6.65N4.15E",
+        "lon": 4.15,
+        "lat": 6.65,
+        "place": "Epe"
+      },
+      "max_cell_total_mm": 42.48,
+      "max_peak_mm_h": 40.75,
+      "cells_over_threshold": 4,
+      "known_event_id": null
+    },
+    {
+      "rank": 571,
+      "start": "2020-05-03",
+      "end": "2020-05-03",
+      "max_cell": {
+        "id": "c6.45N4.15E",
+        "lon": 4.15,
+        "lat": 6.45,
+        "place": "Lekki Free Zone"
+      },
+      "max_cell_total_mm": 42.4,
+      "max_peak_mm_h": 35.2,
+      "cells_over_threshold": 2,
+      "known_event_id": null
+    },
+    {
+      "rank": 572,
+      "start": "2007-06-20",
+      "end": "2007-06-20",
+      "max_cell": {
+        "id": "c6.45N4.35E",
+        "lon": 4.35,
+        "lat": 6.45,
+        "place": "Epe"
+      },
+      "max_cell_total_mm": 42.2,
+      "max_peak_mm_h": 40.57,
+      "cells_over_threshold": 3,
+      "known_event_id": null
+    },
+    {
+      "rank": 573,
+      "start": "2009-05-03",
+      "end": "2009-05-03",
+      "max_cell": {
+        "id": "c6.45N2.75E",
+        "lon": 2.75,
+        "lat": 6.45,
+        "place": "Seme border"
+      },
+      "max_cell_total_mm": 41.98,
+      "max_peak_mm_h": 46.18,
+      "cells_over_threshold": 2,
+      "known_event_id": null
+    },
+    {
+      "rank": 574,
+      "start": "2024-04-10",
+      "end": "2024-04-10",
+      "max_cell": {
+        "id": "c6.45N4.35E",
+        "lon": 4.35,
+        "lat": 6.45,
+        "place": "Epe"
+      },
+      "max_cell_total_mm": 41.98,
+      "max_peak_mm_h": 32.14,
+      "cells_over_threshold": 1,
+      "known_event_id": null
+    },
+    {
+      "rank": 575,
+      "start": "2006-05-28",
+      "end": "2006-05-28",
+      "max_cell": {
+        "id": "c6.75N3.95E",
+        "lon": 3.95,
+        "lat": 6.75,
+        "place": "Agbowa-Ikosi"
+      },
+      "max_cell_total_mm": 40.8,
+      "max_peak_mm_h": 48.05,
+      "cells_over_threshold": 1,
+      "known_event_id": null
+    },
+    {
+      "rank": 576,
+      "start": "2011-07-05",
+      "end": "2011-07-05",
+      "max_cell": {
+        "id": "c6.65N2.85E",
+        "lon": 2.85,
+        "lat": 6.65,
+        "place": "Badagry"
+      },
+      "max_cell_total_mm": 40.28,
+      "max_peak_mm_h": 45.85,
+      "cells_over_threshold": 3,
+      "known_event_id": null
+    },
+    {
+      "rank": 577,
+      "start": "2023-09-29",
+      "end": "2023-09-29",
+      "max_cell": {
+        "id": "c6.55N3.45E",
+        "lon": 3.45,
+        "lat": 6.55,
+        "place": "Kosofe"
+      },
+      "max_cell_total_mm": 39.93,
+      "max_peak_mm_h": 30.55,
+      "cells_over_threshold": 1,
+      "known_event_id": null
+    },
+    {
+      "rank": 578,
+      "start": "2001-09-27",
+      "end": "2001-09-27",
+      "max_cell": {
+        "id": "c6.65N4.15E",
+        "lon": 4.15,
+        "lat": 6.65,
+        "place": "Epe"
+      },
+      "max_cell_total_mm": 39.52,
+      "max_peak_mm_h": 70.33,
+      "cells_over_threshold": 3,
+      "known_event_id": null
+    },
+    {
+      "rank": 579,
+      "start": "2026-08-23",
+      "end": "2026-08-23",
+      "max_cell": {
+        "id": "c6.45N3.75E",
+        "lon": 3.75,
+        "lat": 6.45,
+        "place": "Sangotedo"
+      },
+      "max_cell_total_mm": 39.51,
+      "max_peak_mm_h": 36.84,
+      "cells_over_threshold": 1,
+      "known_event_id": null
+    },
+    {
+      "rank": 580,
+      "start": "2007-03-16",
+      "end": "2007-03-16",
+      "max_cell": {
+        "id": "c6.45N3.15E",
+        "lon": 3.15,
+        "lat": 6.45,
+        "place": "Ijanikin"
+      },
+      "max_cell_total_mm": 38.88,
+      "max_peak_mm_h": 38.27,
+      "cells_over_threshold": 2,
+      "known_event_id": null
+    },
+    {
+      "rank": 581,
+      "start": "2004-01-09",
+      "end": "2004-01-09",
+      "max_cell": {
+        "id": "c6.45N3.05E",
+        "lon": 3.05,
+        "lat": 6.45,
+        "place": "Ijanikin"
+      },
+      "max_cell_total_mm": 38.62,
+      "max_peak_mm_h": 33.6,
+      "cells_over_threshold": 1,
+      "known_event_id": null
+    },
+    {
+      "rank": 582,
+      "start": "2000-06-18",
+      "end": "2000-06-18",
+      "max_cell": {
+        "id": "c6.75N3.15E",
+        "lon": 3.15,
+        "lat": 6.75,
+        "place": "Alimosho / Ipaja"
+      },
+      "max_cell_total_mm": 38.43,
+      "max_peak_mm_h": 31.92,
+      "cells_over_threshold": 1,
+      "known_event_id": null
+    },
+    {
+      "rank": 584,
+      "start": "2020-05-10",
+      "end": "2020-05-10",
+      "max_cell": {
+        "id": "c6.45N3.35E",
+        "lon": 3.35,
+        "lat": 6.45,
+        "place": "Apapa"
+      },
+      "max_cell_total_mm": 37.27,
+      "max_peak_mm_h": 35.12,
+      "cells_over_threshold": 3,
+      "known_event_id": null
+    },
+    {
+      "rank": 585,
+      "start": "2002-05-19",
+      "end": "2002-05-19",
+      "max_cell": {
+        "id": "c6.65N3.75E",
+        "lon": 3.75,
+        "lat": 6.65,
+        "place": "Imota"
+      },
+      "max_cell_total_mm": 37.01,
+      "max_peak_mm_h": 36.76,
+      "cells_over_threshold": 2,
+      "known_event_id": null
+    },
+    {
+      "rank": 586,
+      "start": "2012-04-03",
+      "end": "2012-04-03",
+      "max_cell": {
+        "id": "c6.75N4.05E",
+        "lon": 4.05,
+        "lat": 6.75,
+        "place": "Agbowa-Ikosi"
+      },
+      "max_cell_total_mm": 37.01,
+      "max_peak_mm_h": 31.75,
+      "cells_over_threshold": 1,
+      "known_event_id": null
+    },
+    {
+      "rank": 587,
+      "start": "2000-10-02",
+      "end": "2000-10-02",
+      "max_cell": {
+        "id": "c6.75N3.65E",
+        "lon": 3.65,
+        "lat": 6.75,
+        "place": "Ota"
+      },
+      "max_cell_total_mm": 36.98,
+      "max_peak_mm_h": 31.03,
+      "cells_over_threshold": 1,
+      "known_event_id": null
+    },
+    {
+      "rank": 588,
+      "start": "2026-09-07",
+      "end": "2026-09-07",
+      "max_cell": {
+        "id": "c6.65N4.15E",
+        "lon": 4.15,
+        "lat": 6.65,
+        "place": "Epe"
+      },
+      "max_cell_total_mm": 36.88,
+      "max_peak_mm_h": 33.82,
+      "cells_over_threshold": 3,
+      "known_event_id": null
+    },
+    {
+      "rank": 589,
+      "start": "2004-07-06",
+      "end": "2004-07-06",
+      "max_cell": {
+        "id": "c6.75N3.95E",
+        "lon": 3.95,
+        "lat": 6.75,
+        "place": "Agbowa-Ikosi"
+      },
+      "max_cell_total_mm": 36.79,
+      "max_peak_mm_h": 38.44,
+      "cells_over_threshold": 1,
+      "known_event_id": null
+    },
+    {
+      "rank": 590,
+      "start": "2006-10-14",
+      "end": "2006-10-14",
+      "max_cell": {
+        "id": "c6.75N4.35E",
+        "lon": 4.35,
+        "lat": 6.75,
+        "place": "Epe"
+      },
+      "max_cell_total_mm": 36.71,
+      "max_peak_mm_h": 38.7,
+      "cells_over_threshold": 1,
+      "known_event_id": null
+    },
+    {
+      "rank": 591,
+      "start": "2016-01-19",
+      "end": "2016-01-19",
+      "max_cell": {
+        "id": "c6.45N4.05E",
+        "lon": 4.05,
+        "lat": 6.45,
+        "place": "Lekki Free Zone"
+      },
+      "max_cell_total_mm": 35.96,
+      "max_peak_mm_h": 36.04,
+      "cells_over_threshold": 1,
+      "known_event_id": null
+    },
+    {
+      "rank": 592,
+      "start": "2006-04-30",
+      "end": "2006-04-30",
+      "max_cell": {
+        "id": "c6.55N3.95E",
+        "lon": 3.95,
+        "lat": 6.55,
+        "place": "Ibeju"
+      },
+      "max_cell_total_mm": 35.83,
+      "max_peak_mm_h": 30.92,
+      "cells_over_threshold": 1,
+      "known_event_id": null
+    },
+    {
+      "rank": 593,
+      "start": "2009-05-19",
+      "end": "2009-05-19",
+      "max_cell": {
+        "id": "c6.65N2.95E",
+        "lon": 2.95,
+        "lat": 6.65,
+        "place": "Badagry"
+      },
+      "max_cell_total_mm": 35.67,
+      "max_peak_mm_h": 34.11,
+      "cells_over_threshold": 1,
+      "known_event_id": null
+    },
+    {
+      "rank": 594,
+      "start": "2004-10-06",
+      "end": "2004-10-06",
+      "max_cell": {
+        "id": "c6.75N4.05E",
+        "lon": 4.05,
+        "lat": 6.75,
+        "place": "Agbowa-Ikosi"
+      },
+      "max_cell_total_mm": 35.32,
+      "max_peak_mm_h": 32.2,
+      "cells_over_threshold": 2,
+      "known_event_id": null
+    },
+    {
+      "rank": 595,
+      "start": "2010-04-21",
+      "end": "2010-04-21",
+      "max_cell": {
+        "id": "c6.75N3.45E",
+        "lon": 3.45,
+        "lat": 6.75,
+        "place": "Mowe / Ibafo"
+      },
+      "max_cell_total_mm": 35.17,
+      "max_peak_mm_h": 31.02,
+      "cells_over_threshold": 1,
+      "known_event_id": null
+    },
+    {
+      "rank": 596,
+      "start": "2019-02-19",
+      "end": "2019-02-19",
+      "max_cell": {
+        "id": "c6.55N2.85E",
+        "lon": 2.85,
+        "lat": 6.55,
+        "place": "Badagry"
+      },
+      "max_cell_total_mm": 35.15,
+      "max_peak_mm_h": 31.74,
+      "cells_over_threshold": 1,
+      "known_event_id": null
+    },
+    {
+      "rank": 597,
+      "start": "2011-04-03",
+      "end": "2011-04-03",
+      "max_cell": {
+        "id": "c6.75N4.25E",
+        "lon": 4.25,
+        "lat": 6.75,
+        "place": "Epe"
+      },
+      "max_cell_total_mm": 35.13,
+      "max_peak_mm_h": 48.71,
+      "cells_over_threshold": 2,
+      "known_event_id": null
+    },
+    {
+      "rank": 598,
+      "start": "2014-01-30",
+      "end": "2014-01-30",
+      "max_cell": {
+        "id": "c6.65N3.65E",
+        "lon": 3.65,
+        "lat": 6.65,
+        "place": "Ota"
+      },
+      "max_cell_total_mm": 35.13,
+      "max_peak_mm_h": 34.19,
+      "cells_over_threshold": 3,
+      "known_event_id": null
+    },
+    {
+      "rank": 599,
+      "start": "2000-06-11",
+      "end": "2000-06-11",
+      "max_cell": {
+        "id": "c6.75N4.05E",
+        "lon": 4.05,
+        "lat": 6.75,
+        "place": "Agbowa-Ikosi"
+      },
+      "max_cell_total_mm": 35.01,
+      "max_peak_mm_h": 36.21,
+      "cells_over_threshold": 2,
+      "known_event_id": null
+    },
+    {
+      "rank": 600,
+      "start": "2020-06-20",
+      "end": "2020-06-20",
+      "max_cell": {
+        "id": "c6.45N4.35E",
+        "lon": 4.35,
+        "lat": 6.45,
+        "place": "Epe"
+      },
+      "max_cell_total_mm": 34.94,
+      "max_peak_mm_h": 32.66,
+      "cells_over_threshold": 2,
+      "known_event_id": null
+    },
+    {
+      "rank": 602,
+      "start": "2002-09-23",
+      "end": "2002-09-23",
+      "max_cell": {
+        "id": "c6.75N3.25E",
+        "lon": 3.25,
+        "lat": 6.75,
+        "place": "Agege"
+      },
+      "max_cell_total_mm": 34.5,
+      "max_peak_mm_h": 37.11,
+      "cells_over_threshold": 2,
+      "known_event_id": null
+    },
+    {
+      "rank": 603,
+      "start": "2000-07-06",
+      "end": "2000-07-06",
+      "max_cell": {
+        "id": "c6.45N4.35E",
+        "lon": 4.35,
+        "lat": 6.45,
+        "place": "Epe"
+      },
+      "max_cell_total_mm": 34.08,
+      "max_peak_mm_h": 33.7,
+      "cells_over_threshold": 1,
+      "known_event_id": null
+    },
+    {
+      "rank": 604,
+      "start": "2015-09-11",
+      "end": "2015-09-11",
+      "max_cell": {
+        "id": "c6.55N2.95E",
+        "lon": 2.95,
+        "lat": 6.55,
+        "place": "Badagry"
+      },
+      "max_cell_total_mm": 33.99,
+      "max_peak_mm_h": 44.51,
+      "cells_over_threshold": 1,
+      "known_event_id": null
+    },
+    {
+      "rank": 608,
+      "start": "2002-08-14",
+      "end": "2002-08-14",
+      "max_cell": {
+        "id": "c6.45N3.65E",
+        "lon": 3.65,
+        "lat": 6.45,
+        "place": "Sangotedo"
+      },
+      "max_cell_total_mm": 33.23,
+      "max_peak_mm_h": 38.7,
+      "cells_over_threshold": 1,
+      "known_event_id": null
+    },
+    {
+      "rank": 609,
+      "start": "2020-10-28",
+      "end": "2020-10-28",
+      "max_cell": {
+        "id": "c6.55N2.85E",
+        "lon": 2.85,
+        "lat": 6.55,
+        "place": "Badagry"
+      },
+      "max_cell_total_mm": 33.02,
+      "max_peak_mm_h": 34.41,
+      "cells_over_threshold": 2,
+      "known_event_id": null
+    },
+    {
+      "rank": 610,
+      "start": "2000-09-24",
+      "end": "2000-09-24",
+      "max_cell": {
+        "id": "c6.75N3.15E",
+        "lon": 3.15,
+        "lat": 6.75,
+        "place": "Alimosho / Ipaja"
+      },
+      "max_cell_total_mm": 32.77,
+      "max_peak_mm_h": 39.27,
+      "cells_over_threshold": 1,
+      "known_event_id": null
+    },
+    {
+      "rank": 612,
+      "start": "2002-05-11",
+      "end": "2002-05-11",
+      "max_cell": {
+        "id": "c6.45N4.05E",
+        "lon": 4.05,
+        "lat": 6.45,
+        "place": "Lekki Free Zone"
+      },
+      "max_cell_total_mm": 31.64,
+      "max_peak_mm_h": 33.61,
+      "cells_over_threshold": 1,
+      "known_event_id": null
+    },
+    {
+      "rank": 613,
+      "start": "2001-09-21",
+      "end": "2001-09-21",
+      "max_cell": {
+        "id": "c6.75N3.55E",
+        "lon": 3.55,
+        "lat": 6.75,
+        "place": "Ikorodu"
+      },
+      "max_cell_total_mm": 31.29,
+      "max_peak_mm_h": 31.37,
+      "cells_over_threshold": 1,
+      "known_event_id": null
+    },
+    {
+      "rank": 614,
+      "start": "2001-03-27",
+      "end": "2001-03-27",
+      "max_cell": {
+        "id": "c6.65N3.55E",
+        "lon": 3.55,
+        "lat": 6.65,
+        "place": "Ikorodu"
+      },
+      "max_cell_total_mm": 30.98,
+      "max_peak_mm_h": 34.75,
+      "cells_over_threshold": 1,
+      "known_event_id": null
+    },
+    {
+      "rank": 616,
+      "start": "2019-01-20",
+      "end": "2019-01-20",
+      "max_cell": {
+        "id": "c6.75N3.45E",
+        "lon": 3.45,
+        "lat": 6.75,
+        "place": "Mowe / Ibafo"
+      },
+      "max_cell_total_mm": 29.65,
+      "max_peak_mm_h": 30.37,
+      "cells_over_threshold": 1,
+      "known_event_id": null
+    },
+    {
+      "rank": 617,
+      "start": "2007-03-26",
+      "end": "2007-03-26",
+      "max_cell": {
+        "id": "c6.75N2.95E",
+        "lon": 2.95,
+        "lat": 6.75,
+        "place": "Badagry"
+      },
+      "max_cell_total_mm": 29.62,
+      "max_peak_mm_h": 38.57,
+      "cells_over_threshold": 1,
+      "known_event_id": null
+    },
+    {
+      "rank": 618,
+      "start": "2013-03-24",
+      "end": "2013-03-24",
+      "max_cell": {
+        "id": "c6.55N3.75E",
+        "lon": 3.75,
+        "lat": 6.55,
+        "place": "Imota"
+      },
+      "max_cell_total_mm": 29.62,
+      "max_peak_mm_h": 32.13,
+      "cells_over_threshold": 1,
+      "known_event_id": null
+    },
+    {
+      "rank": 619,
+      "start": "2019-02-26",
+      "end": "2019-02-26",
+      "max_cell": {
+        "id": "c6.65N4.25E",
+        "lon": 4.25,
+        "lat": 6.65,
+        "place": "Epe"
+      },
+      "max_cell_total_mm": 29.61,
+      "max_peak_mm_h": 35.42,
+      "cells_over_threshold": 2,
+      "known_event_id": null
+    },
+    {
+      "rank": 620,
+      "start": "2006-10-26",
+      "end": "2006-10-26",
+      "max_cell": {
+        "id": "c6.65N2.95E",
+        "lon": 2.95,
+        "lat": 6.65,
+        "place": "Badagry"
+      },
+      "max_cell_total_mm": 29.17,
+      "max_peak_mm_h": 33.12,
+      "cells_over_threshold": 2,
+      "known_event_id": null
+    },
+    {
+      "rank": 621,
+      "start": "2001-08-01",
+      "end": "2001-08-01",
+      "max_cell": {
+        "id": "c6.75N3.35E",
+        "lon": 3.35,
+        "lat": 6.75,
+        "place": "Mowe / Ibafo"
+      },
+      "max_cell_total_mm": 28.81,
+      "max_peak_mm_h": 46.13,
+      "cells_over_threshold": 1,
+      "known_event_id": null
+    },
+    {
+      "rank": 622,
+      "start": "2015-08-23",
+      "end": "2015-08-23",
+      "max_cell": {
+        "id": "c6.75N3.25E",
+        "lon": 3.25,
+        "lat": 6.75,
+        "place": "Agege"
+      },
+      "max_cell_total_mm": 28.51,
+      "max_peak_mm_h": 30.49,
+      "cells_over_threshold": 1,
+      "known_event_id": null
+    },
+    {
+      "rank": 623,
+      "start": "2010-03-19",
+      "end": "2010-03-19",
+      "max_cell": {
+        "id": "c6.65N3.35E",
+        "lon": 3.35,
+        "lat": 6.65,
+        "place": "Ojodu Berger"
+      },
+      "max_cell_total_mm": 27.78,
+      "max_peak_mm_h": 31.08,
+      "cells_over_threshold": 1,
+      "known_event_id": null
+    },
+    {
+      "rank": 624,
+      "start": "2007-06-26",
+      "end": "2007-06-26",
+      "max_cell": {
+        "id": "c6.45N3.85E",
+        "lon": 3.85,
+        "lat": 6.45,
+        "place": "Ibeju"
+      },
+      "max_cell_total_mm": 27.41,
+      "max_peak_mm_h": 30.24,
+      "cells_over_threshold": 1,
+      "known_event_id": null
+    },
+    {
+      "rank": 625,
+      "start": "2010-06-13",
+      "end": "2010-06-13",
+      "max_cell": {
+        "id": "c6.55N3.15E",
+        "lon": 3.15,
+        "lat": 6.55,
+        "place": "Ijanikin"
+      },
+      "max_cell_total_mm": 27.25,
+      "max_peak_mm_h": 43.24,
+      "cells_over_threshold": 3,
+      "known_event_id": null
+    },
+    {
+      "rank": 626,
+      "start": "2015-04-24",
+      "end": "2015-04-24",
+      "max_cell": {
+        "id": "c6.75N3.75E",
+        "lon": 3.75,
+        "lat": 6.75,
+        "place": "Ota"
+      },
+      "max_cell_total_mm": 27.11,
+      "max_peak_mm_h": 39.45,
+      "cells_over_threshold": 1,
+      "known_event_id": null
+    },
+    {
+      "rank": 627,
+      "start": "2000-07-08",
+      "end": "2000-07-08",
+      "max_cell": {
+        "id": "c6.75N4.35E",
+        "lon": 4.35,
+        "lat": 6.75,
+        "place": "Epe"
+      },
+      "max_cell_total_mm": 27.03,
+      "max_peak_mm_h": 30.18,
+      "cells_over_threshold": 1,
+      "known_event_id": null
+    },
+    {
+      "rank": 628,
+      "start": "2020-06-01",
+      "end": "2020-06-01",
+      "max_cell": {
+        "id": "c6.55N2.95E",
+        "lon": 2.95,
+        "lat": 6.55,
+        "place": "Badagry"
+      },
+      "max_cell_total_mm": 26.09,
+      "max_peak_mm_h": 34.21,
+      "cells_over_threshold": 2,
+      "known_event_id": null
+    },
+    {
+      "rank": 629,
+      "start": "2002-08-01",
+      "end": "2002-08-01",
+      "max_cell": {
+        "id": "c6.75N2.75E",
+        "lon": 2.75,
+        "lat": 6.75,
+        "place": "Seme border"
+      },
+      "max_cell_total_mm": 25.47,
+      "max_peak_mm_h": 43.64,
+      "cells_over_threshold": 1,
+      "known_event_id": null
+    },
+    {
+      "rank": 630,
+      "start": "2002-03-09",
+      "end": "2002-03-09",
+      "max_cell": {
+        "id": "c6.65N4.35E",
+        "lon": 4.35,
+        "lat": 6.65,
+        "place": "Epe"
+      },
+      "max_cell_total_mm": 25.11,
+      "max_peak_mm_h": 38.12,
+      "cells_over_threshold": 1,
+      "known_event_id": null
+    },
+    {
+      "rank": 631,
+      "start": "2019-03-21",
+      "end": "2019-03-21",
+      "max_cell": {
+        "id": "c6.75N3.75E",
+        "lon": 3.75,
+        "lat": 6.75,
+        "place": "Ota"
+      },
+      "max_cell_total_mm": 23.42,
+      "max_peak_mm_h": 42.92,
+      "cells_over_threshold": 2,
+      "known_event_id": null
+    },
+    {
+      "rank": 632,
+      "start": "2006-08-30",
+      "end": "2006-08-30",
+      "max_cell": {
+        "id": "c6.55N4.05E",
+        "lon": 4.05,
+        "lat": 6.55,
+        "place": "Epe"
+      },
+      "max_cell_total_mm": 22.23,
+      "max_peak_mm_h": 34.75,
+      "cells_over_threshold": 2,
+      "known_event_id": null
+    },
+    {
+      "rank": 633,
+      "start": "2010-07-04",
+      "end": "2010-07-04",
+      "max_cell": {
+        "id": "c6.65N3.15E",
+        "lon": 3.15,
+        "lat": 6.65,
+        "place": "Alimosho / Ipaja"
+      },
+      "max_cell_total_mm": 21.87,
+      "max_peak_mm_h": 35.7,
+      "cells_over_threshold": 1,
+      "known_event_id": null
+    },
+    {
+      "rank": 634,
+      "start": "2008-05-28",
+      "end": "2008-05-28",
+      "max_cell": {
+        "id": "c6.75N2.85E",
+        "lon": 2.85,
+        "lat": 6.75,
+        "place": "Badagry"
+      },
+      "max_cell_total_mm": 21.51,
+      "max_peak_mm_h": 39.45,
+      "cells_over_threshold": 3,
+      "known_event_id": null
+    },
+    {
+      "rank": 635,
+      "start": "2022-10-23",
+      "end": "2022-10-23",
+      "max_cell": {
+        "id": "c6.45N3.35E",
+        "lon": 3.35,
+        "lat": 6.45,
+        "place": "Apapa"
+      },
+      "max_cell_total_mm": 21.41,
+      "max_peak_mm_h": 32.0,
+      "cells_over_threshold": 1,
+      "known_event_id": null
+    },
+    {
+      "rank": 636,
+      "start": "2015-06-12",
+      "end": "2015-06-12",
+      "max_cell": {
+        "id": "c6.75N4.05E",
+        "lon": 4.05,
+        "lat": 6.75,
+        "place": "Agbowa-Ikosi"
+      },
+      "max_cell_total_mm": 21.14,
+      "max_peak_mm_h": 35.3,
+      "cells_over_threshold": 2,
+      "known_event_id": null
+    },
+    {
+      "rank": 637,
+      "start": "2023-03-06",
+      "end": "2023-03-06",
+      "max_cell": {
+        "id": "c6.75N2.75E",
+        "lon": 2.75,
+        "lat": 6.75,
+        "place": "Seme border"
+      },
+      "max_cell_total_mm": 19.8,
+      "max_peak_mm_h": 31.76,
+      "cells_over_threshold": 2,
+      "known_event_id": null
+    },
+    {
+      "rank": 638,
+      "start": "2005-08-23",
+      "end": "2005-08-23",
+      "max_cell": {
+        "id": "c6.75N3.25E",
+        "lon": 3.25,
+        "lat": 6.75,
+        "place": "Agege"
+      },
+      "max_cell_total_mm": 18.64,
+      "max_peak_mm_h": 35.78,
+      "cells_over_threshold": 1,
+      "known_event_id": null
+    },
+    {
+      "rank": 639,
+      "start": "2002-08-06",
+      "end": "2002-08-06",
+      "max_cell": {
+        "id": "c6.55N4.25E",
+        "lon": 4.25,
+        "lat": 6.55,
+        "place": "Epe"
+      },
+      "max_cell_total_mm": 18.37,
+      "max_peak_mm_h": 30.23,
+      "cells_over_threshold": 1,
+      "known_event_id": null
+    },
+    {
+      "rank": 641,
+      "start": "2024-09-27",
+      "end": "2024-09-27",
+      "max_cell": {
+        "id": "c6.55N2.75E",
+        "lon": 2.75,
+        "lat": 6.55,
+        "place": "Seme border"
+      },
+      "max_cell_total_mm": 17.09,
+      "max_peak_mm_h": 31.6,
+      "cells_over_threshold": 1,
+      "known_event_id": null
+    }
+  ],
+  "only_point": [],
+  "rank_changes": [
+    {
+      "point_start": "2011-07-10",
+      "point_end": "2011-07-10",
+      "point_rank": 1,
+      "grid_start": "2011-07-10",
+      "grid_end": "2011-07-10",
+      "grid_rank": 1,
+      "change": 0
+    },
+    {
+      "point_start": "2022-07-08",
+      "point_end": "2022-07-09",
+      "point_rank": 2,
+      "grid_start": "2022-07-08",
+      "grid_end": "2022-07-09",
+      "grid_rank": 3,
+      "change": 1
+    },
+    {
+      "point_start": "2023-06-06",
+      "point_end": "2023-06-08",
+      "point_rank": 3,
+      "grid_start": "2023-06-06",
+      "grid_end": "2023-06-08",
+      "grid_rank": 6,
+      "change": 3
+    },
+    {
+      "point_start": "2007-06-02",
+      "point_end": "2007-06-02",
+      "point_rank": 4,
+      "grid_start": "2007-06-02",
+      "grid_end": "2007-06-02",
+      "grid_rank": 5,
+      "change": 1
+    },
+    {
+      "point_start": "2016-10-07",
+      "point_end": "2016-10-09",
+      "point_rank": 5,
+      "grid_start": "2016-10-07",
+      "grid_end": "2016-10-09",
+      "grid_rank": 2,
+      "change": -3
+    },
+    {
+      "point_start": "2007-08-31",
+      "point_end": "2007-09-01",
+      "point_rank": 6,
+      "grid_start": "2007-08-31",
+      "grid_end": "2007-09-01",
+      "grid_rank": 11,
+      "change": 5
+    },
+    {
+      "point_start": "2010-09-23",
+      "point_end": "2010-09-24",
+      "point_rank": 7,
+      "grid_start": "2010-09-23",
+      "grid_end": "2010-09-24",
+      "grid_rank": 18,
+      "change": 11
+    },
+    {
+      "point_start": "2025-08-04",
+      "point_end": "2025-08-04",
+      "point_rank": 8,
+      "grid_start": "2025-08-03",
+      "grid_end": "2025-08-04",
+      "grid_rank": 15,
+      "change": 7
+    },
+    {
+      "point_start": "2025-10-05",
+      "point_end": "2025-10-05",
+      "point_rank": 9,
+      "grid_start": "2025-10-05",
+      "grid_end": "2025-10-05",
+      "grid_rank": 29,
+      "change": 20
+    },
+    {
+      "point_start": "2006-06-29",
+      "point_end": "2006-06-30",
+      "point_rank": 10,
+      "grid_start": "2006-06-29",
+      "grid_end": "2006-06-30",
+      "grid_rank": 35,
+      "change": 25
+    },
+    {
+      "point_start": "2012-04-16",
+      "point_end": "2012-04-17",
+      "point_rank": 11,
+      "grid_start": "2012-04-16",
+      "grid_end": "2012-04-17",
+      "grid_rank": 4,
+      "change": -7
+    },
+    {
+      "point_start": "2008-07-15",
+      "point_end": "2008-07-15",
+      "point_rank": 12,
+      "grid_start": "2008-07-15",
+      "grid_end": "2008-07-15",
+      "grid_rank": 43,
+      "change": 31
+    },
+    {
+      "point_start": "2014-05-11",
+      "point_end": "2014-05-11",
+      "point_rank": 13,
+      "grid_start": "2014-05-11",
+      "grid_end": "2014-05-11",
+      "grid_rank": 19,
+      "change": 6
+    },
+    {
+      "point_start": "2025-07-03",
+      "point_end": "2025-07-04",
+      "point_rank": 14,
+      "grid_start": "2025-07-03",
+      "grid_end": "2025-07-04",
+      "grid_rank": 38,
+      "change": 24
+    },
+    {
+      "point_start": "2014-05-13",
+      "point_end": "2014-05-14",
+      "point_rank": 15,
+      "grid_start": "2014-05-13",
+      "grid_end": "2014-05-14",
+      "grid_rank": 13,
+      "change": -2
+    },
+    {
+      "point_start": "2005-06-11",
+      "point_end": "2005-06-12",
+      "point_rank": 16,
+      "grid_start": "2005-06-11",
+      "grid_end": "2005-06-12",
+      "grid_rank": 52,
+      "change": 36
+    },
+    {
+      "point_start": "2021-10-17",
+      "point_end": "2021-10-18",
+      "point_rank": 17,
+      "grid_start": "2021-10-17",
+      "grid_end": "2021-10-18",
+      "grid_rank": 53,
+      "change": 36
+    },
+    {
+      "point_start": "2019-01-29",
+      "point_end": "2019-01-30",
+      "point_rank": 18,
+      "grid_start": "2019-01-29",
+      "grid_end": "2019-01-30",
+      "grid_rank": 37,
+      "change": 19
+    },
+    {
+      "point_start": "2016-09-05",
+      "point_end": "2016-09-06",
+      "point_rank": 19,
+      "grid_start": "2016-09-05",
+      "grid_end": "2016-09-06",
+      "grid_rank": 44,
+      "change": 25
+    },
+    {
+      "point_start": "2017-07-05",
+      "point_end": "2017-07-06",
+      "point_rank": 20,
+      "grid_start": "2017-07-05",
+      "grid_end": "2017-07-06",
+      "grid_rank": 34,
+      "change": 14
+    },
+    {
+      "point_start": "2002-09-19",
+      "point_end": "2002-09-19",
+      "point_rank": 21,
+      "grid_start": "2002-09-18",
+      "grid_end": "2002-09-19",
+      "grid_rank": 51,
+      "change": 30
+    },
+    {
+      "point_start": "2007-07-04",
+      "point_end": "2007-07-05",
+      "point_rank": 22,
+      "grid_start": "2007-07-04",
+      "grid_end": "2007-07-05",
+      "grid_rank": 7,
+      "change": -15
+    },
+    {
+      "point_start": "2006-10-29",
+      "point_end": "2006-10-29",
+      "point_rank": 23,
+      "grid_start": "2006-10-29",
+      "grid_end": "2006-10-29",
+      "grid_rank": 66,
+      "change": 43
+    },
+    {
+      "point_start": "2020-06-28",
+      "point_end": "2020-06-28",
+      "point_rank": 24,
+      "grid_start": "2020-06-28",
+      "grid_end": "2020-06-28",
+      "grid_rank": 48,
+      "change": 24
+    },
+    {
+      "point_start": "2008-09-11",
+      "point_end": "2008-09-11",
+      "point_rank": 25,
+      "grid_start": "2008-09-11",
+      "grid_end": "2008-09-11",
+      "grid_rank": 54,
+      "change": 29
+    },
+    {
+      "point_start": "2024-07-02",
+      "point_end": "2024-07-03",
+      "point_rank": 26,
+      "grid_start": "2024-07-02",
+      "grid_end": "2024-07-03",
+      "grid_rank": 30,
+      "change": 4
+    },
+    {
+      "point_start": "2012-06-19",
+      "point_end": "2012-06-19",
+      "point_rank": 27,
+      "grid_start": "2012-06-19",
+      "grid_end": "2012-06-20",
+      "grid_rank": 61,
+      "change": 34
+    },
+    {
+      "point_start": "2026-02-10",
+      "point_end": "2026-02-10",
+      "point_rank": 28,
+      "grid_start": "2026-02-10",
+      "grid_end": "2026-02-10",
+      "grid_rank": 60,
+      "change": 32
+    },
+    {
+      "point_start": "2021-07-16",
+      "point_end": "2021-07-16",
+      "point_rank": 29,
+      "grid_start": "2021-07-16",
+      "grid_end": "2021-07-16",
+      "grid_rank": 87,
+      "change": 58
+    },
+    {
+      "point_start": "2026-01-20",
+      "point_end": "2026-01-20",
+      "point_rank": 30,
+      "grid_start": "2026-01-19",
+      "grid_end": "2026-01-20",
+      "grid_rank": 95,
+      "change": 65
+    },
+    {
+      "point_start": "2000-07-29",
+      "point_end": "2000-07-29",
+      "point_rank": 31,
+      "grid_start": "2000-07-29",
+      "grid_end": "2000-07-29",
+      "grid_rank": 99,
+      "change": 68
+    },
+    {
+      "point_start": "2006-10-22",
+      "point_end": "2006-10-23",
+      "point_rank": 32,
+      "grid_start": "2006-10-22",
+      "grid_end": "2006-10-23",
+      "grid_rank": 73,
+      "change": 41
+    },
+    {
+      "point_start": "2008-07-30",
+      "point_end": "2008-07-30",
+      "point_rank": 33,
+      "grid_start": "2008-07-30",
+      "grid_end": "2008-07-31",
+      "grid_rank": 85,
+      "change": 52
+    },
+    {
+      "point_start": "2003-04-11",
+      "point_end": "2003-04-12",
+      "point_rank": 34,
+      "grid_start": "2003-04-11",
+      "grid_end": "2003-04-12",
+      "grid_rank": 56,
+      "change": 22
+    },
+    {
+      "point_start": "2006-03-22",
+      "point_end": "2006-03-22",
+      "point_rank": 35,
+      "grid_start": "2006-03-22",
+      "grid_end": "2006-03-22",
+      "grid_rank": 70,
+      "change": 35
+    },
+    {
+      "point_start": "2025-10-07",
+      "point_end": "2025-10-07",
+      "point_rank": 36,
+      "grid_start": "2025-10-07",
+      "grid_end": "2025-10-07",
+      "grid_rank": 108,
+      "change": 72
+    },
+    {
+      "point_start": "2012-09-27",
+      "point_end": "2012-09-27",
+      "point_rank": 37,
+      "grid_start": "2012-09-26",
+      "grid_end": "2012-09-27",
+      "grid_rank": 17,
+      "change": -20
+    },
+    {
+      "point_start": "2011-10-01",
+      "point_end": "2011-10-01",
+      "point_rank": 38,
+      "grid_start": "2011-10-01",
+      "grid_end": "2011-10-01",
+      "grid_rank": 112,
+      "change": 74
+    },
+    {
+      "point_start": "2020-05-25",
+      "point_end": "2020-05-25",
+      "point_rank": 39,
+      "grid_start": "2020-05-25",
+      "grid_end": "2020-05-25",
+      "grid_rank": 96,
+      "change": 57
+    },
+    {
+      "point_start": "2019-10-12",
+      "point_end": "2019-10-12",
+      "point_rank": 40,
+      "grid_start": "2019-10-12",
+      "grid_end": "2019-10-12",
+      "grid_rank": 89,
+      "change": 49
+    },
+    {
+      "point_start": "2012-07-02",
+      "point_end": "2012-07-02",
+      "point_rank": 41,
+      "grid_start": "2012-07-02",
+      "grid_end": "2012-07-02",
+      "grid_rank": 121,
+      "change": 80
+    },
+    {
+      "point_start": "2006-09-07",
+      "point_end": "2006-09-07",
+      "point_rank": 42,
+      "grid_start": "2006-09-07",
+      "grid_end": "2006-09-07",
+      "grid_rank": 22,
+      "change": -20
+    },
+    {
+      "point_start": "2014-05-06",
+      "point_end": "2014-05-06",
+      "point_rank": 43,
+      "grid_start": "2014-05-05",
+      "grid_end": "2014-05-06",
+      "grid_rank": 39,
+      "change": -4
+    },
+    {
+      "point_start": "2019-10-01",
+      "point_end": "2019-10-01",
+      "point_rank": 44,
+      "grid_start": "2019-10-01",
+      "grid_end": "2019-10-01",
+      "grid_rank": 82,
+      "change": 38
+    },
+    {
+      "point_start": "2012-06-12",
+      "point_end": "2012-06-12",
+      "point_rank": 45,
+      "grid_start": "2012-06-12",
+      "grid_end": "2012-06-12",
+      "grid_rank": 128,
+      "change": 83
+    },
+    {
+      "point_start": "2024-10-25",
+      "point_end": "2024-10-25",
+      "point_rank": 46,
+      "grid_start": "2024-10-25",
+      "grid_end": "2024-10-25",
+      "grid_rank": 103,
+      "change": 57
+    },
+    {
+      "point_start": "2016-08-28",
+      "point_end": "2016-08-28",
+      "point_rank": 47,
+      "grid_start": "2016-08-28",
+      "grid_end": "2016-08-28",
+      "grid_rank": 117,
+      "change": 70
+    },
+    {
+      "point_start": "2014-07-01",
+      "point_end": "2014-07-01",
+      "point_rank": 48,
+      "grid_start": "2014-07-01",
+      "grid_end": "2014-07-01",
+      "grid_rank": 133,
+      "change": 85
+    },
+    {
+      "point_start": "2013-04-14",
+      "point_end": "2013-04-14",
+      "point_rank": 49,
+      "grid_start": "2013-04-14",
+      "grid_end": "2013-04-15",
+      "grid_rank": 40,
+      "change": -9
+    },
+    {
+      "point_start": "2014-05-29",
+      "point_end": "2014-05-29",
+      "point_rank": 50,
+      "grid_start": "2014-05-29",
+      "grid_end": "2014-05-29",
+      "grid_rank": 134,
+      "change": 84
+    },
+    {
+      "point_start": "2013-05-01",
+      "point_end": "2013-05-01",
+      "point_rank": 51,
+      "grid_start": "2013-05-01",
+      "grid_end": "2013-05-01",
+      "grid_rank": 144,
+      "change": 93
+    },
+    {
+      "point_start": "2007-09-25",
+      "point_end": "2007-09-25",
+      "point_rank": 52,
+      "grid_start": "2007-09-25",
+      "grid_end": "2007-09-25",
+      "grid_rank": 8,
+      "change": -44
+    },
+    {
+      "point_start": "2001-07-04",
+      "point_end": "2001-07-04",
+      "point_rank": 53,
+      "grid_start": "2001-07-04",
+      "grid_end": "2001-07-04",
+      "grid_rank": 147,
+      "change": 94
+    },
+    {
+      "point_start": "2023-09-16",
+      "point_end": "2023-09-16",
+      "point_rank": 54,
+      "grid_start": "2023-09-16",
+      "grid_end": "2023-09-16",
+      "grid_rank": 20,
+      "change": -34
+    },
+    {
+      "point_start": "2022-06-30",
+      "point_end": "2022-06-30",
+      "point_rank": 55,
+      "grid_start": "2022-06-30",
+      "grid_end": "2022-06-30",
+      "grid_rank": 137,
+      "change": 82
+    },
+    {
+      "point_start": "2026-07-27",
+      "point_end": "2026-07-27",
+      "point_rank": 56,
+      "grid_start": "2026-07-27",
+      "grid_end": "2026-07-27",
+      "grid_rank": 135,
+      "change": 79
+    },
+    {
+      "point_start": "2020-10-14",
+      "point_end": "2020-10-14",
+      "point_rank": 57,
+      "grid_start": "2020-10-14",
+      "grid_end": "2020-10-14",
+      "grid_rank": 156,
+      "change": 99
+    },
+    {
+      "point_start": "2014-09-20",
+      "point_end": "2014-09-20",
+      "point_rank": 58,
+      "grid_start": "2014-09-20",
+      "grid_end": "2014-09-20",
+      "grid_rank": 115,
+      "change": 57
+    },
+    {
+      "point_start": "2003-05-29",
+      "point_end": "2003-05-29",
+      "point_rank": 59,
+      "grid_start": "2003-05-29",
+      "grid_end": "2003-05-29",
+      "grid_rank": 143,
+      "change": 84
+    },
+    {
+      "point_start": "2024-07-10",
+      "point_end": "2024-07-10",
+      "point_rank": 60,
+      "grid_start": "2024-07-10",
+      "grid_end": "2024-07-11",
+      "grid_rank": 58,
+      "change": -2
+    },
+    {
+      "point_start": "2014-06-05",
+      "point_end": "2014-06-05",
+      "point_rank": 61,
+      "grid_start": "2014-06-05",
+      "grid_end": "2014-06-05",
+      "grid_rank": 148,
+      "change": 87
+    },
+    {
+      "point_start": "2019-05-20",
+      "point_end": "2019-05-20",
+      "point_rank": 62,
+      "grid_start": "2019-05-20",
+      "grid_end": "2019-05-20",
+      "grid_rank": 169,
+      "change": 107
+    },
+    {
+      "point_start": "2018-07-01",
+      "point_end": "2018-07-01",
+      "point_rank": 63,
+      "grid_start": "2018-06-30",
+      "grid_end": "2018-07-01",
+      "grid_rank": 47,
+      "change": -16
+    },
+    {
+      "point_start": "2012-06-28",
+      "point_end": "2012-06-28",
+      "point_rank": 64,
+      "grid_start": "2012-06-28",
+      "grid_end": "2012-06-28",
+      "grid_rank": 64,
+      "change": 0
+    },
+    {
+      "point_start": "2019-10-18",
+      "point_end": "2019-10-18",
+      "point_rank": 65,
+      "grid_start": "2019-10-18",
+      "grid_end": "2019-10-18",
+      "grid_rank": 171,
+      "change": 106
+    },
+    {
+      "point_start": "2021-09-13",
+      "point_end": "2021-09-13",
+      "point_rank": 66,
+      "grid_start": "2021-09-13",
+      "grid_end": "2021-09-13",
+      "grid_rank": 149,
+      "change": 83
+    },
+    {
+      "point_start": "2011-07-03",
+      "point_end": "2011-07-03",
+      "point_rank": 67,
+      "grid_start": "2011-07-03",
+      "grid_end": "2011-07-03",
+      "grid_rank": 80,
+      "change": 13
+    },
+    {
+      "point_start": "2019-02-24",
+      "point_end": "2019-02-24",
+      "point_rank": 68,
+      "grid_start": "2019-02-24",
+      "grid_end": "2019-02-24",
+      "grid_rank": 77,
+      "change": 9
+    },
+    {
+      "point_start": "2016-10-18",
+      "point_end": "2016-10-19",
+      "point_rank": 69,
+      "grid_start": "2016-10-18",
+      "grid_end": "2016-10-19",
+      "grid_rank": 105,
+      "change": 36
+    },
+    {
+      "point_start": "2014-07-05",
+      "point_end": "2014-07-05",
+      "point_rank": 70,
+      "grid_start": "2014-07-04",
+      "grid_end": "2014-07-05",
+      "grid_rank": 12,
+      "change": -58
+    },
+    {
+      "point_start": "2016-07-23",
+      "point_end": "2016-07-23",
+      "point_rank": 71,
+      "grid_start": "2016-07-23",
+      "grid_end": "2016-07-23",
+      "grid_rank": 188,
+      "change": 117
+    },
+    {
+      "point_start": "2001-04-03",
+      "point_end": "2001-04-03",
+      "point_rank": 72,
+      "grid_start": "2001-04-03",
+      "grid_end": "2001-04-03",
+      "grid_rank": 129,
+      "change": 57
+    },
+    {
+      "point_start": "2014-08-21",
+      "point_end": "2014-08-21",
+      "point_rank": 73,
+      "grid_start": "2014-08-21",
+      "grid_end": "2014-08-21",
+      "grid_rank": 101,
+      "change": 28
+    },
+    {
+      "point_start": "2004-06-07",
+      "point_end": "2004-06-07",
+      "point_rank": 74,
+      "grid_start": "2004-06-07",
+      "grid_end": "2004-06-07",
+      "grid_rank": 198,
+      "change": 124
+    },
+    {
+      "point_start": "2002-04-19",
+      "point_end": "2002-04-19",
+      "point_rank": 75,
+      "grid_start": "2002-04-18",
+      "grid_end": "2002-04-19",
+      "grid_rank": 167,
+      "change": 92
+    },
+    {
+      "point_start": "2002-07-23",
+      "point_end": "2002-07-23",
+      "point_rank": 76,
+      "grid_start": "2002-07-23",
+      "grid_end": "2002-07-23",
+      "grid_rank": 65,
+      "change": -11
+    },
+    {
+      "point_start": "2007-05-11",
+      "point_end": "2007-05-11",
+      "point_rank": 77,
+      "grid_start": "2007-05-11",
+      "grid_end": "2007-05-11",
+      "grid_rank": 124,
+      "change": 47
+    },
+    {
+      "point_start": "2020-06-18",
+      "point_end": "2020-06-18",
+      "point_rank": 78,
+      "grid_start": "2020-06-18",
+      "grid_end": "2020-06-18",
+      "grid_rank": 203,
+      "change": 125
+    },
+    {
+      "point_start": "2023-07-23",
+      "point_end": "2023-07-23",
+      "point_rank": 79,
+      "grid_start": "2023-07-22",
+      "grid_end": "2023-07-23",
+      "grid_rank": 42,
+      "change": -37
+    },
+    {
+      "point_start": "2013-07-08",
+      "point_end": "2013-07-08",
+      "point_rank": 80,
+      "grid_start": "2013-07-07",
+      "grid_end": "2013-07-08",
+      "grid_rank": 45,
+      "change": -35
+    },
+    {
+      "point_start": "2010-09-27",
+      "point_end": "2010-09-27",
+      "point_rank": 81,
+      "grid_start": "2010-09-27",
+      "grid_end": "2010-09-27",
+      "grid_rank": 152,
+      "change": 71
+    },
+    {
+      "point_start": "2023-10-05",
+      "point_end": "2023-10-05",
+      "point_rank": 82,
+      "grid_start": "2023-10-05",
+      "grid_end": "2023-10-05",
+      "grid_rank": 217,
+      "change": 135
+    },
+    {
+      "point_start": "2011-09-20",
+      "point_end": "2011-09-20",
+      "point_rank": 83,
+      "grid_start": "2011-09-20",
+      "grid_end": "2011-09-20",
+      "grid_rank": 200,
+      "change": 117
+    },
+    {
+      "point_start": "2012-05-05",
+      "point_end": "2012-05-05",
+      "point_rank": 84,
+      "grid_start": "2012-05-05",
+      "grid_end": "2012-05-05",
+      "grid_rank": 190,
+      "change": 106
+    },
+    {
+      "point_start": "2018-09-06",
+      "point_end": "2018-09-06",
+      "point_rank": 85,
+      "grid_start": "2018-09-06",
+      "grid_end": "2018-09-07",
+      "grid_rank": 69,
+      "change": -16
+    },
+    {
+      "point_start": "2005-07-06",
+      "point_end": "2005-07-06",
+      "point_rank": 86,
+      "grid_start": "2005-07-06",
+      "grid_end": "2005-07-06",
+      "grid_rank": 126,
+      "change": 40
+    },
+    {
+      "point_start": "2011-07-17",
+      "point_end": "2011-07-17",
+      "point_rank": 87,
+      "grid_start": "2011-07-17",
+      "grid_end": "2011-07-17",
+      "grid_rank": 139,
+      "change": 52
+    },
+    {
+      "point_start": "2003-06-22",
+      "point_end": "2003-06-22",
+      "point_rank": 88,
+      "grid_start": "2003-06-22",
+      "grid_end": "2003-06-22",
+      "grid_rank": 92,
+      "change": 4
+    },
+    {
+      "point_start": "2005-05-30",
+      "point_end": "2005-05-30",
+      "point_rank": 89,
+      "grid_start": "2005-05-30",
+      "grid_end": "2005-05-30",
+      "grid_rank": 24,
+      "change": -65
+    },
+    {
+      "point_start": "2009-06-28",
+      "point_end": "2009-06-28",
+      "point_rank": 90,
+      "grid_start": "2009-06-28",
+      "grid_end": "2009-06-28",
+      "grid_rank": 93,
+      "change": 3
+    },
+    {
+      "point_start": "2008-06-07",
+      "point_end": "2008-06-08",
+      "point_rank": 91,
+      "grid_start": "2008-06-06",
+      "grid_end": "2008-06-08",
+      "grid_rank": 46,
+      "change": -45
+    },
+    {
+      "point_start": "2018-10-29",
+      "point_end": "2018-10-29",
+      "point_rank": 92,
+      "grid_start": "2018-10-29",
+      "grid_end": "2018-10-29",
+      "grid_rank": 204,
+      "change": 112
+    },
+    {
+      "point_start": "2026-06-09",
+      "point_end": "2026-06-09",
+      "point_rank": 93,
+      "grid_start": "2026-06-09",
+      "grid_end": "2026-06-10",
+      "grid_rank": 84,
+      "change": -9
+    },
+    {
+      "point_start": "2013-01-24",
+      "point_end": "2013-01-24",
+      "point_rank": 94,
+      "grid_start": "2013-01-24",
+      "grid_end": "2013-01-24",
+      "grid_rank": 251,
+      "change": 157
+    },
+    {
+      "point_start": "2002-06-06",
+      "point_end": "2002-06-06",
+      "point_rank": 95,
+      "grid_start": "2002-06-06",
+      "grid_end": "2002-06-06",
+      "grid_rank": 21,
+      "change": -74
+    },
+    {
+      "point_start": "2008-09-26",
+      "point_end": "2008-09-26",
+      "point_rank": 96,
+      "grid_start": "2008-09-26",
+      "grid_end": "2008-09-26",
+      "grid_rank": 162,
+      "change": 66
+    },
+    {
+      "point_start": "2005-09-24",
+      "point_end": "2005-09-24",
+      "point_rank": 97,
+      "grid_start": "2005-09-24",
+      "grid_end": "2005-09-24",
+      "grid_rank": 88,
+      "change": -9
+    },
+    {
+      "point_start": "2003-06-14",
+      "point_end": "2003-06-14",
+      "point_rank": 98,
+      "grid_start": "2003-06-14",
+      "grid_end": "2003-06-14",
+      "grid_rank": 253,
+      "change": 155
+    },
+    {
+      "point_start": "2008-06-24",
+      "point_end": "2008-06-24",
+      "point_rank": 99,
+      "grid_start": "2008-06-24",
+      "grid_end": "2008-06-24",
+      "grid_rank": 257,
+      "change": 158
+    },
+    {
+      "point_start": "2004-05-26",
+      "point_end": "2004-05-26",
+      "point_rank": 100,
+      "grid_start": "2004-05-26",
+      "grid_end": "2004-05-26",
+      "grid_rank": 67,
+      "change": -33
+    },
+    {
+      "point_start": "2008-08-08",
+      "point_end": "2008-08-08",
+      "point_rank": 101,
+      "grid_start": "2008-08-08",
+      "grid_end": "2008-08-08",
+      "grid_rank": 195,
+      "change": 94
+    },
+    {
+      "point_start": "2014-09-24",
+      "point_end": "2014-09-24",
+      "point_rank": 102,
+      "grid_start": "2014-09-23",
+      "grid_end": "2014-09-24",
+      "grid_rank": 78,
+      "change": -24
+    },
+    {
+      "point_start": "2022-09-28",
+      "point_end": "2022-09-28",
+      "point_rank": 103,
+      "grid_start": "2022-09-28",
+      "grid_end": "2022-09-28",
+      "grid_rank": 259,
+      "change": 156
+    },
+    {
+      "point_start": "2003-09-07",
+      "point_end": "2003-09-07",
+      "point_rank": 104,
+      "grid_start": "2003-09-07",
+      "grid_end": "2003-09-08",
+      "grid_rank": 164,
+      "change": 60
+    },
+    {
+      "point_start": "2016-09-10",
+      "point_end": "2016-09-10",
+      "point_rank": 105,
+      "grid_start": "2016-09-10",
+      "grid_end": "2016-09-10",
+      "grid_rank": 232,
+      "change": 127
+    },
+    {
+      "point_start": "2009-04-13",
+      "point_end": "2009-04-13",
+      "point_rank": 106,
+      "grid_start": "2009-04-13",
+      "grid_end": "2009-04-13",
+      "grid_rank": 131,
+      "change": 25
+    },
+    {
+      "point_start": "2005-07-13",
+      "point_end": "2005-07-13",
+      "point_rank": 107,
+      "grid_start": "2005-07-13",
+      "grid_end": "2005-07-13",
+      "grid_rank": 183,
+      "change": 76
+    },
+    {
+      "point_start": "2015-06-20",
+      "point_end": "2015-06-20",
+      "point_rank": 108,
+      "grid_start": "2015-06-20",
+      "grid_end": "2015-06-20",
+      "grid_rank": 197,
+      "change": 89
+    },
+    {
+      "point_start": "2026-09-09",
+      "point_end": "2026-09-09",
+      "point_rank": 109,
+      "grid_start": "2026-09-09",
+      "grid_end": "2026-09-09",
+      "grid_rank": 215,
+      "change": 106
+    },
+    {
+      "point_start": "2010-10-21",
+      "point_end": "2010-10-21",
+      "point_rank": 110,
+      "grid_start": "2010-10-21",
+      "grid_end": "2010-10-21",
+      "grid_rank": 283,
+      "change": 173
+    },
+    {
+      "point_start": "2004-09-14",
+      "point_end": "2004-09-14",
+      "point_rank": 111,
+      "grid_start": "2004-09-14",
+      "grid_end": "2004-09-15",
+      "grid_rank": 151,
+      "change": 40
+    },
+    {
+      "point_start": "2010-06-04",
+      "point_end": "2010-06-04",
+      "point_rank": 112,
+      "grid_start": "2010-06-04",
+      "grid_end": "2010-06-04",
+      "grid_rank": 235,
+      "change": 123
+    },
+    {
+      "point_start": "2009-06-09",
+      "point_end": "2009-06-09",
+      "point_rank": 113,
+      "grid_start": "2009-06-09",
+      "grid_end": "2009-06-09",
+      "grid_rank": 163,
+      "change": 50
+    },
+    {
+      "point_start": "2024-05-16",
+      "point_end": "2024-05-16",
+      "point_rank": 114,
+      "grid_start": "2024-05-16",
+      "grid_end": "2024-05-16",
+      "grid_rank": 297,
+      "change": 183
+    },
+    {
+      "point_start": "2005-02-06",
+      "point_end": "2005-02-06",
+      "point_rank": 115,
+      "grid_start": "2005-02-06",
+      "grid_end": "2005-02-06",
+      "grid_rank": 299,
+      "change": 184
+    },
+    {
+      "point_start": "2025-10-28",
+      "point_end": "2025-10-28",
+      "point_rank": 116,
+      "grid_start": "2025-10-28",
+      "grid_end": "2025-10-28",
+      "grid_rank": 305,
+      "change": 189
+    },
+    {
+      "point_start": "2012-09-29",
+      "point_end": "2012-09-29",
+      "point_rank": 117,
+      "grid_start": "2012-09-29",
+      "grid_end": "2012-09-29",
+      "grid_rank": 205,
+      "change": 88
+    },
+    {
+      "point_start": "2017-07-17",
+      "point_end": "2017-07-17",
+      "point_rank": 118,
+      "grid_start": "2017-07-17",
+      "grid_end": "2017-07-17",
+      "grid_rank": 122,
+      "change": 4
+    },
+    {
+      "point_start": "2011-04-17",
+      "point_end": "2011-04-17",
+      "point_rank": 119,
+      "grid_start": "2011-04-17",
+      "grid_end": "2011-04-17",
+      "grid_rank": 307,
+      "change": 188
+    },
+    {
+      "point_start": "2020-07-04",
+      "point_end": "2020-07-04",
+      "point_rank": 120,
+      "grid_start": "2020-07-04",
+      "grid_end": "2020-07-04",
+      "grid_rank": 173,
+      "change": 53
+    },
+    {
+      "point_start": "2010-07-15",
+      "point_end": "2010-07-15",
+      "point_rank": 121,
+      "grid_start": "2010-07-15",
+      "grid_end": "2010-07-15",
+      "grid_rank": 308,
+      "change": 187
+    },
+    {
+      "point_start": "2010-08-17",
+      "point_end": "2010-08-17",
+      "point_rank": 122,
+      "grid_start": "2010-08-17",
+      "grid_end": "2010-08-17",
+      "grid_rank": 236,
+      "change": 114
+    },
+    {
+      "point_start": "2013-05-11",
+      "point_end": "2013-05-11",
+      "point_rank": 123,
+      "grid_start": "2013-05-11",
+      "grid_end": "2013-05-11",
+      "grid_rank": 254,
+      "change": 131
+    },
+    {
+      "point_start": "2007-10-27",
+      "point_end": "2007-10-27",
+      "point_rank": 124,
+      "grid_start": "2007-10-27",
+      "grid_end": "2007-10-27",
+      "grid_rank": 191,
+      "change": 67
+    },
+    {
+      "point_start": "2005-09-01",
+      "point_end": "2005-09-01",
+      "point_rank": 125,
+      "grid_start": "2005-09-01",
+      "grid_end": "2005-09-01",
+      "grid_rank": 213,
+      "change": 88
+    },
+    {
+      "point_start": "2025-06-14",
+      "point_end": "2025-06-14",
+      "point_rank": 126,
+      "grid_start": "2025-06-14",
+      "grid_end": "2025-06-14",
+      "grid_rank": 165,
+      "change": 39
+    },
+    {
+      "point_start": "2019-05-29",
+      "point_end": "2019-05-29",
+      "point_rank": 127,
+      "grid_start": "2019-05-29",
+      "grid_end": "2019-05-29",
+      "grid_rank": 316,
+      "change": 189
+    },
+    {
+      "point_start": "2002-06-09",
+      "point_end": "2002-06-09",
+      "point_rank": 128,
+      "grid_start": "2002-06-09",
+      "grid_end": "2002-06-09",
+      "grid_rank": 206,
+      "change": 78
+    },
+    {
+      "point_start": "2000-09-27",
+      "point_end": "2000-09-27",
+      "point_rank": 129,
+      "grid_start": "2000-09-27",
+      "grid_end": "2000-09-27",
+      "grid_rank": 332,
+      "change": 203
+    },
+    {
+      "point_start": "2006-05-20",
+      "point_end": "2006-05-20",
+      "point_rank": 130,
+      "grid_start": "2006-05-19",
+      "grid_end": "2006-05-20",
+      "grid_rank": 31,
+      "change": -99
+    },
+    {
+      "point_start": "2009-06-26",
+      "point_end": "2009-06-26",
+      "point_rank": 131,
+      "grid_start": "2009-06-26",
+      "grid_end": "2009-06-26",
+      "grid_rank": 119,
+      "change": -12
+    },
+    {
+      "point_start": "2025-09-24",
+      "point_end": "2025-09-24",
+      "point_rank": 132,
+      "grid_start": "2025-09-24",
+      "grid_end": "2025-09-24",
+      "grid_rank": 208,
+      "change": 76
+    },
+    {
+      "point_start": "2014-08-01",
+      "point_end": "2014-08-01",
+      "point_rank": 133,
+      "grid_start": "2014-07-31",
+      "grid_end": "2014-08-01",
+      "grid_rank": 10,
+      "change": -123
+    },
+    {
+      "point_start": "2002-04-07",
+      "point_end": "2002-04-07",
+      "point_rank": 134,
+      "grid_start": "2002-04-06",
+      "grid_end": "2002-04-07",
+      "grid_rank": 221,
+      "change": 87
+    },
+    {
+      "point_start": "2001-06-11",
+      "point_end": "2001-06-11",
+      "point_rank": 135,
+      "grid_start": "2001-06-11",
+      "grid_end": "2001-06-11",
+      "grid_rank": 224,
+      "change": 89
+    },
+    {
+      "point_start": "2014-10-11",
+      "point_end": "2014-10-11",
+      "point_rank": 136,
+      "grid_start": "2014-10-11",
+      "grid_end": "2014-10-11",
+      "grid_rank": 288,
+      "change": 152
+    },
+    {
+      "point_start": "2018-08-13",
+      "point_end": "2018-08-13",
+      "point_rank": 137,
+      "grid_start": "2018-08-13",
+      "grid_end": "2018-08-13",
+      "grid_rank": 267,
+      "change": 130
+    },
+    {
+      "point_start": "2011-11-02",
+      "point_end": "2011-11-02",
+      "point_rank": 138,
+      "grid_start": "2011-11-02",
+      "grid_end": "2011-11-02",
+      "grid_rank": 214,
+      "change": 76
+    },
+    {
+      "point_start": "2023-05-15",
+      "point_end": "2023-05-15",
+      "point_rank": 139,
+      "grid_start": "2023-05-15",
+      "grid_end": "2023-05-15",
+      "grid_rank": 311,
+      "change": 172
+    },
+    {
+      "point_start": "2005-06-24",
+      "point_end": "2005-06-24",
+      "point_rank": 140,
+      "grid_start": "2005-06-24",
+      "grid_end": "2005-06-24",
+      "grid_rank": 57,
+      "change": -83
+    },
+    {
+      "point_start": "2006-09-05",
+      "point_end": "2006-09-05",
+      "point_rank": 141,
+      "grid_start": "2006-09-05",
+      "grid_end": "2006-09-05",
+      "grid_rank": 98,
+      "change": -43
+    },
+    {
+      "point_start": "2004-07-10",
+      "point_end": "2004-07-10",
+      "point_rank": 142,
+      "grid_start": "2004-07-10",
+      "grid_end": "2004-07-10",
+      "grid_rank": 320,
+      "change": 178
+    },
+    {
+      "point_start": "2014-07-27",
+      "point_end": "2014-07-27",
+      "point_rank": 143,
+      "grid_start": "2014-07-27",
+      "grid_end": "2014-07-27",
+      "grid_rank": 104,
+      "change": -39
+    },
+    {
+      "point_start": "2026-07-10",
+      "point_end": "2026-07-10",
+      "point_rank": 144,
+      "grid_start": "2026-07-10",
+      "grid_end": "2026-07-10",
+      "grid_rank": 238,
+      "change": 94
+    },
+    {
+      "point_start": "2009-07-10",
+      "point_end": "2009-07-10",
+      "point_rank": 145,
+      "grid_start": "2009-07-10",
+      "grid_end": "2009-07-12",
+      "grid_rank": 27,
+      "change": -118
+    },
+    {
+      "point_start": "2010-04-17",
+      "point_end": "2010-04-17",
+      "point_rank": 146,
+      "grid_start": "2010-04-17",
+      "grid_end": "2010-04-17",
+      "grid_rank": 355,
+      "change": 209
+    },
+    {
+      "point_start": "2009-04-08",
+      "point_end": "2009-04-08",
+      "point_rank": 147,
+      "grid_start": "2009-04-08",
+      "grid_end": "2009-04-08",
+      "grid_rank": 154,
+      "change": 7
+    },
+    {
+      "point_start": "2008-06-14",
+      "point_end": "2008-06-14",
+      "point_rank": 148,
+      "grid_start": "2008-06-13",
+      "grid_end": "2008-06-14",
+      "grid_rank": 102,
+      "change": -46
+    },
+    {
+      "point_start": "2007-07-26",
+      "point_end": "2007-07-26",
+      "point_rank": 149,
+      "grid_start": "2007-07-25",
+      "grid_end": "2007-07-27",
+      "grid_rank": 28,
+      "change": -121
+    },
+    {
+      "point_start": "2007-07-20",
+      "point_end": "2007-07-20",
+      "point_rank": 150,
+      "grid_start": "2007-07-20",
+      "grid_end": "2007-07-20",
+      "grid_rank": 26,
+      "change": -124
+    },
+    {
+      "point_start": "2004-09-22",
+      "point_end": "2004-09-22",
+      "point_rank": 151,
+      "grid_start": "2004-09-22",
+      "grid_end": "2004-09-22",
+      "grid_rank": 333,
+      "change": 182
+    },
+    {
+      "point_start": "2015-07-05",
+      "point_end": "2015-07-05",
+      "point_rank": 152,
+      "grid_start": "2015-07-05",
+      "grid_end": "2015-07-05",
+      "grid_rank": 79,
+      "change": -73
+    },
+    {
+      "point_start": "2005-11-01",
+      "point_end": "2005-11-01",
+      "point_rank": 153,
+      "grid_start": "2005-11-01",
+      "grid_end": "2005-11-01",
+      "grid_rank": 364,
+      "change": 211
+    },
+    {
+      "point_start": "2013-05-28",
+      "point_end": "2013-05-28",
+      "point_rank": 154,
+      "grid_start": "2013-05-28",
+      "grid_end": "2013-05-28",
+      "grid_rank": 315,
+      "change": 161
+    },
+    {
+      "point_start": "2003-10-25",
+      "point_end": "2003-10-25",
+      "point_rank": 155,
+      "grid_start": "2003-10-25",
+      "grid_end": "2003-10-27",
+      "grid_rank": 357,
+      "change": 202
+    },
+    {
+      "point_start": "2003-06-10",
+      "point_end": "2003-06-10",
+      "point_rank": 156,
+      "grid_start": "2003-06-10",
+      "grid_end": "2003-06-10",
+      "grid_rank": 90,
+      "change": -66
+    },
+    {
+      "point_start": "2017-07-08",
+      "point_end": "2017-07-08",
+      "point_rank": 157,
+      "grid_start": "2017-07-08",
+      "grid_end": "2017-07-09",
+      "grid_rank": 118,
+      "change": -39
+    },
+    {
+      "point_start": "2016-05-21",
+      "point_end": "2016-05-21",
+      "point_rank": 158,
+      "grid_start": "2016-05-21",
+      "grid_end": "2016-05-21",
+      "grid_rank": 184,
+      "change": 26
+    },
+    {
+      "point_start": "2002-07-12",
+      "point_end": "2002-07-12",
+      "point_rank": 159,
+      "grid_start": "2002-07-12",
+      "grid_end": "2002-07-12",
+      "grid_rank": 177,
+      "change": 18
+    },
+    {
+      "point_start": "2000-09-07",
+      "point_end": "2000-09-07",
+      "point_rank": 160,
+      "grid_start": "2000-09-07",
+      "grid_end": "2000-09-07",
+      "grid_rank": 109,
+      "change": -51
+    },
+    {
+      "point_start": "2011-05-14",
+      "point_end": "2011-05-14",
+      "point_rank": 161,
+      "grid_start": "2011-05-14",
+      "grid_end": "2011-05-14",
+      "grid_rank": 295,
+      "change": 134
+    },
+    {
+      "point_start": "2006-09-12",
+      "point_end": "2006-09-12",
+      "point_rank": 162,
+      "grid_start": "2006-09-12",
+      "grid_end": "2006-09-12",
+      "grid_rank": 100,
+      "change": -62
+    },
+    {
+      "point_start": "2003-10-15",
+      "point_end": "2003-10-15",
+      "point_rank": 163,
+      "grid_start": "2003-10-14",
+      "grid_end": "2003-10-16",
+      "grid_rank": 50,
+      "change": -113
+    },
+    {
+      "point_start": "2021-09-03",
+      "point_end": "2021-09-03",
+      "point_rank": 164,
+      "grid_start": "2021-09-01",
+      "grid_end": "2021-09-03",
+      "grid_rank": 25,
+      "change": -139
+    },
+    {
+      "point_start": "2012-07-31",
+      "point_end": "2012-07-31",
+      "point_rank": 165,
+      "grid_start": "2012-07-31",
+      "grid_end": "2012-07-31",
+      "grid_rank": 356,
+      "change": 191
+    },
+    {
+      "point_start": "2015-07-10",
+      "point_end": "2015-07-10",
+      "point_rank": 166,
+      "grid_start": "2015-07-10",
+      "grid_end": "2015-07-10",
+      "grid_rank": 340,
+      "change": 174
+    },
+    {
+      "point_start": "2007-05-21",
+      "point_end": "2007-05-21",
+      "point_rank": 167,
+      "grid_start": "2007-05-21",
+      "grid_end": "2007-05-21",
+      "grid_rank": 397,
+      "change": 230
+    },
+    {
+      "point_start": "2002-04-24",
+      "point_end": "2002-04-24",
+      "point_rank": 168,
+      "grid_start": "2002-04-24",
+      "grid_end": "2002-04-24",
+      "grid_rank": 199,
+      "change": 31
+    },
+    {
+      "point_start": "2022-09-26",
+      "point_end": "2022-09-26",
+      "point_rank": 169,
+      "grid_start": "2022-09-26",
+      "grid_end": "2022-09-26",
+      "grid_rank": 321,
+      "change": 152
+    },
+    {
+      "point_start": "2001-09-17",
+      "point_end": "2001-09-17",
+      "point_rank": 170,
+      "grid_start": "2001-09-17",
+      "grid_end": "2001-09-19",
+      "grid_rank": 14,
+      "change": -156
+    },
+    {
+      "point_start": "2010-08-20",
+      "point_end": "2010-08-20",
+      "point_rank": 171,
+      "grid_start": "2010-08-20",
+      "grid_end": "2010-08-20",
+      "grid_rank": 273,
+      "change": 102
+    },
+    {
+      "point_start": "2010-07-07",
+      "point_end": "2010-07-07",
+      "point_rank": 172,
+      "grid_start": "2010-07-07",
+      "grid_end": "2010-07-07",
+      "grid_rank": 322,
+      "change": 150
+    },
+    {
+      "point_start": "2018-05-05",
+      "point_end": "2018-05-05",
+      "point_rank": 173,
+      "grid_start": "2018-05-03",
+      "grid_end": "2018-05-05",
+      "grid_rank": 23,
+      "change": -150
+    },
+    {
+      "point_start": "2007-06-28",
+      "point_end": "2007-06-28",
+      "point_rank": 174,
+      "grid_start": "2007-06-28",
+      "grid_end": "2007-06-29",
+      "grid_rank": 55,
+      "change": -119
+    },
+    {
+      "point_start": "2021-07-08",
+      "point_end": "2021-07-08",
+      "point_rank": 175,
+      "grid_start": "2021-07-08",
+      "grid_end": "2021-07-09",
+      "grid_rank": 9,
+      "change": -166
+    },
+    {
+      "point_start": "2010-06-20",
+      "point_end": "2010-06-20",
+      "point_rank": 176,
+      "grid_start": "2010-06-20",
+      "grid_end": "2010-06-20",
+      "grid_rank": 284,
+      "change": 108
+    },
+    {
+      "point_start": "2000-06-16",
+      "point_end": "2000-06-16",
+      "point_rank": 177,
+      "grid_start": "2000-06-16",
+      "grid_end": "2000-06-16",
+      "grid_rank": 381,
+      "change": 204
+    },
+    {
+      "point_start": "2025-09-22",
+      "point_end": "2025-09-22",
+      "point_rank": 178,
+      "grid_start": "2025-09-22",
+      "grid_end": "2025-09-22",
+      "grid_rank": 318,
+      "change": 140
+    },
+    {
+      "point_start": "2021-06-26",
+      "point_end": "2021-06-26",
+      "point_rank": 179,
+      "grid_start": "2021-06-26",
+      "grid_end": "2021-06-26",
+      "grid_rank": 189,
+      "change": 10
+    },
+    {
+      "point_start": "2015-05-23",
+      "point_end": "2015-05-23",
+      "point_rank": 180,
+      "grid_start": "2015-05-23",
+      "grid_end": "2015-05-23",
+      "grid_rank": 408,
+      "change": 228
+    },
+    {
+      "point_start": "2016-06-15",
+      "point_end": "2016-06-15",
+      "point_rank": 181,
+      "grid_start": "2016-06-15",
+      "grid_end": "2016-06-15",
+      "grid_rank": 409,
+      "change": 228
+    },
+    {
+      "point_start": "2019-10-08",
+      "point_end": "2019-10-08",
+      "point_rank": 182,
+      "grid_start": "2019-10-08",
+      "grid_end": "2019-10-08",
+      "grid_rank": 226,
+      "change": 44
+    },
+    {
+      "point_start": "2006-06-17",
+      "point_end": "2006-06-17",
+      "point_rank": 183,
+      "grid_start": "2006-06-17",
+      "grid_end": "2006-06-17",
+      "grid_rank": 411,
+      "change": 228
+    },
+    {
+      "point_start": "2003-04-14",
+      "point_end": "2003-04-14",
+      "point_rank": 184,
+      "grid_start": "2003-04-14",
+      "grid_end": "2003-04-14",
+      "grid_rank": 412,
+      "change": 228
+    },
+    {
+      "point_start": "2024-04-16",
+      "point_end": "2024-04-16",
+      "point_rank": 185,
+      "grid_start": "2024-04-16",
+      "grid_end": "2024-04-16",
+      "grid_rank": 413,
+      "change": 228
+    },
+    {
+      "point_start": "2024-05-22",
+      "point_end": "2024-05-22",
+      "point_rank": 186,
+      "grid_start": "2024-05-22",
+      "grid_end": "2024-05-22",
+      "grid_rank": 294,
+      "change": 108
+    },
+    {
+      "point_start": "2019-06-26",
+      "point_end": "2019-06-26",
+      "point_rank": 187,
+      "grid_start": "2019-06-26",
+      "grid_end": "2019-06-26",
+      "grid_rank": 142,
+      "change": -45
+    },
+    {
+      "point_start": "2013-10-04",
+      "point_end": "2013-10-04",
+      "point_rank": 188,
+      "grid_start": "2013-10-04",
+      "grid_end": "2013-10-04",
+      "grid_rank": 233,
+      "change": 45
+    },
+    {
+      "point_start": "2007-06-07",
+      "point_end": "2007-06-07",
+      "point_rank": 189,
+      "grid_start": "2007-06-07",
+      "grid_end": "2007-06-07",
+      "grid_rank": 150,
+      "change": -39
+    },
+    {
+      "point_start": "2015-06-08",
+      "point_end": "2015-06-08",
+      "point_rank": 190,
+      "grid_start": "2015-06-08",
+      "grid_end": "2015-06-09",
+      "grid_rank": 266,
+      "change": 76
+    },
+    {
+      "point_start": "2001-04-16",
+      "point_end": "2001-04-16",
+      "point_rank": 191,
+      "grid_start": "2001-04-16",
+      "grid_end": "2001-04-16",
+      "grid_rank": 243,
+      "change": 52
+    },
+    {
+      "point_start": "2002-03-11",
+      "point_end": "2002-03-11",
+      "point_rank": 192,
+      "grid_start": "2002-03-11",
+      "grid_end": "2002-03-11",
+      "grid_rank": 282,
+      "change": 90
+    },
+    {
+      "point_start": "2001-09-23",
+      "point_end": "2001-09-23",
+      "point_rank": 193,
+      "grid_start": "2001-09-23",
+      "grid_end": "2001-09-24",
+      "grid_rank": 86,
+      "change": -107
+    },
+    {
+      "point_start": "2025-09-16",
+      "point_end": "2025-09-16",
+      "point_rank": 194,
+      "grid_start": "2025-09-16",
+      "grid_end": "2025-09-16",
+      "grid_rank": 277,
+      "change": 83
+    },
+    {
+      "point_start": "2015-10-27",
+      "point_end": "2015-10-27",
+      "point_rank": 195,
+      "grid_start": "2015-10-27",
+      "grid_end": "2015-10-27",
+      "grid_rank": 314,
+      "change": 119
+    },
+    {
+      "point_start": "2013-05-26",
+      "point_end": "2013-05-26",
+      "point_rank": 196,
+      "grid_start": "2013-05-26",
+      "grid_end": "2013-05-26",
+      "grid_rank": 410,
+      "change": 214
+    },
+    {
+      "point_start": "2021-04-18",
+      "point_end": "2021-04-18",
+      "point_rank": 197,
+      "grid_start": "2021-04-18",
+      "grid_end": "2021-04-18",
+      "grid_rank": 390,
+      "change": 193
+    },
+    {
+      "point_start": "2018-05-03",
+      "point_end": "2018-05-03",
+      "point_rank": 198,
+      "grid_start": "2018-05-03",
+      "grid_end": "2018-05-05",
+      "grid_rank": 23,
+      "change": -175
+    },
+    {
+      "point_start": "2013-04-02",
+      "point_end": "2013-04-02",
+      "point_rank": 199,
+      "grid_start": "2013-04-02",
+      "grid_end": "2013-04-02",
+      "grid_rank": 261,
+      "change": 62
+    },
+    {
+      "point_start": "2001-05-02",
+      "point_end": "2001-05-02",
+      "point_rank": 200,
+      "grid_start": "2001-05-02",
+      "grid_end": "2001-05-02",
+      "grid_rank": 107,
+      "change": -93
+    },
+    {
+      "point_start": "2024-06-21",
+      "point_end": "2024-06-21",
+      "point_rank": 201,
+      "grid_start": "2024-06-21",
+      "grid_end": "2024-06-21",
+      "grid_rank": 385,
+      "change": 184
+    },
+    {
+      "point_start": "2009-07-12",
+      "point_end": "2009-07-12",
+      "point_rank": 202,
+      "grid_start": "2009-07-10",
+      "grid_end": "2009-07-12",
+      "grid_rank": 27,
+      "change": -175
+    },
+    {
+      "point_start": "2010-05-02",
+      "point_end": "2010-05-02",
+      "point_rank": 203,
+      "grid_start": "2010-05-02",
+      "grid_end": "2010-05-02",
+      "grid_rank": 447,
+      "change": 244
+    },
+    {
+      "point_start": "2015-06-14",
+      "point_end": "2015-06-14",
+      "point_rank": 204,
+      "grid_start": "2015-06-14",
+      "grid_end": "2015-06-14",
+      "grid_rank": 255,
+      "change": 51
+    },
+    {
+      "point_start": "2011-05-27",
+      "point_end": "2011-05-27",
+      "point_rank": 205,
+      "grid_start": "2011-05-27",
+      "grid_end": "2011-05-27",
+      "grid_rank": 337,
+      "change": 132
+    },
+    {
+      "point_start": "2015-06-05",
+      "point_end": "2015-06-05",
+      "point_rank": 206,
+      "grid_start": "2015-06-05",
+      "grid_end": "2015-06-05",
+      "grid_rank": 218,
+      "change": 12
+    },
+    {
+      "point_start": "2006-06-09",
+      "point_end": "2006-06-09",
+      "point_rank": 207,
+      "grid_start": "2006-06-09",
+      "grid_end": "2006-06-09",
+      "grid_rank": 246,
+      "change": 39
+    },
+    {
+      "point_start": "2024-05-25",
+      "point_end": "2024-05-25",
+      "point_rank": 208,
+      "grid_start": "2024-05-25",
+      "grid_end": "2024-05-25",
+      "grid_rank": 426,
+      "change": 218
+    },
+    {
+      "point_start": "2010-08-07",
+      "point_end": "2010-08-07",
+      "point_rank": 209,
+      "grid_start": "2010-08-07",
+      "grid_end": "2010-08-07",
+      "grid_rank": 174,
+      "change": -35
+    },
+    {
+      "point_start": "2008-05-16",
+      "point_end": "2008-05-16",
+      "point_rank": 210,
+      "grid_start": "2008-05-16",
+      "grid_end": "2008-05-16",
+      "grid_rank": 361,
+      "change": 151
+    },
+    {
+      "point_start": "2011-07-14",
+      "point_end": "2011-07-14",
+      "point_rank": 211,
+      "grid_start": "2011-07-14",
+      "grid_end": "2011-07-14",
+      "grid_rank": 245,
+      "change": 34
+    },
+    {
+      "point_start": "2004-06-17",
+      "point_end": "2004-06-17",
+      "point_rank": 212,
+      "grid_start": "2004-06-16",
+      "grid_end": "2004-06-17",
+      "grid_rank": 91,
+      "change": -121
+    },
+    {
+      "point_start": "2019-09-14",
+      "point_end": "2019-09-14",
+      "point_rank": 213,
+      "grid_start": "2019-09-14",
+      "grid_end": "2019-09-14",
+      "grid_rank": 467,
+      "change": 254
+    },
+    {
+      "point_start": "2024-04-23",
+      "point_end": "2024-04-23",
+      "point_rank": 214,
+      "grid_start": "2024-04-23",
+      "grid_end": "2024-04-23",
+      "grid_rank": 336,
+      "change": 122
+    },
+    {
+      "point_start": "2018-06-23",
+      "point_end": "2018-06-23",
+      "point_rank": 215,
+      "grid_start": "2018-06-23",
+      "grid_end": "2018-06-23",
+      "grid_rank": 281,
+      "change": 66
+    },
+    {
+      "point_start": "2004-05-06",
+      "point_end": "2004-05-06",
+      "point_rank": 216,
+      "grid_start": "2004-05-06",
+      "grid_end": "2004-05-06",
+      "grid_rank": 368,
+      "change": 152
+    },
+    {
+      "point_start": "2002-06-14",
+      "point_end": "2002-06-14",
+      "point_rank": 217,
+      "grid_start": "2002-06-14",
+      "grid_end": "2002-06-14",
+      "grid_rank": 342,
+      "change": 125
+    },
+    {
+      "point_start": "2018-09-26",
+      "point_end": "2018-09-26",
+      "point_rank": 218,
+      "grid_start": "2018-09-26",
+      "grid_end": "2018-09-26",
+      "grid_rank": 309,
+      "change": 91
+    },
+    {
+      "point_start": "2022-10-25",
+      "point_end": "2022-10-25",
+      "point_rank": 219,
+      "grid_start": "2022-10-25",
+      "grid_end": "2022-10-25",
+      "grid_rank": 272,
+      "change": 53
+    },
+    {
+      "point_start": "2000-09-20",
+      "point_end": "2000-09-20",
+      "point_rank": 220,
+      "grid_start": "2000-09-20",
+      "grid_end": "2000-09-20",
+      "grid_rank": 372,
+      "change": 152
+    },
+    {
+      "point_start": "2002-10-09",
+      "point_end": "2002-10-09",
+      "point_rank": 221,
+      "grid_start": "2002-10-09",
+      "grid_end": "2002-10-09",
+      "grid_rank": 319,
+      "change": 98
+    },
+    {
+      "point_start": "2009-06-05",
+      "point_end": "2009-06-05",
+      "point_rank": 222,
+      "grid_start": "2009-06-05",
+      "grid_end": "2009-06-05",
+      "grid_rank": 229,
+      "change": 7
+    },
+    {
+      "point_start": "2021-09-22",
+      "point_end": "2021-09-22",
+      "point_rank": 223,
+      "grid_start": "2021-09-22",
+      "grid_end": "2021-09-22",
+      "grid_rank": 196,
+      "change": -27
+    },
+    {
+      "point_start": "2013-10-15",
+      "point_end": "2013-10-15",
+      "point_rank": 224,
+      "grid_start": "2013-10-15",
+      "grid_end": "2013-10-15",
+      "grid_rank": 223,
+      "change": -1
+    },
+    {
+      "point_start": "2002-06-24",
+      "point_end": "2002-06-24",
+      "point_rank": 225,
+      "grid_start": "2002-06-24",
+      "grid_end": "2002-06-24",
+      "grid_rank": 436,
+      "change": 211
+    },
+    {
+      "point_start": "2024-06-26",
+      "point_end": "2024-06-26",
+      "point_rank": 226,
+      "grid_start": "2024-06-26",
+      "grid_end": "2024-06-26",
+      "grid_rank": 425,
+      "change": 199
+    },
+    {
+      "point_start": "2004-10-25",
+      "point_end": "2004-10-25",
+      "point_rank": 227,
+      "grid_start": "2004-10-25",
+      "grid_end": "2004-10-25",
+      "grid_rank": 422,
+      "change": 195
+    },
+    {
+      "point_start": "2023-09-12",
+      "point_end": "2023-09-12",
+      "point_rank": 228,
+      "grid_start": "2023-09-12",
+      "grid_end": "2023-09-12",
+      "grid_rank": 120,
+      "change": -108
+    },
+    {
+      "point_start": "2014-09-28",
+      "point_end": "2014-09-28",
+      "point_rank": 229,
+      "grid_start": "2014-09-28",
+      "grid_end": "2014-09-28",
+      "grid_rank": 438,
+      "change": 209
+    },
+    {
+      "point_start": "2009-10-08",
+      "point_end": "2009-10-08",
+      "point_rank": 230,
+      "grid_start": "2009-10-08",
+      "grid_end": "2009-10-08",
+      "grid_rank": 415,
+      "change": 185
+    },
+    {
+      "point_start": "2004-04-19",
+      "point_end": "2004-04-19",
+      "point_rank": 231,
+      "grid_start": "2004-04-19",
+      "grid_end": "2004-04-19",
+      "grid_rank": 324,
+      "change": 93
+    },
+    {
+      "point_start": "2017-06-20",
+      "point_end": "2017-06-20",
+      "point_rank": 232,
+      "grid_start": "2017-06-20",
+      "grid_end": "2017-06-20",
+      "grid_rank": 256,
+      "change": 24
+    },
+    {
+      "point_start": "2026-04-26",
+      "point_end": "2026-04-26",
+      "point_rank": 233,
+      "grid_start": "2026-04-26",
+      "grid_end": "2026-04-26",
+      "grid_rank": 76,
+      "change": -157
+    },
+    {
+      "point_start": "2021-09-11",
+      "point_end": "2021-09-11",
+      "point_rank": 234,
+      "grid_start": "2021-09-11",
+      "grid_end": "2021-09-11",
+      "grid_rank": 280,
+      "change": 46
+    },
+    {
+      "point_start": "2020-06-15",
+      "point_end": "2020-06-15",
+      "point_rank": 235,
+      "grid_start": "2020-06-15",
+      "grid_end": "2020-06-15",
+      "grid_rank": 178,
+      "change": -57
+    },
+    {
+      "point_start": "2024-06-02",
+      "point_end": "2024-06-02",
+      "point_rank": 236,
+      "grid_start": "2024-06-02",
+      "grid_end": "2024-06-02",
+      "grid_rank": 497,
+      "change": 261
+    },
+    {
+      "point_start": "2018-09-22",
+      "point_end": "2018-09-22",
+      "point_rank": 237,
+      "grid_start": "2018-09-22",
+      "grid_end": "2018-09-23",
+      "grid_rank": 230,
+      "change": -7
+    },
+    {
+      "point_start": "2001-06-05",
+      "point_end": "2001-06-05",
+      "point_rank": 238,
+      "grid_start": "2001-06-05",
+      "grid_end": "2001-06-05",
+      "grid_rank": 303,
+      "change": 65
+    },
+    {
+      "point_start": "2004-05-21",
+      "point_end": "2004-05-21",
+      "point_rank": 239,
+      "grid_start": "2004-05-21",
+      "grid_end": "2004-05-21",
+      "grid_rank": 380,
+      "change": 141
+    },
+    {
+      "point_start": "2004-04-22",
+      "point_end": "2004-04-22",
+      "point_rank": 240,
+      "grid_start": "2004-04-22",
+      "grid_end": "2004-04-22",
+      "grid_rank": 391,
+      "change": 151
+    },
+    {
+      "point_start": "2015-03-21",
+      "point_end": "2015-03-21",
+      "point_rank": 241,
+      "grid_start": "2015-03-21",
+      "grid_end": "2015-03-21",
+      "grid_rank": 496,
+      "change": 255
+    },
+    {
+      "point_start": "2006-06-15",
+      "point_end": "2006-06-15",
+      "point_rank": 242,
+      "grid_start": "2006-06-15",
+      "grid_end": "2006-06-15",
+      "grid_rank": 268,
+      "change": 26
+    },
+    {
+      "point_start": "2003-04-19",
+      "point_end": "2003-04-19",
+      "point_rank": 243,
+      "grid_start": "2003-04-18",
+      "grid_end": "2003-04-19",
+      "grid_rank": 81,
+      "change": -162
+    },
+    {
+      "point_start": "2006-05-10",
+      "point_end": "2006-05-10",
+      "point_rank": 244,
+      "grid_start": "2006-05-10",
+      "grid_end": "2006-05-10",
+      "grid_rank": 416,
+      "change": 172
+    },
+    {
+      "point_start": "2010-05-31",
+      "point_end": "2010-05-31",
+      "point_rank": 245,
+      "grid_start": "2010-05-31",
+      "grid_end": "2010-05-31",
+      "grid_rank": 287,
+      "change": 42
+    },
+    {
+      "point_start": "2006-08-01",
+      "point_end": "2006-08-01",
+      "point_rank": 246,
+      "grid_start": "2006-08-01",
+      "grid_end": "2006-08-03",
+      "grid_rank": 36,
+      "change": -210
+    },
+    {
+      "point_start": "2017-06-12",
+      "point_end": "2017-06-12",
+      "point_rank": 247,
+      "grid_start": "2017-06-12",
+      "grid_end": "2017-06-12",
+      "grid_rank": 202,
+      "change": -45
+    },
+    {
+      "point_start": "2025-02-23",
+      "point_end": "2025-02-23",
+      "point_rank": 248,
+      "grid_start": "2025-02-22",
+      "grid_end": "2025-02-23",
+      "grid_rank": 180,
+      "change": -68
+    },
+    {
+      "point_start": "2011-05-03",
+      "point_end": "2011-05-03",
+      "point_rank": 249,
+      "grid_start": "2011-05-03",
+      "grid_end": "2011-05-03",
+      "grid_rank": 194,
+      "change": -55
+    },
+    {
+      "point_start": "2026-07-08",
+      "point_end": "2026-07-08",
+      "point_rank": 250,
+      "grid_start": "2026-07-07",
+      "grid_end": "2026-07-08",
+      "grid_rank": 41,
+      "change": -209
+    },
+    {
+      "point_start": "2023-09-22",
+      "point_end": "2023-09-22",
+      "point_rank": 251,
+      "grid_start": "2023-09-22",
+      "grid_end": "2023-09-22",
+      "grid_rank": 457,
+      "change": 206
+    },
+    {
+      "point_start": "2002-07-03",
+      "point_end": "2002-07-03",
+      "point_rank": 252,
+      "grid_start": "2002-07-03",
+      "grid_end": "2002-07-03",
+      "grid_rank": 392,
+      "change": 140
+    },
+    {
+      "point_start": "2012-10-08",
+      "point_end": "2012-10-08",
+      "point_rank": 253,
+      "grid_start": "2012-10-08",
+      "grid_end": "2012-10-08",
+      "grid_rank": 439,
+      "change": 186
+    },
+    {
+      "point_start": "2022-08-14",
+      "point_end": "2022-08-14",
+      "point_rank": 254,
+      "grid_start": "2022-08-14",
+      "grid_end": "2022-08-14",
+      "grid_rank": 507,
+      "change": 253
+    },
+    {
+      "point_start": "2024-10-12",
+      "point_end": "2024-10-12",
+      "point_rank": 255,
+      "grid_start": "2024-10-12",
+      "grid_end": "2024-10-12",
+      "grid_rank": 296,
+      "change": 41
+    },
+    {
+      "point_start": "2015-09-24",
+      "point_end": "2015-09-24",
+      "point_rank": 256,
+      "grid_start": "2015-09-24",
+      "grid_end": "2015-09-24",
+      "grid_rank": 466,
+      "change": 210
+    },
+    {
+      "point_start": "2022-04-27",
+      "point_end": "2022-04-27",
+      "point_rank": 257,
+      "grid_start": "2022-04-27",
+      "grid_end": "2022-04-27",
+      "grid_rank": 452,
+      "change": 195
+    },
+    {
+      "point_start": "2019-09-11",
+      "point_end": "2019-09-11",
+      "point_rank": 258,
+      "grid_start": "2019-09-11",
+      "grid_end": "2019-09-11",
+      "grid_rank": 187,
+      "change": -71
+    },
+    {
+      "point_start": "2001-07-10",
+      "point_end": "2001-07-10",
+      "point_rank": 259,
+      "grid_start": "2001-07-10",
+      "grid_end": "2001-07-10",
+      "grid_rank": 252,
+      "change": -7
+    },
+    {
+      "point_start": "2017-09-11",
+      "point_end": "2017-09-11",
+      "point_rank": 260,
+      "grid_start": "2017-09-11",
+      "grid_end": "2017-09-11",
+      "grid_rank": 376,
+      "change": 116
+    },
+    {
+      "point_start": "2000-08-04",
+      "point_end": "2000-08-04",
+      "point_rank": 261,
+      "grid_start": "2000-08-03",
+      "grid_end": "2000-08-04",
+      "grid_rank": 132,
+      "change": -129
+    },
+    {
+      "point_start": "2026-03-11",
+      "point_end": "2026-03-11",
+      "point_rank": 262,
+      "grid_start": "2026-03-11",
+      "grid_end": "2026-03-11",
+      "grid_rank": 532,
+      "change": 270
+    },
+    {
+      "point_start": "2005-03-09",
+      "point_end": "2005-03-09",
+      "point_rank": 263,
+      "grid_start": "2005-03-09",
+      "grid_end": "2005-03-09",
+      "grid_rank": 537,
+      "change": 274
+    },
+    {
+      "point_start": "2000-08-14",
+      "point_end": "2000-08-14",
+      "point_rank": 264,
+      "grid_start": "2000-08-14",
+      "grid_end": "2000-08-14",
+      "grid_rank": 539,
+      "change": 275
+    },
+    {
+      "point_start": "2014-07-15",
+      "point_end": "2014-07-15",
+      "point_rank": 265,
+      "grid_start": "2014-07-15",
+      "grid_end": "2014-07-17",
+      "grid_rank": 32,
+      "change": -233
+    },
+    {
+      "point_start": "2017-09-26",
+      "point_end": "2017-09-26",
+      "point_rank": 266,
+      "grid_start": "2017-09-26",
+      "grid_end": "2017-09-26",
+      "grid_rank": 424,
+      "change": 158
+    },
+    {
+      "point_start": "2012-04-25",
+      "point_end": "2012-04-25",
+      "point_rank": 267,
+      "grid_start": "2012-04-25",
+      "grid_end": "2012-04-25",
+      "grid_rank": 554,
+      "change": 287
+    },
+    {
+      "point_start": "2000-06-01",
+      "point_end": "2000-06-01",
+      "point_rank": 268,
+      "grid_start": "2000-06-01",
+      "grid_end": "2000-06-01",
+      "grid_rank": 310,
+      "change": 42
+    },
+    {
+      "point_start": "2012-11-12",
+      "point_end": "2012-11-12",
+      "point_rank": 269,
+      "grid_start": "2012-11-12",
+      "grid_end": "2012-11-12",
+      "grid_rank": 558,
+      "change": 289
+    },
+    {
+      "point_start": "2000-06-29",
+      "point_end": "2000-06-30",
+      "point_rank": 270,
+      "grid_start": "2000-06-29",
+      "grid_end": "2000-07-01",
+      "grid_rank": 306,
+      "change": 36
+    },
+    {
+      "point_start": "2000-06-22",
+      "point_end": "2000-06-22",
+      "point_rank": 271,
+      "grid_start": "2000-06-22",
+      "grid_end": "2000-06-22",
+      "grid_rank": 559,
+      "change": 288
+    },
+    {
+      "point_start": "2001-09-08",
+      "point_end": "2001-09-08",
+      "point_rank": 272,
+      "grid_start": "2001-09-08",
+      "grid_end": "2001-09-09",
+      "grid_rank": 565,
+      "change": 293
+    },
+    {
+      "point_start": "2020-10-25",
+      "point_end": "2020-10-25",
+      "point_rank": 273,
+      "grid_start": "2020-10-25",
+      "grid_end": "2020-10-25",
+      "grid_rank": 423,
+      "change": 150
+    },
+    {
+      "point_start": "2011-06-07",
+      "point_end": "2011-06-07",
+      "point_rank": 274,
+      "grid_start": "2011-06-07",
+      "grid_end": "2011-06-07",
+      "grid_rank": 553,
+      "change": 279
+    },
+    {
+      "point_start": "2016-10-31",
+      "point_end": "2016-10-31",
+      "point_rank": 275,
+      "grid_start": "2016-10-30",
+      "grid_end": "2016-10-31",
+      "grid_rank": 343,
+      "change": 68
+    },
+    {
+      "point_start": "2004-04-13",
+      "point_end": "2004-04-13",
+      "point_rank": 276,
+      "grid_start": "2004-04-13",
+      "grid_end": "2004-04-13",
+      "grid_rank": 605,
+      "change": 329
+    },
+    {
+      "point_start": "2004-06-03",
+      "point_end": "2004-06-03",
+      "point_rank": 277,
+      "grid_start": "2004-06-03",
+      "grid_end": "2004-06-04",
+      "grid_rank": 71,
+      "change": -206
+    },
+    {
+      "point_start": "2001-04-09",
+      "point_end": "2001-04-09",
+      "point_rank": 278,
+      "grid_start": "2001-04-09",
+      "grid_end": "2001-04-09",
+      "grid_rank": 606,
+      "change": 328
+    },
+    {
+      "point_start": "2016-10-14",
+      "point_end": "2016-10-14",
+      "point_rank": 279,
+      "grid_start": "2016-10-14",
+      "grid_end": "2016-10-14",
+      "grid_rank": 225,
+      "change": -54
+    },
+    {
+      "point_start": "2023-04-19",
+      "point_end": "2023-04-19",
+      "point_rank": 280,
+      "grid_start": "2023-04-19",
+      "grid_end": "2023-04-19",
+      "grid_rank": 551,
+      "change": 271
+    },
+    {
+      "point_start": "2010-09-04",
+      "point_end": "2010-09-04",
+      "point_rank": 281,
+      "grid_start": "2010-09-04",
+      "grid_end": "2010-09-04",
+      "grid_rank": 607,
+      "change": 326
+    },
+    {
+      "point_start": "2009-09-25",
+      "point_end": "2009-09-25",
+      "point_rank": 282,
+      "grid_start": "2009-09-25",
+      "grid_end": "2009-09-25",
+      "grid_rank": 611,
+      "change": 329
+    },
+    {
+      "point_start": "2017-04-20",
+      "point_end": "2017-04-20",
+      "point_rank": 283,
+      "grid_start": "2017-04-20",
+      "grid_end": "2017-04-20",
+      "grid_rank": 615,
+      "change": 332
+    },
+    {
+      "point_start": "2020-11-04",
+      "point_end": "2020-11-04",
+      "point_rank": 284,
+      "grid_start": "2020-11-04",
+      "grid_end": "2020-11-04",
+      "grid_rank": 583,
+      "change": 299
+    },
+    {
+      "point_start": "2025-04-10",
+      "point_end": "2025-04-10",
+      "point_rank": 285,
+      "grid_start": "2025-04-10",
+      "grid_end": "2025-04-10",
+      "grid_rank": 601,
+      "change": 316
+    },
+    {
+      "point_start": "2019-04-10",
+      "point_end": "2019-04-10",
+      "point_rank": 286,
+      "grid_start": "2019-04-10",
+      "grid_end": "2019-04-11",
+      "grid_rank": 346,
+      "change": 60
+    },
+    {
+      "point_start": "2015-04-11",
+      "point_end": "2015-04-11",
+      "point_rank": 287,
+      "grid_start": "2015-04-11",
+      "grid_end": "2015-04-11",
+      "grid_rank": 640,
+      "change": 353
+    }
+  ]
+}

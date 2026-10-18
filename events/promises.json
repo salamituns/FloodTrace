@@ -1,0 +1,634 @@
+{
+ "meta": {
+  "task": "22-promises",
+  "compiled_at": "2026-10-18T04:20:00Z",
+  "searched_until": "2026-10-17",
+  "method": "Open-source research only (Task 03 rules): official MoE/LASG statements, commissioners, assembly members, and news from 6 months before each site flood through 2026-10-17. Quotes ≤ 25 words, verbatim. Due dates only when the source states a date or duration, or names a contract period. status, status_reason and last_checked left null. No imagery updates.",
+  "notes": "Officials' claims are recorded as updates with finding claimed_done or claimed_ongoing; done is used only when a journalist reports seeing completion. Several sites have no site-specific official structure commitment in the search window.",
+  "unresolved": [
+   "labora: no official build/drain commitment found (resident complaints only)",
+   "marina-drainage: no dated Marina drainage works; Omotosho 17 Jul 2021 said channels were in good condition, not a construction promise",
+   "alapere-ogudu: LASTMA reported road construction in place; no official completion or drainage promise found",
+   "ibeju-lekki-expy: resident asked Ibeju-Lekki LG to clear drains; no official commitment found",
+   "lekki-epe-rehab: rehab reported ongoing 3 Jul 2024; no official completion date found (later Bonny Camp–Admiralty 35-day job excluded)",
+   "agric-bridge: original award/promise date not found; inbound opening of 8 Sep 2026 is recorded",
+   "alpha-beach-156: Wahab 5 Jul 2024 X post is headline_only",
+   "ikorodu-dammed: contractor name still not found"
+  ],
+  "sources": [
+   {
+    "source_id": "moe-lagos-2024-06-27",
+    "url": "https://moelagos.gov.ng/flooding-lagos-to-construct-additional-drainage-collector-on-agungi-to-bring-relief/",
+    "outlet": "Lagos State Ministry of the Environment and Water Resources",
+    "date": "2024-06-27",
+    "read_status": "read"
+   },
+   {
+    "source_id": "vanguard-2024-06-27",
+    "url": "https://www.vanguardngr.com/2024/06/48hrs-rainfall-agungi-lekki-environs-in-lagos-submerge-in-flood/",
+    "outlet": "Vanguard",
+    "date": "2024-06-27",
+    "read_status": "read"
+   },
+   {
+    "source_id": "wahab-x-2024-07-05",
+    "url": "https://x.com/tokunbo_wahab/status/1809487036035793366",
+    "outlet": "Tokunbo Wahab (X)",
+    "date": "2024-07-05",
+    "read_status": "headline_only"
+   },
+   {
+    "source_id": "independent-2024-06-24",
+    "url": "https://independent.ng/lagos-issues-14-day-demolition-notice-to-owners-of-buildings-blocking-drainage-channels-at-lekki-okota-isolo-others/",
+    "outlet": "Independent",
+    "date": "2024-06-24",
+    "read_status": "read"
+   },
+   {
+    "source_id": "vanguard-2024-06-23",
+    "url": "https://www.vanguardngr.com/2024/06/lagos-govt-issues-14-day-demolition-notice-to-owners-of-illegal-structures-in-sangotedo-ago-palace/",
+    "outlet": "Vanguard",
+    "date": "2024-06-23",
+    "read_status": "read"
+   },
+   {
+    "source_id": "punch-2024-07-07",
+    "url": "https://punchng.com/10-hour-rainfall-lekki-ikoyi-residents-flee-luxury-mansions-as-flood-ravages-homes-streets/",
+    "outlet": "Punch",
+    "date": "2024-07-07",
+    "read_status": "read"
+   },
+   {
+    "source_id": "nairametrics-2024-09-21",
+    "url": "https://nairametrics.com/2024/09/21/lagos-govt-demolishes-contravening-structures-blocking-drainage-channel-in-sangotedo/",
+    "outlet": "Nairametrics",
+    "date": "2024-09-21",
+    "read_status": "read"
+   },
+   {
+    "source_id": "guardian-2022-10-27",
+    "url": "https://guardian.ng/news/lagos-disclaims-narrative-on-viral-flood-video-in-oko-oba/",
+    "outlet": "The Guardian Nigeria",
+    "date": "2022-10-27",
+    "read_status": "read"
+   },
+   {
+    "source_id": "bbcpidgin-2022-07-09",
+    "url": "https://www.bbc.com/pidgin/articles/crgw8vrgjdeo",
+    "outlet": "BBC Pidgin",
+    "date": "2022-07-09",
+    "read_status": "read"
+   },
+   {
+    "source_id": "punch-x-2023-08-16",
+    "url": "https://x.com/MobilePunch/status/1691398654781759489",
+    "outlet": "Punch Newspapers (X)",
+    "date": "2023-08-16",
+    "read_status": "headline_only"
+   },
+   {
+    "source_id": "guardian-2025-08-08",
+    "url": "https://guardian.ng/news/nigeria/metro/lasg-officials-inspect-ikorodu-drainage-project-allay-residents-fear-on-flash-flooding/",
+    "outlet": "The Guardian Nigeria",
+    "date": "2025-08-08",
+    "read_status": "read"
+   },
+   {
+    "source_id": "punch-2025-08-06",
+    "url": "https://punchng.com/flooding-lagos-community-counts-losses-blames-abandoned-drainage-construction/",
+    "outlet": "Punch",
+    "date": "2025-08-06",
+    "read_status": "read"
+   },
+   {
+    "source_id": "punch-2025-08-12",
+    "url": "https://punchng.com/lasg-blames-blocked-waterway-for-ikorodu-flooding/",
+    "outlet": "Punch",
+    "date": "2025-08-12",
+    "read_status": "read"
+   },
+   {
+    "source_id": "punch-2026-09-09",
+    "url": "https://punchng.com/lasg-opens-ikorodu-bridge-to-traffic/",
+    "outlet": "Punch",
+    "date": "2026-09-09",
+    "read_status": "read"
+   },
+   {
+    "source_id": "moe-lagos-2026-06-28",
+    "url": "https://moelagos.gov.ng/lagos-to-remove-illegal-structures-blocking-drainage-channels-on-agungi-and-ajiran/",
+    "outlet": "Lagos State Ministry of the Environment and Water Resources",
+    "date": "2026-06-28",
+    "read_status": "read"
+   },
+   {
+    "source_id": "channels-2026-06-29",
+    "url": "https://www.channelstv.com/2026/06/29/lagos-orders-demolition-of-structures-on-drainages-in-agungi-others/",
+    "outlet": "Channels Television",
+    "date": "2026-06-29",
+    "read_status": "read"
+   },
+   {
+    "source_id": "dailytrust-2024-07-03",
+    "url": "https://dailytrust.com/flood-takes-over-houses-roads-in-lagos/",
+    "outlet": "Daily Trust (NAN)",
+    "date": "2024-07-03",
+    "read_status": "read"
+   },
+   {
+    "source_id": "punch-2021-07-17",
+    "url": "https://punchng.com/flood-fallen-trucks-cause-lagos-gridlock-commuters-stranded/",
+    "outlet": "Punch",
+    "date": "2021-07-17",
+    "read_status": "read"
+   }
+  ],
+  "imagery_updates": "Imagery updates added by reviewer (Claude) on 2026-10-17 after inspecting the referenced images; news/official updates by Task 22.",
+  "review_notes": [
+   "Removed 2026-06 claimed_done updates from agungi-collector-build-202406: both sources concern demolitions on Agungi/Ajiran and never mention the collector (checked 2026-10-17).",
+   "Removed ikorodu-dammed-other-202508: an appeal to a contractor during the storm, not a public commitment; due date preceded the date made.",
+   "Quotes verified verbatim 2026-10-17: MoE Agungi 2026 demolition, Guardian Oko-Oba 2022 (via Wayback), Vanguard Sangotedo 48-hour notice, Nairametrics System 63b, plus Task 17 checks."
+  ]
+ },
+ "promises": [
+  {
+   "promise_id": "alpha-beach-156-excavate-202406",
+   "site_id": "alpha-beach-156",
+   "made_by": "Tokunbo Wahab",
+   "role": "Commissioner for the Environment and Water Resources",
+   "date_made": "2024-06-27",
+   "source_id": "moe-lagos-2024-06-27",
+   "url": "https://moelagos.gov.ng/flooding-lagos-to-construct-additional-drainage-collector-on-agungi-to-bring-relief/",
+   "quote": "from Saturday full excavation will start from Alpha Beach to conservation road",
+   "kind": "excavate",
+   "what": "Full excavation of System 156 from Alpha Beach to Conservation Road",
+   "due": {
+    "date": "2024-06-29",
+    "basis": "stated",
+    "note": "Thursday 27 Jun 2024 briefing: start Saturday"
+   },
+   "updates": [
+    {
+     "date": "2024-07-05",
+     "kind": "official",
+     "ref": "https://x.com/tokunbo_wahab/status/1809487036035793366",
+     "finding": "claimed_ongoing"
+    },
+    {
+     "date": "2024-11-30",
+     "kind": "imagery",
+     "ref": "events/drainage_sites/alpha-beach-156/2024-11-30_detail1.jpg",
+     "finding": "work_seen",
+     "note": "Fresh bare earth along the south end of the channel line; channel at the expressway and in the estates unchanged (open, vegetated). Excavation started; no full Alpha Beach→Conservation Road works visible."
+    }
+   ],
+   "status": null,
+   "status_reason": null,
+   "last_checked": null
+  },
+  {
+   "promise_id": "alpha-beach-156-dredge-202406",
+   "site_id": "alpha-beach-156",
+   "made_by": "Tokunbo Wahab",
+   "role": "Commissioner for the Environment and Water Resources",
+   "date_made": "2024-06-27",
+   "source_id": "vanguard-2024-06-27",
+   "url": "https://www.vanguardngr.com/2024/06/48hrs-rainfall-agungi-lekki-environs-in-lagos-submerge-in-flood/",
+   "quote": "the dredging of the channel would commence immediately towards making the state flood free",
+   "kind": "dredge",
+   "what": "Dredge System 156 (upstream) on Alpha Beach Road",
+   "due": {
+    "date": "2024-06-27",
+    "basis": "stated",
+    "note": "commence immediately"
+   },
+   "updates": [
+    {
+     "date": "2024-07-05",
+     "kind": "official",
+     "ref": "https://x.com/tokunbo_wahab/status/1809487036035793366",
+     "finding": "claimed_ongoing"
+    }
+   ],
+   "status": null,
+   "status_reason": null,
+   "last_checked": null
+  },
+  {
+   "promise_id": "alpha-beach-156-enforce-202406",
+   "site_id": "alpha-beach-156",
+   "made_by": "Tokunbo Wahab",
+   "role": "Commissioner for the Environment and Water Resources",
+   "date_made": "2024-06-27",
+   "source_id": "moe-lagos-2024-06-27",
+   "url": "https://moelagos.gov.ng/flooding-lagos-to-construct-additional-drainage-collector-on-agungi-to-bring-relief/",
+   "quote": "ramp up enforcement operations across the state to reclaim setbacks and drainage alignments",
+   "kind": "enforce",
+   "what": "Reclaim setbacks and drainage alignments on System 156 where buildings blocked the channel",
+   "due": {
+    "date": null,
+    "basis": "none",
+    "note": null
+   },
+   "updates": [
+    {
+     "date": "2024-11-30",
+     "kind": "imagery",
+     "ref": "events/drainage_sites/alpha-beach-156/2024-11-30_detail1.jpg",
+     "finding": "work_seen",
+     "note": "Informal structures along the southern road cleared between Apr 2020 and Nov 2024 (date within that span unknown)."
+    }
+   ],
+   "status": null,
+   "status_reason": null,
+   "last_checked": null
+  },
+  {
+   "promise_id": "agungi-collector-build-202406",
+   "site_id": "agungi-collector",
+   "made_by": "Tokunbo Wahab",
+   "role": "Commissioner for the Environment and Water Resources",
+   "date_made": "2024-06-27",
+   "source_id": "moe-lagos-2024-06-27",
+   "url": "https://moelagos.gov.ng/flooding-lagos-to-construct-additional-drainage-collector-on-agungi-to-bring-relief/",
+   "quote": "the area needs a new collector that will take the water from the road into the lagoon",
+   "kind": "build",
+   "what": "Build a bigger Agungi Road collector to the lagoon",
+   "due": {
+    "date": null,
+    "basis": "none",
+    "note": "No completion date in the 27 Jun 2024 briefing"
+   },
+   "updates": [
+    {
+     "date": "2024-11-30",
+     "kind": "imagery",
+     "ref": "events/drainage_sites/agungi-collector/2024-11-30_detail1.jpg",
+     "finding": "no_change",
+     "note": "No trench, new outfall or works visible along Agungi–Ajiran Road five months after the announcement. A buried collector may not show."
+    }
+   ],
+   "status": null,
+   "status_reason": null,
+   "last_checked": null
+  },
+  {
+   "promise_id": "agungi-collector-demolish-202606",
+   "site_id": "agungi-collector",
+   "made_by": "Tokunbo Wahab",
+   "role": "Commissioner for the Environment and Water Resources",
+   "date_made": "2026-06-28",
+   "source_id": "moe-lagos-2026-06-28",
+   "url": "https://moelagos.gov.ng/lagos-to-remove-illegal-structures-blocking-drainage-channels-on-agungi-and-ajiran/",
+   "quote": "it will immediately remove all illegal structures obstructing canals and drainage channel right of way",
+   "kind": "demolish",
+   "what": "Remove illegal structures on canals and drainage right of way in Agungi, Ajiran and Ikota; reopen blocked Ajiran outfall",
+   "due": {
+    "date": "2026-06-28",
+    "basis": "stated",
+    "note": "immediately; blocked outlet to be reopened in the public interest"
+   },
+   "updates": [
+    {
+     "date": "2026-06-29",
+     "kind": "news",
+     "ref": "https://www.channelstv.com/2026/06/29/lagos-orders-demolition-of-structures-on-drainages-in-agungi-others/",
+     "finding": "claimed_ongoing"
+    }
+   ],
+   "status": null,
+   "status_reason": null,
+   "last_checked": null
+  },
+  {
+   "promise_id": "olopomeji-maintain-202407",
+   "site_id": "olopomeji",
+   "made_by": "Kunle Adesina",
+   "role": "Director of Public Affairs, Ministry of Environment and Water Resources",
+   "date_made": "2024-07-07",
+   "source_id": "punch-2024-07-07",
+   "url": "https://punchng.com/10-hour-rainfall-lekki-ikoyi-residents-flee-luxury-mansions-as-flood-ravages-homes-streets/",
+   "quote": "After clearing the paths, we discovered that everything was back to normal some hours later.",
+   "kind": "maintain",
+   "what": "Clear refuse blocking water paths at Olopomeji (Iyana Oworo)",
+   "due": {
+    "date": null,
+    "basis": "none",
+    "note": "Emergency clearance during the 3 Jul 2024 rain, reported 7 Jul"
+   },
+   "updates": [
+    {
+     "date": "2024-07-07",
+     "kind": "official",
+     "ref": "https://punchng.com/10-hour-rainfall-lekki-ikoyi-residents-flee-luxury-mansions-as-flood-ravages-homes-streets/",
+     "finding": "claimed_done"
+    }
+   ],
+   "status": null,
+   "status_reason": null,
+   "last_checked": null
+  },
+  {
+   "promise_id": "ikorodu-dammed-build-202508",
+   "site_id": "ikorodu-dammed",
+   "made_by": "Abiodun Moshood",
+   "role": "Member, Lagos State House of Assembly (Ikorodu II)",
+   "date_made": "2025-02-01",
+   "source_id": "guardian-2025-08-08",
+   "url": "https://guardian.ng/news/nigeria/metro/lasg-officials-inspect-ikorodu-drainage-project-allay-residents-fear-on-flash-flooding/",
+   "quote": "the ongoing drainage project had not been abandoned; it has a 12-month completion period",
+   "kind": "build",
+   "what": "Complete Gberigbe Road (One Fold) outfall channel through Ijede / Abule-Eko",
+   "due": {
+    "date": "2026-02-01",
+    "basis": "contract",
+    "note": "12-month job; Moshood said it was flagged off about six months before 7 Aug 2025"
+   },
+   "updates": [
+    {
+     "date": "2025-08-06",
+     "kind": "news",
+     "ref": "https://punchng.com/flooding-lagos-community-counts-losses-blames-abandoned-drainage-construction/",
+     "finding": "no_change"
+    },
+    {
+     "date": "2025-08-07",
+     "kind": "official",
+     "ref": "https://guardian.ng/news/nigeria/metro/lasg-officials-inspect-ikorodu-drainage-project-allay-residents-fear-on-flash-flooding/",
+     "finding": "claimed_ongoing"
+    },
+    {
+     "date": "2025-08-12",
+     "kind": "news",
+     "ref": "https://punchng.com/lasg-blames-blocked-waterway-for-ikorodu-flooding/",
+     "finding": "claimed_ongoing"
+    }
+   ],
+   "status": null,
+   "status_reason": null,
+   "last_checked": null
+  },
+  {
+   "promise_id": "agric-bridge-build-202609",
+   "site_id": "agric-bridge",
+   "made_by": "Olufemi Daramola",
+   "role": "Special Adviser to the Governor on Infrastructure",
+   "date_made": "2026-09-08",
+   "source_id": "punch-2026-09-09",
+   "url": "https://punchng.com/lasg-opens-ikorodu-bridge-to-traffic/",
+   "quote": "the inbound section of AFA Bridge on Agric-Isawo Road has been opened to traffic",
+   "kind": "build",
+   "what": "Complete AFA Bridge on Agric–Isawo Road (inbound opened; outbound still under construction)",
+   "due": {
+    "date": null,
+    "basis": "none",
+    "note": "No date given for outbound carriageway"
+   },
+   "updates": [
+    {
+     "date": "2026-09-08",
+     "kind": "official",
+     "ref": "https://punchng.com/lasg-opens-ikorodu-bridge-to-traffic/",
+     "finding": "claimed_done"
+    },
+    {
+     "date": "2026-09-09",
+     "kind": "news",
+     "ref": "https://punchng.com/lasg-opens-ikorodu-bridge-to-traffic/",
+     "finding": "claimed_done"
+    }
+   ],
+   "status": null,
+   "status_reason": null,
+   "last_checked": null
+  },
+  {
+   "promise_id": "ijede-drain-build-202508",
+   "site_id": "ijede-drain",
+   "made_by": "Abiodun Moshood",
+   "role": "Member, Lagos State House of Assembly (Ikorodu II)",
+   "date_made": "2025-02-01",
+   "source_id": "guardian-2025-08-08",
+   "url": "https://guardian.ng/news/nigeria/metro/lasg-officials-inspect-ikorodu-drainage-project-allay-residents-fear-on-flash-flooding/",
+   "quote": "the ongoing drainage project had not been abandoned; it has a 12-month completion period",
+   "kind": "build",
+   "what": "Complete Ijede drainage (Oko Ope to Abule Eko / Gberigbe outfall and Palm Avenue collector)",
+   "due": {
+    "date": "2026-02-01",
+    "basis": "contract",
+    "note": "12-month completion; Moshood said flagged off about six months before 7 Aug 2025"
+   },
+   "updates": [
+    {
+     "date": "2025-08-06",
+     "kind": "news",
+     "ref": "https://punchng.com/flooding-lagos-community-counts-losses-blames-abandoned-drainage-construction/",
+     "finding": "no_change"
+    },
+    {
+     "date": "2025-08-07",
+     "kind": "official",
+     "ref": "https://guardian.ng/news/nigeria/metro/lasg-officials-inspect-ikorodu-drainage-project-allay-residents-fear-on-flash-flooding/",
+     "finding": "claimed_ongoing"
+    }
+   ],
+   "status": null,
+   "status_reason": null,
+   "last_checked": null
+  },
+  {
+   "promise_id": "ijede-drain-other-202508",
+   "site_id": "ijede-drain",
+   "made_by": "Olakunle Rotimi-Akodu",
+   "role": "Special Adviser on Environment",
+   "date_made": "2025-08-07",
+   "source_id": "guardian-2025-08-08",
+   "url": "https://guardian.ng/news/nigeria/metro/lasg-officials-inspect-ikorodu-drainage-project-allay-residents-fear-on-flash-flooding/",
+   "quote": "the government would ensure that the contractor handling the drainage project hasten work",
+   "kind": "other",
+   "what": "Contractor to hasten Ijede / Gberigbe drainage work while keeping the contract timetable",
+   "due": {
+    "date": "2026-02-01",
+    "basis": "contract",
+    "note": "Hasten work but stick to the 12-month completion"
+   },
+   "updates": [],
+   "status": null,
+   "status_reason": null,
+   "last_checked": null
+  },
+  {
+   "promise_id": "oko-oba-canal-expand-202207",
+   "site_id": "oko-oba-canal",
+   "made_by": "Tunji Bello",
+   "role": "Commissioner for the Environment and Water Resources",
+   "date_made": "2022-07-09",
+   "source_id": "bbcpidgin-2022-07-09",
+   "url": "https://www.bbc.com/pidgin/articles/crgw8vrgjdeo",
+   "quote": "Dem dey expand di Oko-Oba Canal for Agege to allow for di containment of more stormwater",
+   "kind": "expand",
+   "what": "Expand the Oko-Oba Canal Channel in Agege to hold more stormwater",
+   "due": {
+    "date": null,
+    "basis": "none",
+    "note": "Work paused because of heavy rain in the weeks before 9 Jul 2022"
+   },
+   "updates": [
+    {
+     "date": "2022-10-26",
+     "kind": "official",
+     "ref": "https://guardian.ng/news/lagos-disclaims-narrative-on-viral-flood-video-in-oko-oba/",
+     "finding": "claimed_ongoing"
+    },
+    {
+     "date": "2023-08-16",
+     "kind": "news",
+     "ref": "https://x.com/MobilePunch/status/1691398654781759489",
+     "finding": "claimed_ongoing"
+    },
+    {
+     "date": "2025-05-15",
+     "kind": "imagery",
+     "ref": "Esri World Imagery (current, z18) along the traced channel",
+     "finding": "no_change",
+     "note": "Channel still narrow and overgrown; no 8 m widened section visible."
+    }
+   ],
+   "status": null,
+   "status_reason": null,
+   "last_checked": null
+  },
+  {
+   "promise_id": "oko-oba-canal-expand-202210",
+   "site_id": "oko-oba-canal",
+   "made_by": "Tunji Bello",
+   "role": "Commissioner for the Environment and Water Resources",
+   "date_made": "2022-10-26",
+   "source_id": "guardian-2022-10-27",
+   "url": "https://guardian.ng/news/lagos-disclaims-narrative-on-viral-flood-video-in-oko-oba/",
+   "quote": "the infringed Oko Oba channel will be expanded by eight metres",
+   "kind": "expand",
+   "what": "Expand the infringed Oko-Oba channel by eight metres with 5 m right of way each side",
+   "due": {
+    "date": null,
+    "basis": "none",
+    "note": "No completion date"
+   },
+   "updates": [
+    {
+     "date": "2023-08-16",
+     "kind": "news",
+     "ref": "https://x.com/MobilePunch/status/1691398654781759489",
+     "finding": "claimed_ongoing"
+    },
+    {
+     "date": "2025-05-15",
+     "kind": "imagery",
+     "ref": "Esri World Imagery (current, z18) along the traced channel",
+     "finding": "no_change",
+     "note": "Channel still narrow and overgrown; no 8 m widened section visible."
+    }
+   ],
+   "status": null,
+   "status_reason": null,
+   "last_checked": null
+  },
+  {
+   "promise_id": "oko-oba-canal-demolish-202210",
+   "site_id": "oko-oba-canal",
+   "made_by": "Tunji Bello",
+   "role": "Commissioner for the Environment and Water Resources",
+   "date_made": "2022-10-26",
+   "source_id": "guardian-2022-10-27",
+   "url": "https://guardian.ng/news/lagos-disclaims-narrative-on-viral-flood-video-in-oko-oba/",
+   "quote": "all owners of the structures to be affected will be served with appropriate contravention notices",
+   "kind": "demolish",
+   "what": "Serve contravention notices, then remove structures on the Oko-Oba drainage alignment",
+   "due": {
+    "date": null,
+    "basis": "none",
+    "note": "Removal after notices; no notice length given"
+   },
+   "updates": [
+    {
+     "date": "2023-06-30",
+     "kind": "imagery",
+     "ref": "events/drainage_sites_buildings.json (oko-oba-canal, 0–10 m)",
+     "finding": "no_change",
+     "note": "Open Buildings: built fraction within 10 m of the channel unchanged 2016–2023 (~13%); no removal of structures visible."
+    }
+   ],
+   "status": null,
+   "status_reason": null,
+   "last_checked": null
+  },
+  {
+   "promise_id": "sangotedo-channel-notices-enforce-202406",
+   "site_id": "sangotedo-channel-notices",
+   "made_by": "Tokunbo Wahab",
+   "role": "Commissioner for the Environment and Water Resources",
+   "date_made": "2024-06-23",
+   "source_id": "vanguard-2024-06-23",
+   "url": "https://www.vanguardngr.com/2024/06/lagos-govt-issues-14-day-demolition-notice-to-owners-of-illegal-structures-in-sangotedo-ago-palace/",
+   "quote": "A 48 hours contravention notice have been served to owners of buildings lying within the channels",
+   "kind": "enforce",
+   "what": "48-hour contravention and 14-day abatement at Sangotedo by Lagos Business School (System 63b), then full enforcement",
+   "due": {
+    "date": "2024-07-07",
+    "basis": "stated",
+    "note": "48-hour notice plus 14-day abatement from 23 Jun 2024"
+   },
+   "updates": [
+    {
+     "date": "2024-06-24",
+     "kind": "news",
+     "ref": "https://independent.ng/lagos-issues-14-day-demolition-notice-to-owners-of-buildings-blocking-drainage-channels-at-lekki-okota-isolo-others/",
+     "finding": "claimed_ongoing"
+    },
+    {
+     "date": "2024-07-07",
+     "kind": "news",
+     "ref": "https://punchng.com/10-hour-rainfall-lekki-ikoyi-residents-flee-luxury-mansions-as-flood-ravages-homes-streets/",
+     "finding": "claimed_ongoing"
+    },
+    {
+     "date": "2024-09-21",
+     "kind": "news",
+     "ref": "https://nairametrics.com/2024/09/21/lagos-govt-demolishes-contravening-structures-blocking-drainage-channel-in-sangotedo/",
+     "finding": "claimed_ongoing"
+    }
+   ],
+   "status": null,
+   "status_reason": null,
+   "last_checked": null
+  },
+  {
+   "promise_id": "sangotedo-channel-notices-demolish-202409",
+   "site_id": "sangotedo-channel-notices",
+   "made_by": "Tokunbo Wahab",
+   "role": "Commissioner for the Environment and Water Resources",
+   "date_made": "2024-09-20",
+   "source_id": "nairametrics-2024-09-21",
+   "url": "https://nairametrics.com/2024/09/21/lagos-govt-demolishes-contravening-structures-blocking-drainage-channel-in-sangotedo/",
+   "quote": "continued removal of contravening structures along System 63b Sangotedo, Eti-Osa LGA to prevent flooding in the axis",
+   "kind": "demolish",
+   "what": "Remove contravening structures on System 63b, Sangotedo, Eti-Osa",
+   "due": {
+    "date": null,
+    "basis": "none",
+    "note": null
+   },
+   "updates": [
+    {
+     "date": "2024-09-21",
+     "kind": "news",
+     "ref": "https://nairametrics.com/2024/09/21/lagos-govt-demolishes-contravening-structures-blocking-drainage-channel-in-sangotedo/",
+     "finding": "claimed_ongoing"
+    }
+   ],
+   "status": null,
+   "status_reason": null,
+   "last_checked": null
+  }
+ ]
+}

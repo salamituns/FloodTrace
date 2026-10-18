@@ -1,0 +1,562 @@
+{
+ "type": "FeatureCollection",
+ "meta": {
+  "compiled_at": "2026-10-17T20:34:35Z",
+  "method": "Read named 2022 sources; one point per (source, location); pipeline/geocode.py inside AOI bbox; manual neighbourhood centre where Nominatim missed. Casualty numbers only where the source locates them.",
+  "notes": "Seven NEMA deaths kept at Alimosho LGA, not on a single street. Three sibling deaths attached only to the church building NEMA named. Punch/NAN two deaths at Oyatoki, Orile Agege kept separate from BBC Pidgin two missing at Oke Oba/Fatoki — sources do not identify them as the same people. Meiran/Abbatoir/Alagbado/Agege/Tollgate named as upstream sources of runoff, not as flooded streets. Vanguard 15 Jul names no neighbourhood. No locations, times, numbers or quotes were inferred beyond the text.",
+  "unresolved": [
+   "Which of Oke Isagun / Agbado Oke / Oko LCDA contains Mercy of Christ Apostolic Church",
+   "Oyatoki vs Fatoki/Oke Oba: possibly the same Agege canal incident; not merged",
+   "BBC photo caption 'Opic estate' not geocoded (Isheri/Ogun ambiguity)"
+  ],
+  "bbox": [
+   2.7,
+   6.38,
+   4.35,
+   6.75
+  ],
+  "feature_count": 14,
+  "omitted": [
+   "Vanguard 15 Jul 2022 (citywide rain; no named Lagos streets)",
+   "NEMA.gov.ng Alimosho assessment dated 8–9 Sep 2025 (wrong event)",
+   "Legit.ng Command Area flood 20 Feb 2024 (wrong event)",
+   "AIT Ikola clip dated Sep 2022 in Facebook metadata (not 8–9 Jul)",
+   "Meiran, Abbatoir, Alagbado, Agege, Tollgate as flood sites (CDA described inflow, not flooding there)",
+   "2022 season totals (16,000 families) unrelated to this weekend"
+  ],
+  "review": {
+   "reviewed_at": "2026-10-17",
+   "by": "Claude (lead agent)",
+   "notes": "All points inside AOI; same-name places (Jakande Isolo/Lekki, Ajegunle Ajeromi/Ikorodu) kept distinct; Ijede placed in Ijede town (Ikorodu LGA). Quotes verified for every readable publisher; Channels TV, TheCable, Guardian NG unverifiable (blocked)."
+  },
+  "citywide_cause_statements": [
+   {
+    "source_id": "vanguard-2022-07-15",
+    "url": "https://www.vanguardngr.com/2022/07/jandors-comical-ignorance-on-lagos-floods/",
+    "who": null,
+    "date": "2022-07-15",
+    "causes": [
+     "heavy_rain"
+    ],
+    "cause_quote": "Lagos was hit by heavy and perennial rainfall that fell continuously for no less than eight-10 hours",
+    "cause_attributed_by": "journalist"
+   },
+   {
+    "source_id": "vanguard-2022-07-15",
+    "url": "https://www.vanguardngr.com/2022/07/jandors-comical-ignorance-on-lagos-floods/",
+    "who": "Tunji Bello, Commissioner for the Environment",
+    "date": "2022-07-15",
+    "causes": [
+     "heavy_rain"
+    ],
+    "cause_quote": "sometimes when it rains heavily, it is natural to have flash floods",
+    "cause_attributed_by": "official"
+   },
+   {
+    "source_id": "floodlist-2022-07",
+    "url": "https://floodlist.com/africa/nigeria-floods-june-july-2022",
+    "who": "LASEMA",
+    "date": "2022-07",
+    "causes": [
+     "heavy_rain"
+    ],
+    "cause_quote": "heavy rainfall from around 08 July 2022 caused flooding in Lagos Metropolis Area",
+    "cause_attributed_by": "official"
+   }
+  ],
+  "cause_tagging": "Task 15: NEMA death reports after the weekend rain not tagged unless they named a cause. Vanguard 15 Jul remains citywide (no streets). LASEMA appeal to clear drains is advisory, not an attribution of this flood.",
+  "cause_summary": {
+   "heavy_rain": {
+    "official": 4,
+    "journalist": 1,
+    "resident": 0,
+    "expert": 0,
+    "total": 5
+   },
+   "construction": {
+    "official": 1,
+    "journalist": 0,
+    "resident": 0,
+    "expert": 0,
+    "total": 1
+   },
+   "canal_overflow": {
+    "official": 1,
+    "journalist": 0,
+    "resident": 0,
+    "expert": 0,
+    "total": 1
+   }
+  }
+ },
+ "features": [
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     3.25,
+     6.65
+    ]
+   },
+   "properties": {
+    "id": "ev-001",
+    "kind": "official_statement",
+    "source_id": "channelstv-2022-07-13",
+    "source_url": "https://www.channelstv.com/2022/07/13/lagos-flood-killed-three-siblings-four-adults-nema/",
+    "publisher": "Channels TV",
+    "published_at": "2022-07-13T21:09:13+00:00",
+    "observed_at": "2022-07-09T12:00:00+01:00",
+    "time_confidence": "day",
+    "read_status": "read",
+    "quote_check": "not verifiable (publisher blocks automated access)",
+    "location_name": "Alimosho LGA",
+    "location_confidence": "lga",
+    "geocode_method": "manual: Alimosho LGA centre (event.json aoi point)",
+    "claim": "NEMA: seven dead and eight saved after Friday–Saturday rain.",
+    "depth_note": null,
+    "quote": "seven people – three children of the same parent and four adults – died as a result of the flooding",
+    "verified": false,
+    "causes": [],
+    "cause_quote": null,
+    "cause_attributed_by": null,
+    "cause_who": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     3.278,
+     6.652
+    ]
+   },
+   "properties": {
+    "id": "ev-002",
+    "kind": "official_statement",
+    "source_id": "channelstv-2022-07-13",
+    "source_url": "https://www.channelstv.com/2022/07/13/lagos-flood-killed-three-siblings-four-adults-nema/",
+    "publisher": "Channels TV",
+    "published_at": "2022-07-13T21:09:13+00:00",
+    "observed_at": "2022-07-09T12:00:00+01:00",
+    "time_confidence": "day",
+    "read_status": "read",
+    "quote_check": "not verifiable (publisher blocks automated access)",
+    "location_name": "Mercy of Christ Apostolic Church (uncompleted building)",
+    "location_confidence": "neighbourhood",
+    "geocode_method": "manual: neighbourhood centre in Alimosho; church not in Nominatim; source does not name which of the three communities",
+    "claim": "Three siblings swept while moving from a room to the church.",
+    "depth_note": null,
+    "quote": "The victims – Michael, 18; Elizabeth, 17 and Timi, 14 – were swept away",
+    "verified": false,
+    "causes": [],
+    "cause_quote": null,
+    "cause_attributed_by": null,
+    "cause_who": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     3.27,
+     6.65
+    ]
+   },
+   "properties": {
+    "id": "ev-003",
+    "kind": "news_report",
+    "source_id": "channelstv-2022-07-13",
+    "source_url": "https://www.channelstv.com/2022/07/13/lagos-flood-killed-three-siblings-four-adults-nema/",
+    "publisher": "Channels TV",
+    "published_at": "2022-07-13T21:09:13+00:00",
+    "observed_at": "2022-07-09T12:00:00+01:00",
+    "time_confidence": "day",
+    "read_status": "read",
+    "quote_check": "not verifiable (publisher blocks automated access)",
+    "location_name": "Oke Isagun",
+    "location_confidence": "neighbourhood",
+    "geocode_method": "manual: neighbourhood centre for Oke Isagun, Alimosho, Lagos",
+    "claim": "NEMA listed it among flooded Alimosho communities.",
+    "depth_note": null,
+    "quote": "He listed the flooded communities as Oke Isagun, Agbado Oke, Oko LCDA, all in Alimosho LGA.",
+    "verified": false,
+    "causes": [],
+    "cause_quote": null,
+    "cause_attributed_by": null,
+    "cause_who": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     3.285,
+     6.658
+    ]
+   },
+   "properties": {
+    "id": "ev-004",
+    "kind": "news_report",
+    "source_id": "channelstv-2022-07-13",
+    "source_url": "https://www.channelstv.com/2022/07/13/lagos-flood-killed-three-siblings-four-adults-nema/",
+    "publisher": "Channels TV",
+    "published_at": "2022-07-13T21:09:13+00:00",
+    "observed_at": "2022-07-09T12:00:00+01:00",
+    "time_confidence": "day",
+    "read_status": "read",
+    "quote_check": "not verifiable (publisher blocks automated access)",
+    "location_name": "Agbado Oke",
+    "location_confidence": "neighbourhood",
+    "geocode_method": "manual: neighbourhood centre for Agbado Oke, Alimosho (same district as 2011 Agbado-Oke Odo)",
+    "claim": "NEMA listed it among flooded Alimosho communities.",
+    "depth_note": null,
+    "quote": "He listed the flooded communities as Oke Isagun, Agbado Oke, Oko LCDA, all in Alimosho LGA.",
+    "verified": false,
+    "causes": [],
+    "cause_quote": null,
+    "cause_attributed_by": null,
+    "cause_who": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     3.26,
+     6.645
+    ]
+   },
+   "properties": {
+    "id": "ev-005",
+    "kind": "news_report",
+    "source_id": "channelstv-2022-07-13",
+    "source_url": "https://www.channelstv.com/2022/07/13/lagos-flood-killed-three-siblings-four-adults-nema/",
+    "publisher": "Channels TV",
+    "published_at": "2022-07-13T21:09:13+00:00",
+    "observed_at": "2022-07-09T12:00:00+01:00",
+    "time_confidence": "day",
+    "read_status": "read",
+    "quote_check": "not verifiable (publisher blocks automated access)",
+    "location_name": "Oko LCDA",
+    "location_confidence": "lga",
+    "geocode_method": "manual: Oko LCDA in Alimosho; Nominatim missed the name",
+    "claim": "NEMA listed it among flooded Alimosho communities.",
+    "depth_note": null,
+    "quote": "He listed the flooded communities as Oke Isagun, Agbado Oke, Oko LCDA, all in Alimosho LGA.",
+    "verified": false,
+    "causes": [],
+    "cause_quote": null,
+    "cause_attributed_by": null,
+    "cause_who": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     3.25,
+     6.65
+    ]
+   },
+   "properties": {
+    "id": "ev-006",
+    "kind": "official_statement",
+    "source_id": "punch-2022-07-13",
+    "source_url": "https://punchng.com/lagos-flood-killed-three-siblings-four-adults-nema/",
+    "publisher": "Punch",
+    "published_at": "2022-07-13T17:51:34+00:00",
+    "observed_at": "2022-07-09T12:00:00+01:00",
+    "time_confidence": "day",
+    "read_status": "read",
+    "quote_check": "verbatim match on source page (one quote per publisher spot-checked)",
+    "location_name": "Alimosho LGA",
+    "location_confidence": "lga",
+    "geocode_method": "manual: Alimosho LGA centre (event.json aoi point)",
+    "claim": "NAN/NEMA: seven dead after Friday 8 and Saturday 9 July rain.",
+    "depth_note": null,
+    "quote": "about seven people – three children of the same parent and four adults – died",
+    "verified": false,
+    "causes": [],
+    "cause_quote": null,
+    "cause_attributed_by": null,
+    "cause_who": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     3.278,
+     6.652
+    ]
+   },
+   "properties": {
+    "id": "ev-007",
+    "kind": "official_statement",
+    "source_id": "punch-2022-07-13",
+    "source_url": "https://punchng.com/lagos-flood-killed-three-siblings-four-adults-nema/",
+    "publisher": "Punch",
+    "published_at": "2022-07-13T17:51:34+00:00",
+    "observed_at": "2022-07-09T12:00:00+01:00",
+    "time_confidence": "day",
+    "read_status": "read",
+    "quote_check": "verbatim match on source page (one quote per publisher spot-checked)",
+    "location_name": "Mercy of Christ Apostolic Church (uncompleted building)",
+    "location_confidence": "neighbourhood",
+    "geocode_method": "manual: neighbourhood centre in Alimosho; church not in Nominatim",
+    "claim": "Three siblings swept moving from their room to the church.",
+    "depth_note": null,
+    "quote": "the three siblings who lost their lives were residing at a church building belonging to Mercy of Christ Apostolic Church",
+    "verified": false,
+    "causes": [],
+    "cause_quote": null,
+    "cause_attributed_by": null,
+    "cause_who": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     3.27,
+     6.65
+    ]
+   },
+   "properties": {
+    "id": "ev-008",
+    "kind": "news_report",
+    "source_id": "punch-2022-07-13",
+    "source_url": "https://punchng.com/lagos-flood-killed-three-siblings-four-adults-nema/",
+    "publisher": "Punch",
+    "published_at": "2022-07-13T17:51:34+00:00",
+    "observed_at": "2022-07-09T12:00:00+01:00",
+    "time_confidence": "day",
+    "read_status": "read",
+    "quote_check": "verbatim match on source page (one quote per publisher spot-checked)",
+    "location_name": "Oke Isagun",
+    "location_confidence": "neighbourhood",
+    "geocode_method": "manual: neighbourhood centre for Oke Isagun, Alimosho, Lagos",
+    "claim": "Listed among flooded Alimosho communities.",
+    "depth_note": null,
+    "quote": "He listed the flooded communities as Oke Isagun, Agbado Oke, Oko LCDA, all in Alimosho LGA.",
+    "verified": false,
+    "causes": [],
+    "cause_quote": null,
+    "cause_attributed_by": null,
+    "cause_who": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     3.285,
+     6.658
+    ]
+   },
+   "properties": {
+    "id": "ev-009",
+    "kind": "news_report",
+    "source_id": "punch-2022-07-13",
+    "source_url": "https://punchng.com/lagos-flood-killed-three-siblings-four-adults-nema/",
+    "publisher": "Punch",
+    "published_at": "2022-07-13T17:51:34+00:00",
+    "observed_at": "2022-07-09T12:00:00+01:00",
+    "time_confidence": "day",
+    "read_status": "read",
+    "quote_check": "verbatim match on source page (one quote per publisher spot-checked)",
+    "location_name": "Agbado Oke",
+    "location_confidence": "neighbourhood",
+    "geocode_method": "manual: neighbourhood centre for Agbado Oke, Alimosho",
+    "claim": "Listed among flooded Alimosho communities.",
+    "depth_note": null,
+    "quote": "He listed the flooded communities as Oke Isagun, Agbado Oke, Oko LCDA, all in Alimosho LGA.",
+    "verified": false,
+    "causes": [],
+    "cause_quote": null,
+    "cause_attributed_by": null,
+    "cause_who": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     3.26,
+     6.645
+    ]
+   },
+   "properties": {
+    "id": "ev-010",
+    "kind": "news_report",
+    "source_id": "punch-2022-07-13",
+    "source_url": "https://punchng.com/lagos-flood-killed-three-siblings-four-adults-nema/",
+    "publisher": "Punch",
+    "published_at": "2022-07-13T17:51:34+00:00",
+    "observed_at": "2022-07-09T12:00:00+01:00",
+    "time_confidence": "day",
+    "read_status": "read",
+    "quote_check": "verbatim match on source page (one quote per publisher spot-checked)",
+    "location_name": "Oko LCDA",
+    "location_confidence": "lga",
+    "geocode_method": "manual: Oko LCDA in Alimosho; Nominatim missed the name",
+    "claim": "Listed among flooded Alimosho communities.",
+    "depth_note": null,
+    "quote": "He listed the flooded communities as Oke Isagun, Agbado Oke, Oko LCDA, all in Alimosho LGA.",
+    "verified": false,
+    "causes": [],
+    "cause_quote": null,
+    "cause_attributed_by": null,
+    "cause_who": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     3.318,
+     6.625
+    ]
+   },
+   "properties": {
+    "id": "ev-011",
+    "kind": "official_statement",
+    "source_id": "punch-2022-07-13",
+    "source_url": "https://punchng.com/lagos-flood-killed-three-siblings-four-adults-nema/",
+    "publisher": "Punch",
+    "published_at": "2022-07-13T17:51:34+00:00",
+    "observed_at": "2022-07-09T12:00:00+01:00",
+    "time_confidence": "day",
+    "read_status": "read",
+    "quote_check": "verbatim match on source page (one quote per publisher spot-checked)",
+    "location_name": "Oyatoki, Orile Agege",
+    "location_confidence": "neighbourhood",
+    "geocode_method": "manual: neighbourhood centre for Oyatoki, Orile Agege, Lagos",
+    "claim": "NEMA update: two people died; four rescued.",
+    "depth_note": null,
+    "quote": "update on the flood at Oyatoki in Orile Agege, saying that two people died, while four were rescued",
+    "verified": false,
+    "causes": [],
+    "cause_quote": null,
+    "cause_attributed_by": null,
+    "cause_who": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     3.322,
+     6.638
+    ]
+   },
+   "properties": {
+    "id": "ev-012",
+    "kind": "news_report",
+    "source_id": "bbcpidgin-2022-07-09",
+    "source_url": "https://www.bbc.com/pidgin/articles/crgw8vrgjdeo",
+    "publisher": "BBC Pidgin",
+    "published_at": "2022-07-09T17:44:02+00:00",
+    "observed_at": "2022-07-09T08:00:00+01:00",
+    "time_confidence": "approx",
+    "read_status": "read",
+    "quote_check": "verbatim match on source page (one quote per publisher spot-checked)",
+    "location_name": "Oke Oba, Agege",
+    "location_confidence": "neighbourhood",
+    "geocode_method": "manual: neighbourhood centre for Oko-Oba / Oke Oba, Agege, Lagos",
+    "claim": "Two people missing after flood carried their car on Saturday.",
+    "depth_note": null,
+    "quote": "two pipo miss wen flood carri dia car for Oke Oba, Agege area of Lagos",
+    "verified": false,
+    "causes": [],
+    "cause_quote": null,
+    "cause_attributed_by": null,
+    "cause_who": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     3.32,
+     6.636
+    ]
+   },
+   "properties": {
+    "id": "ev-013",
+    "kind": "official_statement",
+    "source_id": "bbcpidgin-2022-07-09",
+    "source_url": "https://www.bbc.com/pidgin/articles/crgw8vrgjdeo",
+    "publisher": "BBC Pidgin",
+    "published_at": "2022-07-09T17:44:02+00:00",
+    "observed_at": "2022-07-09T08:00:00+01:00",
+    "time_confidence": "approx",
+    "read_status": "read",
+    "quote_check": "verbatim match on source page (one quote per publisher spot-checked)",
+    "location_name": "Fatoki area, Agege",
+    "location_confidence": "neighbourhood",
+    "geocode_method": "manual: neighbourhood centre for Fatoki, Agege, Lagos",
+    "claim": "Authorities: car hooked in flood at Fatoki after heavy rain.",
+    "depth_note": null,
+    "quote": "Di car bin hook for inside flood wey heavy rain cause for di Agege area of di state around Fatoki area",
+    "verified": false,
+    "causes": [
+     "heavy_rain"
+    ],
+    "cause_quote": "Di car bin hook for inside flood wey heavy rain cause for di Agege area",
+    "cause_attributed_by": "official",
+    "cause_who": "authorities (BBC Pidgin)"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     3.322,
+     6.637
+    ]
+   },
+   "properties": {
+    "id": "ev-014",
+    "kind": "official_statement",
+    "source_id": "bbcpidgin-2022-07-09",
+    "source_url": "https://www.bbc.com/pidgin/articles/crgw8vrgjdeo",
+    "publisher": "BBC Pidgin",
+    "published_at": "2022-07-09T17:44:02+00:00",
+    "observed_at": "2022-07-09T08:00:00+01:00",
+    "time_confidence": "approx",
+    "read_status": "read",
+    "quote_check": "verbatim match on source page (one quote per publisher spot-checked)",
+    "location_name": "old Oko-Oba Road",
+    "location_confidence": "street",
+    "geocode_method": "manual: neighbourhood centre for old Oko-Oba Road, Agege, Lagos",
+    "claim": "Bello: flash flooding after 10-hour rain overflowed the canal under expansion.",
+    "depth_note": null,
+    "quote": "flash flooding wey some areas, especially old Oko-Oba Road, experience na as a result of di ova10 hour-rainfall",
+    "verified": false,
+    "causes": [
+     "heavy_rain",
+     "canal_overflow",
+     "construction"
+    ],
+    "cause_quote": "flash flooding wey some areas, especially old Oko-Oba Road, experience na as a result of di ova10 hour-rainfall",
+    "cause_attributed_by": "official",
+    "cause_who": "Tunji Bello, Commissioner for Environment and Water Resources"
+   }
+  }
+ ]
+}

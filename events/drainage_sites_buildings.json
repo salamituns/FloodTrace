@@ -1,0 +1,6371 @@
+{
+ "meta": {
+  "task": "21-open-buildings-encroachment",
+  "generated": "2026-10-18T03:47:51Z",
+  "source": "Google Open Buildings 2.5D Temporal v1 (https://storage.googleapis.com/open-buildings-temporal-data), Sentinel-2 based annual building presence 2016-2023, 4 m effective resolution, 0.5 m pixels, EPSG:32631",
+  "access": "public GCS bucket open-buildings-temporal-data; manifests 11_EPSG_32631_<year>_06_30.json (token 11 covers Lagos; token 13 lies north of the AOI); ranged COG reads via /vsicurl/ - no tile downloaded",
+  "licence": "CC BY 4.0 (or ODbL 1.0)",
+  "citation": "Sirko et al. 2023, arXiv:2310.11622",
+  "thresholds": {
+   "primary": 0.5,
+   "sensitivity": [
+    0.4,
+    0.6
+   ],
+   "note": "building_presence is an uncalibrated model confidence; thresholded, never read as a probability"
+  },
+  "method": {
+   "bands": "0-10 / 10-20 / 20-50 m from the channel centreline (or rings around the point for point-geometry sites), clipped to the site's 300 m radius",
+   "resampling": "8x8 block-mean of the 0.5 m building_presence pixels -> 4 m cells on a world 4 m-aligned grid, then thresholded",
+   "built_fraction": "share of band cells with valid data whose block-mean presence >= threshold",
+   "newly_built": "a cell is newly built in year t if built in t and t+1 and not built in t-1 and t-2 (threshold 0.5); defined for 2018-2022 only; area = cells x 16 m^2",
+   "channels": "OSM waterway=drain|canal|stream|ditch|river within the site's 300 m radius (Task 18 osm.geojson when current, else a fresh Overpass query), plus the site geometry where the recorded structure is a channel and the line is a channel alignment rather than a road (per-site decisions recorded under channel.geometry_note)",
+   "baseline": "200 random 300 m segments of OSM waterways in the AOI [2.6, 6.28, 4.45, 6.85], at least 1000 m from any named site (seed 21); same bands and series",
+   "nodata": "presence nodata -99 excluded before the block-mean"
+  },
+  "caveats": [
+   "4 m effective resolution: the 0-10 m band is 2-3 cells wide - read trends, not exact counts",
+   "Open Buildings 2.5D Temporal annual composites are dated <year>_06_30 and are Sentinel-2 derived; small or temporary structures may be missed",
+   "OSM waterways and buildings are current-date data; channel alignments for ikorodu-dammed and ijede-drain are town-to-town corridors, not surveyed centrelines",
+   "sangotedo-channel-notices has no centreline: bands are rings around the Lagos Business School inspection point"
+  ],
+  "site_count": 13,
+  "included": [
+   "agric-bridge",
+   "agungi-collector",
+   "alapere-ogudu",
+   "alpha-beach-156",
+   "ijede-drain",
+   "ikorodu-dammed",
+   "lekki-epe-rehab",
+   "oko-oba-canal",
+   "olopomeji",
+   "sangotedo-channel-notices"
+  ],
+  "skipped_no_channel": [
+   "marina-drainage",
+   "labora",
+   "ibeju-lekki-expy"
+  ]
+ },
+ "sites": [
+  {
+   "site_id": "alpha-beach-156",
+   "event_id": "lagos-2024-07-03",
+   "included": true,
+   "channel": {
+    "osm_waterways": {
+     "n_ways": 12,
+     "total_length_m": 3099.9,
+     "types": [
+      "ditch",
+      "drain"
+     ],
+     "source": "events/drainage_sites/alpha-beach-156/osm.geojson (current geometry)"
+    },
+    "site_geometry_used": true,
+    "site_geometry_type": "LineString",
+    "location_confidence": "street",
+    "geometry_note": "site line is the OSM-mapped drain taken as the System 156 alignment (location_confidence street)"
+   },
+   "bands": {
+    "0-10": {
+     "n_cells": 5167,
+     "n_valid": {
+      "2016": 5167,
+      "2017": 5167,
+      "2018": 5167,
+      "2019": 5167,
+      "2020": 5167,
+      "2021": 5167,
+      "2022": 5167,
+      "2023": 5167
+     },
+     "built_fraction": {
+      "2016": 0.0362,
+      "2017": 0.036,
+      "2018": 0.0344,
+      "2019": 0.0579,
+      "2020": 0.0656,
+      "2021": 0.0716,
+      "2022": 0.0892,
+      "2023": 0.0937
+     },
+     "built_fraction_thr_0.4": {
+      "2016": 0.041,
+      "2017": 0.0426,
+      "2018": 0.043,
+      "2019": 0.0675,
+      "2020": 0.0764,
+      "2021": 0.0855,
+      "2022": 0.1035,
+      "2023": 0.1101
+     },
+     "built_fraction_thr_0.6": {
+      "2016": 0.0317,
+      "2017": 0.0298,
+      "2018": 0.0306,
+      "2019": 0.0505,
+      "2020": 0.0559,
+      "2021": 0.0627,
+      "2022": 0.0753,
+      "2023": 0.0763
+     },
+     "newly_built_m2": {
+      "2018": 80.0,
+      "2019": 1984.0,
+      "2020": 704.0,
+      "2021": 704.0,
+      "2022": 896.0
+     }
+    },
+    "10-20": {
+     "n_cells": 4383,
+     "n_valid": {
+      "2016": 4383,
+      "2017": 4383,
+      "2018": 4383,
+      "2019": 4383,
+      "2020": 4383,
+      "2021": 4383,
+      "2022": 4383,
+      "2023": 4383
+     },
+     "built_fraction": {
+      "2016": 0.0632,
+      "2017": 0.099,
+      "2018": 0.1013,
+      "2019": 0.1243,
+      "2020": 0.1221,
+      "2021": 0.1394,
+      "2022": 0.1686,
+      "2023": 0.1599
+     },
+     "built_fraction_thr_0.4": {
+      "2016": 0.0817,
+      "2017": 0.125,
+      "2018": 0.1285,
+      "2019": 0.1538,
+      "2020": 0.1513,
+      "2021": 0.1743,
+      "2022": 0.2037,
+      "2023": 0.1974
+     },
+     "built_fraction_thr_0.6": {
+      "2016": 0.0516,
+      "2017": 0.0789,
+      "2018": 0.0833,
+      "2019": 0.0995,
+      "2020": 0.102,
+      "2021": 0.1127,
+      "2022": 0.1339,
+      "2023": 0.13
+     },
+     "newly_built_m2": {
+      "2018": 464.0,
+      "2019": 1744.0,
+      "2020": 1184.0,
+      "2021": 1488.0,
+      "2022": 1744.0
+     }
+    },
+    "20-50": {
+     "n_cells": 11559,
+     "n_valid": {
+      "2016": 11559,
+      "2017": 11559,
+      "2018": 11559,
+      "2019": 11559,
+      "2020": 11559,
+      "2021": 11559,
+      "2022": 11559,
+      "2023": 11559
+     },
+     "built_fraction": {
+      "2016": 0.1729,
+      "2017": 0.1932,
+      "2018": 0.2165,
+      "2019": 0.2421,
+      "2020": 0.2461,
+      "2021": 0.2537,
+      "2022": 0.3056,
+      "2023": 0.299
+     },
+     "built_fraction_thr_0.4": {
+      "2016": 0.2004,
+      "2017": 0.2254,
+      "2018": 0.254,
+      "2019": 0.2796,
+      "2020": 0.2824,
+      "2021": 0.2979,
+      "2022": 0.3541,
+      "2023": 0.3384
+     },
+     "built_fraction_thr_0.6": {
+      "2016": 0.1485,
+      "2017": 0.1637,
+      "2018": 0.1854,
+      "2019": 0.2069,
+      "2020": 0.214,
+      "2021": 0.222,
+      "2022": 0.2625,
+      "2023": 0.2545
+     },
+     "newly_built_m2": {
+      "2018": 4288.0,
+      "2019": 6384.0,
+      "2020": 2688.0,
+      "2021": 3552.0,
+      "2022": 6624.0
+     }
+    }
+   },
+   "files": {
+    "timeline": "events/drainage_sites/alpha-beach-156/ob_timeline.png",
+    "masks": [
+     "events/drainage_sites/alpha-beach-156/ob_2016.png",
+     "events/drainage_sites/alpha-beach-156/ob_2019.png",
+     "events/drainage_sites/alpha-beach-156/ob_2023.png"
+    ]
+   }
+  },
+  {
+   "site_id": "agungi-collector",
+   "event_id": "lagos-2024-07-03",
+   "included": true,
+   "channel": {
+    "osm_waterways": {
+     "n_ways": 4,
+     "total_length_m": 1809.2,
+     "types": [
+      "drain"
+     ],
+     "source": "events/drainage_sites/agungi-collector/osm.geojson (current geometry)"
+    },
+    "site_geometry_used": false,
+    "site_geometry_type": "LineString",
+    "location_confidence": "street",
+    "geometry_note": "named structure is a collector channel, but the recorded line is the Agungi Ajiran Road carriageway, not the channel: road lines excluded; mapped OSM drains within 300 m used instead"
+   },
+   "bands": {
+    "0-10": {
+     "n_cells": 2279,
+     "n_valid": {
+      "2016": 2279,
+      "2017": 2279,
+      "2018": 2279,
+      "2019": 2279,
+      "2020": 2279,
+      "2021": 2279,
+      "2022": 2279,
+      "2023": 2279
+     },
+     "built_fraction": {
+      "2016": 0.0088,
+      "2017": 0.0224,
+      "2018": 0.0123,
+      "2019": 0.0303,
+      "2020": 0.029,
+      "2021": 0.0386,
+      "2022": 0.0303,
+      "2023": 0.0342
+     },
+     "built_fraction_thr_0.4": {
+      "2016": 0.0167,
+      "2017": 0.0298,
+      "2018": 0.0215,
+      "2019": 0.0412,
+      "2020": 0.0426,
+      "2021": 0.0592,
+      "2022": 0.0452,
+      "2023": 0.0518
+     },
+     "built_fraction_thr_0.6": {
+      "2016": 0.0048,
+      "2017": 0.0158,
+      "2018": 0.0075,
+      "2019": 0.018,
+      "2020": 0.018,
+      "2021": 0.0241,
+      "2022": 0.0154,
+      "2023": 0.0202
+     },
+     "newly_built_m2": {
+      "2018": 16.0,
+      "2019": 144.0,
+      "2020": 288.0,
+      "2021": 304.0,
+      "2022": 288.0
+     }
+    },
+    "10-20": {
+     "n_cells": 2282,
+     "n_valid": {
+      "2016": 2282,
+      "2017": 2282,
+      "2018": 2282,
+      "2019": 2282,
+      "2020": 2282,
+      "2021": 2282,
+      "2022": 2282,
+      "2023": 2282
+     },
+     "built_fraction": {
+      "2016": 0.1665,
+      "2017": 0.1332,
+      "2018": 0.1464,
+      "2019": 0.1582,
+      "2020": 0.1788,
+      "2021": 0.2095,
+      "2022": 0.2528,
+      "2023": 0.2642
+     },
+     "built_fraction_thr_0.4": {
+      "2016": 0.2073,
+      "2017": 0.1635,
+      "2018": 0.1744,
+      "2019": 0.184,
+      "2020": 0.2152,
+      "2021": 0.2428,
+      "2022": 0.3024,
+      "2023": 0.3028
+     },
+     "built_fraction_thr_0.6": {
+      "2016": 0.1258,
+      "2017": 0.1047,
+      "2018": 0.1196,
+      "2019": 0.1328,
+      "2020": 0.1534,
+      "2021": 0.1792,
+      "2022": 0.2099,
+      "2023": 0.2239
+     },
+     "newly_built_m2": {
+      "2018": 528.0,
+      "2019": 1056.0,
+      "2020": 576.0,
+      "2021": 1296.0,
+      "2022": 1360.0
+     }
+    },
+    "20-50": {
+     "n_cells": 6972,
+     "n_valid": {
+      "2016": 6972,
+      "2017": 6972,
+      "2018": 6972,
+      "2019": 6972,
+      "2020": 6972,
+      "2021": 6972,
+      "2022": 6972,
+      "2023": 6972
+     },
+     "built_fraction": {
+      "2016": 0.2398,
+      "2017": 0.2423,
+      "2018": 0.2434,
+      "2019": 0.2801,
+      "2020": 0.2929,
+      "2021": 0.3151,
+      "2022": 0.346,
+      "2023": 0.3465
+     },
+     "built_fraction_thr_0.4": {
+      "2016": 0.2689,
+      "2017": 0.2811,
+      "2018": 0.2833,
+      "2019": 0.322,
+      "2020": 0.3332,
+      "2021": 0.3633,
+      "2022": 0.3908,
+      "2023": 0.4019
+     },
+     "built_fraction_thr_0.6": {
+      "2016": 0.2032,
+      "2017": 0.2015,
+      "2018": 0.2015,
+      "2019": 0.2418,
+      "2020": 0.2552,
+      "2021": 0.2671,
+      "2022": 0.2983,
+      "2023": 0.2943
+     },
+     "newly_built_m2": {
+      "2018": 2048.0,
+      "2019": 4464.0,
+      "2020": 3280.0,
+      "2021": 3952.0,
+      "2022": 2512.0
+     }
+    }
+   },
+   "files": {
+    "timeline": "events/drainage_sites/agungi-collector/ob_timeline.png",
+    "masks": [
+     "events/drainage_sites/agungi-collector/ob_2016.png",
+     "events/drainage_sites/agungi-collector/ob_2019.png",
+     "events/drainage_sites/agungi-collector/ob_2023.png"
+    ]
+   }
+  },
+  {
+   "site_id": "olopomeji",
+   "event_id": "lagos-2024-07-03",
+   "included": true,
+   "channel": {
+    "osm_waterways": {
+     "n_ways": 5,
+     "total_length_m": 2072.3,
+     "types": [
+      "drain",
+      "stream"
+     ],
+     "source": "events/drainage_sites/olopomeji/osm.geojson (current geometry)"
+    },
+    "site_geometry_used": false,
+    "site_geometry_type": "LineString",
+    "location_confidence": "street",
+    "geometry_note": "structure is the Iyana Oworo road section, not a channel; mapped OSM drains/streams within 300 m used"
+   },
+   "bands": {
+    "0-10": {
+     "n_cells": 2584,
+     "n_valid": {
+      "2016": 2584,
+      "2017": 2584,
+      "2018": 2584,
+      "2019": 2584,
+      "2020": 2584,
+      "2021": 2584,
+      "2022": 2584,
+      "2023": 2584
+     },
+     "built_fraction": {
+      "2016": 0.0217,
+      "2017": 0.0232,
+      "2018": 0.0213,
+      "2019": 0.0217,
+      "2020": 0.0306,
+      "2021": 0.0298,
+      "2022": 0.0337,
+      "2023": 0.0341
+     },
+     "built_fraction_thr_0.4": {
+      "2016": 0.0298,
+      "2017": 0.0306,
+      "2018": 0.0356,
+      "2019": 0.0352,
+      "2020": 0.0445,
+      "2021": 0.0387,
+      "2022": 0.0464,
+      "2023": 0.0484
+     },
+     "built_fraction_thr_0.6": {
+      "2016": 0.0163,
+      "2017": 0.0163,
+      "2018": 0.0147,
+      "2019": 0.0174,
+      "2020": 0.0193,
+      "2021": 0.0244,
+      "2022": 0.024,
+      "2023": 0.0228
+     },
+     "newly_built_m2": {
+      "2018": 64.0,
+      "2019": 80.0,
+      "2020": 96.0,
+      "2021": 224.0,
+      "2022": 96.0
+     }
+    },
+    "10-20": {
+     "n_cells": 2587,
+     "n_valid": {
+      "2016": 2587,
+      "2017": 2587,
+      "2018": 2587,
+      "2019": 2587,
+      "2020": 2587,
+      "2021": 2587,
+      "2022": 2587,
+      "2023": 2587
+     },
+     "built_fraction": {
+      "2016": 0.0866,
+      "2017": 0.0997,
+      "2018": 0.1098,
+      "2019": 0.1133,
+      "2020": 0.1272,
+      "2021": 0.1307,
+      "2022": 0.1334,
+      "2023": 0.1303
+     },
+     "built_fraction_thr_0.4": {
+      "2016": 0.1113,
+      "2017": 0.1268,
+      "2018": 0.1318,
+      "2019": 0.1438,
+      "2020": 0.1596,
+      "2021": 0.1647,
+      "2022": 0.1701,
+      "2023": 0.1759
+     },
+     "built_fraction_thr_0.6": {
+      "2016": 0.0557,
+      "2017": 0.0634,
+      "2018": 0.0827,
+      "2019": 0.0881,
+      "2020": 0.0908,
+      "2021": 0.1032,
+      "2022": 0.0974,
+      "2023": 0.0908
+     },
+     "newly_built_m2": {
+      "2018": 640.0,
+      "2019": 256.0,
+      "2020": 448.0,
+      "2021": 592.0,
+      "2022": 304.0
+     }
+    },
+    "20-50": {
+     "n_cells": 7799,
+     "n_valid": {
+      "2016": 7799,
+      "2017": 7799,
+      "2018": 7799,
+      "2019": 7799,
+      "2020": 7799,
+      "2021": 7799,
+      "2022": 7799,
+      "2023": 7799
+     },
+     "built_fraction": {
+      "2016": 0.1614,
+      "2017": 0.1931,
+      "2018": 0.2177,
+      "2019": 0.2304,
+      "2020": 0.2149,
+      "2021": 0.2299,
+      "2022": 0.2529,
+      "2023": 0.2536
+     },
+     "built_fraction_thr_0.4": {
+      "2016": 0.2017,
+      "2017": 0.2367,
+      "2018": 0.2562,
+      "2019": 0.2725,
+      "2020": 0.255,
+      "2021": 0.265,
+      "2022": 0.2952,
+      "2023": 0.3098
+     },
+     "built_fraction_thr_0.6": {
+      "2016": 0.1185,
+      "2017": 0.1387,
+      "2018": 0.1737,
+      "2019": 0.1854,
+      "2020": 0.171,
+      "2021": 0.1887,
+      "2022": 0.2032,
+      "2023": 0.1954
+     },
+     "newly_built_m2": {
+      "2018": 3968.0,
+      "2019": 1840.0,
+      "2020": 1136.0,
+      "2021": 2176.0,
+      "2022": 2368.0
+     }
+    }
+   },
+   "files": {
+    "timeline": "events/drainage_sites/olopomeji/ob_timeline.png",
+    "masks": [
+     "events/drainage_sites/olopomeji/ob_2016.png",
+     "events/drainage_sites/olopomeji/ob_2019.png",
+     "events/drainage_sites/olopomeji/ob_2023.png"
+    ]
+   }
+  },
+  {
+   "site_id": "ikorodu-dammed",
+   "event_id": "lagos-2025-08-04",
+   "included": true,
+   "channel": {
+    "osm_waterways": {
+     "n_ways": 0,
+     "total_length_m": 0,
+     "types": [],
+     "source": "events/drainage_sites/ikorodu-dammed/osm.geojson (current geometry)"
+    },
+    "site_geometry_used": true,
+    "site_geometry_type": "LineString",
+    "location_confidence": "neighbourhood",
+    "geometry_note": "Gberigbe Road outfall channel; the line connects the named inspection points (Gberigbe-Ijede corridor), it is not a surveyed centreline (location_confidence neighbourhood) - rough alignment, read trends only"
+   },
+   "bands": {
+    "0-10": {
+     "n_cells": 6456,
+     "n_valid": {
+      "2016": 6456,
+      "2017": 6456,
+      "2018": 6456,
+      "2019": 6456,
+      "2020": 6456,
+      "2021": 6456,
+      "2022": 6456,
+      "2023": 6456
+     },
+     "built_fraction": {
+      "2016": 0.1107,
+      "2017": 0.1213,
+      "2018": 0.1289,
+      "2019": 0.1304,
+      "2020": 0.1341,
+      "2021": 0.1441,
+      "2022": 0.1585,
+      "2023": 0.1518
+     },
+     "built_fraction_thr_0.4": {
+      "2016": 0.136,
+      "2017": 0.1462,
+      "2018": 0.1588,
+      "2019": 0.1608,
+      "2020": 0.1643,
+      "2021": 0.1746,
+      "2022": 0.1907,
+      "2023": 0.1914
+     },
+     "built_fraction_thr_0.6": {
+      "2016": 0.0888,
+      "2017": 0.0889,
+      "2018": 0.1016,
+      "2019": 0.1016,
+      "2020": 0.1066,
+      "2021": 0.1156,
+      "2022": 0.1194,
+      "2023": 0.1162
+     },
+     "newly_built_m2": {
+      "2018": 1920.0,
+      "2019": 1360.0,
+      "2020": 1136.0,
+      "2021": 1296.0,
+      "2022": 1808.0
+     }
+    },
+    "10-20": {
+     "n_cells": 6486,
+     "n_valid": {
+      "2016": 6486,
+      "2017": 6486,
+      "2018": 6486,
+      "2019": 6486,
+      "2020": 6486,
+      "2021": 6486,
+      "2022": 6486,
+      "2023": 6486
+     },
+     "built_fraction": {
+      "2016": 0.1081,
+      "2017": 0.109,
+      "2018": 0.1158,
+      "2019": 0.1163,
+      "2020": 0.1186,
+      "2021": 0.136,
+      "2022": 0.1422,
+      "2023": 0.1472
+     },
+     "built_fraction_thr_0.4": {
+      "2016": 0.1321,
+      "2017": 0.1344,
+      "2018": 0.1432,
+      "2019": 0.1462,
+      "2020": 0.1497,
+      "2021": 0.1662,
+      "2022": 0.1785,
+      "2023": 0.1872
+     },
+     "built_fraction_thr_0.6": {
+      "2016": 0.0834,
+      "2017": 0.0783,
+      "2018": 0.0897,
+      "2019": 0.0888,
+      "2020": 0.0948,
+      "2021": 0.1073,
+      "2022": 0.105,
+      "2023": 0.1085
+     },
+     "newly_built_m2": {
+      "2018": 1264.0,
+      "2019": 1152.0,
+      "2020": 1376.0,
+      "2021": 1408.0,
+      "2022": 1536.0
+     }
+    },
+    "20-50": {
+     "n_cells": 19714,
+     "n_valid": {
+      "2016": 19714,
+      "2017": 19714,
+      "2018": 19714,
+      "2019": 19714,
+      "2020": 19714,
+      "2021": 19714,
+      "2022": 19714,
+      "2023": 19714
+     },
+     "built_fraction": {
+      "2016": 0.1009,
+      "2017": 0.0992,
+      "2018": 0.1077,
+      "2019": 0.1109,
+      "2020": 0.113,
+      "2021": 0.1232,
+      "2022": 0.1238,
+      "2023": 0.1302
+     },
+     "built_fraction_thr_0.4": {
+      "2016": 0.1238,
+      "2017": 0.1244,
+      "2018": 0.1323,
+      "2019": 0.1379,
+      "2020": 0.137,
+      "2021": 0.1493,
+      "2022": 0.156,
+      "2023": 0.1655
+     },
+     "built_fraction_thr_0.6": {
+      "2016": 0.0781,
+      "2017": 0.0768,
+      "2018": 0.0838,
+      "2019": 0.0872,
+      "2020": 0.0891,
+      "2021": 0.0978,
+      "2022": 0.0948,
+      "2023": 0.096
+     },
+     "newly_built_m2": {
+      "2018": 3744.0,
+      "2019": 4560.0,
+      "2020": 2992.0,
+      "2021": 4080.0,
+      "2022": 2672.0
+     }
+    }
+   },
+   "files": {
+    "timeline": "events/drainage_sites/ikorodu-dammed/ob_timeline.png",
+    "masks": [
+     "events/drainage_sites/ikorodu-dammed/ob_2016.png",
+     "events/drainage_sites/ikorodu-dammed/ob_2019.png",
+     "events/drainage_sites/ikorodu-dammed/ob_2023.png"
+    ]
+   }
+  },
+  {
+   "site_id": "agric-bridge",
+   "event_id": "lagos-2025-08-04",
+   "included": true,
+   "channel": {
+    "osm_waterways": {
+     "n_ways": 1,
+     "total_length_m": 64.6,
+     "types": [
+      "drain"
+     ],
+     "source": "events/drainage_sites/agric-bridge/osm.geojson (current geometry)"
+    },
+    "site_geometry_used": false,
+    "site_geometry_type": "LineString",
+    "location_confidence": "street",
+    "geometry_note": "structure is the AFA bridge / Agric-Isawo Road; the OSM drain within the radius is the channel"
+   },
+   "bands": {
+    "0-10": {
+     "n_cells": 92,
+     "n_valid": {
+      "2016": 92,
+      "2017": 92,
+      "2018": 92,
+      "2019": 92,
+      "2020": 92,
+      "2021": 92,
+      "2022": 92,
+      "2023": 92
+     },
+     "built_fraction": {
+      "2016": 0.0,
+      "2017": 0.0,
+      "2018": 0.0,
+      "2019": 0.0,
+      "2020": 0.0,
+      "2021": 0.0,
+      "2022": 0.0,
+      "2023": 0.0
+     },
+     "built_fraction_thr_0.4": {
+      "2016": 0.0,
+      "2017": 0.0,
+      "2018": 0.0,
+      "2019": 0.0,
+      "2020": 0.0,
+      "2021": 0.0,
+      "2022": 0.0,
+      "2023": 0.0
+     },
+     "built_fraction_thr_0.6": {
+      "2016": 0.0,
+      "2017": 0.0,
+      "2018": 0.0,
+      "2019": 0.0,
+      "2020": 0.0,
+      "2021": 0.0,
+      "2022": 0.0,
+      "2023": 0.0
+     },
+     "newly_built_m2": {
+      "2018": 0.0,
+      "2019": 0.0,
+      "2020": 0.0,
+      "2021": 0.0,
+      "2022": 0.0
+     }
+    },
+    "10-20": {
+     "n_cells": 106,
+     "n_valid": {
+      "2016": 106,
+      "2017": 106,
+      "2018": 106,
+      "2019": 106,
+      "2020": 106,
+      "2021": 106,
+      "2022": 106,
+      "2023": 106
+     },
+     "built_fraction": {
+      "2016": 0.0189,
+      "2017": 0.0283,
+      "2018": 0.0377,
+      "2019": 0.0472,
+      "2020": 0.0377,
+      "2021": 0.0283,
+      "2022": 0.0,
+      "2023": 0.0189
+     },
+     "built_fraction_thr_0.4": {
+      "2016": 0.0283,
+      "2017": 0.0472,
+      "2018": 0.0755,
+      "2019": 0.0566,
+      "2020": 0.0472,
+      "2021": 0.0472,
+      "2022": 0.0,
+      "2023": 0.0472
+     },
+     "built_fraction_thr_0.6": {
+      "2016": 0.0,
+      "2017": 0.0189,
+      "2018": 0.0189,
+      "2019": 0.0189,
+      "2020": 0.0377,
+      "2021": 0.0094,
+      "2022": 0.0,
+      "2023": 0.0
+     },
+     "newly_built_m2": {
+      "2018": 0.0,
+      "2019": 0.0,
+      "2020": 0.0,
+      "2021": 0.0,
+      "2022": 0.0
+     }
+    },
+    "20-50": {
+     "n_cells": 399,
+     "n_valid": {
+      "2016": 399,
+      "2017": 399,
+      "2018": 399,
+      "2019": 399,
+      "2020": 399,
+      "2021": 399,
+      "2022": 399,
+      "2023": 399
+     },
+     "built_fraction": {
+      "2016": 0.0702,
+      "2017": 0.0877,
+      "2018": 0.1153,
+      "2019": 0.1228,
+      "2020": 0.1028,
+      "2021": 0.0852,
+      "2022": 0.0652,
+      "2023": 0.0777
+     },
+     "built_fraction_thr_0.4": {
+      "2016": 0.0852,
+      "2017": 0.1253,
+      "2018": 0.1554,
+      "2019": 0.1454,
+      "2020": 0.1353,
+      "2021": 0.1153,
+      "2022": 0.0977,
+      "2023": 0.1128
+     },
+     "built_fraction_thr_0.6": {
+      "2016": 0.0326,
+      "2017": 0.0501,
+      "2018": 0.0827,
+      "2019": 0.0752,
+      "2020": 0.0802,
+      "2021": 0.0551,
+      "2022": 0.0451,
+      "2023": 0.0602
+     },
+     "newly_built_m2": {
+      "2018": 176.0,
+      "2019": 80.0,
+      "2020": 0.0,
+      "2021": 16.0,
+      "2022": 16.0
+     }
+    }
+   },
+   "files": {
+    "timeline": "events/drainage_sites/agric-bridge/ob_timeline.png",
+    "masks": [
+     "events/drainage_sites/agric-bridge/ob_2016.png",
+     "events/drainage_sites/agric-bridge/ob_2019.png",
+     "events/drainage_sites/agric-bridge/ob_2023.png"
+    ]
+   }
+  },
+  {
+   "site_id": "ijede-drain",
+   "event_id": "lagos-2025-08-04",
+   "included": true,
+   "channel": {
+    "osm_waterways": {
+     "n_ways": 0,
+     "total_length_m": 0,
+     "types": [],
+     "source": "events/drainage_sites/ijede-drain/osm.geojson (current geometry)"
+    },
+    "site_geometry_used": true,
+    "site_geometry_type": "LineString",
+    "location_confidence": "neighbourhood",
+    "geometry_note": "Oko Ope-Abule Eko drainage project; the line connects the named endpoints, it is not a surveyed centreline (location_confidence neighbourhood) - rough alignment, read trends only"
+   },
+   "bands": {
+    "0-10": {
+     "n_cells": 7081,
+     "n_valid": {
+      "2016": 7081,
+      "2017": 7081,
+      "2018": 7081,
+      "2019": 7081,
+      "2020": 7081,
+      "2021": 7081,
+      "2022": 7081,
+      "2023": 7081
+     },
+     "built_fraction": {
+      "2016": 0.1206,
+      "2017": 0.1279,
+      "2018": 0.1397,
+      "2019": 0.1367,
+      "2020": 0.1376,
+      "2021": 0.1496,
+      "2022": 0.1562,
+      "2023": 0.1575
+     },
+     "built_fraction_thr_0.4": {
+      "2016": 0.1474,
+      "2017": 0.1589,
+      "2018": 0.169,
+      "2019": 0.1706,
+      "2020": 0.1662,
+      "2021": 0.1786,
+      "2022": 0.1923,
+      "2023": 0.1979
+     },
+     "built_fraction_thr_0.6": {
+      "2016": 0.0935,
+      "2017": 0.0966,
+      "2018": 0.1085,
+      "2019": 0.111,
+      "2020": 0.11,
+      "2021": 0.1217,
+      "2022": 0.1158,
+      "2023": 0.12
+     },
+     "newly_built_m2": {
+      "2018": 1840.0,
+      "2019": 1440.0,
+      "2020": 1104.0,
+      "2021": 1536.0,
+      "2022": 1856.0
+     }
+    },
+    "10-20": {
+     "n_cells": 7114,
+     "n_valid": {
+      "2016": 7114,
+      "2017": 7114,
+      "2018": 7114,
+      "2019": 7114,
+      "2020": 7114,
+      "2021": 7114,
+      "2022": 7114,
+      "2023": 7114
+     },
+     "built_fraction": {
+      "2016": 0.1162,
+      "2017": 0.1215,
+      "2018": 0.1272,
+      "2019": 0.1307,
+      "2020": 0.1327,
+      "2021": 0.1425,
+      "2022": 0.1535,
+      "2023": 0.155
+     },
+     "built_fraction_thr_0.4": {
+      "2016": 0.142,
+      "2017": 0.1487,
+      "2018": 0.1549,
+      "2019": 0.1626,
+      "2020": 0.1624,
+      "2021": 0.1692,
+      "2022": 0.1905,
+      "2023": 0.1965
+     },
+     "built_fraction_thr_0.6": {
+      "2016": 0.0908,
+      "2017": 0.0898,
+      "2018": 0.1009,
+      "2019": 0.1033,
+      "2020": 0.1051,
+      "2021": 0.1126,
+      "2022": 0.1153,
+      "2023": 0.1195
+     },
+     "newly_built_m2": {
+      "2018": 1696.0,
+      "2019": 1776.0,
+      "2020": 960.0,
+      "2021": 1504.0,
+      "2022": 1536.0
+     }
+    },
+    "20-50": {
+     "n_cells": 21581,
+     "n_valid": {
+      "2016": 21581,
+      "2017": 21581,
+      "2018": 21581,
+      "2019": 21581,
+      "2020": 21581,
+      "2021": 21581,
+      "2022": 21581,
+      "2023": 21581
+     },
+     "built_fraction": {
+      "2016": 0.121,
+      "2017": 0.1202,
+      "2018": 0.1291,
+      "2019": 0.1284,
+      "2020": 0.1316,
+      "2021": 0.1412,
+      "2022": 0.1446,
+      "2023": 0.153
+     },
+     "built_fraction_thr_0.4": {
+      "2016": 0.1476,
+      "2017": 0.1511,
+      "2018": 0.1581,
+      "2019": 0.1597,
+      "2020": 0.1605,
+      "2021": 0.1726,
+      "2022": 0.1791,
+      "2023": 0.1918
+     },
+     "built_fraction_thr_0.6": {
+      "2016": 0.0952,
+      "2017": 0.0908,
+      "2018": 0.0998,
+      "2019": 0.1003,
+      "2020": 0.1045,
+      "2021": 0.112,
+      "2022": 0.1093,
+      "2023": 0.1133
+     },
+     "newly_built_m2": {
+      "2018": 4960.0,
+      "2019": 4320.0,
+      "2020": 3680.0,
+      "2021": 4256.0,
+      "2022": 3888.0
+     }
+    }
+   },
+   "files": {
+    "timeline": "events/drainage_sites/ijede-drain/ob_timeline.png",
+    "masks": [
+     "events/drainage_sites/ijede-drain/ob_2016.png",
+     "events/drainage_sites/ijede-drain/ob_2019.png",
+     "events/drainage_sites/ijede-drain/ob_2023.png"
+    ]
+   }
+  },
+  {
+   "site_id": "oko-oba-canal",
+   "event_id": "lagos-2022-07-08",
+   "included": true,
+   "channel": {
+    "osm_waterways": {
+     "n_ways": 1,
+     "total_length_m": 19.2,
+     "types": [
+      "stream"
+     ],
+     "source": "fresh Overpass query around current geometry"
+    },
+    "site_geometry_used": true,
+    "site_geometry_type": "LineString",
+    "location_confidence": "exact",
+    "geometry_note": "Oko-Oba Canal channel traced on current imagery (Task 19 update, location_confidence exact)"
+   },
+   "bands": {
+    "0-10": {
+     "n_cells": 1163,
+     "n_valid": {
+      "2016": 1163,
+      "2017": 1163,
+      "2018": 1163,
+      "2019": 1163,
+      "2020": 1163,
+      "2021": 1163,
+      "2022": 1163,
+      "2023": 1163
+     },
+     "built_fraction": {
+      "2016": 0.1273,
+      "2017": 0.1135,
+      "2018": 0.1298,
+      "2019": 0.1273,
+      "2020": 0.1281,
+      "2021": 0.1324,
+      "2022": 0.1488,
+      "2023": 0.1273
+     },
+     "built_fraction_thr_0.4": {
+      "2016": 0.1574,
+      "2017": 0.1402,
+      "2018": 0.166,
+      "2019": 0.1617,
+      "2020": 0.1462,
+      "2021": 0.1771,
+      "2022": 0.1909,
+      "2023": 0.1702
+     },
+     "built_fraction_thr_0.6": {
+      "2016": 0.0911,
+      "2017": 0.0782,
+      "2018": 0.098,
+      "2019": 0.1092,
+      "2020": 0.0963,
+      "2021": 0.0937,
+      "2022": 0.0954,
+      "2023": 0.098
+     },
+     "newly_built_m2": {
+      "2018": 256.0,
+      "2019": 224.0,
+      "2020": 112.0,
+      "2021": 288.0,
+      "2022": 208.0
+     }
+    },
+    "10-20": {
+     "n_cells": 1215,
+     "n_valid": {
+      "2016": 1215,
+      "2017": 1215,
+      "2018": 1215,
+      "2019": 1215,
+      "2020": 1215,
+      "2021": 1215,
+      "2022": 1215,
+      "2023": 1215
+     },
+     "built_fraction": {
+      "2016": 0.1753,
+      "2017": 0.1564,
+      "2018": 0.1531,
+      "2019": 0.1679,
+      "2020": 0.1753,
+      "2021": 0.1778,
+      "2022": 0.2173,
+      "2023": 0.1695
+     },
+     "built_fraction_thr_0.4": {
+      "2016": 0.2156,
+      "2017": 0.1918,
+      "2018": 0.1951,
+      "2019": 0.1959,
+      "2020": 0.2148,
+      "2021": 0.2033,
+      "2022": 0.2708,
+      "2023": 0.2099
+     },
+     "built_fraction_thr_0.6": {
+      "2016": 0.1276,
+      "2017": 0.1086,
+      "2018": 0.1062,
+      "2019": 0.1317,
+      "2020": 0.1383,
+      "2021": 0.1457,
+      "2022": 0.1333,
+      "2023": 0.1193
+     },
+     "newly_built_m2": {
+      "2018": 272.0,
+      "2019": 368.0,
+      "2020": 192.0,
+      "2021": 192.0,
+      "2022": 336.0
+     }
+    },
+    "20-50": {
+     "n_cells": 3994,
+     "n_valid": {
+      "2016": 3994,
+      "2017": 3994,
+      "2018": 3994,
+      "2019": 3994,
+      "2020": 3994,
+      "2021": 3994,
+      "2022": 3994,
+      "2023": 3994
+     },
+     "built_fraction": {
+      "2016": 0.2579,
+      "2017": 0.2524,
+      "2018": 0.2484,
+      "2019": 0.2619,
+      "2020": 0.2569,
+      "2021": 0.2714,
+      "2022": 0.3125,
+      "2023": 0.2729
+     },
+     "built_fraction_thr_0.4": {
+      "2016": 0.3137,
+      "2017": 0.3252,
+      "2018": 0.3077,
+      "2019": 0.3097,
+      "2020": 0.3032,
+      "2021": 0.325,
+      "2022": 0.3978,
+      "2023": 0.332
+     },
+     "built_fraction_thr_0.6": {
+      "2016": 0.2031,
+      "2017": 0.1835,
+      "2018": 0.1943,
+      "2019": 0.2146,
+      "2020": 0.2046,
+      "2021": 0.2198,
+      "2022": 0.2153,
+      "2023": 0.2193
+     },
+     "newly_built_m2": {
+      "2018": 832.0,
+      "2019": 1360.0,
+      "2020": 608.0,
+      "2021": 992.0,
+      "2022": 1632.0
+     }
+    }
+   },
+   "files": {
+    "timeline": "events/drainage_sites/oko-oba-canal/ob_timeline.png",
+    "masks": [
+     "events/drainage_sites/oko-oba-canal/ob_2016.png",
+     "events/drainage_sites/oko-oba-canal/ob_2019.png",
+     "events/drainage_sites/oko-oba-canal/ob_2023.png"
+    ]
+   }
+  },
+  {
+   "site_id": "alapere-ogudu",
+   "event_id": "lagos-2021-07-16",
+   "included": true,
+   "channel": {
+    "osm_waterways": {
+     "n_ways": 4,
+     "total_length_m": 2870.8,
+     "types": [
+      "drain",
+      "stream"
+     ],
+     "source": "events/drainage_sites/alapere-ogudu/osm.geojson (current geometry)"
+    },
+    "site_geometry_used": false,
+    "site_geometry_type": "LineString",
+    "location_confidence": "street",
+    "geometry_note": "structure is expressway/road construction; the OSM drains and streams within the radius are the channels"
+   },
+   "bands": {
+    "0-10": {
+     "n_cells": 3546,
+     "n_valid": {
+      "2016": 3546,
+      "2017": 3546,
+      "2018": 3546,
+      "2019": 3546,
+      "2020": 3546,
+      "2021": 3546,
+      "2022": 3546,
+      "2023": 3546
+     },
+     "built_fraction": {
+      "2016": 0.0623,
+      "2017": 0.046,
+      "2018": 0.0454,
+      "2019": 0.0561,
+      "2020": 0.0431,
+      "2021": 0.0488,
+      "2022": 0.0406,
+      "2023": 0.046
+     },
+     "built_fraction_thr_0.4": {
+      "2016": 0.09,
+      "2017": 0.0756,
+      "2018": 0.0663,
+      "2019": 0.0787,
+      "2020": 0.0581,
+      "2021": 0.0666,
+      "2022": 0.0654,
+      "2023": 0.066
+     },
+     "built_fraction_thr_0.6": {
+      "2016": 0.0415,
+      "2017": 0.0319,
+      "2018": 0.0313,
+      "2019": 0.04,
+      "2020": 0.0321,
+      "2021": 0.0347,
+      "2022": 0.0248,
+      "2023": 0.0302
+     },
+     "newly_built_m2": {
+      "2018": 592.0,
+      "2019": 336.0,
+      "2020": 224.0,
+      "2021": 272.0,
+      "2022": 192.0
+     }
+    },
+    "10-20": {
+     "n_cells": 3472,
+     "n_valid": {
+      "2016": 3472,
+      "2017": 3472,
+      "2018": 3472,
+      "2019": 3472,
+      "2020": 3472,
+      "2021": 3472,
+      "2022": 3472,
+      "2023": 3472
+     },
+     "built_fraction": {
+      "2016": 0.1679,
+      "2017": 0.1745,
+      "2018": 0.1915,
+      "2019": 0.2036,
+      "2020": 0.1872,
+      "2021": 0.197,
+      "2022": 0.2068,
+      "2023": 0.2033
+     },
+     "built_fraction_thr_0.4": {
+      "2016": 0.2189,
+      "2017": 0.2301,
+      "2018": 0.2359,
+      "2019": 0.2532,
+      "2020": 0.2313,
+      "2021": 0.2359,
+      "2022": 0.2658,
+      "2023": 0.263
+     },
+     "built_fraction_thr_0.6": {
+      "2016": 0.1195,
+      "2017": 0.1273,
+      "2018": 0.1443,
+      "2019": 0.1547,
+      "2020": 0.1411,
+      "2021": 0.1544,
+      "2022": 0.1532,
+      "2023": 0.1567
+     },
+     "newly_built_m2": {
+      "2018": 1680.0,
+      "2019": 1104.0,
+      "2020": 480.0,
+      "2021": 1088.0,
+      "2022": 1056.0
+     }
+    },
+    "20-50": {
+     "n_cells": 9938,
+     "n_valid": {
+      "2016": 9938,
+      "2017": 9938,
+      "2018": 9938,
+      "2019": 9938,
+      "2020": 9938,
+      "2021": 9938,
+      "2022": 9938,
+      "2023": 9938
+     },
+     "built_fraction": {
+      "2016": 0.2602,
+      "2017": 0.2754,
+      "2018": 0.2806,
+      "2019": 0.2942,
+      "2020": 0.2844,
+      "2021": 0.2908,
+      "2022": 0.3399,
+      "2023": 0.3171
+     },
+     "built_fraction_thr_0.4": {
+      "2016": 0.33,
+      "2017": 0.3431,
+      "2018": 0.3415,
+      "2019": 0.3524,
+      "2020": 0.3443,
+      "2021": 0.3496,
+      "2022": 0.4098,
+      "2023": 0.3878
+     },
+     "built_fraction_thr_0.6": {
+      "2016": 0.1942,
+      "2017": 0.2071,
+      "2018": 0.2204,
+      "2019": 0.2327,
+      "2020": 0.2244,
+      "2021": 0.2318,
+      "2022": 0.2555,
+      "2023": 0.2405
+     },
+     "newly_built_m2": {
+      "2018": 6768.0,
+      "2019": 3552.0,
+      "2020": 2224.0,
+      "2021": 4144.0,
+      "2022": 4784.0
+     }
+    }
+   },
+   "files": {
+    "timeline": "events/drainage_sites/alapere-ogudu/ob_timeline.png",
+    "masks": [
+     "events/drainage_sites/alapere-ogudu/ob_2016.png",
+     "events/drainage_sites/alapere-ogudu/ob_2019.png",
+     "events/drainage_sites/alapere-ogudu/ob_2023.png"
+    ]
+   }
+  },
+  {
+   "site_id": "marina-drainage",
+   "event_id": "lagos-2021-07-16",
+   "included": false,
+   "skip_reason": "no channel line within the site's 300 m radius and no usable channel geometry",
+   "channel": {
+    "osm_waterways": {
+     "n_ways": 0,
+     "total_length_m": 0,
+     "types": [],
+     "source": "events/drainage_sites/marina-drainage/osm.geojson (current geometry)"
+    },
+    "site_geometry_used": false,
+    "site_geometry_type": "LineString",
+    "location_confidence": "street",
+    "geometry_note": "structure is a road where the claim is that drainage is absent; not a channel and no mapped waterway within 300 m"
+   }
+  },
+  {
+   "site_id": "lekki-epe-rehab",
+   "event_id": "lagos-2024-07-03",
+   "included": true,
+   "channel": {
+    "osm_waterways": {
+     "n_ways": 1,
+     "total_length_m": 498.0,
+     "types": [
+      "stream"
+     ],
+     "source": "events/drainage_sites/lekki-epe-rehab/osm.geojson (current geometry)"
+    },
+    "site_geometry_used": false,
+    "site_geometry_type": "LineString",
+    "location_confidence": "street",
+    "geometry_note": "structure is the Lekki-Epe Expressway (road works); the OSM stream within the radius is the channel"
+   },
+   "bands": {
+    "0-10": {
+     "n_cells": 631,
+     "n_valid": {
+      "2016": 631,
+      "2017": 631,
+      "2018": 631,
+      "2019": 631,
+      "2020": 631,
+      "2021": 631,
+      "2022": 631,
+      "2023": 631
+     },
+     "built_fraction": {
+      "2016": 0.0,
+      "2017": 0.0,
+      "2018": 0.0016,
+      "2019": 0.0127,
+      "2020": 0.0048,
+      "2021": 0.0032,
+      "2022": 0.0127,
+      "2023": 0.0032
+     },
+     "built_fraction_thr_0.4": {
+      "2016": 0.0,
+      "2017": 0.0,
+      "2018": 0.0032,
+      "2019": 0.0158,
+      "2020": 0.0079,
+      "2021": 0.0111,
+      "2022": 0.0254,
+      "2023": 0.0238
+     },
+     "built_fraction_thr_0.6": {
+      "2016": 0.0,
+      "2017": 0.0,
+      "2018": 0.0016,
+      "2019": 0.0063,
+      "2020": 0.0032,
+      "2021": 0.0032,
+      "2022": 0.0032,
+      "2023": 0.0032
+     },
+     "newly_built_m2": {
+      "2018": 16.0,
+      "2019": 16.0,
+      "2020": 16.0,
+      "2021": 0.0,
+      "2022": 0.0
+     }
+    },
+    "10-20": {
+     "n_cells": 652,
+     "n_valid": {
+      "2016": 652,
+      "2017": 652,
+      "2018": 652,
+      "2019": 652,
+      "2020": 652,
+      "2021": 652,
+      "2022": 652,
+      "2023": 652
+     },
+     "built_fraction": {
+      "2016": 0.0,
+      "2017": 0.0,
+      "2018": 0.0184,
+      "2019": 0.0199,
+      "2020": 0.0215,
+      "2021": 0.0291,
+      "2022": 0.0383,
+      "2023": 0.0567
+     },
+     "built_fraction_thr_0.4": {
+      "2016": 0.0,
+      "2017": 0.0,
+      "2018": 0.0215,
+      "2019": 0.0307,
+      "2020": 0.0307,
+      "2021": 0.0337,
+      "2022": 0.0629,
+      "2023": 0.0813
+     },
+     "built_fraction_thr_0.6": {
+      "2016": 0.0,
+      "2017": 0.0,
+      "2018": 0.0123,
+      "2019": 0.0107,
+      "2020": 0.0184,
+      "2021": 0.0169,
+      "2022": 0.0123,
+      "2023": 0.0414
+     },
+     "newly_built_m2": {
+      "2018": 96.0,
+      "2019": 32.0,
+      "2020": 32.0,
+      "2021": 112.0,
+      "2022": 144.0
+     }
+    },
+    "20-50": {
+     "n_cells": 2057,
+     "n_valid": {
+      "2016": 2057,
+      "2017": 2057,
+      "2018": 2057,
+      "2019": 2057,
+      "2020": 2057,
+      "2021": 2057,
+      "2022": 2057,
+      "2023": 2057
+     },
+     "built_fraction": {
+      "2016": 0.0243,
+      "2017": 0.0248,
+      "2018": 0.0331,
+      "2019": 0.0297,
+      "2020": 0.0326,
+      "2021": 0.0579,
+      "2022": 0.0564,
+      "2023": 0.0788
+     },
+     "built_fraction_thr_0.4": {
+      "2016": 0.0277,
+      "2017": 0.0297,
+      "2018": 0.0399,
+      "2019": 0.0345,
+      "2020": 0.0404,
+      "2021": 0.0734,
+      "2022": 0.0826,
+      "2023": 0.1026
+     },
+     "built_fraction_thr_0.6": {
+      "2016": 0.0209,
+      "2017": 0.0224,
+      "2018": 0.0277,
+      "2019": 0.0263,
+      "2020": 0.0267,
+      "2021": 0.0457,
+      "2022": 0.034,
+      "2023": 0.0588
+     },
+     "newly_built_m2": {
+      "2018": 240.0,
+      "2019": 64.0,
+      "2020": 112.0,
+      "2021": 416.0,
+      "2022": 240.0
+     }
+    }
+   },
+   "files": {
+    "timeline": "events/drainage_sites/lekki-epe-rehab/ob_timeline.png",
+    "masks": [
+     "events/drainage_sites/lekki-epe-rehab/ob_2016.png",
+     "events/drainage_sites/lekki-epe-rehab/ob_2019.png",
+     "events/drainage_sites/lekki-epe-rehab/ob_2023.png"
+    ]
+   }
+  },
+  {
+   "site_id": "labora",
+   "event_id": "lagos-2024-07-03",
+   "included": false,
+   "skip_reason": "no channel line within the site's 300 m radius and no usable channel geometry",
+   "channel": {
+    "osm_waterways": {
+     "n_ways": 0,
+     "total_length_m": 0,
+     "types": [],
+     "source": "fresh Overpass query around current geometry"
+    },
+    "site_geometry_used": false,
+    "site_geometry_type": "Point",
+    "location_confidence": "neighbourhood",
+    "geometry_note": "new residential site with no mapped drain; no channel"
+   }
+  },
+  {
+   "site_id": "ibeju-lekki-expy",
+   "event_id": "lagos-2024-07-03",
+   "included": false,
+   "skip_reason": "no channel line within the site's 300 m radius and no usable channel geometry",
+   "channel": {
+    "osm_waterways": {
+     "n_ways": 0,
+     "total_length_m": 0,
+     "types": [],
+     "source": "events/drainage_sites/ibeju-lekki-expy/osm.geojson (current geometry)"
+    },
+    "site_geometry_used": false,
+    "site_geometry_type": "LineString",
+    "location_confidence": "street",
+    "geometry_note": "roadside drains along the expressway; no channel line mapped within 300 m"
+   }
+  },
+  {
+   "site_id": "sangotedo-channel-notices",
+   "event_id": "lagos-2024-07-03",
+   "included": true,
+   "channel": {
+    "osm_waterways": {
+     "n_ways": 0,
+     "total_length_m": 0,
+     "types": [],
+     "source": "fresh Overpass query around current geometry"
+    },
+    "site_geometry_used": true,
+    "site_geometry_type": "Point",
+    "location_confidence": "street",
+    "geometry_note": "System 63b channel; centreline not in OSM: the geometry is the Lagos Business School inspection point (location_confidence street), so the bands are rings around the point rather than bands along a centreline - the 0-10 m band is ~20 cells, qualitative only"
+   },
+   "bands": {
+    "0-10": {
+     "n_cells": 21,
+     "n_valid": {
+      "2016": 21,
+      "2017": 21,
+      "2018": 21,
+      "2019": 21,
+      "2020": 21,
+      "2021": 21,
+      "2022": 21,
+      "2023": 21
+     },
+     "built_fraction": {
+      "2016": 0.0,
+      "2017": 0.0,
+      "2018": 0.0,
+      "2019": 0.0,
+      "2020": 0.0,
+      "2021": 0.0,
+      "2022": 0.0,
+      "2023": 0.0
+     },
+     "built_fraction_thr_0.4": {
+      "2016": 0.0,
+      "2017": 0.0,
+      "2018": 0.0,
+      "2019": 0.0,
+      "2020": 0.0,
+      "2021": 0.0,
+      "2022": 0.0,
+      "2023": 0.0
+     },
+     "built_fraction_thr_0.6": {
+      "2016": 0.0,
+      "2017": 0.0,
+      "2018": 0.0,
+      "2019": 0.0,
+      "2020": 0.0,
+      "2021": 0.0,
+      "2022": 0.0,
+      "2023": 0.0
+     },
+     "newly_built_m2": {
+      "2018": 0.0,
+      "2019": 0.0,
+      "2020": 0.0,
+      "2021": 0.0,
+      "2022": 0.0
+     }
+    },
+    "10-20": {
+     "n_cells": 54,
+     "n_valid": {
+      "2016": 54,
+      "2017": 54,
+      "2018": 54,
+      "2019": 54,
+      "2020": 54,
+      "2021": 54,
+      "2022": 54,
+      "2023": 54
+     },
+     "built_fraction": {
+      "2016": 0.0,
+      "2017": 0.0,
+      "2018": 0.0,
+      "2019": 0.0,
+      "2020": 0.0,
+      "2021": 0.0,
+      "2022": 0.0,
+      "2023": 0.0
+     },
+     "built_fraction_thr_0.4": {
+      "2016": 0.0,
+      "2017": 0.0,
+      "2018": 0.0,
+      "2019": 0.0,
+      "2020": 0.0,
+      "2021": 0.0,
+      "2022": 0.0,
+      "2023": 0.0
+     },
+     "built_fraction_thr_0.6": {
+      "2016": 0.0,
+      "2017": 0.0,
+      "2018": 0.0,
+      "2019": 0.0,
+      "2020": 0.0,
+      "2021": 0.0,
+      "2022": 0.0,
+      "2023": 0.0
+     },
+     "newly_built_m2": {
+      "2018": 0.0,
+      "2019": 0.0,
+      "2020": 0.0,
+      "2021": 0.0,
+      "2022": 0.0
+     }
+    },
+    "20-50": {
+     "n_cells": 417,
+     "n_valid": {
+      "2016": 417,
+      "2017": 417,
+      "2018": 417,
+      "2019": 417,
+      "2020": 417,
+      "2021": 417,
+      "2022": 417,
+      "2023": 417
+     },
+     "built_fraction": {
+      "2016": 0.0,
+      "2017": 0.0,
+      "2018": 0.0,
+      "2019": 0.036,
+      "2020": 0.0024,
+      "2021": 0.0,
+      "2022": 0.0,
+      "2023": 0.0
+     },
+     "built_fraction_thr_0.4": {
+      "2016": 0.0,
+      "2017": 0.0,
+      "2018": 0.0,
+      "2019": 0.048,
+      "2020": 0.0096,
+      "2021": 0.0,
+      "2022": 0.0072,
+      "2023": 0.0
+     },
+     "built_fraction_thr_0.6": {
+      "2016": 0.0,
+      "2017": 0.0,
+      "2018": 0.0,
+      "2019": 0.0048,
+      "2020": 0.0,
+      "2021": 0.0,
+      "2022": 0.0,
+      "2023": 0.0
+     },
+     "newly_built_m2": {
+      "2018": 0.0,
+      "2019": 16.0,
+      "2020": 0.0,
+      "2021": 0.0,
+      "2022": 0.0
+     }
+    }
+   },
+   "files": {
+    "timeline": "events/drainage_sites/sangotedo-channel-notices/ob_timeline.png",
+    "masks": [
+     "events/drainage_sites/sangotedo-channel-notices/ob_2016.png",
+     "events/drainage_sites/sangotedo-channel-notices/ob_2019.png",
+     "events/drainage_sites/sangotedo-channel-notices/ob_2023.png"
+    ]
+   }
+  }
+ ],
+ "baseline": {
+  "aoi": [
+   2.6,
+   6.28,
+   4.45,
+   6.85
+  ],
+  "segment_length_m": 300.0,
+  "n_segments": 200,
+  "sampling": {
+   "n_ways_ge_300m": 490,
+   "attempts": 225,
+   "n_accepted": 200
+  },
+  "exclusion": ">= 1000 m from any named site",
+  "bands": {
+   "0-10": {
+    "n_segments_with_data": {
+     "2016": 191,
+     "2017": 191,
+     "2018": 191,
+     "2019": 191,
+     "2020": 191,
+     "2021": 191,
+     "2022": 191,
+     "2023": 191
+    },
+    "median": {
+     "2016": 0.0,
+     "2017": 0.0,
+     "2018": 0.0,
+     "2019": 0.0,
+     "2020": 0.0,
+     "2021": 0.0,
+     "2022": 0.0,
+     "2023": 0.0
+    },
+    "iqr": {
+     "q1": {
+      "2016": 0.0,
+      "2017": 0.0,
+      "2018": 0.0,
+      "2019": 0.0,
+      "2020": 0.0,
+      "2021": 0.0,
+      "2022": 0.0,
+      "2023": 0.0
+     },
+     "q3": {
+      "2016": 0.0,
+      "2017": 0.0,
+      "2018": 0.0,
+      "2019": 0.0,
+      "2020": 0.0,
+      "2021": 0.0,
+      "2022": 0.0,
+      "2023": 0.0
+     }
+    },
+    "mean": {
+     "2016": 0.0039,
+     "2017": 0.0028,
+     "2018": 0.0033,
+     "2019": 0.0041,
+     "2020": 0.0038,
+     "2021": 0.0046,
+     "2022": 0.0051,
+     "2023": 0.0046
+    },
+    "newly_built_m2_sum": {
+     "2018": 768.0,
+     "2019": 960.0,
+     "2020": 384.0,
+     "2021": 1088.0,
+     "2022": 480.0
+    },
+    "newly_built_m2_median_per_segment": {
+     "2018": 0.0,
+     "2019": 0.0,
+     "2020": 0.0,
+     "2021": 0.0,
+     "2022": 0.0
+    }
+   },
+   "10-20": {
+    "n_segments_with_data": {
+     "2016": 191,
+     "2017": 191,
+     "2018": 191,
+     "2019": 191,
+     "2020": 191,
+     "2021": 191,
+     "2022": 191,
+     "2023": 191
+    },
+    "median": {
+     "2016": 0.0,
+     "2017": 0.0,
+     "2018": 0.0,
+     "2019": 0.0,
+     "2020": 0.0,
+     "2021": 0.0,
+     "2022": 0.0,
+     "2023": 0.0
+    },
+    "iqr": {
+     "q1": {
+      "2016": 0.0,
+      "2017": 0.0,
+      "2018": 0.0,
+      "2019": 0.0,
+      "2020": 0.0,
+      "2021": 0.0,
+      "2022": 0.0,
+      "2023": 0.0
+     },
+     "q3": {
+      "2016": 0.0,
+      "2017": 0.0,
+      "2018": 0.0,
+      "2019": 0.0,
+      "2020": 0.0,
+      "2021": 0.0,
+      "2022": 0.0,
+      "2023": 0.0
+     }
+    },
+    "mean": {
+     "2016": 0.0177,
+     "2017": 0.0154,
+     "2018": 0.018,
+     "2019": 0.0198,
+     "2020": 0.0202,
+     "2021": 0.0204,
+     "2022": 0.0226,
+     "2023": 0.0228
+    },
+    "newly_built_m2_sum": {
+     "2018": 3632.0,
+     "2019": 3648.0,
+     "2020": 1872.0,
+     "2021": 3120.0,
+     "2022": 2768.0
+    },
+    "newly_built_m2_median_per_segment": {
+     "2018": 0.0,
+     "2019": 0.0,
+     "2020": 0.0,
+     "2021": 0.0,
+     "2022": 0.0
+    }
+   },
+   "20-50": {
+    "n_segments_with_data": {
+     "2016": 191,
+     "2017": 191,
+     "2018": 191,
+     "2019": 191,
+     "2020": 191,
+     "2021": 191,
+     "2022": 191,
+     "2023": 191
+    },
+    "median": {
+     "2016": 0.0,
+     "2017": 0.0,
+     "2018": 0.0,
+     "2019": 0.0,
+     "2020": 0.0,
+     "2021": 0.0,
+     "2022": 0.0,
+     "2023": 0.0
+    },
+    "iqr": {
+     "q1": {
+      "2016": 0.0,
+      "2017": 0.0,
+      "2018": 0.0,
+      "2019": 0.0,
+      "2020": 0.0,
+      "2021": 0.0,
+      "2022": 0.0,
+      "2023": 0.0
+     },
+     "q3": {
+      "2016": 0.0029,
+      "2017": 0.0029,
+      "2018": 0.0065,
+      "2019": 0.0055,
+      "2020": 0.0095,
+      "2021": 0.0097,
+      "2022": 0.0143,
+      "2023": 0.0117
+     }
+    },
+    "mean": {
+     "2016": 0.031,
+     "2017": 0.0308,
+     "2018": 0.034,
+     "2019": 0.0366,
+     "2020": 0.038,
+     "2021": 0.0403,
+     "2022": 0.0425,
+     "2023": 0.0436
+    },
+    "newly_built_m2_sum": {
+     "2018": 20128.0,
+     "2019": 17168.0,
+     "2020": 16000.0,
+     "2021": 15424.0,
+     "2022": 20464.0
+    },
+    "newly_built_m2_median_per_segment": {
+     "2018": 0.0,
+     "2019": 0.0,
+     "2020": 0.0,
+     "2021": 0.0,
+     "2022": 0.0
+    }
+   }
+  },
+  "per_segment": [
+   {
+    "way_id": 1115313146,
+    "midpoint": [
+     4.31578,
+     6.62603
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "10-20": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "20-50": {
+      "2016": 0.0,
+      "2023": 0.0013
+     }
+    }
+   },
+   {
+    "way_id": 246839364,
+    "midpoint": [
+     3.41697,
+     6.61377
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "10-20": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "20-50": {
+      "2016": 0.0163,
+      "2023": 0.0345
+     }
+    }
+   },
+   {
+    "way_id": 1366037345,
+    "midpoint": [
+     3.23923,
+     6.62805
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "10-20": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "20-50": {
+      "2016": 0.0,
+      "2023": 0.0007
+     }
+    }
+   },
+   {
+    "way_id": 390274996,
+    "midpoint": [
+     4.70146,
+     6.33772
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": null,
+      "2023": null
+     },
+     "10-20": {
+      "2016": null,
+      "2023": null
+     },
+     "20-50": {
+      "2016": null,
+      "2023": null
+     }
+    }
+   },
+   {
+    "way_id": 737425210,
+    "midpoint": [
+     3.28784,
+     6.54086
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "10-20": {
+      "2016": 0.0,
+      "2023": 0.0023
+     },
+     "20-50": {
+      "2016": 0.0078,
+      "2023": 0.0487
+     }
+    }
+   },
+   {
+    "way_id": 1547601490,
+    "midpoint": [
+     3.3114,
+     6.58507
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "10-20": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "20-50": {
+      "2016": 0.0007,
+      "2023": 0.0033
+     }
+    }
+   },
+   {
+    "way_id": 247681899,
+    "midpoint": [
+     4.2407,
+     6.58266
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "10-20": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "20-50": {
+      "2016": 0.0,
+      "2023": 0.0
+     }
+    }
+   },
+   {
+    "way_id": 761430225,
+    "midpoint": [
+     3.34552,
+     6.42355
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "10-20": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "20-50": {
+      "2016": 0.0,
+      "2023": 0.0
+     }
+    }
+   },
+   {
+    "way_id": 821534986,
+    "midpoint": [
+     2.61987,
+     6.4655
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "10-20": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "20-50": {
+      "2016": 0.0,
+      "2023": 0.0
+     }
+    }
+   },
+   {
+    "way_id": 1327914466,
+    "midpoint": [
+     3.28962,
+     6.61788
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": 0.0,
+      "2023": 0.0025
+     },
+     "10-20": {
+      "2016": 0.0,
+      "2023": 0.03
+     },
+     "20-50": {
+      "2016": 0.0494,
+      "2023": 0.11
+     }
+    }
+   },
+   {
+    "way_id": 315122733,
+    "midpoint": [
+     3.57152,
+     6.43269
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "10-20": {
+      "2016": 0.0,
+      "2023": 0.0824
+     },
+     "20-50": {
+      "2016": 0.0,
+      "2023": 0.0296
+     }
+    }
+   },
+   {
+    "way_id": 787296054,
+    "midpoint": [
+     3.56419,
+     6.44743
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": 0.0,
+      "2023": 0.0201
+     },
+     "10-20": {
+      "2016": 0.0764,
+      "2023": 0.0787
+     },
+     "20-50": {
+      "2016": 0.1032,
+      "2023": 0.2632
+     }
+    }
+   },
+   {
+    "way_id": 390274996,
+    "midpoint": [
+     4.49561,
+     6.41737
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "10-20": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "20-50": {
+      "2016": 0.0,
+      "2023": 0.0
+     }
+    }
+   },
+   {
+    "way_id": 390274996,
+    "midpoint": [
+     4.46073,
+     6.42451
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "10-20": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "20-50": {
+      "2016": 0.0,
+      "2023": 0.0
+     }
+    }
+   },
+   {
+    "way_id": 783095283,
+    "midpoint": [
+     3.21343,
+     6.7387
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "10-20": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "20-50": {
+      "2016": 0.0,
+      "2023": 0.0
+     }
+    }
+   },
+   {
+    "way_id": 821534986,
+    "midpoint": [
+     2.56655,
+     6.44589
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "10-20": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "20-50": {
+      "2016": 0.0,
+      "2023": 0.0
+     }
+    }
+   },
+   {
+    "way_id": 390274996,
+    "midpoint": [
+     4.40747,
+     6.42918
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "10-20": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "20-50": {
+      "2016": 0.0,
+      "2023": 0.0
+     }
+    }
+   },
+   {
+    "way_id": 551464923,
+    "midpoint": [
+     3.33096,
+     6.59991
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "10-20": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "20-50": {
+      "2016": 0.0,
+      "2023": 0.0
+     }
+    }
+   },
+   {
+    "way_id": 741343449,
+    "midpoint": [
+     3.3306,
+     6.65464
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": 0.0585,
+      "2023": 0.0585
+     },
+     "10-20": {
+      "2016": 0.2145,
+      "2023": 0.3077
+     },
+     "20-50": {
+      "2016": 0.2796,
+      "2023": 0.337
+     }
+    }
+   },
+   {
+    "way_id": 741343458,
+    "midpoint": [
+     3.37766,
+     6.64951
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "10-20": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "20-50": {
+      "2016": 0.0072,
+      "2023": 0.0189
+     }
+    }
+   },
+   {
+    "way_id": 246839372,
+    "midpoint": [
+     3.36013,
+     6.91044
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "10-20": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "20-50": {
+      "2016": 0.0,
+      "2023": 0.0
+     }
+    }
+   },
+   {
+    "way_id": 707733141,
+    "midpoint": [
+     3.41049,
+     6.59089
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "10-20": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "20-50": {
+      "2016": 0.0,
+      "2023": 0.0
+     }
+    }
+   },
+   {
+    "way_id": 761430222,
+    "midpoint": [
+     3.39595,
+     6.43328
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "10-20": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "20-50": {
+      "2016": 0.0,
+      "2023": 0.0
+     }
+    }
+   },
+   {
+    "way_id": 737425210,
+    "midpoint": [
+     3.28686,
+     6.56665
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": 0.0102,
+      "2023": 0.0051
+     },
+     "10-20": {
+      "2016": 0.0645,
+      "2023": 0.0922
+     },
+     "20-50": {
+      "2016": 0.1191,
+      "2023": 0.2069
+     }
+    }
+   },
+   {
+    "way_id": 1116104783,
+    "midpoint": [
+     4.41146,
+     6.74637
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "10-20": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "20-50": {
+      "2016": 0.0,
+      "2023": 0.0
+     }
+    }
+   },
+   {
+    "way_id": 1116104783,
+    "midpoint": [
+     4.48918,
+     6.81036
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "10-20": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "20-50": {
+      "2016": 0.0,
+      "2023": 0.0
+     }
+    }
+   },
+   {
+    "way_id": 374760562,
+    "midpoint": [
+     3.35053,
+     6.41184
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "10-20": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "20-50": {
+      "2016": 0.0,
+      "2023": 0.0
+     }
+    }
+   },
+   {
+    "way_id": 390274996,
+    "midpoint": [
+     4.52663,
+     6.41325
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": null,
+      "2023": null
+     },
+     "10-20": {
+      "2016": null,
+      "2023": null
+     },
+     "20-50": {
+      "2016": null,
+      "2023": null
+     }
+    }
+   },
+   {
+    "way_id": 93337825,
+    "midpoint": [
+     3.37705,
+     6.53889
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": 0.0,
+      "2023": 0.0025
+     },
+     "10-20": {
+      "2016": 0.127,
+      "2023": 0.1066
+     },
+     "20-50": {
+      "2016": 0.2461,
+      "2023": 0.4582
+     }
+    }
+   },
+   {
+    "way_id": 1112388245,
+    "midpoint": [
+     4.40038,
+     6.48444
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "10-20": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "20-50": {
+      "2016": 0.0079,
+      "2023": 0.0046
+     }
+    }
+   },
+   {
+    "way_id": 821534986,
+    "midpoint": [
+     2.54422,
+     6.4368
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": null,
+      "2023": null
+     },
+     "10-20": {
+      "2016": null,
+      "2023": null
+     },
+     "20-50": {
+      "2016": null,
+      "2023": null
+     }
+    }
+   },
+   {
+    "way_id": 787296050,
+    "midpoint": [
+     3.57578,
+     6.44924
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "10-20": {
+      "2016": 0.0,
+      "2023": 0.0092
+     },
+     "20-50": {
+      "2016": 0.0364,
+      "2023": 0.087
+     }
+    }
+   },
+   {
+    "way_id": 387656252,
+    "midpoint": [
+     3.22132,
+     6.59886
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "10-20": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "20-50": {
+      "2016": 0.0,
+      "2023": 0.0
+     }
+    }
+   },
+   {
+    "way_id": 134414163,
+    "midpoint": [
+     3.32484,
+     6.61074
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": 0.1893,
+      "2023": 0.1279
+     },
+     "10-20": {
+      "2016": 0.3507,
+      "2023": 0.3597
+     },
+     "20-50": {
+      "2016": 0.5278,
+      "2023": 0.5593
+     }
+    }
+   },
+   {
+    "way_id": 599458825,
+    "midpoint": [
+     3.48169,
+     6.45461
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": 0.0051,
+      "2023": 0.0
+     },
+     "10-20": {
+      "2016": 0.0046,
+      "2023": 0.0323
+     },
+     "20-50": {
+      "2016": 0.1074,
+      "2023": 0.0775
+     }
+    }
+   },
+   {
+    "way_id": 364638169,
+    "midpoint": [
+     2.67077,
+     6.53824
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "10-20": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "20-50": {
+      "2016": 0.0,
+      "2023": 0.0
+     }
+    }
+   },
+   {
+    "way_id": 241273521,
+    "midpoint": [
+     4.05529,
+     6.62266
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "10-20": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "20-50": {
+      "2016": 0.0,
+      "2023": 0.0
+     }
+    }
+   },
+   {
+    "way_id": 759278975,
+    "midpoint": [
+     3.77104,
+     6.74042
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "10-20": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "20-50": {
+      "2016": 0.0,
+      "2023": 0.0
+     }
+    }
+   },
+   {
+    "way_id": 374638307,
+    "midpoint": [
+     3.178,
+     6.43981
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "10-20": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "20-50": {
+      "2016": 0.0,
+      "2023": 0.0
+     }
+    }
+   },
+   {
+    "way_id": 732685022,
+    "midpoint": [
+     3.18698,
+     6.52155
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "10-20": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "20-50": {
+      "2016": 0.0,
+      "2023": 0.0
+     }
+    }
+   },
+   {
+    "way_id": 786056326,
+    "midpoint": [
+     3.1865,
+     6.4638
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": 0.005,
+      "2023": 0.0
+     },
+     "10-20": {
+      "2016": 0.0556,
+      "2023": 0.044
+     },
+     "20-50": {
+      "2016": 0.129,
+      "2023": 0.2052
+     }
+    }
+   },
+   {
+    "way_id": 893077164,
+    "midpoint": [
+     3.98984,
+     6.43875
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "10-20": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "20-50": {
+      "2016": 0.0,
+      "2023": 0.0543
+     }
+    }
+   },
+   {
+    "way_id": 761430225,
+    "midpoint": [
+     3.35473,
+     6.42791
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "10-20": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "20-50": {
+      "2016": 0.0,
+      "2023": 0.0
+     }
+    }
+   },
+   {
+    "way_id": 317115117,
+    "midpoint": [
+     3.55005,
+     6.43474
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": 0.0051,
+      "2023": 0.0
+     },
+     "10-20": {
+      "2016": 0.0206,
+      "2023": 0.0114
+     },
+     "20-50": {
+      "2016": 0.0496,
+      "2023": 0.0659
+     }
+    }
+   },
+   {
+    "way_id": 787296054,
+    "midpoint": [
+     3.5708,
+     6.44821
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": 0.0,
+      "2023": 0.0302
+     },
+     "10-20": {
+      "2016": 0.0115,
+      "2023": 0.1062
+     },
+     "20-50": {
+      "2016": 0.1475,
+      "2023": 0.2833
+     }
+    }
+   },
+   {
+    "way_id": 1112460413,
+    "midpoint": [
+     4.22468,
+     6.44641
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "10-20": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "20-50": {
+      "2016": 0.0,
+      "2023": 0.0
+     }
+    }
+   },
+   {
+    "way_id": 374634645,
+    "midpoint": [
+     3.39587,
+     6.44145
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "10-20": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "20-50": {
+      "2016": 0.0,
+      "2023": 0.0
+     }
+    }
+   },
+   {
+    "way_id": 1533647875,
+    "midpoint": [
+     2.80859,
+     6.41004
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "10-20": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "20-50": {
+      "2016": 0.0,
+      "2023": 0.0
+     }
+    }
+   },
+   {
+    "way_id": 1561370920,
+    "midpoint": [
+     3.29715,
+     6.52289
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "10-20": {
+      "2016": 0.0114,
+      "2023": 0.0228
+     },
+     "20-50": {
+      "2016": 0.0613,
+      "2023": 0.1461
+     }
+    }
+   },
+   {
+    "way_id": 1116104783,
+    "midpoint": [
+     4.40751,
+     6.74125
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "10-20": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "20-50": {
+      "2016": 0.0,
+      "2023": 0.0
+     }
+    }
+   },
+   {
+    "way_id": 759278975,
+    "midpoint": [
+     3.791,
+     6.75127
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "10-20": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "20-50": {
+      "2016": 0.0,
+      "2023": 0.0
+     }
+    }
+   },
+   {
+    "way_id": 1115313147,
+    "midpoint": [
+     4.30809,
+     6.61541
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "10-20": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "20-50": {
+      "2016": 0.0,
+      "2023": 0.0
+     }
+    }
+   },
+   {
+    "way_id": 152733584,
+    "midpoint": [
+     3.32304,
+     6.45601
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "10-20": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "20-50": {
+      "2016": 0.072,
+      "2023": 0.0921
+     }
+    }
+   },
+   {
+    "way_id": 732679115,
+    "midpoint": [
+     3.24941,
+     6.54732
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": 0.0561,
+      "2023": 0.0485
+     },
+     "10-20": {
+      "2016": 0.1347,
+      "2023": 0.2306
+     },
+     "20-50": {
+      "2016": 0.1603,
+      "2023": 0.2971
+     }
+    }
+   },
+   {
+    "way_id": 786056325,
+    "midpoint": [
+     3.16023,
+     6.46837
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": 0.0229,
+      "2023": 0.0102
+     },
+     "10-20": {
+      "2016": 0.1839,
+      "2023": 0.1678
+     },
+     "20-50": {
+      "2016": 0.3114,
+      "2023": 0.3277
+     }
+    }
+   },
+   {
+    "way_id": 246839359,
+    "midpoint": [
+     3.34727,
+     6.77237
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "10-20": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "20-50": {
+      "2016": 0.0,
+      "2023": 0.0
+     }
+    }
+   },
+   {
+    "way_id": 737431093,
+    "midpoint": [
+     3.24162,
+     6.65982
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "10-20": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "20-50": {
+      "2016": 0.0,
+      "2023": 0.0
+     }
+    }
+   },
+   {
+    "way_id": 759278977,
+    "midpoint": [
+     3.82329,
+     6.80487
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "10-20": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "20-50": {
+      "2016": 0.0,
+      "2023": 0.0
+     }
+    }
+   },
+   {
+    "way_id": 384774022,
+    "midpoint": [
+     2.61145,
+     6.84894
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "10-20": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "20-50": {
+      "2016": 0.0,
+      "2023": 0.0
+     }
+    }
+   },
+   {
+    "way_id": 390274996,
+    "midpoint": [
+     4.68116,
+     6.34859
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": null,
+      "2023": null
+     },
+     "10-20": {
+      "2016": null,
+      "2023": null
+     },
+     "20-50": {
+      "2016": null,
+      "2023": null
+     }
+    }
+   },
+   {
+    "way_id": 604386559,
+    "midpoint": [
+     3.36501,
+     6.62899
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "10-20": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "20-50": {
+      "2016": 0.0234,
+      "2023": 0.0189
+     }
+    }
+   },
+   {
+    "way_id": 493104131,
+    "midpoint": [
+     2.71458,
+     6.52768
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "10-20": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "20-50": {
+      "2016": 0.0,
+      "2023": 0.0
+     }
+    }
+   },
+   {
+    "way_id": 893077183,
+    "midpoint": [
+     4.01457,
+     6.4625
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "10-20": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "20-50": {
+      "2016": 0.0,
+      "2023": 0.0
+     }
+    }
+   },
+   {
+    "way_id": 742035989,
+    "midpoint": [
+     3.44092,
+     6.59171
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "10-20": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "20-50": {
+      "2016": 0.0,
+      "2023": 0.0
+     }
+    }
+   },
+   {
+    "way_id": 785734162,
+    "midpoint": [
+     3.4507,
+     6.6199
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "10-20": {
+      "2016": 0.0,
+      "2023": 0.0092
+     },
+     "20-50": {
+      "2016": 0.0,
+      "2023": 0.0013
+     }
+    }
+   },
+   {
+    "way_id": 144092582,
+    "midpoint": [
+     3.1218,
+     6.50504
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "10-20": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "20-50": {
+      "2016": 0.0,
+      "2023": 0.0
+     }
+    }
+   },
+   {
+    "way_id": 125070205,
+    "midpoint": [
+     3.77684,
+     6.67027
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "10-20": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "20-50": {
+      "2016": 0.0,
+      "2023": 0.0
+     }
+    }
+   },
+   {
+    "way_id": 384774022,
+    "midpoint": [
+     2.61467,
+     6.84115
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "10-20": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "20-50": {
+      "2016": 0.0,
+      "2023": 0.0
+     }
+    }
+   },
+   {
+    "way_id": 246839372,
+    "midpoint": [
+     3.35608,
+     6.80846
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "10-20": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "20-50": {
+      "2016": 0.0,
+      "2023": 0.0
+     }
+    }
+   },
+   {
+    "way_id": 125070205,
+    "midpoint": [
+     3.75677,
+     6.68226
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "10-20": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "20-50": {
+      "2016": 0.0,
+      "2023": 0.0
+     }
+    }
+   },
+   {
+    "way_id": 144092582,
+    "midpoint": [
+     3.1637,
+     6.5088
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "10-20": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "20-50": {
+      "2016": 0.0,
+      "2023": 0.0
+     }
+    }
+   },
+   {
+    "way_id": 1116106531,
+    "midpoint": [
+     4.45142,
+     6.82566
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "10-20": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "20-50": {
+      "2016": 0.0,
+      "2023": 0.0
+     }
+    }
+   },
+   {
+    "way_id": 315122733,
+    "midpoint": [
+     3.58366,
+     6.4347
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "10-20": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "20-50": {
+      "2016": 0.0,
+      "2023": 0.0033
+     }
+    }
+   },
+   {
+    "way_id": 374638307,
+    "midpoint": [
+     3.16192,
+     6.44998
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "10-20": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "20-50": {
+      "2016": 0.0,
+      "2023": 0.0
+     }
+    }
+   },
+   {
+    "way_id": 1115468599,
+    "midpoint": [
+     4.03125,
+     6.44715
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "10-20": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "20-50": {
+      "2016": 0.0,
+      "2023": 0.0169
+     }
+    }
+   },
+   {
+    "way_id": 93337825,
+    "midpoint": [
+     3.37287,
+     6.54002
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": 0.0152,
+      "2023": 0.0558
+     },
+     "10-20": {
+      "2016": 0.1126,
+      "2023": 0.2989
+     },
+     "20-50": {
+      "2016": 0.173,
+      "2023": 0.5326
+     }
+    }
+   },
+   {
+    "way_id": 1116104783,
+    "midpoint": [
+     4.44749,
+     6.77526
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "10-20": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "20-50": {
+      "2016": 0.0,
+      "2023": 0.0
+     }
+    }
+   },
+   {
+    "way_id": 1530704758,
+    "midpoint": [
+     2.95075,
+     6.48542
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "10-20": {
+      "2016": 0.0161,
+      "2023": 0.0046
+     },
+     "20-50": {
+      "2016": 0.0072,
+      "2023": 0.0078
+     }
+    }
+   },
+   {
+    "way_id": 937863880,
+    "midpoint": [
+     3.35217,
+     6.65381
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "10-20": {
+      "2016": 0.0046,
+      "2023": 0.0138
+     },
+     "20-50": {
+      "2016": 0.0506,
+      "2023": 0.0981
+     }
+    }
+   },
+   {
+    "way_id": 819116209,
+    "midpoint": [
+     2.71809,
+     6.49929
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "10-20": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "20-50": {
+      "2016": 0.0,
+      "2023": 0.0
+     }
+    }
+   },
+   {
+    "way_id": 555290601,
+    "midpoint": [
+     3.4772,
+     6.43202
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "10-20": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "20-50": {
+      "2016": 0.0026,
+      "2023": 0.0175
+     }
+    }
+   },
+   {
+    "way_id": 390274996,
+    "midpoint": [
+     4.79516,
+     6.31414
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": null,
+      "2023": null
+     },
+     "10-20": {
+      "2016": null,
+      "2023": null
+     },
+     "20-50": {
+      "2016": null,
+      "2023": null
+     }
+    }
+   },
+   {
+    "way_id": 387656252,
+    "midpoint": [
+     3.21483,
+     6.59449
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "10-20": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "20-50": {
+      "2016": 0.0,
+      "2023": 0.0
+     }
+    }
+   },
+   {
+    "way_id": 129586395,
+    "midpoint": [
+     3.45153,
+     6.44031
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "10-20": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "20-50": {
+      "2016": 0.0,
+      "2023": 0.0
+     }
+    }
+   },
+   {
+    "way_id": 759278975,
+    "midpoint": [
+     3.79256,
+     6.75902
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "10-20": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "20-50": {
+      "2016": 0.0,
+      "2023": 0.0
+     }
+    }
+   },
+   {
+    "way_id": 733621327,
+    "midpoint": [
+     3.41158,
+     6.5988
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "10-20": {
+      "2016": 0.0,
+      "2023": 0.0069
+     },
+     "20-50": {
+      "2016": 0.0398,
+      "2023": 0.0652
+     }
+    }
+   },
+   {
+    "way_id": 229109030,
+    "midpoint": [
+     4.06279,
+     6.59095
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "10-20": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "20-50": {
+      "2016": 0.0,
+      "2023": 0.0
+     }
+    }
+   },
+   {
+    "way_id": 364638172,
+    "midpoint": [
+     2.68082,
+     6.52959
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "10-20": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "20-50": {
+      "2016": 0.0,
+      "2023": 0.0
+     }
+    }
+   },
+   {
+    "way_id": 374638307,
+    "midpoint": [
+     3.18634,
+     6.44119
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "10-20": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "20-50": {
+      "2016": 0.0,
+      "2023": 0.0
+     }
+    }
+   },
+   {
+    "way_id": 428837275,
+    "midpoint": [
+     2.91109,
+     6.73915
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "10-20": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "20-50": {
+      "2016": 0.0,
+      "2023": 0.0
+     }
+    }
+   },
+   {
+    "way_id": 390274996,
+    "midpoint": [
+     4.42042,
+     6.43131
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "10-20": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "20-50": {
+      "2016": 0.0,
+      "2023": 0.0
+     }
+    }
+   },
+   {
+    "way_id": 315122733,
+    "midpoint": [
+     3.58767,
+     6.435
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "10-20": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "20-50": {
+      "2016": 0.0,
+      "2023": 0.0
+     }
+    }
+   },
+   {
+    "way_id": 422549904,
+    "midpoint": [
+     2.69929,
+     6.52268
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "10-20": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "20-50": {
+      "2016": 0.0,
+      "2023": 0.0
+     }
+    }
+   },
+   {
+    "way_id": 246839356,
+    "midpoint": [
+     3.37863,
+     6.68742
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "10-20": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "20-50": {
+      "2016": 0.0,
+      "2023": 0.0
+     }
+    }
+   },
+   {
+    "way_id": 1567538231,
+    "midpoint": [
+     4.1021,
+     6.42082
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "10-20": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "20-50": {
+      "2016": 0.0,
+      "2023": 0.0
+     }
+    }
+   },
+   {
+    "way_id": 152733591,
+    "midpoint": [
+     3.33162,
+     6.45097
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "10-20": {
+      "2016": 0.1674,
+      "2023": 0.0161
+     },
+     "20-50": {
+      "2016": 0.2528,
+      "2023": 0.385
+     }
+    }
+   },
+   {
+    "way_id": 742035991,
+    "midpoint": [
+     3.43402,
+     6.61703
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "10-20": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "20-50": {
+      "2016": 0.0,
+      "2023": 0.0
+     }
+    }
+   },
+   {
+    "way_id": 558895991,
+    "midpoint": [
+     3.43076,
+     6.42951
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": 0.0025,
+      "2023": 0.0229
+     },
+     "10-20": {
+      "2016": 0.222,
+      "2023": 0.2334
+     },
+     "20-50": {
+      "2016": 0.4,
+      "2023": 0.4235
+     }
+    }
+   },
+   {
+    "way_id": 315122733,
+    "midpoint": [
+     3.56938,
+     6.43564
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "10-20": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "20-50": {
+      "2016": 0.0,
+      "2023": 0.0
+     }
+    }
+   },
+   {
+    "way_id": 374638307,
+    "midpoint": [
+     3.13479,
+     6.44741
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "10-20": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "20-50": {
+      "2016": 0.0,
+      "2023": 0.0026
+     }
+    }
+   },
+   {
+    "way_id": 315122733,
+    "midpoint": [
+     3.59352,
+     6.43432
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "10-20": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "20-50": {
+      "2016": 0.0,
+      "2023": 0.0
+     }
+    }
+   },
+   {
+    "way_id": 1115796338,
+    "midpoint": [
+     4.08213,
+     6.56895
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "10-20": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "20-50": {
+      "2016": 0.0,
+      "2023": 0.0
+     }
+    }
+   },
+   {
+    "way_id": 1533647876,
+    "midpoint": [
+     2.86751,
+     6.40828
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "10-20": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "20-50": {
+      "2016": 0.0,
+      "2023": 0.0
+     }
+    }
+   },
+   {
+    "way_id": 315128154,
+    "midpoint": [
+     3.90101,
+     6.49265
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "10-20": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "20-50": {
+      "2016": 0.0,
+      "2023": 0.0
+     }
+    }
+   },
+   {
+    "way_id": 374638307,
+    "midpoint": [
+     3.14887,
+     6.44014
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "10-20": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "20-50": {
+      "2016": 0.0032,
+      "2023": 0.0091
+     }
+    }
+   },
+   {
+    "way_id": 93337825,
+    "midpoint": [
+     3.39554,
+     6.50909
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "10-20": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "20-50": {
+      "2016": 0.0006,
+      "2023": 0.0039
+     }
+    }
+   },
+   {
+    "way_id": 216613130,
+    "midpoint": [
+     3.31749,
+     6.55161
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "10-20": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "20-50": {
+      "2016": 0.0143,
+      "2023": 0.0007
+     }
+    }
+   },
+   {
+    "way_id": 1115313146,
+    "midpoint": [
+     4.29717,
+     6.61633
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "10-20": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "20-50": {
+      "2016": 0.0007,
+      "2023": 0.0
+     }
+    }
+   },
+   {
+    "way_id": 134157440,
+    "midpoint": [
+     3.33746,
+     6.4987
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": 0.0612,
+      "2023": 0.0179
+     },
+     "10-20": {
+      "2016": 0.2661,
+      "2023": 0.2156
+     },
+     "20-50": {
+      "2016": 0.5472,
+      "2023": 0.4293
+     }
+    }
+   },
+   {
+    "way_id": 419337357,
+    "midpoint": [
+     2.70957,
+     6.52413
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "10-20": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "20-50": {
+      "2016": 0.0,
+      "2023": 0.0
+     }
+    }
+   },
+   {
+    "way_id": 1115796338,
+    "midpoint": [
+     4.10561,
+     6.59097
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "10-20": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "20-50": {
+      "2016": 0.0,
+      "2023": 0.0
+     }
+    }
+   },
+   {
+    "way_id": 378310650,
+    "midpoint": [
+     3.89504,
+     6.69292
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "10-20": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "20-50": {
+      "2016": 0.0,
+      "2023": 0.0
+     }
+    }
+   },
+   {
+    "way_id": 166893834,
+    "midpoint": [
+     3.3668,
+     6.48113
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "10-20": {
+      "2016": 0.0,
+      "2023": 0.0069
+     },
+     "20-50": {
+      "2016": 0.0348,
+      "2023": 0.042
+     }
+    }
+   },
+   {
+    "way_id": 428837275,
+    "midpoint": [
+     2.91013,
+     6.80339
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "10-20": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "20-50": {
+      "2016": 0.0,
+      "2023": 0.0
+     }
+    }
+   },
+   {
+    "way_id": 428837275,
+    "midpoint": [
+     2.90853,
+     6.81018
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "10-20": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "20-50": {
+      "2016": 0.0,
+      "2023": 0.0
+     }
+    }
+   },
+   {
+    "way_id": 1115796338,
+    "midpoint": [
+     4.07959,
+     6.55916
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "10-20": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "20-50": {
+      "2016": 0.0,
+      "2023": 0.0
+     }
+    }
+   },
+   {
+    "way_id": 783360141,
+    "midpoint": [
+     3.43942,
+     6.45728
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": 0.1675,
+      "2023": 0.2538
+     },
+     "10-20": {
+      "2016": 0.4432,
+      "2023": 0.529
+     },
+     "20-50": {
+      "2016": 0.2493,
+      "2023": 0.2677
+     }
+    }
+   },
+   {
+    "way_id": 144092582,
+    "midpoint": [
+     3.15472,
+     6.50613
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "10-20": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "20-50": {
+      "2016": 0.0,
+      "2023": 0.0
+     }
+    }
+   },
+   {
+    "way_id": 1366037345,
+    "midpoint": [
+     3.23955,
+     6.63767
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "10-20": {
+      "2016": 0.0,
+      "2023": 0.0367
+     },
+     "20-50": {
+      "2016": 0.0,
+      "2023": 0.0143
+     }
+    }
+   },
+   {
+    "way_id": 374772272,
+    "midpoint": [
+     3.19772,
+     6.44902
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "10-20": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "20-50": {
+      "2016": 0.0,
+      "2023": 0.0
+     }
+    }
+   },
+   {
+    "way_id": 551464862,
+    "midpoint": [
+     3.31418,
+     6.56776
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "10-20": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "20-50": {
+      "2016": 0.0,
+      "2023": 0.0
+     }
+    }
+   },
+   {
+    "way_id": 374638307,
+    "midpoint": [
+     3.17423,
+     6.44426
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "10-20": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "20-50": {
+      "2016": 0.0,
+      "2023": 0.0
+     }
+    }
+   },
+   {
+    "way_id": 1115313147,
+    "midpoint": [
+     4.34309,
+     6.60316
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "10-20": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "20-50": {
+      "2016": 0.0,
+      "2023": 0.0
+     }
+    }
+   },
+   {
+    "way_id": 759278975,
+    "midpoint": [
+     3.79626,
+     6.76877
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "10-20": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "20-50": {
+      "2016": 0.0,
+      "2023": 0.0
+     }
+    }
+   },
+   {
+    "way_id": 741343458,
+    "midpoint": [
+     3.34419,
+     6.66404
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "10-20": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "20-50": {
+      "2016": 0.0156,
+      "2023": 0.0507
+     }
+    }
+   },
+   {
+    "way_id": 390274996,
+    "midpoint": [
+     4.77689,
+     6.29462
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": null,
+      "2023": null
+     },
+     "10-20": {
+      "2016": null,
+      "2023": null
+     },
+     "20-50": {
+      "2016": null,
+      "2023": null
+     }
+    }
+   },
+   {
+    "way_id": 374638307,
+    "midpoint": [
+     3.16657,
+     6.44093
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "10-20": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "20-50": {
+      "2016": 0.0,
+      "2023": 0.0
+     }
+    }
+   },
+   {
+    "way_id": 419336836,
+    "midpoint": [
+     2.70193,
+     6.50451
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "10-20": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "20-50": {
+      "2016": 0.0,
+      "2023": 0.0
+     }
+    }
+   },
+   {
+    "way_id": 1116104783,
+    "midpoint": [
+     4.41131,
+     6.74013
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "10-20": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "20-50": {
+      "2016": 0.0,
+      "2023": 0.0
+     }
+    }
+   },
+   {
+    "way_id": 246809970,
+    "midpoint": [
+     4.12188,
+     6.75218
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "10-20": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "20-50": {
+      "2016": 0.0,
+      "2023": 0.0
+     }
+    }
+   },
+   {
+    "way_id": 551464961,
+    "midpoint": [
+     3.31573,
+     6.57157
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "10-20": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "20-50": {
+      "2016": 0.0,
+      "2023": 0.0
+     }
+    }
+   },
+   {
+    "way_id": 384774022,
+    "midpoint": [
+     2.67629,
+     6.77553
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "10-20": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "20-50": {
+      "2016": 0.0,
+      "2023": 0.0
+     }
+    }
+   },
+   {
+    "way_id": 700933731,
+    "midpoint": [
+     4.2799,
+     6.78868
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "10-20": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "20-50": {
+      "2016": 0.015,
+      "2023": 0.0182
+     }
+    }
+   },
+   {
+    "way_id": 1285093090,
+    "midpoint": [
+     3.334,
+     6.76285
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "10-20": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "20-50": {
+      "2016": 0.0,
+      "2023": 0.0
+     }
+    }
+   },
+   {
+    "way_id": 287526233,
+    "midpoint": [
+     4.21304,
+     6.60828
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "10-20": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "20-50": {
+      "2016": 0.0,
+      "2023": 0.0
+     }
+    }
+   },
+   {
+    "way_id": 821534986,
+    "midpoint": [
+     2.6674,
+     6.44412
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "10-20": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "20-50": {
+      "2016": 0.0,
+      "2023": 0.0
+     }
+    }
+   },
+   {
+    "way_id": 736717962,
+    "midpoint": [
+     3.28445,
+     6.47875
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "10-20": {
+      "2016": 0.055,
+      "2023": 0.0229
+     },
+     "20-50": {
+      "2016": 0.1929,
+      "2023": 0.259
+     }
+    }
+   },
+   {
+    "way_id": 761430225,
+    "midpoint": [
+     3.26003,
+     6.40989
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "10-20": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "20-50": {
+      "2016": 0.0,
+      "2023": 0.0
+     }
+    }
+   },
+   {
+    "way_id": 1115468594,
+    "midpoint": [
+     4.02621,
+     6.45073
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "10-20": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "20-50": {
+      "2016": 0.0,
+      "2023": 0.0
+     }
+    }
+   },
+   {
+    "way_id": 785343406,
+    "midpoint": [
+     3.59421,
+     6.48234
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "10-20": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "20-50": {
+      "2016": 0.0,
+      "2023": 0.0
+     }
+    }
+   },
+   {
+    "way_id": 364638031,
+    "midpoint": [
+     2.71471,
+     6.49365
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "10-20": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "20-50": {
+      "2016": 0.0,
+      "2023": 0.0
+     }
+    }
+   },
+   {
+    "way_id": 556872662,
+    "midpoint": [
+     3.4499,
+     6.42735
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": 0.1063,
+      "2023": 0.2
+     },
+     "10-20": {
+      "2016": 0.485,
+      "2023": 0.7252
+     },
+     "20-50": {
+      "2016": 0.2025,
+      "2023": 0.2135
+     }
+    }
+   },
+   {
+    "way_id": 129586384,
+    "midpoint": [
+     3.40901,
+     6.46045
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": 0.0025,
+      "2023": 0.0
+     },
+     "10-20": {
+      "2016": 0.0321,
+      "2023": 0.0482
+     },
+     "20-50": {
+      "2016": 0.1084,
+      "2023": 0.1267
+     }
+    }
+   },
+   {
+    "way_id": 1116106531,
+    "midpoint": [
+     4.45814,
+     6.82039
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "10-20": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "20-50": {
+      "2016": 0.0,
+      "2023": 0.0
+     }
+    }
+   },
+   {
+    "way_id": 384774022,
+    "midpoint": [
+     2.64333,
+     6.81134
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "10-20": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "20-50": {
+      "2016": 0.0,
+      "2023": 0.0
+     }
+    }
+   },
+   {
+    "way_id": 247681908,
+    "midpoint": [
+     4.28919,
+     6.77457
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "10-20": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "20-50": {
+      "2016": 0.0,
+      "2023": 0.0
+     }
+    }
+   },
+   {
+    "way_id": 247681908,
+    "midpoint": [
+     4.28405,
+     6.8103
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "10-20": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "20-50": {
+      "2016": 0.0,
+      "2023": 0.0
+     }
+    }
+   },
+   {
+    "way_id": 744502286,
+    "midpoint": [
+     3.1924,
+     6.48187
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": 0.0,
+      "2023": 0.0051
+     },
+     "10-20": {
+      "2016": 0.0254,
+      "2023": 0.067
+     },
+     "20-50": {
+      "2016": 0.2248,
+      "2023": 0.2958
+     }
+    }
+   },
+   {
+    "way_id": 316757152,
+    "midpoint": [
+     3.54408,
+     6.45769
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "10-20": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "20-50": {
+      "2016": 0.0,
+      "2023": 0.0429
+     }
+    }
+   },
+   {
+    "way_id": 759278978,
+    "midpoint": [
+     3.82102,
+     6.83894
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "10-20": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "20-50": {
+      "2016": 0.0,
+      "2023": 0.0
+     }
+    }
+   },
+   {
+    "way_id": 815963544,
+    "midpoint": [
+     2.60981,
+     6.37698
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": 0.0,
+      "2023": 0.0026
+     },
+     "10-20": {
+      "2016": 0.0,
+      "2023": 0.0345
+     },
+     "20-50": {
+      "2016": 0.0007,
+      "2023": 0.041
+     }
+    }
+   },
+   {
+    "way_id": 1115791414,
+    "midpoint": [
+     4.28409,
+     6.7069
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "10-20": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "20-50": {
+      "2016": 0.0,
+      "2023": 0.0
+     }
+    }
+   },
+   {
+    "way_id": 761430221,
+    "midpoint": [
+     3.25196,
+     6.42674
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "10-20": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "20-50": {
+      "2016": 0.0,
+      "2023": 0.0
+     }
+    }
+   },
+   {
+    "way_id": 378310650,
+    "midpoint": [
+     3.90131,
+     6.6849
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "10-20": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "20-50": {
+      "2016": 0.0,
+      "2023": 0.0
+     }
+    }
+   },
+   {
+    "way_id": 390274996,
+    "midpoint": [
+     4.75422,
+     6.29779
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": null,
+      "2023": null
+     },
+     "10-20": {
+      "2016": null,
+      "2023": null
+     },
+     "20-50": {
+      "2016": null,
+      "2023": null
+     }
+    }
+   },
+   {
+    "way_id": 246839372,
+    "midpoint": [
+     3.36319,
+     6.8376
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "10-20": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "20-50": {
+      "2016": 0.0,
+      "2023": 0.0
+     }
+    }
+   },
+   {
+    "way_id": 246809965,
+    "midpoint": [
+     4.1082,
+     6.81247
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "10-20": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "20-50": {
+      "2016": 0.0,
+      "2023": 0.0
+     }
+    }
+   },
+   {
+    "way_id": 821767660,
+    "midpoint": [
+     2.62665,
+     6.45636
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "10-20": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "20-50": {
+      "2016": 0.0,
+      "2023": 0.0
+     }
+    }
+   },
+   {
+    "way_id": 374638307,
+    "midpoint": [
+     3.15493,
+     6.43869
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "10-20": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "20-50": {
+      "2016": 0.0,
+      "2023": 0.0
+     }
+    }
+   },
+   {
+    "way_id": 1115796338,
+    "midpoint": [
+     4.1008,
+     6.59888
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "10-20": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "20-50": {
+      "2016": 0.0,
+      "2023": 0.0
+     }
+    }
+   },
+   {
+    "way_id": 818449264,
+    "midpoint": [
+     2.78073,
+     6.67988
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "10-20": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "20-50": {
+      "2016": 0.0,
+      "2023": 0.0
+     }
+    }
+   },
+   {
+    "way_id": 374638307,
+    "midpoint": [
+     3.18259,
+     6.44545
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "10-20": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "20-50": {
+      "2016": 0.0,
+      "2023": 0.0
+     }
+    }
+   },
+   {
+    "way_id": 786056325,
+    "midpoint": [
+     3.15617,
+     6.47045
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": 0.0,
+      "2023": 0.0076
+     },
+     "10-20": {
+      "2016": 0.0526,
+      "2023": 0.0366
+     },
+     "20-50": {
+      "2016": 0.146,
+      "2023": 0.1408
+     }
+    }
+   },
+   {
+    "way_id": 221338624,
+    "midpoint": [
+     3.36666,
+     6.59149
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": 0.0127,
+      "2023": 0.0025
+     },
+     "10-20": {
+      "2016": 0.0664,
+      "2023": 0.0521
+     },
+     "20-50": {
+      "2016": 0.0756,
+      "2023": 0.1698
+     }
+    }
+   },
+   {
+    "way_id": 1116104783,
+    "midpoint": [
+     4.47636,
+     6.80406
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "10-20": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "20-50": {
+      "2016": 0.0013,
+      "2023": 0.0013
+     }
+    }
+   },
+   {
+    "way_id": 742035977,
+    "midpoint": [
+     3.44859,
+     6.69169
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "10-20": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "20-50": {
+      "2016": 0.0,
+      "2023": 0.0
+     }
+    }
+   },
+   {
+    "way_id": 390274996,
+    "midpoint": [
+     4.65125,
+     6.36249
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": null,
+      "2023": null
+     },
+     "10-20": {
+      "2016": null,
+      "2023": null
+     },
+     "20-50": {
+      "2016": null,
+      "2023": null
+     }
+    }
+   },
+   {
+    "way_id": 821534986,
+    "midpoint": [
+     2.57021,
+     6.44805
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "10-20": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "20-50": {
+      "2016": 0.0,
+      "2023": 0.0
+     }
+    }
+   },
+   {
+    "way_id": 152826751,
+    "midpoint": [
+     3.33359,
+     6.47899
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "10-20": {
+      "2016": 0.0206,
+      "2023": 0.016
+     },
+     "20-50": {
+      "2016": 0.0852,
+      "2023": 0.1601
+     }
+    }
+   },
+   {
+    "way_id": 513426528,
+    "midpoint": [
+     3.41144,
+     6.41279
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": 0.0302,
+      "2023": 0.0
+     },
+     "10-20": {
+      "2016": 0.0302,
+      "2023": 0.0
+     },
+     "20-50": {
+      "2016": 0.0143,
+      "2023": 0.0
+     }
+    }
+   },
+   {
+    "way_id": 152826751,
+    "midpoint": [
+     3.34159,
+     6.47399
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "10-20": {
+      "2016": 0.0,
+      "2023": 0.0092
+     },
+     "20-50": {
+      "2016": 0.0992,
+      "2023": 0.1795
+     }
+    }
+   },
+   {
+    "way_id": 599933087,
+    "midpoint": [
+     3.48198,
+     6.44094
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": 0.0,
+      "2023": 0.0051
+     },
+     "10-20": {
+      "2016": 0.0256,
+      "2023": 0.007
+     },
+     "20-50": {
+      "2016": 0.035,
+      "2023": 0.085
+     }
+    }
+   },
+   {
+    "way_id": 1285093090,
+    "midpoint": [
+     3.32481,
+     6.76916
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "10-20": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "20-50": {
+      "2016": 0.0,
+      "2023": 0.0
+     }
+    }
+   },
+   {
+    "way_id": 428837275,
+    "midpoint": [
+     2.91615,
+     6.94766
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "10-20": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "20-50": {
+      "2016": 0.0,
+      "2023": 0.0
+     }
+    }
+   },
+   {
+    "way_id": 434338067,
+    "midpoint": [
+     3.36893,
+     6.43299
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "10-20": {
+      "2016": 0.0047,
+      "2023": 0.0
+     },
+     "20-50": {
+      "2016": 0.0149,
+      "2023": 0.0091
+     }
+    }
+   },
+   {
+    "way_id": 374638307,
+    "midpoint": [
+     3.14316,
+     6.44783
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "10-20": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "20-50": {
+      "2016": 0.0013,
+      "2023": 0.0
+     }
+    }
+   },
+   {
+    "way_id": 1112388245,
+    "midpoint": [
+     4.39873,
+     6.47814
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "10-20": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "20-50": {
+      "2016": 0.0,
+      "2023": 0.0
+     }
+    }
+   },
+   {
+    "way_id": 1115313147,
+    "midpoint": [
+     4.35123,
+     6.61138
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "10-20": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "20-50": {
+      "2016": 0.0,
+      "2023": 0.0
+     }
+    }
+   },
+   {
+    "way_id": 390274996,
+    "midpoint": [
+     4.80432,
+     6.31939
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": null,
+      "2023": null
+     },
+     "10-20": {
+      "2016": null,
+      "2023": null
+     },
+     "20-50": {
+      "2016": null,
+      "2023": null
+     }
+    }
+   },
+   {
+    "way_id": 783704769,
+    "midpoint": [
+     3.25504,
+     6.43626
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "10-20": {
+      "2016": 0.0114,
+      "2023": 0.0795
+     },
+     "20-50": {
+      "2016": 0.1154,
+      "2023": 0.1519
+     }
+    }
+   },
+   {
+    "way_id": 604386559,
+    "midpoint": [
+     3.39002,
+     6.62035
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "10-20": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "20-50": {
+      "2016": 0.0026,
+      "2023": 0.0
+     }
+    }
+   },
+   {
+    "way_id": 246809965,
+    "midpoint": [
+     4.10132,
+     6.84216
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "10-20": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "20-50": {
+      "2016": 0.0,
+      "2023": 0.0
+     }
+    }
+   },
+   {
+    "way_id": 144092582,
+    "midpoint": [
+     3.10476,
+     6.50212
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "10-20": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "20-50": {
+      "2016": 0.0,
+      "2023": 0.0
+     }
+    }
+   },
+   {
+    "way_id": 428837275,
+    "midpoint": [
+     2.91953,
+     6.71265
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "10-20": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "20-50": {
+      "2016": 0.0,
+      "2023": 0.0
+     }
+    }
+   },
+   {
+    "way_id": 732679122,
+    "midpoint": [
+     3.22633,
+     6.52788
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "10-20": {
+      "2016": 0.0,
+      "2023": 0.0023
+     },
+     "20-50": {
+      "2016": 0.0,
+      "2023": 0.0065
+     }
+    }
+   },
+   {
+    "way_id": 1482807127,
+    "midpoint": [
+     4.23102,
+     6.39892
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "10-20": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "20-50": {
+      "2016": 0.0,
+      "2023": 0.0
+     }
+    }
+   },
+   {
+    "way_id": 604386564,
+    "midpoint": [
+     3.34826,
+     6.60902
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "10-20": {
+      "2016": 0.0785,
+      "2023": 0.157
+     },
+     "20-50": {
+      "2016": 0.281,
+      "2023": 0.2816
+     }
+    }
+   },
+   {
+    "way_id": 387656253,
+    "midpoint": [
+     3.2044,
+     6.53918
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "10-20": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "20-50": {
+      "2016": 0.0,
+      "2023": 0.0
+     }
+    }
+   },
+   {
+    "way_id": 287526233,
+    "midpoint": [
+     4.20395,
+     6.59669
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "10-20": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "20-50": {
+      "2016": 0.0,
+      "2023": 0.0
+     }
+    }
+   },
+   {
+    "way_id": 785343406,
+    "midpoint": [
+     3.59838,
+     6.48318
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "10-20": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "20-50": {
+      "2016": 0.0,
+      "2023": 0.0
+     }
+    }
+   },
+   {
+    "way_id": 1530704764,
+    "midpoint": [
+     2.95831,
+     6.48068
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "10-20": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "20-50": {
+      "2016": 0.0,
+      "2023": 0.0007
+     }
+    }
+   },
+   {
+    "way_id": 787296050,
+    "midpoint": [
+     3.58247,
+     6.45007
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "10-20": {
+      "2016": 0.0046,
+      "2023": 0.0346
+     },
+     "20-50": {
+      "2016": 0.028,
+      "2023": 0.0358
+     }
+    }
+   },
+   {
+    "way_id": 374865466,
+    "midpoint": [
+     3.11917,
+     6.45384
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "10-20": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "20-50": {
+      "2016": 0.0,
+      "2023": 0.0
+     }
+    }
+   },
+   {
+    "way_id": 374865466,
+    "midpoint": [
+     3.09636,
+     6.45545
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "10-20": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "20-50": {
+      "2016": 0.0,
+      "2023": 0.0
+     }
+    }
+   },
+   {
+    "way_id": 761430225,
+    "midpoint": [
+     3.33881,
+     6.42066
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "10-20": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "20-50": {
+      "2016": 0.0,
+      "2023": 0.0
+     }
+    }
+   },
+   {
+    "way_id": 374772272,
+    "midpoint": [
+     3.18978,
+     6.44694
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "10-20": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "20-50": {
+      "2016": 0.0,
+      "2023": 0.0
+     }
+    }
+   },
+   {
+    "way_id": 1112460413,
+    "midpoint": [
+     4.23012,
+     6.44558
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "10-20": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "20-50": {
+      "2016": 0.0,
+      "2023": 0.0
+     }
+    }
+   },
+   {
+    "way_id": 419278311,
+    "midpoint": [
+     2.70348,
+     6.47853
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "10-20": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "20-50": {
+      "2016": 0.0,
+      "2023": 0.0
+     }
+    }
+   },
+   {
+    "way_id": 419337357,
+    "midpoint": [
+     2.70628,
+     6.51879
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "10-20": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "20-50": {
+      "2016": 0.0,
+      "2023": 0.0
+     }
+    }
+   },
+   {
+    "way_id": 736717961,
+    "midpoint": [
+     3.31751,
+     6.44074
+    ],
+    "built_fraction": {
+     "0-10": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "10-20": {
+      "2016": 0.0,
+      "2023": 0.0
+     },
+     "20-50": {
+      "2016": 0.0306,
+      "2023": 0.0
+     }
+    }
+   }
+  ]
+ },
+ "validation": {
+  "method": "2023 presence >= 0.5 mask vs OSM building footprints (Task 18 osm.geojson, current geometry) at 4 m: a cell is OSM-built when its centre falls inside a footprint. Precision = fraction of Open-Buildings-built cells that contain an OSM footprint; recall = fraction of OSM footprint cells the mask detects. OSM completeness varies across Lagos, so recall is an agreement score, not a ground-truth accuracy; overlays saved against the latest Wayback chip.",
+  "sites": {
+   "alpha-beach-156": {
+    "overall": {
+     "precision": 0.1124,
+     "recall": 0.6741,
+     "n_ob_built": 28341,
+     "n_osm_built": 4725
+    },
+    "within_20m": {
+     "precision": 0.4186,
+     "recall": 0.5183,
+     "n_ob_built": 1185,
+     "n_osm_built": 957
+    },
+    "chip_date": "2024-11-30",
+    "overlay": "events/drainage_sites/alpha-beach-156/ob_validation.png"
+   },
+   "agungi-collector": {
+    "overall": {
+     "precision": 0.5625,
+     "recall": 0.7414,
+     "n_ob_built": 33656,
+     "n_osm_built": 25536
+    },
+    "within_20m": {
+     "precision": 0.3451,
+     "recall": 0.625,
+     "n_ob_built": 681,
+     "n_osm_built": 376
+    },
+    "chip_date": "2024-11-30",
+    "overlay": "events/drainage_sites/agungi-collector/ob_validation.png"
+   },
+   "olopomeji": {
+    "overall": {
+     "precision": 0.4612,
+     "recall": 0.7948,
+     "n_ob_built": 45975,
+     "n_osm_built": 26676
+    },
+    "within_20m": {
+     "precision": 0.3129,
+     "recall": 0.5833,
+     "n_ob_built": 425,
+     "n_osm_built": 228
+    },
+    "chip_date": "2025-05-15",
+    "overlay": "events/drainage_sites/olopomeji/ob_validation.png"
+   }
+  }
+ }
+}

@@ -1,0 +1,1182 @@
+{
+ "meta": {
+  "task": "17-drainage-sites; 19-relocate-sites",
+  "compiled_at": "2026-10-18T03:00:00Z",
+  "method": "Open-source research only (Task 03 rules): evidence.geojson human-cause features; Nominatim + OSM Overpass for named highways/waterways/bridges; news and MOE Lagos statements for alleged change dates. Task 19 relocated oko-oba-canal, sangotedo-channel-notices and labora from named landmarks (Agric Road bridges; Lagos Business School; Labora/Abijo GRA school and church). No imagery interpretation. Quotes ≤ 25 words, verbatim. Geometries are Point or LineString, lon/lat, EPSG:4326.",
+  "notes": "Olopomeji in the 2024 flood coverage is the Iyana Oworo / Third Mainland approach (also spelled Olopo Meji, Alapomeji), not a Yaba or Ebute Metta street of the same name. Wahab's Ikorodu 'dammed downstream' statement never names the waterway, project or contractor; the contemporaneous official inspection names the Gberigbe Road outfall / Ijede drainage works. Labora is not in OSM; Maps listings place it in Abijo GRA (Community Primary School Labora; Christ Embassy Church Labora), not the Task 03 forest point. System 156 and System 63b are official channel numbers, not OSM names. Oko-Oba Canal is unlabelled in OSM; the line is the alignment through OSM bridges on Agric Road and Akinsegun Street behind Abimbola Awoliyi/Awoniyi Estate, not Oko Oba Road.",
+  "aoi_bbox": [
+   2.7,
+   6.38,
+   4.35,
+   6.75
+  ],
+  "site_count": 13,
+  "unresolved": [
+   "ikorodu-dammed: contractor name not found",
+   "ikorodu-dammed: official waterway number/name not stated in Wahab's 12 Aug 2025 statement",
+   "lekki-epe-rehab: start date of the July 2024 Sangotedo–Awoyaya works not found (reported as ongoing on 3 Jul 2024)",
+   "alapere-ogudu: construction project name and start date not found",
+   "marina-drainage: no dated drainage works found; claim is absence of drainage",
+   "oko-oba-canal: OSM has no named waterway; alignment inferred from Agric Road and Akinsegun Street bridges",
+   "sangotedo-channel-notices: System 63b centreline not in OSM; notices name Sangotedo by Lagos Business School",
+   "labora: OSM/Nominatim still have no place named Labora; neighbourhood from Maps school/church in Abijo GRA"
+  ]
+ },
+ "sites": [
+  {
+   "site_id": "alpha-beach-156",
+   "status": "located",
+   "event_id": "lagos-2024-07-03",
+   "evidence_ids": [
+    "ev-003"
+   ],
+   "claim": "Buildings/developers blocked System 156 on the Alpha Beach Road corridor (Wahab).",
+   "cause_tags": [
+    "setback_encroachment"
+   ],
+   "structure_name": "System 156 (upstream), Alpha Beach Road corridor",
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      3.51093,
+      6.42707
+     ],
+     [
+      3.51089,
+      6.43028
+     ],
+     [
+      3.51146,
+      6.43312
+     ],
+     [
+      3.51134,
+      6.43592
+     ],
+     [
+      3.50836,
+      6.43994
+     ],
+     [
+      3.50257,
+      6.44421
+     ]
+    ]
+   },
+   "location_confidence": "street",
+   "located_how": "Official texts place System 156 upstream on Alpha Beach Road, with excavation 'from Alpha Beach to conservation road' and a blockage 'along Alfa Beach behind James Hope University'. OSM has no name 'System 156' or 'Alpha Beach Road'. Overpass returns a continuous unnamed drain/ditch at ~3.511°E from ~6.427–6.444°N, west of Lekki Conservation Centre (OSM ~3.535, 6.443) and of the evidence neighbourhood point (3.515, 6.430). Line is that mapped drain (OSM ways 599933032 + 295026376).",
+   "change_dates": [
+    {
+     "what": "encroachment / buildings on System 156 (undated; described as recurring)",
+     "date": null,
+     "range": null,
+     "source_id": "moe-lagos-2024-06-27"
+    },
+    {
+     "what": "full excavation Alpha Beach to Conservation Road to start Saturday after the 27 Jun inspection",
+     "date": "2024-06-29",
+     "range": null,
+     "source_id": "moe-lagos-2024-06-27"
+    },
+    {
+     "what": "maintenance dredging and silt evacuation from System 156 Channel (upstream), Alpha Beach Road",
+     "date": "2024-07-05",
+     "range": null,
+     "source_id": "wahab-x-2024-07-05"
+    }
+   ],
+   "followups": [
+    {
+     "what": "Wahab: dredging of the channel would commence immediately",
+     "date": "2024-06-27",
+     "source_id": "vanguard-2024-06-27",
+     "quote": "the dredging of the channel would commence immediately towards making the state flood free"
+    },
+    {
+     "what": "enforcement to reclaim setbacks and drainage alignments",
+     "date": "2024-06-27",
+     "source_id": "moe-lagos-2024-06-27",
+     "quote": "ramp up enforcement operations across the state to reclaim setbacks and drainage alignments"
+    }
+   ],
+   "image_windows": {
+    "before": [
+     "2021-06-01",
+     "2024-05-31"
+    ],
+    "after": [
+     "2024-06-27",
+     "2024-12-31"
+    ]
+   },
+   "notes": "Building-over date is not given; before-window is 2–3 years pre-flood plus months before the announced excavation. Open channel: useful for imagery if buildings sit on the mapped drain. Do not confuse with the Agungi collector (separate claim, ~1.5 km north).",
+   "sources": [
+    {
+     "source_id": "vanguard-2024-06-27",
+     "url": "https://www.vanguardngr.com/2024/06/48hrs-rainfall-agungi-lekki-environs-in-lagos-submerge-in-flood/",
+     "outlet": "Vanguard",
+     "date": "2024-06-27",
+     "read_status": "read",
+     "quote": "people built to block System 156 and some families on this corridor also obliterated with developers"
+    },
+    {
+     "source_id": "moe-lagos-2024-06-27",
+     "url": "https://moelagos.gov.ng/flooding-lagos-to-construct-additional-drainage-collector-on-agungi-to-bring-relief/",
+     "outlet": "Lagos State Ministry of the Environment and Water Resources",
+     "date": "2024-06-27",
+     "read_status": "read",
+     "quote": "from Saturday full excavation will start from Alpha Beach to conservation road"
+    },
+    {
+     "source_id": "wahab-x-2024-07-05",
+     "url": "https://x.com/tokunbo_wahab/status/1809487036035793366",
+     "outlet": "Tokunbo Wahab (X)",
+     "date": "2024-07-05",
+     "read_status": "headline_only",
+     "quote": "maintenance dredging & evacuation of silts from System 156 Channel (Up Stream), Alpha Beach Road"
+    }
+   ]
+  },
+  {
+   "site_id": "agungi-collector",
+   "status": "located",
+   "event_id": "lagos-2024-07-03",
+   "evidence_ids": [
+    "ev-001",
+    "ev-064"
+   ],
+   "claim": "Collector too small; Agungi road development outgrew the drainage.",
+   "cause_tags": [
+    "drainage_capacity"
+   ],
+   "structure_name": "Agungi Road collector (existing, to lagoon); Agungi–Ajiran Road",
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      3.5163,
+      6.43829
+     ],
+     [
+      3.51604,
+      6.4422
+     ],
+     [
+      3.51712,
+      6.446
+     ],
+     [
+      3.51883,
+      6.44871
+     ],
+     [
+      3.52071,
+      6.45562
+     ]
+    ]
+   },
+   "location_confidence": "street",
+   "located_how": "Nominatim: Agungi suburb 3.51811, 6.44700; OSM way 785691910/193596805 'Agungi Ajiran Road' runs from ~6.438 toward the lagoon at ~6.456. Wahab: new collector to take water 'from the road into the lagoon' along the Agungi stretch. Line is that OSM tertiary.",
+   "change_dates": [
+    {
+     "what": "existing collector described as too small (installation date not given)",
+     "date": null,
+     "range": null,
+     "source_id": "vanguard-2024-06-27"
+    },
+    {
+     "what": "state announces construction of a bigger/new collector on Agungi Road",
+     "date": "2024-06-27",
+     "range": null,
+     "source_id": "moe-lagos-2024-06-27"
+    }
+   ],
+   "followups": [
+    {
+     "what": "after the new collector, Works to be invited to raise the road",
+     "date": "2024-06-27",
+     "source_id": "vanguard-2024-06-27",
+     "quote": "after the construction of a new collector, Ministry of Works and Infrastructure would also be invited"
+    }
+   ],
+   "image_windows": {
+    "before": [
+     "2021-06-01",
+     "2024-05-31"
+    ],
+    "after": [
+     "2024-06-27",
+     "2025-01-31"
+    ]
+   },
+   "notes": "No source dates when the existing collector was built or when Agungi Road 'outgrew' it. The 27 Jun 2024 announcement is a planned work, not a completed change before the 3 Jul flood. Roadside collector may sit beside or under the carriageway: look at the channel toward the lagoon, not only pavement.",
+   "sources": [
+    {
+     "source_id": "vanguard-2024-06-27",
+     "url": "https://www.vanguardngr.com/2024/06/48hrs-rainfall-agungi-lekki-environs-in-lagos-submerge-in-flood/",
+     "outlet": "Vanguard",
+     "date": "2024-06-27",
+     "read_status": "read",
+     "quote": "the collector they have there is too small to serve the volume of storm water"
+    },
+    {
+     "source_id": "arise-2024-07-04",
+     "url": "https://www.arise.tv/lagos-floods-rainwater-slow-to-recede-due-to-high-tide-says-environment-commissioner-wahab/",
+     "outlet": "Arise News",
+     "date": "2024-07-04",
+     "read_status": "read",
+     "quote": "The development of Agungi road has outweighed the drainage system that was put in place by the local government."
+    },
+    {
+     "source_id": "moe-lagos-2024-06-27",
+     "url": "https://moelagos.gov.ng/flooding-lagos-to-construct-additional-drainage-collector-on-agungi-to-bring-relief/",
+     "outlet": "Lagos State Ministry of the Environment and Water Resources",
+     "date": "2024-06-27",
+     "read_status": "read",
+     "quote": "the area needs a new collector that will take the water from the road into the lagoon"
+    }
+   ]
+  },
+  {
+   "site_id": "olopomeji",
+   "status": "located",
+   "event_id": "lagos-2024-07-03",
+   "evidence_ids": [
+    "ev-061"
+   ],
+   "claim": "Water paths at Olopomeji blocked by refuse (which Olopomeji: Ebute Metta/Yaba?).",
+   "cause_tags": [
+    "blocked_drainage"
+   ],
+   "structure_name": "Olopo Meji / Alapomeji section of Iyana Oworo (approach to Third Mainland Bridge)",
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      3.40639,
+      6.54849
+     ],
+     [
+      3.40171,
+      6.54951
+     ],
+     [
+      3.39739,
+      6.55149
+     ],
+     [
+      3.39443,
+      6.55064
+     ],
+     [
+      3.3802,
+      6.5483
+     ]
+    ]
+   },
+   "location_confidence": "street",
+   "located_how": "Not Ebute Metta or Yaba. Same-day coverage: flood 'from Iyana-Oworo through Olopo Meji towards 3rd Mainland Bridge'; ThisDay/Instagram: 'Olopomeji section of Iyana Oworo'. OSM Oworo Road (ways 134223844, 588314503) plus Apapa–Oworonshoki Expressway at Iyana Oworo (way 134221209). Evidence point 3.399, 6.548 sits on this corridor.",
+   "change_dates": [
+    {
+     "what": "refuse blocking water paths (not a dated construction)",
+     "date": "2024-07-03",
+     "range": null,
+     "source_id": "punch-2024-07-07"
+    }
+   ],
+   "followups": [
+    {
+     "what": "EFAG / emergency responders cleared the blocked paths; water receded hours later",
+     "date": "2024-07-03",
+     "source_id": "punch-2024-07-07",
+     "quote": "After clearing the paths, we discovered that everything was back to normal some hours later."
+    }
+   ],
+   "image_windows": {
+    "before": [
+     "2021-07-01",
+     "2024-06-30"
+    ],
+    "after": [
+     "2024-07-03",
+     "2024-12-31"
+    ]
+   },
+   "notes": "Refuse in an open path may not show on satellite imagery. ThisDay also used 'Alapomeji section of Iyana Oworo' (ev-020, no cause tag) for the same place. No source ties this flood to an Ebute Metta or Yaba Olopomeji.",
+   "sources": [
+    {
+     "source_id": "punch-2024-07-07",
+     "url": "https://punchng.com/10-hour-rainfall-lekki-ikoyi-residents-flee-luxury-mansions-as-flood-ravages-homes-streets/",
+     "outlet": "Punch",
+     "date": "2024-07-07",
+     "read_status": "read",
+     "quote": "Olopomeji where the water paths had been blocked by refuse and are experiencing flash floods"
+    },
+    {
+     "source_id": "thisday-2024-07-03",
+     "url": "https://www.thisdaylive.com/index.php/2024/07/03/torrential-rain-causes-widespread-flooding-in-lagos/",
+     "outlet": "ThisDay",
+     "date": "2024-07-03",
+     "read_status": "read",
+     "quote": "The EFAG team from the Lagos State Ministry of the Environment and Water Resources @LasgMOE were deployed"
+    }
+   ]
+  },
+  {
+   "site_id": "ikorodu-dammed",
+   "status": "located",
+   "event_id": "lagos-2025-08-04",
+   "evidence_ids": [
+    "ev-005"
+   ],
+   "claim": "A contractor dammed the downstream of a waterway for construction: which waterway, which project, which contractor.",
+   "cause_tags": [
+    "construction"
+   ],
+   "structure_name": "Ikorodu drainage works — Gberigbe Road outfall channel (One Fold / Ijede corridor); contractor and official channel number not_found in Wahab's statement",
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      3.6218,
+      6.60122
+     ],
+     [
+      3.607,
+      6.583
+     ],
+     [
+      3.59186,
+      6.56558
+     ]
+    ]
+   },
+   "location_confidence": "neighbourhood",
+   "located_how": "Punch 12 Aug 2025 quotes Wahab on an unnamed Ikorodu waterway dammed by 'the contractor' during the 14-hour rain. The 7–8 Aug official tour (Guardian) inspected 'ongoing construction of the Outfall Channel for the ongoing Gberigbe Road Project (One Fold) Outfall' through One Fold, Okeletu, Unity Estate, Gbopa, Abule-Eko (Ijede), plus Palm Avenue collector at Oke-Eletu. Nominatim: Gberigbe 3.62180, 6.60122; Ijede 3.59186, 6.56558. Line is Gberigbe–Ijede, not a surveyed channel centreline. Wahab never names the waterway, project title or firm — those remain not_found.",
+   "change_dates": [
+    {
+     "what": "Ikorodu/Ijede drainage construction flagged off (~6 months before 7 Aug 2025 inspection); 12-month contract",
+     "date": null,
+     "range": [
+      "2025-02-01",
+      "2025-02-28"
+     ],
+     "source_id": "guardian-2025-08-08"
+    },
+    {
+     "what": "contractor dammed downstream on site to allow construction; asked to free it when the rain started",
+     "date": "2025-08-04",
+     "range": [
+      "2025-08-03",
+      "2025-08-04"
+     ],
+     "source_id": "punch-2025-08-12"
+    }
+   ],
+   "followups": [
+    {
+     "what": "government appealed to the contractor to free the downstream so stormwater could recede",
+     "date": "2025-08-04",
+     "source_id": "punch-2025-08-12",
+     "quote": "the government appealed to him to free the downstream sector so that the storm water would recede"
+    },
+    {
+     "what": "assembly member: project not abandoned; six months remaining",
+     "date": "2025-08-07",
+     "source_id": "guardian-2025-08-08",
+     "quote": "the ongoing drainage project had not been abandoned; it has a 12-month completion period"
+    }
+   ],
+   "image_windows": {
+    "before": [
+     "2024-08-01",
+     "2025-01-31"
+    ],
+    "after": [
+     "2025-08-04",
+     "2026-02-04"
+    ]
+   },
+   "notes": "Temporary cofferdam may be gone within days of the rain; imagery after the flood may miss it. This site overlaps geographically with ijede-drain (same Ijede/Abule Eko corridor, different claim: dam vs abandoned unfinished drain). Do not treat them as proven to be the same contract.",
+   "sources": [
+    {
+     "source_id": "punch-2025-08-12",
+     "url": "https://punchng.com/lasg-blames-blocked-waterway-for-ikorodu-flooding/",
+     "outlet": "Punch",
+     "date": "2025-08-12",
+     "read_status": "read",
+     "quote": "the contractor had been on site and dammed the downstream to allow the construction to go on"
+    },
+    {
+     "source_id": "guardian-2025-08-08",
+     "url": "https://guardian.ng/news/nigeria/metro/lasg-officials-inspect-ikorodu-drainage-project-allay-residents-fear-on-flash-flooding/",
+     "outlet": "The Guardian Nigeria",
+     "date": "2025-08-08",
+     "read_status": "read",
+     "quote": "Outfall Channel for the ongoing Gberigbe Road Project (One Fold) Outfall"
+    }
+   ]
+  },
+  {
+   "site_id": "agric-bridge",
+   "status": "located",
+   "event_id": "lagos-2025-08-04",
+   "evidence_ids": [
+    "ev-001"
+   ],
+   "claim": "Bridge construction at Agric, Ikorodu.",
+   "cause_tags": [
+    "construction"
+   ],
+   "structure_name": "AFA Bridge on Agric–Isawo Road (old Afa Bridge / Afa River crossing); contractor named as HiTech Construction in one outlet",
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      3.48551,
+      6.62583
+     ],
+     [
+      3.48365,
+      6.62893
+     ],
+     [
+      3.48229,
+      6.63553
+     ]
+    ]
+   },
+   "location_confidence": "street",
+   "located_how": "Nominatim: Agric BRT bus stop 3.48393, 6.62541 on BRT lane, Ologode. OSM Owutu–Isawo Road (way 1434016884) starts at 3.48551, 6.62583. Punch 9 Sep 2026 names 'AFA Bridge on Agric-Isawo Road'. National Daily (5 Aug 2025) places the old Afa Bridge on Agric–Isawo Road where Afa River overflowed. Line is that OSM road segment from Agric north toward Isawo.",
+   "change_dates": [
+    {
+     "what": "new elevated bridge delayed ~five years (as of Aug 2025); National Daily names HiTech Construction",
+     "date": null,
+     "range": [
+      "2020-08-01",
+      "2025-08-05"
+     ],
+     "source_id": "nationaldaily-2025-08-05"
+    },
+    {
+     "what": "inbound section of AFA Bridge opened to traffic (outbound still under construction)",
+     "date": "2026-09-08",
+     "range": null,
+     "source_id": "punch-2026-09-09"
+    }
+   ],
+   "followups": [
+    {
+     "what": "inbound AFA Bridge opened; commuters told they can avoid the floodplain",
+     "date": "2026-09-08",
+     "source_id": "punch-2026-09-09",
+     "quote": "the inbound section of AFA Bridge on Agric-Isawo Road has been opened to traffic"
+    }
+   ],
+   "image_windows": {
+    "before": [
+     "2019-08-01",
+     "2020-12-31"
+    ],
+    "after": [
+     "2025-08-04",
+     "2026-09-30"
+    ]
+   },
+   "notes": "OSU (ev-001) cites 'bridge construction in Agric' without naming AFA/HiTech; National Daily and later Punch supply the name and the 2026 opening. Look at the river crossing and both old and new decks, not only the bus stop.",
+   "sources": [
+    {
+     "source_id": "osu-2025-09-29",
+     "url": "https://oia.osu.edu/news/2025/09/29/documenting-floods-and-building-resilience-lagos",
+     "outlet": "Ohio State University OIA",
+     "date": "2025-09-29",
+     "read_status": "read",
+     "quote": "bridge construction in Agric and an abandoned drainage system in Ijede, worsened the impacts of heavy rain"
+    },
+    {
+     "source_id": "nationaldaily-2025-08-05",
+     "url": "https://nationaldailyng.com/incomplete-bridge-project-on-agric-isawo-road-sparks-outrage-flood-cuts-off-ikorodu-community/",
+     "outlet": "National Daily",
+     "date": "2025-08-05",
+     "read_status": "headline_only",
+     "quote": "five-year delay in completing a new elevated bridge being constructed by HiTech Construction"
+    },
+    {
+     "source_id": "punch-2026-09-09",
+     "url": "https://punchng.com/lasg-opens-ikorodu-bridge-to-traffic/",
+     "outlet": "Punch",
+     "date": "2026-09-09",
+     "read_status": "read",
+     "quote": "It's bye to driving through the floodplain"
+    }
+   ]
+  },
+  {
+   "site_id": "ijede-drain",
+   "status": "located",
+   "event_id": "lagos-2025-08-04",
+   "evidence_ids": [
+    "ev-002"
+   ],
+   "claim": "Abandoned drainage system at Ijede.",
+   "cause_tags": [
+    "drainage_capacity",
+    "construction"
+   ],
+   "structure_name": "Drainage project from Oko Ope to Abule Eko, Ijede (Gberigbe outfall / Palm Avenue collector also named on the 7 Aug tour)",
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      3.588,
+      6.568
+     ],
+     [
+      3.59186,
+      6.56558
+     ],
+     [
+      3.6218,
+      6.60122
+     ]
+    ]
+   },
+   "location_confidence": "neighbourhood",
+   "located_how": "Punch 6 Aug: residents name 'abandoned drainage project from Oko Ope down to Abule Eko', unfinished ~four months, parts buried in sand. Evidence: Oko Ope 3.588, 6.568 (manual); Ijede 3.59186, 6.56558 (Nominatim). Abule Eko has no Nominatim hit; Guardian 8 Aug lists Abule-Eko Community on the Gberigbe Road outfall with Oke-Eletu / Ijede. Third vertex is Gberigbe (3.62180, 6.60122) as the official outfall named the next day — neighbourhood, not a surveyed drain.",
+   "change_dates": [
+    {
+     "what": "construction started then left halfway at Abule Eko; residents: abandoned close to four months (implies pause ~Apr 2025)",
+     "date": null,
+     "range": [
+      "2025-04-01",
+      "2025-08-04"
+     ],
+     "source_id": "punch-2025-08-06"
+    },
+    {
+     "what": "official: flagged off about six months before 7 Aug 2025; 12-month completion; not abandoned",
+     "date": null,
+     "range": [
+      "2025-02-01",
+      "2026-02-01"
+     ],
+     "source_id": "guardian-2025-08-08"
+    }
+   ],
+   "followups": [
+    {
+     "what": "inspection of Ijede, Gberigbe and environs; contractor told to hasten work",
+     "date": "2025-08-07",
+     "source_id": "guardian-2025-08-08",
+     "quote": "the government would ensure that the contractor handling the drainage project hasten work"
+    }
+   ],
+   "image_windows": {
+    "before": [
+     "2023-08-01",
+     "2025-01-31"
+    ],
+    "after": [
+     "2025-08-04",
+     "2026-02-04"
+    ]
+   },
+   "notes": "Residents say abandoned; assembly member says 12-month job mid-contract. Unfinished open drain plus sand fill should be visible if the alignment is the Gberigbe outfall; if it is a covered roadside drain, imagery is weaker. Overlaps ikorodu-dammed geographically.",
+   "sources": [
+    {
+     "source_id": "osu-2025-09-29",
+     "url": "https://oia.osu.edu/news/2025/09/29/documenting-floods-and-building-resilience-lagos",
+     "outlet": "Ohio State University OIA",
+     "date": "2025-09-29",
+     "read_status": "read",
+     "quote": "bridge construction in Agric and an abandoned drainage system in Ijede, worsened the impacts of heavy rain"
+    },
+    {
+     "source_id": "punch-2025-08-06",
+     "url": "https://punchng.com/flooding-lagos-community-counts-losses-blames-abandoned-drainage-construction/",
+     "outlet": "Punch",
+     "date": "2025-08-06",
+     "read_status": "read",
+     "quote": "The cause of the flooding is the abandoned drainage project from Oko Ope down to Abule Eko."
+    },
+    {
+     "source_id": "guardian-2025-08-08",
+     "url": "https://guardian.ng/news/nigeria/metro/lasg-officials-inspect-ikorodu-drainage-project-allay-residents-fear-on-flash-flooding/",
+     "outlet": "The Guardian Nigeria",
+     "date": "2025-08-08",
+     "read_status": "read",
+     "quote": "flagged off about six months ago with another six months before its completion"
+    }
+   ]
+  },
+  {
+   "site_id": "oko-oba-canal",
+   "status": "located",
+   "event_id": "lagos-2022-07-08",
+   "evidence_ids": [
+    "ev-014"
+   ],
+   "claim": "Canal by old Oko-Oba Road (Agege) overflowed; was it under works?",
+   "cause_tags": [
+    "heavy_rain",
+    "canal_overflow",
+    "construction"
+   ],
+   "structure_name": "Oko-Oba Canal Channel, Agege (behind Abimbola Awoniyi/Awoliyi Estate by Agric Road; OSM bridges on Agric Road and Akinsegun Street)",
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      3.31447,
+      6.64863
+     ],
+     [
+      3.31471,
+      6.64943
+     ],
+     [
+      3.31496,
+      6.64979
+     ],
+     [
+      3.31533,
+      6.6509
+     ],
+     [
+      3.31545,
+      6.65213
+     ],
+     [
+      3.31544,
+      6.65348
+     ],
+     [
+      3.31527,
+      6.6544
+     ],
+     [
+      3.31533,
+      6.65642
+     ]
+    ]
+   },
+   "location_confidence": "exact",
+   "located_how": "BBC Pidgin 9 Jul 2022: 10-hour rain overflowed the Oko-Oba Canal Channel then under expansion; old Oko-Oba Road named. OSM still has no way named Oko-Oba Canal (Nominatim miss; Overpass waterway=* within 800 m of the estate returns none). Guardian/Vanguard 27 Oct 2022 place the viral-flood reach \"behind Abimbola Awoniyi Estate by Agric Road, Oko Oba, Agege\". Maps: Abimbola Awoliyi Estate 3.31209, 6.64853 (Ifako-Ijaiye/Ojokoro). OSM Agric Road (ways 586770836, 4992769) runs east of the estate; way 586770837 is a 15 m bridge on Agric Road at 3.31474, 6.64940, and way 586763553 is a bridge on Akinsegun Street at 3.31552, 6.65149 — the only mapped crossings that can carry the channel. Line is those two bridges extended ~150 m along the same bearing (not Oko Oba Road, which Task 18 imagery showed was the previous line). Canal centreline itself remains unlabelled. | 2026-10-17 (reviewer): channel traced by hand on current Esri World Imagery (z18): an open vegetated channel running S→N from the Agric Road bridge (3.31474, 6.64940) past Abimbola Awoniyi Estate; Task 19 line followed it in the south but veered NE onto streets in the north.",
+   "change_dates": [
+    {
+     "what": "Oko-Oba Canal expansion underway; paused because of heavy rain in the weeks before 9 Jul 2022",
+     "date": "2022-07-09",
+     "range": null,
+     "source_id": "bbcpidgin-2022-07-09"
+    },
+    {
+     "what": "plan to expand infringed channel by eight metres with 5 m right of way each side; contravention notices then removal",
+     "date": "2022-10-26",
+     "range": null,
+     "source_id": "guardian-2022-10-27"
+    }
+   ],
+   "followups": [
+    {
+     "what": "structures on drainage alignment to be removed after contravention notices",
+     "date": "2022-10-26",
+     "source_id": "guardian-2022-10-27",
+     "quote": "all owners of the structures to be affected will be served with appropriate contravention notices"
+    }
+   ],
+   "image_windows": {
+    "before": [
+     "2019-07-01",
+     "2022-03-31"
+    ],
+    "after": [
+     "2022-07-09",
+     "2023-01-31"
+    ]
+   },
+   "notes": "Yes: official statement on the flood day says the canal was under expansion. Open channel at the Agric Road / Akinsegun Street bridges should be visible; if reaches are already culverted, imagery of the channel bed is limited. Oct 2022 viral video is a later event, useful as a follow-up on the same channel. Do not use Oko Oba Road as a proxy: Task 18 showed that line was the carriageway (unpaved 2021 → paved 2025).",
+   "sources": [
+    {
+     "source_id": "bbcpidgin-2022-07-09",
+     "url": "https://www.bbc.com/pidgin/articles/crgw8vrgjdeo",
+     "outlet": "BBC Pidgin",
+     "date": "2022-07-09",
+     "read_status": "read",
+     "quote": "Dem dey expand di Oko-Oba Canal for Agege to allow for di containment of more stormwater"
+    },
+    {
+     "source_id": "guardian-2022-10-27",
+     "url": "https://guardian.ng/news/lagos-disclaims-narrative-on-viral-flood-video-in-oko-oba/",
+     "outlet": "The Guardian Nigeria",
+     "date": "2022-10-27",
+     "read_status": "read",
+     "quote": "the infringed Oko Oba channel will be expanded by eight metres"
+    }
+   ],
+   "geometry_prev": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      3.31171,
+      6.6322
+     ],
+     [
+      3.31248,
+      6.63609
+     ],
+     [
+      3.31312,
+      6.64095
+     ],
+     [
+      3.31578,
+      6.64514
+     ]
+    ]
+   },
+   "geometry_prev_task19": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      3.31427,
+      6.64813
+     ],
+     [
+      3.31474,
+      6.6494
+     ],
+     [
+      3.31552,
+      6.65149
+     ],
+     [
+      3.31599,
+      6.65276
+     ]
+    ]
+   }
+  },
+  {
+   "site_id": "alapere-ogudu",
+   "status": "located",
+   "event_id": "lagos-2021-07-16",
+   "evidence_ids": [
+    "ev-023"
+   ],
+   "claim": "Construction at Alapere inwards Ogudu Car Wash.",
+   "cause_tags": [
+    "construction"
+   ],
+   "structure_name": "Lagos–Ibadan Expressway / Ogudu Road at Alapere (Heyden filling station) inwards Ogudu Car Wash",
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      3.392,
+      6.592
+     ],
+     [
+      3.38851,
+      6.57772
+     ],
+     [
+      3.39547,
+      6.57317
+     ]
+    ]
+   },
+   "location_confidence": "street",
+   "located_how": "LASTMA (Punch/ThisDay 17 Jul 2021): 'flooding and construction at Alapere inwards Ogudu Car Wash', traffic back to Toll-gate. LASTMA Facebook same wording with 'Alapere (Heyden filling station)'. Evidence neighbourhood 3.392, 6.592. OSM Ogudu Road 221600790 from ~3.380, 6.588 toward 3.395, 6.573 (Ogudu). Nominatim Ogudu suburb 3.39053, 6.57500. Line: Alapere evidence point along Ogudu Road toward Ogudu. Project name not_found.",
+   "change_dates": [
+    {
+     "what": "construction section in place on 16 Jul 2021 (start/end not found)",
+     "date": "2021-07-16",
+     "range": null,
+     "source_id": "punch-2021-07-17"
+    }
+   ],
+   "followups": [],
+   "image_windows": {
+    "before": [
+     "2018-07-01",
+     "2021-01-31"
+    ],
+    "after": [
+     "2021-07-16",
+     "2022-01-16"
+    ]
+   },
+   "notes": "This is road construction on the expressway/Ogudu approach, not a named canal. Imagery of an open drain is unlikely; look for carriageway works, closures and the Heyden/Alapere–Car Wash stretch. Change date otherwise unknown: before-window is 2–3 years earlier.",
+   "sources": [
+    {
+     "source_id": "punch-2021-07-17",
+     "url": "https://punchng.com/flood-fallen-trucks-cause-lagos-gridlock-commuters-stranded/",
+     "outlet": "Punch",
+     "date": "2021-07-17",
+     "read_status": "read",
+     "quote": "Due to flooding and construction at Alapere inwards Ogudu Car Wash"
+    },
+    {
+     "source_id": "thisday-2021-07-17",
+     "url": "https://www.thisdaylive.com/2021/07/17/heavy-rain-wreaks-havoc-in-lagos/",
+     "outlet": "ThisDay",
+     "date": "2021-07-17",
+     "read_status": "read",
+     "quote": "Due to flooding and construction at Alapere inwards Ogudu Car Wash"
+    }
+   ]
+  },
+  {
+   "site_id": "marina-drainage",
+   "status": "located",
+   "event_id": "lagos-2021-07-16",
+   "evidence_ids": [
+    "ev-018"
+   ],
+   "claim": "Marina has 'no drainage system'.",
+   "cause_tags": [
+    "drainage_capacity"
+   ],
+   "structure_name": "Marina Road, Lagos Island (Kakawa junction toward Marina / Cathedral axis)",
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      3.38873,
+      6.45211
+     ],
+     [
+      3.38196,
+      6.45461
+     ],
+     [
+      3.38065,
+      6.45757
+     ]
+    ]
+   },
+   "location_confidence": "street",
+   "located_how": "Punch 17 Jul 2021: motorist Okechukwu Chuckwu on Marina Road, highway blocked 'as a result of the flooding caused by no drainage system'. LASTMA Facebook: Marina Road from Kakawa junction. Nominatim: Kakawa Street way 828125160 at 3.38873, 6.45211; Marina Road ways 328558542 / 166721549 at ~3.381, 6.455. Line Kakawa → Marina Road.",
+   "change_dates": [],
+   "followups": [],
+   "image_windows": {
+    "before": [
+     "2018-07-01",
+     "2021-01-16"
+    ],
+    "after": [
+     "2021-07-16",
+     "2022-01-16"
+    ]
+   },
+   "notes": "No dated works found. The claim is missing drainage, not a new structure. Island Marina typically uses covered/kerbside drains and car parks (ev-001 vehicles in parks): surface imagery of 'no drainage' is likely useless. before-window is 2–3 years before the flood because the change is undated.",
+   "sources": [
+    {
+     "source_id": "punch-2021-07-17",
+     "url": "https://punchng.com/flood-fallen-trucks-cause-lagos-gridlock-commuters-stranded/",
+     "outlet": "Punch",
+     "date": "2021-07-17",
+     "read_status": "read",
+     "quote": "as a result of the flooding caused by no drainage system"
+    }
+   ]
+  },
+  {
+   "site_id": "lekki-epe-rehab",
+   "status": "located",
+   "event_id": "lagos-2024-07-03",
+   "evidence_ids": [
+    "ev-027",
+    "ev-028",
+    "ev-029",
+    "ev-030"
+   ],
+   "claim": "Road rehabilitation works at Sangotedo, Awoyaya, Majek, Abraham Adesanya.",
+   "cause_tags": [
+    "construction"
+   ],
+   "structure_name": "Lekki–Epe Expressway (Abraham Adesanya–Sangotedo–Majek–Awoyaya)",
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      3.58428,
+      6.46956
+     ],
+     [
+      3.60575,
+      6.47505
+     ],
+     [
+      3.63558,
+      6.47102
+     ],
+     [
+      3.68,
+      6.46
+     ],
+     [
+      3.70456,
+      6.46971
+     ]
+    ]
+   },
+   "location_confidence": "street",
+   "located_how": "Daily Trust/NAN 3 Jul 2024: floods on Abraham Adesanya, Awoyaya, Sangotedo and Majek 'due to the ongoing rehabilitation road works'. OSM Lekki–Epe Expressway trunk (ways 564321933, 193596810, 282425755). Nominatim: Abraham Adesanya bus stop on the expressway 3.58428, 6.46956; Sangotedo 3.63558, 6.47102; Awoyaya 3.70456, 6.46971. Majek has no Nominatim hit (Task 03b street/place issue); 3.68, 6.46 is the evidence manual neighbourhood on this corridor. Line follows the expressway through those four named places.",
+   "change_dates": [
+    {
+     "what": "rehabilitation works ongoing on 3 Jul 2024 (start date of this stretch not found)",
+     "date": "2024-07-03",
+     "range": null,
+     "source_id": "dailytrust-2024-07-03"
+    }
+   ],
+   "followups": [
+    {
+     "what": "resident asked government to speed completion of Sangotedo road repairs",
+     "date": "2024-07-03",
+     "source_id": "dailytrust-2024-07-03",
+     "quote": "urged the Lagos State Government to speed up the completion of road repairs in Sangotedo"
+    }
+   ],
+   "image_windows": {
+    "before": [
+     "2021-07-01",
+     "2024-03-31"
+    ],
+    "after": [
+     "2024-07-03",
+     "2025-01-03"
+    ]
+   },
+   "notes": "Do not use the 2026 35-day Bonny Camp–Admiralty rehab; that is a later, western job. Road works can hide or relocate side drains: look at the expressway pavement and the roadside channel. Start date unknown: before-window is ~2–3 years earlier.",
+   "sources": [
+    {
+     "source_id": "dailytrust-2024-07-03",
+     "url": "https://dailytrust.com/flood-takes-over-houses-roads-in-lagos/",
+     "outlet": "Daily Trust (NAN)",
+     "date": "2024-07-03",
+     "read_status": "read",
+     "quote": "due to the ongoing rehabilitation road works in the localities"
+    }
+   ]
+  },
+  {
+   "site_id": "labora",
+   "status": "located",
+   "event_id": "lagos-2024-07-03",
+   "evidence_ids": [
+    "ev-021",
+    "ev-053"
+   ],
+   "claim": "New site with no drainage.",
+   "cause_tags": [
+    "drainage_capacity"
+   ],
+   "structure_name": "Labora new residential site, Abijo GRA, Ibeju-Lekki (no mapped drain; OSM has no Labora)",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     3.66628,
+     6.45031
+    ]
+   },
+   "location_confidence": "neighbourhood",
+   "located_how": "Daily Trust/NAN: Rasheed Ayobami and Bola Fadugba \"Labora area of Ibeju-Lekki\"; Fadugba relocates to Eputu in the rains. Nominatim \"Labora\" / \"Laboran\" and OSM name=Labora: no hit (same as Task 17). Property listings and Maps places cluster in Abijo GRA, not the Task 03 manual point 3.92, 6.48 (forest, ~28 km east). Community Primary School, Labora, Ibeju-Lekki at Labora ABIJO GRA, 7 Atanda Badmus St (Maps 3.66400, 6.44791); Christ Embassy Church Labora at Abijo GRA after Dog Junction (Maps 3.66856, 6.45271). OSM Abijo G.R.A. Road way 449012161 at 3.67171, 6.45524. Point is the midpoint of the school and church. Eputu (Nominatim 3.71950, 6.47518) is the nearby place Fadugba named as a wet-season move — consistent with Abijo, not eastern Ibeju forest. Not a named collector.",
+   "change_dates": [
+    {
+     "what": "new residential site without drainage (build-out date not given)",
+     "date": null,
+     "range": null,
+     "source_id": "dailytrust-2024-07-03"
+    }
+   ],
+   "followups": [],
+   "image_windows": {
+    "before": [
+     "2021-07-01",
+     "2024-03-31"
+    ],
+    "after": [
+     "2024-07-03",
+     "2025-01-03"
+    ]
+   },
+   "notes": "Absence of drains on a new layout is the claim; parcel-scale housing change is what to look for. No official follow-up found. Change undated: before-window 2–3 years earlier. Previous point (3.92, 6.48) was a forest geocode; do not reuse Task 18 chips from that location.",
+   "sources": [
+    {
+     "source_id": "dailytrust-2024-07-03",
+     "url": "https://dailytrust.com/flood-takes-over-houses-roads-in-lagos/",
+     "outlet": "Daily Trust (NAN)",
+     "date": "2024-07-03",
+     "read_status": "read",
+     "quote": "I live in a new site where there is no drainage which makes the water run into residential homes"
+    },
+    {
+     "source_id": "dailypost-2024-07-03",
+     "url": "https://dailypost.ng/2024/07/03/flood-takes-over-residential-areas-in-ibeju-lekki-video/",
+     "outlet": "Daily Post",
+     "date": "2024-07-03",
+     "read_status": "read",
+     "quote": "There is too much water flowing into my compound, the entire house is submerged."
+    }
+   ],
+   "geometry_prev": {
+    "type": "Point",
+    "coordinates": [
+     3.92,
+     6.48
+    ]
+   }
+  },
+  {
+   "site_id": "ibeju-lekki-expy",
+   "status": "located",
+   "event_id": "lagos-2024-07-03",
+   "evidence_ids": [
+    "ev-022"
+   ],
+   "claim": "Blocked drains on the Ibeju-Lekki Expressway.",
+   "cause_tags": [
+    "blocked_drainage"
+   ],
+   "structure_name": "Lekki–Epe / Ibeju-Lekki Expressway roadside drains (Ibeju-Lekki stretch)",
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      3.77479,
+      6.47438
+     ],
+     [
+      3.80013,
+      6.47136
+     ],
+     [
+      3.88043,
+      6.48486
+     ]
+    ]
+   },
+   "location_confidence": "street",
+   "located_how": "NAN/Daily Trust: Seyi Arowosaye, 'perennial flooding in Ibeju-Lekki Expressway due to blockage of drains'. Evidence Nominatim point 3.808, 6.471. OSM names the road Lekki–Epe Expressway through Ibeju-Lekki (ways 193596810 / 282425755); samples 3.775, 6.474 → 3.800, 6.471 → 3.880, 6.485. Line is that trunk through Ibeju-Lekki, east of Awoyaya.",
+   "change_dates": [],
+   "followups": [
+    {
+     "what": "resident asked Ibeju-Lekki LG to clear drains and residents to stop dumping waste",
+     "date": "2024-07-03",
+     "source_id": "dailytrust-2024-07-03",
+     "quote": "called on Ibeju-Lekki Local Government to clear drains and urged residents to desist from further dumping"
+    }
+   ],
+   "image_windows": {
+    "before": [
+     "2021-07-01",
+     "2024-03-31"
+    ],
+    "after": [
+     "2024-07-03",
+     "2025-01-03"
+    ]
+   },
+   "notes": "Blockage by waste is not a dated structural change. Roadside drains may be covered. Distinct from lekki-epe-rehab (Abraham Adesanya–Awoyaya works further west) though the same OSM highway. Change undated: before-window 2–3 years earlier.",
+   "sources": [
+    {
+     "source_id": "dailytrust-2024-07-03",
+     "url": "https://dailytrust.com/flood-takes-over-houses-roads-in-lagos/",
+     "outlet": "Daily Trust (NAN)",
+     "date": "2024-07-03",
+     "read_status": "read",
+     "quote": "perennial flooding in Ibeju-Lekki Expressway due to blockage of drains in the metropolis"
+    }
+   ]
+  },
+  {
+   "site_id": "sangotedo-channel-notices",
+   "status": "located",
+   "event_id": "lagos-2024-07-03",
+   "evidence_ids": [
+    "ev-027"
+   ],
+   "claim": "Added: Wahab served 14-day abatement / 48-hour contravention notices for buildings on drainage channels in Sangotedo (Lekki), 23 Jun 2024.",
+   "cause_tags": [
+    "setback_encroachment",
+    "construction"
+   ],
+   "structure_name": "System 63b drainage channel, Sangotedo (Eti-Osa), at Lagos Business School; centreline not in OSM",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     3.60357,
+     6.47129
+    ]
+   },
+   "location_confidence": "street",
+   "located_how": "Independent 24 Jun 2024 quotes Wahab after the 23 Jun tour: notices \"At Sangotedo by Lagos Business School\" for buildings \"lying within the channels\". Nominatim: Lagos Business School (OSM way 539288427) 3.60357, 6.47129 on Lekki–Epe Expressway, address suburb Sangotedo, Eti Osa — ~3.5 km west of the previous town-centroid point (3.63558, 6.47102). Nairametrics 21 Sep 2024 names the follow-up demolition as System 63b, Sangotedo, Eti-Osa; OSM has no name System 63b. Overpass waterway=* within 2 km of LBS returns only an unnamed stream (ways 785343404/406) ~1.2 km north at ~6.482°N — not published as System 63b, so not used as the line. Channel centreline: neighbourhood / not_found beyond the LBS inspection site. Monastery Road canal reports are a different Sangotedo street (~3.643, 6.447) and are not in the 23 Jun notices.",
+   "change_dates": [
+    {
+     "what": "48-hour contravention and 14-day abatement notices; full enforcement after expiry",
+     "date": "2024-06-23",
+     "range": [
+      "2024-06-23",
+      "2024-07-07"
+     ],
+     "source_id": "punch-2024-07-07"
+    }
+   ],
+   "followups": [
+    {
+     "what": "enforcement after notices; option of voluntary compliance",
+     "date": "2024-06-23",
+     "source_id": "punch-2024-07-07",
+     "quote": "We will commence full enforcement after the expiration of all notices with an option of voluntary compliance."
+    }
+   ],
+   "image_windows": {
+    "before": [
+     "2021-06-01",
+     "2024-06-22"
+    ],
+    "after": [
+     "2024-06-23",
+     "2024-12-31"
+    ]
+   },
+   "notes": "Extra site (named structure in a Task 03 source). Channel geometry not_found beyond the LBS site; point is the named inspection, not a drain centreline. Overlaps lekki-epe-rehab at Sangotedo but the claim is buildings on drainage alignments, not the expressway pavement.",
+   "sources": [
+    {
+     "source_id": "punch-2024-07-07",
+     "url": "https://punchng.com/10-hour-rainfall-lekki-ikoyi-residents-flee-luxury-mansions-as-flood-ravages-homes-streets/",
+     "outlet": "Punch",
+     "date": "2024-07-07",
+     "read_status": "read",
+     "quote": "A 48-hour contravention notice has been served to owners of buildings lying within the channels"
+    },
+    {
+     "source_id": "independent-2024-06-24",
+     "url": "https://independent.ng/lagos-issues-14-day-demolition-notice-to-owners-of-buildings-blocking-drainage-channels-at-lekki-okota-isolo-others/",
+     "outlet": "Independent",
+     "date": "2024-06-24",
+     "read_status": "read",
+     "quote": "At Sangotedo by Lagos Business School, a 48 hours contravention notice have been served to owners of buildings lying within the channels"
+    },
+    {
+     "source_id": "nairametrics-2024-09-21",
+     "url": "https://nairametrics.com/2024/09/21/lagos-govt-demolishes-contravening-structures-blocking-drainage-channel-in-sangotedo/",
+     "outlet": "Nairametrics",
+     "date": "2024-09-21",
+     "read_status": "read",
+     "quote": "continued removal of contravening structures along System 63b Sangotedo, Eti-Osa LGA to prevent flooding in the axis"
+    }
+   ],
+   "geometry_prev": {
+    "type": "Point",
+    "coordinates": [
+     3.63558,
+     6.47102
+    ]
+   }
+  }
+ ]
+}

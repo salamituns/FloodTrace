@@ -1,0 +1,849 @@
+{
+ "type": "FeatureCollection",
+ "meta": {
+  "compiled_at": "2026-10-17T20:34:35Z",
+  "method": "Read named 2025 sources; one point per (source, location); pipeline/geocode.py inside AOI bbox; manual neighbourhood centre where Nominatim missed. ClimaMeter 191 deaths not used.",
+  "notes": "Punch 4 Aug Wahab statement names no streets (citywide rain). Punch 12 Aug Agboyi/Agiliti/Itowolo/Ajegunle are relocation advice, not named as flooded that night. Guardian Ajegunle left off because the list mixes Ikorodu and mainland names. Channels Ajegunle placed in Ajeromi-Ifelodun (grouped with Eti-Osa, Agege, Surulere, Alimosho). Jakande with Ajah/Lekki treated as Eti-Osa. No Nigerian outlet stated a death toll; ClimaMeter 191 not used. No locations, times, numbers or quotes were inferred beyond the text.",
+  "unresolved": [
+   "Guardian Ajegunle (Ikorodu vs Ajeromi) not mapped",
+   "Exact coordinates of Agric bus stop / Oko Ope (manual neighbourhood centres)",
+   "Punch 4 Aug names no flooded streets"
+  ],
+  "bbox": [
+   2.7,
+   6.38,
+   4.35,
+   6.75
+  ],
+  "feature_count": 22,
+  "omitted": [
+   "ClimaMeter 191 deaths (uncorroborated by Nigerian reporting)",
+   "Niger, Adamawa floods in Channels 4 Aug piece",
+   "Agboyi, Agiliti, Itowolo, Ajegunle relocation advice (Punch 12 Aug)",
+   "Igbogbo / Oke-Eletu named as drainage works, not as flooded streets (Guardian 8 Aug)"
+  ],
+  "review": {
+   "reviewed_at": "2026-10-17",
+   "by": "Claude (lead agent)",
+   "notes": "All points inside AOI; same-name places (Jakande Isolo/Lekki, Ajegunle Ajeromi/Ikorodu) kept distinct; Ijede placed in Ijede town (Ikorodu LGA). Quotes verified for every readable publisher; Channels TV, TheCable, Guardian NG unverifiable (blocked)."
+  },
+  "citywide_cause_statements": [
+   {
+    "source_id": "punch-2025-08-04",
+    "url": "https://punchng.com/lagos-urges-calm-as-heavy-rainfall-persists/",
+    "who": "Tokunbo Wahab, Commissioner for Environment and Water Resources",
+    "date": "2025-08-04",
+    "causes": [
+     "heavy_rain"
+    ],
+    "cause_quote": "Over the past 12 hours, Lagos has experienced intense rainfall, and more is expected",
+    "cause_attributed_by": "official"
+   },
+   {
+    "source_id": "punch-2025-08-04",
+    "url": "https://punchng.com/lagos-urges-calm-as-heavy-rainfall-persists/",
+    "who": "Tokunbo Wahab, Commissioner for Environment and Water Resources",
+    "date": "2025-08-04",
+    "causes": [
+     "lagoon_tide"
+    ],
+    "cause_quote": "Lagos is naturally vulnerable to tidal lock-up when rising water levels in the lagoon slow down the discharge of runoff",
+    "cause_attributed_by": "official"
+   },
+   {
+    "source_id": "punch-2025-08-04",
+    "url": "https://punchng.com/lagos-urges-calm-as-heavy-rainfall-persists/",
+    "who": "Tokunbo Wahab, Commissioner for Environment and Water Resources",
+    "date": "2025-08-04",
+    "causes": [
+     "blocked_drainage"
+    ],
+    "cause_quote": "do not dump refuse into drains during rainfall. It clogs our drainage systems and worsens flooding",
+    "cause_attributed_by": "official"
+   }
+  ],
+  "cause_tagging": "Task 15: Punch 4 Aug remains citywide (no streets). Punch 12 Aug Agboyi/Agiliti/Itowolo/Ajegunle kept as relocation advice, not flood sites. Contractor damming tagged construction, not blocked_drainage (no waste/silt). OSU recap is 29 Sep; tagged because the features already existed.",
+  "cause_summary": {
+   "heavy_rain": {
+    "official": 5,
+    "journalist": 1,
+    "resident": 2,
+    "expert": 0,
+    "total": 8
+   },
+   "blocked_drainage": {
+    "official": 1,
+    "journalist": 0,
+    "resident": 0,
+    "expert": 0,
+    "total": 1
+   },
+   "drainage_capacity": {
+    "official": 0,
+    "journalist": 0,
+    "resident": 1,
+    "expert": 0,
+    "total": 1
+   },
+   "construction": {
+    "official": 1,
+    "journalist": 0,
+    "resident": 1,
+    "expert": 0,
+    "total": 2
+   },
+   "lagoon_tide": {
+    "official": 1,
+    "journalist": 0,
+    "resident": 0,
+    "expert": 0,
+    "total": 1
+   }
+  }
+ },
+ "features": [
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     3.52,
+     6.605
+    ]
+   },
+   "properties": {
+    "id": "ev-001",
+    "kind": "news_report",
+    "source_id": "osu-2025-09-29",
+    "source_url": "https://oia.osu.edu/news/2025/09/29/documenting-floods-and-building-resilience-lagos",
+    "publisher": "Ohio State University OIA",
+    "published_at": "2025-09-29T00:00:00+00:00",
+    "observed_at": "2025-08-04T12:00:00+01:00",
+    "time_confidence": "day",
+    "read_status": "read",
+    "quote_check": "verbatim match on source page (one quote per publisher spot-checked)",
+    "location_name": "Agric, Ikorodu",
+    "location_confidence": "neighbourhood",
+    "geocode_method": "manual: neighbourhood centre for Agric, Ikorodu, Lagos",
+    "claim": "Homes and cars underwater; bridge construction cited as worsening rain.",
+    "depth_note": "homes and cars underwater",
+    "quote": "floodwaters swallowed the Agric and Ijede communities of Ikorodu on August 4, 2025",
+    "verified": false,
+    "causes": [
+     "heavy_rain",
+     "construction"
+    ],
+    "cause_quote": "bridge construction in Agric and an abandoned drainage system in Ijede, worsened the impacts of heavy rain",
+    "cause_attributed_by": "resident",
+    "cause_who": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     3.591864,
+     6.565579
+    ]
+   },
+   "properties": {
+    "id": "ev-002",
+    "kind": "news_report",
+    "source_id": "osu-2025-09-29",
+    "source_url": "https://oia.osu.edu/news/2025/09/29/documenting-floods-and-building-resilience-lagos",
+    "publisher": "Ohio State University OIA",
+    "published_at": "2025-09-29T00:00:00+00:00",
+    "observed_at": "2025-08-04T12:00:00+01:00",
+    "time_confidence": "day",
+    "read_status": "read",
+    "quote_check": "verbatim match on source page (one quote per publisher spot-checked)",
+    "location_name": "Ijede, Ikorodu",
+    "location_confidence": "neighbourhood",
+    "geocode_method": "nominatim:Ijede, Ikorodu, Lagos",
+    "claim": "Homes and cars underwater; abandoned drainage cited as worsening rain.",
+    "depth_note": "homes and cars underwater",
+    "quote": "floodwaters swallowed the Agric and Ijede communities of Ikorodu on August 4, 2025",
+    "verified": false,
+    "causes": [
+     "heavy_rain",
+     "drainage_capacity"
+    ],
+    "cause_quote": "bridge construction in Agric and an abandoned drainage system in Ijede, worsened the impacts of heavy rain",
+    "cause_attributed_by": "resident",
+    "cause_who": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     3.591864,
+     6.565579
+    ]
+   },
+   "properties": {
+    "id": "ev-003",
+    "kind": "social_post",
+    "source_id": "vanguard-x-2025-08-04",
+    "source_url": "https://x.com/vanguardngrnews/status/1952406403252924608",
+    "publisher": "Vanguard (X)",
+    "published_at": "2025-08-04T16:28:55+00:00",
+    "observed_at": "2025-08-04T12:00:00+01:00",
+    "time_confidence": "day",
+    "read_status": "read",
+    "quote_check": "verbatim match on source page (one quote per publisher spot-checked)",
+    "location_name": "Ijede, Ikorodu",
+    "location_confidence": "neighbourhood",
+    "geocode_method": "nominatim:Ijede, Ikorodu, Lagos",
+    "claim": "Heavy flooding displaced residents; homes and vehicles submerged.",
+    "depth_note": "homes and vehicles submerged",
+    "quote": "Heavy flooding has wreaked havoc in the Ijede area of Ikorodu, Lagos State",
+    "verified": false,
+    "causes": [],
+    "cause_quote": null,
+    "cause_attributed_by": null,
+    "cause_who": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     3.588,
+     6.568
+    ]
+   },
+   "properties": {
+    "id": "ev-004",
+    "kind": "social_post",
+    "source_id": "vanguard-x-2025-08-04",
+    "source_url": "https://x.com/vanguardngrnews/status/1952406403252924608",
+    "publisher": "Vanguard (X)",
+    "published_at": "2025-08-04T16:28:55+00:00",
+    "observed_at": "2025-08-04T12:00:00+01:00",
+    "time_confidence": "day",
+    "read_status": "read",
+    "quote_check": "verbatim match on source page (one quote per publisher spot-checked)",
+    "location_name": "Oko Ope, Ijede",
+    "location_confidence": "neighbourhood",
+    "geocode_method": "manual: neighbourhood centre for Oko Ope, Ijede, Lagos",
+    "claim": "Resident: cannot enter house; flood damaged everything on 4 Aug.",
+    "depth_note": null,
+    "quote": "We are in Oko Ope in Ijede. Have mercy on us. This is our community.",
+    "verified": false,
+    "causes": [],
+    "cause_quote": null,
+    "cause_attributed_by": null,
+    "cause_who": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     3.504127,
+     6.619123
+    ]
+   },
+   "properties": {
+    "id": "ev-005",
+    "kind": "official_statement",
+    "source_id": "punch-2025-08-12",
+    "source_url": "https://punchng.com/lasg-blames-blocked-waterway-for-ikorodu-flooding/",
+    "publisher": "Punch",
+    "published_at": "2025-08-11T23:02:05+00:00",
+    "observed_at": "2025-08-04T12:00:00+01:00",
+    "time_confidence": "day",
+    "read_status": "read",
+    "quote_check": "verbatim match on source page (one quote per publisher spot-checked)",
+    "location_name": "Ikorodu",
+    "location_confidence": "lga",
+    "geocode_method": "nominatim:Ikorodu, Lagos",
+    "claim": "Wahab: 14-hour downpour worsened after contractor dammed downstream.",
+    "depth_note": null,
+    "quote": "the 14-hour torrential downpour, which recently affected some areas in Ikorodu",
+    "verified": false,
+    "causes": [
+     "heavy_rain",
+     "construction"
+    ],
+    "cause_quote": "the contractor had been on site and dammed the downstream to allow the construction to go on",
+    "cause_attributed_by": "official",
+    "cause_who": "Tokunbo Wahab, Commissioner for Environment and Water Resources"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     3.591864,
+     6.565579
+    ]
+   },
+   "properties": {
+    "id": "ev-006",
+    "kind": "news_report",
+    "source_id": "guardian-2025-08-05",
+    "source_url": "https://guardian.ng/news/nigeria/metro/ajah-ijede-lekki-others-submerged-after-downpour-in-lagos/",
+    "publisher": "The Guardian NG",
+    "published_at": "2025-08-05T02:09:43+00:00",
+    "observed_at": "2025-08-04T12:00:00+01:00",
+    "time_confidence": "day",
+    "read_status": "read",
+    "quote_check": "not verifiable (publisher blocks automated access)",
+    "depth_note": null,
+    "quote": "Residents of Ijede, Ikorodu, Jakande, Ajah, Okota, Lekki, Ajegunle, and others appeared in viral videos",
+    "location_name": "Ijede",
+    "location_confidence": "neighbourhood",
+    "geocode_method": "nominatim:Ijede, Ikorodu, Lagos",
+    "claim": "Named among areas whose residents appeared in viral flood videos.",
+    "verified": false,
+    "causes": [],
+    "cause_quote": null,
+    "cause_attributed_by": null,
+    "cause_who": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     3.504127,
+     6.619123
+    ]
+   },
+   "properties": {
+    "id": "ev-007",
+    "kind": "news_report",
+    "source_id": "guardian-2025-08-05",
+    "source_url": "https://guardian.ng/news/nigeria/metro/ajah-ijede-lekki-others-submerged-after-downpour-in-lagos/",
+    "publisher": "The Guardian NG",
+    "published_at": "2025-08-05T02:09:43+00:00",
+    "observed_at": "2025-08-04T12:00:00+01:00",
+    "time_confidence": "day",
+    "read_status": "read",
+    "quote_check": "not verifiable (publisher blocks automated access)",
+    "depth_note": null,
+    "quote": "Residents of Ijede, Ikorodu, Jakande, Ajah, Okota, Lekki, Ajegunle, and others appeared in viral videos",
+    "location_name": "Ikorodu",
+    "location_confidence": "lga",
+    "geocode_method": "nominatim:Ikorodu, Lagos",
+    "claim": "Named among areas whose residents appeared in viral flood videos.",
+    "verified": false,
+    "causes": [],
+    "cause_quote": null,
+    "cause_attributed_by": null,
+    "cause_who": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     3.508018,
+     6.434419
+    ]
+   },
+   "properties": {
+    "id": "ev-008",
+    "kind": "news_report",
+    "source_id": "guardian-2025-08-05",
+    "source_url": "https://guardian.ng/news/nigeria/metro/ajah-ijede-lekki-others-submerged-after-downpour-in-lagos/",
+    "publisher": "The Guardian NG",
+    "published_at": "2025-08-05T02:09:43+00:00",
+    "observed_at": "2025-08-04T12:00:00+01:00",
+    "time_confidence": "day",
+    "read_status": "read",
+    "quote_check": "not verifiable (publisher blocks automated access)",
+    "depth_note": null,
+    "quote": "Residents of Ijede, Ikorodu, Jakande, Ajah, Okota, Lekki, Ajegunle, and others appeared in viral videos",
+    "location_name": "Jakande",
+    "location_confidence": "neighbourhood",
+    "geocode_method": "nominatim:Jakande, Eti-Osa, Lagos",
+    "claim": "Named among areas whose residents appeared in viral flood videos.",
+    "verified": false,
+    "causes": [],
+    "cause_quote": null,
+    "cause_attributed_by": null,
+    "cause_who": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     3.562386,
+     6.469472
+    ]
+   },
+   "properties": {
+    "id": "ev-009",
+    "kind": "news_report",
+    "source_id": "guardian-2025-08-05",
+    "source_url": "https://guardian.ng/news/nigeria/metro/ajah-ijede-lekki-others-submerged-after-downpour-in-lagos/",
+    "publisher": "The Guardian NG",
+    "published_at": "2025-08-05T02:09:43+00:00",
+    "observed_at": "2025-08-04T12:00:00+01:00",
+    "time_confidence": "day",
+    "read_status": "read",
+    "quote_check": "not verifiable (publisher blocks automated access)",
+    "depth_note": null,
+    "quote": "Residents of Ijede, Ikorodu, Jakande, Ajah, Okota, Lekki, Ajegunle, and others appeared in viral videos",
+    "location_name": "Ajah",
+    "location_confidence": "neighbourhood",
+    "geocode_method": "nominatim:Ajah, Lagos",
+    "claim": "Named among areas whose residents appeared in viral flood videos.",
+    "verified": false,
+    "causes": [],
+    "cause_quote": null,
+    "cause_attributed_by": null,
+    "cause_who": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     3.312,
+     6.508
+    ]
+   },
+   "properties": {
+    "id": "ev-010",
+    "kind": "news_report",
+    "source_id": "guardian-2025-08-05",
+    "source_url": "https://guardian.ng/news/nigeria/metro/ajah-ijede-lekki-others-submerged-after-downpour-in-lagos/",
+    "publisher": "The Guardian NG",
+    "published_at": "2025-08-05T02:09:43+00:00",
+    "observed_at": "2025-08-04T12:00:00+01:00",
+    "time_confidence": "day",
+    "read_status": "read",
+    "quote_check": "not verifiable (publisher blocks automated access)",
+    "depth_note": null,
+    "quote": "Residents of Ijede, Ikorodu, Jakande, Ajah, Okota, Lekki, Ajegunle, and others appeared in viral videos",
+    "location_name": "Okota",
+    "location_confidence": "neighbourhood",
+    "geocode_method": "manual: neighbourhood centre for Okota, Isolo, Lagos",
+    "claim": "Named among areas whose residents appeared in viral flood videos.",
+    "verified": false,
+    "causes": [],
+    "cause_quote": null,
+    "cause_attributed_by": null,
+    "cause_who": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     3.47047,
+     6.441399
+    ]
+   },
+   "properties": {
+    "id": "ev-011",
+    "kind": "news_report",
+    "source_id": "guardian-2025-08-05",
+    "source_url": "https://guardian.ng/news/nigeria/metro/ajah-ijede-lekki-others-submerged-after-downpour-in-lagos/",
+    "publisher": "The Guardian NG",
+    "published_at": "2025-08-05T02:09:43+00:00",
+    "observed_at": "2025-08-04T12:00:00+01:00",
+    "time_confidence": "day",
+    "read_status": "read",
+    "quote_check": "not verifiable (publisher blocks automated access)",
+    "depth_note": null,
+    "quote": "Residents of Ijede, Ikorodu, Jakande, Ajah, Okota, Lekki, Ajegunle, and others appeared in viral videos",
+    "location_name": "Lekki",
+    "location_confidence": "lga",
+    "geocode_method": "nominatim:Lekki, Eti-Osa, Lagos",
+    "claim": "Named among areas whose residents appeared in viral flood videos.",
+    "verified": false,
+    "causes": [],
+    "cause_quote": null,
+    "cause_attributed_by": null,
+    "cause_who": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     3.591864,
+     6.565579
+    ]
+   },
+   "properties": {
+    "id": "ev-012",
+    "kind": "news_report",
+    "source_id": "channelstv-2025-08-04",
+    "source_url": "https://www.channelstv.com/2025/08/04/lagos-communities-flooded-vehicles-submerged-after-marathon-rainfall/",
+    "publisher": "Channels TV",
+    "published_at": "2025-08-04T18:57:17+00:00",
+    "observed_at": "2025-08-04T12:00:00+01:00",
+    "time_confidence": "day",
+    "read_status": "read",
+    "quote_check": "not verifiable (publisher blocks automated access)",
+    "location_name": "Ijede, Ikorodu",
+    "location_confidence": "neighbourhood",
+    "geocode_method": "nominatim:Ijede, Ikorodu, Lagos",
+    "claim": "Viral videos: houses and vehicles submerged after Sunday-night to Monday rain.",
+    "depth_note": "houses and vehicles submerged",
+    "quote": "Viral videos showed submerged houses and vehicles in Ijede in the Ikorodu area of the state.",
+    "verified": false,
+    "causes": [
+     "heavy_rain"
+    ],
+    "cause_quote": "Lagos communities flooded, vehicles submerged after marathon rainfall",
+    "cause_attributed_by": "journalist",
+    "cause_who": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     3.47047,
+     6.441399
+    ]
+   },
+   "properties": {
+    "id": "ev-013",
+    "kind": "news_report",
+    "source_id": "channelstv-2025-08-04",
+    "source_url": "https://www.channelstv.com/2025/08/04/lagos-communities-flooded-vehicles-submerged-after-marathon-rainfall/",
+    "publisher": "Channels TV",
+    "published_at": "2025-08-04T18:57:17+00:00",
+    "observed_at": "2025-08-04T12:00:00+01:00",
+    "time_confidence": "day",
+    "read_status": "read",
+    "quote_check": "not verifiable (publisher blocks automated access)",
+    "location_name": "Lekki",
+    "location_confidence": "lga",
+    "geocode_method": "nominatim:Lekki, Eti-Osa, Lagos",
+    "claim": "Named among coastal/flood-prone areas not spared on Monday.",
+    "depth_note": null,
+    "quote": "Coastal and flood-prone areas like Lekki, parts of Eti-Osa, Ajegunle, Agege, Surulere, and Alimosho",
+    "verified": false,
+    "causes": [],
+    "cause_quote": null,
+    "cause_attributed_by": null,
+    "cause_who": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     3.5,
+     6.44
+    ]
+   },
+   "properties": {
+    "id": "ev-014",
+    "kind": "news_report",
+    "source_id": "channelstv-2025-08-04",
+    "source_url": "https://www.channelstv.com/2025/08/04/lagos-communities-flooded-vehicles-submerged-after-marathon-rainfall/",
+    "publisher": "Channels TV",
+    "published_at": "2025-08-04T18:57:17+00:00",
+    "observed_at": "2025-08-04T12:00:00+01:00",
+    "time_confidence": "day",
+    "read_status": "read",
+    "quote_check": "not verifiable (publisher blocks automated access)",
+    "location_name": "parts of Eti-Osa",
+    "location_confidence": "lga",
+    "geocode_method": "manual: Eti-Osa LGA / Lekki peninsula centre",
+    "claim": "Named among coastal/flood-prone areas not spared on Monday.",
+    "depth_note": null,
+    "quote": "Coastal and flood-prone areas like Lekki, parts of Eti-Osa, Ajegunle, Agege, Surulere, and Alimosho",
+    "verified": false,
+    "causes": [],
+    "cause_quote": null,
+    "cause_attributed_by": null,
+    "cause_who": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     3.33351,
+     6.448156
+    ]
+   },
+   "properties": {
+    "id": "ev-015",
+    "kind": "news_report",
+    "source_id": "channelstv-2025-08-04",
+    "source_url": "https://www.channelstv.com/2025/08/04/lagos-communities-flooded-vehicles-submerged-after-marathon-rainfall/",
+    "publisher": "Channels TV",
+    "published_at": "2025-08-04T18:57:17+00:00",
+    "observed_at": "2025-08-04T12:00:00+01:00",
+    "time_confidence": "day",
+    "read_status": "read",
+    "quote_check": "not verifiable (publisher blocks automated access)",
+    "location_name": "Ajegunle",
+    "location_confidence": "neighbourhood",
+    "geocode_method": "nominatim:Ajegunle, Ajeromi, Lagos",
+    "claim": "Named among areas not spared; grouped with Eti-Osa, Agege, Surulere, Alimosho.",
+    "depth_note": null,
+    "quote": "Coastal and flood-prone areas like Lekki, parts of Eti-Osa, Ajegunle, Agege, Surulere, and Alimosho",
+    "verified": false,
+    "causes": [],
+    "cause_quote": null,
+    "cause_attributed_by": null,
+    "cause_who": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     3.320339,
+     6.622916
+    ]
+   },
+   "properties": {
+    "id": "ev-016",
+    "kind": "news_report",
+    "source_id": "channelstv-2025-08-04",
+    "source_url": "https://www.channelstv.com/2025/08/04/lagos-communities-flooded-vehicles-submerged-after-marathon-rainfall/",
+    "publisher": "Channels TV",
+    "published_at": "2025-08-04T18:57:17+00:00",
+    "observed_at": "2025-08-04T12:00:00+01:00",
+    "time_confidence": "day",
+    "read_status": "read",
+    "quote_check": "not verifiable (publisher blocks automated access)",
+    "location_name": "Agege",
+    "location_confidence": "lga",
+    "geocode_method": "nominatim:Agege, Lagos",
+    "claim": "Named among local governments not spared on Monday.",
+    "depth_note": null,
+    "quote": "Coastal and flood-prone areas like Lekki, parts of Eti-Osa, Ajegunle, Agege, Surulere, and Alimosho",
+    "verified": false,
+    "causes": [],
+    "cause_quote": null,
+    "cause_attributed_by": null,
+    "cause_who": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     3.357116,
+     6.500803
+    ]
+   },
+   "properties": {
+    "id": "ev-017",
+    "kind": "news_report",
+    "source_id": "channelstv-2025-08-04",
+    "source_url": "https://www.channelstv.com/2025/08/04/lagos-communities-flooded-vehicles-submerged-after-marathon-rainfall/",
+    "publisher": "Channels TV",
+    "published_at": "2025-08-04T18:57:17+00:00",
+    "observed_at": "2025-08-04T12:00:00+01:00",
+    "time_confidence": "day",
+    "read_status": "read",
+    "quote_check": "not verifiable (publisher blocks automated access)",
+    "location_name": "Surulere",
+    "location_confidence": "lga",
+    "geocode_method": "nominatim:Surulere, Lagos",
+    "claim": "Named among local governments not spared on Monday.",
+    "depth_note": null,
+    "quote": "Coastal and flood-prone areas like Lekki, parts of Eti-Osa, Ajegunle, Agege, Surulere, and Alimosho",
+    "verified": false,
+    "causes": [],
+    "cause_quote": null,
+    "cause_attributed_by": null,
+    "cause_who": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     3.278232,
+     6.630026
+    ]
+   },
+   "properties": {
+    "id": "ev-018",
+    "kind": "news_report",
+    "source_id": "channelstv-2025-08-04",
+    "source_url": "https://www.channelstv.com/2025/08/04/lagos-communities-flooded-vehicles-submerged-after-marathon-rainfall/",
+    "publisher": "Channels TV",
+    "published_at": "2025-08-04T18:57:17+00:00",
+    "observed_at": "2025-08-04T12:00:00+01:00",
+    "time_confidence": "day",
+    "read_status": "read",
+    "quote_check": "not verifiable (publisher blocks automated access)",
+    "location_name": "Alimosho",
+    "location_confidence": "lga",
+    "geocode_method": "nominatim:Alimosho, Lagos",
+    "claim": "Named among local governments not spared on Monday.",
+    "depth_note": null,
+    "quote": "Coastal and flood-prone areas like Lekki, parts of Eti-Osa, Ajegunle, Agege, Surulere, and Alimosho",
+    "verified": false,
+    "causes": [],
+    "cause_quote": null,
+    "cause_attributed_by": null,
+    "cause_who": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     3.591864,
+     6.565579
+    ]
+   },
+   "properties": {
+    "id": "ev-019",
+    "kind": "news_report",
+    "source_id": "vanguard-2025-08-30",
+    "source_url": "https://www.vanguardngr.com/2025/08/ijede-ikorodu-flood-victims-get-relief-materials/",
+    "publisher": "Vanguard",
+    "published_at": "2025-08-29T23:01:00+00:00",
+    "observed_at": "2025-08-04T12:00:00+01:00",
+    "time_confidence": "day",
+    "location_name": "Ijede, Ikorodu",
+    "location_confidence": "neighbourhood",
+    "geocode_method": "nominatim:Ijede, Ikorodu, Lagos",
+    "claim": "Flood on 4 August displaced families; property and livelihoods destroyed.",
+    "depth_note": null,
+    "quote": "The devastating flood, which occurred on 4th August 2025, left many families displaced",
+    "read_status": "read",
+    "quote_check": "verbatim match on source page (one quote per publisher spot-checked)",
+    "verified": false,
+    "causes": [],
+    "cause_quote": null,
+    "cause_attributed_by": null,
+    "cause_who": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     3.504127,
+     6.619123
+    ]
+   },
+   "properties": {
+    "id": "ev-020",
+    "kind": "official_statement",
+    "source_id": "guardian-2025-08-08",
+    "source_url": "https://guardian.ng/news/nigeria/metro/lasg-officials-inspect-ikorodu-drainage-project-allay-residents-fear-on-flash-flooding/",
+    "publisher": "The Guardian NG",
+    "published_at": "2025-08-08T00:30:01+00:00",
+    "observed_at": "2025-08-04T12:00:00+01:00",
+    "time_confidence": "day",
+    "read_status": "read",
+    "quote_check": "not verifiable (publisher blocks automated access)",
+    "location_name": "Ikorodu",
+    "location_confidence": "lga",
+    "geocode_method": "nominatim:Ikorodu, Lagos",
+    "claim": "Officials visited after flash flood following over 13 hours of rain.",
+    "depth_note": null,
+    "quote": "visited and sympathised with residents of Ikorodu who were affected by the recent flash flood after over 13 hours of rainfall",
+    "verified": false,
+    "causes": [
+     "heavy_rain"
+    ],
+    "cause_quote": "affected by the recent flash flood after over 13 hours of rainfall",
+    "cause_attributed_by": "official",
+    "cause_who": "Lagos State Government officials"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     3.591864,
+     6.565579
+    ]
+   },
+   "properties": {
+    "id": "ev-021",
+    "kind": "official_statement",
+    "source_id": "guardian-2025-08-08",
+    "source_url": "https://guardian.ng/news/nigeria/metro/lasg-officials-inspect-ikorodu-drainage-project-allay-residents-fear-on-flash-flooding/",
+    "publisher": "The Guardian NG",
+    "published_at": "2025-08-08T00:30:01+00:00",
+    "observed_at": "2025-08-04T12:00:00+01:00",
+    "time_confidence": "day",
+    "read_status": "read",
+    "quote_check": "not verifiable (publisher blocks automated access)",
+    "location_name": "Ijede",
+    "location_confidence": "neighbourhood",
+    "geocode_method": "nominatim:Ijede, Ikorodu, Lagos",
+    "claim": "Inspection covered Ijede; flooding in last 48 hours named.",
+    "depth_note": null,
+    "quote": "permanently provide a lasting solution to flash flooding the residents of Ijede experienced in the last 48 hours",
+    "verified": false,
+    "causes": [
+     "heavy_rain"
+    ],
+    "cause_quote": "affected by the recent flash flood after over 13 hours of rainfall",
+    "cause_attributed_by": "official",
+    "cause_who": "Lagos State Government officials"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     3.621797,
+     6.601219
+    ]
+   },
+   "properties": {
+    "id": "ev-022",
+    "kind": "official_statement",
+    "source_id": "guardian-2025-08-08",
+    "source_url": "https://guardian.ng/news/nigeria/metro/lasg-officials-inspect-ikorodu-drainage-project-allay-residents-fear-on-flash-flooding/",
+    "publisher": "The Guardian NG",
+    "published_at": "2025-08-08T00:30:01+00:00",
+    "observed_at": "2025-08-04T12:00:00+01:00",
+    "time_confidence": "day",
+    "read_status": "read",
+    "quote_check": "not verifiable (publisher blocks automated access)",
+    "location_name": "Gberigbe",
+    "location_confidence": "neighbourhood",
+    "geocode_method": "nominatim:Gberigbe, Ikorodu, Lagos",
+    "claim": "Officials toured Ijede, Gberigbe and environs after the flood.",
+    "depth_note": null,
+    "quote": "tour to Ijede, Gberigbe and environs, yesterday",
+    "verified": false,
+    "causes": [
+     "heavy_rain"
+    ],
+    "cause_quote": "affected by the recent flash flood after over 13 hours of rainfall",
+    "cause_attributed_by": "official",
+    "cause_who": "Lagos State Government officials"
+   }
+  }
+ ]
+}

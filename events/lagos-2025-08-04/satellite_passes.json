@@ -1,0 +1,389 @@
+{
+  "meta": {
+    "source_url": [
+      "https://catalogue.dataspace.copernicus.eu/odata/v1/Products?$filter=Collection/Name%20eq%20%27SENTINEL-1%27%20and%20contains%28Name%2C%27GRDH%27%29%20and%20OData.CSC.Intersects%28area%3Dgeography%27SRID%3D4326%3BPOLYGON%28%282.7%206.38%2C4.35%206.38%2C4.35%206.75%2C2.7%206.75%2C2.7%206.38%29%29%27%29%20and%20ContentDate/Start%20ge%202025-07-13T23%3A00%3A00.000Z%20and%20ContentDate/Start%20le%202025-08-24T23%3A00%3A00.000Z&$expand=Attributes&$orderby=ContentDate/Start&$top=100&$skip=0",
+      "https://catalogue.dataspace.copernicus.eu/odata/v1/Products?$filter=Collection/Name%20eq%20%27SENTINEL-2%27%20and%20contains%28Name%2C%27L2A%27%29%20and%20OData.CSC.Intersects%28area%3Dgeography%27SRID%3D4326%3BPOLYGON%28%282.7%206.38%2C4.35%206.38%2C4.35%206.75%2C2.7%206.75%2C2.7%206.38%29%29%27%29%20and%20ContentDate/Start%20ge%202025-07-13T23%3A00%3A00.000Z%20and%20ContentDate/Start%20le%202025-08-24T23%3A00%3A00.000Z&$expand=Attributes&$orderby=ContentDate/Start&$top=100&$skip=0"
+    ],
+    "retrieved_at": "2026-10-17T17:44:14Z",
+    "units": {
+      "cloud_cover": "percent"
+    },
+    "licence": "free/open",
+    "window_extended": {
+      "start": "2025-07-13T23:00:00.000Z",
+      "end": "2025-08-24T23:00:00.000Z"
+    },
+    "record_count": 42
+  },
+  "products": [
+    {
+      "name": "S1A_IW_GRDH_1SDV_20250715T180200_20250715T180225_060098_07778B_4812.SAFE",
+      "acquisition_start_utc": "2025-07-15T18:02:00Z",
+      "acquisition_start_local": "2025-07-15T19:02:00+01:00",
+      "platform": "S1A",
+      "relative_orbit": 1,
+      "collection": "SENTINEL-1"
+    },
+    {
+      "name": "S2C_MSIL2A_20250718T100051_N0511_R122_T31NDH_20250718T151314.SAFE",
+      "acquisition_start_utc": "2025-07-18T10:00:51Z",
+      "acquisition_start_local": "2025-07-18T11:00:51+01:00",
+      "platform": "S2C",
+      "relative_orbit": 122,
+      "cloud_cover": 62.36847,
+      "collection": "SENTINEL-2"
+    },
+    {
+      "name": "S2C_MSIL2A_20250718T100051_N0511_R122_T31NFH_20250718T151314.SAFE",
+      "acquisition_start_utc": "2025-07-18T10:00:51Z",
+      "acquisition_start_local": "2025-07-18T11:00:51+01:00",
+      "platform": "S2C",
+      "relative_orbit": 122,
+      "cloud_cover": 67.84718,
+      "collection": "SENTINEL-2"
+    },
+    {
+      "name": "S2C_MSIL2A_20250718T100051_N0511_R122_T31NEH_20250718T151314.SAFE",
+      "acquisition_start_utc": "2025-07-18T10:00:51Z",
+      "acquisition_start_local": "2025-07-18T11:00:51+01:00",
+      "platform": "S2C",
+      "relative_orbit": 122,
+      "cloud_cover": 70.8363,
+      "collection": "SENTINEL-2"
+    },
+    {
+      "name": "S2A_MSIL2A_20250720T100051_N0511_R122_T31NEH_20250720T150115.SAFE",
+      "acquisition_start_utc": "2025-07-20T10:00:51Z",
+      "acquisition_start_local": "2025-07-20T11:00:51+01:00",
+      "platform": "S2A",
+      "relative_orbit": 122,
+      "cloud_cover": 97.160953,
+      "collection": "SENTINEL-2"
+    },
+    {
+      "name": "S2A_MSIL2A_20250720T100051_N0511_R122_T31NDH_20250720T150115.SAFE",
+      "acquisition_start_utc": "2025-07-20T10:00:51Z",
+      "acquisition_start_local": "2025-07-20T11:00:51+01:00",
+      "platform": "S2A",
+      "relative_orbit": 122,
+      "cloud_cover": 88.67628,
+      "collection": "SENTINEL-2"
+    },
+    {
+      "name": "S2A_MSIL2A_20250720T100051_N0511_R122_T31NFH_20250720T150115.SAFE",
+      "acquisition_start_utc": "2025-07-20T10:00:51Z",
+      "acquisition_start_local": "2025-07-20T11:00:51+01:00",
+      "platform": "S2A",
+      "relative_orbit": 122,
+      "cloud_cover": 95.056343,
+      "collection": "SENTINEL-2"
+    },
+    {
+      "name": "S1A_IW_GRDH_1SDV_20250722T053008_20250722T053037_060192_077ACA_716F.SAFE",
+      "acquisition_start_utc": "2025-07-22T05:30:08Z",
+      "acquisition_start_local": "2025-07-22T06:30:08+01:00",
+      "platform": "S1A",
+      "relative_orbit": 95,
+      "collection": "SENTINEL-1"
+    },
+    {
+      "name": "S1A_IW_GRDH_1SDV_20250722T175348_20250722T175413_060200_077B08_CADD.SAFE",
+      "acquisition_start_utc": "2025-07-22T17:53:48Z",
+      "acquisition_start_local": "2025-07-22T18:53:48+01:00",
+      "platform": "S1A",
+      "relative_orbit": 103,
+      "collection": "SENTINEL-1"
+    },
+    {
+      "name": "S2C_MSIL2A_20250728T100051_N0511_R122_T31NFH_20250728T151304.SAFE",
+      "acquisition_start_utc": "2025-07-28T10:00:51Z",
+      "acquisition_start_local": "2025-07-28T11:00:51+01:00",
+      "platform": "S2C",
+      "relative_orbit": 122,
+      "cloud_cover": 99.338436,
+      "collection": "SENTINEL-2"
+    },
+    {
+      "name": "S2C_MSIL2A_20250728T100051_N0511_R122_T31NEH_20250728T151304.SAFE",
+      "acquisition_start_utc": "2025-07-28T10:00:51Z",
+      "acquisition_start_local": "2025-07-28T11:00:51+01:00",
+      "platform": "S2C",
+      "relative_orbit": 122,
+      "cloud_cover": 99.980587,
+      "collection": "SENTINEL-2"
+    },
+    {
+      "name": "S2C_MSIL2A_20250728T100051_N0511_R122_T31NDH_20250728T151304.SAFE",
+      "acquisition_start_utc": "2025-07-28T10:00:51Z",
+      "acquisition_start_local": "2025-07-28T11:00:51+01:00",
+      "platform": "S2C",
+      "relative_orbit": 122,
+      "cloud_cover": 99.926263,
+      "collection": "SENTINEL-2"
+    },
+    {
+      "name": "S2A_MSIL2A_20250730T101551_N0511_R122_T31NFH_20250730T162320.SAFE",
+      "acquisition_start_utc": "2025-07-30T10:15:51Z",
+      "acquisition_start_local": "2025-07-30T11:15:51+01:00",
+      "platform": "S2A",
+      "relative_orbit": 122,
+      "cloud_cover": 99.930429,
+      "collection": "SENTINEL-2"
+    },
+    {
+      "name": "S2A_MSIL2A_20250730T101551_N0511_R122_T31NDH_20250730T162320.SAFE",
+      "acquisition_start_utc": "2025-07-30T10:15:51Z",
+      "acquisition_start_local": "2025-07-30T11:15:51+01:00",
+      "platform": "S2A",
+      "relative_orbit": 122,
+      "cloud_cover": 95.278561,
+      "collection": "SENTINEL-2"
+    },
+    {
+      "name": "S2A_MSIL2A_20250730T101551_N0511_R122_T31NEH_20250730T162320.SAFE",
+      "acquisition_start_utc": "2025-07-30T10:15:51Z",
+      "acquisition_start_local": "2025-07-30T11:15:51+01:00",
+      "platform": "S2A",
+      "relative_orbit": 122,
+      "cloud_cover": 100.0,
+      "collection": "SENTINEL-2"
+    },
+    {
+      "name": "S2B_MSIL2A_20250802T100029_N0511_R122_T31NDH_20250802T123657.SAFE",
+      "acquisition_start_utc": "2025-08-02T10:00:29Z",
+      "acquisition_start_local": "2025-08-02T11:00:29+01:00",
+      "platform": "S2B",
+      "relative_orbit": 122,
+      "cloud_cover": 22.154373,
+      "collection": "SENTINEL-2"
+    },
+    {
+      "name": "S2B_MSIL2A_20250802T100029_N0511_R122_T31NEH_20250802T123657.SAFE",
+      "acquisition_start_utc": "2025-08-02T10:00:29Z",
+      "acquisition_start_local": "2025-08-02T11:00:29+01:00",
+      "platform": "S2B",
+      "relative_orbit": 122,
+      "cloud_cover": 48.227757,
+      "collection": "SENTINEL-2"
+    },
+    {
+      "name": "S2B_MSIL2A_20250802T100029_N0511_R122_T31NFH_20250802T123657.SAFE",
+      "acquisition_start_utc": "2025-08-02T10:00:29Z",
+      "acquisition_start_local": "2025-08-02T11:00:29+01:00",
+      "platform": "S2B",
+      "relative_orbit": 122,
+      "cloud_cover": 90.729445,
+      "collection": "SENTINEL-2"
+    },
+    {
+      "name": "S1A_IW_GRDH_1SDV_20250803T053008_20250803T053037_060367_0780CE_92E2.SAFE",
+      "acquisition_start_utc": "2025-08-03T05:30:08Z",
+      "acquisition_start_local": "2025-08-03T06:30:08+01:00",
+      "platform": "S1A",
+      "relative_orbit": 95,
+      "collection": "SENTINEL-1"
+    },
+    {
+      "name": "S1A_IW_GRDH_1SDV_20250803T175348_20250803T175413_060375_078110_1CAC.SAFE",
+      "acquisition_start_utc": "2025-08-03T17:53:48Z",
+      "acquisition_start_local": "2025-08-03T18:53:48+01:00",
+      "platform": "S1A",
+      "relative_orbit": 103,
+      "collection": "SENTINEL-1"
+    },
+    {
+      "name": "S2C_MSIL2A_20250807T100041_N0511_R122_T31NDH_20250807T133916.SAFE",
+      "acquisition_start_utc": "2025-08-07T10:00:41Z",
+      "acquisition_start_local": "2025-08-07T11:00:41+01:00",
+      "platform": "S2C",
+      "relative_orbit": 122,
+      "cloud_cover": 99.995482,
+      "collection": "SENTINEL-2"
+    },
+    {
+      "name": "S2C_MSIL2A_20250807T100041_N0511_R122_T31NEH_20250807T133916.SAFE",
+      "acquisition_start_utc": "2025-08-07T10:00:41Z",
+      "acquisition_start_local": "2025-08-07T11:00:41+01:00",
+      "platform": "S2C",
+      "relative_orbit": 122,
+      "cloud_cover": 99.917901,
+      "collection": "SENTINEL-2"
+    },
+    {
+      "name": "S2C_MSIL2A_20250807T100041_N0511_R122_T31NFH_20250807T133916.SAFE",
+      "acquisition_start_utc": "2025-08-07T10:00:41Z",
+      "acquisition_start_local": "2025-08-07T11:00:41+01:00",
+      "platform": "S2C",
+      "relative_orbit": 122,
+      "cloud_cover": 99.806523,
+      "collection": "SENTINEL-2"
+    },
+    {
+      "name": "S1A_IW_GRDH_1SDV_20250808T180200_20250808T180225_060448_0783C0_99C5.SAFE",
+      "acquisition_start_utc": "2025-08-08T18:02:00Z",
+      "acquisition_start_local": "2025-08-08T19:02:00+01:00",
+      "platform": "S1A",
+      "relative_orbit": 1,
+      "collection": "SENTINEL-1"
+    },
+    {
+      "name": "S2A_MSIL2A_20250809T100041_N0511_R122_T31NEH_20250809T150513.SAFE",
+      "acquisition_start_utc": "2025-08-09T10:00:41Z",
+      "acquisition_start_local": "2025-08-09T11:00:41+01:00",
+      "platform": "S2A",
+      "relative_orbit": 122,
+      "cloud_cover": 99.137825,
+      "collection": "SENTINEL-2"
+    },
+    {
+      "name": "S2A_MSIL2A_20250809T100041_N0511_R122_T31NDH_20250809T150513.SAFE",
+      "acquisition_start_utc": "2025-08-09T10:00:41Z",
+      "acquisition_start_local": "2025-08-09T11:00:41+01:00",
+      "platform": "S2A",
+      "relative_orbit": 122,
+      "cloud_cover": 99.935353,
+      "collection": "SENTINEL-2"
+    },
+    {
+      "name": "S2A_MSIL2A_20250809T100041_N0511_R122_T31NFH_20250809T150513.SAFE",
+      "acquisition_start_utc": "2025-08-09T10:00:41Z",
+      "acquisition_start_local": "2025-08-09T11:00:41+01:00",
+      "platform": "S2A",
+      "relative_orbit": 122,
+      "cloud_cover": 99.838871,
+      "collection": "SENTINEL-2"
+    },
+    {
+      "name": "S2B_MSIL2A_20250812T100029_N0511_R122_T31NDH_20250812T152636.SAFE",
+      "acquisition_start_utc": "2025-08-12T10:00:29Z",
+      "acquisition_start_local": "2025-08-12T11:00:29+01:00",
+      "platform": "S2B",
+      "relative_orbit": 122,
+      "cloud_cover": 97.831249,
+      "collection": "SENTINEL-2"
+    },
+    {
+      "name": "S2B_MSIL2A_20250812T100029_N0511_R122_T31NEH_20250812T152636.SAFE",
+      "acquisition_start_utc": "2025-08-12T10:00:29Z",
+      "acquisition_start_local": "2025-08-12T11:00:29+01:00",
+      "platform": "S2B",
+      "relative_orbit": 122,
+      "cloud_cover": 99.782604,
+      "collection": "SENTINEL-2"
+    },
+    {
+      "name": "S2B_MSIL2A_20250812T100029_N0511_R122_T31NFH_20250812T152636.SAFE",
+      "acquisition_start_utc": "2025-08-12T10:00:29Z",
+      "acquisition_start_local": "2025-08-12T11:00:29+01:00",
+      "platform": "S2B",
+      "relative_orbit": 122,
+      "cloud_cover": 99.979758,
+      "collection": "SENTINEL-2"
+    },
+    {
+      "name": "S1A_IW_GRDH_1SDV_20250815T053008_20250815T053037_060542_07877B_8CA8.SAFE",
+      "acquisition_start_utc": "2025-08-15T05:30:08Z",
+      "acquisition_start_local": "2025-08-15T06:30:08+01:00",
+      "platform": "S1A",
+      "relative_orbit": 95,
+      "collection": "SENTINEL-1"
+    },
+    {
+      "name": "S1A_IW_GRDH_1SDV_20250815T175348_20250815T175413_060550_0787C8_D8BA.SAFE",
+      "acquisition_start_utc": "2025-08-15T17:53:48Z",
+      "acquisition_start_local": "2025-08-15T18:53:48+01:00",
+      "platform": "S1A",
+      "relative_orbit": 103,
+      "collection": "SENTINEL-1"
+    },
+    {
+      "name": "S2C_MSIL2A_20250817T100051_N0511_R122_T31NFH_20250817T163112.SAFE",
+      "acquisition_start_utc": "2025-08-17T10:00:51Z",
+      "acquisition_start_local": "2025-08-17T11:00:51+01:00",
+      "platform": "S2C",
+      "relative_orbit": 122,
+      "cloud_cover": 93.721944,
+      "collection": "SENTINEL-2"
+    },
+    {
+      "name": "S2C_MSIL2A_20250817T100051_N0511_R122_T31NEH_20250817T163112.SAFE",
+      "acquisition_start_utc": "2025-08-17T10:00:51Z",
+      "acquisition_start_local": "2025-08-17T11:00:51+01:00",
+      "platform": "S2C",
+      "relative_orbit": 122,
+      "cloud_cover": 84.099245,
+      "collection": "SENTINEL-2"
+    },
+    {
+      "name": "S2C_MSIL2A_20250817T100051_N0511_R122_T31NDH_20250817T163112.SAFE",
+      "acquisition_start_utc": "2025-08-17T10:00:51Z",
+      "acquisition_start_local": "2025-08-17T11:00:51+01:00",
+      "platform": "S2C",
+      "relative_orbit": 122,
+      "cloud_cover": 88.945156,
+      "collection": "SENTINEL-2"
+    },
+    {
+      "name": "S2A_MSIL2A_20250819T101551_N0511_R122_T31NEH_20250819T150312.SAFE",
+      "acquisition_start_utc": "2025-08-19T10:15:51Z",
+      "acquisition_start_local": "2025-08-19T11:15:51+01:00",
+      "platform": "S2A",
+      "relative_orbit": 122,
+      "cloud_cover": 98.21651,
+      "collection": "SENTINEL-2"
+    },
+    {
+      "name": "S2A_MSIL2A_20250819T101551_N0511_R122_T31NDH_20250819T150312.SAFE",
+      "acquisition_start_utc": "2025-08-19T10:15:51Z",
+      "acquisition_start_local": "2025-08-19T11:15:51+01:00",
+      "platform": "S2A",
+      "relative_orbit": 122,
+      "cloud_cover": 98.509461,
+      "collection": "SENTINEL-2"
+    },
+    {
+      "name": "S2A_MSIL2A_20250819T101551_N0511_R122_T31NFH_20250819T150312.SAFE",
+      "acquisition_start_utc": "2025-08-19T10:15:51Z",
+      "acquisition_start_local": "2025-08-19T11:15:51+01:00",
+      "platform": "S2A",
+      "relative_orbit": 122,
+      "cloud_cover": 95.877904,
+      "collection": "SENTINEL-2"
+    },
+    {
+      "name": "S1A_IW_GRDH_1SDV_20250820T180200_20250820T180225_060623_078AA4_4B4F.SAFE",
+      "acquisition_start_utc": "2025-08-20T18:02:00Z",
+      "acquisition_start_local": "2025-08-20T19:02:00+01:00",
+      "platform": "S1A",
+      "relative_orbit": 1,
+      "collection": "SENTINEL-1"
+    },
+    {
+      "name": "S2B_MSIL2A_20250822T100029_N0511_R122_T31NDH_20250822T122801.SAFE",
+      "acquisition_start_utc": "2025-08-22T10:00:29Z",
+      "acquisition_start_local": "2025-08-22T11:00:29+01:00",
+      "platform": "S2B",
+      "relative_orbit": 122,
+      "cloud_cover": 99.206734,
+      "collection": "SENTINEL-2"
+    },
+    {
+      "name": "S2B_MSIL2A_20250822T100029_N0511_R122_T31NFH_20250822T122801.SAFE",
+      "acquisition_start_utc": "2025-08-22T10:00:29Z",
+      "acquisition_start_local": "2025-08-22T11:00:29+01:00",
+      "platform": "S2B",
+      "relative_orbit": 122,
+      "cloud_cover": 91.537511,
+      "collection": "SENTINEL-2"
+    },
+    {
+      "name": "S2B_MSIL2A_20250822T100029_N0511_R122_T31NEH_20250822T122801.SAFE",
+      "acquisition_start_utc": "2025-08-22T10:00:29Z",
+      "acquisition_start_local": "2025-08-22T11:00:29+01:00",
+      "platform": "S2B",
+      "relative_orbit": 122,
+      "cloud_cover": 93.209219,
+      "collection": "SENTINEL-2"
+    }
+  ]
+}

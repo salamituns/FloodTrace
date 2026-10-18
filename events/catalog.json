@@ -1,0 +1,98 @@
+{
+ "events": [
+  {
+   "id": "lagos-2024-07-03",
+   "name": "Lagos Flash Flood",
+   "date": "2024-07-03",
+   "areas": [
+    "Apapa",
+    "Iyana-Oworo",
+    "Oshodi",
+    "Lekki",
+    "Ibeju-Lekki"
+   ],
+   "status": "in-progress",
+   "headline": "Intense morning core over Apapa/Mile 2; 62 media reports; radar pass during rain",
+   "built": true
+  },
+  {
+   "id": "lagos-2011-07-10",
+   "name": "Lagos Flood 2011",
+   "date": "2011-07-10",
+   "areas": [
+    "Ikoyi",
+    "Victoria Island",
+    "Apapa",
+    "Lekki",
+    "Ogba",
+    "Agege"
+   ],
+   "status": "in-progress",
+   "headline": "~16 h of rain, two 44–46 mm/h cores (IMERG); morning core on a rising tide; 20–25 deaths (NEMA, Vanguard). #1 in rainfall scan",
+   "built": true
+  },
+  {
+   "id": "lagos-2022-07-08",
+   "name": "Alimosho Flood 2022",
+   "date": "2022-07-08",
+   "areas": [
+    "Alimosho",
+    "Oke Isagun",
+    "Agbado Oke"
+   ],
+   "status": "in-progress",
+   "built": true,
+   "headline": "Two days of citywide rain on wet ground (AOI 70 + 41 mm); cores at high tide; NEMA: seven dead in Alimosho. pwr #2"
+  },
+  {
+   "id": "lagos-2025-08-04",
+   "name": "Lagos Flood Aug 2025",
+   "date": "2025-08-04",
+   "areas": [
+    "Ijede",
+    "Agric",
+    "Ikorodu"
+   ],
+   "status": "in-progress",
+   "built": true,
+   "headline": "~13 h overnight rain, 120–160 mm Lekki/Island/Ikorodu; peak on a weak high tide. Homes submerged in Ijede/Ikorodu. pwr #21"
+  },
+  {
+   "id": "lagos-2017-07-08",
+   "name": "Lekki/VI Flood 2017",
+   "date": "2017-07-08",
+   "areas": [
+    "Lekki",
+    "Victoria Island"
+   ],
+   "status": "likely",
+   "built": false,
+   "headline": "Street flooding in Lekki/VI on Sat 8 Jul (CNN), two days after the IMERG candidate. Rank #20"
+  },
+  {
+   "id": "lagos-2021-07-16",
+   "name": "Lagos Island Flood 2021",
+   "date": "2021-07-16",
+   "areas": [
+    "Marina",
+    "Lagos Island",
+    "Lekki",
+    "Jakande",
+    "Ajah"
+   ],
+   "status": "in-progress",
+   "built": true,
+   "headline": "~12 h rain, 90–105 mm citywide; peak on a falling tide. Marina, Lekki, Ajah flooded. NiMet gauges for validation. pwr #25"
+  }
+ ],
+ "review": {
+  "source": "events/catalog_review.json",
+  "reviewed": 30,
+  "pwr_top25": {
+   "confirmed": 5,
+   "likely": 1,
+   "no_flood_report": 18,
+   "known_event": 1
+  }
+ }
+}

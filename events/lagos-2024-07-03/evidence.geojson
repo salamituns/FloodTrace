@@ -1,0 +1,2292 @@
+{
+  "type": "FeatureCollection",
+  "meta": {
+    "compiled_at": "2026-10-17T20:34:35Z",
+    "method": "Read named sources; one point per (source, location); Nominatim geocode inside AOI bbox, 1 req/s; manual neighbourhood centre only if Nominatim missed.",
+    "notes": "Quotes are verbatim excerpts ≤ 25 words. Ifo, Ogun (TheCable) omitted — outside AOI. Punch dates the 10-hour rain Wednesday 4 July as published; ThisDay/BBC/Channels describe Wednesday 3 July. No locations, times or quotes were inferred beyond the text.",
+    "unresolved": [],
+    "bbox": [
+      2.7,
+      6.38,
+      4.35,
+      6.75
+    ],
+    "feature_count": 64,
+    "review": {
+      "reviewed_at": "2026-10-17",
+      "by": "Claude (lead agent)",
+      "notes": "Quotes verified verbatim for Vanguard, ThisDay, Daily Trust, BBC Pidgin, Daily Post, Punch; TheCable unverifiable (blocked, no archive). Geocoder matched street names over places (Majek, Abijo, Lekki); corrections are marked \"review:\" in geocode_method. Corrections matched by location_name after IDs were renumbered by a concurrent re-run."
+    },
+    "citywide_cause_statements": [
+      {
+        "source_id": "thisday-2024-07-03",
+        "url": "https://www.thisdaylive.com/index.php/2024/07/03/torrential-rain-causes-widespread-flooding-in-lagos/",
+        "who": null,
+        "date": "2024-07-03",
+        "causes": [
+          "heavy_rain"
+        ],
+        "cause_quote": "Torrential Rain Causes Widespread Flooding in Lagos",
+        "cause_attributed_by": "journalist"
+      },
+      {
+        "source_id": "punch-2024-07-07",
+        "url": "https://punchng.com/10-hour-rainfall-lekki-ikoyi-residents-flee-luxury-mansions-as-flood-ravages-homes-streets/",
+        "who": "Tokunbo Wahab, Commissioner for Environment and Water Resources",
+        "date": "2024-07-07",
+        "causes": [
+          "blocked_drainage"
+        ],
+        "cause_quote": "People drop refuse on water paths, and it is because they don't want to patronise waste collectors",
+        "cause_attributed_by": "official"
+      },
+      {
+        "source_id": "punch-2024-07-07",
+        "url": "https://punchng.com/10-hour-rainfall-lekki-ikoyi-residents-flee-luxury-mansions-as-flood-ravages-homes-streets/",
+        "who": "Tokunbo Wahab, Commissioner for Environment and Water Resources",
+        "date": "2024-07-07",
+        "causes": [
+          "setback_encroachment"
+        ],
+        "cause_quote": "What is safer is that they should not build houses on flood plains",
+        "cause_attributed_by": "official"
+      },
+      {
+        "source_id": "arise-2024-07-04",
+        "url": "https://www.arise.tv/lagos-floods-rainwater-slow-to-recede-due-to-high-tide-says-environment-commissioner-wahab/",
+        "who": "Tokunbo Wahab, Commissioner for Environment and Water Resources",
+        "date": "2024-07-04",
+        "causes": [
+          "heavy_rain",
+          "lagoon_tide"
+        ],
+        "cause_quote": "We had a 10-hour non-stop rainfall yesterday (Wednesday) and the tidal level was up.",
+        "cause_attributed_by": "official"
+      },
+      {
+        "source_id": "arise-2024-07-04",
+        "url": "https://www.arise.tv/lagos-floods-rainwater-slow-to-recede-due-to-high-tide-says-environment-commissioner-wahab/",
+        "who": "Tokunbo Wahab, Commissioner for Environment and Water Resources",
+        "date": "2024-07-04",
+        "causes": [
+          "low_lying_terrain"
+        ],
+        "cause_quote": "emphasising Lagos’s vulnerability to its effects as a coastal, low-lying state",
+        "cause_attributed_by": "official"
+      }
+    ],
+    "cause_tagging": "Task 15: ThisDay neighbourhood list not given rain/tide tags (Wahab tied those to Olopo Meji). EFAG debris deployment (ev-002) is response, not an explicit cause. Climate-change remarks omitted (no tag). Two new features: Ibeju-Lekki waste blockage (NAN residents) and Agungi drainage (Arise, 4 Jul).",
+    "cause_summary": {
+      "heavy_rain": {
+        "official": 3,
+        "journalist": 8,
+        "resident": 0,
+        "expert": 0,
+        "total": 11
+      },
+      "blocked_drainage": {
+        "official": 2,
+        "journalist": 0,
+        "resident": 2,
+        "expert": 0,
+        "total": 4
+      },
+      "drainage_capacity": {
+        "official": 2,
+        "journalist": 0,
+        "resident": 2,
+        "expert": 0,
+        "total": 4
+      },
+      "setback_encroachment": {
+        "official": 2,
+        "journalist": 0,
+        "resident": 0,
+        "expert": 0,
+        "total": 2
+      },
+      "construction": {
+        "official": 0,
+        "journalist": 4,
+        "resident": 0,
+        "expert": 0,
+        "total": 4
+      },
+      "lagoon_tide": {
+        "official": 3,
+        "journalist": 0,
+        "resident": 0,
+        "expert": 0,
+        "total": 3
+      },
+      "low_lying_terrain": {
+        "official": 1,
+        "journalist": 0,
+        "resident": 0,
+        "expert": 0,
+        "total": 1
+      }
+    },
+    "review_notes": [
+      "2026-10-17 (Claude): ev-064 low_lying_terrain moved to citywide — Wahab described Lagos as a whole as low-lying, not Agungi. Quote verified on arise.tv."
+    ]
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.518112,
+          6.447001
+        ]
+      },
+      "properties": {
+        "id": "ev-001",
+        "kind": "news_report",
+        "source_id": "vanguard-2024-06-27",
+        "source_url": "https://www.vanguardngr.com/2024/06/48hrs-rainfall-agungi-lekki-environs-in-lagos-submerge-in-flood/",
+        "publisher": "Vanguard",
+        "published_at": "2024-06-27T18:56:56+01:00",
+        "observed_at": "2024-06-27T12:00:00+01:00",
+        "time_confidence": "day",
+        "location_name": "Agungi",
+        "location_confidence": "neighbourhood",
+        "geocode_method": "nominatim:Agungi, Lekki, Lagos",
+        "claim": "Flooding after 48 hours of rain; collector too small for storm water.",
+        "depth_note": null,
+        "quote": "the collector they have there is too small to serve the volume of storm water",
+        "verified": false,
+        "read_status": "read",
+        "quote_check": "verbatim match on source page",
+        "causes": [
+          "drainage_capacity"
+        ],
+        "cause_quote": "the collector they have there is too small to serve the volume of storm water",
+        "cause_attributed_by": "official",
+        "cause_who": "Tokunbo Wahab, Commissioner for Environment and Water Resources"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.5,
+          6.437
+        ]
+      },
+      "properties": {
+        "id": "ev-002",
+        "kind": "official_statement",
+        "source_id": "vanguard-2024-06-27",
+        "source_url": "https://www.vanguardngr.com/2024/06/48hrs-rainfall-agungi-lekki-environs-in-lagos-submerge-in-flood/",
+        "publisher": "Vanguard",
+        "published_at": "2024-06-27T18:56:56+01:00",
+        "observed_at": "2024-06-27T12:00:00+01:00",
+        "time_confidence": "day",
+        "location_name": "Freedom Park Road/Kusenla Junction",
+        "location_confidence": "neighbourhood",
+        "geocode_method": "manual: neighbourhood centre for Kusenla, Lekki, Lagos",
+        "claim": "EFAG deployed during rain to clear collector debris.",
+        "depth_note": null,
+        "quote": "Emergency Flood Abatement Gang were deployed while the rain was ongoing",
+        "verified": false,
+        "read_status": "read",
+        "quote_check": "verbatim match on source page",
+        "causes": [],
+        "cause_quote": null,
+        "cause_attributed_by": null,
+        "cause_who": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.515,
+          6.43
+        ]
+      },
+      "properties": {
+        "id": "ev-003",
+        "kind": "official_statement",
+        "source_id": "vanguard-2024-06-27",
+        "source_url": "https://www.vanguardngr.com/2024/06/48hrs-rainfall-agungi-lekki-environs-in-lagos-submerge-in-flood/",
+        "publisher": "Vanguard",
+        "published_at": "2024-06-27T18:56:56+01:00",
+        "observed_at": "2024-06-27T12:00:00+01:00",
+        "time_confidence": "day",
+        "location_name": "Alpha Beach Road",
+        "location_confidence": "street",
+        "geocode_method": "manual: neighbourhood centre for Alpha Beach Road, Lekki, Lagos",
+        "claim": "System 156 flooding; dredging of channel to start.",
+        "depth_note": null,
+        "quote": "the flooding issue on System 156 (Up- stream) Alpha Beach Road has been a recurring problem",
+        "verified": false,
+        "read_status": "read",
+        "quote_check": "verbatim match on source page",
+        "causes": [
+          "setback_encroachment"
+        ],
+        "cause_quote": "people built to block System 156 and some families on this corridor also obliterated with developers",
+        "cause_attributed_by": "official",
+        "cause_who": "Tokunbo Wahab, Commissioner for Environment and Water Resources"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.40233,
+          6.502441
+        ]
+      },
+      "properties": {
+        "id": "ev-004",
+        "kind": "news_report",
+        "source_id": "thisday-2024-07-03",
+        "source_url": "https://www.thisdaylive.com/index.php/2024/07/03/torrential-rain-causes-widespread-flooding-in-lagos/",
+        "publisher": "ThisDay",
+        "published_at": "2024-07-03T00:00:00+01:00",
+        "observed_at": "2024-07-03T03:00:00+01:00",
+        "time_confidence": "approx",
+        "location_name": "Third Mainland Bridge entrances",
+        "location_confidence": "street",
+        "geocode_method": "nominatim:Third Mainland Bridge, Lagos",
+        "claim": "Commuters stranded; major entrances to the bridge severely flooded.",
+        "depth_note": "submerged cars",
+        "quote": "severe flooding of major roads, including major entrances leading to the Third Mainland Bridge",
+        "verified": false,
+        "read_status": "read",
+        "quote_check": "verbatim match on source page",
+        "causes": [],
+        "cause_quote": null,
+        "cause_attributed_by": null,
+        "cause_who": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.403,
+          6.548
+        ]
+      },
+      "properties": {
+        "id": "ev-005",
+        "kind": "news_report",
+        "source_id": "thisday-2024-07-03",
+        "source_url": "https://www.thisdaylive.com/index.php/2024/07/03/torrential-rain-causes-widespread-flooding-in-lagos/",
+        "publisher": "ThisDay",
+        "published_at": "2024-07-03T00:00:00+01:00",
+        "observed_at": "2024-07-03T03:00:00+01:00",
+        "time_confidence": "approx",
+        "location_name": "Iyana-Oworo-Alapomeji",
+        "location_confidence": "neighbourhood",
+        "geocode_method": "manual: neighbourhood centre for Iyana Oworo, Lagos",
+        "claim": "Severe flooding left commuters stranded.",
+        "depth_note": null,
+        "quote": "including Iyana-Oworo-Alapomeji, Ketu-Alapere, Oshodi-Mafoluku, Aboru",
+        "verified": false,
+        "read_status": "read",
+        "quote_check": "verbatim match on source page",
+        "causes": [],
+        "cause_quote": null,
+        "cause_attributed_by": null,
+        "cause_who": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.397721,
+          6.588243
+        ]
+      },
+      "properties": {
+        "id": "ev-006",
+        "kind": "news_report",
+        "source_id": "thisday-2024-07-03",
+        "source_url": "https://www.thisdaylive.com/index.php/2024/07/03/torrential-rain-causes-widespread-flooding-in-lagos/",
+        "publisher": "ThisDay",
+        "published_at": "2024-07-03T00:00:00+01:00",
+        "observed_at": "2024-07-03T03:00:00+01:00",
+        "time_confidence": "approx",
+        "location_name": "Ketu-Alapere",
+        "location_confidence": "neighbourhood",
+        "geocode_method": "nominatim:Alapere, Ketu, Lagos",
+        "claim": "Listed among neighbourhoods with severe flooding.",
+        "depth_note": null,
+        "quote": null,
+        "verified": false,
+        "read_status": "read",
+        "quote_check": null,
+        "causes": [],
+        "cause_quote": null,
+        "cause_attributed_by": null,
+        "cause_who": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.331992,
+          6.559599
+        ]
+      },
+      "properties": {
+        "id": "ev-007",
+        "kind": "news_report",
+        "source_id": "thisday-2024-07-03",
+        "source_url": "https://www.thisdaylive.com/index.php/2024/07/03/torrential-rain-causes-widespread-flooding-in-lagos/",
+        "publisher": "ThisDay",
+        "published_at": "2024-07-03T00:00:00+01:00",
+        "observed_at": "2024-07-03T03:00:00+01:00",
+        "time_confidence": "approx",
+        "location_name": "Oshodi-Mafoluku",
+        "location_confidence": "neighbourhood",
+        "geocode_method": "nominatim:Mafoluku, Oshodi, Lagos",
+        "claim": "Listed among neighbourhoods with severe flooding.",
+        "depth_note": null,
+        "quote": null,
+        "verified": false,
+        "read_status": "read",
+        "quote_check": null,
+        "causes": [],
+        "cause_quote": null,
+        "cause_attributed_by": null,
+        "cause_who": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.282127,
+          6.624484
+        ]
+      },
+      "properties": {
+        "id": "ev-008",
+        "kind": "news_report",
+        "source_id": "thisday-2024-07-03",
+        "source_url": "https://www.thisdaylive.com/index.php/2024/07/03/torrential-rain-causes-widespread-flooding-in-lagos/",
+        "publisher": "ThisDay",
+        "published_at": "2024-07-03T00:00:00+01:00",
+        "observed_at": "2024-07-03T03:00:00+01:00",
+        "time_confidence": "approx",
+        "location_name": "Aboru",
+        "location_confidence": "neighbourhood",
+        "geocode_method": "nominatim:Aboru, Lagos",
+        "claim": "Listed among neighbourhoods with severe flooding.",
+        "depth_note": null,
+        "quote": null,
+        "verified": false,
+        "read_status": "read",
+        "quote_check": null,
+        "causes": [],
+        "cause_quote": null,
+        "cause_attributed_by": null,
+        "cause_who": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.297339,
+          6.61731
+        ]
+      },
+      "properties": {
+        "id": "ev-009",
+        "kind": "news_report",
+        "source_id": "thisday-2024-07-03",
+        "source_url": "https://www.thisdaylive.com/index.php/2024/07/03/torrential-rain-causes-widespread-flooding-in-lagos/",
+        "publisher": "ThisDay",
+        "published_at": "2024-07-03T00:00:00+01:00",
+        "observed_at": "2024-07-03T03:00:00+01:00",
+        "time_confidence": "approx",
+        "location_name": "Iyana ipaja",
+        "location_confidence": "neighbourhood",
+        "geocode_method": "nominatim:Iyana Ipaja, Lagos",
+        "claim": "Listed among neighbourhoods with severe flooding.",
+        "depth_note": null,
+        "quote": null,
+        "verified": false,
+        "read_status": "read",
+        "quote_check": null,
+        "causes": [],
+        "cause_quote": null,
+        "cause_attributed_by": null,
+        "cause_who": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.204204,
+          6.461342
+        ]
+      },
+      "properties": {
+        "id": "ev-010",
+        "kind": "news_report",
+        "source_id": "thisday-2024-07-03",
+        "source_url": "https://www.thisdaylive.com/index.php/2024/07/03/torrential-rain-causes-widespread-flooding-in-lagos/",
+        "publisher": "ThisDay",
+        "published_at": "2024-07-03T00:00:00+01:00",
+        "observed_at": "2024-07-03T03:00:00+01:00",
+        "time_confidence": "approx",
+        "location_name": "Iyana Iba",
+        "location_confidence": "neighbourhood",
+        "geocode_method": "nominatim:Iyana Iba, Lagos",
+        "claim": "Listed among neighbourhoods with severe flooding.",
+        "depth_note": null,
+        "quote": null,
+        "verified": false,
+        "read_status": "read",
+        "quote_check": null,
+        "causes": [],
+        "cause_quote": null,
+        "cause_attributed_by": null,
+        "cause_who": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.283904,
+          6.575256
+        ]
+      },
+      "properties": {
+        "id": "ev-011",
+        "kind": "news_report",
+        "source_id": "thisday-2024-07-03",
+        "source_url": "https://www.thisdaylive.com/index.php/2024/07/03/torrential-rain-causes-widespread-flooding-in-lagos/",
+        "publisher": "ThisDay",
+        "published_at": "2024-07-03T00:00:00+01:00",
+        "observed_at": "2024-07-03T03:00:00+01:00",
+        "time_confidence": "approx",
+        "location_name": "Isheri/Idimu-LASU",
+        "location_confidence": "neighbourhood",
+        "geocode_method": "nominatim:Idimu, Lagos",
+        "claim": "Listed among neighbourhoods with severe flooding.",
+        "depth_note": null,
+        "quote": null,
+        "verified": false,
+        "read_status": "read",
+        "quote_check": null,
+        "causes": [],
+        "cause_quote": null,
+        "cause_attributed_by": null,
+        "cause_who": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.254866,
+          6.516155
+        ]
+      },
+      "properties": {
+        "id": "ev-012",
+        "kind": "news_report",
+        "source_id": "thisday-2024-07-03",
+        "source_url": "https://www.thisdaylive.com/index.php/2024/07/03/torrential-rain-causes-widespread-flooding-in-lagos/",
+        "publisher": "ThisDay",
+        "published_at": "2024-07-03T00:00:00+01:00",
+        "observed_at": "2024-07-03T03:00:00+01:00",
+        "time_confidence": "approx",
+        "location_name": "Ijegun-Abaranje",
+        "location_confidence": "neighbourhood",
+        "geocode_method": "nominatim:Ijegun, Lagos",
+        "claim": "Listed among neighbourhoods with severe flooding.",
+        "depth_note": null,
+        "quote": null,
+        "verified": false,
+        "read_status": "read",
+        "quote_check": null,
+        "causes": [],
+        "cause_quote": null,
+        "cause_attributed_by": null,
+        "cause_who": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.481146,
+          6.432643
+        ]
+      },
+      "properties": {
+        "id": "ev-013",
+        "kind": "news_report",
+        "source_id": "thisday-2024-07-03",
+        "source_url": "https://www.thisdaylive.com/index.php/2024/07/03/torrential-rain-causes-widespread-flooding-in-lagos/",
+        "publisher": "ThisDay",
+        "published_at": "2024-07-03T00:00:00+01:00",
+        "observed_at": "2024-07-03T03:00:00+01:00",
+        "time_confidence": "approx",
+        "location_name": "Ikate",
+        "location_confidence": "neighbourhood",
+        "geocode_method": "nominatim:Ikate, Lekki, Lagos",
+        "claim": "Listed among neighbourhoods with severe flooding.",
+        "depth_note": null,
+        "quote": null,
+        "verified": false,
+        "read_status": "read",
+        "quote_check": null,
+        "causes": [],
+        "cause_quote": null,
+        "cause_attributed_by": null,
+        "cause_who": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.288964,
+          6.591207
+        ]
+      },
+      "properties": {
+        "id": "ev-014",
+        "kind": "news_report",
+        "source_id": "thisday-2024-07-03",
+        "source_url": "https://www.thisdaylive.com/index.php/2024/07/03/torrential-rain-causes-widespread-flooding-in-lagos/",
+        "publisher": "ThisDay",
+        "published_at": "2024-07-03T00:00:00+01:00",
+        "observed_at": "2024-07-03T03:00:00+01:00",
+        "time_confidence": "approx",
+        "location_name": "Egbeda-Akowonjo",
+        "location_confidence": "neighbourhood",
+        "geocode_method": "nominatim:Egbeda, Lagos",
+        "claim": "Listed among neighbourhoods with severe flooding.",
+        "depth_note": null,
+        "quote": null,
+        "verified": false,
+        "read_status": "read",
+        "quote_check": null,
+        "causes": [],
+        "cause_quote": null,
+        "cause_attributed_by": null,
+        "cause_who": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.32,
+          6.535
+        ]
+      },
+      "properties": {
+        "id": "ev-015",
+        "kind": "news_report",
+        "source_id": "thisday-2024-07-03",
+        "source_url": "https://www.thisdaylive.com/index.php/2024/07/03/torrential-rain-causes-widespread-flooding-in-lagos/",
+        "publisher": "ThisDay",
+        "published_at": "2024-07-03T00:00:00+01:00",
+        "observed_at": "2024-07-03T03:00:00+01:00",
+        "time_confidence": "approx",
+        "location_name": "Jakande Estate",
+        "location_confidence": "neighbourhood",
+        "geocode_method": "manual: neighbourhood centre for Jakande Estate, Isolo, Lagos",
+        "claim": "Listed among neighbourhoods with severe flooding.",
+        "depth_note": null,
+        "quote": null,
+        "verified": false,
+        "read_status": "read",
+        "quote_check": null,
+        "causes": [],
+        "cause_quote": null,
+        "cause_attributed_by": null,
+        "cause_who": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.340775,
+          6.632608
+        ]
+      },
+      "properties": {
+        "id": "ev-016",
+        "kind": "news_report",
+        "source_id": "thisday-2024-07-03",
+        "source_url": "https://www.thisdaylive.com/index.php/2024/07/03/torrential-rain-causes-widespread-flooding-in-lagos/",
+        "publisher": "ThisDay",
+        "published_at": "2024-07-03T00:00:00+01:00",
+        "observed_at": "2024-07-03T03:00:00+01:00",
+        "time_confidence": "approx",
+        "location_name": "Ogba",
+        "location_confidence": "neighbourhood",
+        "geocode_method": "nominatim:Ogba, Lagos",
+        "claim": "Listed among neighbourhoods with severe flooding.",
+        "depth_note": null,
+        "quote": null,
+        "verified": false,
+        "read_status": "read",
+        "quote_check": null,
+        "causes": [],
+        "cause_quote": null,
+        "cause_attributed_by": null,
+        "cause_who": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.308552,
+          6.479389
+        ]
+      },
+      "properties": {
+        "id": "ev-017",
+        "kind": "news_report",
+        "source_id": "thisday-2024-07-03",
+        "source_url": "https://www.thisdaylive.com/index.php/2024/07/03/torrential-rain-causes-widespread-flooding-in-lagos/",
+        "publisher": "ThisDay",
+        "published_at": "2024-07-03T00:00:00+01:00",
+        "observed_at": "2024-07-03T03:00:00+01:00",
+        "time_confidence": "approx",
+        "location_name": "Okota",
+        "location_confidence": "neighbourhood",
+        "geocode_method": "nominatim:Okota, Lagos",
+        "claim": "Listed among neighbourhoods with severe flooding.",
+        "depth_note": null,
+        "quote": null,
+        "verified": false,
+        "read_status": "read",
+        "quote_check": null,
+        "causes": [],
+        "cause_quote": null,
+        "cause_attributed_by": null,
+        "cause_who": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.562386,
+          6.469472
+        ]
+      },
+      "properties": {
+        "id": "ev-018",
+        "kind": "news_report",
+        "source_id": "thisday-2024-07-03",
+        "source_url": "https://www.thisdaylive.com/index.php/2024/07/03/torrential-rain-causes-widespread-flooding-in-lagos/",
+        "publisher": "ThisDay",
+        "published_at": "2024-07-03T00:00:00+01:00",
+        "observed_at": "2024-07-03T03:00:00+01:00",
+        "time_confidence": "approx",
+        "location_name": "Lekki -Ajah axis",
+        "location_confidence": "neighbourhood",
+        "geocode_method": "nominatim:Ajah, Lagos",
+        "claim": "Listed among neighbourhoods with severe flooding.",
+        "depth_note": null,
+        "quote": null,
+        "verified": false,
+        "read_status": "read",
+        "quote_check": null,
+        "causes": [],
+        "cause_quote": null,
+        "cause_attributed_by": null,
+        "cause_who": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.399,
+          6.548
+        ]
+      },
+      "properties": {
+        "id": "ev-019",
+        "kind": "official_statement",
+        "source_id": "thisday-2024-07-03",
+        "source_url": "https://www.thisdaylive.com/index.php/2024/07/03/torrential-rain-causes-widespread-flooding-in-lagos/",
+        "publisher": "ThisDay",
+        "published_at": "2024-07-03T00:00:00+01:00",
+        "observed_at": "2024-07-03T09:00:00+01:00",
+        "time_confidence": "day",
+        "location_name": "Olopo Meji inward 3rd Mainland",
+        "location_confidence": "neighbourhood",
+        "geocode_method": "manual: neighbourhood centre for Olopomeji, Lagos",
+        "claim": "Wahab: flash flood from intense rain, duration and high lagoon tide.",
+        "depth_note": null,
+        "quote": "flash flood that is due to the high intensity of the rain, long duration rain coupled with high tidal lagoon level",
+        "verified": false,
+        "read_status": "read",
+        "quote_check": "verbatim match on source page",
+        "causes": [
+          "heavy_rain",
+          "lagoon_tide"
+        ],
+        "cause_quote": "flash flood that is due to the high intensity of the rain, long duration rain coupled with high tidal lagoon level",
+        "cause_attributed_by": "official",
+        "cause_who": "Tokunbo Wahab, Commissioner for Environment and Water Resources"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.399,
+          6.548
+        ]
+      },
+      "properties": {
+        "id": "ev-020",
+        "kind": "official_statement",
+        "source_id": "thisday-2024-07-03",
+        "source_url": "https://www.thisdaylive.com/index.php/2024/07/03/torrential-rain-causes-widespread-flooding-in-lagos/",
+        "publisher": "ThisDay",
+        "published_at": "2024-07-03T00:00:00+01:00",
+        "observed_at": "2024-07-03T09:00:00+01:00",
+        "time_confidence": "day",
+        "location_name": "Alapomeji section of Iyana Oworo",
+        "location_confidence": "neighbourhood",
+        "geocode_method": "manual: neighbourhood centre for Alapomeji, Lagos",
+        "claim": "EFAG deployed; Wahab said the road was then free of rainwater.",
+        "depth_note": null,
+        "quote": "The EFAG team from the Lagos State Ministry of the Environment and Water Resources @LasgMOE were deployed",
+        "verified": false,
+        "read_status": "read",
+        "quote_check": "verbatim match on source page",
+        "causes": [],
+        "cause_quote": null,
+        "cause_attributed_by": null,
+        "cause_who": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.92,
+          6.48
+        ]
+      },
+      "properties": {
+        "id": "ev-021",
+        "kind": "news_report",
+        "source_id": "dailytrust-2024-07-03",
+        "source_url": "https://dailytrust.com/flood-takes-over-houses-roads-in-lagos/",
+        "publisher": "Daily Trust",
+        "published_at": "2024-07-03T13:05:19+01:00",
+        "observed_at": "2024-07-03T12:00:00+01:00",
+        "time_confidence": "day",
+        "location_name": "Labora",
+        "location_confidence": "neighbourhood",
+        "geocode_method": "manual: neighbourhood centre for Labora, Ibeju-Lekki",
+        "claim": "Resident said house submerged; no functional drainage at new site.",
+        "depth_note": "entire house is submerged",
+        "quote": "There is too much water flowing into my compound, the entire house is submerged.",
+        "verified": false,
+        "read_status": "read",
+        "quote_check": "verbatim match on source page",
+        "causes": [
+          "drainage_capacity"
+        ],
+        "cause_quote": "I live in a new site where there is no drainage which makes the water run into residential homes",
+        "cause_attributed_by": "resident",
+        "cause_who": "Rasheed Ayobami"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.808,
+          6.471
+        ]
+      },
+      "properties": {
+        "id": "ev-022",
+        "kind": "news_report",
+        "source_id": "dailytrust-2024-07-03",
+        "source_url": "https://dailytrust.com/flood-takes-over-houses-roads-in-lagos/",
+        "publisher": "Daily Trust",
+        "published_at": "2024-07-03T13:05:19+01:00",
+        "observed_at": "2024-07-03T12:00:00+01:00",
+        "time_confidence": "day",
+        "location_name": "Ibeju-Lekki Expressway",
+        "location_confidence": "street",
+        "geocode_method": "nominatim:Ibeju-Lekki Expressway, Lagos",
+        "claim": "Perennial flooding attributed to blocked drains.",
+        "depth_note": null,
+        "quote": null,
+        "verified": false,
+        "read_status": "read",
+        "quote_check": null,
+        "causes": [
+          "blocked_drainage"
+        ],
+        "cause_quote": "perennial flooding in Ibeju-Lekki Expressway due to blockage of drains in the metropolis",
+        "cause_attributed_by": "resident",
+        "cause_who": "Seyi Arowosaye"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.975694,
+          6.585729
+        ]
+      },
+      "properties": {
+        "id": "ev-023",
+        "kind": "news_report",
+        "source_id": "dailytrust-2024-07-03",
+        "source_url": "https://dailytrust.com/flood-takes-over-houses-roads-in-lagos/",
+        "publisher": "Daily Trust",
+        "published_at": "2024-07-03T13:05:19+01:00",
+        "observed_at": "2024-07-03T12:00:00+01:00",
+        "time_confidence": "day",
+        "location_name": "Epe",
+        "location_confidence": "neighbourhood",
+        "geocode_method": "nominatim:Epe, Lagos",
+        "claim": "Named among areas flooded after hours of rain.",
+        "depth_note": null,
+        "quote": null,
+        "verified": false,
+        "read_status": "read",
+        "quote_check": null,
+        "causes": [],
+        "cause_quote": null,
+        "cause_attributed_by": null,
+        "cause_who": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.98,
+          6.55
+        ]
+      },
+      "properties": {
+        "id": "ev-024",
+        "kind": "news_report",
+        "source_id": "dailytrust-2024-07-03",
+        "source_url": "https://dailytrust.com/flood-takes-over-houses-roads-in-lagos/",
+        "publisher": "Daily Trust",
+        "published_at": "2024-07-03T13:05:19+01:00",
+        "observed_at": "2024-07-03T12:00:00+01:00",
+        "time_confidence": "day",
+        "location_name": "Eredo",
+        "location_confidence": "neighbourhood",
+        "geocode_method": "manual: neighbourhood centre for Eredo, Ibeju-Lekki, Lagos",
+        "claim": "Named among areas flooded after hours of rain.",
+        "depth_note": null,
+        "quote": null,
+        "verified": false,
+        "read_status": "read",
+        "quote_check": null,
+        "causes": [],
+        "cause_quote": null,
+        "cause_attributed_by": null,
+        "cause_who": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.76,
+          6.48
+        ]
+      },
+      "properties": {
+        "id": "ev-025",
+        "kind": "news_report",
+        "source_id": "dailytrust-2024-07-03",
+        "source_url": "https://dailytrust.com/flood-takes-over-houses-roads-in-lagos/",
+        "publisher": "Daily Trust",
+        "published_at": "2024-07-03T13:05:19+01:00",
+        "observed_at": "2024-07-03T12:00:00+01:00",
+        "time_confidence": "day",
+        "location_name": "Bogije",
+        "location_confidence": "neighbourhood",
+        "geocode_method": "manual: neighbourhood centre for Bogije, Lagos",
+        "claim": "Named among areas flooded after hours of rain.",
+        "depth_note": null,
+        "quote": null,
+        "verified": false,
+        "read_status": "read",
+        "quote_check": null,
+        "causes": [],
+        "cause_quote": null,
+        "cause_attributed_by": null,
+        "cause_who": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.672,
+          6.455
+        ]
+      },
+      "properties": {
+        "id": "ev-026",
+        "kind": "news_report",
+        "source_id": "dailytrust-2024-07-03",
+        "source_url": "https://dailytrust.com/flood-takes-over-houses-roads-in-lagos/",
+        "publisher": "Daily Trust",
+        "published_at": "2024-07-03T13:05:19+01:00",
+        "observed_at": "2024-07-03T12:00:00+01:00",
+        "time_confidence": "day",
+        "location_name": "Abijon",
+        "location_confidence": "neighbourhood",
+        "geocode_method": "review: nominatim \"Abijo G.R.A. Road, Awoyaya, Ibeju-Lekki\" (first-pass hit was Abijo Close, Ikoyi)",
+        "claim": "Named among areas flooded after hours of rain.",
+        "depth_note": null,
+        "quote": null,
+        "verified": false,
+        "read_status": "read",
+        "quote_check": null,
+        "causes": [],
+        "cause_quote": null,
+        "cause_attributed_by": null,
+        "cause_who": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.636,
+          6.471
+        ]
+      },
+      "properties": {
+        "id": "ev-027",
+        "kind": "news_report",
+        "source_id": "dailytrust-2024-07-03",
+        "source_url": "https://dailytrust.com/flood-takes-over-houses-roads-in-lagos/",
+        "publisher": "Daily Trust",
+        "published_at": "2024-07-03T13:05:19+01:00",
+        "observed_at": "2024-07-03T12:00:00+01:00",
+        "time_confidence": "day",
+        "location_name": "Sangotedo",
+        "location_confidence": "neighbourhood",
+        "geocode_method": "nominatim:Sangotedo, Lagos",
+        "claim": "Flooded; resident urged completion of road repairs.",
+        "depth_note": null,
+        "quote": null,
+        "verified": false,
+        "read_status": "read",
+        "quote_check": null,
+        "causes": [
+          "construction"
+        ],
+        "cause_quote": "due to the ongoing rehabilitation road works in the localities",
+        "cause_attributed_by": "journalist",
+        "cause_who": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.704557,
+          6.469715
+        ]
+      },
+      "properties": {
+        "id": "ev-028",
+        "kind": "news_report",
+        "source_id": "dailytrust-2024-07-03",
+        "source_url": "https://dailytrust.com/flood-takes-over-houses-roads-in-lagos/",
+        "publisher": "Daily Trust",
+        "published_at": "2024-07-03T13:05:19+01:00",
+        "observed_at": "2024-07-03T12:00:00+01:00",
+        "time_confidence": "day",
+        "location_name": "Awoyaya",
+        "location_confidence": "neighbourhood",
+        "geocode_method": "nominatim:Awoyaya, Lagos",
+        "claim": "Named among flooded roads during rehabilitation works.",
+        "depth_note": null,
+        "quote": null,
+        "verified": false,
+        "read_status": "read",
+        "quote_check": null,
+        "causes": [
+          "construction"
+        ],
+        "cause_quote": "due to the ongoing rehabilitation road works in the localities",
+        "cause_attributed_by": "journalist",
+        "cause_who": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.584282,
+          6.469561
+        ]
+      },
+      "properties": {
+        "id": "ev-029",
+        "kind": "news_report",
+        "source_id": "dailytrust-2024-07-03",
+        "source_url": "https://dailytrust.com/flood-takes-over-houses-roads-in-lagos/",
+        "publisher": "Daily Trust",
+        "published_at": "2024-07-03T13:05:19+01:00",
+        "observed_at": "2024-07-03T12:00:00+01:00",
+        "time_confidence": "day",
+        "location_name": "Abraham Adesanya",
+        "location_confidence": "street",
+        "geocode_method": "nominatim:Abraham Adesanya, Lagos",
+        "claim": "Road flooded amid ongoing rehabilitation works.",
+        "depth_note": null,
+        "quote": null,
+        "verified": false,
+        "read_status": "read",
+        "quote_check": null,
+        "causes": [
+          "construction"
+        ],
+        "cause_quote": "due to the ongoing rehabilitation road works in the localities",
+        "cause_attributed_by": "journalist",
+        "cause_who": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.68,
+          6.46
+        ]
+      },
+      "properties": {
+        "id": "ev-030",
+        "kind": "news_report",
+        "source_id": "dailytrust-2024-07-03",
+        "source_url": "https://dailytrust.com/flood-takes-over-houses-roads-in-lagos/",
+        "publisher": "Daily Trust",
+        "published_at": "2024-07-03T13:05:19+01:00",
+        "observed_at": "2024-07-03T12:00:00+01:00",
+        "time_confidence": "day",
+        "location_name": "Majek",
+        "location_confidence": "neighbourhood",
+        "geocode_method": "manual: neighbourhood centre for Majek, Lagos",
+        "claim": "Named among flooded roads in Ibeju-Lekki.",
+        "depth_note": null,
+        "quote": null,
+        "verified": false,
+        "read_status": "read",
+        "quote_check": null,
+        "causes": [
+          "construction"
+        ],
+        "cause_quote": "due to the ongoing rehabilitation road works in the localities",
+        "cause_attributed_by": "journalist",
+        "cause_who": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.405,
+          6.555
+        ]
+      },
+      "properties": {
+        "id": "ev-031",
+        "kind": "news_photo",
+        "source_id": "thecable-2024-07-03",
+        "source_url": "https://www.thecable.ng/photos-commuters-stranded-homes-submerged-as-flood-ravages-lagos/",
+        "publisher": "TheCable",
+        "published_at": "2024-07-03T13:13:02+01:00",
+        "observed_at": "2024-07-03T02:00:00+01:00",
+        "time_confidence": "approx",
+        "location_name": "Iyana-Oworonshoki link to the Third Mainland Bridge",
+        "location_confidence": "street",
+        "geocode_method": "manual: neighbourhood centre for Oworonshoki, Lagos",
+        "claim": "Major road underwater after rain that began around 2am.",
+        "depth_note": "homes and estates flooded",
+        "quote": "The rain began around 2am. Some residents woke up to find their homes and estates flooded.",
+        "verified": false,
+        "read_status": "read",
+        "quote_check": "not verifiable (publisher blocks automated access; no archive copy)",
+        "causes": [],
+        "cause_quote": null,
+        "cause_attributed_by": null,
+        "cause_who": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.353991,
+          6.485574
+        ]
+      },
+      "properties": {
+        "id": "ev-032",
+        "kind": "news_photo",
+        "source_id": "thecable-2024-07-03",
+        "source_url": "https://www.thecable.ng/photos-commuters-stranded-homes-submerged-as-flood-ravages-lagos/",
+        "publisher": "TheCable",
+        "published_at": "2024-07-03T13:13:02+01:00",
+        "observed_at": "2024-07-03T02:00:00+01:00",
+        "time_confidence": "approx",
+        "location_name": "Surulere",
+        "location_confidence": "lga",
+        "geocode_method": "nominatim:Surulere, Lagos",
+        "claim": "Named among parts of Lagos affected by the flood.",
+        "depth_note": null,
+        "quote": null,
+        "verified": false,
+        "read_status": "read",
+        "quote_check": "not verifiable (publisher blocks automated access; no archive copy)",
+        "causes": [],
+        "cause_quote": null,
+        "cause_attributed_by": null,
+        "cause_who": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.327973,
+          6.500366
+        ]
+      },
+      "properties": {
+        "id": "ev-033",
+        "kind": "news_photo",
+        "source_id": "thecable-2024-07-03",
+        "source_url": "https://www.thecable.ng/photos-commuters-stranded-homes-submerged-as-flood-ravages-lagos/",
+        "publisher": "TheCable",
+        "published_at": "2024-07-03T13:13:02+01:00",
+        "observed_at": "2024-07-03T02:00:00+01:00",
+        "time_confidence": "approx",
+        "location_name": "Ijesha",
+        "location_confidence": "neighbourhood",
+        "geocode_method": "nominatim:Ijesha, Lagos",
+        "claim": "Named among parts of Lagos affected by the flood.",
+        "depth_note": null,
+        "quote": null,
+        "verified": false,
+        "read_status": "read",
+        "quote_check": "not verifiable (publisher blocks automated access; no archive copy)",
+        "causes": [],
+        "cause_quote": null,
+        "cause_attributed_by": null,
+        "cause_who": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.190535,
+          6.474806
+        ]
+      },
+      "properties": {
+        "id": "ev-034",
+        "kind": "news_photo",
+        "source_id": "thecable-2024-07-03",
+        "source_url": "https://www.thecable.ng/photos-commuters-stranded-homes-submerged-as-flood-ravages-lagos/",
+        "publisher": "TheCable",
+        "published_at": "2024-07-03T13:13:02+01:00",
+        "observed_at": "2024-07-03T02:00:00+01:00",
+        "time_confidence": "approx",
+        "location_name": "Okokomaiko",
+        "location_confidence": "neighbourhood",
+        "geocode_method": "nominatim:Okokomaiko, Lagos",
+        "claim": "Named among parts of Lagos affected by the flood.",
+        "depth_note": null,
+        "quote": null,
+        "verified": false,
+        "read_status": "read",
+        "quote_check": "not verifiable (publisher blocks automated access; no archive copy)",
+        "causes": [],
+        "cause_quote": null,
+        "cause_attributed_by": null,
+        "cause_who": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.386,
+          6.569
+        ]
+      },
+      "properties": {
+        "id": "ev-035",
+        "kind": "news_photo",
+        "source_id": "thecable-2024-07-03",
+        "source_url": "https://www.thecable.ng/photos-commuters-stranded-homes-submerged-as-flood-ravages-lagos/",
+        "publisher": "TheCable",
+        "published_at": "2024-07-03T13:13:02+01:00",
+        "observed_at": "2024-07-03T02:00:00+01:00",
+        "time_confidence": "approx",
+        "location_name": "Greenland Estate in Mende",
+        "location_confidence": "neighbourhood",
+        "geocode_method": "manual: neighbourhood centre for Greenland Estate, Mende, Lagos",
+        "claim": "Named among parts of Lagos affected by the flood.",
+        "depth_note": null,
+        "quote": null,
+        "verified": false,
+        "read_status": "read",
+        "quote_check": "not verifiable (publisher blocks automated access; no archive copy)",
+        "causes": [],
+        "cause_quote": null,
+        "cause_attributed_by": null,
+        "cause_who": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.383621,
+          6.558073
+        ]
+      },
+      "properties": {
+        "id": "ev-036",
+        "kind": "news_photo",
+        "source_id": "thecable-2024-07-03",
+        "source_url": "https://www.thecable.ng/photos-commuters-stranded-homes-submerged-as-flood-ravages-lagos/",
+        "publisher": "TheCable",
+        "published_at": "2024-07-03T13:13:02+01:00",
+        "observed_at": "2024-07-03T02:00:00+01:00",
+        "time_confidence": "approx",
+        "location_name": "Gbagada",
+        "location_confidence": "neighbourhood",
+        "geocode_method": "nominatim:Gbagada, Lagos",
+        "claim": "Named among flooded areas; tweet in article shows flooding there.",
+        "depth_note": null,
+        "quote": null,
+        "verified": false,
+        "read_status": "read",
+        "quote_check": "not verifiable (publisher blocks automated access; no archive copy)",
+        "causes": [],
+        "cause_quote": null,
+        "cause_attributed_by": null,
+        "cause_who": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.349442,
+          6.557025
+        ]
+      },
+      "properties": {
+        "id": "ev-037",
+        "kind": "news_photo",
+        "source_id": "thecable-2024-07-03",
+        "source_url": "https://www.thecable.ng/photos-commuters-stranded-homes-submerged-as-flood-ravages-lagos/",
+        "publisher": "TheCable",
+        "published_at": "2024-07-03T13:13:02+01:00",
+        "observed_at": "2024-07-03T02:00:00+01:00",
+        "time_confidence": "approx",
+        "location_name": "Oshodi",
+        "location_confidence": "neighbourhood",
+        "geocode_method": "nominatim:Oshodi, Lagos",
+        "claim": "Named among parts of Lagos affected by the flood.",
+        "depth_note": null,
+        "quote": null,
+        "verified": false,
+        "read_status": "read",
+        "quote_check": "not verifiable (publisher blocks automated access; no archive copy)",
+        "causes": [],
+        "cause_quote": null,
+        "cause_attributed_by": null,
+        "cause_who": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.31878,
+          6.528509
+        ]
+      },
+      "properties": {
+        "id": "ev-038",
+        "kind": "news_photo",
+        "source_id": "thecable-2024-07-03",
+        "source_url": "https://www.thecable.ng/photos-commuters-stranded-homes-submerged-as-flood-ravages-lagos/",
+        "publisher": "TheCable",
+        "published_at": "2024-07-03T13:13:02+01:00",
+        "observed_at": "2024-07-03T02:00:00+01:00",
+        "time_confidence": "approx",
+        "location_name": "Isolo",
+        "location_confidence": "neighbourhood",
+        "geocode_method": "nominatim:Isolo, Lagos",
+        "claim": "Named among parts of Lagos affected by the flood.",
+        "depth_note": null,
+        "quote": null,
+        "verified": false,
+        "read_status": "read",
+        "quote_check": "not verifiable (publisher blocks automated access; no archive copy)",
+        "causes": [],
+        "cause_quote": null,
+        "cause_attributed_by": null,
+        "cause_who": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.475,
+          6.445
+        ]
+      },
+      "properties": {
+        "id": "ev-039",
+        "kind": "news_photo",
+        "source_id": "thecable-2024-07-03",
+        "source_url": "https://www.thecable.ng/photos-commuters-stranded-homes-submerged-as-flood-ravages-lagos/",
+        "publisher": "TheCable",
+        "published_at": "2024-07-03T13:13:02+01:00",
+        "observed_at": "2024-07-03T02:00:00+01:00",
+        "time_confidence": "approx",
+        "location_name": "Lekki",
+        "location_confidence": "lga",
+        "geocode_method": "review: \"Lekki\" in news usage = Lekki peninsula (Eti-Osa); original hit was Lekki town near the Free Trade Zone. Broad placement",
+        "claim": "Named among parts of Lagos affected by the flood.",
+        "depth_note": null,
+        "quote": null,
+        "verified": false,
+        "read_status": "read",
+        "quote_check": "not verifiable (publisher blocks automated access; no archive copy)",
+        "causes": [],
+        "cause_quote": null,
+        "cause_attributed_by": null,
+        "cause_who": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.428052,
+          6.452343
+        ]
+      },
+      "properties": {
+        "id": "ev-040",
+        "kind": "news_photo",
+        "source_id": "thecable-2024-07-03",
+        "source_url": "https://www.thecable.ng/photos-commuters-stranded-homes-submerged-as-flood-ravages-lagos/",
+        "publisher": "TheCable",
+        "published_at": "2024-07-03T13:13:02+01:00",
+        "observed_at": "2024-07-03T02:00:00+01:00",
+        "time_confidence": "approx",
+        "location_name": "Ikoyi",
+        "location_confidence": "neighbourhood",
+        "geocode_method": "nominatim:Ikoyi, Lagos",
+        "claim": "Named among parts of Lagos affected by the flood.",
+        "depth_note": null,
+        "quote": null,
+        "verified": false,
+        "read_status": "read",
+        "quote_check": "not verifiable (publisher blocks automated access; no archive copy)",
+        "causes": [],
+        "cause_quote": null,
+        "cause_attributed_by": null,
+        "cause_who": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.351598,
+          6.601627
+        ]
+      },
+      "properties": {
+        "id": "ev-041",
+        "kind": "news_photo",
+        "source_id": "thecable-2024-07-03",
+        "source_url": "https://www.thecable.ng/photos-commuters-stranded-homes-submerged-as-flood-ravages-lagos/",
+        "publisher": "TheCable",
+        "published_at": "2024-07-03T13:13:02+01:00",
+        "observed_at": "2024-07-03T02:00:00+01:00",
+        "time_confidence": "approx",
+        "location_name": "Ikeja",
+        "location_confidence": "neighbourhood",
+        "geocode_method": "nominatim:Ikeja, Lagos",
+        "claim": "Named among parts of Lagos affected by the flood.",
+        "depth_note": null,
+        "quote": null,
+        "verified": false,
+        "read_status": "read",
+        "quote_check": "not verifiable (publisher blocks automated access; no archive copy)",
+        "causes": [],
+        "cause_quote": null,
+        "cause_attributed_by": null,
+        "cause_who": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.199472,
+          6.473789
+        ]
+      },
+      "properties": {
+        "id": "ev-042",
+        "kind": "news_photo",
+        "source_id": "thecable-2024-07-03",
+        "source_url": "https://www.thecable.ng/photos-commuters-stranded-homes-submerged-as-flood-ravages-lagos/",
+        "publisher": "TheCable",
+        "published_at": "2024-07-03T13:13:02+01:00",
+        "observed_at": "2024-07-03T02:00:00+01:00",
+        "time_confidence": "approx",
+        "location_name": "LASU/Iba-Ojo road",
+        "location_confidence": "street",
+        "geocode_method": "nominatim:LASU, Ojo, Lagos",
+        "claim": "Named as a major flooded road.",
+        "depth_note": null,
+        "quote": null,
+        "verified": false,
+        "read_status": "read",
+        "quote_check": "not verifiable (publisher blocks automated access; no archive copy)",
+        "causes": [],
+        "cause_quote": null,
+        "cause_attributed_by": null,
+        "cause_who": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.351,
+          6.596
+        ]
+      },
+      "properties": {
+        "id": "ev-043",
+        "kind": "news_photo",
+        "source_id": "thecable-2024-07-03",
+        "source_url": "https://www.thecable.ng/photos-commuters-stranded-homes-submerged-as-flood-ravages-lagos/",
+        "publisher": "TheCable",
+        "published_at": "2024-07-03T13:13:02+01:00",
+        "observed_at": "2024-07-03T02:00:00+01:00",
+        "time_confidence": "approx",
+        "location_name": "Awolowo Road in Ikeja",
+        "location_confidence": "street",
+        "geocode_method": "manual: neighbourhood centre for Awolowo Road, Ikeja, Lagos",
+        "claim": "Named as a major flooded road.",
+        "depth_note": null,
+        "quote": null,
+        "verified": false,
+        "read_status": "read",
+        "quote_check": "not verifiable (publisher blocks automated access; no archive copy)",
+        "causes": [],
+        "cause_quote": null,
+        "cause_attributed_by": null,
+        "cause_who": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.384,
+          6.548
+        ]
+      },
+      "properties": {
+        "id": "ev-044",
+        "kind": "news_photo",
+        "source_id": "thecable-2024-07-03",
+        "source_url": "https://www.thecable.ng/photos-commuters-stranded-homes-submerged-as-flood-ravages-lagos/",
+        "publisher": "TheCable",
+        "published_at": "2024-07-03T13:13:02+01:00",
+        "observed_at": "2024-07-03T02:00:00+01:00",
+        "time_confidence": "approx",
+        "location_name": "Apapa-Gbagada expressway",
+        "location_confidence": "street",
+        "geocode_method": "manual: neighbourhood centre for Gbagada Expressway, Lagos",
+        "claim": "Named as a major flooded road.",
+        "depth_note": null,
+        "quote": null,
+        "verified": false,
+        "read_status": "read",
+        "quote_check": "not verifiable (publisher blocks automated access; no archive copy)",
+        "causes": [],
+        "cause_quote": null,
+        "cause_attributed_by": null,
+        "cause_who": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.25577,
+          6.659705
+        ]
+      },
+      "properties": {
+        "id": "ev-045",
+        "kind": "news_photo",
+        "source_id": "thecable-2024-07-03",
+        "source_url": "https://www.thecable.ng/photos-commuters-stranded-homes-submerged-as-flood-ravages-lagos/",
+        "publisher": "TheCable",
+        "published_at": "2024-07-03T13:13:02+01:00",
+        "observed_at": "2024-07-03T02:00:00+01:00",
+        "time_confidence": "approx",
+        "location_name": "Alagbado",
+        "location_confidence": "neighbourhood",
+        "geocode_method": "nominatim:Alagbado, Lagos",
+        "claim": "Motorists and commuters stranded due to flooding.",
+        "depth_note": null,
+        "quote": null,
+        "verified": false,
+        "read_status": "read",
+        "quote_check": "not verifiable (publisher blocks automated access; no archive copy)",
+        "causes": [],
+        "cause_quote": null,
+        "cause_attributed_by": null,
+        "cause_who": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.399,
+          6.548
+        ]
+      },
+      "properties": {
+        "id": "ev-046",
+        "kind": "social_post",
+        "source_id": "thecable-2024-07-03",
+        "source_url": "https://www.thecable.ng/photos-commuters-stranded-homes-submerged-as-flood-ravages-lagos/",
+        "publisher": "TheCable",
+        "published_at": "2024-07-03T13:13:02+01:00",
+        "observed_at": "2024-07-03T08:00:00+01:00",
+        "time_confidence": "approx",
+        "location_name": "Iyana-Oworo, Olopo meji area heading to 3rd Mainland Bridge",
+        "location_confidence": "neighbourhood",
+        "geocode_method": "manual: neighbourhood centre for Olopomeji, Lagos",
+        "claim": "Tweet: completely flooded, traffic extending to Alapere.",
+        "depth_note": null,
+        "quote": "Iyana-Oworo, Olopo meji area heading to 3rd Mainland Bridge this morning is completely flooded",
+        "verified": false,
+        "read_status": "read",
+        "quote_check": "not verifiable (publisher blocks automated access; no archive copy)",
+        "causes": [],
+        "cause_quote": null,
+        "cause_attributed_by": null,
+        "cause_who": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.343,
+          6.533
+        ]
+      },
+      "properties": {
+        "id": "ev-047",
+        "kind": "official_statement",
+        "source_id": "bbcpidgin-2024-07-03",
+        "source_url": "https://www.bbc.com/pidgin/articles/czvxdzwr97go",
+        "publisher": "BBC News Pidgin",
+        "published_at": "2024-07-03T13:01:53+01:00",
+        "observed_at": "2024-07-03T09:37:00+01:00",
+        "time_confidence": "exact",
+        "location_name": "No 12 Cameroun street Mushin",
+        "location_confidence": "neighbourhood",
+        "geocode_method": "manual: neighbourhood centre for Cameroun Street, Mushin, Lagos",
+        "claim": "LASEMA: seven people rescued after two-storey building collapse.",
+        "depth_note": null,
+        "quote": "Di response team say dem ansa one call for help around 9:37am for No 12 Cameroun street Mushin",
+        "verified": false,
+        "read_status": "read",
+        "quote_check": "verbatim match on source page",
+        "causes": [],
+        "cause_quote": null,
+        "cause_attributed_by": null,
+        "cause_who": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.403,
+          6.548
+        ]
+      },
+      "properties": {
+        "id": "ev-048",
+        "kind": "news_report",
+        "source_id": "bbcpidgin-2024-07-03",
+        "source_url": "https://www.bbc.com/pidgin/articles/czvxdzwr97go",
+        "publisher": "BBC News Pidgin",
+        "published_at": "2024-07-03T13:01:53+01:00",
+        "observed_at": "2024-07-03T03:00:00+01:00",
+        "time_confidence": "approx",
+        "location_name": "Iyana oworo",
+        "location_confidence": "neighbourhood",
+        "geocode_method": "manual: neighbourhood centre for Iyana Oworo, Lagos",
+        "claim": "Resident Taiwo Ajisafe could not go to work; house floods after downpour.",
+        "depth_note": null,
+        "quote": null,
+        "verified": false,
+        "read_status": "read",
+        "quote_check": null,
+        "causes": [
+          "heavy_rain"
+        ],
+        "cause_quote": "Lekki, Oshodi, Iyano-Oworo hit as early morning continuous rain cause damage",
+        "cause_attributed_by": "journalist",
+        "cause_who": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.399,
+          6.548
+        ]
+      },
+      "properties": {
+        "id": "ev-049",
+        "kind": "news_report",
+        "source_id": "bbcpidgin-2024-07-03",
+        "source_url": "https://www.bbc.com/pidgin/articles/czvxdzwr97go",
+        "publisher": "BBC News Pidgin",
+        "published_at": "2024-07-03T13:01:53+01:00",
+        "observed_at": "2024-07-03T03:00:00+01:00",
+        "time_confidence": "approx",
+        "location_name": "Olopo Meji / 3rd mainland bridge",
+        "location_confidence": "neighbourhood",
+        "geocode_method": "manual: neighbourhood centre for Olopomeji, Lagos",
+        "claim": "Main entry to Third Mainland Bridge seriously flooded; traffic to Alapere.",
+        "depth_note": null,
+        "quote": "Iyana-Oworo, Olopo Meji areas wey be di main entry point for 3rd mainland bridge bin dey seriously flooded",
+        "verified": false,
+        "read_status": "read",
+        "quote_check": "verbatim match on source page",
+        "causes": [],
+        "cause_quote": null,
+        "cause_attributed_by": null,
+        "cause_who": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.267294,
+          6.609549
+        ]
+      },
+      "properties": {
+        "id": "ev-050",
+        "kind": "news_report",
+        "source_id": "bbcpidgin-2024-07-03",
+        "source_url": "https://www.bbc.com/pidgin/articles/czvxdzwr97go",
+        "publisher": "BBC News Pidgin",
+        "published_at": "2024-07-03T13:01:53+01:00",
+        "observed_at": "2024-07-03T03:00:00+01:00",
+        "time_confidence": "approx",
+        "location_name": "Ipaja",
+        "location_confidence": "neighbourhood",
+        "geocode_method": "nominatim:Ipaja, Lagos",
+        "claim": "Resident said house sank under water in two hours; car fuel tank flooded.",
+        "depth_note": "house sink under water; motor bin sink",
+        "quote": "Two hours na wetin e take Mary-Jane Ukeme house to sink under water",
+        "verified": false,
+        "read_status": "read",
+        "quote_check": "verbatim match on source page",
+        "causes": [],
+        "cause_quote": null,
+        "cause_attributed_by": null,
+        "cause_who": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.475,
+          6.445
+        ]
+      },
+      "properties": {
+        "id": "ev-051",
+        "kind": "news_report",
+        "source_id": "bbcpidgin-2024-07-03",
+        "source_url": "https://www.bbc.com/pidgin/articles/czvxdzwr97go",
+        "publisher": "BBC News Pidgin",
+        "published_at": "2024-07-03T13:01:53+01:00",
+        "observed_at": "2024-07-03T03:00:00+01:00",
+        "time_confidence": "approx",
+        "location_name": "Lekki",
+        "location_confidence": "lga",
+        "geocode_method": "review: \"Lekki\" in news usage = Lekki peninsula (Eti-Osa); first-pass hit was Lekki town near the Free Trade Zone. Broad placement",
+        "claim": "Named in headline as hit by early morning continuous rain.",
+        "depth_note": null,
+        "quote": "Lagos flood: Lekki, Oshodi, Iyano-Oworo hit as early morning continuous rain cause damage",
+        "verified": false,
+        "read_status": "read",
+        "quote_check": "verbatim match on source page",
+        "causes": [
+          "heavy_rain"
+        ],
+        "cause_quote": "Lekki, Oshodi, Iyano-Oworo hit as early morning continuous rain cause damage",
+        "cause_attributed_by": "journalist",
+        "cause_who": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.349442,
+          6.557025
+        ]
+      },
+      "properties": {
+        "id": "ev-052",
+        "kind": "news_report",
+        "source_id": "bbcpidgin-2024-07-03",
+        "source_url": "https://www.bbc.com/pidgin/articles/czvxdzwr97go",
+        "publisher": "BBC News Pidgin",
+        "published_at": "2024-07-03T13:01:53+01:00",
+        "observed_at": "2024-07-03T03:00:00+01:00",
+        "time_confidence": "approx",
+        "location_name": "Oshodi",
+        "location_confidence": "neighbourhood",
+        "geocode_method": "nominatim:Oshodi, Lagos",
+        "claim": "Named in headline as hit by early morning continuous rain.",
+        "depth_note": null,
+        "quote": null,
+        "verified": false,
+        "read_status": "read",
+        "quote_check": null,
+        "causes": [
+          "heavy_rain"
+        ],
+        "cause_quote": "Lekki, Oshodi, Iyano-Oworo hit as early morning continuous rain cause damage",
+        "cause_attributed_by": "journalist",
+        "cause_who": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.92,
+          6.48
+        ]
+      },
+      "properties": {
+        "id": "ev-053",
+        "kind": "video",
+        "source_id": "dailypost-2024-07-03",
+        "source_url": "https://dailypost.ng/2024/07/03/flood-takes-over-residential-areas-in-ibeju-lekki-video/",
+        "publisher": "Daily Post",
+        "published_at": "2024-07-03T12:30:02+01:00",
+        "observed_at": "2024-07-03T08:00:00+01:00",
+        "time_confidence": "approx",
+        "location_name": "Labora area of Ibeju-Lekki",
+        "location_confidence": "neighbourhood",
+        "geocode_method": "manual: neighbourhood centre for Labora, Ibeju-Lekki, Lagos",
+        "claim": "House submerged; resident said no drainage at new site.",
+        "depth_note": "entire house is submerged",
+        "quote": "There is too much water flowing into my compound, the entire house is submerged.",
+        "verified": false,
+        "read_status": "read",
+        "quote_check": "verbatim match on source page",
+        "causes": [
+          "drainage_capacity"
+        ],
+        "cause_quote": "I live in a new site where there is no drainage which makes the water run into residential homes",
+        "cause_attributed_by": "resident",
+        "cause_who": "Rasheed Ayobami"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.389,
+          6.557
+        ]
+      },
+      "properties": {
+        "id": "ev-054",
+        "kind": "video",
+        "source_id": "dailypost-2024-07-03",
+        "source_url": "https://dailypost.ng/2024/07/03/flood-takes-over-residential-areas-in-ibeju-lekki-video/",
+        "publisher": "Daily Post",
+        "published_at": "2024-07-03T12:30:02+01:00",
+        "observed_at": "2024-07-03T08:00:00+01:00",
+        "time_confidence": "approx",
+        "location_name": "Sholuyi Gbagada",
+        "location_confidence": "neighbourhood",
+        "geocode_method": "manual: neighbourhood centre for Sholuyi, Gbagada, Lagos",
+        "claim": "Embedded video described as mainland report from Sholuyi Gbagada.",
+        "depth_note": null,
+        "quote": null,
+        "verified": false,
+        "read_status": "read",
+        "quote_check": null,
+        "causes": [],
+        "cause_quote": null,
+        "cause_attributed_by": null,
+        "cause_who": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.635581,
+          6.471022
+        ]
+      },
+      "properties": {
+        "id": "ev-055",
+        "kind": "video",
+        "source_id": "dailypost-2024-07-03",
+        "source_url": "https://dailypost.ng/2024/07/03/flood-takes-over-residential-areas-in-ibeju-lekki-video/",
+        "publisher": "Daily Post",
+        "published_at": "2024-07-03T12:30:02+01:00",
+        "observed_at": "2024-07-03T08:00:00+01:00",
+        "time_confidence": "approx",
+        "location_name": "Sangotedo",
+        "location_confidence": "neighbourhood",
+        "geocode_method": "nominatim:Sangotedo, Lagos",
+        "claim": "Named among flooded Ibeju-Lekki areas; road repairs incomplete.",
+        "depth_note": null,
+        "quote": null,
+        "verified": false,
+        "read_status": "read",
+        "quote_check": null,
+        "causes": [],
+        "cause_quote": null,
+        "cause_attributed_by": null,
+        "cause_who": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.704557,
+          6.469715
+        ]
+      },
+      "properties": {
+        "id": "ev-056",
+        "kind": "video",
+        "source_id": "dailypost-2024-07-03",
+        "source_url": "https://dailypost.ng/2024/07/03/flood-takes-over-residential-areas-in-ibeju-lekki-video/",
+        "publisher": "Daily Post",
+        "published_at": "2024-07-03T12:30:02+01:00",
+        "observed_at": "2024-07-03T08:00:00+01:00",
+        "time_confidence": "approx",
+        "location_name": "Awoyaya",
+        "location_confidence": "neighbourhood",
+        "geocode_method": "nominatim:Awoyaya, Lagos",
+        "claim": "Named among flooded Ibeju-Lekki areas.",
+        "depth_note": null,
+        "quote": null,
+        "verified": false,
+        "read_status": "read",
+        "quote_check": null,
+        "causes": [],
+        "cause_quote": null,
+        "cause_attributed_by": null,
+        "cause_who": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.56,
+          6.455
+        ]
+      },
+      "properties": {
+        "id": "ev-057",
+        "kind": "news_report",
+        "source_id": "punch-2024-07-07",
+        "source_url": "https://punchng.com/10-hour-rainfall-lekki-ikoyi-residents-flee-luxury-mansions-as-flood-ravages-homes-streets/",
+        "publisher": "Punch",
+        "published_at": "2024-07-07T13:20:29+01:00",
+        "observed_at": "2024-07-04T12:00:00+01:00",
+        "time_confidence": "day",
+        "location_name": "Lekki Phase II",
+        "location_confidence": "neighbourhood",
+        "geocode_method": "manual: neighbourhood centre for Lekki Phase 2, Lagos",
+        "claim": "Roads impassable; cars half-submerged; residents fled homes.",
+        "depth_note": "three cars ... half-submerged; water almost at knee level",
+        "quote": "Roads were impassable when our correspondent visited a popular estate in the Lekki Phase II area",
+        "verified": false,
+        "read_status": "read",
+        "quote_check": "verbatim match on source page",
+        "causes": [
+          "heavy_rain"
+        ],
+        "cause_quote": "after flooding caused by heavy rainfall",
+        "cause_attributed_by": "journalist",
+        "cause_who": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.428052,
+          6.452343
+        ]
+      },
+      "properties": {
+        "id": "ev-058",
+        "kind": "news_report",
+        "source_id": "punch-2024-07-07",
+        "source_url": "https://punchng.com/10-hour-rainfall-lekki-ikoyi-residents-flee-luxury-mansions-as-flood-ravages-homes-streets/",
+        "publisher": "Punch",
+        "published_at": "2024-07-07T13:20:29+01:00",
+        "observed_at": "2024-07-04T12:00:00+01:00",
+        "time_confidence": "day",
+        "location_name": "Ikoyi",
+        "location_confidence": "neighbourhood",
+        "geocode_method": "nominatim:Ikoyi, Lagos",
+        "claim": "Residents fled luxury homes after more than 10 hours of rain.",
+        "depth_note": null,
+        "quote": null,
+        "verified": false,
+        "read_status": "read",
+        "quote_check": null,
+        "causes": [
+          "heavy_rain"
+        ],
+        "cause_quote": "after flooding caused by heavy rainfall",
+        "cause_attributed_by": "journalist",
+        "cause_who": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.562386,
+          6.469472
+        ]
+      },
+      "properties": {
+        "id": "ev-059",
+        "kind": "news_report",
+        "source_id": "punch-2024-07-07",
+        "source_url": "https://punchng.com/10-hour-rainfall-lekki-ikoyi-residents-flee-luxury-mansions-as-flood-ravages-homes-streets/",
+        "publisher": "Punch",
+        "published_at": "2024-07-07T13:20:29+01:00",
+        "observed_at": "2024-07-04T12:00:00+01:00",
+        "time_confidence": "day",
+        "location_name": "Ajah",
+        "location_confidence": "neighbourhood",
+        "geocode_method": "nominatim:Ajah, Lagos",
+        "claim": "Residents used canoes on flooded streets; markets abandoned.",
+        "depth_note": null,
+        "quote": "In Ajah, residents used canoes to navigate flooded streets.",
+        "verified": false,
+        "read_status": "read",
+        "quote_check": "verbatim match on source page",
+        "causes": [
+          "heavy_rain"
+        ],
+        "cause_quote": "after flooding caused by heavy rainfall",
+        "cause_attributed_by": "journalist",
+        "cause_who": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.475,
+          6.445
+        ]
+      },
+      "properties": {
+        "id": "ev-060",
+        "kind": "news_report",
+        "source_id": "punch-2024-07-07",
+        "source_url": "https://punchng.com/10-hour-rainfall-lekki-ikoyi-residents-flee-luxury-mansions-as-flood-ravages-homes-streets/",
+        "publisher": "Punch",
+        "published_at": "2024-07-07T13:20:29+01:00",
+        "observed_at": "2024-07-04T12:00:00+01:00",
+        "time_confidence": "day",
+        "location_name": "Lekki",
+        "location_confidence": "lga",
+        "geocode_method": "review: \"Lekki\" in news usage = Lekki peninsula (Eti-Osa); original hit was Lekki town near the Free Trade Zone. Broad placement",
+        "claim": "Living rooms flooded; residents moved to hotels.",
+        "depth_note": "living room submerged; water almost at knee level",
+        "quote": "I woke up to find my living room submerged in water.",
+        "verified": false,
+        "read_status": "read",
+        "quote_check": "verbatim match on source page",
+        "causes": [
+          "heavy_rain"
+        ],
+        "cause_quote": "after flooding caused by heavy rainfall",
+        "cause_attributed_by": "journalist",
+        "cause_who": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.399,
+          6.548
+        ]
+      },
+      "properties": {
+        "id": "ev-061",
+        "kind": "official_statement",
+        "source_id": "punch-2024-07-07",
+        "source_url": "https://punchng.com/10-hour-rainfall-lekki-ikoyi-residents-flee-luxury-mansions-as-flood-ravages-homes-streets/",
+        "publisher": "Punch",
+        "published_at": "2024-07-07T13:20:29+01:00",
+        "observed_at": "2024-07-03T12:00:00+01:00",
+        "time_confidence": "day",
+        "location_name": "Olopomeji",
+        "location_confidence": "neighbourhood",
+        "geocode_method": "manual: neighbourhood centre for Olopomeji, Lagos",
+        "claim": "Ministry said emergency responders cleared refuse-blocked water paths.",
+        "depth_note": null,
+        "quote": "we deployed our emergency responders to some areas like Olopomeji",
+        "verified": false,
+        "read_status": "read",
+        "quote_check": "verbatim match on source page",
+        "causes": [
+          "blocked_drainage"
+        ],
+        "cause_quote": "Olopomeji where the water paths had been blocked by refuse and are experiencing flash floods",
+        "cause_attributed_by": "official",
+        "cause_who": "Tokunbo Wahab, Commissioner for Environment and Water Resources"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.403,
+          6.548
+        ]
+      },
+      "properties": {
+        "id": "ev-062",
+        "kind": "official_statement",
+        "source_id": "channelstv-2024-07-03",
+        "source_url": "https://www.channelstv.com/2024/07/03/lagos-calls-for-calm-after-wednesdays-torrential-rainfall/",
+        "publisher": "Channels Television",
+        "published_at": "2024-07-03T15:37:45+01:00",
+        "observed_at": "2024-07-03T09:00:00+01:00",
+        "time_confidence": "approx",
+        "location_name": "Iyana Oworo linking the Third Mainland",
+        "location_confidence": "street",
+        "geocode_method": "manual: neighbourhood centre for Iyana Oworo, Lagos",
+        "claim": "Wahab: about nine hours of rain; EFAG cleared Iyana Oworo.",
+        "depth_note": "a foot of flowing water with high tide",
+        "quote": "the flash floods which inundated areas like Iyana Oworo linking the Third Mainland",
+        "verified": false,
+        "read_status": "read",
+        "quote_check": "verbatim match on source page",
+        "causes": [
+          "heavy_rain",
+          "lagoon_tide"
+        ],
+        "cause_quote": "heavy rainfall which the state has been experiencing on a daily basis since last week, resulting in the level rise of the Lagos lagoon",
+        "cause_attributed_by": "official",
+        "cause_who": "Tokunbo Wahab, Commissioner for Environment and Water Resources"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.95,
+          6.47
+        ]
+      },
+      "properties": {
+        "id": "ev-063",
+        "kind": "news_report",
+        "source_id": "dailytrust-2024-07-03",
+        "source_url": "https://dailytrust.com/flood-takes-over-houses-roads-in-lagos/",
+        "publisher": "Daily Trust",
+        "published_at": "2024-07-03T13:05:19+01:00",
+        "observed_at": "2024-07-03T12:00:00+01:00",
+        "time_confidence": "day",
+        "location_name": "Ibeju-Lekki",
+        "location_confidence": "lga",
+        "geocode_method": "manual: Ibeju-Lekki analysis point from event.json aoi.points.ibeju_lekki",
+        "claim": "Residents told NAN flooding came from waste-blocked waterways.",
+        "depth_note": null,
+        "quote": "attributed the flooding to the blockage of waterways due to indiscriminate dumping of waste",
+        "verified": false,
+        "read_status": "read",
+        "quote_check": "verbatim match on source page",
+        "causes": [
+          "blocked_drainage"
+        ],
+        "cause_quote": "attributed the flooding to the blockage of waterways due to indiscriminate dumping of waste",
+        "cause_attributed_by": "resident",
+        "cause_who": "residents speaking to NAN"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.518112,
+          6.447001
+        ]
+      },
+      "properties": {
+        "id": "ev-064",
+        "kind": "official_statement",
+        "source_id": "arise-2024-07-04",
+        "source_url": "https://www.arise.tv/lagos-floods-rainwater-slow-to-recede-due-to-high-tide-says-environment-commissioner-wahab/",
+        "publisher": "Arise News",
+        "published_at": "2024-07-04T13:17:55+01:00",
+        "observed_at": "2024-07-03T12:00:00+01:00",
+        "time_confidence": "day",
+        "location_name": "Agungi",
+        "location_confidence": "neighbourhood",
+        "geocode_method": "nominatim:Agungi, Lekki, Lagos (same point as ev-001)",
+        "claim": "Wahab: Agungi road growth has outgrown the local drainage.",
+        "depth_note": null,
+        "quote": "The development of Agungi road has outweighed the drainage system that was put in place by the local government.",
+        "verified": false,
+        "read_status": "read",
+        "quote_check": "verbatim match on source page",
+        "causes": [
+          "drainage_capacity"
+        ],
+        "cause_quote": "The development of Agungi road has outweighed the drainage system that was put in place by the local government.",
+        "cause_attributed_by": "official",
+        "cause_who": "Tokunbo Wahab, Commissioner for Environment and Water Resources"
+      }
+    }
+  ]
+}
