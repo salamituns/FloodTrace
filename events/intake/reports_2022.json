@@ -1,0 +1,559 @@
+{
+  "meta": {
+    "compiled_at": "2026-10-18T21:45:00Z",
+    "year": 2022,
+    "task": "28-news-sweep-full",
+    "method": "Pass 1: news-first sweep of wet-season months (Apr–Nov) using Task 26 outlets and qualifying rule. Pass 2 (slimmed 2026-10-18): death queries with no site filter; Oyan Dam / Ogun River / lagoon / water-release / Isheri-Ajegunle-Owode-Agboyi queries; Anadolu once per year; out-of-season Jan–Mar and Dec. Qualifying reports name a Lagos State place and a date, and describe water on streets or in homes. Quotes ≤25 words, verbatim, and taken only from that report's own URL. Dates, numbers and quotes are only those in the source. Areas left as named; not geocoded. Flood date is the flood day, not publication day.",
+    "districts_searched": [
+      "Alimosho",
+      "Ajeromi-Ifelodun",
+      "Kosofe",
+      "Mushin",
+      "Oshodi-Isolo",
+      "Ojo",
+      "Ikorodu",
+      "Surulere",
+      "Agege",
+      "Ifako-Ijaiye",
+      "Somolu",
+      "Amuwo-Odofin",
+      "Lagos Mainland",
+      "Ikeja",
+      "Eti-Osa"
+    ],
+    "outlets": [
+      "Punch",
+      "Vanguard",
+      "Guardian NG",
+      "Premium Times",
+      "Channels TV",
+      "TVC",
+      "Daily Trust",
+      "BBC Pidgin",
+      "Nairametrics"
+    ],
+    "notes": [
+      "Vanguard 11 Jul 2022 covers Friday 8 Jul (Egbe-Idimu / Mushin canal) and Saturday 9 Jul (Oko Oba / Oyatoki / Ipaja) on one URL; kept as r2022-003 on Friday 8 Jul for the confirmed Mushin canal death. Saturday scenes for that weekend come from other URLs.",
+      "NEMA 13 Jul wrap (Punch, Channels, Vanguard) attributes deaths to rainfall of 8–9 Jul. Punch and Channels say seven in Lagos; Vanguard's Farinloye quote splits five Lagos and two Ogun. Recorded as each outlet printed it.",
+      "Ogun Akute deaths and the Mile 2/Ojo boat capsize in the Vanguard weekend piece are not Lagos street/home flood fatalities.",
+      "Ugo (Egbe-Idimu) is missing, not confirmed dead, in Vanguard 11 Jul; Guardian 10 Jul states he was swept away to his death — deaths only on the Guardian report.",
+      "May 2022: Idumagbo stakeholder copy and building-collapse stories did not yield a dated street/home flood in Task 26 outlets.",
+      "August 2022: Cluster One / Garfa Street pieces are ongoing blockage or gully features, not a named flood day.",
+      "October Oyan Dam / Ogun River hits were relocate alerts. Punch 9 Nov is aftermath of 21 Oct, not a new day.",
+      "Anadolu 2022 copy was national (603 deaths) or 2023 Lagos; no 2022 Lagos flood day.",
+      "X accounts of LASEMA, Lagos MoE and NEMA: no dated 2022 flood posts reached.",
+      "Nairametrics, TVC and BBC Pidgin: no qualifying 2022 Lagos street/home flood day found (BBC Pidgin was the Third Mainland fact-check)."
+    ]
+  },
+  "reports": [
+    {
+      "id": "r2022-001",
+      "date": "2022-04-06",
+      "date_confidence": "day",
+      "areas": [
+        "Oregun",
+        "Kudirat Way",
+        "Long Bridge, Lagos-Ibadan Expressway",
+        "Otedola Bridge",
+        "Berger bus stop"
+      ],
+      "impacts": "Early-morning downpour yesterday hampered traffic for hours. Thunderstorm blew down billboards and road signs in Oregun; multiple crashes, no casualties per LASTMA. Motorists waded through flooded parts of Long and Otedola bridges; water on Otedola caused traffic to Berger.",
+      "quote": "motorists plying the Lagos- Ibadan Expressway had hectic time wading through flooded parts of the Long and Otedola bridges",
+      "causes": [
+        "heavy_rain"
+      ],
+      "cause_quote": "the two bridges have been retaining a large volume of water, any time it rains, thereby impeding free flow of traffic",
+      "cause_attributed_by": "journalist",
+      "cause_who": null,
+      "url": "https://guardian.ng/news/lagos-bridges-flooded-as-thunderstorm-wreaks-havoc-in-oregun/",
+      "publisher": "The Guardian Nigeria",
+      "published_at": "2022-04-07T05:10:00+01:00",
+      "read_status": "read",
+      "deaths": null,
+      "pass": 1
+    },
+    {
+      "id": "r2022-002",
+      "date": "2022-06-18",
+      "date_confidence": "exact",
+      "areas": [
+        "Ojodu Berger",
+        "Ikosi-Ketu",
+        "Alapere, Ketu",
+        "Gbagada",
+        "Surulere",
+        "Ikorodu",
+        "Mile 12 Market road"
+      ],
+      "impacts": "Saturday downpour lasting hours flooded roads and houses; property destroyed. Ketu-Ikosi roads to Mile 12 Market flooded; streets in Ikosi flooded; gridlock toward Lagos-Ibadan Expressway. Iya Beji: home in Alapere flooded through the back door. Victor: used a canoe to leave his house in Ikorodu. Lucy Ige stuck in traffic after floods blocked the road to Secretariat Bus Stop, Gbagada.",
+      "quote": "Roads and houses were flooded and property destroyed in Lagos on Saturday after a downpour which lasted for hours.",
+      "causes": [
+        "heavy_rain",
+        "drainage_capacity"
+      ],
+      "cause_quote": "urged the state government to work on coordinating their drainage channels and linking to avert perennial flooding",
+      "cause_attributed_by": "expert",
+      "cause_who": "Michael Simire, environmental expert",
+      "url": "https://punchng.com/rain-pounds-lagos-houses-roads-flooded-property-destroyed/",
+      "publisher": "Punch",
+      "published_at": "2022-06-19T00:57:00+01:00",
+      "read_status": "read",
+      "deaths": null,
+      "pass": 1
+    },
+    {
+      "id": "r2022-003",
+      "date": "2022-07-08",
+      "date_confidence": "exact",
+      "areas": [
+        "Yaya Hassan Street, Egbe-Idimu",
+        "Idi-Oro, Alhaji Lasisi bus stop, Mushin",
+        "old Oko Oba Road, Agege",
+        "Oyatoki Street, Oko-Oba",
+        "Oluwaga, Ipaja"
+      ],
+      "impacts": "Friday: commercial driver Ugo, 48, alias Gunners, washed into an open drainage on Yaya Hassan Street about 4 p.m.; not found dead or alive as of 7.30 p.m. Same Friday: 15-year-old Erinle Mouturayo Mary found dead in the Idi-Oro canal after slipping in on the way home from school. Saturday: man swept while searching for cows at Oko-Oba (outcome not stated); Lexus and another vehicle swept at Oyatoki, occupants later found alive. Saturday: more than 10 hours of rain overflowed Oko Oba Canal. Sunday: LASEMA rescued an elderly stroke patient trapped at Oluwaga, Ipaja. Mile 2/Ojo boat capsize in this piece is not logged as a street/home flood death.",
+      "quote": "a 15-year-old student, Erinle Mouturayo Mary was also found dead in the same canal at Idi-Oro Mushin",
+      "causes": [
+        "heavy_rain",
+        "drainage_capacity",
+        "canal_overflow",
+        "construction"
+      ],
+      "cause_quote": "the overflowing of the Oko Oba Canal Channel which is presently undergoing expansion",
+      "cause_attributed_by": "official",
+      "cause_who": "Tunji Bello, Commissioner for the Environment and Water Resources",
+      "url": "https://www.vanguardngr.com/2022/07/rainstorms-flood-rages-in-lagos-as-residents-get-fresh-danger-alert/",
+      "publisher": "Vanguard",
+      "published_at": "2022-07-11T00:00:00+01:00",
+      "read_status": "read",
+      "deaths": {
+        "count": 1,
+        "who_reported": null,
+        "quote": "a 15-year-old student, Erinle Mouturayo Mary was also found dead in the same canal"
+      },
+      "pass": 1,
+      "review_note": "2026-10-18 reviewer: Vanguard doesn't attribute this death to Bamuya (he witnessed a different incident); who_reported set to null."
+    },
+    {
+      "id": "r2022-004",
+      "date": "2022-07-09",
+      "date_confidence": "exact",
+      "areas": [
+        "Fatoki Street, Orile-Agege",
+        "Oyatoki, Agege",
+        "Yaya Hassan Street, Egbe-Idimu"
+      ],
+      "impacts": "Saturday downpour about seven hours: two vehicles, three occupants each, swept into drainage on Fatoki Street; NEMA/LASEMA/Fire still searching for two missing at press time. Farinloye: rainwater overflowed an uncompleted canal. Friday: Ugo, 48, swept away to his death in Egbe-Idimu.",
+      "quote": "Ugo, 48, Alias, “Gunners” was swept away to his death by heavy flood",
+      "causes": [
+        "heavy_rain",
+        "canal_overflow",
+        "construction"
+      ],
+      "cause_quote": "the six persons were reported to have been swept away when rainwater overflowed an uncompleted canal in the area",
+      "cause_attributed_by": "official",
+      "cause_who": "Ibrahim Farinloye, NEMA South-West",
+      "url": "https://guardian.ng/news/heavy-rains-wreak-havoc-sweep-vehicles-occupants-into-drainage/",
+      "publisher": "The Guardian Nigeria",
+      "published_at": "2022-07-10T04:55:00+01:00",
+      "read_status": "read",
+      "deaths": {
+        "count": 1,
+        "who_reported": null,
+        "quote": "Ugo, 48, Alias, “Gunners” was swept away to his death by heavy flood"
+      },
+      "pass": 1
+    },
+    {
+      "id": "r2022-005",
+      "date": "2022-07-09",
+      "date_confidence": "exact",
+      "areas": [
+        "Oyatoki, Agege"
+      ],
+      "impacts": "Saturday: Lexus Jeep with three persons and a Toyota with three occupants swept away when rainwater overflowed an uncompleted canal. Residents had warned drivers not to pass. Farinloye: three rescued alive, one jumped to safety, two missing at the 2.49 p.m. statement. Outcome of the two missing not stated in this report.",
+      "quote": "the six persons were reported to have been swept away when rainwater overflowed an uncompleted canal in the area",
+      "causes": [
+        "heavy_rain",
+        "canal_overflow",
+        "construction"
+      ],
+      "cause_quote": "the six persons were reported to have been swept away when rainwater overflowed an uncompleted canal in the area",
+      "cause_attributed_by": "official",
+      "cause_who": "Ibrahim Farinloye, Zonal Coordinator, South-West, NEMA",
+      "url": "https://guardian.ng/news/emergency-responders-rescue-three-persons-from-lagos-flood/",
+      "publisher": "The Guardian Nigeria",
+      "published_at": "2022-07-09T14:49:00+01:00",
+      "read_status": "read",
+      "deaths": null,
+      "pass": 1
+    },
+    {
+      "id": "r2022-006",
+      "date": "2022-07-09",
+      "date_confidence": "exact",
+      "areas": [
+        "Agege Market",
+        "Abule-Egba, Agege",
+        "Ijaiye",
+        "Lekki",
+        "Ipaja",
+        "Orile-Agege",
+        "Akowonjo"
+      ],
+      "impacts": "Rain for days; Saturday: flooding and fare hikes. Agege Market wooden tables and chairs destroyed; wooden pedestrian bridge at the flyover destroyed. Lekki roads flooded; vehicles overwhelmed; people wading and some swimming in flood water. LASEMA: elderly woman with a stroke trapped in an Ipaja building after Saturday downpour, rescued alive. Farinloye: two vehicles swept at Orile-Agege; two occupants still missing, two persons feared dead.",
+      "quote": "In the Lekki area of Lagos, the roads were flooded, with vehicles overwhelmed by water.",
+      "causes": [
+        "heavy_rain",
+        "blocked_drainage"
+      ],
+      "cause_quote": "It is wrong for residents in the city to experience flood as a result of blocked drainage and gutters.",
+      "cause_attributed_by": "resident",
+      "cause_who": "Omor Jacobs, Akowonjo",
+      "url": "https://punchng.com/rainfall-lagos-residents-lament-flooding-transport-fare-hike/",
+      "publisher": "Punch",
+      "published_at": "2022-07-11T00:30:00+01:00",
+      "read_status": "read",
+      "deaths": null,
+      "pass": 1
+    },
+    {
+      "id": "r2022-007",
+      "date": "2022-07-09",
+      "date_confidence": "exact",
+      "areas": [
+        "Ipaja-Ayobo"
+      ],
+      "impacts": "LASEMA rescued an elderly woman trapped in her Ipaja-Ayobo building after Saturday's downpour. Near-drowning; she was alive but had a stroke. First aid then hospital. Flash flood ravaged parts of the state.",
+      "quote": "flooding had ravaged the area resorting to the near-drowning of the elderly woman",
+      "causes": [
+        "heavy_rain"
+      ],
+      "cause_quote": "trapped in her building as a result of flood occasioned by a downpour experienced in some parts of Lagos on Saturday",
+      "cause_attributed_by": "official",
+      "cause_who": "Olufemi Oke-Osanyintolu, Permanent Secretary, LASEMA",
+      "url": "https://dailytrust.com/elderly-woman-rescued-from-lagos-flood-as-government-asks-residents-to-avoid-flood-prone-areas/",
+      "publisher": "Daily Trust",
+      "published_at": "2022-07-11T05:41:08+01:00",
+      "read_status": "read",
+      "deaths": null,
+      "pass": 1
+    },
+    {
+      "id": "r2022-008",
+      "date": "2022-07-08",
+      "date_confidence": "day",
+      "areas": [
+        "Oke Isagun, Agbado Oke, Oko LCDA, Alimosho",
+        "Oyatoki, Orile Agege",
+        "Meiran",
+        "Abbatoir",
+        "Alagbado",
+        "Agege",
+        "Tollgate"
+      ],
+      "impacts": "NEMA post-emergency assessment after rainfall Friday 8 and Saturday 9 July: about seven people died (three children of the same parent and four adults); about eight saved. Siblings Michael, 18, Elizabeth, 17 and Timi, 14, swept away at Mercy of Christ Apostolic Church uncompleted building while relocating; Timi slipped on a plank. Oyatoki: two died, four rescued. Progressive CDA: rainwater from Meiran, Abbatoir, Alagbado, Agege and Tollgate converged.",
+      "quote": "about seven people – three children of the same parent and four adults – died",
+      "causes": [
+        "heavy_rain",
+        "canal_overflow"
+      ],
+      "cause_quote": "rainwater from Meiran, Abbatoir, Alagbado, Agege and Tollgate converged in their community",
+      "cause_attributed_by": "resident",
+      "cause_who": "Progressive Community Development Area",
+      "url": "https://punchng.com/lagos-flood-killed-three-siblings-four-adults-nema/",
+      "publisher": "Punch",
+      "published_at": "2022-07-13T18:51:00+01:00",
+      "read_status": "read",
+      "deaths": {
+        "count": 7,
+        "who_reported": "Ibrahim Farinloye, Zonal Coordinator, South West, NEMA",
+        "quote": "about seven people – three children of the same parent and four adults – died"
+      },
+      "pass": 1
+    },
+    {
+      "id": "r2022-009",
+      "date": "2022-07-08",
+      "date_confidence": "day",
+      "areas": [
+        "Oke Isagun, Agbado Oke, Oko LCDA, Alimosho"
+      ],
+      "impacts": "Same NEMA statement as r2022-008: seven dead (three siblings and four adults) and eight saved after Friday–Saturday rain. Michael, 18; Elizabeth, 17; Timi, 14 swept away at Mercy of Christ Apostolic Church uncompleted building.",
+      "quote": "Three siblings and four adults have died from a two-day continuous rainfall in Lagos State.",
+      "causes": [
+        "heavy_rain"
+      ],
+      "cause_quote": "died as a result of the flooding that was witnessed during the two days continuous rainfall",
+      "cause_attributed_by": "official",
+      "cause_who": "Ibrahim Farinloye, NEMA Zonal Coordinator for South West",
+      "url": "https://www.channelstv.com/2022/07/13/lagos-flood-killed-three-siblings-four-adults-nema/",
+      "publisher": "Channels Television",
+      "published_at": "2022-07-13T00:00:00+01:00",
+      "read_status": "read",
+      "deaths": {
+        "count": 7,
+        "who_reported": "Ibrahim Farinloye, NEMA Zonal Coordinator for South West",
+        "quote": "Three siblings and four adults have died from a two-day continuous rainfall in Lagos State."
+      },
+      "pass": 1
+    },
+    {
+      "id": "r2022-010",
+      "date": "2022-07-08",
+      "date_confidence": "day",
+      "areas": [
+        "Oke Isagun, Agbado Oke, Oko LCDA, Alimosho",
+        "Oyatoki, Orile Agege",
+        "Oko-Oba, Agege",
+        "Mushin",
+        "Ikorodu",
+        "Kosofe",
+        "Eti-Osa"
+      ],
+      "impacts": "Farinloye: seven deaths recorded, two in Ogun and five in Lagos; nine/eight rescued. Three siblings at Oke Isagun. Oyatoki: four rescued and two dead; one body recovered Monday, one still missing Wednesday 5 p.m. Other serious impacts without lives lost: Mushin, Ikorodu, Kosofe, Agege and Eti-Osa. Two adults swept on Alagbole–Akute Road, Akute, Ogun (not Lagos).",
+      "quote": "seven death were recorded,two in Ogun and five in Lagos",
+      "causes": [
+        "heavy_rain",
+        "canal_overflow"
+      ],
+      "cause_quote": "rainwater from Meiran, Abbatoir, Alagbado, Agege and Toll gate converged and channeled to their community",
+      "cause_attributed_by": "official",
+      "cause_who": "Ibrahim Farinloye, NEMA Lagos Territorial District",
+      "url": "https://www.vanguardngr.com/2022/07/how-flood-swept-3-siblings-4-others-in-lagos-ogun-nema/",
+      "publisher": "Vanguard",
+      "published_at": "2022-07-13T00:00:00+01:00",
+      "read_status": "read",
+      "deaths": {
+        "count": 5,
+        "who_reported": "Ibrahim Farinloye, NEMA Lagos Territorial District",
+        "quote": "seven death were recorded,two in Ogun and five in Lagos"
+      },
+      "pass": 1
+    },
+    {
+      "id": "r2022-011",
+      "date": "2022-09-12",
+      "date_confidence": "exact",
+      "areas": [
+        "Marina, Lagos Island",
+        "Pen Cinema, Agege",
+        "Aboru-Iyana-Ipaja-Ile-Epo",
+        "Dolphin Estate, Ikoyi",
+        "47 Akinwunmi Street, Mende, Maryland",
+        "Ajayi Street",
+        "Olubodun Ifesowapo",
+        "Olubodun",
+        "Fafunwa",
+        "Ipaja West",
+        "Tioluwani",
+        "Command Bridge, Alimosho"
+      ],
+      "impacts": "Monday early-morning rain about four hours. Roads flooded: Marina, Pen Cinema, Aboru-Iyana-Ipaja-Ile-Epo, Dolphin Estate. Nine women rescued from a sinking building at 47 Akinwunmi Street, Mende; 35 buildings on Akinwumi Estate, 31 on Arowojobe, and Ebun Otti Estate impacted. Two men swept away and killed: Alfa returned to a flooded house; another missed his step on Command Bridge.",
+      "quote": "They were swept away by the floods and Farinloye said they both lost their lives.",
+      "causes": [
+        "heavy_rain",
+        "lagoon_tide"
+      ],
+      "cause_quote": "Lagos is a coastal city, and flash flood are expected",
+      "cause_attributed_by": "official",
+      "cause_who": "Joe Igbokwe, Special Adviser on Drainage and Water Resources",
+      "url": "https://www.channelstv.com/2022/09/12/gridlock-outcry-as-floods-hit-lagos-kill-two/",
+      "publisher": "Channels Television",
+      "published_at": "2022-09-12T00:00:00+01:00",
+      "read_status": "read",
+      "deaths": {
+        "count": 2,
+        "who_reported": "Ibrahim Farinloye, Lagos Territorial Coordinator, NEMA",
+        "quote": "They were swept away by the floods and Farinloye said they both lost their lives."
+      },
+      "pass": 1
+    },
+    {
+      "id": "r2022-012",
+      "date": "2022-09-12",
+      "date_confidence": "exact",
+      "areas": [
+        "Iyana Ipaja",
+        "Command Bridge, Alimosho",
+        "Ajayi Street",
+        "Olubodun Ifesowapo",
+        "Olubodun",
+        "Fafunwa",
+        "Ipaja West",
+        "Tioluwani",
+        "47 Akinwunmi Street, Mende, Maryland"
+      ],
+      "impacts": "Monday: two adult men swept away in Iyana Ipaja and Command; Alfa returned for items and was swept from a submerged house; another fell from Command Bridge. Two others with Alfa escaped. Nine ladies rescued from a one-storey building that started sinking on Akinwunmi Street; neighbouring houses displaced. Sylvester Diugwu: canal blocked by bamboo, water cannot reach the lagoon.",
+      "quote": "Two persons lost their lives during the flood that submerged various communities in Alimosho Local Government Area of Lagos State on Monday.",
+      "causes": [
+        "heavy_rain",
+        "blocked_drainage",
+        "canal_overflow"
+      ],
+      "cause_quote": "there is no channel to locate the lagoon, so the whole rain comes onto the street.",
+      "cause_attributed_by": "resident",
+      "cause_who": "Sylvester Diugwu, landlord, Mende",
+      "url": "https://punchng.com/lagos-flooding-rescuers-recover-two-corpses-save-nine/",
+      "publisher": "Punch",
+      "published_at": "2022-09-13T03:33:00+01:00",
+      "read_status": "read",
+      "deaths": {
+        "count": 2,
+        "who_reported": "Ibrahim Farinloye, Lagos Territorial Coordinator, NEMA",
+        "quote": "Two adult men were swept away at Iyana Ipaja and Command areas of Lagos State."
+      },
+      "pass": 1
+    },
+    {
+      "id": "r2022-013",
+      "date": "2022-09-12",
+      "date_confidence": "exact",
+      "areas": [
+        "47 Akinwunmi Street, Akinwunmi North Estate, Mende, Maryland, Ikeja"
+      ],
+      "impacts": "Monday morning: storey building submerged after about four hours of rain, then started sinking. Nine female occupants rescued. Landlord escaped by ladder without alerting tenants; later questioned. Occupants Tosin Ademuyiwa and Blessing Uzokah had just renewed N300,000 annual rent and had nowhere to go. Rescue concluded about 11.56 a.m.; building cordoned for integrity testing.",
+      "quote": "the building started sinking on Monday morning, after it was submerged due to four hours of torrential rainfall",
+      "causes": [
+        "heavy_rain"
+      ],
+      "cause_quote": "the building started sinking on Monday morning, after it was submerged due to four hours of torrential rainfall",
+      "cause_attributed_by": "journalist",
+      "cause_who": null,
+      "url": "https://www.vanguardngr.com/2022/09/we-just-renewed-rent-have-no-place-to-go-survivors-of-lagos-sinking-building/",
+      "publisher": "Vanguard",
+      "published_at": "2022-09-12T00:00:00+01:00",
+      "read_status": "read",
+      "deaths": null,
+      "pass": 1
+    },
+    {
+      "id": "r2022-014",
+      "date": "2022-09-26",
+      "date_confidence": "day",
+      "areas": [
+        "Ibiwoye road, Ago Palace Way, Okota",
+        "Community Road, Ago Palace Way, Okota",
+        "Oshodi-Isolo"
+      ],
+      "impacts": "Yesterday: flood on Ibiwoye road and adjoining roads stranded commuters and shop owners. Motorists avoided the road; fares up about 50 percent. Chioma Enwerem: hard to leave home; water takes a week or more to dry. Victor Nwafada: stopped plying when it rains after flood damaged his tricycle last week.",
+      "quote": "floods that threw commuters, residents and shop owners into distress",
+      "causes": [
+        "heavy_rain",
+        "blocked_drainage",
+        "drainage_capacity"
+      ],
+      "cause_quote": "The flood was exacerbated by heavy rainfalls and blocked drainage systems that have defied solutions.",
+      "cause_attributed_by": "journalist",
+      "cause_who": null,
+      "url": "https://guardian.ng/news/okota-residents-commuters-stranded-as-flood-takes-over-roads/",
+      "publisher": "The Guardian Nigeria",
+      "published_at": "2022-09-27T05:00:00+01:00",
+      "read_status": "read",
+      "deaths": null,
+      "pass": 1
+    },
+    {
+      "id": "r2022-015",
+      "date": "2022-10-21",
+      "date_confidence": "exact",
+      "areas": [
+        "New Oko Oba, Ojokoro",
+        "street behind Abimbola Awoliyi Estate"
+      ],
+      "impacts": "Friday torrential rain overwhelmed buildings and washed away fences, including New Oko Oba. Jefferson Uwoghiren video from 2.30 p.m.: houses submerged, gates and fences washed away beside the canal. Dawodu: shoddy canal construction; same canal to Iyana-Ipaja, Command, Ayobo. LASEMA Oke-Osanyintolu: no casualty in New Oko Oba. Omotoso: flash flood, gone within hours after rain subsided.",
+      "quote": "houses are being submerged, gates and fences being removed and washed away by the flood",
+      "causes": [
+        "heavy_rain",
+        "canal_overflow",
+        "drainage_capacity",
+        "setback_encroachment",
+        "blocked_drainage"
+      ],
+      "cause_quote": "the flood was caused by the shoddy construction of canals in the community",
+      "cause_attributed_by": "resident",
+      "cause_who": "Dawodu, resident",
+      "url": "https://punchng.com/flood-overtakes-lagos-community-govt-decries-illegal-structures/",
+      "publisher": "Punch",
+      "published_at": "2022-10-24T00:15:00+01:00",
+      "read_status": "read",
+      "deaths": null,
+      "pass": 1
+    }
+  ],
+  "excluded": [
+    {
+      "url": "https://www.vanguardngr.com/2022/04/heavy-rains-ahead-lagos-govt-alerts-residents/",
+      "publisher": "Vanguard",
+      "reason": "seasonal climate prediction / alert, not an observed flood day",
+      "pass": 1
+    },
+    {
+      "url": "https://www.vanguardngr.com/2022/04/lagoon-threats-lagos-allays-fears-over-idumagbo-flood-sues-for-calm/",
+      "publisher": "Vanguard",
+      "reason": "perennial Idumagbo flooding protest; no named flood day with water on streets that day",
+      "pass": 1
+    },
+    {
+      "url": "https://punchng.com/climate-change-responsible-for-flooding-lagos-govt/",
+      "publisher": "Punch",
+      "reason": "stakeholder meeting / climate-change statement on Idumagbo, not a dated observed flood day",
+      "pass": 1
+    },
+    {
+      "url": "https://thesun.ng/rainy-season-fear-grips-lagos-residents-over-storms-floods/",
+      "publisher": "The Sun",
+      "reason": "fear/perennial feature; not a Task 26 outlet",
+      "pass": 1
+    },
+    {
+      "url": "https://punchng.com/lagos-residents-lament-drain-blockage-govt-promises-intervention/",
+      "publisher": "Punch",
+      "reason": "Cluster One Estate ongoing developer blockage from May; no named flood day",
+      "pass": 1
+    },
+    {
+      "url": "https://www.vanguardngr.com/2022/10/flood-alert-relocate-to-safe-grounds-lagos-tells-residents/",
+      "publisher": "Vanguard",
+      "reason": "Oyan Dam / Ogun River relocate alert, not an observed flood day",
+      "pass": 2
+    },
+    {
+      "url": "https://guardian.ng/news/lagos-issues-fresh-update-on-flooding-for-ikoyi-lekki-vi-residents/",
+      "publisher": "The Guardian Nigeria",
+      "reason": "high-tide advisory and fake-news denial, not observed street/home flooding that day",
+      "pass": 2
+    },
+    {
+      "url": "https://www.aa.com.tr/en/africa/flood-deaths-hit-603-in-10-months-in-nigeria-official-says/2713826",
+      "publisher": "Anadolu Agency",
+      "reason": "national 2022 flood death toll, not a named Lagos street/home flood day",
+      "pass": 2
+    },
+    {
+      "url": "https://punchng.com/we-are-traumatised-scared-lagos-flood-victims/",
+      "publisher": "Punch",
+      "reason": "aftermath interviews of the 21 Oct New Oko Oba flood, not a new flood day",
+      "pass": 2
+    },
+    {
+      "url": "https://www.bbc.com/pidgin/articles/c4n9kmjrxe5o",
+      "publisher": "BBC News Pidgin",
+      "reason": "fact-check of viral Third Mainland Bridge lagoon video; no qualifying flood day",
+      "pass": 2
+    },
+    {
+      "url": "https://dailytrust.com/7-killed-over-24000-households-displaced-in-lagos-flood/",
+      "publisher": "Daily Trust",
+      "reason": "October relief-grain wrap aggregating earlier flash floods, not a new dated flood day",
+      "pass": 2
+    },
+    {
+      "url": "https://tribuneonlineng.com/lagos-floods-24131-households-affected-families-construct-sleep-on-slabs-in-flooded-rooms/",
+      "publisher": "Nigerian Tribune",
+      "reason": "Isheri North / Owode Onirin inundation described, but not a Task 26 outlet; no dated day isolated",
+      "pass": 2
+    }
+  ]
+}

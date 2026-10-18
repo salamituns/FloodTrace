@@ -1,8 +1,8 @@
 {
   "meta": {
-    "compiled_at": "2026-10-18T17:30:00Z",
-    "task": "26-news-sweep-pilot",
-    "coverage": "wet-season months Apr–Nov for pilot years 2019 and 2023",
+    "compiled_at": "2026-10-19T02:30:00Z",
+    "task": "26-news-sweep-pilot; 28-news-sweep-full",
+    "coverage": "wet-season months Apr–Nov for 2019, 2023 (pilot), 2018, 2020, 2021, 2022, 2024 and 2025 (Task 28, with pass 2); 2018–2025 include out-of-season Jan–Mar and Dec pass-2 checks; 2025–2018 pass 2 follows the slimmed 2026-10-18 brief (death, river/dam/lagoon, Anadolu once per year); 2026 Task 28 run is January–September only: pass 1 Apr–Sep, pass 2 death/river/Anadolu plus out-of-season Jan–Mar (Dec not run)",
     "districts_searched": [
       "Alimosho",
       "Ajeromi-Ifelodun",
@@ -20,9 +20,115 @@
       "Ikeja",
       "Eti-Osa"
     ],
-    "notes": "One entry per year-month. Hits screened are unique URLs opened or read from title/snippet for that month. Kept counts match reports_*.json. A month with kept=0 is a recorded search, not missing work."
+    "notes": "One entry per year-month. Hits screened are unique URLs opened or read from title/snippet for that month. Kept counts match reports_*.json. A month with kept=0 is a recorded search, not missing work. From 2024, each wet-season entry has a pass2 object. For 2019, pass2 objects were added on 2026-10-18 without duplicating pass-1 entries. 2019-01/02/03/12 and 2024–2025-01/02/03/12 are out-of-season checks (pass 2 only). 2026-01/02/03 are out-of-season checks (pass 2 only); 2026-04..09 have pass 1 + pass 2; 2026-10/11/12 not in this run. 2022 Task 28 run (2026-10-18): pass 1 Apr–Nov plus pass 2 death/river/Anadolu and out-of-season Jan–Mar and Dec; reports in reports_2022.json. 2021 Task 28 run (2026-10-18): pass 1 Apr–Nov plus pass 2 death/river/Anadolu and out-of-season Jan–Mar and Dec; reports in reports_2021.json. 2020 Task 28 run (2026-10-18): pass 1 Apr–Nov plus pass 2 death/river/Anadolu and out-of-season Jan–Mar and Dec; reports in reports_2020.json. 2018 Task 28 run (2026-10-19): pass 1 Apr–Nov plus pass 2 death/river/Anadolu and out-of-season Jan–Mar and Dec; reports in reports_2018.json."
   },
   "entries": [
+    {
+      "year_month": "2019-01",
+      "queries": [
+        "flood Lagos January 2019",
+        "Lagos residents happy with first rain 2019"
+      ],
+      "outlets": {
+        "note": "out-of-season check; pass 1 not run"
+      },
+      "hits_screened": 4,
+      "kept": 0,
+      "excluded": 1,
+      "minutes": 4,
+      "pass2": {
+        "queries": [
+          "flood Lagos January 2019",
+          "Lagos residents happy with first rain 2019"
+        ],
+        "outlets": {
+          "Anadolu": "reached_no_lagos_flood_day",
+          "Reuters": "not_reached_lagos_day",
+          "AFP": "not_reached_lagos_day",
+          "Al Jazeera": "not_reached_lagos_day",
+          "Xinhua": "reached_no_lagos_flood",
+          "ReliefWeb": "reached_national_not_lagos_street",
+          "Dartmouth Flood Observatory": "reached_no_lagos_2019_event",
+          "lagosstate.gov.ng": "reached_no_2019_flood_day",
+          "moelagos.gov.ng": "not_reached_2019_flood_day",
+          "NIHSA": "reached_outlook_not_observed_day",
+          "Vanguard": "reached_rain_not_flood"
+        },
+        "hits_screened": 4,
+        "kept": 0,
+        "excluded": 1,
+        "minutes": 6
+      }
+    },
+    {
+      "year_month": "2019-02",
+      "queries": [
+        "flood Lagos February 2019"
+      ],
+      "outlets": {
+        "note": "out-of-season check; pass 1 not run"
+      },
+      "hits_screened": 2,
+      "kept": 0,
+      "excluded": 0,
+      "minutes": 4,
+      "pass2": {
+        "queries": [
+          "flood Lagos February 2019"
+        ],
+        "outlets": {
+          "Anadolu": "reached_no_lagos_flood_day",
+          "Reuters": "not_reached_lagos_day",
+          "AFP": "not_reached_lagos_day",
+          "Al Jazeera": "not_reached_lagos_day",
+          "Xinhua": "reached_no_lagos_flood",
+          "ReliefWeb": "reached_national_not_lagos_street",
+          "Dartmouth Flood Observatory": "reached_no_lagos_2019_event",
+          "lagosstate.gov.ng": "reached_no_2019_flood_day",
+          "moelagos.gov.ng": "not_reached_2019_flood_day",
+          "NIHSA": "reached_outlook_not_observed_day"
+        },
+        "hits_screened": 2,
+        "kept": 0,
+        "excluded": 0,
+        "minutes": 5
+      }
+    },
+    {
+      "year_month": "2019-03",
+      "queries": [
+        "flood Lagos March 2019"
+      ],
+      "outlets": {
+        "note": "out-of-season check; pass 1 not run"
+      },
+      "hits_screened": 3,
+      "kept": 0,
+      "excluded": 0,
+      "minutes": 4,
+      "pass2": {
+        "queries": [
+          "flood Lagos March 2019"
+        ],
+        "outlets": {
+          "Anadolu": "reached_no_lagos_flood_day",
+          "Reuters": "not_reached_lagos_day",
+          "AFP": "not_reached_lagos_day",
+          "Al Jazeera": "not_reached_lagos_day",
+          "Xinhua": "reached_no_lagos_flood",
+          "ReliefWeb": "reached_national_not_lagos_street",
+          "Dartmouth Flood Observatory": "reached_no_lagos_2019_event",
+          "lagosstate.gov.ng": "reached_no_2019_flood_day",
+          "moelagos.gov.ng": "not_reached_2019_flood_day",
+          "NIHSA": "reached_outlook_not_observed_day",
+          "France24": "reached_building_collapse_not_flood"
+        },
+        "hits_screened": 3,
+        "kept": 0,
+        "excluded": 0,
+        "minutes": 6
+      }
+    },
     {
       "year_month": "2019-04",
       "queries": [
@@ -55,7 +161,40 @@
       "hits_screened": 12,
       "kept": 0,
       "excluded": 0,
-      "minutes": 12
+      "minutes": 12,
+      "pass2": {
+        "queries": [
+          "Lagos flood site:aa.com.tr 2019",
+          "Lagos flood 2019 site:reuters.com OR site:france24.com OR site:aljazeera.com OR site:xinhuanet.com",
+          "Lagos flood site:reliefweb.int 2019",
+          "Lagos site:floodobservatory.colorado.edu 2019",
+          "\"Lagos flood\" dead OR died OR drowned OR killed OR bodies OR \"swept away\" 2019",
+          "\"Oyan Dam\" Lagos 2019",
+          "\"Ogun River\" overflow Lagos 2019",
+          "\"Lagos lagoon\" overflow 2019",
+          "\"release of water\" Lagos flood 2019",
+          "LASEMA flood Lagos 2019",
+          "NEMA Lagos flood 2019",
+          "flood Lagos 2019 site:lagosstate.gov.ng OR site:moelagos.gov.ng",
+          "NIHSA Annual Flood Outlook Lagos 2019"
+        ],
+        "outlets": {
+          "Anadolu": "reached_no_lagos_flood_day",
+          "Reuters": "not_reached_lagos_day",
+          "AFP": "not_reached_lagos_day",
+          "Al Jazeera": "not_reached_lagos_day",
+          "Xinhua": "reached_no_lagos_flood",
+          "ReliefWeb": "reached_national_not_lagos_street",
+          "Dartmouth Flood Observatory": "reached_no_lagos_2019_event",
+          "lagosstate.gov.ng": "reached_no_2019_flood_day",
+          "moelagos.gov.ng": "not_reached_2019_flood_day",
+          "NIHSA": "reached_outlook_not_observed_day"
+        },
+        "hits_screened": 6,
+        "kept": 0,
+        "excluded": 1,
+        "minutes": 10
+      }
     },
     {
       "year_month": "2019-05",
@@ -81,7 +220,40 @@
       "hits_screened": 18,
       "kept": 3,
       "excluded": 0,
-      "minutes": 28
+      "minutes": 28,
+      "pass2": {
+        "queries": [
+          "Lagos flood site:aa.com.tr 2019",
+          "Lagos flood 2019 site:reuters.com OR site:france24.com OR site:aljazeera.com OR site:xinhuanet.com",
+          "Lagos flood site:reliefweb.int 2019",
+          "Lagos site:floodobservatory.colorado.edu 2019",
+          "\"Lagos flood\" dead OR died OR drowned OR killed OR bodies OR \"swept away\" 2019",
+          "\"Oyan Dam\" Lagos 2019",
+          "\"Ogun River\" overflow Lagos 2019",
+          "\"Lagos lagoon\" overflow 2019",
+          "\"release of water\" Lagos flood 2019",
+          "LASEMA flood Lagos 2019",
+          "NEMA Lagos flood 2019",
+          "flood Lagos 2019 site:lagosstate.gov.ng OR site:moelagos.gov.ng",
+          "NIHSA Annual Flood Outlook Lagos 2019"
+        ],
+        "outlets": {
+          "Anadolu": "reached_no_lagos_flood_day",
+          "Reuters": "not_reached_lagos_day",
+          "AFP": "not_reached_lagos_day",
+          "Al Jazeera": "not_reached_lagos_day",
+          "Xinhua": "reached_no_lagos_flood",
+          "ReliefWeb": "reached_national_not_lagos_street",
+          "Dartmouth Flood Observatory": "reached_no_lagos_2019_event",
+          "lagosstate.gov.ng": "reached_no_2019_flood_day",
+          "moelagos.gov.ng": "not_reached_2019_flood_day",
+          "NIHSA": "reached_outlook_not_observed_day"
+        },
+        "hits_screened": 5,
+        "kept": 0,
+        "excluded": 0,
+        "minutes": 8
+      }
     },
     {
       "year_month": "2019-06",
@@ -106,7 +278,40 @@
       "hits_screened": 8,
       "kept": 1,
       "excluded": 0,
-      "minutes": 15
+      "minutes": 15,
+      "pass2": {
+        "queries": [
+          "Lagos flood site:aa.com.tr 2019",
+          "Lagos flood 2019 site:reuters.com OR site:france24.com OR site:aljazeera.com OR site:xinhuanet.com",
+          "Lagos flood site:reliefweb.int 2019",
+          "Lagos site:floodobservatory.colorado.edu 2019",
+          "\"Lagos flood\" dead OR died OR drowned OR killed OR bodies OR \"swept away\" 2019",
+          "\"Oyan Dam\" Lagos 2019",
+          "\"Ogun River\" overflow Lagos 2019",
+          "\"Lagos lagoon\" overflow 2019",
+          "\"release of water\" Lagos flood 2019",
+          "LASEMA flood Lagos 2019",
+          "NEMA Lagos flood 2019",
+          "flood Lagos 2019 site:lagosstate.gov.ng OR site:moelagos.gov.ng",
+          "NIHSA Annual Flood Outlook Lagos 2019"
+        ],
+        "outlets": {
+          "Anadolu": "reached_no_lagos_flood_day",
+          "Reuters": "not_reached_lagos_day",
+          "AFP": "not_reached_lagos_day",
+          "Al Jazeera": "not_reached_lagos_day",
+          "Xinhua": "reached_no_lagos_flood",
+          "ReliefWeb": "reached_national_not_lagos_street",
+          "Dartmouth Flood Observatory": "reached_no_lagos_2019_event",
+          "lagosstate.gov.ng": "reached_no_2019_flood_day",
+          "moelagos.gov.ng": "not_reached_2019_flood_day",
+          "NIHSA": "reached_outlook_not_observed_day"
+        },
+        "hits_screened": 4,
+        "kept": 0,
+        "excluded": 0,
+        "minutes": 8
+      }
     },
     {
       "year_month": "2019-07",
@@ -131,7 +336,42 @@
       "hits_screened": 14,
       "kept": 2,
       "excluded": 1,
-      "minutes": 22
+      "minutes": 22,
+      "pass2": {
+        "queries": [
+          "Lagos flood site:aa.com.tr 2019",
+          "Lagos flood 2019 site:reuters.com OR site:france24.com OR site:aljazeera.com OR site:xinhuanet.com",
+          "Lagos flood site:reliefweb.int 2019",
+          "Lagos site:floodobservatory.colorado.edu 2019",
+          "\"Lagos flood\" dead OR died OR drowned OR killed OR bodies OR \"swept away\" 2019",
+          "\"Oyan Dam\" Lagos 2019",
+          "\"Ogun River\" overflow Lagos 2019",
+          "\"Lagos lagoon\" overflow 2019",
+          "\"release of water\" Lagos flood 2019",
+          "LASEMA flood Lagos 2019",
+          "NEMA Lagos flood 2019",
+          "flood Lagos 2019 site:lagosstate.gov.ng OR site:moelagos.gov.ng",
+          "NIHSA Annual Flood Outlook Lagos 2019",
+          "LAGOS FLOOD Abraham Adesanya Ajah 1 July 2019"
+        ],
+        "outlets": {
+          "Anadolu": "reached_no_lagos_flood_day",
+          "Reuters": "not_reached_lagos_day",
+          "AFP": "not_reached_lagos_day",
+          "Al Jazeera": "not_reached_lagos_day",
+          "Xinhua": "reached_no_lagos_flood",
+          "ReliefWeb": "reached_national_not_lagos_street",
+          "Dartmouth Flood Observatory": "reached_no_lagos_2019_event",
+          "lagosstate.gov.ng": "reached_no_2019_flood_day",
+          "moelagos.gov.ng": "not_reached_2019_flood_day",
+          "NIHSA": "reached_outlook_not_observed_day",
+          "Facebook/YouTube": "leads_only_not_confirmed"
+        },
+        "hits_screened": 6,
+        "kept": 0,
+        "excluded": 0,
+        "minutes": 8
+      }
     },
     {
       "year_month": "2019-08",
@@ -156,7 +396,40 @@
       "hits_screened": 6,
       "kept": 0,
       "excluded": 1,
-      "minutes": 10
+      "minutes": 10,
+      "pass2": {
+        "queries": [
+          "Lagos flood site:aa.com.tr 2019",
+          "Lagos flood 2019 site:reuters.com OR site:france24.com OR site:aljazeera.com OR site:xinhuanet.com",
+          "Lagos flood site:reliefweb.int 2019",
+          "Lagos site:floodobservatory.colorado.edu 2019",
+          "\"Lagos flood\" dead OR died OR drowned OR killed OR bodies OR \"swept away\" 2019",
+          "\"Oyan Dam\" Lagos 2019",
+          "\"Ogun River\" overflow Lagos 2019",
+          "\"Lagos lagoon\" overflow 2019",
+          "\"release of water\" Lagos flood 2019",
+          "LASEMA flood Lagos 2019",
+          "NEMA Lagos flood 2019",
+          "flood Lagos 2019 site:lagosstate.gov.ng OR site:moelagos.gov.ng",
+          "NIHSA Annual Flood Outlook Lagos 2019"
+        ],
+        "outlets": {
+          "Anadolu": "reached_no_lagos_flood_day",
+          "Reuters": "not_reached_lagos_day",
+          "AFP": "not_reached_lagos_day",
+          "Al Jazeera": "not_reached_lagos_day",
+          "Xinhua": "reached_no_lagos_flood",
+          "ReliefWeb": "reached_adamawa_not_lagos",
+          "Dartmouth Flood Observatory": "reached_no_lagos_2019_event",
+          "lagosstate.gov.ng": "reached_no_2019_flood_day",
+          "moelagos.gov.ng": "not_reached_2019_flood_day",
+          "NIHSA": "reached_outlook_not_observed_day"
+        },
+        "hits_screened": 5,
+        "kept": 0,
+        "excluded": 2,
+        "minutes": 8
+      }
     },
     {
       "year_month": "2019-09",
@@ -181,7 +454,40 @@
       "hits_screened": 7,
       "kept": 1,
       "excluded": 0,
-      "minutes": 12
+      "minutes": 12,
+      "pass2": {
+        "queries": [
+          "Lagos flood site:aa.com.tr 2019",
+          "Lagos flood 2019 site:reuters.com OR site:france24.com OR site:aljazeera.com OR site:xinhuanet.com",
+          "Lagos flood site:reliefweb.int 2019",
+          "Lagos site:floodobservatory.colorado.edu 2019",
+          "\"Lagos flood\" dead OR died OR drowned OR killed OR bodies OR \"swept away\" 2019",
+          "\"Oyan Dam\" Lagos 2019",
+          "\"Ogun River\" overflow Lagos 2019",
+          "\"Lagos lagoon\" overflow 2019",
+          "\"release of water\" Lagos flood 2019",
+          "LASEMA flood Lagos 2019",
+          "NEMA Lagos flood 2019",
+          "flood Lagos 2019 site:lagosstate.gov.ng OR site:moelagos.gov.ng",
+          "NIHSA Annual Flood Outlook Lagos 2019"
+        ],
+        "outlets": {
+          "Anadolu": "reached_no_lagos_flood_day",
+          "Reuters": "not_reached_lagos_day",
+          "AFP": "not_reached_lagos_day",
+          "Al Jazeera": "not_reached_lagos_day",
+          "Xinhua": "reached_no_lagos_flood",
+          "ReliefWeb": "reached_national_not_lagos_street",
+          "Dartmouth Flood Observatory": "reached_no_lagos_2019_event",
+          "lagosstate.gov.ng": "reached_no_2019_flood_day",
+          "moelagos.gov.ng": "not_reached_2019_flood_day",
+          "NIHSA": "reached_outlook_not_observed_day"
+        },
+        "hits_screened": 4,
+        "kept": 0,
+        "excluded": 0,
+        "minutes": 8
+      }
     },
     {
       "year_month": "2019-10",
@@ -209,7 +515,47 @@
       "hits_screened": 24,
       "kept": 7,
       "excluded": 2,
-      "minutes": 45
+      "minutes": 45,
+      "pass2": {
+        "queries": [
+          "Lagos flood site:aa.com.tr 2019",
+          "Lagos flood 2019 site:reuters.com OR site:france24.com OR site:aljazeera.com OR site:xinhuanet.com",
+          "Lagos flood site:reliefweb.int 2019",
+          "Lagos site:floodobservatory.colorado.edu 2019",
+          "\"Lagos flood\" dead OR died OR drowned OR killed OR bodies OR \"swept away\" 2019",
+          "\"Oyan Dam\" Lagos 2019",
+          "\"Ogun River\" overflow Lagos 2019",
+          "\"Lagos lagoon\" overflow 2019",
+          "\"release of water\" Lagos flood 2019",
+          "LASEMA flood Lagos 2019",
+          "NEMA Lagos flood 2019",
+          "flood Lagos 2019 site:lagosstate.gov.ng OR site:moelagos.gov.ng",
+          "NIHSA Annual Flood Outlook Lagos 2019",
+          "\"Floods leave 6 dead\" Lagos site:aa.com.tr",
+          "\"Six killed as flood submerges Lagos communities\"",
+          "\"Ogun River\" overflow Lagos site:independent.ng"
+        ],
+        "outlets": {
+          "Anadolu": "reached",
+          "Punch": "reached",
+          "Independent Nigeria": "reached",
+          "TheCable": "reached",
+          "The Guardian Nigeria": "reached",
+          "Reuters": "not_reached_lagos_day",
+          "AFP": "not_reached_lagos_day",
+          "Al Jazeera": "not_reached_lagos_day",
+          "Xinhua": "reached_no_lagos_flood",
+          "ReliefWeb": "reached_national_not_lagos_street",
+          "Dartmouth Flood Observatory": "reached_no_lagos_2019_event",
+          "lagosstate.gov.ng": "reached_no_2019_flood_day",
+          "moelagos.gov.ng": "not_reached_2019_flood_day",
+          "BusinessDay": "reached_paywalled"
+        },
+        "hits_screened": 18,
+        "kept": 5,
+        "excluded": 2,
+        "minutes": 42
+      }
     },
     {
       "year_month": "2019-11",
@@ -234,7 +580,554 @@
       "hits_screened": 5,
       "kept": 1,
       "excluded": 1,
-      "minutes": 10
+      "minutes": 10,
+      "pass2": {
+        "queries": [
+          "Lagos flood site:aa.com.tr 2019",
+          "Lagos flood 2019 site:reuters.com OR site:france24.com OR site:aljazeera.com OR site:xinhuanet.com",
+          "Lagos flood site:reliefweb.int 2019",
+          "Lagos site:floodobservatory.colorado.edu 2019",
+          "\"Lagos flood\" dead OR died OR drowned OR killed OR bodies OR \"swept away\" 2019",
+          "\"Oyan Dam\" Lagos 2019",
+          "\"Ogun River\" overflow Lagos 2019",
+          "\"Lagos lagoon\" overflow 2019",
+          "\"release of water\" Lagos flood 2019",
+          "LASEMA flood Lagos 2019",
+          "NEMA Lagos flood 2019",
+          "flood Lagos 2019 site:lagosstate.gov.ng OR site:moelagos.gov.ng",
+          "NIHSA Annual Flood Outlook Lagos 2019",
+          "Flooding from Oyan Dam Isheri site:guardian.ng"
+        ],
+        "outlets": {
+          "Anadolu": "reached_no_lagos_flood_day",
+          "Reuters": "not_reached_lagos_day",
+          "AFP": "not_reached_lagos_day",
+          "Al Jazeera": "not_reached_lagos_day",
+          "Xinhua": "reached_no_lagos_flood",
+          "ReliefWeb": "reached_national_not_lagos_street",
+          "Dartmouth Flood Observatory": "reached_no_lagos_2019_event",
+          "lagosstate.gov.ng": "reached_no_2019_flood_day",
+          "moelagos.gov.ng": "not_reached_2019_flood_day",
+          "NIHSA": "reached_outlook_not_observed_day",
+          "The Guardian Nigeria": "reached",
+          "BusinessDay": "reached_paywalled"
+        },
+        "hits_screened": 6,
+        "kept": 1,
+        "excluded": 2,
+        "minutes": 12
+      }
+    },
+    {
+      "year_month": "2019-12",
+      "queries": [
+        "flood Lagos December 2019"
+      ],
+      "outlets": {
+        "note": "out-of-season check; pass 1 not run"
+      },
+      "hits_screened": 4,
+      "kept": 0,
+      "excluded": 1,
+      "minutes": 4,
+      "pass2": {
+        "queries": [
+          "flood Lagos December 2019"
+        ],
+        "outlets": {
+          "Anadolu": "reached_no_lagos_flood_day",
+          "Reuters": "not_reached_lagos_day",
+          "AFP": "not_reached_lagos_day",
+          "Al Jazeera": "not_reached_lagos_day",
+          "Xinhua": "reached_no_lagos_flood",
+          "ReliefWeb": "reached_national_not_lagos_street",
+          "Dartmouth Flood Observatory": "reached_no_lagos_2019_event",
+          "lagosstate.gov.ng": "reached_no_2019_flood_day",
+          "moelagos.gov.ng": "not_reached_2019_flood_day",
+          "NIHSA": "reached_outlook_not_observed_day",
+          "Independent Nigeria": "reached_no_flood_day"
+        },
+        "hits_screened": 4,
+        "kept": 0,
+        "excluded": 1,
+        "minutes": 6
+      }
+    },
+    {
+      "year_month": "2022-01",
+      "queries": [
+        "flood Lagos January 2022"
+      ],
+      "outlets": {
+        "note": "out-of-season check; pass 1 not run"
+      },
+      "hits_screened": 3,
+      "kept": 0,
+      "excluded": 0,
+      "minutes": 4,
+      "pass2": {
+        "queries": [
+          "flood Lagos January 2022",
+          "\"Lagos flood\" dead OR died OR drowned OR killed OR \"swept away\" OR bodies 2022"
+        ],
+        "outlets": {
+          "Punch": "reached_no_lagos_flood_day",
+          "Anadolu": "year_query_national_not_lagos_day",
+          "Vanguard": "reached_no_jan_flood_day"
+        },
+        "hits_screened": 3,
+        "kept": 0,
+        "excluded": 0,
+        "minutes": 8
+      }
+    },
+    {
+      "year_month": "2022-02",
+      "queries": [
+        "flood Lagos February 2022",
+        "Rainy Season Are Drains Clear Lagos 2022"
+      ],
+      "outlets": {
+        "note": "out-of-season check; pass 1 not run"
+      },
+      "hits_screened": 4,
+      "kept": 0,
+      "excluded": 1,
+      "minutes": 4,
+      "pass2": {
+        "queries": [
+          "flood Lagos February 2022",
+          "Rainy Season Are Drains Clear Lagos 2022",
+          "\"Lagos flood\" dead OR died OR drowned OR killed OR \"swept away\" OR bodies 2022"
+        ],
+        "outlets": {
+          "Independent NG": "reached_season_prep_not_flood_day",
+          "Punch": "reached_no_feb_flood_day",
+          "Anadolu": "year_query_national_not_lagos_day"
+        },
+        "hits_screened": 4,
+        "kept": 0,
+        "excluded": 1,
+        "minutes": 8
+      }
+    },
+    {
+      "year_month": "2022-03",
+      "queries": [
+        "flood Lagos March 2022",
+        "Lagos 1750mm rainfall 2022 alert"
+      ],
+      "outlets": {
+        "note": "out-of-season check; pass 1 not run"
+      },
+      "hits_screened": 4,
+      "kept": 0,
+      "excluded": 1,
+      "minutes": 4,
+      "pass2": {
+        "queries": [
+          "flood Lagos March 2022",
+          "Lagos 1750mm rainfall 2022 alert",
+          "\"Lagos flood\" dead OR died OR drowned OR killed OR \"swept away\" OR bodies 2022"
+        ],
+        "outlets": {
+          "Vanguard": "reached_scp_alert_excluded",
+          "Punch": "reached_no_march_flood_day",
+          "Anadolu": "year_query_national_not_lagos_day"
+        },
+        "hits_screened": 4,
+        "kept": 0,
+        "excluded": 1,
+        "minutes": 8
+      }
+    },
+    {
+      "year_month": "2022-04",
+      "queries": [
+        "flood Lagos April 2022 site:guardian.ng",
+        "flood Lagos site:vanguardngr.com/2022/04",
+        "flood Lagos April 2022 streets",
+        "flood Lagos site:punchng.com/2022/04"
+      ],
+      "outlets": {
+        "Punch": "reached_no_qualifying_april_day",
+        "Vanguard": "reached_alerts_and_idumagbo_protest_excluded",
+        "Guardian NG": "reached",
+        "Premium Times": "reached_no_qualifying_april_day",
+        "Channels TV": "reached_no_qualifying_april_day",
+        "TVC": "reached_no_qualifying_april_day",
+        "Daily Trust": "reached_no_qualifying_april_day",
+        "BBC Pidgin": "reached_no_qualifying_april_day",
+        "Nairametrics": "reached_no_qualifying_april_day",
+        "X:LASEMA": "not_reached",
+        "X:Lagos_MoE": "not_reached",
+        "X:NEMA": "not_reached"
+      },
+      "hits_screened": 14,
+      "kept": 1,
+      "excluded": 3,
+      "minutes": 28,
+      "pass2": {
+        "queries": [
+          "\"Lagos flood\" dead OR died OR drowned OR killed OR \"swept away\" OR bodies 2022",
+          "\"Oyan Dam\" Lagos 2022",
+          "\"Ogun River\" overflow Lagos",
+          "\"Lagos lagoon\" overflow",
+          "\"release of water\" Lagos",
+          "Isheri OR Ajegunle OR \"Owode Onirin\" OR Agboyi flood 2022"
+        ],
+        "outlets": {
+          "Guardian NG": "already_pass1",
+          "Anadolu": "year_query_national_not_lagos_day",
+          "Punch": "no_april_death_day"
+        },
+        "hits_screened": 6,
+        "kept": 0,
+        "excluded": 2,
+        "minutes": 10
+      }
+    },
+    {
+      "year_month": "2022-05",
+      "queries": [
+        "flood Lagos May 2022 streets homes",
+        "flood Lagos site:punchng.com/2022/05",
+        "Idumagbo flooding Lagos May 2022"
+      ],
+      "outlets": {
+        "Punch": "reached_idumagbo_stakeholder_excluded",
+        "Vanguard": "reached_idumagbo_stakeholder_excluded",
+        "Guardian NG": "reached_idumagbo_stakeholder_excluded",
+        "Premium Times": "reached_no_qualifying_may_day",
+        "Channels TV": "reached_no_qualifying_may_day",
+        "TVC": "reached_no_qualifying_may_day",
+        "Daily Trust": "reached_no_qualifying_may_day",
+        "BBC Pidgin": "reached_no_qualifying_may_day",
+        "Nairametrics": "reached_no_qualifying_may_day",
+        "X:LASEMA": "not_reached",
+        "X:Lagos_MoE": "not_reached",
+        "X:NEMA": "not_reached"
+      },
+      "hits_screened": 12,
+      "kept": 0,
+      "excluded": 4,
+      "minutes": 22,
+      "pass2": {
+        "queries": [
+          "\"Lagos flood\" dead OR died OR drowned OR killed OR \"swept away\" OR bodies 2022",
+          "\"Oyan Dam\" Lagos 2022",
+          "\"Ogun River\" overflow Lagos",
+          "\"Lagos lagoon\" overflow",
+          "\"release of water\" Lagos",
+          "Isheri OR Ajegunle OR \"Owode Onirin\" OR Agboyi flood 2022"
+        ],
+        "outlets": {
+          "Punch": "no_may_death_day",
+          "Anadolu": "year_query_national_not_lagos_day"
+        },
+        "hits_screened": 5,
+        "kept": 0,
+        "excluded": 1,
+        "minutes": 10
+      }
+    },
+    {
+      "year_month": "2022-06",
+      "queries": [
+        "flood Lagos June 2022 streets submerged",
+        "flood Lagos site:punchng.com/2022/06",
+        "rain pounds Lagos houses roads 2022"
+      ],
+      "outlets": {
+        "Punch": "reached",
+        "Vanguard": "reached_no_qualifying_june_day",
+        "Guardian NG": "reached_no_qualifying_june_day",
+        "Premium Times": "reached_no_qualifying_june_day",
+        "Channels TV": "reached_no_qualifying_june_day",
+        "TVC": "reached_no_qualifying_june_day",
+        "Daily Trust": "reached_no_qualifying_june_day",
+        "BBC Pidgin": "reached_no_qualifying_june_day",
+        "Nairametrics": "reached_no_qualifying_june_day",
+        "X:LASEMA": "not_reached",
+        "X:Lagos_MoE": "not_reached",
+        "X:NEMA": "not_reached"
+      },
+      "hits_screened": 11,
+      "kept": 1,
+      "excluded": 1,
+      "minutes": 24,
+      "pass2": {
+        "queries": [
+          "\"Lagos flood\" dead OR died OR drowned OR killed OR \"swept away\" OR bodies 2022",
+          "\"Oyan Dam\" Lagos 2022",
+          "\"Ogun River\" overflow Lagos",
+          "\"Lagos lagoon\" overflow",
+          "\"release of water\" Lagos",
+          "Isheri OR Ajegunle OR \"Owode Onirin\" OR Agboyi flood 2022"
+        ],
+        "outlets": {
+          "Punch": "already_pass1",
+          "Anadolu": "year_query_national_not_lagos_day"
+        },
+        "hits_screened": 5,
+        "kept": 0,
+        "excluded": 0,
+        "minutes": 10
+      }
+    },
+    {
+      "year_month": "2022-07",
+      "queries": [
+        "flood Lagos July 2022 Lekki",
+        "Lagos flood killed NEMA 2022",
+        "flood Lagos site:vanguardngr.com/2022/07",
+        "flood Lagos site:guardian.ng 2022 July"
+      ],
+      "outlets": {
+        "Punch": "reached",
+        "Vanguard": "reached",
+        "Guardian NG": "reached",
+        "Premium Times": "reached_nan_wrap_paywall_not_kept_without_full_read",
+        "Channels TV": "reached",
+        "TVC": "reached_no_qualifying_july_day",
+        "Daily Trust": "reached",
+        "BBC Pidgin": "reached_no_qualifying_july_day",
+        "Nairametrics": "reached_no_qualifying_july_day",
+        "X:LASEMA": "not_reached",
+        "X:Lagos_MoE": "not_reached",
+        "X:NEMA": "not_reached"
+      },
+      "hits_screened": 22,
+      "kept": 8,
+      "excluded": 2,
+      "minutes": 48,
+      "pass2": {
+        "queries": [
+          "Lagos flood site:aa.com.tr 2022",
+          "\"Lagos flood\" dead OR died OR drowned OR killed OR \"swept away\" OR bodies 2022",
+          "\"Oyan Dam\" Lagos 2022",
+          "\"Ogun River\" overflow Lagos",
+          "\"Lagos lagoon\" overflow",
+          "\"release of water\" Lagos",
+          "Isheri OR Ajegunle OR \"Owode Onirin\" OR Agboyi flood 2022"
+        ],
+        "outlets": {
+          "Punch": "nema_deaths_already_pass1",
+          "Vanguard": "nema_and_egbe_already_pass1",
+          "Channels TV": "already_pass1",
+          "Anadolu": "year_query_national_not_lagos_day"
+        },
+        "hits_screened": 12,
+        "kept": 0,
+        "excluded": 1,
+        "minutes": 14
+      }
+    },
+    {
+      "year_month": "2022-08",
+      "queries": [
+        "flood Lagos August 2022 streets",
+        "flood Lagos site:punchng.com/2022/08"
+      ],
+      "outlets": {
+        "Punch": "reached_cluster_one_and_garfa_features_excluded",
+        "Vanguard": "reached_no_qualifying_august_day",
+        "Guardian NG": "reached_no_qualifying_august_day",
+        "Premium Times": "reached_no_qualifying_august_day",
+        "Channels TV": "reached_no_qualifying_august_day",
+        "TVC": "reached_no_qualifying_august_day",
+        "Daily Trust": "reached_no_qualifying_august_day",
+        "BBC Pidgin": "reached_no_qualifying_august_day",
+        "Nairametrics": "reached_no_qualifying_august_day",
+        "X:LASEMA": "not_reached",
+        "X:Lagos_MoE": "not_reached",
+        "X:NEMA": "not_reached"
+      },
+      "hits_screened": 10,
+      "kept": 0,
+      "excluded": 2,
+      "minutes": 18,
+      "pass2": {
+        "queries": [
+          "\"Lagos flood\" dead OR died OR drowned OR killed OR \"swept away\" OR bodies 2022",
+          "\"Oyan Dam\" Lagos 2022",
+          "\"Ogun River\" overflow Lagos",
+          "\"Lagos lagoon\" overflow",
+          "\"release of water\" Lagos",
+          "Isheri OR Ajegunle OR \"Owode Onirin\" OR Agboyi flood 2022"
+        ],
+        "outlets": {
+          "Punch": "no_august_death_day",
+          "Anadolu": "year_query_national_not_lagos_day"
+        },
+        "hits_screened": 4,
+        "kept": 0,
+        "excluded": 0,
+        "minutes": 8
+      }
+    },
+    {
+      "year_month": "2022-09",
+      "queries": [
+        "flood Lagos September 2022 streets homes",
+        "floods hit Lagos kill two 2022",
+        "Okota flood Lagos September 2022"
+      ],
+      "outlets": {
+        "Punch": "reached",
+        "Vanguard": "reached",
+        "Guardian NG": "reached",
+        "Premium Times": "reached_no_qualifying_september_day",
+        "Channels TV": "reached",
+        "TVC": "reached_no_qualifying_september_day",
+        "Daily Trust": "reached_no_qualifying_september_day",
+        "BBC Pidgin": "reached_no_qualifying_september_day",
+        "Nairametrics": "reached_no_qualifying_september_day",
+        "X:LASEMA": "not_reached",
+        "X:Lagos_MoE": "not_reached",
+        "X:NEMA": "not_reached"
+      },
+      "hits_screened": 16,
+      "kept": 4,
+      "excluded": 1,
+      "minutes": 36,
+      "pass2": {
+        "queries": [
+          "\"Lagos flood\" dead OR died OR drowned OR killed OR \"swept away\" OR bodies 2022",
+          "\"Oyan Dam\" Lagos 2022",
+          "\"Ogun River\" overflow Lagos",
+          "\"Lagos lagoon\" overflow",
+          "\"release of water\" Lagos",
+          "Isheri OR Ajegunle OR \"Owode Onirin\" OR Agboyi flood 2022"
+        ],
+        "outlets": {
+          "Channels TV": "sept12_deaths_already_pass1",
+          "Punch": "already_pass1",
+          "Anadolu": "year_query_national_not_lagos_day"
+        },
+        "hits_screened": 8,
+        "kept": 0,
+        "excluded": 1,
+        "minutes": 12
+      }
+    },
+    {
+      "year_month": "2022-10",
+      "queries": [
+        "flood Lagos October 2022 streets homes",
+        "flood overtakes Lagos community 2022",
+        "Oyan Dam Lagos October 2022"
+      ],
+      "outlets": {
+        "Punch": "reached",
+        "Vanguard": "reached_oyan_relocate_alert_excluded",
+        "Guardian NG": "reached_lagoon_tide_advisory_excluded",
+        "Premium Times": "reached_no_qualifying_october_day",
+        "Channels TV": "reached_no_qualifying_october_day",
+        "TVC": "reached_no_qualifying_october_day",
+        "Daily Trust": "reached_relief_wrap_excluded",
+        "BBC Pidgin": "reached_third_mainland_factcheck_excluded",
+        "Nairametrics": "reached_no_qualifying_october_day",
+        "X:LASEMA": "not_reached",
+        "X:Lagos_MoE": "not_reached",
+        "X:NEMA": "not_reached"
+      },
+      "hits_screened": 18,
+      "kept": 1,
+      "excluded": 5,
+      "minutes": 32,
+      "pass2": {
+        "queries": [
+          "Lagos flood site:aa.com.tr 2022",
+          "\"Lagos flood\" dead OR died OR drowned OR killed OR \"swept away\" OR bodies 2022",
+          "\"Oyan Dam\" Lagos 2022",
+          "\"Ogun River\" overflow Lagos",
+          "\"Lagos lagoon\" overflow",
+          "\"release of water\" Lagos",
+          "Isheri OR Ajegunle OR \"Owode Onirin\" OR Agboyi flood 2022"
+        ],
+        "outlets": {
+          "Vanguard": "oyan_alert_excluded",
+          "Punch": "nov9_aftermath_excluded",
+          "Anadolu": "year_query_603_national_not_lagos_day",
+          "Tribune": "isheri_owode_not_task26_outlet"
+        },
+        "hits_screened": 14,
+        "kept": 0,
+        "excluded": 4,
+        "minutes": 16
+      }
+    },
+    {
+      "year_month": "2022-11",
+      "queries": [
+        "flood Lagos November 2022 streets submerged",
+        "flood Lagos site:punchng.com/2022/11"
+      ],
+      "outlets": {
+        "Punch": "reached_oct21_aftermath_excluded",
+        "Vanguard": "reached_no_qualifying_november_day",
+        "Guardian NG": "reached_no_qualifying_november_day",
+        "Premium Times": "reached_no_qualifying_november_day",
+        "Channels TV": "reached_no_qualifying_november_day",
+        "TVC": "reached_no_qualifying_november_day",
+        "Daily Trust": "reached_no_qualifying_november_day",
+        "BBC Pidgin": "reached_no_qualifying_november_day",
+        "Nairametrics": "reached_no_qualifying_november_day",
+        "X:LASEMA": "not_reached",
+        "X:Lagos_MoE": "not_reached",
+        "X:NEMA": "not_reached"
+      },
+      "hits_screened": 8,
+      "kept": 0,
+      "excluded": 1,
+      "minutes": 16,
+      "pass2": {
+        "queries": [
+          "\"Lagos flood\" dead OR died OR drowned OR killed OR \"swept away\" OR bodies 2022",
+          "\"Oyan Dam\" Lagos 2022",
+          "\"Ogun River\" overflow Lagos",
+          "\"Lagos lagoon\" overflow",
+          "\"release of water\" Lagos",
+          "Isheri OR Ajegunle OR \"Owode Onirin\" OR Agboyi flood 2022"
+        ],
+        "outlets": {
+          "Punch": "aftermath_already_logged",
+          "Anadolu": "year_query_national_not_lagos_day"
+        },
+        "hits_screened": 4,
+        "kept": 0,
+        "excluded": 0,
+        "minutes": 8
+      }
+    },
+    {
+      "year_month": "2022-12",
+      "queries": [
+        "flood Lagos December 2022"
+      ],
+      "outlets": {
+        "note": "out-of-season check; pass 1 not run"
+      },
+      "hits_screened": 3,
+      "kept": 0,
+      "excluded": 0,
+      "minutes": 4,
+      "pass2": {
+        "queries": [
+          "flood Lagos December 2022",
+          "\"Lagos flood\" dead OR died OR drowned OR killed OR \"swept away\" OR bodies 2022"
+        ],
+        "outlets": {
+          "Punch": "reached_no_dec_flood_day",
+          "Anadolu": "year_query_national_not_lagos_day",
+          "Vanguard": "reached_no_dec_flood_day"
+        },
+        "hits_screened": 3,
+        "kept": 0,
+        "excluded": 0,
+        "minutes": 8
+      }
     },
     {
       "year_month": "2023-04",
@@ -437,6 +1330,2440 @@
       "kept": 0,
       "excluded": 0,
       "minutes": 8
+    },
+    {
+      "year_month": "2024-01",
+      "queries": [
+        "flood Lagos January 2024 site:punchng.com OR site:vanguardngr.com OR site:channelstv.com"
+      ],
+      "outlets": {
+        "note": "out-of-season check; pass 1 not run"
+      },
+      "hits_screened": 3,
+      "kept": 0,
+      "excluded": 1,
+      "minutes": 4,
+      "pass2": {
+        "queries": [
+          "flood Lagos January 2024"
+        ],
+        "outlets": {
+          "Anadolu": "reached_no_lagos_flood_day",
+          "Reuters": "not_reached_lagos_day",
+          "AFP": "not_reached_lagos_day",
+          "Al Jazeera": "not_reached_lagos_day",
+          "Xinhua": "not_reached",
+          "ReliefWeb": "reached_seasonal_aggregate_excluded",
+          "Dartmouth Flood Observatory": "not_reached",
+          "lagosstate.gov.ng": "reached_alerts_or_unrelated",
+          "moelagos.gov.ng": "reached"
+        },
+        "hits_screened": 3,
+        "kept": 0,
+        "excluded": 1,
+        "minutes": 6
+      }
+    },
+    {
+      "year_month": "2024-02",
+      "queries": [
+        "flood Lagos site:channelstv.com/2024/02",
+        "flood Lagos site:vanguardngr.com/2024/02"
+      ],
+      "outlets": {
+        "note": "out-of-season check; qualifying reports stored as pass 2"
+      },
+      "hits_screened": 6,
+      "kept": 0,
+      "excluded": 0,
+      "minutes": 5,
+      "pass2": {
+        "queries": [
+          "flood Lagos February 2024",
+          "151 houses Lagos flood NEMA",
+          "site:nairametrics.com/2024/02 flood Lagos"
+        ],
+        "outlets": {
+          "Anadolu": "reached_no_lagos_flood_day",
+          "Reuters": "not_reached_lagos_day",
+          "AFP": "not_reached_lagos_day",
+          "Al Jazeera": "not_reached_lagos_day",
+          "Xinhua": "not_reached",
+          "ReliefWeb": "reached_seasonal_aggregate_excluded",
+          "Dartmouth Flood Observatory": "not_reached",
+          "lagosstate.gov.ng": "reached_alerts_or_unrelated",
+          "moelagos.gov.ng": "reached",
+          "Channels TV": "reached",
+          "Vanguard": "reached",
+          "Nairametrics": "reached",
+          "NEMA": "reached_via_news"
+        },
+        "hits_screened": 8,
+        "kept": 3,
+        "excluded": 0,
+        "minutes": 18
+      }
+    },
+    {
+      "year_month": "2024-03",
+      "queries": [
+        "flood Lagos March 2024"
+      ],
+      "outlets": {
+        "note": "out-of-season check; pass 1 not run"
+      },
+      "hits_screened": 4,
+      "kept": 0,
+      "excluded": 2,
+      "minutes": 4,
+      "pass2": {
+        "queries": [
+          "flood Lagos March 2024",
+          "Lagos anticipates rainfall 2024"
+        ],
+        "outlets": {
+          "Anadolu": "reached_no_lagos_flood_day",
+          "Reuters": "not_reached_lagos_day",
+          "AFP": "not_reached_lagos_day",
+          "Al Jazeera": "not_reached_lagos_day",
+          "Xinhua": "not_reached",
+          "ReliefWeb": "reached_seasonal_aggregate_excluded",
+          "Dartmouth Flood Observatory": "not_reached",
+          "lagosstate.gov.ng": "reached_alerts_or_unrelated",
+          "moelagos.gov.ng": "reached"
+        },
+        "hits_screened": 4,
+        "kept": 0,
+        "excluded": 2,
+        "minutes": 6
+      }
+    },
+    {
+      "year_month": "2024-04",
+      "queries": [
+        "flood Lagos site:vanguardngr.com/2024/04",
+        "flood Lagos site:nairametrics.com/2024/04",
+        "flood Lagos site:punchng.com/2024/"
+      ],
+      "outlets": {
+        "Punch": "reached_no_qualifying",
+        "Vanguard": "reached_forecasts_only",
+        "Guardian NG": "reached_no_qualifying",
+        "Premium Times": "reached_year_leak_no_2024_url",
+        "Channels TV": "reached_no_qualifying",
+        "TVC": "reached_no_qualifying",
+        "Daily Trust": "reached_no_qualifying",
+        "BBC Pidgin": "reached_no_qualifying",
+        "Nairametrics": "reached_alerts_only",
+        "X:LASEMA": "not_reached",
+        "X:Lagos_MoE": "not_reached",
+        "X:NEMA": "not_reached"
+      },
+      "hits_screened": 10,
+      "kept": 0,
+      "excluded": 5,
+      "minutes": 14,
+      "pass2": {
+        "queries": [
+          "Lagos flood site:aa.com.tr 2024",
+          "Lagos flood dead OR died OR drowned OR killed 2024",
+          "Oyan Dam Lagos 2024",
+          "LASEMA flood 2024",
+          "NEMA Lagos flood 2024",
+          "site:reliefweb.int Lagos flood 2024",
+          "site:floodobservatory.colorado.edu Lagos 2024",
+          "NIHSA 2024 Annual Flood Outlook Lagos"
+        ],
+        "outlets": {
+          "Anadolu": "reached_no_lagos_flood_day",
+          "Reuters": "not_reached_lagos_day",
+          "AFP": "not_reached_lagos_day",
+          "Al Jazeera": "not_reached_lagos_day",
+          "Xinhua": "not_reached",
+          "ReliefWeb": "reached_seasonal_aggregate_excluded",
+          "Dartmouth Flood Observatory": "not_reached",
+          "lagosstate.gov.ng": "reached_alerts_or_unrelated",
+          "moelagos.gov.ng": "reached"
+        },
+        "hits_screened": 6,
+        "kept": 0,
+        "excluded": 4,
+        "minutes": 10
+      }
+    },
+    {
+      "year_month": "2024-05",
+      "queries": [
+        "flood Lagos site:vanguardngr.com/2024/05",
+        "Lagos flood May 2024 streets houses",
+        "flood Alimosho OR Ikeja OR Surulere OR Ikorodu Lagos 2024"
+      ],
+      "outlets": {
+        "Punch": "reached_storm_not_flood",
+        "Vanguard": "reached_forecasts_only",
+        "Guardian NG": "reached_no_qualifying",
+        "Premium Times": "reached_year_leak_no_2024_url",
+        "Channels TV": "reached",
+        "TVC": "reached_no_qualifying",
+        "Daily Trust": "reached_no_qualifying",
+        "BBC Pidgin": "reached",
+        "Nairametrics": "reached_alerts_or_no_qualifying",
+        "X:LASEMA": "not_reached",
+        "X:Lagos_MoE": "not_reached",
+        "X:NEMA": "not_reached"
+      },
+      "hits_screened": 8,
+      "kept": 0,
+      "excluded": 3,
+      "minutes": 12,
+      "pass2": {
+        "queries": [
+          "Lagos flood site:aa.com.tr 2024",
+          "Lagos flood dead OR died OR drowned OR killed 2024",
+          "Oyan Dam Lagos 2024",
+          "LASEMA flood 2024",
+          "NEMA Lagos flood 2024",
+          "site:reliefweb.int Lagos flood 2024",
+          "site:floodobservatory.colorado.edu Lagos 2024",
+          "Lagos flood May 2024 dead"
+        ],
+        "outlets": {
+          "Anadolu": "reached_no_lagos_flood_day",
+          "Reuters": "not_reached_lagos_day",
+          "AFP": "not_reached_lagos_day",
+          "Al Jazeera": "not_reached_lagos_day",
+          "Xinhua": "not_reached",
+          "ReliefWeb": "reached_seasonal_aggregate_excluded",
+          "Dartmouth Flood Observatory": "not_reached",
+          "lagosstate.gov.ng": "reached_alerts_or_unrelated",
+          "moelagos.gov.ng": "reached"
+        },
+        "hits_screened": 5,
+        "kept": 0,
+        "excluded": 2,
+        "minutes": 8
+      }
+    },
+    {
+      "year_month": "2024-06",
+      "queries": [
+        "48hrs rainfall Agungi Lekki site:vanguardngr.com/2024/06",
+        "flood Lagos site:channelstv.com/2024/06",
+        "flood Lekki June 2024"
+      ],
+      "outlets": {
+        "Punch": "reached_no_june_qualifying",
+        "Vanguard": "reached",
+        "Guardian NG": "reached_no_qualifying",
+        "Premium Times": "reached_year_leak_no_2024_url",
+        "Channels TV": "reached_long_bridge_ogun_excluded",
+        "TVC": "reached_no_qualifying",
+        "Daily Trust": "reached_no_qualifying",
+        "BBC Pidgin": "reached",
+        "Nairametrics": "reached_alerts_or_no_qualifying",
+        "X:LASEMA": "not_reached",
+        "X:Lagos_MoE": "not_reached",
+        "X:NEMA": "not_reached"
+      },
+      "hits_screened": 12,
+      "kept": 1,
+      "excluded": 4,
+      "minutes": 22,
+      "pass2": {
+        "queries": [
+          "Lagos flood site:aa.com.tr 2024",
+          "Lagos flood dead OR died OR drowned OR killed 2024",
+          "Oyan Dam Lagos 2024",
+          "LASEMA flood 2024",
+          "NEMA Lagos flood 2024",
+          "site:reliefweb.int Lagos flood 2024",
+          "site:floodobservatory.colorado.edu Lagos 2024",
+          "site:moelagos.gov.ng Agungi flood 2024",
+          "THISDAY Lagos-Ibadan expressway flood June 2024"
+        ],
+        "outlets": {
+          "Anadolu": "reached_no_lagos_flood_day",
+          "Reuters": "not_reached_lagos_day",
+          "AFP": "not_reached_lagos_day",
+          "Al Jazeera": "not_reached_lagos_day",
+          "Xinhua": "not_reached",
+          "ReliefWeb": "reached_seasonal_aggregate_excluded",
+          "Dartmouth Flood Observatory": "not_reached",
+          "lagosstate.gov.ng": "reached_alerts_or_unrelated",
+          "moelagos.gov.ng": "reached"
+        },
+        "hits_screened": 7,
+        "kept": 1,
+        "excluded": 3,
+        "minutes": 12
+      }
+    },
+    {
+      "year_month": "2024-07",
+      "queries": [
+        "flood Lagos site:channelstv.com/2024/07",
+        "flood Lagos site:vanguardngr.com/2024/07",
+        "flood Lagos site:punchng.com 10-hour rainfall",
+        "Lagos flood site:bbc.com/pidgin 2024",
+        "torrential rain flooding Lagos site:thisdaylive.com/2024/07"
+      ],
+      "outlets": {
+        "Punch": "reached",
+        "Vanguard": "reached",
+        "Guardian NG": "reached_no_qualifying_day",
+        "Premium Times": "reached_year_leak_no_2024_url",
+        "Channels TV": "reached",
+        "TVC": "reached_no_qualifying",
+        "Daily Trust": "reached_no_qualifying",
+        "BBC Pidgin": "reached",
+        "Nairametrics": "reached_alerts_or_no_qualifying",
+        "X:LASEMA": "not_reached",
+        "X:Lagos_MoE": "not_reached",
+        "X:NEMA": "not_reached"
+      },
+      "hits_screened": 28,
+      "kept": 7,
+      "excluded": 6,
+      "minutes": 42,
+      "pass2": {
+        "queries": [
+          "Lagos flood site:aa.com.tr 2024",
+          "Lagos flood dead OR died OR drowned OR killed 2024",
+          "Oyan Dam Lagos 2024",
+          "LASEMA flood 2024",
+          "NEMA Lagos flood 2024",
+          "site:reliefweb.int Lagos flood 2024",
+          "site:floodobservatory.colorado.edu Lagos 2024",
+          "Lagos flood July 3 2024 site:aa.com.tr",
+          "FLASH FLOOD 14 LGAS LAGOS IFRC",
+          "site:thisdaylive.com/2024/07 torrential rain Lagos"
+        ],
+        "outlets": {
+          "Anadolu": "reached_no_lagos_flood_day",
+          "Reuters": "not_reached_lagos_day",
+          "AFP": "not_reached_lagos_day",
+          "Al Jazeera": "not_reached_lagos_day",
+          "Xinhua": "not_reached",
+          "ReliefWeb": "reached_seasonal_aggregate_excluded",
+          "Dartmouth Flood Observatory": "not_reached",
+          "lagosstate.gov.ng": "reached_alerts_or_unrelated",
+          "moelagos.gov.ng": "reached",
+          "THISDAY": "reached",
+          "IFRC GO": "reached_10_dead_unconfirmed_excluded"
+        },
+        "hits_screened": 14,
+        "kept": 1,
+        "excluded": 5,
+        "minutes": 20
+      }
+    },
+    {
+      "year_month": "2024-08",
+      "queries": [
+        "flood Lagos site:vanguardngr.com/2024/08",
+        "flood Lagos site:channelstv.com/2024/08",
+        "Lagos flood August 2024 streets submerged"
+      ],
+      "outlets": {
+        "Punch": "reached",
+        "Vanguard": "reached_no_lagos_day",
+        "Guardian NG": "reached_no_qualifying",
+        "Premium Times": "reached_year_leak_no_2024_url",
+        "Channels TV": "reached_national_not_lagos",
+        "TVC": "reached_no_qualifying",
+        "Daily Trust": "reached_no_qualifying",
+        "BBC Pidgin": "reached",
+        "Nairametrics": "reached_alerts_or_no_qualifying",
+        "X:LASEMA": "not_reached",
+        "X:Lagos_MoE": "not_reached",
+        "X:NEMA": "not_reached"
+      },
+      "hits_screened": 8,
+      "kept": 0,
+      "excluded": 4,
+      "minutes": 12,
+      "pass2": {
+        "queries": [
+          "Lagos flood site:aa.com.tr 2024",
+          "Lagos flood dead OR died OR drowned OR killed 2024",
+          "Oyan Dam Lagos 2024",
+          "LASEMA flood 2024",
+          "NEMA Lagos flood 2024",
+          "site:reliefweb.int Lagos flood 2024",
+          "site:floodobservatory.colorado.edu Lagos 2024",
+          "Lagos flood August 2024"
+        ],
+        "outlets": {
+          "Anadolu": "reached_no_lagos_flood_day",
+          "Reuters": "not_reached_lagos_day",
+          "AFP": "not_reached_lagos_day",
+          "Al Jazeera": "not_reached_lagos_day",
+          "Xinhua": "not_reached",
+          "ReliefWeb": "reached_seasonal_aggregate_excluded",
+          "Dartmouth Flood Observatory": "not_reached",
+          "lagosstate.gov.ng": "reached_alerts_or_unrelated",
+          "moelagos.gov.ng": "reached"
+        },
+        "hits_screened": 6,
+        "kept": 0,
+        "excluded": 3,
+        "minutes": 8
+      }
+    },
+    {
+      "year_month": "2024-09",
+      "queries": [
+        "flood Lagos site:vanguardngr.com/2024/09",
+        "flood Lagos site:channelstv.com/2024/09"
+      ],
+      "outlets": {
+        "Punch": "reached",
+        "Vanguard": "reached_enforcement_not_flood_day",
+        "Guardian NG": "reached_no_qualifying",
+        "Premium Times": "reached_year_leak_no_2024_url",
+        "Channels TV": "reached",
+        "TVC": "reached_no_qualifying",
+        "Daily Trust": "reached_no_qualifying",
+        "BBC Pidgin": "reached",
+        "Nairametrics": "reached_alerts_or_no_qualifying",
+        "X:LASEMA": "not_reached",
+        "X:Lagos_MoE": "not_reached",
+        "X:NEMA": "not_reached"
+      },
+      "hits_screened": 7,
+      "kept": 0,
+      "excluded": 3,
+      "minutes": 10,
+      "pass2": {
+        "queries": [
+          "Lagos flood site:aa.com.tr 2024",
+          "Lagos flood dead OR died OR drowned OR killed 2024",
+          "Oyan Dam Lagos 2024",
+          "LASEMA flood 2024",
+          "NEMA Lagos flood 2024",
+          "site:reliefweb.int Lagos flood 2024",
+          "site:floodobservatory.colorado.edu Lagos 2024",
+          "Oyan Dam Lagos September 2024"
+        ],
+        "outlets": {
+          "Anadolu": "reached_no_lagos_flood_day",
+          "Reuters": "not_reached_lagos_day",
+          "AFP": "not_reached_lagos_day",
+          "Al Jazeera": "not_reached_lagos_day",
+          "Xinhua": "not_reached",
+          "ReliefWeb": "reached_seasonal_aggregate_excluded",
+          "Dartmouth Flood Observatory": "not_reached",
+          "lagosstate.gov.ng": "reached_alerts_or_unrelated",
+          "moelagos.gov.ng": "reached"
+        },
+        "hits_screened": 5,
+        "kept": 0,
+        "excluded": 3,
+        "minutes": 8
+      }
+    },
+    {
+      "year_month": "2024-10",
+      "queries": [
+        "flood Lagos site:punchng.com commuters motorists stranded downpour",
+        "flood Lagos October 2024 site:channelstv.com/2024/10",
+        "Oyan Dam Lagos site:vanguardngr.com/2024/10"
+      ],
+      "outlets": {
+        "Punch": "reached",
+        "Vanguard": "reached_oyan_warning_excluded",
+        "Guardian NG": "reached_no_qualifying",
+        "Premium Times": "reached_year_leak_no_2024_url",
+        "Channels TV": "reached_no_lagos_day",
+        "TVC": "reached_no_qualifying",
+        "Daily Trust": "reached_no_qualifying",
+        "BBC Pidgin": "reached",
+        "Nairametrics": "reached_drainage_project_not_flood",
+        "X:LASEMA": "not_reached",
+        "X:Lagos_MoE": "not_reached",
+        "X:NEMA": "not_reached"
+      },
+      "hits_screened": 14,
+      "kept": 1,
+      "excluded": 5,
+      "minutes": 20,
+      "pass2": {
+        "queries": [
+          "Lagos flood site:aa.com.tr 2024",
+          "Lagos flood dead OR died OR drowned OR killed 2024",
+          "Oyan Dam Lagos 2024",
+          "LASEMA flood 2024",
+          "NEMA Lagos flood 2024",
+          "site:reliefweb.int Lagos flood 2024",
+          "site:floodobservatory.colorado.edu Lagos 2024",
+          "Oyan Dam release Lagos October 2024",
+          "flood Lagos 17 October 2024"
+        ],
+        "outlets": {
+          "Anadolu": "reached_no_lagos_flood_day",
+          "Reuters": "not_reached_lagos_day",
+          "AFP": "not_reached_lagos_day",
+          "Al Jazeera": "not_reached_lagos_day",
+          "Xinhua": "not_reached",
+          "ReliefWeb": "reached_seasonal_aggregate_excluded",
+          "Dartmouth Flood Observatory": "not_reached",
+          "lagosstate.gov.ng": "reached_alerts_or_unrelated",
+          "moelagos.gov.ng": "reached"
+        },
+        "hits_screened": 8,
+        "kept": 0,
+        "excluded": 4,
+        "minutes": 12
+      }
+    },
+    {
+      "year_month": "2024-11",
+      "queries": [
+        "flood Lagos site:vanguardngr.com/2024/11",
+        "Banana Island flood Lagos November 2024"
+      ],
+      "outlets": {
+        "Punch": "reached",
+        "Vanguard": "reached_perennial_complaint_no_flood_day",
+        "Guardian NG": "reached_no_qualifying",
+        "Premium Times": "reached_year_leak_no_2024_url",
+        "Channels TV": "reached",
+        "TVC": "reached_no_qualifying",
+        "Daily Trust": "reached_no_qualifying",
+        "BBC Pidgin": "reached",
+        "Nairametrics": "reached_alerts_or_no_qualifying",
+        "X:LASEMA": "not_reached",
+        "X:Lagos_MoE": "not_reached",
+        "X:NEMA": "not_reached"
+      },
+      "hits_screened": 6,
+      "kept": 0,
+      "excluded": 2,
+      "minutes": 10,
+      "pass2": {
+        "queries": [
+          "Lagos flood site:aa.com.tr 2024",
+          "Lagos flood dead OR died OR drowned OR killed 2024",
+          "Oyan Dam Lagos 2024",
+          "LASEMA flood 2024",
+          "NEMA Lagos flood 2024",
+          "site:reliefweb.int Lagos flood 2024",
+          "site:floodobservatory.colorado.edu Lagos 2024",
+          "Banana Island flood Sanwo-Olu 2024"
+        ],
+        "outlets": {
+          "Anadolu": "reached_no_lagos_flood_day",
+          "Reuters": "not_reached_lagos_day",
+          "AFP": "not_reached_lagos_day",
+          "Al Jazeera": "not_reached_lagos_day",
+          "Xinhua": "not_reached",
+          "ReliefWeb": "reached_seasonal_aggregate_excluded",
+          "Dartmouth Flood Observatory": "not_reached",
+          "lagosstate.gov.ng": "reached_alerts_or_unrelated",
+          "moelagos.gov.ng": "reached"
+        },
+        "hits_screened": 5,
+        "kept": 0,
+        "excluded": 2,
+        "minutes": 8
+      }
+    },
+    {
+      "year_month": "2024-12",
+      "queries": [
+        "flood Lagos December 2024"
+      ],
+      "outlets": {
+        "note": "out-of-season check; pass 1 not run"
+      },
+      "hits_screened": 4,
+      "kept": 0,
+      "excluded": 1,
+      "minutes": 5,
+      "pass2": {
+        "queries": [
+          "site:reliefweb.int Joint Post-Flood Situation Report Lagos State 30 December 2024",
+          "flood Lagos December 2024"
+        ],
+        "outlets": {
+          "Anadolu": "reached_no_lagos_flood_day",
+          "Reuters": "not_reached_lagos_day",
+          "AFP": "not_reached_lagos_day",
+          "Al Jazeera": "not_reached_lagos_day",
+          "Xinhua": "not_reached",
+          "ReliefWeb": "reached_seasonal_aggregate_excluded",
+          "Dartmouth Flood Observatory": "not_reached",
+          "lagosstate.gov.ng": "reached_alerts_or_unrelated",
+          "moelagos.gov.ng": "reached"
+        },
+        "hits_screened": 4,
+        "kept": 0,
+        "excluded": 1,
+        "minutes": 10
+      }
+    },
+    {
+      "year_month": "2025-01",
+      "queries": [
+        "flood Lagos January 2025"
+      ],
+      "outlets": {
+        "note": "out-of-season check; pass 1 not run"
+      },
+      "hits_screened": 3,
+      "kept": 0,
+      "excluded": 0,
+      "minutes": 5,
+      "pass2": {
+        "queries": [
+          "flood Lagos January 2025",
+          "Lagos flood dead OR died OR drowned OR killed January 2025"
+        ],
+        "outlets": {
+          "Punch": "reached_no_qualifying_day",
+          "Anadolu": "reached_building_collapse_not_flood"
+        },
+        "hits_screened": 3,
+        "kept": 0,
+        "excluded": 1,
+        "minutes": 6
+      }
+    },
+    {
+      "year_month": "2025-02",
+      "queries": [
+        "flood Lagos February 2025"
+      ],
+      "outlets": {
+        "note": "out-of-season check; pass 1 not run"
+      },
+      "hits_screened": 2,
+      "kept": 0,
+      "excluded": 0,
+      "minutes": 4,
+      "pass2": {
+        "queries": [
+          "flood Lagos February 2025"
+        ],
+        "outlets": {
+          "Punch": "reached_no_qualifying_day"
+        },
+        "hits_screened": 2,
+        "kept": 0,
+        "excluded": 0,
+        "minutes": 5
+      }
+    },
+    {
+      "year_month": "2025-03",
+      "queries": [
+        "flood Lagos March 2025"
+      ],
+      "outlets": {
+        "note": "out-of-season check; pass 1 not run"
+      },
+      "hits_screened": 4,
+      "kept": 0,
+      "excluded": 2,
+      "minutes": 6,
+      "pass2": {
+        "queries": [
+          "flood Lagos March 2025",
+          "Lagos govt warns heavy rains possible flash floods 2025"
+        ],
+        "outlets": {
+          "Punch": "reached_outlook_not_observed_day",
+          "Nairametrics": "reached_outlook_and_enforcement_not_flood_day"
+        },
+        "hits_screened": 4,
+        "kept": 0,
+        "excluded": 2,
+        "minutes": 6
+      }
+    },
+    {
+      "year_month": "2025-04",
+      "queries": [
+        "flood Lagos site:punchng.com/2025",
+        "flood Lagos site:vanguardngr.com/2025/04",
+        "flood Lagos site:channelstv.com/2025",
+        "flood Lagos site:guardian.ng 2025",
+        "flood Lagos site:premiumtimesng.com 2025",
+        "flood Lagos site:tvcnews.tv 2025",
+        "flood Lagos site:dailytrust.com 2025",
+        "flood Lagos site:bbc.com/pidgin 2025",
+        "flood Lagos site:nairametrics.com/2025",
+        "flood Lagos April 2025"
+      ],
+      "outlets": {
+        "Punch": "reached",
+        "Vanguard": "reached_outlook_not_flood_day",
+        "Guardian NG": "reached_no_qualifying_april_day",
+        "Premium Times": "reached_island_works_not_new_day",
+        "Channels TV": "reached_no_qualifying_april_day",
+        "TVC": "reached_no_qualifying",
+        "Daily Trust": "reached_no_qualifying_april_day",
+        "BBC Pidgin": "reached_outlook_not_observed_day",
+        "Nairametrics": "reached_no_qualifying_april_day",
+        "X:LASEMA": "not_reached",
+        "X:Lagos_MoE": "not_reached",
+        "X:NEMA": "not_reached"
+      },
+      "hits_screened": 18,
+      "kept": 1,
+      "excluded": 6,
+      "minutes": 28,
+      "pass2": {
+        "queries": [
+          "Lagos flood dead OR died OR drowned OR killed OR \"swept away\" OR bodies 2025",
+          "\"Oyan Dam\" Lagos 2025",
+          "\"Ogun River\" overflow Lagos",
+          "\"Lagos lagoon\" overflow",
+          "\"release of water\" Lagos",
+          "Isheri OR Ajegunle OR \"Owode Onirin\" OR Agboyi flood 2025"
+        ],
+        "outlets": {
+          "Punch": "reached_april_pumps_already_kept",
+          "Anadolu": "year_query_mokwa_not_lagos"
+        },
+        "hits_screened": 8,
+        "kept": 0,
+        "excluded": 4,
+        "minutes": 12
+      }
+    },
+    {
+      "year_month": "2025-05",
+      "queries": [
+        "flood Lagos site:vanguardngr.com/2025/05",
+        "flood Lagos May 2025 streets",
+        "flash floods Lagos high tidal levels 2025",
+        "flood Lagos site:punchng.com",
+        "flood Lagos site:tvcnews.tv 2025"
+      ],
+      "outlets": {
+        "Punch": "reached",
+        "Vanguard": "reached",
+        "Guardian NG": "reached_pass2_death",
+        "Premium Times": "reached_no_qualifying_may_day",
+        "Channels TV": "reached_no_qualifying_may_day",
+        "TVC": "reached_tidal_lock_no_named_street",
+        "Daily Trust": "reached_no_qualifying_may_day",
+        "BBC Pidgin": "reached_no_qualifying_may_day",
+        "Nairametrics": "reached_enforcement_not_flood_day",
+        "X:LASEMA": "not_reached",
+        "X:Lagos_MoE": "not_reached",
+        "X:NEMA": "not_reached"
+      },
+      "hits_screened": 16,
+      "kept": 2,
+      "excluded": 5,
+      "minutes": 32,
+      "pass2": {
+        "queries": [
+          "Lagos flood dead OR died OR drowned OR killed OR \"swept away\" OR bodies 2025",
+          "\"Oyan Dam\" Lagos 2025",
+          "\"Ogun River\" overflow Lagos",
+          "\"Lagos lagoon\" overflow",
+          "\"release of water\" Lagos",
+          "Isheri OR Ajegunle OR \"Owode Onirin\" OR Agboyi flood 2025"
+        ],
+        "outlets": {
+          "Guardian NG": "reached",
+          "Punch": "alakuko_death_already_pass1",
+          "Anadolu": "year_query_mokwa_not_lagos"
+        },
+        "hits_screened": 10,
+        "kept": 1,
+        "excluded": 3,
+        "minutes": 14
+      }
+    },
+    {
+      "year_month": "2025-06",
+      "queries": [
+        "flood Lagos site:vanguardngr.com/2025/06",
+        "flood Lagos June 2025 streets submerged",
+        "flood Lagos site:guardian.ng 2025",
+        "flood Lagos site:punchng.com"
+      ],
+      "outlets": {
+        "Punch": "reached_alerts_and_lasema_prep",
+        "Vanguard": "reached_alert_june13_unnamed_parts_excluded",
+        "Guardian NG": "reached_alerts_not_flood_day",
+        "Premium Times": "reached_no_qualifying",
+        "Channels TV": "reached_national_or_alert",
+        "TVC": "reached_alert",
+        "Daily Trust": "reached_no_qualifying",
+        "BBC Pidgin": "reached_no_qualifying",
+        "Nairametrics": "reached_alert",
+        "X:LASEMA": "not_reached",
+        "X:Lagos_MoE": "not_reached",
+        "X:NEMA": "not_reached"
+      },
+      "hits_screened": 12,
+      "kept": 0,
+      "excluded": 7,
+      "minutes": 18,
+      "pass2": {
+        "queries": [
+          "Lagos flood dead OR died OR drowned OR killed OR \"swept away\" OR bodies 2025",
+          "\"Oyan Dam\" Lagos 2025",
+          "\"Ogun River\" overflow Lagos",
+          "\"Lagos lagoon\" overflow",
+          "\"release of water\" Lagos",
+          "Isheri OR Ajegunle OR \"Owode Onirin\" OR Agboyi flood 2025",
+          "Lagos flood June 13 2025"
+        ],
+        "outlets": {
+          "Vanguard": "june13_recall_no_named_place"
+        },
+        "hits_screened": 6,
+        "kept": 0,
+        "excluded": 2,
+        "minutes": 10
+      }
+    },
+    {
+      "year_month": "2025-07",
+      "queries": [
+        "flood Lagos July 2025",
+        "flood Lagos site:nairametrics.com/2025/07",
+        "flood Lagos site:punchng.com",
+        "flood Lagos site:vanguardngr.com/2025/07"
+      ],
+      "outlets": {
+        "Punch": "reached_alerts_and_inspection_no_dated_street_flood",
+        "Vanguard": "reached_no_qualifying_july_day",
+        "Guardian NG": "reached_no_qualifying",
+        "Premium Times": "reached_no_qualifying",
+        "Channels TV": "reached_nimet_not_lagos_street",
+        "TVC": "reached_no_qualifying",
+        "Daily Trust": "reached_no_qualifying",
+        "BBC Pidgin": "reached_adamawa_not_lagos_day",
+        "Nairametrics": "reached_tidal_lock_no_named_place_excluded",
+        "X:LASEMA": "not_reached",
+        "X:Lagos_MoE": "not_reached",
+        "X:NEMA": "not_reached"
+      },
+      "hits_screened": 11,
+      "kept": 0,
+      "excluded": 5,
+      "minutes": 16,
+      "pass2": {
+        "queries": [
+          "Lagos flood dead OR died OR drowned OR killed OR \"swept away\" OR bodies 2025",
+          "\"Oyan Dam\" Lagos 2025",
+          "\"Ogun River\" overflow Lagos",
+          "\"Lagos lagoon\" overflow",
+          "\"release of water\" Lagos",
+          "Isheri OR Ajegunle OR \"Owode Onirin\" OR Agboyi flood 2025"
+        ],
+        "outlets": {
+          "Nairametrics": "tidal_lock_no_named_place"
+        },
+        "hits_screened": 5,
+        "kept": 0,
+        "excluded": 2,
+        "minutes": 8
+      }
+    },
+    {
+      "year_month": "2025-08",
+      "queries": [
+        "flood Lagos site:channelstv.com/2025/08",
+        "flood Lagos site:vanguardngr.com/2025/08",
+        "flood Lagos site:punchng.com",
+        "flood Lagos site:dailytrust.com",
+        "flood Lagos site:nairametrics.com/2025/08",
+        "flood Lagos site:tvcnews.tv",
+        "flood Lagos site:bbc.com/pidgin 2025",
+        "flood Lagos site:premiumtimesng.com 2025"
+      ],
+      "outlets": {
+        "Punch": "reached",
+        "Vanguard": "reached",
+        "Guardian NG": "reached_no_additional_aug4_url",
+        "Premium Times": "reached_calm_advisory_no_named_streets",
+        "Channels TV": "reached",
+        "TVC": "reached",
+        "Daily Trust": "reached",
+        "BBC Pidgin": "reached",
+        "Nairametrics": "reached",
+        "X:LASEMA": "not_reached",
+        "X:Lagos_MoE": "not_reached",
+        "X:NEMA": "not_reached"
+      },
+      "hits_screened": 32,
+      "kept": 7,
+      "excluded": 8,
+      "minutes": 48,
+      "pass2": {
+        "queries": [
+          "Lagos flood site:aa.com.tr 2025",
+          "Lagos flood dead OR died OR drowned OR killed OR \"swept away\" OR bodies 2025",
+          "\"Oyan Dam\" Lagos 2025",
+          "\"Ogun River\" overflow Lagos",
+          "\"Lagos lagoon\" overflow",
+          "\"release of water\" Lagos",
+          "Isheri OR Ajegunle OR \"Owode Onirin\" OR Agboyi flood 2025"
+        ],
+        "outlets": {
+          "Anadolu": "reached_national_mokwa_not_lagos_day",
+          "Punch": "ijede_already_pass1"
+        },
+        "hits_screened": 12,
+        "kept": 0,
+        "excluded": 4,
+        "minutes": 16
+      }
+    },
+    {
+      "year_month": "2025-09",
+      "queries": [
+        "flood Lagos site:vanguardngr.com/2025/09",
+        "flood Lagos site:punchng.com",
+        "flood Lagos site:guardian.ng 2025",
+        "flood Lagos site:channelstv.com/2025/09",
+        "flood Lagos site:nairametrics.com/2025/09",
+        "flood Lagos site:premiumtimesng.com 2025",
+        "flood Lagos site:tvcnews.tv"
+      ],
+      "outlets": {
+        "Punch": "reached",
+        "Vanguard": "reached",
+        "Guardian NG": "reached",
+        "Premium Times": "reached",
+        "Channels TV": "reached",
+        "TVC": "reached",
+        "Daily Trust": "reached_kogi_lagos_disruption_not_named_lagos_streets",
+        "BBC Pidgin": "reached_no_qualifying_sept_day",
+        "Nairametrics": "reached",
+        "X:LASEMA": "not_reached",
+        "X:Lagos_MoE": "not_reached",
+        "X:NEMA": "not_reached"
+      },
+      "hits_screened": 30,
+      "kept": 8,
+      "excluded": 6,
+      "minutes": 50,
+      "pass2": {
+        "queries": [
+          "Lagos flood dead OR died OR drowned OR killed OR \"swept away\" OR bodies 2025",
+          "\"Oyan Dam\" Lagos 2025",
+          "\"Ogun River\" overflow Lagos",
+          "\"Lagos lagoon\" overflow",
+          "\"release of water\" Lagos",
+          "Isheri OR Ajegunle OR \"Owode Onirin\" OR Agboyi flood 2025"
+        ],
+        "outlets": {
+          "Ogun": "reached_isheri_alert_not_observed_lagos_day"
+        },
+        "hits_screened": 8,
+        "kept": 0,
+        "excluded": 3,
+        "minutes": 12
+      }
+    },
+    {
+      "year_month": "2025-10",
+      "queries": [
+        "flood Lagos October 2025 streets",
+        "flood Lagos site:punchng.com",
+        "flood Lagos site:vanguardngr.com/2025/10",
+        "flood Lagos site:nema.gov.ng"
+      ],
+      "outlets": {
+        "Punch": "reached_aggregate_and_alerts",
+        "Vanguard": "reached_aggregate_and_perennial_oyadiran",
+        "Guardian NG": "reached_lekki_feature_on_sept_23_already_kept",
+        "Premium Times": "reached_no_new_oct_day",
+        "Channels TV": "reached_ogun_alert_not_lagos_day",
+        "TVC": "reached_no_qualifying",
+        "Daily Trust": "reached_no_qualifying",
+        "BBC Pidgin": "reached_no_qualifying",
+        "Nairametrics": "reached_enforcement_not_flood_day",
+        "X:LASEMA": "not_reached",
+        "X:Lagos_MoE": "not_reached",
+        "X:NEMA": "not_reached"
+      },
+      "hits_screened": 14,
+      "kept": 0,
+      "excluded": 6,
+      "minutes": 20,
+      "pass2": {
+        "queries": [
+          "Lagos flood dead OR died OR drowned OR killed OR \"swept away\" OR bodies 2025",
+          "\"Oyan Dam\" Lagos 2025",
+          "\"Ogun River\" overflow Lagos",
+          "\"Lagos lagoon\" overflow",
+          "\"release of water\" Lagos",
+          "Isheri OR Ajegunle OR \"Owode Onirin\" OR Agboyi flood 2025"
+        ],
+        "outlets": {
+          "Punch": "ogun_oyan_alert_excluded",
+          "NEMA": "oshodi_isolo_postflood_no_flood_date_excluded"
+        },
+        "hits_screened": 8,
+        "kept": 0,
+        "excluded": 4,
+        "minutes": 12
+      }
+    },
+    {
+      "year_month": "2025-11",
+      "queries": [
+        "flood Lagos November 2025 streets",
+        "flood Lagos site:punchng.com",
+        "flood Lagos site:vanguardngr.com/2025/11"
+      ],
+      "outlets": {
+        "Punch": "reached_perennial_ajah_and_drainage_tours",
+        "Vanguard": "reached_maternal_health_feature_not_dated_day",
+        "Guardian NG": "reached_no_qualifying",
+        "Premium Times": "reached_no_qualifying",
+        "Channels TV": "reached_no_qualifying",
+        "TVC": "reached_no_qualifying",
+        "Daily Trust": "reached_no_qualifying",
+        "BBC Pidgin": "reached_no_qualifying",
+        "Nairametrics": "reached_no_qualifying",
+        "X:LASEMA": "not_reached",
+        "X:Lagos_MoE": "not_reached",
+        "X:NEMA": "not_reached"
+      },
+      "hits_screened": 10,
+      "kept": 0,
+      "excluded": 4,
+      "minutes": 14,
+      "pass2": {
+        "queries": [
+          "Lagos flood dead OR died OR drowned OR killed OR \"swept away\" OR bodies 2025",
+          "\"Oyan Dam\" Lagos 2025",
+          "\"Ogun River\" overflow Lagos",
+          "\"Lagos lagoon\" overflow",
+          "\"release of water\" Lagos",
+          "Isheri OR Ajegunle OR \"Owode Onirin\" OR Agboyi flood 2025"
+        ],
+        "outlets": {
+          "Vanguard": "agboyi_oyan_recurring_not_dated_day"
+        },
+        "hits_screened": 5,
+        "kept": 0,
+        "excluded": 2,
+        "minutes": 8
+      }
+    },
+    {
+      "year_month": "2025-12",
+      "queries": [
+        "flood Lagos December 2025"
+      ],
+      "outlets": {
+        "note": "out-of-season check; pass 1 not run"
+      },
+      "hits_screened": 4,
+      "kept": 0,
+      "excluded": 1,
+      "minutes": 5,
+      "pass2": {
+        "queries": [
+          "flood Lagos December 2025",
+          "Lagos flood dead OR died OR drowned OR killed 2025"
+        ],
+        "outlets": {
+          "Punch": "reached_yearend_awards_not_flood_day",
+          "Vanguard": "reached_2026_measures_not_flood_day",
+          "Anadolu": "year_query_national_toll_not_lagos_day"
+        },
+        "hits_screened": 4,
+        "kept": 0,
+        "excluded": 1,
+        "minutes": 6
+      }
+    },
+    {
+      "year_month": "2026-01",
+      "queries": [
+        "flood Lagos January 2026",
+        "rain floods Lagos road January 2026"
+      ],
+      "outlets": {
+        "note": "out-of-season check; pass 1 not run"
+      },
+      "hits_screened": 8,
+      "kept": 0,
+      "excluded": 3,
+      "minutes": 8,
+      "pass2": {
+        "queries": [
+          "flood Lagos January 2026",
+          "VIDEO rain floods Lagos road",
+          "Lagos flood site:aa.com.tr 2026",
+          "\"Lagos flood\" dead OR died OR drowned OR killed OR \"swept away\" OR bodies 2026"
+        ],
+        "outlets": {
+          "Punch": "reached",
+          "Vanguard": "reached_outlook_not_jan_day",
+          "Anadolu": "year_query_makoko_demolitions_not_flood_day",
+          "BBC Pidgin": "reached_older_year_or_alert"
+        },
+        "hits_screened": 8,
+        "kept": 1,
+        "excluded": 3,
+        "minutes": 14
+      }
+    },
+    {
+      "year_month": "2026-02",
+      "queries": [
+        "flood Lagos February 2026"
+      ],
+      "outlets": {
+        "note": "out-of-season check; pass 1 not run"
+      },
+      "hits_screened": 6,
+      "kept": 0,
+      "excluded": 2,
+      "minutes": 6,
+      "pass2": {
+        "queries": [
+          "flood Lagos February 2026",
+          "flash floods Lekki Chisco Elegushi 2026",
+          "Lagos flood site:aa.com.tr 2026"
+        ],
+        "outlets": {
+          "Punch": "reached",
+          "TVC": "reached",
+          "Anadolu": "year_query_makoko_demolitions_not_flood_day"
+        },
+        "hits_screened": 6,
+        "kept": 2,
+        "excluded": 1,
+        "minutes": 12
+      }
+    },
+    {
+      "year_month": "2026-03",
+      "queries": [
+        "flood Lagos March 2026"
+      ],
+      "outlets": {
+        "note": "out-of-season check; pass 1 not run"
+      },
+      "hits_screened": 10,
+      "kept": 0,
+      "excluded": 5,
+      "minutes": 10,
+      "pass2": {
+        "queries": [
+          "flood Lagos March 2026",
+          "Ijora Badia canal flood 2026",
+          "Lagos warns excess rainfall 2026",
+          "Lagos flood site:aa.com.tr 2026",
+          "\"Lagos flood\" dead OR died OR drowned OR killed OR \"swept away\" OR bodies 2026",
+          "\"Oyan Dam\" Lagos 2026"
+        ],
+        "outlets": {
+          "Punch": "reached_ijora_tuesday_downpour_and_persistent_not_new_named_rain_except_31_mar",
+          "Vanguard": "reached_seasonal_warning_not_observed_day",
+          "Guardian NG": "reached_outlook_not_observed_day",
+          "Anadolu": "year_query_makoko_demolitions_not_flood_day"
+        },
+        "hits_screened": 10,
+        "kept": 1,
+        "excluded": 5,
+        "minutes": 16
+      }
+    },
+    {
+      "year_month": "2026-04",
+      "queries": [
+        "flood Lagos site:punchng.com/2026/04",
+        "flood Lagos site:vanguardngr.com/2026/04",
+        "flood Lagos site:guardian.ng 2026",
+        "flood Lagos site:premiumtimesng.com 2026",
+        "flood Lagos site:channelstv.com/2026/04",
+        "flood Lagos site:tvcnews.tv 2026",
+        "flood Lagos site:dailytrust.com 2026",
+        "flood Lagos site:bbc.com/pidgin 2026",
+        "flood Lagos site:nairametrics.com/2026",
+        "flood Lagos April 2026",
+        "flood Alimosho OR Ikeja OR Surulere OR Ikorodu OR Lekki Lagos April 2026"
+      ],
+      "outlets": {
+        "Punch": "reached",
+        "Vanguard": "reached_nema_mitigation_advice_not_april_day",
+        "Guardian NG": "reached_no_qualifying_april_street_day",
+        "Premium Times": "reached_no_qualifying_april_day",
+        "Channels TV": "reached_no_qualifying_april_day",
+        "TVC": "reached_no_qualifying_april_day",
+        "Daily Trust": "reached_no_qualifying_april_day",
+        "BBC Pidgin": "reached_no_qualifying_april_day",
+        "Nairametrics": "reached_no_qualifying_april_day",
+        "X:LASEMA": "not_reached",
+        "X:Lagos_MoE": "not_reached",
+        "X:NEMA": "not_reached"
+      },
+      "hits_screened": 16,
+      "kept": 1,
+      "excluded": 6,
+      "minutes": 28,
+      "pass2": {
+        "queries": [
+          "\"Lagos flood\" dead OR died OR drowned OR killed OR \"swept away\" OR bodies 2026",
+          "\"Oyan Dam\" Lagos 2026",
+          "\"Ogun River\" overflow Lagos",
+          "\"Lagos lagoon\" overflow",
+          "\"release of water\" Lagos",
+          "Isheri OR Ajegunle OR \"Owode Onirin\" OR Agboyi flood 2026",
+          "Lagos flood site:aa.com.tr 2026"
+        ],
+        "outlets": {
+          "Punch": "ijora_school_already_pass1; 31_mar_is_pass2_march",
+          "Anadolu": "year_query_makoko_not_flood_day"
+        },
+        "hits_screened": 8,
+        "kept": 0,
+        "excluded": 3,
+        "minutes": 12
+      }
+    },
+    {
+      "year_month": "2026-05",
+      "queries": [
+        "flood Lagos site:punchng.com/2026/05",
+        "flood Lagos site:vanguardngr.com/2026/05",
+        "flood Lagos site:guardian.ng 2026",
+        "flood Lagos site:premiumtimesng.com 2026",
+        "flood Lagos site:channelstv.com/2026/05",
+        "flood Lagos site:tvcnews.tv 2026",
+        "flood Lagos site:dailytrust.com 2026",
+        "flood Lagos site:bbc.com/pidgin 2026",
+        "flood Lagos site:nairametrics.com/2026",
+        "flood Lagos May 2026",
+        "Ajegunle Amukoko flood Lagos May 2026"
+      ],
+      "outlets": {
+        "Punch": "reached_no_qualifying_may_day",
+        "Vanguard": "reached",
+        "Guardian NG": "reached_no_qualifying_may_day",
+        "Premium Times": "reached_no_qualifying_may_day",
+        "Channels TV": "reached_no_qualifying_may_day",
+        "TVC": "reached_no_qualifying_may_day",
+        "Daily Trust": "reached_no_qualifying_may_day",
+        "BBC Pidgin": "reached_no_qualifying_may_day",
+        "Nairametrics": "reached_no_qualifying_may_day",
+        "X:LASEMA": "not_reached",
+        "X:Lagos_MoE": "not_reached",
+        "X:NEMA": "not_reached"
+      },
+      "hits_screened": 14,
+      "kept": 1,
+      "excluded": 5,
+      "minutes": 24,
+      "pass2": {
+        "queries": [
+          "\"Lagos flood\" dead OR died OR drowned OR killed OR \"swept away\" OR bodies 2026",
+          "\"Oyan Dam\" Lagos 2026",
+          "\"Ogun River\" overflow Lagos",
+          "\"Lagos lagoon\" overflow",
+          "\"release of water\" Lagos",
+          "Isheri OR Ajegunle OR \"Owode Onirin\" OR Agboyi flood 2026",
+          "Lagos flood site:aa.com.tr 2026"
+        ],
+        "outlets": {
+          "Vanguard": "ajegunle_already_pass1",
+          "Anadolu": "year_query_makoko_not_flood_day"
+        },
+        "hits_screened": 8,
+        "kept": 0,
+        "excluded": 3,
+        "minutes": 12
+      }
+    },
+    {
+      "year_month": "2026-06",
+      "queries": [
+        "flood Lagos site:punchng.com/2026/06",
+        "flood Lagos site:vanguardngr.com/2026/06",
+        "flood Lagos site:guardian.ng 2026",
+        "flood Lagos site:premiumtimesng.com 2026",
+        "flood Lagos site:channelstv.com/2026/06",
+        "flood Lagos site:tvcnews.tv 2026",
+        "flood Lagos site:dailytrust.com 2026",
+        "flood Lagos site:bbc.com/pidgin 2026",
+        "flood Lagos site:nairametrics.com/2026",
+        "flood Lagos June 2026",
+        "flood Lagos Sunday airport 2026",
+        "Ajah Mafoluku flood Thursday 2026"
+      ],
+      "outlets": {
+        "Punch": "reached",
+        "Vanguard": "reached",
+        "Guardian NG": "reached",
+        "Premium Times": "reached",
+        "Channels TV": "reached",
+        "TVC": "reached_no_june_qualifying_beyond_feb",
+        "Daily Trust": "reached",
+        "BBC Pidgin": "reached_no_june_day",
+        "Nairametrics": "reached_july5_analysis_kept_on_30_jun",
+        "X:LASEMA": "not_reached",
+        "X:Lagos_MoE": "not_reached",
+        "X:NEMA": "not_reached"
+      },
+      "hits_screened": 32,
+      "kept": 12,
+      "excluded": 8,
+      "minutes": 48,
+      "pass2": {
+        "queries": [
+          "\"Lagos flood\" dead OR died OR drowned OR killed OR \"swept away\" OR bodies 2026",
+          "\"Oyan Dam\" Lagos 2026",
+          "\"Ogun River\" overflow Lagos",
+          "\"Lagos lagoon\" overflow",
+          "\"release of water\" Lagos",
+          "Isheri OR Ajegunle OR \"Owode Onirin\" OR Agboyi flood 2026",
+          "Lagos flood site:aa.com.tr 2026",
+          "Lagos flood swept away kiosk 2026"
+        ],
+        "outlets": {
+          "Guardian NG": "kiosk_swept_away_not_confirmed_death",
+          "Anadolu": "year_query_makoko_not_flood_day"
+        },
+        "hits_screened": 12,
+        "kept": 0,
+        "excluded": 4,
+        "minutes": 16
+      }
+    },
+    {
+      "year_month": "2026-07",
+      "queries": [
+        "flood Lagos site:punchng.com/2026/07",
+        "flood Lagos site:vanguardngr.com/2026/07",
+        "flood Lagos site:guardian.ng 2026",
+        "flood Lagos site:premiumtimesng.com 2026",
+        "flood Lagos site:channelstv.com/2026/07",
+        "flood Lagos site:tvcnews.tv 2026",
+        "flood Lagos site:dailytrust.com 2026",
+        "flood Lagos site:bbc.com/pidgin 2026",
+        "flood Lagos site:nairametrics.com/2026",
+        "flood Lagos July 2026",
+        "Ogombo flood Lagos 2026",
+        "Ikoyi Bourdillon flood July 2026"
+      ],
+      "outlets": {
+        "Punch": "reached",
+        "Vanguard": "reached",
+        "Guardian NG": "reached",
+        "Premium Times": "reached_sanwo_olu_visit_followup_not_new_url_kept",
+        "Channels TV": "reached",
+        "TVC": "reached_atiku_sympathy_not_new_day",
+        "Daily Trust": "reached_ecological_fund_feature_not_new_day",
+        "BBC Pidgin": "reached_no_july_day",
+        "Nairametrics": "reached_already_kept_june30",
+        "X:LASEMA": "not_reached",
+        "X:Lagos_MoE": "not_reached",
+        "X:NEMA": "not_reached"
+      },
+      "hits_screened": 24,
+      "kept": 4,
+      "excluded": 7,
+      "minutes": 40,
+      "pass2": {
+        "queries": [
+          "\"Lagos flood\" dead OR died OR drowned OR killed OR \"swept away\" OR bodies 2026",
+          "\"Oyan Dam\" Lagos 2026",
+          "\"Ogun River\" overflow Lagos",
+          "\"Lagos lagoon\" overflow",
+          "\"release of water\" Lagos",
+          "Isheri OR Ajegunle OR \"Owode Onirin\" OR Agboyi flood 2026",
+          "Lagos flood site:aa.com.tr 2026"
+        ],
+        "outlets": {
+          "Punch": "monday_13_jul_already_pass1",
+          "Anadolu": "year_query_makoko_not_flood_day"
+        },
+        "hits_screened": 10,
+        "kept": 0,
+        "excluded": 3,
+        "minutes": 14
+      }
+    },
+    {
+      "year_month": "2026-08",
+      "queries": [
+        "flood Lagos site:punchng.com/2026/08",
+        "flood Lagos site:vanguardngr.com/2026/08",
+        "flood Lagos site:guardian.ng 2026",
+        "flood Lagos site:premiumtimesng.com 2026",
+        "flood Lagos site:channelstv.com/2026/08",
+        "flood Lagos site:tvcnews.tv 2026",
+        "flood Lagos site:dailytrust.com 2026",
+        "flood Lagos site:bbc.com/pidgin 2026",
+        "flood Lagos site:nairametrics.com/2026",
+        "flood Lagos August 2026"
+      ],
+      "outlets": {
+        "Punch": "reached_rainy_season_feature_and_ndc_warning_no_dated_day",
+        "Vanguard": "reached_waste_flood_crisis_feature_no_dated_day",
+        "Guardian NG": "reached_fg_lagos_flood_defence_plan_no_dated_day",
+        "Premium Times": "reached_no_qualifying_august_day",
+        "Channels TV": "reached_no_qualifying_august_day",
+        "TVC": "reached_no_qualifying_august_day",
+        "Daily Trust": "reached_no_qualifying_august_day",
+        "BBC Pidgin": "reached_no_qualifying_august_day",
+        "Nairametrics": "reached_no_qualifying_august_day",
+        "X:LASEMA": "not_reached",
+        "X:Lagos_MoE": "not_reached",
+        "X:NEMA": "not_reached"
+      },
+      "hits_screened": 14,
+      "kept": 0,
+      "excluded": 6,
+      "minutes": 22,
+      "pass2": {
+        "queries": [
+          "\"Lagos flood\" dead OR died OR drowned OR killed OR \"swept away\" OR bodies 2026",
+          "\"Oyan Dam\" Lagos 2026",
+          "\"Ogun River\" overflow Lagos",
+          "\"Lagos lagoon\" overflow",
+          "\"release of water\" Lagos",
+          "Isheri OR Ajegunle OR \"Owode Onirin\" OR Agboyi flood 2026",
+          "Lagos flood site:aa.com.tr 2026"
+        ],
+        "outlets": {
+          "Anadolu": "year_query_makoko_not_flood_day"
+        },
+        "hits_screened": 7,
+        "kept": 0,
+        "excluded": 2,
+        "minutes": 10
+      }
+    },
+    {
+      "year_month": "2026-09",
+      "queries": [
+        "flood Lagos site:punchng.com/2026/09",
+        "flood Lagos site:vanguardngr.com/2026/09",
+        "flood Lagos site:guardian.ng 2026",
+        "flood Lagos site:premiumtimesng.com 2026",
+        "flood Lagos site:channelstv.com/2026/09",
+        "flood Lagos site:tvcnews.tv 2026",
+        "flood Lagos site:dailytrust.com 2026",
+        "flood Lagos site:bbc.com/pidgin 2026",
+        "flood Lagos site:nairametrics.com/2026",
+        "flood Lagos September 2026",
+        "Lagos relocate flood prone September 2026"
+      ],
+      "outlets": {
+        "Punch": "reached_nihsa_alert_and_relocate_order_excluded",
+        "Vanguard": "reached_nihsa_september_warning_and_eti_osa_evac_order_excluded",
+        "Guardian NG": "reached_no_qualifying_september_observed_day",
+        "Premium Times": "reached_relocate_order_excluded",
+        "Channels TV": "reached_relocate_order_excluded",
+        "TVC": "reached_evac_order_excluded",
+        "Daily Trust": "reached_fg_alert_lagos_listed_excluded",
+        "BBC Pidgin": "reached_nihsa_alert_21_sep_excluded",
+        "Nairametrics": "reached_no_qualifying_september_day",
+        "X:LASEMA": "not_reached",
+        "X:Lagos_MoE": "not_reached",
+        "X:NEMA": "not_reached"
+      },
+      "hits_screened": 16,
+      "kept": 0,
+      "excluded": 9,
+      "minutes": 24,
+      "pass2": {
+        "queries": [
+          "\"Lagos flood\" dead OR died OR drowned OR killed OR \"swept away\" OR bodies 2026",
+          "\"Oyan Dam\" Lagos 2026",
+          "\"Ogun River\" overflow Lagos",
+          "\"Lagos lagoon\" overflow",
+          "\"release of water\" Lagos",
+          "Isheri OR Ajegunle OR \"Owode Onirin\" OR Agboyi flood 2026",
+          "Lagos flood site:aa.com.tr 2026",
+          "Oyan Dam Lagos September 2026"
+        ],
+        "outlets": {
+          "Punch": "ogun_river_communities_in_alert_not_observed_day",
+          "Anadolu": "year_query_makoko_not_flood_day"
+        },
+        "hits_screened": 8,
+        "kept": 0,
+        "excluded": 4,
+        "minutes": 12
+      }
+    },
+    {
+      "year_month": "2021-01",
+      "queries": [
+        "flood Lagos January 2021"
+      ],
+      "outlets": {
+        "note": "out-of-season check; pass 1 not run"
+      },
+      "hits_screened": 3,
+      "kept": 0,
+      "excluded": 0,
+      "minutes": 6,
+      "pass2": {
+        "queries": [
+          "flood Lagos January 2021",
+          "\"Lagos flood\" dead OR died OR drowned OR killed OR \"swept away\" OR bodies 2021",
+          "\"Oyan Dam\" Lagos 2021",
+          "\"Ogun River\" overflow Lagos",
+          "\"Lagos lagoon\" overflow",
+          "\"release of water\" Lagos",
+          "Isheri OR Ajegunle OR \"Owode Onirin\" OR Agboyi flood 2021"
+        ],
+        "outlets": {
+          "Punch": "reached_no_jan_flood_day",
+          "Anadolu": "year_query_ikoyi_collapse_not_flood"
+        },
+        "hits_screened": 4,
+        "kept": 0,
+        "excluded": 0,
+        "minutes": 8
+      }
+    },
+    {
+      "year_month": "2021-02",
+      "queries": [
+        "flood Lagos February 2021"
+      ],
+      "outlets": {
+        "note": "out-of-season check; pass 1 not run"
+      },
+      "hits_screened": 2,
+      "kept": 0,
+      "excluded": 0,
+      "minutes": 5,
+      "pass2": {
+        "queries": [
+          "flood Lagos February 2021",
+          "\"Lagos flood\" dead OR died OR drowned OR killed OR \"swept away\" OR bodies 2021",
+          "\"Oyan Dam\" Lagos 2021",
+          "\"Ogun River\" overflow Lagos",
+          "\"Lagos lagoon\" overflow",
+          "\"release of water\" Lagos",
+          "Isheri OR Ajegunle OR \"Owode Onirin\" OR Agboyi flood 2021"
+        ],
+        "outlets": {
+          "Punch": "reached_no_feb_flood_day",
+          "Anadolu": "year_query_ikoyi_collapse_not_flood"
+        },
+        "hits_screened": 3,
+        "kept": 0,
+        "excluded": 0,
+        "minutes": 6
+      }
+    },
+    {
+      "year_month": "2021-03",
+      "queries": [
+        "flood Lagos March 2021"
+      ],
+      "outlets": {
+        "note": "out-of-season check; pass 1 not run"
+      },
+      "hits_screened": 2,
+      "kept": 0,
+      "excluded": 0,
+      "minutes": 5,
+      "pass2": {
+        "queries": [
+          "flood Lagos March 2021",
+          "\"Lagos flood\" dead OR died OR drowned OR killed OR \"swept away\" OR bodies 2021",
+          "\"Oyan Dam\" Lagos 2021",
+          "\"Ogun River\" overflow Lagos",
+          "\"Lagos lagoon\" overflow",
+          "\"release of water\" Lagos",
+          "Isheri OR Ajegunle OR \"Owode Onirin\" OR Agboyi flood 2021"
+        ],
+        "outlets": {
+          "Punch": "reached_no_mar_flood_day",
+          "Anadolu": "year_query_ikoyi_collapse_not_flood"
+        },
+        "hits_screened": 3,
+        "kept": 0,
+        "excluded": 0,
+        "minutes": 6
+      }
+    },
+    {
+      "year_month": "2021-04",
+      "queries": [
+        "flood Lagos April 2021 site:guardian.ng",
+        "flood Lagos April 2021 site:vanguardngr.com",
+        "flood Lagos April 2021 site:punchng.com",
+        "flood Lagos April 2021 streets homes"
+      ],
+      "outlets": {
+        "Punch": "reached_scp_alert_excluded",
+        "Vanguard": "reached_flash_flood_alert_excluded",
+        "Guardian NG": "reached",
+        "Premium Times": "reached_no_qualifying_day",
+        "Channels TV": "reached_rainfall_prediction_excluded",
+        "TVC": "reached_no_qualifying_day",
+        "Daily Trust": "reached_no_qualifying_day",
+        "BBC Pidgin": "reached_no_qualifying_day",
+        "Nairametrics": "reached_no_qualifying_day",
+        "X:LASEMA": "not_reached",
+        "X:Lagos_MoE": "not_reached",
+        "X:NEMA": "not_reached"
+      },
+      "hits_screened": 14,
+      "kept": 1,
+      "excluded": 5,
+      "minutes": 28,
+      "pass2": {
+        "queries": [
+          "\"Lagos flood\" dead OR died OR drowned OR killed OR \"swept away\" OR bodies 2021",
+          "\"Oyan Dam\" Lagos 2021",
+          "\"Ogun River\" overflow Lagos",
+          "\"Lagos lagoon\" overflow",
+          "\"release of water\" Lagos",
+          "Isheri OR Ajegunle OR \"Owode Onirin\" OR Agboyi flood 2021",
+          "Daily Sun Ilo Boundary Ajegunle flood April 2021 children rescued"
+        ],
+        "outlets": {
+          "Daily Sun": "ilo_boundary_rescue_not_task26_and_not_death",
+          "IReporter": "fagba_22_apr_not_task26_outlet",
+          "Anadolu": "year_query_ikoyi_collapse_not_flood"
+        },
+        "hits_screened": 6,
+        "kept": 0,
+        "excluded": 2,
+        "minutes": 12
+      }
+    },
+    {
+      "year_month": "2021-05",
+      "queries": [
+        "flood Lagos May 2021 streets homes",
+        "flood Lagos site:punchng.com/2021/05",
+        "flood Lagos site:guardian.ng May 2021"
+      ],
+      "outlets": {
+        "Punch": "reached_no_qualifying_may_day",
+        "Vanguard": "reached_no_qualifying_may_day",
+        "Guardian NG": "reached_desilting_feature_excluded",
+        "Premium Times": "reached_no_qualifying_day",
+        "Channels TV": "reached_no_qualifying_day",
+        "TVC": "reached_no_qualifying_day",
+        "Daily Trust": "reached_no_qualifying_day",
+        "BBC Pidgin": "reached_no_qualifying_day",
+        "Nairametrics": "reached_no_qualifying_day",
+        "X:LASEMA": "not_reached",
+        "X:Lagos_MoE": "not_reached",
+        "X:NEMA": "not_reached"
+      },
+      "hits_screened": 10,
+      "kept": 0,
+      "excluded": 3,
+      "minutes": 18,
+      "pass2": {
+        "queries": [
+          "\"Lagos flood\" dead OR died OR drowned OR killed OR \"swept away\" OR bodies 2021",
+          "\"Oyan Dam\" Lagos 2021",
+          "\"Ogun River\" overflow Lagos",
+          "\"Lagos lagoon\" overflow",
+          "\"release of water\" Lagos",
+          "Isheri OR Ajegunle OR \"Owode Onirin\" OR Agboyi flood 2021"
+        ],
+        "outlets": {
+          "Punch": "no_may_death_or_river_day",
+          "Anadolu": "year_query_ikoyi_collapse_not_flood"
+        },
+        "hits_screened": 4,
+        "kept": 0,
+        "excluded": 0,
+        "minutes": 8
+      }
+    },
+    {
+      "year_month": "2021-06",
+      "queries": [
+        "flood Lagos June 2021 streets submerged",
+        "flood Lagos site:punchng.com/2021/06",
+        "flood Lagos site:guardian.ng June 2021"
+      ],
+      "outlets": {
+        "Punch": "reached",
+        "Vanguard": "reached_no_qualifying_day",
+        "Guardian NG": "reached_plastics_and_last_rainfall_no_named_day_excluded",
+        "Premium Times": "reached_lekki_canal_ultimatum_excluded",
+        "Channels TV": "reached_no_qualifying_day",
+        "TVC": "reached_no_qualifying_day",
+        "Daily Trust": "reached_no_qualifying_day",
+        "BBC Pidgin": "reached_no_qualifying_day",
+        "Nairametrics": "reached_no_qualifying_day",
+        "X:LASEMA": "not_reached",
+        "X:Lagos_MoE": "not_reached",
+        "X:NEMA": "not_reached"
+      },
+      "hits_screened": 12,
+      "kept": 1,
+      "excluded": 3,
+      "minutes": 26,
+      "pass2": {
+        "queries": [
+          "\"Lagos flood\" dead OR died OR drowned OR killed OR \"swept away\" OR bodies 2021",
+          "\"Oyan Dam\" Lagos 2021",
+          "\"Ogun River\" overflow Lagos",
+          "\"Lagos lagoon\" overflow",
+          "\"release of water\" Lagos",
+          "Isheri OR Ajegunle OR \"Owode Onirin\" OR Agboyi flood 2021"
+        ],
+        "outlets": {
+          "Punch": "already_pass1",
+          "Premium Times": "2020_surulere_death_not_2021",
+          "Anadolu": "year_query_ikoyi_collapse_not_flood"
+        },
+        "hits_screened": 5,
+        "kept": 0,
+        "excluded": 1,
+        "minutes": 10
+      }
+    },
+    {
+      "year_month": "2021-07",
+      "queries": [
+        "flood Lagos July 2021",
+        "flood Lagos site:punchng.com/2021/07",
+        "flood Lagos site:channelstv.com/2021/07",
+        "flood Lagos site:nairametrics.com 2021 July",
+        "flood Lagos site:dailytrust.com 2021 July",
+        "flood Lagos site:guardian.ng July 2021",
+        "flood Lagos site:vanguardngr.com/2021/07"
+      ],
+      "outlets": {
+        "Punch": "reached",
+        "Vanguard": "reached_gridlock_and_nimet_forecast_no_16_jul_story",
+        "Guardian NG": "reached_canal_clearing_16_jul_excluded_and_ile_epo_photo_23_jul_kept",
+        "Premium Times": "reached_no_qualifying_july_day",
+        "Channels TV": "reached",
+        "TVC": "reached_no_qualifying_day",
+        "Daily Trust": "reached",
+        "BBC Pidgin": "reached_no_qualifying_july_day",
+        "Nairametrics": "reached",
+        "X:LASEMA": "not_reached",
+        "X:Lagos_MoE": "not_reached",
+        "X:NEMA": "not_reached"
+      },
+      "hits_screened": 24,
+      "kept": 6,
+      "excluded": 4,
+      "minutes": 52,
+      "pass2": {
+        "queries": [
+          "Lagos flood site:aa.com.tr 2021",
+          "\"Lagos flood\" dead OR died OR drowned OR killed OR \"swept away\" OR bodies 2021",
+          "\"Oyan Dam\" Lagos 2021",
+          "\"Ogun River\" overflow Lagos",
+          "\"Lagos lagoon\" overflow",
+          "\"release of water\" Lagos",
+          "Isheri OR Ajegunle OR \"Owode Onirin\" OR Agboyi flood 2021"
+        ],
+        "outlets": {
+          "Punch": "already_pass1_no_deaths",
+          "Channels TV": "already_pass1_no_deaths",
+          "Daily Trust": "already_pass1_no_deaths",
+          "Anadolu": "year_query_ikoyi_collapse_not_flood"
+        },
+        "hits_screened": 8,
+        "kept": 0,
+        "excluded": 1,
+        "minutes": 12
+      }
+    },
+    {
+      "year_month": "2021-08",
+      "queries": [
+        "flood Lagos August 2021 streets homes",
+        "flood Lagos site:punchng.com/2021/08",
+        "flood Lagos site:vanguardngr.com/2021/08"
+      ],
+      "outlets": {
+        "Punch": "reached_ojo_afeje_and_osborne_perennial_excluded",
+        "Vanguard": "reached_relocate_alert_excluded",
+        "Guardian NG": "reached_iwaya_drain_works_excluded",
+        "Premium Times": "reached_no_qualifying_day",
+        "Channels TV": "reached_no_qualifying_day",
+        "TVC": "reached_no_qualifying_day",
+        "Daily Trust": "reached_no_qualifying_day",
+        "BBC Pidgin": "reached_no_qualifying_day",
+        "Nairametrics": "reached_no_qualifying_day",
+        "X:LASEMA": "not_reached",
+        "X:Lagos_MoE": "not_reached",
+        "X:NEMA": "not_reached"
+      },
+      "hits_screened": 12,
+      "kept": 0,
+      "excluded": 6,
+      "minutes": 22,
+      "pass2": {
+        "queries": [
+          "\"Lagos flood\" dead OR died OR drowned OR killed OR \"swept away\" OR bodies 2021",
+          "\"Oyan Dam\" Lagos 2021",
+          "\"Ogun River\" overflow Lagos",
+          "\"Lagos lagoon\" overflow",
+          "\"release of water\" Lagos",
+          "Isheri OR Ajegunle OR \"Owode Onirin\" OR Agboyi flood 2021"
+        ],
+        "outlets": {
+          "Cable": "itowolo_onset_last_week_august_kept_on_10_oct_visit_url",
+          "Anadolu": "year_query_ikoyi_collapse_not_flood"
+        },
+        "hits_screened": 5,
+        "kept": 0,
+        "excluded": 1,
+        "minutes": 10
+      }
+    },
+    {
+      "year_month": "2021-09",
+      "queries": [
+        "flood Lagos September 2021",
+        "Oyan Dam Lagos September 2021",
+        "flood Lagos site:punchng.com/2021/09",
+        "flood Lagos site:vanguardngr.com 2021 September"
+      ],
+      "outlets": {
+        "Punch": "reached",
+        "Vanguard": "reached",
+        "Guardian NG": "reached",
+        "Premium Times": "reached_no_qualifying_day",
+        "Channels TV": "reached_no_qualifying_day",
+        "TVC": "reached_no_qualifying_day",
+        "Daily Trust": "reached_no_qualifying_day",
+        "BBC Pidgin": "reached_no_qualifying_day",
+        "Nairametrics": "reached_no_qualifying_day",
+        "X:LASEMA": "not_reached",
+        "X:Lagos_MoE": "not_reached",
+        "X:NEMA": "not_reached"
+      },
+      "hits_screened": 16,
+      "kept": 3,
+      "excluded": 3,
+      "minutes": 36,
+      "pass2": {
+        "queries": [
+          "Lagos flood site:aa.com.tr 2021",
+          "\"Lagos flood\" dead OR died OR drowned OR killed OR \"swept away\" OR bodies 2021",
+          "\"Oyan Dam\" Lagos 2021",
+          "\"Ogun River\" overflow Lagos",
+          "\"Lagos lagoon\" overflow",
+          "\"release of water\" Lagos",
+          "Isheri OR Ajegunle OR \"Owode Onirin\" OR Agboyi flood 2021"
+        ],
+        "outlets": {
+          "THISDAY": "owode_onirin_since_2_sep_kept",
+          "Punch": "already_pass1",
+          "Anadolu": "year_query_ikoyi_collapse_not_flood"
+        },
+        "hits_screened": 8,
+        "kept": 1,
+        "excluded": 2,
+        "minutes": 16
+      }
+    },
+    {
+      "year_month": "2021-10",
+      "queries": [
+        "flood Lagos October 2021",
+        "Oyan Dam Agboyi Ajegunle Isheri 2021",
+        "flood Lagos site:guardian.ng October 2021"
+      ],
+      "outlets": {
+        "Punch": "reached_opinion_and_alerts_no_new_october_day",
+        "Vanguard": "reached_looming_floods_dated_late_sept",
+        "Guardian NG": "reached_oyan_feature_dated_late_sept",
+        "Premium Times": "reached_no_qualifying_day",
+        "Channels TV": "reached_no_qualifying_day",
+        "TVC": "reached_no_qualifying_day",
+        "Daily Trust": "reached_no_qualifying_day",
+        "BBC Pidgin": "reached_no_qualifying_day",
+        "Nairametrics": "reached_no_qualifying_day",
+        "X:LASEMA": "not_reached",
+        "X:Lagos_MoE": "not_reached",
+        "X:NEMA": "not_reached"
+      },
+      "hits_screened": 14,
+      "kept": 0,
+      "excluded": 4,
+      "minutes": 28,
+      "pass2": {
+        "queries": [
+          "\"Lagos flood\" dead OR died OR drowned OR killed OR \"swept away\" OR bodies 2021",
+          "\"Oyan Dam\" Lagos 2021",
+          "\"Ogun River\" overflow Lagos",
+          "\"Lagos lagoon\" overflow",
+          "\"release of water\" Lagos",
+          "Isheri OR Ajegunle OR \"Owode Onirin\" OR Agboyi flood 2021"
+        ],
+        "outlets": {
+          "TheCable": "ajegunle_itowolo_10_oct_visit_kept",
+          "Guardian NG": "teenager_bridge_deaths_unattributed_deaths_null",
+          "Anadolu": "year_query_2019_six_dead_not_2021"
+        },
+        "hits_screened": 7,
+        "kept": 1,
+        "excluded": 2,
+        "minutes": 16
+      }
+    },
+    {
+      "year_month": "2021-11",
+      "queries": [
+        "flood Lagos November 2021",
+        "flood Lagos site:dailytrust.com November 2021",
+        "flood Lagos site:punchng.com/2021/11",
+        "Ekoro Egbeda Akowonjo flood Lagos 2021"
+      ],
+      "outlets": {
+        "Punch": "reached_akowonjo_perennial_and_ikeja_drain_plan_excluded",
+        "Vanguard": "reached_road_closure_de_flooding_excluded",
+        "Guardian NG": "reached_no_qualifying_day",
+        "Premium Times": "reached_no_qualifying_day",
+        "Channels TV": "reached_no_qualifying_day",
+        "TVC": "reached_no_qualifying_day",
+        "Daily Trust": "reached",
+        "BBC Pidgin": "reached_makoko_school_video_not_dated_street_flood",
+        "Nairametrics": "reached_no_qualifying_day",
+        "X:LASEMA": "not_reached",
+        "X:Lagos_MoE": "not_reached",
+        "X:NEMA": "not_reached"
+      },
+      "hits_screened": 14,
+      "kept": 1,
+      "excluded": 5,
+      "minutes": 28,
+      "pass2": {
+        "queries": [
+          "\"Lagos flood\" dead OR died OR drowned OR killed OR \"swept away\" OR bodies 2021",
+          "\"Oyan Dam\" Lagos 2021",
+          "\"Ogun River\" overflow Lagos",
+          "\"Lagos lagoon\" overflow",
+          "\"release of water\" Lagos",
+          "Isheri OR Ajegunle OR \"Owode Onirin\" OR Agboyi flood 2021",
+          "Lagos flood site:aa.com.tr 2021"
+        ],
+        "outlets": {
+          "Daily Trust": "already_pass1_farinloye_no_life_lost",
+          "Anadolu": "ikoyi_building_collapse_not_flood"
+        },
+        "hits_screened": 6,
+        "kept": 0,
+        "excluded": 1,
+        "minutes": 10
+      }
+    },
+    {
+      "year_month": "2021-12",
+      "queries": [
+        "flood Lagos December 2021"
+      ],
+      "outlets": {
+        "note": "out-of-season check; pass 1 not run"
+      },
+      "hits_screened": 4,
+      "kept": 0,
+      "excluded": 1,
+      "minutes": 8,
+      "pass2": {
+        "queries": [
+          "flood Lagos December 2021",
+          "\"Lagos flood\" dead OR died OR drowned OR killed OR \"swept away\" OR bodies 2021",
+          "\"Oyan Dam\" Lagos 2021",
+          "\"Ogun River\" overflow Lagos",
+          "\"Lagos lagoon\" overflow",
+          "\"release of water\" Lagos",
+          "Isheri OR Ajegunle OR \"Owode Onirin\" OR Agboyi flood 2021"
+        ],
+        "outlets": {
+          "THISDAY": "owode_onirin_flood_day_is_2_sep_not_dec",
+          "TheCable": "visit_10_oct_not_dec_flood_day",
+          "Anadolu": "year_query_ikoyi_collapse_not_flood"
+        },
+        "hits_screened": 5,
+        "kept": 0,
+        "excluded": 2,
+        "minutes": 10
+      }
+    },
+    {
+      "year_month": "2020-01",
+      "queries": [
+        "flood Lagos January 2020"
+      ],
+      "outlets": {
+        "note": "out-of-season check; pass 1 not run"
+      },
+      "hits_screened": 3,
+      "kept": 0,
+      "excluded": 0,
+      "minutes": 4,
+      "pass2": {
+        "queries": [
+          "flood Lagos January 2020",
+          "\"Lagos flood\" dead OR died OR drowned OR killed OR \"swept away\" OR bodies 2020"
+        ],
+        "outlets": {
+          "Anadolu": "year_query_is_23_oct_2019_six_dead_not_2020",
+          "Punch": "reached_no_jan_flood_day"
+        },
+        "hits_screened": 3,
+        "kept": 0,
+        "excluded": 0,
+        "minutes": 6
+      }
+    },
+    {
+      "year_month": "2020-02",
+      "queries": [
+        "flood Lagos February 2020"
+      ],
+      "outlets": {
+        "note": "out-of-season check; pass 1 not run"
+      },
+      "hits_screened": 3,
+      "kept": 0,
+      "excluded": 1,
+      "minutes": 4,
+      "pass2": {
+        "queries": [
+          "flood Lagos February 2020",
+          "govt seeks flood-free rainy season 2020"
+        ],
+        "outlets": {
+          "Anadolu": "year_query_is_23_oct_2019_six_dead_not_2020",
+          "Punch": "reached_drainage_prep_not_flood_day"
+        },
+        "hits_screened": 3,
+        "kept": 0,
+        "excluded": 1,
+        "minutes": 6
+      }
+    },
+    {
+      "year_month": "2020-03",
+      "queries": [
+        "flood Lagos March 2020"
+      ],
+      "outlets": {
+        "note": "out-of-season check; pass 1 not run"
+      },
+      "hits_screened": 5,
+      "kept": 0,
+      "excluded": 2,
+      "minutes": 5,
+      "pass2": {
+        "queries": [
+          "flood Lagos March 2020",
+          "Lagos 270 days rainfall 2020"
+        ],
+        "outlets": {
+          "Anadolu": "year_query_is_23_oct_2019_six_dead_not_2020",
+          "Punch": "reached_nimet_prediction_excluded",
+          "Channels TV": "reached_nimet_prediction_excluded",
+          "Guardian NG": "reached_opinion_prediction_excluded"
+        },
+        "hits_screened": 5,
+        "kept": 0,
+        "excluded": 2,
+        "minutes": 7
+      }
+    },
+    {
+      "year_month": "2020-04",
+      "queries": [
+        "flood Lagos April 2020 site:punchng.com",
+        "flood Lagos April 2020 site:vanguardngr.com",
+        "flood Lagos April 2020 site:guardian.ng",
+        "flood Lagos April 2020 site:channelstv.com",
+        "flood Lagos April 2020 site:premiumtimesng.com OR site:dailytrust.com OR site:nairametrics.com OR site:tvcnews.tv"
+      ],
+      "outlets": {
+        "Punch": "reached_nimet_and_dredge_alerts_excluded",
+        "Vanguard": "reached_amukoko_canal_fear_feature_excluded",
+        "Guardian NG": "reached_dredging_inspection_excluded",
+        "Premium Times": "reached_no_qualifying_day",
+        "Channels TV": "reached_no_april_flood_day",
+        "TVC": "reached_no_qualifying_day",
+        "Daily Trust": "reached_no_qualifying_day",
+        "BBC Pidgin": "reached_no_qualifying_day",
+        "Nairametrics": "reached_dangote_flood_committee_covid_excluded",
+        "X:LASEMA": "not_reached",
+        "X:Lagos_MoE": "not_reached",
+        "X:NEMA": "not_reached"
+      },
+      "hits_screened": 12,
+      "kept": 0,
+      "excluded": 5,
+      "minutes": 22,
+      "pass2": {
+        "queries": [
+          "\"Lagos flood\" dead OR died OR drowned OR killed OR \"swept away\" OR bodies 2020",
+          "\"Oyan Dam\" Lagos 2020",
+          "\"Ogun River\" overflow Lagos",
+          "\"Lagos lagoon\" overflow",
+          "\"release of water\" Lagos",
+          "Isheri OR Ajegunle OR \"Owode Onirin\" OR Agboyi flood 2020"
+        ],
+        "outlets": {
+          "Anadolu": "year_query_is_23_oct_2019_six_dead_not_2020",
+          "Punch": "no_april_death_or_river_day"
+        },
+        "hits_screened": 4,
+        "kept": 0,
+        "excluded": 0,
+        "minutes": 8
+      }
+    },
+    {
+      "year_month": "2020-05",
+      "queries": [
+        "flood Lagos May 2020 site:punchng.com OR site:vanguardngr.com OR site:guardian.ng OR site:channelstv.com",
+        "flood Lagos May 2020 Ikorodu",
+        "flood Lagos May 2020 site:premiumtimesng.com OR site:dailytrust.com OR site:nairametrics.com"
+      ],
+      "outlets": {
+        "Punch": "reached_badagry_rainstorm_and_drainage_tour_excluded",
+        "Vanguard": "reached",
+        "Guardian NG": "reached_bridge_drains_maintenance_excluded",
+        "Premium Times": "reached_no_qualifying_may_day",
+        "Channels TV": "reached_no_qualifying_day",
+        "TVC": "reached_no_qualifying_day",
+        "Daily Trust": "reached_no_qualifying_day",
+        "BBC Pidgin": "reached_no_qualifying_day",
+        "Nairametrics": "reached_alagomeji_collapse_not_street_flood",
+        "X:LASEMA": "not_reached",
+        "X:Lagos_MoE": "not_reached",
+        "X:NEMA": "not_reached"
+      },
+      "hits_screened": 14,
+      "kept": 1,
+      "excluded": 5,
+      "minutes": 28,
+      "pass2": {
+        "queries": [
+          "\"Lagos flood\" dead OR died OR drowned OR killed OR \"swept away\" OR bodies 2020",
+          "\"Oyan Dam\" Lagos 2020",
+          "\"Ogun River\" overflow Lagos",
+          "\"Lagos lagoon\" overflow",
+          "\"release of water\" Lagos",
+          "Isheri OR Ajegunle OR \"Owode Onirin\" OR Agboyi flood 2020"
+        ],
+        "outlets": {
+          "Anadolu": "year_query_is_23_oct_2019_six_dead_not_2020",
+          "Vanguard": "already_pass1_ikorodu_no_deaths"
+        },
+        "hits_screened": 4,
+        "kept": 0,
+        "excluded": 0,
+        "minutes": 8
+      }
+    },
+    {
+      "year_month": "2020-06",
+      "queries": [
+        "flood Lagos June 2020 site:punchng.com",
+        "flood Lagos June 2020 site:vanguardngr.com",
+        "flood Lagos June 2020 site:guardian.ng",
+        "flood Lagos June 2020 site:premiumtimesng.com OR site:channelstv.com OR site:dailytrust.com OR site:bbc.com/pidgin",
+        "Alimosho OR Agege OR Surulere flood Lagos 2020 site:punchng.com"
+      ],
+      "outlets": {
+        "Punch": "reached",
+        "Vanguard": "reached",
+        "Guardian NG": "reached",
+        "Premium Times": "reached",
+        "Channels TV": "reached_no_june_street_flood_story",
+        "TVC": "reached_ogudu_collapse_excluded",
+        "Daily Trust": "reached",
+        "BBC Pidgin": "reached",
+        "Nairametrics": "reached_no_qualifying_june_day",
+        "X:LASEMA": "not_reached",
+        "X:Lagos_MoE": "not_reached",
+        "X:NEMA": "not_reached"
+      },
+      "hits_screened": 28,
+      "kept": 9,
+      "excluded": 6,
+      "minutes": 58,
+      "pass2": {
+        "queries": [
+          "\"Lagos flood\" dead OR died OR drowned OR killed OR \"swept away\" OR bodies 2020",
+          "\"Oyan Dam\" Lagos 2020",
+          "\"Ogun River\" overflow Lagos",
+          "\"Lagos lagoon\" overflow",
+          "\"release of water\" Lagos",
+          "Isheri OR Ajegunle OR \"Owode Onirin\" OR Agboyi flood 2020",
+          "body of Lagos teenager swept away by flood 2020"
+        ],
+        "outlets": {
+          "Anadolu": "year_query_is_23_oct_2019_six_dead_not_2020",
+          "Daily Trust": "ayisat_body_kept",
+          "Punch": "already_pass1_azizat_search_and_aishat",
+          "Independent": "not_task26_ayisat_lead",
+          "Ripples Nigeria": "not_task26_ayisat_lead"
+        },
+        "hits_screened": 10,
+        "kept": 1,
+        "excluded": 3,
+        "minutes": 16
+      }
+    },
+    {
+      "year_month": "2020-07",
+      "queries": [
+        "flood Lagos July 2020 site:punchng.com",
+        "flood Lagos July 2020 site:guardian.ng",
+        "flood Lagos July 2020 site:vanguardngr.com",
+        "Igbogbo OR Bayeku flood Lagos July 2020",
+        "flood Lagos site:channelstv.com July 2020"
+      ],
+      "outlets": {
+        "Punch": "reached",
+        "Vanguard": "reached_bello_warning_and_iya_yi_to_excluded",
+        "Guardian NG": "reached",
+        "Premium Times": "reached_no_qualifying_july_day",
+        "Channels TV": "reached_nema_warning_excluded",
+        "TVC": "reached_no_qualifying_day",
+        "Daily Trust": "reached_no_qualifying_july_day",
+        "BBC Pidgin": "reached_no_qualifying_july_day",
+        "Nairametrics": "reached_no_qualifying_day",
+        "X:LASEMA": "quoted_inside_punch_28_jun_not_reached_directly",
+        "X:Lagos_MoE": "not_reached",
+        "X:NEMA": "not_reached"
+      },
+      "hits_screened": 16,
+      "kept": 2,
+      "excluded": 5,
+      "minutes": 32,
+      "pass2": {
+        "queries": [
+          "\"Lagos flood\" dead OR died OR drowned OR killed OR \"swept away\" OR bodies 2020",
+          "\"Oyan Dam\" Lagos 2020",
+          "\"Ogun River\" overflow Lagos",
+          "\"Lagos lagoon\" overflow",
+          "\"release of water\" Lagos",
+          "Isheri OR Ajegunle OR \"Owode Onirin\" OR Agboyi flood 2020"
+        ],
+        "outlets": {
+          "Anadolu": "year_query_is_23_oct_2019_six_dead_not_2020",
+          "Punch": "igbogbo_already_pass1_no_deaths"
+        },
+        "hits_screened": 5,
+        "kept": 0,
+        "excluded": 0,
+        "minutes": 8
+      }
+    },
+    {
+      "year_month": "2020-08",
+      "queries": [
+        "flood Lagos August 2020 site:punchng.com OR site:vanguardngr.com OR site:guardian.ng OR site:channelstv.com",
+        "flood Lagos August 2020 streets homes"
+      ],
+      "outlets": {
+        "Punch": "reached_nema_sensitisation_and_idi_araba_feature_excluded",
+        "Vanguard": "reached_no_august_flood_day",
+        "Guardian NG": "reached_opinion_and_relocate_alerts_excluded",
+        "Premium Times": "reached_no_qualifying_day",
+        "Channels TV": "reached_no_qualifying_day",
+        "TVC": "reached_no_qualifying_day",
+        "Daily Trust": "reached_no_qualifying_day",
+        "BBC Pidgin": "reached_no_qualifying_day",
+        "Nairametrics": "reached_no_qualifying_day",
+        "X:LASEMA": "not_reached",
+        "X:Lagos_MoE": "not_reached",
+        "X:NEMA": "not_reached"
+      },
+      "hits_screened": 12,
+      "kept": 0,
+      "excluded": 4,
+      "minutes": 20,
+      "pass2": {
+        "queries": [
+          "\"Lagos flood\" dead OR died OR drowned OR killed OR \"swept away\" OR bodies 2020",
+          "\"Oyan Dam\" Lagos 2020",
+          "\"Ogun River\" overflow Lagos",
+          "\"Lagos lagoon\" overflow",
+          "\"release of water\" Lagos",
+          "Isheri OR Ajegunle OR \"Owode Onirin\" OR Agboyi flood 2020"
+        ],
+        "outlets": {
+          "Anadolu": "year_query_is_23_oct_2019_six_dead_not_2020",
+          "Punch": "bello_oyan_relocate_alert_excluded"
+        },
+        "hits_screened": 5,
+        "kept": 0,
+        "excluded": 1,
+        "minutes": 8
+      }
+    },
+    {
+      "year_month": "2020-09",
+      "queries": [
+        "flood Lagos September 2020 site:punchng.com",
+        "flood Lagos September 2020 site:vanguardngr.com OR site:guardian.ng",
+        "flood Lagos Ketu 2020"
+      ],
+      "outlets": {
+        "Punch": "reached",
+        "Vanguard": "reached_coming_rains_column_excluded",
+        "Guardian NG": "reached_no_sept_street_flood_day",
+        "Premium Times": "reached_no_qualifying_day",
+        "Channels TV": "reached_nihsa_national_warning_excluded",
+        "TVC": "reached_no_qualifying_day",
+        "Daily Trust": "reached_no_qualifying_sept_day",
+        "BBC Pidgin": "reached_no_qualifying_day",
+        "Nairametrics": "reached_no_qualifying_day",
+        "X:LASEMA": "not_reached",
+        "X:Lagos_MoE": "not_reached",
+        "X:NEMA": "not_reached"
+      },
+      "hits_screened": 14,
+      "kept": 2,
+      "excluded": 4,
+      "minutes": 30,
+      "pass2": {
+        "queries": [
+          "\"Lagos flood\" dead OR died OR drowned OR killed OR \"swept away\" OR bodies 2020",
+          "\"Oyan Dam\" Lagos 2020",
+          "\"Ogun River\" overflow Lagos",
+          "\"Lagos lagoon\" overflow",
+          "\"release of water\" Lagos",
+          "Isheri OR Ajegunle OR \"Owode Onirin\" OR Agboyi flood 2020",
+          "flood kills father of five Adiyan"
+        ],
+        "outlets": {
+          "Anadolu": "year_query_is_23_oct_2019_six_dead_not_2020",
+          "Punch": "ketu_already_pass1_unrecovered; adetoye_is_ogun"
+        },
+        "hits_screened": 6,
+        "kept": 0,
+        "excluded": 2,
+        "minutes": 10
+      }
+    },
+    {
+      "year_month": "2020-10",
+      "queries": [
+        "flood Lagos October 2020 site:punchng.com OR site:vanguardngr.com OR site:guardian.ng",
+        "Oyan Dam Lagos October 2020"
+      ],
+      "outlets": {
+        "Punch": "reached_oyan_release_alert_excluded",
+        "Vanguard": "reached_national_killer_floods_lagos_relocate_copy_excluded",
+        "Guardian NG": "reached_pumping_stations_excluded",
+        "Premium Times": "reached_no_qualifying_day",
+        "Channels TV": "reached_no_qualifying_day",
+        "TVC": "reached_no_qualifying_day",
+        "Daily Trust": "reached_no_qualifying_day",
+        "BBC Pidgin": "reached_no_qualifying_day",
+        "Nairametrics": "reached_oyan_caution_excluded",
+        "X:LASEMA": "not_reached",
+        "X:Lagos_MoE": "not_reached",
+        "X:NEMA": "not_reached"
+      },
+      "hits_screened": 12,
+      "kept": 0,
+      "excluded": 5,
+      "minutes": 22,
+      "pass2": {
+        "queries": [
+          "\"Lagos flood\" dead OR died OR drowned OR killed OR \"swept away\" OR bodies 2020",
+          "\"Oyan Dam\" Lagos 2020",
+          "\"Ogun River\" overflow Lagos",
+          "\"Lagos lagoon\" overflow",
+          "\"release of water\" Lagos",
+          "Isheri OR Ajegunle OR \"Owode Onirin\" OR Agboyi flood 2020"
+        ],
+        "outlets": {
+          "Anadolu": "year_query_is_23_oct_2019_six_dead_not_2020",
+          "Nairametrics": "oyan_alert_no_observed_street_flood",
+          "Punch": "oyan_23m_cubic_metres_alert_excluded"
+        },
+        "hits_screened": 6,
+        "kept": 0,
+        "excluded": 2,
+        "minutes": 10
+      }
+    },
+    {
+      "year_month": "2020-11",
+      "queries": [
+        "flood Lagos November 2020 site:punchng.com OR site:vanguardngr.com OR site:guardian.ng",
+        "flood Lagos November 2020 streets homes"
+      ],
+      "outlets": {
+        "Punch": "reached_no_nov_flood_day",
+        "Vanguard": "reached_no_nov_flood_day",
+        "Guardian NG": "reached_no_nov_flood_day",
+        "Premium Times": "reached_no_qualifying_day",
+        "Channels TV": "reached_no_qualifying_day",
+        "TVC": "reached_no_qualifying_day",
+        "Daily Trust": "reached_no_qualifying_day",
+        "BBC Pidgin": "reached_no_qualifying_day",
+        "Nairametrics": "reached_no_qualifying_day",
+        "X:LASEMA": "not_reached",
+        "X:Lagos_MoE": "not_reached",
+        "X:NEMA": "not_reached"
+      },
+      "hits_screened": 8,
+      "kept": 0,
+      "excluded": 0,
+      "minutes": 16,
+      "pass2": {
+        "queries": [
+          "\"Lagos flood\" dead OR died OR drowned OR killed OR \"swept away\" OR bodies 2020",
+          "\"Oyan Dam\" Lagos 2020",
+          "\"Ogun River\" overflow Lagos",
+          "\"Lagos lagoon\" overflow",
+          "\"release of water\" Lagos",
+          "Isheri OR Ajegunle OR \"Owode Onirin\" OR Agboyi flood 2020"
+        ],
+        "outlets": {
+          "Anadolu": "year_query_is_23_oct_2019_six_dead_not_2020",
+          "Punch": "no_nov_death_or_river_day"
+        },
+        "hits_screened": 3,
+        "kept": 0,
+        "excluded": 0,
+        "minutes": 6
+      }
+    },
+    {
+      "year_month": "2020-12",
+      "queries": [
+        "flood Lagos December 2020"
+      ],
+      "outlets": {
+        "note": "out-of-season check; pass 1 not run"
+      },
+      "hits_screened": 3,
+      "kept": 0,
+      "excluded": 1,
+      "minutes": 4,
+      "pass2": {
+        "queries": [
+          "flood Lagos December 2020",
+          "\"Lagos flood\" dead OR died OR drowned OR killed OR \"swept away\" OR bodies 2020",
+          "\"Oyan Dam\" Lagos 2020"
+        ],
+        "outlets": {
+          "Anadolu": "year_query_is_23_oct_2019_six_dead_not_2020",
+          "Punch": "reached_drainage_construction_not_flood_day"
+        },
+        "hits_screened": 3,
+        "kept": 0,
+        "excluded": 1,
+        "minutes": 6
+      }
     }
   ]
 }

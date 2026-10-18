@@ -8,14 +8,21 @@ Usage:
 Input : events/intake/reports_*.json (Task 26 schema). When no pilot
         files exist yet, falls back to pipeline/intake/fixtures/reports_*.json.
 Output: events/flood_days.json
-Print : flood days per year, and the drainage signal: the share of
-        checkable flood days (>= 1 geocoded area and IMERG coverage) with
-        local_max_2d_mm below 20 mm. The AOI-mean share is printed as
-        context. Days with no geocoded area are excluded from the signal.
+Print : flood days per year and per flood type, the riverine and lagoon
+        days with their episode, and the drainage signal: pluvial days
+        with local_max_2d_mm below 20 mm, over checkable pluvial days
+        (>= 1 geocoded area and IMERG coverage). Riverine and lagoon days
+        are not part of the signal: their water comes from rain far
+        upstream (or the sea), so local rain says nothing about them.
 
 Grouping: same date, or dates within +/-1 day when either report's
-date_confidence is not "exact" and the areas overlap (same normalized
-name, or geocoded points within 2 km). Geocoding uses pipeline/geocode.py
+date_confidence is "approx" and the areas overlap (same normalized
+name, or geocoded points within 2 km). Flood type (Task 28b): per report
+via flood_type_report (riverine / lagoon / pluvial); per day, riverine if
+any report of the day is riverine, else lagoon if any is, else pluvial.
+Riverine days less than 21 days apart share an episode_id
+(ep-<first date>-riverine), summarized in episodes[]; pluvial and lagoon
+days are not grouped. Geocoding uses pipeline/geocode.py
 (Nominatim, max 1 request/s, cached); a full name that fails is retried with
 its district part (text after the last comma, or a known district inside
 the string) at confidence "neighbourhood". Rain signatures come from
@@ -54,16 +61,10 @@ DRAINAGE_SIGNAL_MM = 20.0
 DATE_CONFIDENCE_ORDER = {"exact": 0, "day": 1, "approx": 2}
 
 # docs/INTAKE_PLAN.md decision 3 (promotion to Tier A)
-OFFICIAL_WORDS = re.compile(
-    r"\b(NEMA|LASEMA|LASTMA|LASEPA|LAWMA|NIHSA|SEMA|Red Cross|Red Crescent|"
-    r"police|fire service|commissioner|commissioner's|ministry|government|"
-    r"governor|Nigerian military|army|navy|"
-    r"director(?:[- ]general)?|coordinator|general manager|"
-    r"spokesman|spokesperson|permanent secretary)\b",
-    re.I,
-)
-# Task 27b fix 4: death words. Any report of the day counts, and the
-# official/named attribution may sit in any report of that same day.
+# Task 28c: death words are a REVIEW AID ONLY. They never promote; a hit
+# on a report whose 'deaths' field is null or missing goes to the day's
+# deaths_review for a reader to check. Promotion comes from the explicit
+# per-report 'deaths' field (count / who_reported), not from this regex.
 DEATH_WORDS = re.compile(
     r"\b(swept away|drowned|drownings?|died|dead|death|deaths|killed|"
     r"bodies|fatalities?|lost (?:their |his |her )?lives?)\b",
@@ -87,6 +88,21 @@ NATURAL_CAUSE_TAGS = {"heavy_rain", "lagoon_tide", "dam_release"}
 # Task 27b fix 2: a known district immediately followed by one of these is
 # part of a route name ("Lagos-Badagry Expressway"), not the district.
 ROUTE_AFTER_RE = re.compile(r"^(expressway|road|street|way|avenue|boulevard|link)$", re.I)
+# Task 28b: flood type triggers. Riverine floods are fed from rain far
+# upstream, so local rain says nothing about them.
+# A river name alone is a place ("Ogun River plains at Isheri"), so it must
+# sit near overflow wording; a dam or a release of water is enough itself.
+RIVERINE_TEXT_RE = re.compile(
+    r"\b(?:Oyan Dam|Owena|release of water)\b"
+    r"|\bOgun River\b[^.!?]{0,40}\b(?:overflow\w*|over (?:(?:its|their|the) )?banks?"
+    r"|burst\w*|ris(?:e|en|ing)|swell\w*)\b", re.I)
+# "the lagoon overflowed into <area>" -- overflow INTO a place. Lagoon
+# backflow that slows drainage during rain ("back flow into drainage
+# outlets") does not match and stays pluvial.
+LAGOON_OVERFLOW_RE = re.compile(
+    r"\b(?:lagoon|tide)s?\b[^.!?]{0,120}\boverflow(?:ed|ing|s)?\b"
+    r"[^.!?]{0,60}\binto\b", re.I)
+EPISODE_GAP_DAYS = 21
 
 
 def utc_now_iso() -> str:
@@ -191,7 +207,9 @@ def district_fallback_queries(area: str, known_districts: list[str]) -> list[str
         if tail:
             candidates.append(tail)
     normed = norm_name(area)
-    for district in sorted(set(known_districts), key=len, reverse=True):
+    # longest first; ties broken by name so the run is reproducible (a set's
+    # order changes with PYTHONHASHSEED, and "Orile" vs "Agege" are ~3 km apart)
+    for district in sorted(set(known_districts), key=lambda d: (-len(d), d)):
         nd = norm_name(district)
         if not nd or nd == normed:
             continue  # already tried as the full name
@@ -276,10 +294,12 @@ def group_reports(reports: list[dict]) -> list[list[dict]]:
             d1, d2 = date.fromisoformat(r1["date"]), date.fromisoformat(r2["date"])
             same_day = d1 == d2
             adjacent = abs((d1 - d2).days) <= 1
-            non_exact = (r1.get("date_confidence") != "exact"
-                         or r2.get("date_confidence") != "exact")
+            # "day" dates (worked out from a weekday) are reliable; only "approx"
+            # dates may slide onto a neighbouring day.
+            approx = (r1.get("date_confidence") not in ("exact", "day")
+                      or r2.get("date_confidence") not in ("exact", "day"))
             overlap = areas_overlap(set(r1["areas"]), set(r2["areas"]), r1["_geocode"])
-            if same_day or (adjacent and non_exact and overlap):
+            if same_day or (adjacent and approx and overlap):
                 union(i, j)
 
     groups: dict[int, list[dict]] = {}
@@ -475,17 +495,57 @@ def tier_a_event(day: date) -> str | None:
             event = json.loads(path.read_text(encoding="utf-8"))
         except (json.JSONDecodeError, OSError):
             continue
-        try:
-            window_start = date.fromisoformat(event["window"]["start"][:10])
-            window_end = date.fromisoformat(event["window"]["end"][:10])
-        except (KeyError, ValueError):
-            continue
-        # the event folder id carries the flood date; accept the window too
+        # the event folder id carries the flood date; otherwise the day must
+        # fall inside the event's focus (the wettest ~48 h), not the wider
+        # +/-1-week data window, which would claim unrelated floods
         if event_dir.name == f"lagos-{day.isoformat()}":
             return event.get("id") or event_dir.name
-        if window_start <= day <= window_end and event.get("status") != "draft":
+        try:
+            focus_start = date.fromisoformat(event["focus"]["start"][:10])
+            focus_end = date.fromisoformat(event["focus"]["end"][:10])
+        except (KeyError, TypeError, ValueError):
+            continue
+        if focus_start <= day <= focus_end and event.get("status") != "draft":
             return event.get("id") or event_dir.name
     return None
+
+
+# --------------------------------------------------------------- flood type
+
+
+def flood_type_report(report: dict) -> str:
+    """Flood type of one report (derived; report files are never edited).
+
+    Triggers, in order:
+    - "riverine": causes include dam_release, or the text (impacts,
+      quote, cause_quote) names Oyan Dam, Owena or a "release of water",
+      or the Ogun River near overflow wording (overflow, over its banks,
+      burst, rising). canal_overflow alone is NOT riverine.
+    - "lagoon": lagoon_tide is the ONLY non-rain cause, and the text
+      says the lagoon or tide overflowed into an area. Lagoon backflow
+      that slows drainage during rain stays pluvial.
+    - "pluvial": everything else.
+    """
+    causes = set(report.get("causes") or [])
+    text = " ".join(filter(None, [report.get("impacts"),
+                                  report.get("quote"),
+                                  report.get("cause_quote")]))
+    if "dam_release" in causes or RIVERINE_TEXT_RE.search(text):
+        return "riverine"
+    if causes - {"heavy_rain"} == {"lagoon_tide"} \
+            and LAGOON_OVERFLOW_RE.search(text):
+        return "lagoon"
+    return "pluvial"
+
+
+def flood_type_day(report_types: list[str]) -> str:
+    """Day type: riverine if any report of the day is riverine; else
+    lagoon if any is; else pluvial."""
+    if "riverine" in report_types:
+        return "riverine"
+    if "lagoon" in report_types:
+        return "lagoon"
+    return "pluvial"
 
 
 # --------------------------------------------------------------- promotion
@@ -511,41 +571,59 @@ def find_named_structure(text: str) -> str | None:
     return None
 
 
-def promote_day(reports: list[dict]) -> tuple[bool, list[str], str | None]:
-    """docs/INTAKE_PLAN.md decision 3, with the Task 27b fixes 3 and 4.
-    Returns (promote, reasons, deaths_note)."""
+def death_field_qualifies(report: dict) -> bool:
+    """Task 28c: a report's explicit 'deaths' field promotes when it has a
+    non-null count, or a null count with a non-null who_reported ("some
+    dead" with a named source). deaths null, or no deaths key at all (an
+    old file), never promotes."""
+    deaths = report.get("deaths")
+    return isinstance(deaths, dict) and (
+        deaths.get("count") is not None
+        or deaths.get("who_reported") is not None)
+
+
+def promote_day(reports: list[dict]) -> tuple[bool, list[str], str | None, list[dict]]:
+    """docs/INTAKE_PLAN.md decision 3, with the Task 27b fix 3.
+    Task 28c: deaths promote only from the explicit per-report 'deaths'
+    field; the death-word regex never promotes, it only feeds the day's
+    deaths_review. Returns (promote, reasons, deaths_note, deaths_review)."""
     reasons: list[str] = []
     outlets = {r.get("publisher") for r in reports if r.get("publisher")}
     if len(outlets) >= 3:
         reasons.append(f"three_independent_outlets ({len(outlets)})")
 
-    # deaths (fix 4): scan every report of the day; the official/named
-    # attribution may sit in the same report or any other of the same day.
-    official_report = next((r for r in reports
-                            if r.get("cause_attributed_by") == "official"
-                            or OFFICIAL_WORDS.search(report_text(r))), None)
-    death_hits: list[tuple[dict, str, bool]] = []
-    for report in reports:
-        text = report_text(report)
-        match = DEATH_WORDS.search(text)
-        if match:
-            same_report_official = (
-                report.get("cause_attributed_by") == "official"
-                or bool(OFFICIAL_WORDS.search(text)))
-            death_hits.append((report, match.group(0), same_report_official))
+    # deaths (Task 28c): the explicit field is the only promotion path,
+    # in any report of the day; who_reported carries the attribution.
+    death_reports = [r for r in reports if death_field_qualifies(r)]
+    # decision 3 says "official or named source": a named who_reported, or
+    # failing that at least two independent outlets reporting the deaths.
+    named = any(r["deaths"].get("who_reported") for r in death_reports)
+    death_outlets = {r.get("publisher") for r in death_reports}
     deaths_note = None
-    if death_hits and (official_report is not None
-                       or any(hit[2] for hit in death_hits)):
-        reasons.append("deaths_reported_by_official_or_named_source")
-        parts = [f"'{word}' in {report.get('publisher')} ({report.get('url')})"
-                 for report, word, _ in death_hits]
-        if any(hit[2] for hit in death_hits):
-            attribution = "official/named source in the same report"
-        else:
-            attribution = (f"official attribution in "
-                          f"{official_report.get('publisher')} "
-                          f"({official_report.get('url')})")
-        deaths_note = "; ".join(parts) + " -- " + attribution
+    if death_reports and (named or len(death_outlets) >= 2):
+        reasons.append("deaths_reported")
+        parts = []
+        for report in death_reports:
+            deaths = report["deaths"]
+            count = deaths.get("count")
+            who = deaths.get("who_reported") or report.get("publisher")
+            per = f"{count} dead" if count is not None else "dead"
+            parts.append(f"{per} per {who} ({report.get('url')})")
+        deaths_note = "; ".join(parts)
+
+    # regex as a review aid (Task 28c): a death word in a report whose
+    # deaths field is null or missing (or does not qualify) goes to
+    # deaths_review -- never to reasons.
+    deaths_review: list[dict] = []
+    for report in reports:
+        if death_field_qualifies(report):
+            continue
+        match = DEATH_WORDS.search(report_text(report))
+        if match:
+            deaths_review.append({
+                "id": report.get("id"),
+                "matched": match.group(0),
+            })
 
     # official named structure (fix 3): an official cause attribution with
     # a human cause tag whose cause quote names a physical structure.
@@ -570,7 +648,61 @@ def promote_day(reports: list[dict]) -> tuple[bool, list[str], str | None]:
     for reason in reasons:
         if reason not in seen:
             seen.append(reason)
-    return bool(seen), seen, deaths_note
+    return bool(seen), seen, deaths_note, deaths_review
+
+
+# ------------------------------------------------------------------ episodes
+
+
+def build_episodes(days: list[dict],
+                   day_reports: list[list[dict]]) -> list[dict]:
+    """Riverine flood days less than EPISODE_GAP_DAYS apart share one
+    episode_id (ep-<first date>-riverine); the reports keep their own
+    dates. Pluvial and lagoon days are not grouped (episode_id null).
+    Assigns day["episode_id"] and returns the episode records."""
+    for day in days:
+        day["episode_id"] = None
+    order = sorted(range(len(days)), key=lambda i: days[i]["date"])
+    clusters: list[list[int]] = []
+    for i in order:
+        if days[i]["flood_type"] != "riverine":
+            continue
+        if not clusters or (date.fromisoformat(days[i]["date"])
+                            - date.fromisoformat(
+                                days[clusters[-1][-1]]["date"])).days \
+                >= EPISODE_GAP_DAYS:
+            clusters.append([])
+        clusters[-1].append(i)
+    episodes: list[dict] = []
+    for cluster in clusters:
+        episode_id = f"ep-{days[cluster[0]]['date']}-riverine"
+        for i in cluster:
+            days[i]["episode_id"] = episode_id
+        areas: list[dict] = []
+        seen: set[str] = set()
+        for i in cluster:
+            for area in days[i]["areas"]:
+                if area["name"] not in seen:
+                    seen.add(area["name"])
+                    areas.append(area)
+        reports = [r for i in cluster for r in day_reports[i]]
+        promote, reasons, _, _ = promote_day(reports)
+        deaths_note = next((days[i]["deaths_note"] for i in cluster
+                            if days[i]["deaths_note"]), None)
+        episodes.append({
+            "id": episode_id,
+            "type": "riverine",
+            "first_date": days[cluster[0]]["date"],
+            "last_date": days[cluster[-1]]["date"],
+            "days": len(cluster),
+            "areas": areas,
+            "deaths_note": deaths_note,
+            "n_outlets": len({r.get("publisher") for r in reports
+                              if r.get("publisher")}),
+            "promote": promote,
+            "promote_reasons": reasons,
+        })
+    return episodes
 
 
 # --------------------------------------------------------------------- main
@@ -622,6 +754,7 @@ def main() -> None:
     rain = RainHistory()
 
     days = []
+    day_groups: list[list[dict]] = []
     for group in groups:
         day = day_date(group)
         area_names: list[str] = []
@@ -643,7 +776,14 @@ def main() -> None:
             })
         areas_by_name = {a["name"]: geocoded.get(a["name"]) for a in areas_out}
         candidate = match_candidate(day)
-        promote, reasons, deaths_note = promote_day(group)
+        promote, reasons, deaths_note, deaths_review = promote_day(group)
+        report_types = [flood_type_report(r) for r in group]
+        flood_type = flood_type_day(report_types)
+        flood_type_reports = {
+            "pluvial": report_types.count("pluvial"),
+            "riverine": report_types.count("riverine"),
+            "lagoon": report_types.count("lagoon"),
+        }
         days.append({
             "date": day.isoformat(),
             "areas": areas_out,
@@ -651,12 +791,16 @@ def main() -> None:
             "n_outlets": len({r.get("publisher") for r in group}),
             "impacts": [r.get("impacts") for r in group if r.get("impacts")],
             "causes": sorted({c for r in group for c in r.get("causes") or []}),
+            "flood_type": flood_type,
+            "flood_type_reports": flood_type_reports,
+            "episode_id": None,  # riverine days: ep-<first date>-riverine
             "rain": rain_signature(day, rain, areas_by_name),
             "candidate_rank": candidate["candidate_rank"] if candidate else None,
             "tier_a_event_id": tier_a_event(day),
             "promote": promote,
             "promote_reasons": reasons,
             "deaths_note": deaths_note,
+            "deaths_review": deaths_review,
             "reports": [
                 {
                     "url": r.get("url"),
@@ -675,6 +819,9 @@ def main() -> None:
             ],
         })
         print(f"  {day}  {len(group)} report(s), areas: {', '.join(area_names)}")
+        day_groups.append(group)
+
+    episodes = build_episodes(days, day_groups)
 
     search_coverage = None
     if SEARCH_LOG.is_file():
@@ -696,7 +843,7 @@ def main() -> None:
         "meta": {
             "method": (
                 "Tier B flood-day catalog: reports grouped by date (same day, or "
-                "+/-1 day with non-exact date_confidence and overlapping areas); "
+                "+/-1 day with an approx date_confidence and overlapping areas); "
                 "areas geocoded with pipeline/geocode.py (Nominatim, 1 req/s, "
                 "cached), with a district fallback (text after the last comma, "
                 "or a known district inside the string) at confidence "
@@ -706,11 +853,13 @@ def main() -> None:
                 "cells for the flood day and the day before; population-"
                 "weighted rain as in catalog_ranked.json (GHSL epoch nearest "
                 "the flood year); candidates matched from catalog_ranked.json "
-                "within +/-1 day; promotion per docs/INTAKE_PLAN.md decision 3"
+                "within +/-1 day; promotion per docs/INTAKE_PLAN.md "
+                "decision 3; flood type per report and riverine episodes "
+                "(Task 28b)"
             ),
             "grouping": {
                 "same_date": True,
-                "adjacent_days": "+/-1 day only when a date_confidence is not 'exact' and areas overlap",
+                "adjacent_days": "+/-1 day only when a date_confidence is 'approx' and areas overlap",
                 "area_overlap": f"same normalized name or geocoded points within {AREA_OVERLAP_KM} km",
             },
             "geocoding": {
@@ -721,9 +870,17 @@ def main() -> None:
                 "geocoded_from": "the fallback query that resolved the area (null for full-name hits)",
             },
             "promotion_rule": {
-                "deaths": "a death word (swept away, drowned, died, dead, killed, bodies, ...) in any report of the day, with the official or named attribution in that report or any other report of the same day (NEMA, LASEMA, LASTMA, police, named officials); deaths_note records the sources",
+                "deaths": "a report of the day with an explicit deaths field: non-null count, or null count with a non-null who_reported; deaths_note is '<count> dead per <who_reported or publisher> (<url>)'. The death-word regex (swept away, drowned, died, dead, killed, bodies, ...) never promotes: a hit on a report whose deaths is null or missing (including old files with no deaths key) goes to the day's deaths_review for a reader to check",
                 "outlets": "at least 3 independent outlets (distinct publishers)",
                 "structure": "an official cause attribution with a human cause tag (not heavy_rain/lagoon_tide/dam_release) whose cause quote names a physical structure: canal, channel, collector, drain system number, bridge, culvert, outfall or named road project",
+            },
+            "flood_type": {
+                "per_report": "riverine: causes include dam_release, or the text (impacts, quote, cause_quote) names the Ogun River, Oyan Dam, Owena or a 'release of water'; canal_overflow alone is not riverine. lagoon: lagoon_tide is the only non-rain cause and the text says the lagoon or tide overflowed into an area; lagoon backflow that slows drainage during rain stays pluvial. pluvial: everything else.",
+                "per_day": "riverine if any report of the day is riverine; else lagoon if any is; else pluvial. flood_type_reports counts the day's reports by their own type.",
+            },
+            "episodes": {
+                "rule": "riverine flood days less than 21 days apart share one episode_id (ep-<first date>-riverine); reports keep their own dates. Pluvial and lagoon days are not grouped (episode_id null).",
+                "fields": "areas are the union over the episode's days; deaths_note is the first that exists (earliest day); n_outlets is distinct publishers over all the episode's reports; promote applies the day promotion rule over all the episode's reports.",
             },
             "generated_at": utc_now_iso(),
             "sources": report_sources(paths),
@@ -732,10 +889,11 @@ def main() -> None:
                 "source": str(RAIN_HISTORY.relative_to(PROJECT_ROOT)),
                 "units": "mm per WAT calendar day",
                 "local": "rain at the geocoded areas' own cells: max and median total_mm for the flood day and the day before; local_max_2d_mm = the largest per-cell day + previous-day sum; max_30min_mm_h_2d = the highest 30-min rate over both days; null when the day has no geocoded area",
-                "drainage_signal": f"share of checkable flood days (>= 1 geocoded area and IMERG coverage) with local_max_2d_mm < {DRAINAGE_SIGNAL_MM} mm; the AOI mean is kept as context",
+                "drainage_signal": f"share of checkable pluvial flood days (>= 1 geocoded area and IMERG coverage) with local_max_2d_mm < {DRAINAGE_SIGNAL_MM} mm; riverine and lagoon days are excluded from the signal: their water comes from rain far upstream or from the sea, so local rain says nothing about them",
             },
         },
         "days": days,
+        "episodes": episodes,
     }
     args.out.parent.mkdir(parents=True, exist_ok=True)
     args.out.write_text(json.dumps(payload, indent=2) + "\n", encoding="utf-8")
@@ -743,32 +901,45 @@ def main() -> None:
 
     # --- summary prints
     per_year: dict[int, int] = {}
-    low_rain = 0
     for day in days:
         year = int(day["date"][:4])
         per_year[year] = per_year.get(year, 0) + 1
-        aoi = day["rain"].get("aoi_mean_mm")
-        if aoi is not None and aoi < DRAINAGE_SIGNAL_MM:
-            low_rain += 1
     print("\nflood days per year:")
     for year in sorted(per_year):
         print(f"  {year}: {per_year[year]}")
-    checkable = [d for d in days
+
+    per_type: dict[str, int] = {"pluvial": 0, "riverine": 0, "lagoon": 0}
+    for day in days:
+        per_type[day["flood_type"]] += 1
+    print("\nflood days per type:")
+    for ftype, count in per_type.items():
+        print(f"  {ftype}: {count}")
+
+    for ftype in ("riverine", "lagoon"):
+        marked = [d for d in days if d["flood_type"] == ftype]
+        print(f"\n{ftype} day(s), with episode:")
+        if not marked:
+            print("  (none)")
+        for day in marked:
+            print(f"  {day['date']}  {day['episode_id']}")
+
+    pluvial_days = [d for d in days if d["flood_type"] == "pluvial"]
+    checkable = [d for d in pluvial_days
                  if (d["rain"].get("local") or {}).get("local_max_2d_mm") is not None]
     low_local = [d for d in checkable
                  if d["rain"]["local"]["local_max_2d_mm"] < DRAINAGE_SIGNAL_MM]
     share_local = (len(low_local) / len(checkable)) if checkable else None
-    print(f"\ndrainage signal: flood days with local_max_2d_mm < "
+    print(f"\ndrainage signal: pluvial days with local_max_2d_mm < "
           f"{DRAINAGE_SIGNAL_MM} mm: {len(low_local)}/{len(checkable)}"
           + (f" ({share_local:.0%})" if share_local is not None else ""))
-    print(f"  ({len(days) - len(checkable)} day(s) excluded from the signal: "
-          "no geocoded area or no IMERG daily history)")
-    share_aoi = (low_rain / len(days)) if days else None
-    print(f"context (the old AOI-mean signal): AOI mean rain < "
-          f"{DRAINAGE_SIGNAL_MM} mm on {low_rain}/{len(days)} day(s)"
-          + (f" ({share_aoi:.0%})" if share_aoi is not None else ""))
+    print(f"  ({len(pluvial_days) - len(checkable)} pluvial day(s) excluded "
+          "from the signal: no geocoded area or no IMERG daily history; "
+          "riverine and lagoon days are not part of the signal)")
     n_promote = sum(1 for d in days if d["promote"])
-    print(f"promote to Tier A: {n_promote}/{len(days)}")
+    print(f"promote to Tier A: {n_promote}/{len(days)} day(s)"
+          + (f"; riverine episodes: {len(episodes)}, "
+             f"{sum(1 for e in episodes if e['promote'])} promoted"
+             if episodes else ""))
 
 
 if __name__ == "__main__":

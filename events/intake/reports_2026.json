@@ -1,0 +1,701 @@
+{
+  "meta": {
+    "compiled_at": "2026-10-18T22:15:00Z",
+    "year": 2026,
+    "task": "28-news-sweep-full",
+    "method": "Pass 1: news-first sweep of wet-season months in scope (Apr–Sep 2026; year run stops at September) using Task 26 outlets and qualifying rule. Pass 2 (slimmed 2026-10-18): death queries with no site filter; Oyan Dam / Ogun River / lagoon / water-release / Isheri-Ajegunle-Owode-Agboyi queries; Anadolu once per year; out-of-season Jan–Mar (Dec not in this run). Qualifying reports name a Lagos State place and a date, and describe water on streets or in homes. Quotes ≤25 words, verbatim, and taken only from that report's own URL. Dates, numbers and quotes are only those in the source. Areas left as named; not geocoded. Flood date is the flood day, not publication day.",
+    "districts_searched": [
+      "Alimosho",
+      "Ajeromi-Ifelodun",
+      "Kosofe",
+      "Mushin",
+      "Oshodi-Isolo",
+      "Ojo",
+      "Ikorodu",
+      "Surulere",
+      "Agege",
+      "Ifako-Ijaiye",
+      "Somolu",
+      "Amuwo-Odofin",
+      "Lagos Mainland",
+      "Ikeja",
+      "Eti-Osa"
+    ],
+    "outlets": [
+      "Punch",
+      "Vanguard",
+      "Guardian NG",
+      "Premium Times",
+      "Channels TV",
+      "TVC",
+      "Daily Trust",
+      "BBC Pidgin",
+      "Nairametrics"
+    ],
+    "notes": [
+      "This run covers January–September 2026 only (reviewer brief). Pass 1 is Apr–Sep; Oct–Nov and the December out-of-season check were not run.",
+      "August: Task 26 outlets returned rainy-season features, waste/drainage investigations and flood-defence plans, not a named dated street/home flood day.",
+      "September: NiHSA seven-day riverine alerts and Lagos relocate-to-higher-ground orders; no qualifying observed street/home flood day in Task 26 outlets. A QNC piece repeating the June 28 Vanguard account was treated as a scrape, not a September day.",
+      "Oyan Dam / Ogun River 2026 hits were preparedness (NEMA: Ikorodu/Isheri vulnerable to possible releases) and OORBDA controlled-release language, not an observed Lagos river-flood day in Jan–Sep.",
+      "Anadolu 2026 Lagos copy was Makoko demolitions and protests, not a named flood day. 2019 Oyan Dam death piece is out of year.",
+      "Death queries: no Task 26 outlet reported a 2026 Lagos flood death with a named source. Guardian 1 Jul mentioned a man swept away in a wooden kiosk without saying he died; not logged as a death.",
+      "X accounts of LASEMA, Lagos MoE and NEMA: no dated 2026 flood posts reached.",
+      "BBC Pidgin 2026 hits in scope were the 21 Sep NiHSA/Lagos relocate alert (excluded: warning) and older-year flood pages.",
+      "Ijora Badia: Tuesday 31 Mar downpour (Punch 3 Apr) is pass 2 out-of-season; Friday 10 Apr school visit (Punch 13 Apr) is pass 1 April.",
+      "June 25 (Thursday) Ajah/Mafoluku is a separate day from Sunday 28 Jun and Tuesday 30 Jun.",
+      "Punch Saturday 4 Jul 'last Thursday' preview is dated to Thursday 25 Jun (before Sunday 28 Jun); 'last Sunday' in that piece is 28 Jun.",
+      "Ogombo/Abraham Adesanya still inundated at the 15 Jul governor visit; dated to the visit day with date_confidence approx.",
+      "Quotes and cause_quotes are taken only from the report URL; Wahab/FAAN statements are not copied across outlets."
+    ]
+  },
+  "reports": [
+    {
+      "id": "r2026-001",
+      "pass": 2,
+      "date": "2026-01-30",
+      "date_confidence": "exact",
+      "areas": [
+        "Odo Iyaloro Bridge, Maryland",
+        "Ikorodu Road",
+        "Lagos–Ibadan Expressway"
+      ],
+      "impacts": "Commuters stranded for hours on Friday as rain flooded the Odo Iyaloro Bridge near Maryland. Traffic spilled onto the Lagos–Ibadan Expressway and Ikorodu Road toward Maryland.",
+      "quote": "Although the rainfall was light, water accumulated on the bridge after the drainage system failed to discharge it",
+      "causes": [
+        "blocked_drainage"
+      ],
+      "cause_quote": "Several road users attributed the flooding and resulting severe traffic congestion to blocked drainage channels.",
+      "cause_attributed_by": "journalist",
+      "cause_who": null,
+      "url": "https://punchng.com/video-rain-floods-lagos-road-causes-gridlock/",
+      "publisher": "Punch",
+      "published_at": "2026-01-30T15:16:00+01:00",
+      "read_status": "read",
+      "deaths": null
+    },
+    {
+      "id": "r2026-002",
+      "pass": 2,
+      "date": "2026-02-10",
+      "date_confidence": "exact",
+      "areas": [
+        "Lekki",
+        "Chisco Elegushi",
+        "Elf",
+        "Jakande First Gate"
+      ],
+      "impacts": "Tuesday rainfall caused flash floods and tidal lock-ups on Lekki, with traffic congestion from Chisco Elegushi and Elf back to Jakande First Gate. A motorist video alleged flooding after about 30 minutes of rain.",
+      "quote": "Due to the heavy rains, there are flash floods at Chisco Elegushi worsening traffic flow.",
+      "causes": [
+        "heavy_rain",
+        "lagoon_tide"
+      ],
+      "cause_quote": "While there was rainfall on the Island and a temporary tidal lock-up occurred, this is a short-term situation.",
+      "cause_attributed_by": "official",
+      "cause_who": "Tokunbo Wahab, Commissioner for the Environment and Water Resources",
+      "url": "https://punchng.com/rains-trigger-flooding-traffic-gridlock-in-lagos/",
+      "publisher": "Punch",
+      "published_at": "2026-02-10T13:07:00+01:00",
+      "read_status": "read",
+      "deaths": null
+    },
+    {
+      "id": "r2026-003",
+      "pass": 2,
+      "date": "2026-02-10",
+      "date_confidence": "exact",
+      "areas": [
+        "Lekki",
+        "Chisco Elegushi",
+        "Elf",
+        "Jakande First Gate"
+      ],
+      "impacts": "Heavy rainfall across the Lekki axis triggered flash floods and temporary tidal lock-ups, with severe congestion on Chisco Elegushi and Elf stretching back to Jakande First Gate. Videos showed submerged sections of roadway.",
+      "quote": "Heavy rainfall across the Lekki axis triggered flash floods and temporary tidal lock-ups, leading to severe traffic congestion",
+      "causes": [
+        "heavy_rain",
+        "lagoon_tide"
+      ],
+      "cause_quote": "As the tide recedes in the next few minutes, the water will discharge naturally and conditions will improve",
+      "cause_attributed_by": "official",
+      "cause_who": "Tokunbo Wahab, Commissioner for the Environment and Water Resources",
+      "url": "https://www.tvcnews.tv/lagos-govt-reacts-as-heavy-rain-triggers-flash-flooding-traffic-gridlock/",
+      "publisher": "TVC",
+      "published_at": "2026-02-10T13:45:00+01:00",
+      "read_status": "read",
+      "deaths": null
+    },
+    {
+      "id": "r2026-004",
+      "pass": 2,
+      "date": "2026-03-31",
+      "date_confidence": "day",
+      "areas": [
+        "Ijora Badia, Apapa",
+        "Okere community",
+        "Badia East",
+        "Badia West"
+      ],
+      "impacts": "After Tuesday's downpour, floodwater spilled into homes and streets. About 300 houses affected; families including Sadiq Bello's moved children to a neighbour. Shops closed; residents stranded. Persistent flooding since September 2025 linked to canal blockage.",
+      "quote": "The water entered my house after the downpour on Tuesday. We had to move our children to a neighbour's place.",
+      "causes": [
+        "construction",
+        "canal_overflow"
+      ],
+      "cause_quote": "The canal is being blocked by mud, so there is no way for water to flow.",
+      "cause_attributed_by": "resident",
+      "cause_who": "Raymond Tejujaye, Community Development Association chairman, Badia",
+      "url": "https://punchng.com/residents-blame-blocked-canal-as-flood-overruns-lagos-community/",
+      "publisher": "Punch",
+      "published_at": "2026-04-03T00:13:00+01:00",
+      "read_status": "read",
+      "deaths": null
+    },
+    {
+      "id": "r2026-005",
+      "pass": 1,
+      "date": "2026-04-10",
+      "date_confidence": "approx",
+      "areas": [
+        "Ijora Badia, Apapa",
+        "Ajeromi Nursery and Primary School",
+        "Badia East",
+        "Badia West"
+      ],
+      "impacts": "Correspondent visit Friday: floodwaters on community streets and school premises; pupils wading to classrooms; some out of school for days; parents withdrawing children. About 300 houses affected; families displaced since the canal blockage began.",
+      "quote": "The school is filled with floodwater, making it hard for people to move because of the project they are carrying out.",
+      "causes": [
+        "construction",
+        "canal_overflow"
+      ],
+      "cause_quote": "blocked a major canal after sand-filling activities redirected water into the community",
+      "cause_attributed_by": "resident",
+      "cause_who": null,
+      "url": "https://punchng.com/flood-displaces-lagos-schoolchildren-as-building-project-blocks-canal/",
+      "publisher": "Punch",
+      "published_at": "2026-04-13T00:45:00+01:00",
+      "read_status": "read",
+      "deaths": null
+    },
+    {
+      "id": "r2026-006",
+      "pass": 1,
+      "date": "2026-05-07",
+      "date_confidence": "approx",
+      "areas": [
+        "Ishaga Close",
+        "Safejo",
+        "Amukoko",
+        "Ojo Road, Ajegunle",
+        "Alaba Oro",
+        "Amusa",
+        "Suru-Alaba"
+      ],
+      "impacts": "Residents said many had abandoned homes due to severe flooding. Appliances and chairs destroyed over the past few days. Movement in rain boots; community turned into a pool after one rainfall.",
+      "quote": "The flood has taken over our community. We move around in rain boots",
+      "causes": [
+        "blocked_drainage",
+        "setback_encroachment"
+      ],
+      "cause_quote": "Just one rainfall, everywhere in the community has turned into a pool",
+      "cause_attributed_by": "resident",
+      "cause_who": "Mrs. Rukayat",
+      "url": "https://www.vanguardngr.com/2026/05/again-lagos-community-cries-for-help-as-flood-threatens-lives-properties/",
+      "publisher": "Vanguard",
+      "published_at": "2026-05-08T00:00:00+01:00",
+      "read_status": "read",
+      "deaths": null
+    },
+    {
+      "id": "r2026-007",
+      "pass": 1,
+      "date": "2026-06-25",
+      "date_confidence": "day",
+      "areas": [
+        "Mobil Road, Ajah",
+        "Mafoluku",
+        "Agboola Street",
+        "Eyinogun"
+      ],
+      "impacts": "Thursday torrential rain: about 200 metres of Mobil Road submerged; commuters waded waist-deep; motorists turned back or abandoned vehicles. Mafoluku streets, homes and access roads submerged. Floodwater entered an Eyinogun compound and damaged household items.",
+      "quote": "The water level was almost up to my lap. People literally had to wade through it to get home.",
+      "causes": [
+        "heavy_rain",
+        "drainage_capacity"
+      ],
+      "cause_quote": "She attributed the flooding to poor drainage and possible blockage of a major canal serving the area.",
+      "cause_attributed_by": "resident",
+      "cause_who": "Mrs Rukayat",
+      "url": "https://dailytrust.com/lagos-residents-stranded-as-flood-cuts-off-ajah-mafoluku-communities/",
+      "publisher": "Daily Trust",
+      "published_at": "2026-06-26T18:11:31+01:00",
+      "read_status": "read",
+      "deaths": null
+    },
+    {
+      "id": "r2026-008",
+      "pass": 1,
+      "date": "2026-06-28",
+      "date_confidence": "exact",
+      "areas": [
+        "Oshodi",
+        "Opeki Road, Mosan-Okunola LCDA",
+        "Abesan Estate",
+        "Ilupeju Road",
+        "Mushin",
+        "Fashoro Street, Surulere",
+        "Akowonjo Road, Egbeda",
+        "Gbagada Expressway",
+        "Idi-Oro",
+        "Murtala Muhammed International Airport"
+      ],
+      "impacts": "Sunday rainfall flooded major roads and residential communities, halted commerce, and shut the MMIA temporary international terminal after water reached the departure hall, boarding gates, airline offices and powerhouse. A vehicle plunged into a drainage channel at Akowonjo. Gbagada Expressway impassable for hours.",
+      "quote": "Heavy rainfall on Sunday left many parts of Lagos under water, flooding major roads and residential communities",
+      "causes": [
+        "heavy_rain",
+        "blocked_drainage",
+        "construction"
+      ],
+      "cause_quote": "It was the construction works that affected the drainage.",
+      "cause_attributed_by": "official",
+      "cause_who": "Henry Agbebire, FAAN spokesperson",
+      "url": "https://www.premiumtimesng.com/regional/ssouth-west/891405-heavy-rainfall-floods-lagos-communities-disrupts-airport-operations.html",
+      "publisher": "Premium Times",
+      "published_at": "2026-06-29T00:00:00+01:00",
+      "read_status": "read",
+      "deaths": null
+    },
+    {
+      "id": "r2026-009",
+      "pass": 1,
+      "date": "2026-06-28",
+      "date_confidence": "exact",
+      "areas": [
+        "Oshodi",
+        "Apakun Bridge, Oshodi-Apapa Expressway",
+        "Opeki Road, Mosan-Okunola LCDA",
+        "Abesan Estate",
+        "Ilupeju Road",
+        "Mushin",
+        "Fashoro Street, Surulere",
+        "Akowonjo Road, Egbeda",
+        "Gbagada Expressway",
+        "Idi-Oro",
+        "Ikorodu",
+        "Lekki",
+        "Ipaja"
+      ],
+      "impacts": "Sunday torrential rain submerged roads and homes. In Ipaja residents held hands wading through currents. Markets closed; floodwater entered a clothing shop; debris on a railway track slowed a train. Airport terminal temporarily affected.",
+      "quote": "Residents of Lagos endured a difficult day yesterday after torrential rainfall on Sunday triggered widespread flooding",
+      "causes": [
+        "heavy_rain",
+        "blocked_drainage",
+        "lagoon_tide"
+      ],
+      "cause_quote": "high lagoon water levels temporarily prevent stormwater from draining into the lagoon until the tide subsides",
+      "cause_attributed_by": "official",
+      "cause_who": "Tokunbo Wahab, Commissioner for the Environment and Water Resources",
+      "url": "https://guardian.ng/news/nigeria/metro/lagos-residents-lament-as-flooding-cripples-transport-businesses/",
+      "publisher": "Guardian NG",
+      "published_at": "2026-06-30T04:00:00+01:00",
+      "read_status": "read",
+      "deaths": null
+    },
+    {
+      "id": "r2026-010",
+      "pass": 1,
+      "date": "2026-06-28",
+      "date_confidence": "exact",
+      "areas": [
+        "Oshodi",
+        "Mushin",
+        "Surulere",
+        "Fashoro Street",
+        "Akowonjo Road, Egbeda",
+        "Gbagada Expressway",
+        "Idi-Oro",
+        "Ipaja",
+        "Murtala Muhammed International Airport"
+      ],
+      "impacts": "June 28 downpour submerged major roads, shut businesses, and suspended MMIA temporary international terminal operations after water reached the powerhouse. Knee-deep flooding in parts of Gbagada, Ipaja and Surulere. Ground floors of some homes almost fully submerged. Receded by Monday morning.",
+      "quote": "Floodwaters entered residential buildings in many parts of Lagos, leaving the ground floors of some homes almost completely submerged.",
+      "causes": [
+        "heavy_rain",
+        "lagoon_tide",
+        "drainage_capacity"
+      ],
+      "cause_quote": "The ground is saturated, the lagoon has risen a bit, and the channels are overwhelmed",
+      "cause_attributed_by": "official",
+      "cause_who": "Mahmood Adegbite, Permanent Secretary, Office of Drainage Services and Water Resources",
+      "url": "https://punchng.com/heavy-rain-floods-lagos-roads-agencies-warn-of-more-risks/",
+      "publisher": "Punch",
+      "published_at": "2026-06-30T06:40:00+01:00",
+      "read_status": "read",
+      "deaths": null
+    },
+    {
+      "id": "r2026-011",
+      "pass": 1,
+      "date": "2026-06-28",
+      "date_confidence": "day",
+      "areas": [
+        "Lagos-Ibadan Expressway",
+        "Ikorodu Road",
+        "Lagos-Abeokuta Expressway",
+        "Apapa-Oshodi Expressway",
+        "Oshodi",
+        "Agege",
+        "Ikeja",
+        "Alimosho",
+        "Obalende",
+        "Lekki-Epe Expressway"
+      ],
+      "impacts": "Rain from about noon to 4 p.m. inundated highways and inner roads; vehicles trapped or broken down; some motorists abandoned cars; bus operators suspended services; commuters trekked.",
+      "quote": "The entire road is submerged, no movement. The drainage channel is not functional here.",
+      "causes": [
+        "heavy_rain",
+        "blocked_drainage",
+        "lagoon_tide"
+      ],
+      "cause_quote": "Anytime there is high tidal movement, it may 'lock up' the discharge points of drainage channels",
+      "cause_attributed_by": "official",
+      "cause_who": "Tokunbo Wahab, Commissioner for the Environment and Water Resources",
+      "url": "https://www.vanguardngr.com/2026/06/motorists-commuters-stranded-as-floods-submerge-lagos-roads/",
+      "publisher": "Vanguard",
+      "published_at": "2026-06-29T00:00:00+01:00",
+      "read_status": "read",
+      "deaths": null
+    },
+    {
+      "id": "r2026-012",
+      "pass": 1,
+      "date": "2026-06-28",
+      "date_confidence": "exact",
+      "areas": [
+        "Oshodi",
+        "Opeki Road, Mosan-Okunola LCDA",
+        "Abesan Estate",
+        "Ilupeju Road",
+        "Mushin",
+        "Fashoro Street, Surulere",
+        "Akowonjo Road, Egbeda",
+        "Gbagada Expressway",
+        "Idi-Oro",
+        "Murtala Muhammed International Airport"
+      ],
+      "impacts": "Monday visit: floodwaters that inundated Oshodi after Sunday's rain had receded; buses moving; some shops still shut (traders said for Iyaloja's death, not the flood). Paul Arinze: floodwater entered his shop Sunday with minor damage.",
+      "quote": "We were able to clean up because the water inside the shop was not as bad as what was on the road.",
+      "causes": [
+        "heavy_rain",
+        "construction"
+      ],
+      "cause_quote": "It was the construction works that affected the drainage.",
+      "cause_attributed_by": "official",
+      "cause_who": "Henry Agbebire, FAAN spokesperson",
+      "url": "https://www.premiumtimesng.com/regional/ssouth-west/891467-lagos-flood-floodwaters-recede-in-oshodi-but-shops-remain-shut.html",
+      "publisher": "Premium Times",
+      "published_at": "2026-06-29T00:00:00+01:00",
+      "read_status": "read",
+      "deaths": null
+    },
+    {
+      "id": "r2026-013",
+      "pass": 1,
+      "date": "2026-06-28",
+      "date_confidence": "day",
+      "areas": [
+        "Gbagada",
+        "Iyana Ipaja",
+        "Ikorodu Road",
+        "Ikeja",
+        "Maryland",
+        "Mushin",
+        "Ogudu",
+        "Lekki",
+        "Oshodi",
+        "Agege",
+        "Alimosho",
+        "Obalende",
+        "Mafoluku",
+        "Iwaya",
+        "Idi Oro",
+        "Agungi",
+        "Odo Iya Alaro Bridge"
+      ],
+      "impacts": "Last Sunday's rain turned major roads into rivers; homes flooded; workers could not reach offices. Kemi Badero, Agboola Street Mushin: children slept on a table; belongings floating until Tuesday evening salvage. Lekki N3m-rent apartment taken over. Agungi: schoolchildren ferried by canoe on Monday. Adebayo Abubakar: N150,000 engine repair after driving through flood toward Ojota.",
+      "quote": "My children slept on the table. Most of my belongings were floating in the water",
+      "causes": [
+        "heavy_rain",
+        "blocked_drainage"
+      ],
+      "cause_quote": "Because of blocked drainage channels and mountains of refuse.",
+      "cause_attributed_by": "resident",
+      "cause_who": "Femi Arowosegbe",
+      "url": "https://punchng.com/lagos-residents-count-losses-after-flooding-nightmare/",
+      "publisher": "Punch",
+      "published_at": "2026-07-04T00:30:00+01:00",
+      "read_status": "read",
+      "deaths": null
+    },
+    {
+      "id": "r2026-014",
+      "pass": 1,
+      "date": "2026-06-30",
+      "date_confidence": "exact",
+      "areas": [
+        "FESTAC",
+        "Gbagada",
+        "Evans",
+        "Olushi",
+        "Anikantamo",
+        "Adeniji Adele",
+        "Ikeja",
+        "Ajah",
+        "Victoria Island",
+        "Lekki",
+        "Mushin",
+        "Mafoluku",
+        "Oworo 132/33kV Transmission Station"
+      ],
+      "impacts": "Tuesday hours of heavy rain submerged homes and roads; knee-deep water; Ikeja residents temporarily relocated. Oworo transmission station flooding knocked out two transformers and several 33kV feeders (Ladilak, Bariga, Araromi, Oworo, Pedro, GTB, Alapere, Agboyi, Araba, Hospital, Gbagada). Governor approved dredging of 28 additional primary channels.",
+      "quote": "Floodwaters swept through several communities in Lagos State on Tuesday following hours of heavy rainfall, submerging homes and roads",
+      "causes": [
+        "heavy_rain",
+        "blocked_drainage",
+        "lagoon_tide"
+      ],
+      "cause_quote": "Wahab described Tuesday's downpour as an extreme weather event that overwhelmed drainage infrastructure",
+      "cause_attributed_by": "official",
+      "cause_who": "Tokunbo Wahab, Commissioner for the Environment and Water Resources",
+      "url": "https://punchng.com/floodwaters-submerge-homes-disrupt-power-supply-in-lagos/",
+      "publisher": "Punch",
+      "published_at": "2026-07-01T00:49:00+01:00",
+      "read_status": "read",
+      "deaths": null
+    },
+    {
+      "id": "r2026-015",
+      "pass": 1,
+      "date": "2026-06-30",
+      "date_confidence": "exact",
+      "areas": [
+        "Victoria Island",
+        "Lekki",
+        "Ikeja",
+        "Gbagada",
+        "Mushin",
+        "Mafoluku"
+      ],
+      "impacts": "Hours-long rainfall on Tuesday caused flash floods; residents stranded; transit networks flooded. Government called for calm; governor approved dredging and maintenance of 28 additional primary channels.",
+      "quote": "flash floods were reported in several parts of the city following hours-long rainfall on Tuesday",
+      "causes": [
+        "heavy_rain",
+        "lagoon_tide"
+      ],
+      "cause_quote": "the rainfalls were an extreme weather event that produced an unusually high volume of water within a short period",
+      "cause_attributed_by": "official",
+      "cause_who": "Tokunbo Wahab, Commissioner for the Environment and Water Resources",
+      "url": "https://www.channelstv.com/2026/06/30/lagos-govt-sues-for-calm-following-persistent-rainfalls-flash-floods/",
+      "publisher": "Channels Television",
+      "published_at": "2026-06-30T00:00:00+01:00",
+      "read_status": "read",
+      "deaths": null
+    },
+    {
+      "id": "r2026-016",
+      "pass": 1,
+      "date": "2026-06-30",
+      "date_confidence": "day",
+      "areas": [
+        "Festac town",
+        "Festac Extension, Jakande Estate",
+        "Lawanson Road, Surulere",
+        "Lekki",
+        "Ikota",
+        "Ikeja",
+        "Ikotun",
+        "Gbagada",
+        "Ejigbo",
+        "Victoria Island"
+      ],
+      "impacts": "Heavy rain flooded Festac (photographed yesterday). Homes and vehicles submerged; businesses closed. Video of a man swept away inside a wooden kiosk (outcome not stated). Fence collapsed onto vehicles in a mechanic workshop. Lawanson Road shops flooded; residents scooping water. Wisdom Sotomchukwu: apartment flooded, pumping since last week.",
+      "quote": "Flooded Festac town yesterday.",
+      "causes": [
+        "heavy_rain",
+        "blocked_drainage",
+        "drainage_capacity"
+      ],
+      "cause_quote": "Another challenge is the blocked and narrow drainage channels.",
+      "cause_attributed_by": "resident",
+      "cause_who": "Nosa Iyamu",
+      "url": "https://guardian.ng/news/nigeria/metro/heavy-rain-triggers-flooding-across-lagos-strands-commuters-businesses/",
+      "publisher": "Guardian NG",
+      "published_at": "2026-07-01T04:56:00+01:00",
+      "read_status": "read",
+      "deaths": null
+    },
+    {
+      "id": "r2026-017",
+      "pass": 1,
+      "date": "2026-06-30",
+      "date_confidence": "day",
+      "areas": [
+        "Ago Palace Way",
+        "Okota Road",
+        "Amuwo Odofin",
+        "Ilaje, Ajah",
+        "Greenfield Estate",
+        "Community Road",
+        "Ago Bridge-Apple Junction"
+      ],
+      "impacts": "Tuesday interviews: persistent rain submerged homes and roads; families displaced; school in Ajah suspended Tuesday. Sarah Onyeachonam, Amuwo Odofin: not at work since Monday, homes behind the estate flooded. Community Road like a pond.",
+      "quote": "I've not been able to go to work since Monday. Everybody's just indoors. Everywhere is flooded.",
+      "causes": [
+        "heavy_rain",
+        "blocked_drainage"
+      ],
+      "cause_quote": "She blamed blocked drainage channels and poor road conditions for the persistent flooding.",
+      "cause_attributed_by": "resident",
+      "cause_who": "Chiazo",
+      "url": "https://dailytrust.com/flood-lagos-residents-count-losses/",
+      "publisher": "Daily Trust",
+      "published_at": "2026-06-30T21:23:16+01:00",
+      "read_status": "read",
+      "deaths": null
+    },
+    {
+      "id": "r2026-018",
+      "pass": 1,
+      "date": "2026-06-30",
+      "date_confidence": "approx",
+      "areas": [
+        "Kunsela Road, Ikate",
+        "Shogunle, Oshodi",
+        "Gbagada",
+        "Ikorodu Road",
+        "Ajiran"
+      ],
+      "impacts": "Knee-deep flood on Kunsela Road. In Shogunle, Osila Obarijima watched floodwater above parked-car tyres; water indoors on ground floors. Repeated across Gbagada, Ikorodu Road and Ajiran in the last days of June and first days of July.",
+      "quote": "residents of Kunsela Road in Ikate waded through knee-deep floodwater as they went about their day",
+      "causes": [
+        "heavy_rain",
+        "lagoon_tide",
+        "land_reclamation"
+      ],
+      "cause_quote": "illegal land reclamation in areas such as Ajiran, Agungi, Ikota and the Chevron corridor",
+      "cause_attributed_by": "official",
+      "cause_who": "Tokunbo Wahab, Commissioner for Environment and Water Resources",
+      "url": "https://nairametrics.com/2026/07/05/why-kunsela-ologolo-gbagada-and-other-parts-of-lagos-keep-flooding/",
+      "publisher": "Nairametrics",
+      "published_at": "2026-07-05T00:00:00+01:00",
+      "read_status": "read",
+      "deaths": null
+    },
+    {
+      "id": "r2026-019",
+      "pass": 1,
+      "date": "2026-07-10",
+      "date_confidence": "day",
+      "areas": [
+        "Lekki Scheme II",
+        "Ajiran, Lekki",
+        "Ikotun Market",
+        "Bola Street, Ebute Metta"
+      ],
+      "impacts": "NAN Friday interviews: poultry farmer Alex trapped indoors three days, chicks dying. Johnson, Ajiran: flood entered apartment about 4:00 a.m.; family moved upstairs; fridge, mattress, electronics, food and school books damaged. Ikotun Market trader: rice and beans soaked. Ebute Metta: Friday downpour made the canal overflow within hours, flooding streets and compounds.",
+      "quote": "Friday's downpour caused the canal to overflow within hours, flooding nearby streets and compounds.",
+      "causes": [
+        "heavy_rain",
+        "canal_overflow",
+        "setback_encroachment"
+      ],
+      "cause_quote": "Those developers built on top of the canal. They narrowed it and turned it into a gutter.",
+      "cause_attributed_by": "resident",
+      "cause_who": "Mr Alex, Lekki Scheme II",
+      "url": "https://www.vanguardngr.com/2026/07/residents-count-losses-as-torrential-rain-floods-lagos-communities/",
+      "publisher": "Vanguard",
+      "published_at": "2026-07-10T00:00:00+01:00",
+      "read_status": "read",
+      "deaths": null
+    },
+    {
+      "id": "r2026-020",
+      "pass": 1,
+      "date": "2026-07-13",
+      "date_confidence": "day",
+      "areas": [
+        "Ikoyi",
+        "Lekki",
+        "Victoria Island",
+        "Oworonshoki",
+        "Bourdillon Road",
+        "Orile",
+        "Coker",
+        "Aguda",
+        "Itire",
+        "Ikate",
+        "Ijesha",
+        "Surulere"
+      ],
+      "impacts": "Monday torrential rain halted commerce; vehicles partially submerged; pedestrians waded knee-deep. Iyabo Ojo filmed Bourdillon. NEMA impact assessment in Surulere communities: homes and businesses inundated; household property damaged.",
+      "quote": "The worst-hit areas included Ikoyi, Lekki, Victoria Island and Oworonshoki, where floodwaters overwhelmed roads",
+      "causes": [
+        "heavy_rain",
+        "lagoon_tide",
+        "blocked_drainage"
+      ],
+      "cause_quote": "The flooding currently being experienced in some parts of Lagos is largely attributable to a significant rise in the lagoon water level",
+      "cause_attributed_by": "official",
+      "cause_who": "Tokunbo Wahab, Commissioner for the Environment and Water Resources",
+      "url": "https://punchng.com/downpour-cripples-lagos-flood-submerges-cars-strands-motorists/",
+      "publisher": "Punch",
+      "published_at": "2026-07-14T00:01:00+01:00",
+      "read_status": "read",
+      "deaths": null
+    },
+    {
+      "id": "r2026-021",
+      "pass": 1,
+      "date": "2026-07-15",
+      "date_confidence": "approx",
+      "areas": [
+        "Ogombo, Eti-Osa"
+      ],
+      "impacts": "Governor Sanwo-Olu on Wednesday waded through flooded Ogombo roads with cabinet members. Several roads still submerged; some residents used canoes to cross flooded sections.",
+      "quote": "With several roads submerged, some residents have resorted to using canoes to transport people across flooded sections",
+      "causes": [],
+      "cause_quote": null,
+      "cause_attributed_by": null,
+      "cause_who": null,
+      "url": "https://www.channelstv.com/2026/07/15/video-sanwo-olu-visits-displaced-residents-in-flooded-ogombo-area/",
+      "publisher": "Channels Television",
+      "published_at": "2026-07-15T00:00:00+01:00",
+      "read_status": "read",
+      "deaths": null
+    },
+    {
+      "id": "r2026-022",
+      "pass": 1,
+      "date": "2026-07-15",
+      "date_confidence": "approx",
+      "areas": [
+        "Ogombo",
+        "Abraham Adesanya Estate, Eti-Osa"
+      ],
+      "impacts": "Days after a heavy downpour, Ogombo and Abraham Adesanya streets remained submerged; homes cut off; electricity disconnected in some areas. Canoes charged up to N2,500 versus about N500 normally. Eunice Akintola temporarily left home. Vehicle damaged driving through floodwater.",
+      "quote": "Days after the heavy downpour, streets remained submerged, homes were cut off, electricity was disconnected in some areas",
+      "causes": [
+        "drainage_capacity",
+        "blocked_drainage"
+      ],
+      "cause_quote": "There is virtually no drainage in our area. That is one of the biggest problems",
+      "cause_attributed_by": "resident",
+      "cause_who": "Eunice Akintola",
+      "url": "https://guardian.ng/news/nigeria/metro/flood-lagos-residents-count-losses-demand-lasting-drainage-solutions/",
+      "publisher": "Guardian NG",
+      "published_at": "2026-07-22T04:56:00+01:00",
+      "read_status": "read",
+      "deaths": null
+    }
+  ]
+}

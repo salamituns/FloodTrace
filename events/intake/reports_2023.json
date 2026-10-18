@@ -49,14 +49,17 @@
       ],
       "impacts": "LASTMA official Lateef Kabir dislodged rain flood from the main carriageway into open drains after heavy gridlock on the bridge inward Ojota.",
       "quote": "dislodging rain floods into open drains on the main carriageway, Odo Iya-Alaro Bridge inward Ojota, Lagos",
-      "causes": ["heavy_rain"],
+      "causes": [
+        "heavy_rain"
+      ],
       "cause_quote": "dislodging rain floods into open drains on the main carriageway",
       "cause_attributed_by": "official",
       "cause_who": "Taofiq Adebayo, Director, Public Affairs and Enlightenment, LASTMA",
       "url": "https://www.vanguardngr.com/2023/04/lagos-traffic-lastma-dislodges-flood-into-open-drains/",
       "publisher": "Vanguard",
       "published_at": "2023-04-24T00:00:00+01:00",
-      "read_status": "read"
+      "read_status": "read",
+      "deaths": null
     },
     {
       "id": "r2023-002",
@@ -69,14 +72,18 @@
       ],
       "impacts": "Rain about 11.30 a.m. to 1.00 p.m. Thursday flooded NPC and NYSC premises. Workers and visitors waded through flood after it subsided. Staff said flooding continues despite rehabilitation of Babs Animashaun Road; offices sit close to a canal.",
       "quote": "When the rain subsided, workers and visitors were seen wading through the flood.",
-      "causes": ["heavy_rain", "canal_overflow"],
+      "causes": [
+        "heavy_rain",
+        "canal_overflow"
+      ],
       "cause_quote": "We are located close to a canal, which makes it worse.",
       "cause_attributed_by": "resident",
       "cause_who": "unnamed NPC/NYSC worker",
       "url": "https://www.vanguardngr.com/2023/04/flood-takes-over-npc-nysc-premises-in-lagos/",
       "publisher": "Vanguard",
       "published_at": "2023-04-27T00:00:00+01:00",
-      "read_status": "read"
+      "read_status": "read",
+      "deaths": null
     },
     {
       "id": "r2023-003",
@@ -90,14 +97,19 @@
       ],
       "impacts": "Feature published 5 Aug 2023: a June video showed pupils walking a slippery path home after a downpour; the headmistress sent video of the flood. Sports pavilion launched 20 May 2023 was submerged by canal flood barely a month later. Parents wait across the water until it subsides before children leave school. 2022 deaths on this canal are not this year's flood day.",
       "quote": "I'm the headmistress of this place. I'm also a parent. I'm sending the video to our bosses so that they can see the flood.",
-      "causes": ["canal_overflow", "construction", "drainage_capacity"],
+      "causes": [
+        "canal_overflow",
+        "construction",
+        "drainage_capacity"
+      ],
       "cause_quote": "Houses were demolished in the name of constructing the water channel and bridges",
       "cause_attributed_by": "resident",
       "cause_who": "Henry, resident",
       "url": "https://punchng.com/flooding-lagos-communities-where-residents-dread-rain-over-abandoned-canals/",
       "publisher": "Punch",
       "published_at": "2023-08-05T06:12:00+01:00",
-      "read_status": "read"
+      "read_status": "read",
+      "deaths": null
     },
     {
       "id": "r2023-004",
@@ -116,14 +128,19 @@
       ],
       "impacts": "Saturday morning rain from 5.00 a.m. for hours; flood blocked Trade Fair axis; passengers trekked from Abule-Ado to Barracks in Ojo; vehicles trapped. NAN: floods also affected Badagry communities Mowo, Ikoga, Ansarudeen, Ajara-Vetho, Aghelaso and Zogakome.",
       "quote": "Hundreds of motorists and passengers going to Mile 2 were on Saturday stranded as flood from a morning downpour disrupted free movement",
-      "causes": ["heavy_rain", "blocked_drainage", "construction"],
+      "causes": [
+        "heavy_rain",
+        "blocked_drainage",
+        "construction"
+      ],
       "cause_quote": "The drainage is blocked by plastics and nylon preventing the passage of the water.",
       "cause_attributed_by": "resident",
       "cause_who": "Ibironke Adegboyega, trader",
       "url": "https://www.vanguardngr.com/2023/09/downpour-leaves-lagos-badagry-expressway-flooded-residents-groan/",
       "publisher": "Vanguard",
       "published_at": "2023-09-16T00:00:00+01:00",
-      "read_status": "read"
+      "read_status": "read",
+      "deaths": null
     },
     {
       "id": "r2023-005",
@@ -138,14 +155,17 @@
       ],
       "impacts": "Early-morning Saturday downpour; flood took over major areas; residents in Alimosho, Agege and Ikeja bailed storm water from houses; flood later receded. Motorists said flood takes over Oko Filling bus stop on LASU–Igando Expressway whenever it rains.",
       "quote": "Some residents in affected areas in Alimosho, Agege, Ikeja, were seen bailing out storm water from their houses.",
-      "causes": ["heavy_rain"],
+      "causes": [
+        "heavy_rain"
+      ],
       "cause_quote": "flood took over major areas of the Lagos metropolis following early morning downpour",
       "cause_attributed_by": "journalist",
       "cause_who": null,
       "url": "https://www.vanguardngr.com/2023/09/downpour-lagos-postpones-3rd-mainland-bridge-repairs-floods-sack-communities-motorists-stranded/",
       "publisher": "Vanguard",
       "published_at": "2023-09-16T00:00:00+01:00",
-      "read_status": "read"
+      "read_status": "read",
+      "deaths": null
     },
     {
       "id": "r2023-006",
@@ -159,14 +179,23 @@
       ],
       "impacts": "Rain about 2am–2pm Saturday. Motorcycle rider Mr Abe swept away on Ile Epo Bus Stop canal (NEMA SW coordinator Ibrahim Farinloye). Houses, offices and roads submerged in Papa Ashafa and Fashola. NEMA: immediate succour to about 200 people in Orile Agege that afternoon; DG Mustapha Ahmed ordered relief for people in four churches. Ago-Palace residents battling flood water in homes.",
       "quote": "Several houses, office premises and roads were submerged in the flood.",
-      "causes": ["heavy_rain", "canal_overflow", "drainage_capacity"],
+      "causes": [
+        "heavy_rain",
+        "canal_overflow",
+        "drainage_capacity"
+      ],
       "cause_quote": "primarily due to an inadequate drainage system",
       "cause_attributed_by": "journalist",
       "cause_who": null,
       "url": "https://www.vanguardngr.com/2023/09/photos-cyclist-drowns-200-displaced-as-downpour-wreaks-havoc-on-lagos-communities/",
       "publisher": "Vanguard",
       "published_at": "2023-09-16T00:00:00+01:00",
-      "read_status": "read"
+      "read_status": "read",
+      "deaths": {
+        "count": 1,
+        "who_reported": "Ibrahim Farinloye, Zonal Coordinator South-West, NEMA",
+        "quote": "A motorcycle rider, simply identified as Mr Abe, was swept away after refusing to heed warnings"
+      }
     },
     {
       "id": "r2023-007",
@@ -186,14 +215,18 @@
       ],
       "impacts": "Early-morning rain submerged houses; residents bailed water; flood overflowed drains into houses; some fences and gates destroyed; some families temporarily relocated. NEMA Farinloye: assistance to about 200 people in Orile Agege that afternoon; helping reconstruct a collapsed fence.",
       "quote": "Flooding caused by the heavy rainfall has submerged a number of houses in the affected areas.",
-      "causes": ["heavy_rain", "canal_overflow"],
+      "causes": [
+        "heavy_rain",
+        "canal_overflow"
+      ],
       "cause_quote": "Residents, who live close to canals, appealed to the state governor, Babajide Sanwo-Olu, to come to their aid by dredging the canals.",
       "cause_attributed_by": "journalist",
       "cause_who": null,
       "url": "https://dailytrust.com/flood-submerges-houses-destroys-property-in-lagos/",
       "publisher": "Daily Trust",
       "published_at": "2023-09-16T13:05:59+01:00",
-      "read_status": "read"
+      "read_status": "read",
+      "deaths": null
     },
     {
       "id": "r2023-008",
@@ -205,14 +238,21 @@
       ],
       "impacts": "Published Sunday 17 Sept: heavy flood swept away a commercial motorcycle at Papa Ashafa yesterday; rider Mr Abe, per NEMA's Ibrahim Farinlonye. Third Mainland Bridge palliative works postponed because of Saturday downpour.",
       "quote": "In Lagos, a heavy flood swept away a commercial motorcycle at Papa Ashafa in Orile Agege area of Lagos State yesterday.",
-      "causes": ["heavy_rain"],
+      "causes": [
+        "heavy_rain"
+      ],
       "cause_quote": "Floods due to torrential rainfalls have left many across the country in gruelling situations.",
       "cause_attributed_by": "journalist",
       "cause_who": null,
       "url": "https://www.vanguardngr.com/2023/09/floods-wreak-havoc-in-lagos-delta-anambra-sweep-away-motorcyclist/",
       "publisher": "Vanguard",
       "published_at": "2023-09-17T00:00:00+01:00",
-      "read_status": "read"
+      "read_status": "read",
+      "deaths": {
+        "count": 1,
+        "who_reported": "Ibrahim Farinlonye, Zonal Coordinator, South West, NEMA",
+        "quote": "One motorcycle rider simply called Mr. Abe has swept away after refusing to heed to warnings"
+      }
     }
   ],
   "excluded": [

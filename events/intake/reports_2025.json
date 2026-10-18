@@ -1,0 +1,594 @@
+{
+  "meta": {
+    "compiled_at": "2026-10-18T21:30:00Z",
+    "year": 2025,
+    "task": "28-news-sweep-full",
+    "method": "Pass 1: news-first sweep of wet-season months (Apr–Nov) using Task 26 outlets and qualifying rule. Pass 2 (slimmed 2026-10-18): death queries with no site filter; Oyan Dam / Ogun River / lagoon / water-release / Isheri-Ajegunle-Owode-Agboyi queries; Anadolu once per year; out-of-season Jan–Mar and Dec. Qualifying reports name a Lagos State place and a date, and describe water on streets or in homes. Quotes ≤25 words, verbatim. Dates, numbers and quotes are only those in the source. Areas left as named; not geocoded. Flood date is the flood day, not publication day.",
+    "districts_searched": [
+      "Alimosho",
+      "Ajeromi-Ifelodun",
+      "Kosofe",
+      "Mushin",
+      "Oshodi-Isolo",
+      "Ojo",
+      "Ikorodu",
+      "Surulere",
+      "Agege",
+      "Ifako-Ijaiye",
+      "Somolu",
+      "Amuwo-Odofin",
+      "Lagos Mainland",
+      "Ikeja",
+      "Eti-Osa"
+    ],
+    "outlets": [
+      "Punch",
+      "Vanguard",
+      "Guardian NG",
+      "Premium Times",
+      "Channels TV",
+      "TVC",
+      "Daily Trust",
+      "BBC Pidgin",
+      "Nairametrics"
+    ],
+    "notes": [
+      "June, July, October and November: no qualifying dated Lagos street/home flood found in Task 26 outlets (warnings, aggregates, perennial features, or other-state leaks).",
+      "June 13 torrential rain with 'flooding in some parts' (Vanguard 22 Jun recall) had no named Lagos place — excluded.",
+      "July Nairametrics tidal-lock statement named only 'low-lying areas' — excluded for no named place.",
+      "Sanwo-Olu 6 Oct 2025 Habitat Day figures (3,000 displaced; 57,000 impacted Jan–Oct) are a seasonal aggregate, not a dated flood day — excluded.",
+      "Oyan Dam / Ogun River 2025 hits were alerts (Oct overflow window; OORBDA controlled release) not an observed Lagos street flood day.",
+      "Anadolu 2025 Nigeria flood copy was Mokwa/Niger State, not a named Lagos flood day.",
+      "X accounts of LASEMA, Lagos MoE and NEMA: no dated 2025 flood posts reached.",
+      "Out-of-season Jan–Mar and Dec: outlooks, demolitions, and year-end awards; no qualifying flood day.",
+      "BBC Pidgin 6 Aug mislabelled Monday as 5 Aug (Monday was 4 Aug); kept as the 4 Aug flood matching same-day outlets.",
+      "Premium Times 24 Sep covers Tuesday and Wednesday (23–24 Sep); dated to Wednesday 24 Sep, when Wahab said the flash flood had receded.",
+      "May weekend Lekki flooding dated 2025-05-18 (Sunday) with date_confidence approx; Vanguard said 'over the weekend' in a 20 May piece.",
+      "Alakuko motorcyclist death is 20 May 2025 (exact); that is a separate day from the Lekki weekend."
+    ]
+  },
+  "reports": [
+    {
+      "id": "r2025-001",
+      "pass": 1,
+      "date": "2025-04-10",
+      "date_confidence": "day",
+      "areas": [
+        "Aroloya Street",
+        "Ojo-Giwa",
+        "Binuyo",
+        "Oroyinyin",
+        "Lagos Island"
+      ],
+      "impacts": "Lagos State deployed pumping stations to pump out stormwater after reports of flooding and disruptions from blocked drainages on Lagos Island during urban-regeneration construction. Aimed at relieving residents and business owners.",
+      "quote": "the Lagos State government has set up pumping stations in the area to pump out the stormwater",
+      "causes": [
+        "construction",
+        "blocked_drainage"
+      ],
+      "cause_quote": "This temporary blockage of the drainages are as a result of the ongoing constructions.",
+      "cause_attributed_by": "official",
+      "cause_who": "Tokunbo Wahab, Commissioner for the Environment and Water Resources",
+      "url": "https://punchng.com/video-govt-deploys-pumps-to-address-flooding-in-lagos-island-communities/",
+      "publisher": "Punch",
+      "published_at": "2025-04-10T16:02:05+00:00",
+      "read_status": "read",
+      "deaths": null
+    },
+    {
+      "id": "r2025-002",
+      "pass": 1,
+      "date": "2025-05-18",
+      "date_confidence": "approx",
+      "areas": [
+        "Lekki Phase 1"
+      ],
+      "impacts": "Residents of Lekki Phase 1 and surrounding areas experienced severe flooding over the weekend after heavy rainfall. Viral videos showed large portions of Lekki submerged. Wahab said floodwater should drain within 1–2 hours after rain stops once the tide recedes.",
+      "quote": "residents of Lekki Phase 1 and surrounding areas, who experienced severe flooding over the weekend following heavy rainfall",
+      "causes": [
+        "heavy_rain",
+        "lagoon_tide",
+        "ocean_surge"
+      ],
+      "cause_quote": "The flash flooding currently being experienced in parts of the city is due to increased tidal levels",
+      "cause_attributed_by": "official",
+      "cause_who": "Tokunbo Wahab, Commissioner for the Environment and Water Resources",
+      "url": "https://www.vanguardngr.com/2025/05/flash-floods-in-lagos-caused-by-high-tidal-levels-says-environment-commissioner/",
+      "publisher": "Vanguard",
+      "published_at": "2025-05-20T14:07:00+00:00",
+      "read_status": "read",
+      "deaths": null
+    },
+    {
+      "id": "r2025-003",
+      "pass": 1,
+      "date": "2025-05-20",
+      "date_confidence": "exact",
+      "areas": [
+        "Lagos-Abeokuta Expressway, Alakuko"
+      ],
+      "impacts": "At about 4pm during heavy rainfall, motorcycle operator Wasiu Babatunde Adeniran, 60, was swept away by floodwaters. Motorcycle found downstream about 6pm the same day. Body found about 9am on 21 May 2025 at Obasanjo River, Ota, Ogun State. Autopsy ordered.",
+      "quote": "The victim, Wasiu Babatunde Adeniran, fell off his motorcycle, which was also carried away by the flood",
+      "causes": [
+        "heavy_rain"
+      ],
+      "cause_quote": "swept away by floodwaters during heavy rainfall along the Lagos-Abeokuta Expressway in Alakuko, Lagos",
+      "cause_attributed_by": "official",
+      "cause_who": "Benjamin Hundeyin, Lagos State Police Public Relations Officer",
+      "url": "https://punchng.com/flood-sweeps-away-lagos-motorcyclist-body-recovered-in-ogun-river/",
+      "publisher": "Punch",
+      "published_at": "2025-05-22T09:57:25+00:00",
+      "read_status": "read",
+      "deaths": {
+        "count": 1,
+        "who_reported": "Benjamin Hundeyin, Lagos State Police Public Relations Officer",
+        "quote": "The Lagos State Police Command has confirmed the death of a 60-year-old motorcycle operator"
+      }
+    },
+    {
+      "id": "r2025-004",
+      "pass": 1,
+      "date": "2025-08-04",
+      "date_confidence": "exact",
+      "areas": [
+        "Ijede, Ikorodu",
+        "Lekki",
+        "Eti-Osa",
+        "Ajegunle",
+        "Agege",
+        "Surulere",
+        "Alimosho"
+      ],
+      "impacts": "Communities flooded on Monday after marathon rainfall from Sunday night through Monday evening. Viral videos: submerged houses and vehicles in Ijede. Residents navigated pool-like streets overflowing from clogged drains and canals. Trade paralysed; motorists avoided flooded roads.",
+      "quote": "Some communities in Lagos State, Nigeria's commercial capital, were flooded on Monday after marathon rainfall",
+      "causes": [
+        "heavy_rain",
+        "blocked_drainage",
+        "drainage_capacity"
+      ],
+      "cause_quote": "pool-like streets and roads, which overflowed from clogged drainage channels and canals",
+      "cause_attributed_by": "journalist",
+      "cause_who": null,
+      "url": "https://www.channelstv.com/2025/08/04/lagos-communities-flooded-vehicles-submerged-after-marathon-rainfall/",
+      "publisher": "Channels Television",
+      "published_at": "2025-08-04T18:57:17+00:00",
+      "read_status": "read",
+      "deaths": null
+    },
+    {
+      "id": "r2025-005",
+      "pass": 1,
+      "date": "2025-08-04",
+      "date_confidence": "exact",
+      "areas": [
+        "Oko Ope, Ijede",
+        "Ikorodu",
+        "Lekki",
+        "Eti-Osa",
+        "Ajegunle",
+        "Agege",
+        "Surulere",
+        "Alimosho",
+        "Ikeja",
+        "Maryland",
+        "Oshodi",
+        "Gberegbe, Ikorodu"
+      ],
+      "impacts": "Flash floods after rain from around midnight Sunday through Monday. Island and Mainland roads flooded. Woman in Oko Ope: could not enter homes; flood destroyed everything; dated the plea 4 August 2025. Another: house full of water 3–4 August, cars submerged. Shops in Ikeja, Agege, Maryland, Oshodi closed as of 10 a.m.; commuters stranded.",
+      "quote": "We can't even enter our homes. The flood has destroyed everything.",
+      "causes": [
+        "heavy_rain"
+      ],
+      "cause_quote": "flash floods swept through several communities and streets in Lagos State following intense rainfall",
+      "cause_attributed_by": "journalist",
+      "cause_who": null,
+      "url": "https://dailytrust.com/residents-motorists-stranded-as-flood-hits-lagos/",
+      "publisher": "Daily Trust",
+      "published_at": "2025-08-05T07:52:35+00:00",
+      "read_status": "read",
+      "deaths": null
+    },
+    {
+      "id": "r2025-006",
+      "pass": 1,
+      "date": "2025-08-04",
+      "date_confidence": "exact",
+      "areas": [
+        "Odo Iya Alaro Bridge, Ikorodu",
+        "Ikotun",
+        "Igando Roads",
+        "Oworosonki",
+        "Gberegbe, Ikorodu"
+      ],
+      "impacts": "Early-morning torrential rain; roads flooded and homes submerged. Downpour from about midnight, intermittent through Monday. Motorists stranded for hours. Odo Iya Alaro Bridge heavily flooded about 5 a.m. Broken-down vehicles stuck. Gridlock toward Ikotun and Igando. Commuters waiting at bus stops after rain subsided about 9 a.m. Wahab: rainfall of several 12 hours.",
+      "quote": "The flash floods affected roads and submerged various homes across the metropolis.",
+      "causes": [
+        "heavy_rain",
+        "lagoon_tide"
+      ],
+      "cause_quote": "with the heavy rainfalls, the level of water in the lagoon is bound to rise and will result in a tidal lock",
+      "cause_attributed_by": "official",
+      "cause_who": "Tokunbo Wahab, Commissioner for the Environment and Water Resources",
+      "url": "https://www.vanguardngr.com/2025/08/flash-floods-ground-lagos-paralyse-businesses/",
+      "publisher": "Vanguard",
+      "published_at": "2025-08-05T04:58:31+00:00",
+      "read_status": "read",
+      "deaths": null
+    },
+    {
+      "id": "r2025-007",
+      "pass": 1,
+      "date": "2025-08-04",
+      "date_confidence": "exact",
+      "areas": [
+        "Oko Ope",
+        "Anjorin",
+        "Abule Eko",
+        "Odetedo",
+        "Ijede, Ikorodu"
+      ],
+      "impacts": "Aftermath visit Tuesday after Monday flood videos. Homes and streets submerged. Princess Ademola, Oko Ope: water almost shoulder-high; generator, pumping machines and cars destroyed. Correspondent counted no fewer than 28 houses with fences destroyed. Fuel-station storage tank along Abule Eko Road caved in. Residents blamed an abandoned drainage project from Oko Ope to Abule Eko, left about four months.",
+      "quote": "It was when it almost reached my shoulder that I had to do the video.",
+      "causes": [
+        "construction",
+        "drainage_capacity"
+      ],
+      "cause_quote": "The cause of the flooding is the abandoned drainage project from Oko Ope down to Abule Eko.",
+      "cause_attributed_by": "resident",
+      "cause_who": "Ismael Taoreed",
+      "url": "https://punchng.com/flooding-lagos-community-counts-losses-blames-abandoned-drainage-construction/",
+      "publisher": "Punch",
+      "published_at": "2025-08-06T00:40:53+00:00",
+      "read_status": "read",
+      "deaths": null
+    },
+    {
+      "id": "r2025-008",
+      "pass": 1,
+      "date": "2025-08-04",
+      "date_confidence": "exact",
+      "areas": [
+        "Ijede",
+        "Agungi",
+        "Lekki",
+        "Ikorodu"
+      ],
+      "impacts": "Wahab on Ask Lagos: Monday flash flooding from rainfall lasting more than 15 hours in some parts. Named Ijede; apologised to Agungi, Lekki and parts of Ikorodu. Said a major contract is in progress at Ijede.",
+      "quote": "the flash flooding experienced in some areas on Monday was caused by a rainfall that lasted more than 15 hours",
+      "causes": [
+        "heavy_rain"
+      ],
+      "cause_quote": "the flash flooding experienced in some areas on Monday was caused by a rainfall that lasted more than 15 hours",
+      "cause_attributed_by": "official",
+      "cause_who": "Tokunbo Wahab, Commissioner for the Environment and Water Resources",
+      "url": "https://nairametrics.com/2025/08/07/lagos-state-govt-reassures-residents-over-flash-floods-says-infrastructure-in-place-to-manage-flooding/",
+      "publisher": "Nairametrics",
+      "published_at": "2025-08-07T09:32:03+00:00",
+      "read_status": "read",
+      "deaths": null
+    },
+    {
+      "id": "r2025-009",
+      "pass": 1,
+      "date": "2025-08-04",
+      "date_confidence": "exact",
+      "areas": [
+        "Lekki",
+        "Ikorodu",
+        "Ajegunle",
+        "Isheri (OPIC axis)"
+      ],
+      "impacts": "Warning after Monday's widespread flooding from uninterrupted rain starting Sunday night. Viral videos: submerged homes and vehicles; streets overwhelmed by overflowing drainage. Wahab named Lekki, Ikorodu, Ajegunle and Isheri (OPIC) as high flash-flood risk.",
+      "quote": "Viral videos showed submerged homes and vehicles, with residents navigating floodwaters on roads and streets",
+      "causes": [
+        "heavy_rain",
+        "blocked_drainage"
+      ],
+      "cause_quote": "streets overwhelmed by overflowing drainage channels",
+      "cause_attributed_by": "journalist",
+      "cause_who": null,
+      "url": "https://www.tvcnews.tv/lagos-warns-lekki-ikorodu-other-residents-to-relocate-over-flood-risk/",
+      "publisher": "TVC",
+      "published_at": "2025-08-06T07:52:00+01:00",
+      "read_status": "read",
+      "deaths": null
+    },
+    {
+      "id": "r2025-010",
+      "pass": 1,
+      "date": "2025-08-04",
+      "date_confidence": "day",
+      "areas": [
+        "Lekki",
+        "Ikorodu",
+        "Ajegunle",
+        "Ajilete",
+        "Majidun",
+        "OPIC estate"
+      ],
+      "impacts": "Flood hit parts of Lagos after all-night rainfall. Videos: woman scooping water from sitting room; flood to half of houses; cars and streets taken over. Wahab listed low-lying areas at risk; said Epe, Mushin and Ikeja were safe for now. Piece mislabels the Monday as 5 August; Monday was 4 August.",
+      "quote": "For one of di videos, one woman dey use bucket pack water comot from her sitting room.",
+      "causes": [
+        "heavy_rain"
+      ],
+      "cause_quote": "flood hit some parts of Lagos on Monday, 5 August, afta one all night rainfall",
+      "cause_attributed_by": "journalist",
+      "cause_who": null,
+      "url": "https://www.bbc.com/pidgin/articles/clyrq7qzzjxo",
+      "publisher": "BBC Pidgin",
+      "published_at": "2025-08-06T00:00:00+01:00",
+      "read_status": "read",
+      "deaths": null
+    },
+    {
+      "id": "r2025-011",
+      "pass": 1,
+      "date": "2025-09-09",
+      "date_confidence": "day",
+      "areas": [
+        "Lagos Island",
+        "Ikoyi",
+        "Alexander Way",
+        "Dolphin Estate",
+        "Lekki",
+        "Obalende",
+        "Funsho Williams Avenue",
+        "Ikorodu Road",
+        "Agege",
+        "Ikeja",
+        "Mobolaji Bank Anthony Way",
+        "Maryland",
+        "Oworonshoki",
+        "Oshodi",
+        "Apapa",
+        "Alimosho"
+      ],
+      "impacts": "Tuesday early-morning downpour: motorists and residents trapped in gridlock. Commercial activity halted; vehicles broke down on waterlogged roads. Businesses closed in the morning, reopened afternoon. Stormwater receded about 2pm. Named Island and Mainland corridors. Separate Ifako-Ijaiye Link Bridge rehab gridlock the same day.",
+      "quote": "Motorists and residents across Lagos on Tuesday were trapped in heavy gridlock after several hours of early morning downpour",
+      "causes": [
+        "heavy_rain"
+      ],
+      "cause_quote": "trapped in heavy gridlock after several hours of early morning downpour in major parts of the Lagos metropolis",
+      "cause_attributed_by": "journalist",
+      "cause_who": null,
+      "url": "https://www.vanguardngr.com/2025/09/gridlock-as-flash-floods-take-over-lagos-roads-paralyse-business-activities/",
+      "publisher": "Vanguard",
+      "published_at": "2025-09-10T03:12:45+00:00",
+      "read_status": "read",
+      "deaths": null
+    },
+    {
+      "id": "r2025-012",
+      "pass": 1,
+      "date": "2025-09-16",
+      "date_confidence": "day",
+      "areas": [
+        "Ago Palace Way, Okota",
+        "Ikorodu",
+        "Akowonjo",
+        "Lekki",
+        "Alhaji Idowu Street, Akowonjo",
+        "Osapa London",
+        "Agege",
+        "Ogba",
+        "Wempco Road",
+        "Egbeda-Idimu"
+      ],
+      "impacts": "Tuesday-morning downpour submerged major roads and neighbourhoods. Homes and shops flooded; residents stranded. Alhaji Idowu Street filled with water after about three hours of rain. Ago Palace Way slow with flood. Osapa London estate roads flooded. Agege–Ogba–Wempco T-junction by Mobil filling station heavily flooded. Egbeda-Idimu drivers called for government intervention.",
+      "quote": "Some parts of Lagos State, on Tuesday morning, were once again submerged by heavy flooding following a downpour",
+      "causes": [
+        "heavy_rain"
+      ],
+      "cause_quote": "submerged by heavy flooding following a downpour that started in the early hours of the day",
+      "cause_attributed_by": "journalist",
+      "cause_who": null,
+      "url": "https://punchng.com/motorists-residents-lament-as-flood-submerges-lagos-roads/",
+      "publisher": "Punch",
+      "published_at": "2025-09-17T04:00:48+00:00",
+      "read_status": "read",
+      "deaths": null
+    },
+    {
+      "id": "r2025-013",
+      "pass": 1,
+      "date": "2025-09-23",
+      "date_confidence": "day",
+      "areas": [
+        "Kusenla",
+        "House on the Rock church"
+      ],
+      "impacts": "Tuesday flash floods. Wahab Wednesday: Kusenla downstream about 1.2 metres higher than existing drainage invert; pumping-station project awarded. House on the Rock flooding linked to illegal floodplain construction and refuse in drains. Said the flash flood had receded.",
+      "quote": "the flash floods experienced in parts of the state on Tuesday were caused by a mix of technical drainage challenges",
+      "causes": [
+        "drainage_capacity",
+        "setback_encroachment",
+        "blocked_drainage",
+        "lagoon_tide"
+      ],
+      "cause_quote": "the flash floods experienced in parts of the state on Tuesday were caused by a mix of technical drainage challenges",
+      "cause_attributed_by": "official",
+      "cause_who": "Tokunbo Wahab, Commissioner for the Environment and Water Resources",
+      "url": "https://nairametrics.com/2025/09/24/lagos-govt-blames-flash-floods-on-illegal-construction-and-waste-dumping/",
+      "publisher": "Nairametrics",
+      "published_at": "2025-09-24T20:26:09+00:00",
+      "read_status": "read",
+      "review_note": "2026-10-18 reviewer: cause_quote was TVC's Wahab quote copied in; replaced with Nairametrics' own sentence (verified).",
+      "deaths": null
+    },
+    {
+      "id": "r2025-014",
+      "pass": 1,
+      "date": "2025-09-23",
+      "date_confidence": "day",
+      "areas": [
+        "Victoria Island",
+        "Lekki",
+        "Ajah",
+        "Kusenla",
+        "House on the Rock church"
+      ],
+      "impacts": "Early-morning rainfall Tuesday: roads, homes and shops submerged in Victoria Island, Lekki, Ajah. Pedestrian and vehicular traffic standstill more than seven hours. Some commuters home after 10 p.m.; others stuck until early Wednesday. Wahab: Kusenla technical; House on the Rock illegal construction and refuse.",
+      "quote": "The early morning rainfall triggered widespread flooding across Victoria Island, Lekki, Ajah, and nearby areas, submerging roads, homes, and shops.",
+      "causes": [
+        "heavy_rain",
+        "setback_encroachment",
+        "blocked_drainage",
+        "drainage_capacity",
+        "lagoon_tide"
+      ],
+      "cause_quote": "Around House on the Rock church, the flooding was linked to infractions we highlighted earlier; illegal construction on flood plains",
+      "cause_attributed_by": "official",
+      "cause_who": "Tokunbo Wahab, Commissioner for the Environment and Water Resources",
+      "url": "https://www.tvcnews.tv/lagos-blames-illegal-structures-waste-disposal-for-lekki-flooding/",
+      "publisher": "TVC",
+      "published_at": "2025-09-25T11:22:00+01:00",
+      "read_status": "read",
+      "deaths": null
+    },
+    {
+      "id": "r2025-015",
+      "pass": 1,
+      "date": "2025-09-23",
+      "date_confidence": "day",
+      "areas": [
+        "Ikota",
+        "Lekki"
+      ],
+      "impacts": "Ikota and Lekki residents said Tuesday's downpour left homes and roads completely submerged; businesses destroyed. They blamed illegal structures on canals, particularly System 156 and 157. Scores of streets and homes flooded; commuters stranded; vehicles submerged.",
+      "quote": "The residents lamented that Tuesday's downpour was yet another nightmare that left homes and roads completely submerged.",
+      "causes": [
+        "setback_encroachment",
+        "heavy_rain"
+      ],
+      "cause_quote": "illegal structures built on canals and drainage channels, particularly System 156 and 157 drainage channels",
+      "cause_attributed_by": "resident",
+      "cause_who": null,
+      "url": "https://www.channelstv.com/2025/09/27/flood-ikota-lekki-residents-urge-govt-to-act-against-illegal-structures-on-waterways/",
+      "publisher": "Channels Television",
+      "published_at": "2025-09-27T00:00:00+01:00",
+      "read_status": "read",
+      "deaths": null
+    },
+    {
+      "id": "r2025-016",
+      "pass": 1,
+      "date": "2025-09-24",
+      "date_confidence": "day",
+      "areas": [
+        "Maryland",
+        "Lekki",
+        "Ogba",
+        "Ikorodu",
+        "Olatunji Street, Maryland",
+        "Mende",
+        "Ogba-Wempco junction",
+        "Ikate",
+        "Kusenla",
+        "House on the Rock church"
+      ],
+      "impacts": "Wednesday hours of heavy downpour: flash floods paralysed vehicles and businesses. Homes and shops overrun. Canal overflow on Olatunji Street cut access to Mende. Church instruments damaged when canal-full water reached half the building. Ogba-Wempco junction flooded. Wahab: Kusenla technical; House on the Rock illegal construction and refuse; flash flood receded by Wednesday morning.",
+      "quote": "Vehicular and business activities were paralysed across parts of Lagos State on Wednesday after hours of heavy downpour",
+      "causes": [
+        "heavy_rain",
+        "canal_overflow",
+        "drainage_capacity",
+        "setback_encroachment",
+        "blocked_drainage",
+        "lagoon_tide"
+      ],
+      "cause_quote": "flooding around the Kusenla area of Lekki was caused by a technical challenge, adding that the downstream was higher",
+      "cause_attributed_by": "official",
+      "cause_who": "Tokunbo Wahab, Commissioner for the Environment and Water Resources",
+      "url": "https://punchng.com/motorists-stranded-as-flood-overruns-lagos-communities/",
+      "publisher": "Punch",
+      "published_at": "2025-09-24T23:10:40+00:00",
+      "read_status": "read",
+      "deaths": null
+    },
+    {
+      "id": "r2025-017",
+      "pass": 1,
+      "date": "2025-09-24",
+      "date_confidence": "day",
+      "areas": [
+        "Ago Palace Way",
+        "Apple Junction",
+        "Ago Bridge",
+        "Mile 2"
+      ],
+      "impacts": "Wednesday-morning downpour submerged streets and disrupted movement. Social-media videos: Ago Palace Way (Apple Junction, Ago Bridge) and Mile 2 waterlogged; floodwaters covering gutters; traffic congestion. One X post dated the scenes 23 September; the article's own lead is Wednesday morning (24 September).",
+      "quote": "Several areas of Lagos State were heavily impacted by flooding on Wednesday morning following a downpour that submerged streets",
+      "causes": [
+        "heavy_rain",
+        "blocked_drainage"
+      ],
+      "cause_quote": "stop dumping refuse in gutters, keep drainage paths free of blockage, obey urban planning rules",
+      "cause_attributed_by": "resident",
+      "cause_who": "JustOzed (X user, as quoted)",
+      "url": "https://guardian.ng/news/nigeria/metro/heavy-rainfall-floods-lagos-residents-struggle-to-navigate-streets/",
+      "publisher": "Guardian NG",
+      "published_at": "2025-09-24T12:31:57+00:00",
+      "read_status": "read",
+      "deaths": null
+    },
+    {
+      "id": "r2025-018",
+      "pass": 1,
+      "date": "2025-09-24",
+      "date_confidence": "day",
+      "areas": [
+        "Kusenla",
+        "House on the Rock church",
+        "Itafaji",
+        "Jankarra Market",
+        "St John Primary School",
+        "Adeniji Market",
+        "Lagos Island"
+      ],
+      "impacts": "Heavy downpours Tuesday and Wednesday. Wahab Wednesday: flash flood in parts of Lagos had receded; Kusenla invert problem; House on the Rock illegal construction. Reporter: stagnant water still on Jankarra Market and at least two Itafaji streets, submerging a bakery, Mountain of Fire Ministry and shops; also St John Primary School and Adeniji Market. Residents said flooding persisted even before Wednesday's rain, blamed missing drains / ongoing drainage works.",
+      "quote": "the flooding recorded in parts of Lagos on Wednesday was a flash flood that had since receded",
+      "causes": [
+        "heavy_rain",
+        "lagoon_tide",
+        "drainage_capacity",
+        "setback_encroachment",
+        "blocked_drainage",
+        "construction"
+      ],
+      "cause_quote": "Our condition is caused by ongoing drainage works. Even when it doesn't rain, the water refuses to go.",
+      "cause_attributed_by": "resident",
+      "cause_who": "Abdulkareem Hammed",
+      "url": "https://www.premiumtimesng.com/news/top-news/823455-lagos-govt-appeals-for-calm-as-heavy-floods-submerge-streets.html",
+      "publisher": "Premium Times",
+      "published_at": "2025-09-24T00:00:00+01:00",
+      "read_status": "read",
+      "deaths": null
+    },
+    {
+      "id": "r2025-019",
+      "pass": 2,
+      "date": "2025-05-20",
+      "date_confidence": "exact",
+      "areas": [
+        "Lagos-Abeokuta Expressway, Alakuko"
+      ],
+      "impacts": "Police confirmed death of motorcycle operator Wasiu Babatunde Adeniran, 60, swept away about 4 p.m. on 20 May 2025 in heavy rain at Alakuko. Motorcycle located downstream by 6 p.m.; body found 9 a.m. on 21 May at Obasanjo River, Ota, Ogun State.",
+      "quote": "The unfortunate incident took place along Lagos-Abeokuta Expressway, Alakuko, during heavy rainfall.",
+      "causes": [
+        "heavy_rain"
+      ],
+      "cause_quote": "who was swept away by floodwaters along the Lagos-Abeokuta Expressway at Alakuko during heavy rainfall",
+      "cause_attributed_by": "official",
+      "cause_who": "Benjamin Hundeyin, Lagos State Police Public Relations Officer",
+      "url": "https://guardian.ng/news/nigeria/metro/motorcycle-rider-swept-away-by-flood-on-lagos-abeokuta-expressway-found-dead/",
+      "publisher": "Guardian NG",
+      "published_at": "2025-05-22T00:00:00+01:00",
+      "read_status": "read",
+      "deaths": {
+        "count": 1,
+        "who_reported": "Benjamin Hundeyin, Lagos State Police Public Relations Officer",
+        "quote": "The Lagos State Police Command has confirmed the death of 60-year-old motorcycle operator, Wasiu Babatunde Adeniran"
+      }
+    }
+  ]
+}

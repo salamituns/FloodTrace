@@ -1,0 +1,457 @@
+{
+  "meta": {
+    "compiled_at": "2026-10-18T23:30:00Z",
+    "year": 2020,
+    "task": "28-news-sweep-full",
+    "method": "Pass 1: news-first sweep of wet-season months (Apr–Nov) using Task 26 outlets and qualifying rule. Pass 2 (slimmed 2026-10-18): death queries with no site filter; Oyan Dam / Ogun River / lagoon / water-release / Isheri-Ajegunle-Owode-Agboyi queries; Anadolu once per year; out-of-season Jan–Mar and Dec. Qualifying reports name a Lagos State place and a date, and describe water on streets or in homes. Quotes ≤25 words, verbatim, and taken only from that report's own URL. Dates, numbers and quotes are only those in the source. Areas left as named; not geocoded. Flood date is the flood day, not publication day.",
+    "districts_searched": [
+      "Alimosho",
+      "Ajeromi-Ifelodun",
+      "Kosofe",
+      "Mushin",
+      "Oshodi-Isolo",
+      "Ojo",
+      "Ikorodu",
+      "Surulere",
+      "Agege",
+      "Ifako-Ijaiye",
+      "Somolu",
+      "Amuwo-Odofin",
+      "Lagos Mainland",
+      "Ikeja",
+      "Eti-Osa"
+    ],
+    "outlets": [
+      "Punch",
+      "Vanguard",
+      "Guardian NG",
+      "Premium Times",
+      "Channels TV",
+      "TVC",
+      "Daily Trust",
+      "BBC Pidgin",
+      "Nairametrics"
+    ],
+    "notes": [
+      "Thursday 18 Jun 2020 is the citywide rain flood (Agege / Lekki / Oworo / Ikorodu Road). Rain started Wednesday 17 Jun; contemporaneous Task 26 outlets date the street/home flood to Thursday. Ogudu building collapse (two children, mudslide after Wednesday rain) is not a flood death.",
+      "Azizat/Azeezat, 4, Papa Ashafa, Orile-Agege: swept away Thursday 18 Jun; NEMA/LASEMA still searching in 18–19 Jun copy. Punch 4 Jul feature later says her corpse was recovered; that line stays in impacts on r2020-012. deaths is null on the June reports (outcome unknown at publication).",
+      "Magodo woman (Punch 19 Jun) died in a mudslide/building collapse; LASEMA's Nosa Okunbor does not tie it to street flood. deaths is null.",
+      "Monday 22 Jun: Ayisat/Aishat swept into Alapafuja / Surulere Plaza canal. Punch 23 Jun still searching. Punch 24 Jun and Daily Trust 24 Jun: Oke-Osanyintolu says the body was found 23 Jun. Punch prints 19 years; Daily Trust prints 17.",
+      "Sunday 28 Jun: LASEMA Twitter quoted in Punch 4 Jul — Obafatola / Ebute Igbogbo Road and Raman Shoderu Street, Powerline. No life lost per LASEMA.",
+      "Guardian 6 Jul: weekend (4–5 Jul) rain flood plus Igbogbo 'last week's flood' (the 28 Jun day). Hope Estate Okota is an ongoing complaint, not a second dated day.",
+      "Saturday 12 Sep Ketu (Oyebanjo Solarin Street): LASEMA said two children swept away; Punch 14 Sep — identities unconfirmed, bodies not found, Okunbor called it hearsay. deaths is null.",
+      "May 24 Badagry Iragon rainstorm (roofs blown off, buildings damaged) did not describe water on streets or in homes. Excluded.",
+      "Oyan Dam / Ogun River 2020 hits in Task 26 outlets were relocate alerts (Bello cubic-metre schedule; Nairametrics 5 Oct). No observed Lagos street/home inundation from the release was kept.",
+      "Anadolu 2020 Lagos flood hit is the 23 Oct 2019 six-dead Oyan piece, not a 2020 day.",
+      "X accounts of LASEMA, Lagos MoE and NEMA: no dated 2020 flood posts reached (LASEMA 28 Jun tweets are quoted inside Punch).",
+      "Channels TV, TVC and Nairametrics: no qualifying 2020 Lagos street/home flood day (Channels was rainfall/NIHSA warnings; TVC was the Ogudu collapse; Nairametrics was Oyan caution and COVID flood-committee copy).",
+      "Kamilu Adetoye (Punch 20 Sep) died in Adiyan, Ogun State. Not a Lagos flood death."
+    ]
+  },
+  "reports": [
+    {
+      "id": "r2020-001",
+      "date": "2020-05-25",
+      "date_confidence": "exact",
+      "areas": [
+        "Macaulay bus/stop, Igbogbo/Bayeku, Ikorodu"
+      ],
+      "impacts": "Monday downpour: flood covered the roads at Macaulay bus stop, Igbogbo/Bayeku in Ikorodu. Vehicles struggled to navigate. No death reported.",
+      "quote": "Macaulay bus/stop, Igbogbo/Bayeku at Ikorodu in Lagos State was flooded",
+      "causes": [
+        "heavy_rain"
+      ],
+      "cause_quote": "Aftermath the heavy rainfall which many Lagosians woke up to, Macaulay bus/stop, Igbogbo/Bayeku at Ikorodu in Lagos State was flooded",
+      "cause_attributed_by": "journalist",
+      "cause_who": null,
+      "url": "https://www.vanguardngr.com/2020/05/photos-aftermath-monday-downpour-parts-of-ikorodu-flooded/",
+      "publisher": "Vanguard",
+      "published_at": "2020-05-25T00:00:00+01:00",
+      "read_status": "read",
+      "deaths": null,
+      "pass": 1
+    },
+    {
+      "id": "r2020-002",
+      "date": "2020-06-18",
+      "date_confidence": "exact",
+      "areas": [
+        "Olabode Street, Papa-Asafa, Orile, Agege"
+      ],
+      "impacts": "Thursday: flood from heavy downpour carried four-year-old Azeezat away around Olabode Street, Papa-Asafa, Orile Agege. Residents bailed water from homes with buckets. LASEMA DG Oke-Osanyintolu: search and rescue underway. Body not recovered in this report.",
+      "quote": "some other residents were seen using buckets to bail out water from their various homes",
+      "causes": [
+        "heavy_rain"
+      ],
+      "cause_quote": "Flood resulting from heavy downpour carried a four-year-old girl, Azeezat, away",
+      "cause_attributed_by": "journalist",
+      "cause_who": null,
+      "url": "https://punchng.com/flood-sweeps-away-four-year-old-girl-in-lagos/",
+      "publisher": "Punch",
+      "published_at": "2020-06-18T16:55:00+01:00",
+      "read_status": "read",
+      "deaths": null,
+      "pass": 1
+    },
+    {
+      "id": "r2020-003",
+      "date": "2020-06-18",
+      "date_confidence": "day",
+      "areas": [
+        "Anifowose Community, Ikeja",
+        "Agege",
+        "Lekki",
+        "Dopemu",
+        "Guinness street, Agege",
+        "Oworo"
+      ],
+      "impacts": "Early-morning downpour Wednesday and Thursday: roads and houses flooded in Anifowose, Ikeja, Agege and most parts of Lekki. Traffic; transporters abandoned vehicles. Social posts showed water at Lekki gates, Anifowose residents bailing houses, Oworo canal, Agungi, Guinness Street Agege. No death in this piece.",
+      "quote": "Anifowose Community, Ikeja, Agege, and most parts of Lekki stranded as roads and houses were flooded",
+      "causes": [
+        "heavy_rain"
+      ],
+      "cause_quote": "most parts of Lekki stranded as roads and houses were flooded",
+      "cause_attributed_by": "journalist",
+      "cause_who": null,
+      "url": "https://www.vanguardngr.com/2020/06/early-morning-downpour-in-lagos-leaves-roads-homes-flooded/",
+      "publisher": "Vanguard",
+      "published_at": "2020-06-18T00:00:00+01:00",
+      "read_status": "read",
+      "deaths": null,
+      "pass": 1
+    },
+    {
+      "id": "r2020-004",
+      "date": "2020-06-18",
+      "date_confidence": "exact",
+      "areas": [
+        "Agege",
+        "Lekki",
+        "Ajah",
+        "Victoria Island",
+        "Ifako",
+        "Oworo",
+        "Ogudu",
+        "Ayobo",
+        "Gbagada",
+        "Iyana-Ipaja",
+        "Ebutte Metta",
+        "Ikeja Along",
+        "Marina"
+      ],
+      "impacts": "Thursday morning rainfall submerged parts of the city. Gridlock on major highways. Iyana Oworo road submerged; traffic back to Alausa more than 10 km. Ikorodu Road little movement for hours. One-storey building of eight rooms and 23 shops collapsed at Iyana Ipaja; LASEMA DG Femi Oke-Osanyintolu: adjoining fence to the staircase collapsed, leading to partial collapse. Photos of Marina and Ikeja Along. No flood death in this piece.",
+      "quote": "Lagos residents battled heavy flood after a Thursday morning rainfall submerged various parts of the city",
+      "causes": [
+        "heavy_rain"
+      ],
+      "cause_quote": "Lagos residents battled heavy flood after a Thursday morning rainfall submerged various parts of the city",
+      "cause_attributed_by": "journalist",
+      "cause_who": null,
+      "url": "https://www.premiumtimesng.com/regional/ssouth-west/398304-lagos-residents-battle-flood-after-downpour.html",
+      "publisher": "Premium Times",
+      "published_at": "2020-06-18T00:00:00+01:00",
+      "read_status": "read",
+      "deaths": null,
+      "pass": 1
+    },
+    {
+      "id": "r2020-005",
+      "date": "2020-06-18",
+      "date_confidence": "exact",
+      "areas": [
+        "Fashola Street, Papa Ashafa, Orile Agege",
+        "Hassan Adejobi Street, Orile Agege",
+        "Unity Close, Magodo",
+        "Ashade Quarter, Agege",
+        "Sadiku Street, Iyana Ipaja",
+        "Abraham Adesanya Estate, Lekki-Epe Expressway",
+        "Awoyaya, Ajah"
+      ],
+      "impacts": "Thursday flood after torrential rain that started Wednesday. Four-year-old Azizat swept from Fashola Street when the compound was submerged; NEMA and LASEMA searching. Woman and daughter injured when a fence collapsed onto a six-room boys’ quarter on Hassan Adejobi Street around 6am; 10-room bungalow occupants dislodged. Unidentified woman died after a building collapsed on Unity Close, Magodo; LASEMA PRO Nosa Okunbor: fence collapsed on a storey building as a result of mudslide (not logged as a flood death). Four buildings collapsed at Ashade Quarter; two rescued including a pregnant woman. Sadiku Street, Iyana Ipaja: eight-room, 23-shop building partial collapse around 11am; injuries, responders rescued victims. Abraham Adesanya Estate: floodwater slowed traffic more than an hour Jubilee Bridge to the estate junction; Awoyaya also affected. Ubi Franklin: house flooded after roof caved. Ibrahim Farinloye: floodwater from blocked drainage channels.",
+      "quote": "a four-year-old girl, identified simply as Azizat, was swept away by flood",
+      "causes": [
+        "heavy_rain",
+        "blocked_drainage"
+      ],
+      "cause_quote": "The rain was heavy throughout Wednesday night till this afternoon (Thursday), so being a coastal city, you should expect flooding",
+      "cause_attributed_by": "official",
+      "cause_who": "Joe Igbokwe, Special Adviser on Drainage and Water Resources",
+      "url": "https://punchng.com/lagos-rain-four-year-old-girl-swept-away-woman-dies-buildings-collapse/",
+      "publisher": "Punch",
+      "published_at": "2020-06-19T06:51:00+01:00",
+      "read_status": "read",
+      "deaths": null,
+      "pass": 1
+    },
+    {
+      "id": "r2020-006",
+      "date": "2020-06-18",
+      "date_confidence": "exact",
+      "areas": [
+        "Papa Ashafa, Agege",
+        "No. 38, Fashola Street, Orile-Agege",
+        "No. 12, Hassan Adejobi Street, Papa Ashafa, Orile-Agege",
+        "Ashade Quarters, behind Guinness",
+        "No. 3, Sadiku Street, Alaggba, Iyana Ipaja",
+        "Iyana Oworo",
+        "Ikorodu Road",
+        "Lekki",
+        "Ajah",
+        "Victoria Island",
+        "Ifako",
+        "Ogudu",
+        "Ayobo",
+        "Gbagada",
+        "Ebutte Metta"
+      ],
+      "impacts": "Yesterday (Thursday): four-year-old Azizat swept at Papa Ashafa when house overtaken by flood; missed a step into a drainage covered with flood. NEMA searching along Aboru, Iyana-Ipaja, Command, Ota, Agbara. About 20 families displaced at Orile-Agege; fence fell on six-room boys’ quarters; 10-room bungalow submerged about 6am. Mother and daughter injured at Hassan Adejobi Street. Four buildings partially collapsed at Ashade Quarters; two women rescued including a pregnant woman. Storey building at Sadiku Street collapsed about 11am; scores injured, Oke-Osanyintolu: no life lost. Iyana Oworo flood inward Third Mainland Bridge; vehicles stuck; Ikorodu Road gridlock hours. Police spokesman Bala Elkana confirmed the girl search. Wednesday Ogudu collapse of two teenagers noted as a separate prior incident.",
+      "quote": "The flood took over Iyana Oworo inwards Third Mainland Bridge, leaving many vehicles stuck in the water",
+      "causes": [
+        "heavy_rain"
+      ],
+      "cause_quote": "residents battled heavy flood after a downpour that lasted for hours submerged many parts of the city",
+      "cause_attributed_by": "journalist",
+      "cause_who": null,
+      "url": "https://guardian.ng/news/flood-sweeps-four-year-old-girl-displaces-over-20-families-in-lagos/",
+      "publisher": "The Guardian Nigeria",
+      "published_at": "2020-06-19T05:17:00+01:00",
+      "read_status": "read",
+      "deaths": null,
+      "pass": 1
+    },
+    {
+      "id": "r2020-007",
+      "date": "2020-06-18",
+      "date_confidence": "exact",
+      "areas": [
+        "Fashola Street, Papa Ashafa, Orile Agege",
+        "Ashade Quarters, behind Guinness, Ikeja"
+      ],
+      "impacts": "Yesterday's heavy downpour: Azizat, 4, swept into drainage behind No. 38 Fashola Street; house submerged. Neighbour Shade Kazeem: she missed her step into a drainage covered by flood water. NEMA acting coordinator Ibrahim Farinloye: body not recovered; floodwater runs Fashola Street through Aboru, Iyana Ipaja, Command, Ota, Agbara to the sea. Two women including a pregnant lady rescued from collapsed building at Ashade Quarters; four houses affected; No. 18 Railway Line advised to leave after two days of downpour weakened it.",
+      "quote": "Azizat mistakenly missed her step and fell into a drainage that was covered by flood water",
+      "causes": [
+        "heavy_rain"
+      ],
+      "cause_quote": "Azizat was swept away by flood during yesterday’s heavy downpour in the state",
+      "cause_attributed_by": "journalist",
+      "cause_who": null,
+      "url": "https://dailytrust.com/flood-sweeps-away-4-year-old-girl-in-lagos/",
+      "publisher": "Daily Trust",
+      "published_at": "2020-06-19T03:27:06+01:00",
+      "read_status": "read",
+      "deaths": null,
+      "pass": 1
+    },
+    {
+      "id": "r2020-008",
+      "date": "2020-06-18",
+      "date_confidence": "exact",
+      "areas": [
+        "Agege",
+        "Lekki"
+      ],
+      "impacts": "Thursday Agege: flood carried four-year-old Azeezat while the family fled the house; father Basil Tariho (barber) and wife (tailor) still searching canals. Rain almost nonstop Wednesday 17 and Thursday 18 Jun; many areas including Lekki. Residents: new government road ignored houses below drainage level; no canal big enough; drains filled, water entered houses and covered streets.",
+      "quote": "begin enta houses wey dey below drainage level and also cover di streets wey dey di area",
+      "causes": [
+        "heavy_rain",
+        "drainage_capacity",
+        "low_lying_terrain"
+      ],
+      "cause_quote": "Dem also no build big canal wey fit carri di flood wey dey come wen rain happen",
+      "cause_attributed_by": "resident",
+      "cause_who": null,
+      "url": "https://www.bbc.com/pidgin/tori-53104678",
+      "publisher": "BBC Pidgin",
+      "published_at": "2020-06-19T00:00:00+01:00",
+      "read_status": "read",
+      "deaths": null,
+      "pass": 1
+    },
+    {
+      "id": "r2020-009",
+      "date": "2020-06-22",
+      "date_confidence": "exact",
+      "areas": [
+        "Akerele, Surulere",
+        "Alapafuja, Surulere Low-Cost Housing Estate",
+        "canal beside Surulere Plaza"
+      ],
+      "impacts": "Monday: yet-to-be-identified girl trying to navigate in the downpour fell into the canal beside burnt Surulere Plaza; flood swept her away; rescue by residents failed. Resident Adekunle Shokefun: she could not tell the canal from the road because everywhere was flooded. LASEMA DG Oke-Osanyintolu: 17-year-old Ayisat swept away by strong flood at Alapafuja. Not found in this report.",
+      "quote": "The girl fell into the canal and the flood swept her away",
+      "causes": [
+        "heavy_rain"
+      ],
+      "cause_quote": "Flood from torrential rainfall swept away a yet-to-be-identified girl in the Akerele area of Surulere",
+      "cause_attributed_by": "journalist",
+      "cause_who": null,
+      "url": "https://punchng.com/flood-sweeps-away-girl-in-lagos/",
+      "publisher": "Punch",
+      "published_at": "2020-06-23T06:01:00+01:00",
+      "read_status": "read",
+      "deaths": null,
+      "pass": 1
+    },
+    {
+      "id": "r2020-010",
+      "date": "2020-06-22",
+      "date_confidence": "exact",
+      "areas": [
+        "Alapafuja Close linking Bank Olemoh, Surulere",
+        "Onilegogoro canal, Surulere",
+        "canal beside Surulere Plaza"
+      ],
+      "impacts": "Monday about 12.30pm: 19-year-old Aishat swept away by flood that submerged the canal on Alapafuja Close after persistent rainfall. LASEMA and community searched adjoining canals without success that day. Corpse found in Onilegogoro canal about 8.30am Tuesday; buried by community members beside the canal. Oke-Osanyintolu reported the recovery.",
+      "quote": "a 19-year-old girl, Aishat, was swept away by flood, which submerged the canal",
+      "causes": [
+        "heavy_rain"
+      ],
+      "cause_quote": "swept away by flood, which submerged the canal on Alapafuja Close linking Bank Olemoh in Surulere as a result of persistent rainfall",
+      "cause_attributed_by": "official",
+      "cause_who": "Olufemi Oke-Osanyintolu, Director-General, LASEMA",
+      "url": "https://punchng.com/body-of-lagos-teenager-swept-away-by-flood-recovered/",
+      "publisher": "Punch",
+      "published_at": "2020-06-24T00:09:00+01:00",
+      "read_status": "read",
+      "deaths": {
+        "count": 1,
+        "who_reported": "Olufemi Oke-Osanyintolu, Director-General, LASEMA",
+        "quote": "a 19-year-old girl, Aishat, was swept away by flood, which submerged the canal"
+      },
+      "pass": 1
+    },
+    {
+      "id": "r2020-011",
+      "date": "2020-06-22",
+      "date_confidence": "exact",
+      "areas": [
+        "Alapafuja axis, Surulere Low-Cost Housing Estate",
+        "Onilegogoro canal, Surulere"
+      ],
+      "impacts": "Monday downpour: 17-year-old Ayisat washed away by flood. LASEMA searched drains around Alapafuja and along the flood flow. Oke-Osanyintolu: dead body found in Onilegogoro canal about 8.30am Tuesday 23 Jun 2020; buried by community members beside the canal. Piece notes a similar downpour the previous week swept away four-year-old Azeezat at Papa Ashafa (not this day's death).",
+      "quote": "Ayisat’s dead body was later found in the Onilegogoro canal, Surulere, Lagos, at about 8.30am",
+      "causes": [
+        "heavy_rain"
+      ],
+      "cause_quote": "washed away by flood during Monday’s downpour",
+      "cause_attributed_by": "journalist",
+      "cause_who": null,
+      "url": "https://dailytrust.com/body-of-teenage-girl-swept-away-by-flood-found-buried/",
+      "publisher": "Daily Trust",
+      "published_at": "2020-06-24T02:06:17+01:00",
+      "read_status": "read",
+      "deaths": {
+        "count": 1,
+        "who_reported": "Olufemi Oke-Osanyintolu, Director-General, LASEMA",
+        "quote": "Ayisat’s dead body was later found in the Onilegogoro canal, Surulere, Lagos, at about 8.30am"
+      },
+      "pass": 2
+    },
+    {
+      "id": "r2020-012",
+      "date": "2020-06-28",
+      "date_confidence": "exact",
+      "areas": [
+        "Obafatola Community, Ebute Igbogbo Road, Ikorodu",
+        "Raman Shoderu Street, Powerline, off Sagamu Road",
+        "Selewu, Igbogbo",
+        "Ifesowapo community, Selewu"
+      ],
+      "impacts": "Sunday 28 Jun: LASEMA Lion Squad to Obafatola / Ebute Igbogbo Road — most of the community flooded; six streets, more than 20 houses; no loss of life or injury; property worth millions destroyed; barriers blocking drainage named as major cause. Same day: Raman Shoderu Street, Powerline — four streets, more than 15 houses; drainage needs widening. Segun Daniyan: Sunday flooding affected over 100 houses; some relocated. Pastor Sunday Ogbona: water flooded houses Sunday, fences and appliances destroyed, vehicles submerged. Dr Dika Digbo: rain from about 1.30am Sunday, Jeep submerged. Feature also recaps 18 Jun Orile-Agege (Azeezat); Saturday PUNCH says her corpse was later recovered — not used as this day's death.",
+      "quote": "most part of the community was flooded as a result of the downpour",
+      "causes": [
+        "heavy_rain",
+        "blocked_drainage"
+      ],
+      "cause_quote": "There are a lot of barriers blocking the drainage channels in the affected areas which are the major cause of the flood",
+      "cause_attributed_by": "official",
+      "cause_who": "LASEMA (@followlasema)",
+      "url": "https://punchng.com/we-cry-pray-fear-for-our-lives-every-rainy-season-lagosians-living-in-flood-prone-areas/",
+      "publisher": "Punch",
+      "published_at": "2020-07-04T13:09:00+01:00",
+      "read_status": "read",
+      "deaths": null,
+      "pass": 1
+    },
+    {
+      "id": "r2020-013",
+      "date": "2020-07-04",
+      "date_confidence": "day",
+      "areas": [
+        "Ajah",
+        "Alimosho",
+        "Ikorodu",
+        "plains of the Ogun River in Isheri",
+        "Ibeju-Lekki Expressway",
+        "Igbogbo",
+        "Oreta",
+        "Offin",
+        "Bayeku",
+        "Lajo",
+        "Owode-Ibeshe",
+        "Agunfoye",
+        "Awesu"
+      ],
+      "impacts": "Weekend downpour: communities submerged, drains blocked, homes sacked. Property destroyed in Ajah, Alimosho, Ikorodu and Ogun River plains at Isheri. Police station on Ibeju-Lekki Expressway so flooded it almost covered parked vehicles. Gridlock. Last week's flood (aligned with 28 Jun): hundreds homeless in Igbogbo/Bayeku LCDA communities; Igbogbo monarch's residence damaged. Adekambi Muftau, Lajo: over 500 houses submerged. Hope Estate Okota chairman Lynus Okafor describes an ongoing drainage blockage, not a separate dated day.",
+      "quote": "communities were submerged, drains blocked and homes sacked",
+      "causes": [
+        "heavy_rain",
+        "blocked_drainage"
+      ],
+      "cause_quote": "communities were submerged, drains blocked and homes sacked",
+      "cause_attributed_by": "journalist",
+      "cause_who": null,
+      "url": "https://guardian.ng/news/residents-seek-action-as-flood-sacks-lagos-communities/",
+      "publisher": "The Guardian Nigeria",
+      "published_at": "2020-07-06T04:06:00+01:00",
+      "read_status": "read",
+      "deaths": null,
+      "pass": 1
+    },
+    {
+      "id": "r2020-014",
+      "date": "2020-09-12",
+      "date_confidence": "exact",
+      "areas": [
+        "Oyebanjo street, Ketu"
+      ],
+      "impacts": "Saturday about 8pm: flood from torrential rainfall swept away two yet-to-be-identified children. LASEMA DG Oke-Osanyintolu: distress calls; children caught up by floodwater; joint responders; search along the flood path into a canal; sloping topography. Rescue ongoing. Bodies not recovered in this report.",
+      "quote": "around 8 pm, two children had been caught up by floodwater",
+      "causes": [
+        "heavy_rain"
+      ],
+      "cause_quote": "Flood from torrential rainfall has swept away two yet-to-be-identified children at Oyebanjo street, Ketu",
+      "cause_attributed_by": "journalist",
+      "cause_who": null,
+      "url": "https://punchng.com/flood-sweeps-away-two-children-in-lagos/",
+      "publisher": "Punch",
+      "published_at": "2020-09-13T07:57:00+01:00",
+      "read_status": "read",
+      "deaths": null,
+      "pass": 1
+    },
+    {
+      "id": "r2020-015",
+      "date": "2020-09-12",
+      "date_confidence": "exact",
+      "areas": [
+        "Oyebanjo Solarin Street, Ketu"
+      ],
+      "impacts": "Saturday about 8pm: LASEMA said two children swept away; Sunday search to about 500 m of the canal; still not found. Residents disagreed on identities (father and child vs young ladies vs two female adults). Temitope Adekoya: two persons struggling in floodwater about 8.30pm, one with nylon on her head, swept before rescue. Oladipo Omoneyin: no parent had come to look for anyone; canal construction slow. LASEMA public affairs Nosa Okunbor: identities unconfirmed, hearsay, search continues. Agency also blamed waste dumped in drains.",
+      "quote": "around 8pm on Saturday, two children had been swept away by the flood",
+      "causes": [
+        "heavy_rain",
+        "blocked_drainage",
+        "construction"
+      ],
+      "cause_quote": "dispose their domestic and bodily waste in the drainage systems, as it leads to blockage of the canal",
+      "cause_attributed_by": "official",
+      "cause_who": "LASEMA",
+      "url": "https://punchng.com/confusion-trails-drowning-of-two-in-lagos-flood/",
+      "publisher": "Punch",
+      "published_at": "2020-09-14T04:23:00+01:00",
+      "read_status": "read",
+      "deaths": null,
+      "pass": 1
+    }
+  ]
+}

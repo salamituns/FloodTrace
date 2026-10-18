@@ -1,0 +1,463 @@
+{
+  "meta": {
+    "compiled_at": "2026-10-18T21:00:00Z",
+    "year": 2024,
+    "task": "28-news-sweep-full",
+    "method": "Pass 1: news-first sweep of wet-season months (Apr–Nov) using Task 26 outlets and qualifying rule. Pass 2: recall via wires/aggregators, death and dam queries, official sites, plus a once-per-year out-of-season check (Jan–Mar, Dec). Qualifying reports name a Lagos State place and a date, and describe water on streets or in homes. Quotes ≤25 words, verbatim. Dates, numbers and quotes are only those in the source. Areas left as named; not geocoded. Flood date is the flood day, not publication day.",
+    "districts_searched": [
+      "Alimosho",
+      "Ajeromi-Ifelodun",
+      "Kosofe",
+      "Mushin",
+      "Oshodi-Isolo",
+      "Ojo",
+      "Ikorodu",
+      "Surulere",
+      "Agege",
+      "Ifako-Ijaiye",
+      "Somolu",
+      "Amuwo-Odofin",
+      "Lagos Mainland",
+      "Ikeja",
+      "Eti-Osa"
+    ],
+    "outlets": [
+      "Punch",
+      "Vanguard",
+      "Guardian NG",
+      "Premium Times",
+      "Channels TV",
+      "TVC",
+      "Daily Trust",
+      "BBC Pidgin",
+      "Nairametrics"
+    ],
+    "notes": [
+      "Generic date-range search leaked 2025–2026 stories; 2024 kept only from year-in-URL hits or a readable published_at in 2024.",
+      "Premium Times, Guardian NG, Daily Trust and TVC: no qualifying 2024 Lagos street/home flood with a named date found (alerts, enforcement, opinion, or other-year leaks).",
+      "X accounts of LASEMA, Lagos MoE and NEMA: no dated 2024 flood posts reached.",
+      "Anadolu, Reuters, AFP, Al Jazeera and Xinhua 2024 Nigeria flood copy was national (Jigawa, Maiduguri) not a named Lagos flood day.",
+      "Oyan Dam 2024 hits were warnings or monitoring, not observed Lagos flooding.",
+      "ReliefWeb/IOM-NEMA-LASEMA DTM Lagos post-flood report (30 Dec 2024) is a seasonal aggregate (14 LGAs; 275,621 affected), not a dated flood day — logged excluded.",
+      "Dartmouth Flood Observatory: no Lagos-matched 2024 event list reached.",
+      "Punch 7 Jul feature mislabels Wednesday as 4 Jul 2024 (Wednesday was 3 Jul); kept as the 3 Jul flood, matching same-day outlets.",
+      "Feb 20 Alimosho flood kept from the out-of-season check. NEMA also mentioned a similar Sunday event (18 Feb) without named places — not kept as a separate report."
+    ]
+  },
+  "reports": [
+    {
+      "id": "r2024-001",
+      "pass": 1,
+      "date": "2024-06-27",
+      "date_confidence": "day",
+      "areas": [
+        "Agungi",
+        "Lekki-Epe Expressway, Eti-Osa",
+        "Freedom Park Road/Kusenla Junction",
+        "Alpha Beach Road"
+      ],
+      "impacts": "Flooding in Agungi and environs after 48 hours of continuous rainfall. Emergency Flood Abatement Gang deployed while rain was ongoing to clear debris in collectors. Minor encroachment and a blockage found along Alfa Beach behind James Hope University.",
+      "quote": "the flooding incidents experienced as a result of the 48 hours of continuous rainfall experienced in the state",
+      "causes": [
+        "heavy_rain",
+        "drainage_capacity",
+        "setback_encroachment"
+      ],
+      "cause_quote": "the collector they have there is too small to serve the volume of storm water on the Agungi stretch",
+      "cause_attributed_by": "official",
+      "cause_who": "Tokunbo Wahab, Commissioner for the Environment and Water Resources",
+      "url": "https://www.vanguardngr.com/2024/06/48hrs-rainfall-agungi-lekki-environs-in-lagos-submerge-in-flood/",
+      "publisher": "Vanguard",
+      "published_at": "2024-06-27T17:56:56+00:00",
+      "read_status": "read",
+      "deaths": null
+    },
+    {
+      "id": "r2024-002",
+      "pass": 1,
+      "date": "2024-07-03",
+      "date_confidence": "exact",
+      "areas": [
+        "Iyana-Oworo",
+        "Olopo Meji",
+        "Alapere",
+        "Berger Bus-stop",
+        "Airport U-turn, Oshodi"
+      ],
+      "impacts": "Heavy rain from early Wednesday flooded many parts of Lagos; commuters stranded. Iyana-Oworo/Olopo Meji toward Third Mainland Bridge completely flooded, traffic to Alapere. Tree fell at Airport U-turn, Oshodi; LASTMA cleared it. Wahab said the Olopomeji section was later free of rainwater.",
+      "quote": "A heavy rainfall early Wednesday morning has flooded many parts of Lagos, making it difficult for commuters to move to their destinations.",
+      "causes": [
+        "heavy_rain"
+      ],
+      "cause_quote": "A heavy rainfall early Wednesday morning has flooded many parts of Lagos",
+      "cause_attributed_by": "journalist",
+      "cause_who": null,
+      "url": "https://www.channelstv.com/2024/07/03/commuters-stranded-as-heavy-downpour-floods-lagos-roads/",
+      "publisher": "Channels Television",
+      "published_at": "2024-07-03T17:01:03+00:00",
+      "read_status": "read",
+      "deaths": null
+    },
+    {
+      "id": "r2024-003",
+      "pass": 1,
+      "date": "2024-07-03",
+      "date_confidence": "exact",
+      "areas": [
+        "Iyana-Oworo"
+      ],
+      "impacts": "About nine hours of non-stop rainfall from early Wednesday, plus daily rain the previous week that raised the Lagos lagoon. Flash floods inundated Iyana-Oworo linking Third Mainland and other areas. EFAG deployed; Iyana-Oworo cleared of blockages. Residents in low-lying areas told to relocate to higher ground.",
+      "quote": "Lagos has experienced about nine hours of non-stop rainfall since the early hours of Wednesday.",
+      "causes": [
+        "heavy_rain",
+        "lagoon_tide"
+      ],
+      "cause_quote": "This is coupled with the heavy rainfall which the state has been experiencing daily since the previous week resulting in the rise in level of the Lagos lagoon",
+      "cause_attributed_by": "official",
+      "cause_who": "Tokunbo Wahab, Commissioner for the Environment and Water Resources",
+      "url": "https://www.vanguardngr.com/2024/07/lagos-calls-for-calm-as-floods-sack-residents-after-9hrs-rainfall/",
+      "publisher": "Vanguard",
+      "published_at": "2024-07-03T14:03:56+00:00",
+      "read_status": "read",
+      "deaths": null
+    },
+    {
+      "id": "r2024-004",
+      "pass": 1,
+      "date": "2024-07-03",
+      "date_confidence": "exact",
+      "areas": [
+        "Iyana Oworo"
+      ],
+      "impacts": "Flash flood from incessant early-Wednesday rain statewide. Nine hours of non-stop rain and a risen lagoon. Iyana Oworo linking Third Mainland inundated; EFAG cleared blockages there. Low-lying residents urged to move to higher ground; do not drive through floods.",
+      "quote": "the flash floods which inundated areas like Iyana Oworo linking the Third Mainland and several other areas",
+      "causes": [
+        "heavy_rain",
+        "lagoon_tide"
+      ],
+      "cause_quote": "this is coupled with heavy rainfall which the state has been experiencing on a daily basis since last week, resulting in the level rise of the Lagos lagoon",
+      "cause_attributed_by": "official",
+      "cause_who": "Tokunbo Wahab, Commissioner for the Environment and Water Resources",
+      "url": "https://www.channelstv.com/2024/07/03/lagos-calls-for-calm-after-wednesdays-torrential-rainfall/",
+      "publisher": "Channels Television",
+      "published_at": "2024-07-03T14:37:45+00:00",
+      "read_status": "read",
+      "deaths": null
+    },
+    {
+      "id": "r2024-005",
+      "pass": 1,
+      "date": "2024-07-03",
+      "date_confidence": "exact",
+      "areas": [
+        "Iyana-Oworo",
+        "Olopo Meji",
+        "Alapere",
+        "Ikeja",
+        "Ogba",
+        "Agege",
+        "Gbagada",
+        "Lagos Island",
+        "White Sand Estate, Isheri-Osun",
+        "Ewenla, Mushin",
+        "Pen Cinema, Agege",
+        "Trade Fair under-bridge, Ojo",
+        "Sangotedo",
+        "Ibeju-Lekki",
+        "Awoyaya"
+      ],
+      "impacts": "Business grounded after a 10-hour downpour Wednesday. Roads and houses flooded. Two-storey building on Cameroon Road, Ewenla, Mushin collapsed; seven rescued alive (three females, four males), none under rubble. White Sand Estate homes flooded to mid-level; school closed. Traffic fares Ogba–Ikeja rose from N300 to N700. Miscreants charged N100 at Trade Fair under-bridge; arrested.",
+      "quote": "Business and commercial activities were grounded on Wednesday following a 10-hour downpour in many parts of Lagos and Ogun states.",
+      "causes": [
+        "heavy_rain",
+        "blocked_drainage",
+        "lagoon_tide"
+      ],
+      "cause_quote": "Lagos experienced about nine hours of non-stop rainfall since the early hours of Wednesday",
+      "cause_attributed_by": "official",
+      "cause_who": "Tokunbo Wahab, Commissioner for the Environment and Water Resources",
+      "url": "https://punchng.com/10-hour-rainfall-businesses-grounded-house-collapses-as-flood-overtakes-lagos/",
+      "publisher": "Punch",
+      "published_at": "2024-07-04T08:05:31+00:00",
+      "read_status": "read",
+      "deaths": null
+    },
+    {
+      "id": "r2024-006",
+      "pass": 1,
+      "date": "2024-07-03",
+      "date_confidence": "exact",
+      "areas": [
+        "Third Mainland Bridge",
+        "Iyana-Oworo",
+        "Olopo Meji",
+        "Alapere",
+        "Ikeja",
+        "Agege",
+        "Ikorodu Road",
+        "Oworonshoki",
+        "Egbeda",
+        "Oshodi",
+        "Funsho Williams",
+        "Lekki",
+        "Ajah",
+        "Obalende",
+        "Falomo",
+        "Ijesha",
+        "Akewukewe Street, Ijesha"
+      ],
+      "impacts": "Early-morning rain paralysed most of the state; motorists trapped including on Third Mainland Bridge. Iyana-Oworo/Olopo Meji submerged; traffic to Alapere and old Toll Gate. Trees fell; roofs blown. Children kept from school. Hoodlums charged N100–N200 to carry pedestrians. LAWMA/Itire-Ikate LCDA locked a building after occupants dumped waste into street water.",
+      "quote": "activities in most parts of the state were paralysed following early morning rains that left many neighbourhoods heavily flooded",
+      "causes": [
+        "heavy_rain",
+        "blocked_drainage",
+        "setback_encroachment",
+        "low_lying_terrain"
+      ],
+      "cause_quote": "The poor drainage network is worsened by the habit of dumping refuse in drainage channels which become blocked",
+      "cause_attributed_by": "expert",
+      "cause_who": "Michael Simire, publisher of EnvironNews",
+      "url": "https://www.vanguardngr.com/2024/07/aftermath-of-heavy-rain-chaos-lamentations-as-flood-grounds-lagos/",
+      "publisher": "Vanguard",
+      "published_at": "2024-07-04T05:04:36+00:00",
+      "read_status": "read",
+      "deaths": null
+    },
+    {
+      "id": "r2024-007",
+      "pass": 1,
+      "date": "2024-07-03",
+      "date_confidence": "exact",
+      "areas": [
+        "Lekki Phase II",
+        "Ikoyi",
+        "Ajah",
+        "Olopomeji"
+      ],
+      "impacts": "More than 10 hours of rain; flood into homes of Lekki, Ikoyi and Ajah. Residents fled to hotels. Mrs Shade: lost TV, fridge, furniture, mattress in a N3.5m/year two-bedroom. Correspondent saw three half-submerged cars; residents reported reptiles in water. Ajah: canoes on streets; markets abandoned; schools and businesses closed. Kunle Adesina: Olopomeji paths blocked by refuse were cleared and later returned to normal.",
+      "quote": "Streets became streams. Reptiles came out to play in the floodwater that overflowed roads and seeped into the homes of the rich",
+      "causes": [
+        "heavy_rain",
+        "blocked_drainage",
+        "lagoon_tide"
+      ],
+      "cause_quote": "this happens when the magnitude of rain is so much on the Island which is discharged into the Lagoon, the water level of the Lagoon rises",
+      "cause_attributed_by": "official",
+      "cause_who": "Kunle Adesina, Director of Public Affairs, Ministry of Environment and Water Resources",
+      "url": "https://punchng.com/10-hour-rainfall-lekki-ikoyi-residents-flee-luxury-mansions-as-flood-ravages-homes-streets/",
+      "publisher": "Punch",
+      "published_at": "2024-07-07T12:20:29+00:00",
+      "read_status": "read",
+      "deaths": null
+    },
+    {
+      "id": "r2024-008",
+      "pass": 1,
+      "date": "2024-07-03",
+      "date_confidence": "exact",
+      "areas": [
+        "Iyana-Oworo",
+        "Olopo Meji",
+        "Alapere",
+        "Mushin",
+        "No 12 Cameroun Street, Mushin",
+        "Ipaja"
+      ],
+      "impacts": "Rain from about 3:00am Wednesday. Seven people rescued from a collapsed two-storey building at No 12 Cameroun Street, Mushin, after a 9:37am call; three females and four males taken to hospital; no one under rubble. Taiwo Ajisafe, Iyana-Oworo, could not go to work; house flooding. Over four hours Alapere to Third Mainland. Mary-Jane Ukeme, Ipaja: house under water in two hours; car fuel tank mixed with floodwater; ₦150,000 repair and ₦35,000 fuel lost.",
+      "quote": "Iyana-Oworo, Olopo Meji areas wey be di main entry point for 3rd mainland bridge bin dey seriously flooded",
+      "causes": [
+        "heavy_rain"
+      ],
+      "cause_quote": "one heavy rainfall wey bin start around early mor-mor 3:00am on Wednesday wey cause gbege across di state",
+      "cause_attributed_by": "journalist",
+      "cause_who": null,
+      "url": "https://www.bbc.com/pidgin/articles/czvxdzwr97go",
+      "publisher": "BBC Pidgin",
+      "published_at": "2024-07-03T12:01:53+00:00",
+      "read_status": "read",
+      "deaths": null
+    },
+    {
+      "id": "r2024-009",
+      "pass": 1,
+      "date": "2024-10-17",
+      "date_confidence": "day",
+      "areas": [
+        "Ojota-Yaba Expressway",
+        "Ago Palace Way",
+        "Iyana-Oworo",
+        "Egbeda",
+        "Okota",
+        "Egbeda-Akowonjo Road",
+        "Alapere"
+      ],
+      "impacts": "Early-Thursday downpour flooded major roads; commuters and motorists stranded. Oduche Azih, Okota: compound ankle- to knee-deep; flood seeped through walls into lower-level living room; blamed blockage of over one kilometre of drain ending at communal-effort bridge at Fasheun Drive. Traffic Alapere to Third Mainland. Some motorists parked because water volume could damage engines.",
+      "quote": "A downpour in the early hours of Thursday, caused widespread flooding in several parts of Lagos State, leaving commuters and motorists stranded.",
+      "causes": [
+        "heavy_rain",
+        "blocked_drainage"
+      ],
+      "cause_quote": "the flooding in his Okota area was huge and caused by the total blockage of over one kilometre terminating at the communal effort bridge at Fasheun Drive",
+      "cause_attributed_by": "resident",
+      "cause_who": "Oduche Azih",
+      "url": "https://punchng.com/commuters-motorists-stranded-as-downpour-floods-lagos-roads/",
+      "publisher": "Punch",
+      "published_at": "2024-10-18T02:17:30+00:00",
+      "read_status": "read",
+      "deaths": null
+    },
+    {
+      "id": "r2024-010",
+      "pass": 2,
+      "date": "2024-02-20",
+      "date_confidence": "exact",
+      "areas": [
+        "Oke Ishagun",
+        "Isale Aboru",
+        "Ikola Community",
+        "Olubodun Majiyagbe-Ajayi",
+        "Makinde Street",
+        "Olokowo Street",
+        "Adeola Street"
+      ],
+      "impacts": "Tuesday-morning downpour after months of heatwaves. Major roads submerged; residents stranded in apartments and cars. NEMA SW coordinator Ibrahim Farinloye: no life lost, no one injured. Houses: Oke Ishagun 23 evacuated; Isale Aboru 35 affected; Ikola 29; Olubodun Majiyagbe-Ajayi 15; Makinde Street 12; Olokowo Street 16; Adeola Street 21. Also mentioned a similar Sunday event.",
+      "quote": "Scores of houses were affected as downpour and flood hit Lagos State on Tuesday morning.",
+      "causes": [
+        "heavy_rain"
+      ],
+      "cause_quote": "In view of today’s excessive rainfall and the Sunday’s similar event",
+      "cause_attributed_by": "official",
+      "cause_who": "Ibrahim Farinloye, South West Coordinator, NEMA",
+      "url": "https://www.channelstv.com/2024/02/20/photos-many-houses-affected-as-downpour-flood-hit-lagos/",
+      "publisher": "Channels Television",
+      "published_at": "2024-02-20T10:30:42+00:00",
+      "read_status": "read",
+      "deaths": null
+    },
+    {
+      "id": "r2024-011",
+      "pass": 2,
+      "date": "2024-02-20",
+      "date_confidence": "exact",
+      "areas": [
+        "Alimosho Local Government Area",
+        "Oke Ishagun",
+        "Isale Aboru",
+        "Ikola Community",
+        "Olubodun Majiyagbe – Ajayi",
+        "Makinde Street",
+        "Olokowo Street",
+        "Adeola Street",
+        "Ajasa Command Bridge"
+      ],
+      "impacts": "About 151 houses in Alimosho submerged. NEMA, Fire Service and Police rescued people trapped. No life lost, no one injured; many displaced. Ajasa Command Bridge overrun; residents told to use alternative routes. Flood later receding; Command Bridge still submerged at the visit.",
+      "quote": "About 151 houses within the Alimosho Local Government Area of Lagos were submerged in floods following excessive rainfall.",
+      "causes": [
+        "heavy_rain"
+      ],
+      "cause_quote": "About 151 houses within the Alimosho Local Government Area of Lagos were submerged in floods following excessive rainfall.",
+      "cause_attributed_by": "journalist",
+      "cause_who": null,
+      "url": "https://www.vanguardngr.com/2024/02/photos-151-houses-7-communities-submerged-in-lagos-flood/",
+      "publisher": "Vanguard",
+      "published_at": "2024-02-20T16:03:42+00:00",
+      "read_status": "read",
+      "deaths": null
+    },
+    {
+      "id": "r2024-012",
+      "pass": 2,
+      "date": "2024-02-20",
+      "date_confidence": "exact",
+      "areas": [
+        "Command",
+        "Ipaja",
+        "Oke Ishagun",
+        "Isale Aboru",
+        "Ikola Community",
+        "Olubodun Majiyagbe-Ajayi",
+        "Makinde Street",
+        "Olokowo Street",
+        "Adeola Street"
+      ],
+      "impacts": "Tuesday downpour hit Command and Ipaja; about 151 houses. Same NEMA house counts as Channels/Vanguard. No casualties or injuries. NEMA DG Mustapha Habib Ahmed appealed for drain clearing and prosecution of dumpers.",
+      "quote": "On Tuesday, Command and Ipaja communities in Lagos bore the brunt of the heavy downpour, witnessing the impact on approximately 151 houses",
+      "causes": [
+        "heavy_rain"
+      ],
+      "cause_quote": "the excessive rainfall on Tuesday, coupled with a downpour earlier in the week",
+      "cause_attributed_by": "official",
+      "cause_who": "Ibrahim Farinloye, Lagos Territorial Coordinator, NEMA",
+      "url": "https://nairametrics.com/2024/02/21/flooding-in-lagos-affects-151-houses-says-nema/",
+      "publisher": "Nairametrics",
+      "published_at": "2024-02-21T07:18:35+00:00",
+      "read_status": "read",
+      "deaths": null
+    },
+    {
+      "id": "r2024-013",
+      "pass": 2,
+      "date": "2024-06-27",
+      "date_confidence": "day",
+      "areas": [
+        "Agungi",
+        "Ajiran",
+        "Kusenla",
+        "Freedom Park Road / Kusenla Junction",
+        "Alpha Beach Road",
+        "Kusenla Elegushi, Ikate, Lekki Peninsula"
+      ],
+      "impacts": "Official inspection Thursday 27 June after flooding from 48 hours of continuous rain. EFAG deployed during the rain to clear collector debris. Encroachment/blockage behind James Hope University on Alfa Beach; excavation from Alpha Beach to Conservation Road to start Saturday. New collector planned on Agungi Road into the lagoon.",
+      "quote": "following the flooding incidents experienced as a result of the 48hrs continous rainfall experienced in the state",
+      "causes": [
+        "heavy_rain",
+        "drainage_capacity",
+        "setback_encroachment"
+      ],
+      "cause_quote": "the collector they have there is too small to Serve the volume of Storm water on the Agungi Streach",
+      "cause_attributed_by": "official",
+      "cause_who": "Tokunbo Wahab, Commissioner for the Environment and Water Resources",
+      "url": "https://moelagos.gov.ng/flooding-lagos-to-construct-additional-drainage-collector-on-agungi-to-bring-relief/",
+      "publisher": "Lagos State Ministry of the Environment and Water Resources",
+      "published_at": "2024-06-27T00:00:00+01:00",
+      "read_status": "read",
+      "deaths": null
+    },
+    {
+      "id": "r2024-014",
+      "pass": 2,
+      "date": "2024-07-03",
+      "date_confidence": "exact",
+      "areas": [
+        "Iyana-Oworo-Alapomeji",
+        "Ketu-Alapere",
+        "Oshodi-Mafoluku",
+        "Aboru",
+        "Iyana Ipaja",
+        "Iyana Iba",
+        "Isheri/Idimu-LASU",
+        "Ijegun-Abaranje",
+        "Ikate",
+        "Egbeda-Akowonjo",
+        "Jakande Estate",
+        "Ogba",
+        "Okota",
+        "Lekki-Ajah"
+      ],
+      "impacts": "Rain from around 3 am Wednesday stranded thousands. Major roads and Third Mainland Bridge approaches flooded. Cars submerged; houses flooded. Wahab: Olopo Meji flash flood from high-intensity, long-duration rain plus high tidal lagoon level, expected to go in about 1–2 hours; EFAG cleared Alapomeji section of Iyana Oworo.",
+      "quote": "Thousands of commuters and motorists in Lagos state were stranded due to severe flooding of major roads",
+      "causes": [
+        "heavy_rain",
+        "lagoon_tide"
+      ],
+      "cause_quote": "a flash flood that is due to the high intensity of the rain, long duration rain coupled with high tidal lagoon level",
+      "cause_attributed_by": "official",
+      "cause_who": "Tokunbo Wahab, Commissioner for Environment and Water Resources",
+      "url": "https://www.thisdaylive.com/2024/07/03/torrential-rain-causes-widespread-flooding-in-lagos/",
+      "publisher": "THISDAY",
+      "published_at": "2024-07-03T00:00:00+01:00",
+      "read_status": "read",
+      "deaths": null
+    }
+  ]
+}

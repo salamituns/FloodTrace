@@ -98,3 +98,40 @@ even without an event folder.
   canal). The first figure, 6 of 12 on the AOI mean, was an artefact of averaging over the rural fringe and of overnight rain.
   So in this sample, reported floods follow real local rain. Drainage decides *where* within a storm, not *whether* a light
   rain floods. Promotion: 3 days (2019-05-20 outlets; 2019-10-12 and 2023-09-16 deaths with a named source).
+
+## Status (2026-10-18): full sweep under way (Task 28)
+- **Done:** 2024 and 2025 (pass 1 + 2), plus pass 2 for 2019. The catalog has 25 flood days: 23 rain floods and 2 river
+  floods, which are one riverine episode (Oyan Dam, Oct 2019, 6 dead).
+- **Pass 2 slimmed.** The wire services, ReliefWeb, the Dartmouth archive and government sites added nothing in either test
+  year. What pass 2 catches is river and dam floods, and deaths (the 2019 Oyan Dam flood; the 2025-05-20 Alakuko
+  motorcyclist). The 2019 recall test was partly leaked: the prompt named the target article, so Task 28 now forbids
+  searching for named articles.
+- **Flood types (Task 28b).** Each day is now rain, river or lagoon, and river days within 21 days form one episode. The
+  drainage signal counts rain floods only.
+- **Merge rule tightened.** Only `approx` dates may join a neighbouring day; dates worked out from a weekday are reliable.
+  This split 2019-10-11 (Agege) from 10-12 (Alimosho), and 2025-09-24 from 09-23 (rain on both days).
+- **The drainage signal can't be read from IMERG alone.** 4 of 23 rain-flood days have < 20 mm locally (2023-04-27,
+  2024-02-20, 2025-05-18, 2025-05-20). On every one of them, the sources describe heavy rain or a torrential downpour.
+  The likelier reading is that IMERG (0.1°, satellite) misses short, intense, local storms, not that light rain floods
+  Lagos. Next: cross-check those days against a rain gauge (GHCN-Daily stations at Ikeja and Lagos Marina, open NOAA data),
+  if records exist for those dates.
+- **Corrected:** r2025-013's cause_quote had TVC's Wahab quote copied in. It's replaced with Nairametrics' own sentence.
+- **2026 (Jan–Sep) and 2022 done.** The catalog has 43 days (41 rain, 2 river), 16 promoted.
+- **Deaths (Task 28c).** Each report now carries an explicit `deaths` field filled in by the reader. The word regex only
+  feeds `deaths_review`; it never promotes. A day promotes on deaths when the source is named, or when at least 2
+  outlets report the deaths (decision 3). Reviewer fix: r2022-003's death isn't attributed to Bamuya in the article.
+- **Conflicting counts are kept as reported.** For 8–9 Jul 2022, Punch and Channels say NEMA counted 7 dead in Lagos;
+  Vanguard says Farinloye split them 5 Lagos / 2 Ogun. Any total must use 5 for Lagos and must never sum across reports.
+- **2021 done.** 9 days, among them a second riverine episode: 2 Sep–10 Oct 2021 (Owode-Onirin, Iba, Ajegunle, Itowolo;
+  the Oyan release). The catalog has 52 days (46 rain, 6 river in 2 episodes), 18 promoted.
+- **Reviewer fix: Tier A matching.** `tier_a_event` matched any day inside an event's ±1-week data window, which wrongly
+  linked 2024-06-27 (Agungi) to `lagos-2024-07-03` and 2021-07-23 to `lagos-2021-07-16`. It now matches only the
+  event's focus (the wettest ~48 h) or the folder's own date.
+- **Watch:** Orile-Agege (2019-10-11) geocoded to two points ~3 km apart in two runs, which moved its local rain from 10 mm
+  to 22 mm. Low-rain days near 20 mm are sensitive to geocoding; the gauge cross-check should use a margin.
+- **2020 done.** 6 days. On 22 Jun, a teenager died in the Surulere canal (LASEMA; Punch prints her age as 19, Daily
+  Trust as 17, and both are kept as printed). On 18 Jun, 6 outlets covered the flood and a 4-year-old was swept away at
+  Orile-Agege; she's recorded as missing because no outlet confirms a death. The catalog has 58 days (52 rain, 6 river
+  in 2 episodes), 21 promoted.
+- **Reviewer fix: riverine trigger.** A bare "Ogun River" in the text is often a place ("Ogun River plains at Isheri"),
+  and that made the 4 Jul 2020 weekend downpour a river flood. The river name now has to sit near overflow wording.

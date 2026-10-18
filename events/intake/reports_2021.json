@@ -1,0 +1,416 @@
+{
+  "meta": {
+    "compiled_at": "2026-10-18T22:30:00Z",
+    "year": 2021,
+    "task": "28-news-sweep-full",
+    "method": "Pass 1: news-first sweep of wet-season months (Apr–Nov) using Task 26 outlets and qualifying rule. Pass 2 (slimmed 2026-10-18): death queries with no site filter; Oyan Dam / Ogun River / lagoon / water-release / Isheri-Ajegunle-Owode-Agboyi queries; Anadolu once per year; out-of-season Jan–Mar and Dec. Qualifying reports name a Lagos State place and a date, and describe water on streets or in homes. Quotes ≤25 words, verbatim, and taken only from that report's own URL. Dates, numbers and quotes are only those in the source. Areas left as named; not geocoded. Flood date is the flood day, not publication day.",
+    "districts_searched": [
+      "Alimosho",
+      "Ajeromi-Ifelodun",
+      "Kosofe",
+      "Mushin",
+      "Oshodi-Isolo",
+      "Ojo",
+      "Ikorodu",
+      "Surulere",
+      "Agege",
+      "Ifako-Ijaiye",
+      "Somolu",
+      "Amuwo-Odofin",
+      "Lagos Mainland",
+      "Ikeja",
+      "Eti-Osa"
+    ],
+    "outlets": [
+      "Punch",
+      "Vanguard",
+      "Guardian NG",
+      "Premium Times",
+      "Channels TV",
+      "TVC",
+      "Daily Trust",
+      "BBC Pidgin",
+      "Nairametrics"
+    ],
+    "notes": [
+      "Friday 16 Jul 2021 is the citywide rain flood (Marina / Island / LASTMA corridors). Later official copy (Vanguard 26–27 Aug, Guardian Oyan relocate) dates that Marina submergence to 19 Jul; contemporaneous Task 26 outlets all say Friday 16 Jul. No separate 19 Jul day was kept from those later alerts.",
+      "Guardian 24 Apr photo caption dates Ile-Epo flooding to last Sunday (18 Apr). Guardian 24 Jul photo caption dates another Ile-Epo wade to yesterday (23 Jul). Body copy of the 24 Jul piece is an NIHSA webinar, not a second flood narrative.",
+      "Punch 27 Jun: Saturday 26 Jun Ogba / Apple Junction. Shalom Estate Arepo is Ogun; not used as a Lagos area.",
+      "Oyan / Ogun River 2021 is a multi-month inundation, not one rain day. Kept: Punch 15 Sep (Bello: Iba New Town experiencing flooding); Guardian 3 Oct and Vanguard 3 Oct (late-Sep visits); Cable 14 Dec (visit 10 Oct Ajegunle / Itowolo); ThisDay 6 Dec (Owode-Onirin since 2 Sep). Relocate alerts without observed water on Lagos streets were excluded.",
+      "Guardian 3 Oct records 'deaths of teenagers that fell from makeshift bridges' without a count, year, or named attributer. deaths is null; the line stays in impacts only.",
+      "Daily Trust 14 Nov: Farinloye said no life was lost. deaths is null.",
+      "Anadolu 2021 Lagos hits were the Ikoyi building collapse, not a flood day. The six-dead Lagos flood on aa.com.tr is 23 Oct 2019.",
+      "X accounts of LASEMA, Lagos MoE and NEMA: no dated 2021 flood posts reached.",
+      "TVC and BBC Pidgin: no qualifying 2021 Lagos street/home flood day (BBC Pidgin was the Makoko school-video check; TVC was drain works and later-year relocate copy).",
+      "April 22 Fagba car-in-flood (IReporter) and Nov 14 Nation/New Telegraph Ekoro copy were not Task 26 outlets; Daily Trust covers 14 Nov."
+    ]
+  },
+  "reports": [
+    {
+      "id": "r2021-001",
+      "date": "2021-04-18",
+      "date_confidence": "day",
+      "areas": [
+        "Lagos/Abeokuta Expressway by Ile-Epo market"
+      ],
+      "impacts": "Photo caption on a 24 Apr 2021 piece: residents waded through flood on the Lagos/Abeokuta Expressway by Ile-Epo market after last Sunday's downpour. Body of the piece is a rainy-season fear feature, not a second dated flood.",
+      "quote": "Residents wade through flooded Lagos/Abeokuta Expressway by Ile-Epo market in Lagos after last Sunday’s downpour",
+      "causes": [
+        "heavy_rain"
+      ],
+      "cause_quote": "Residents wade through flooded Lagos/Abeokuta Expressway by Ile-Epo market in Lagos after last Sunday’s downpour",
+      "cause_attributed_by": "journalist",
+      "cause_who": null,
+      "url": "https://guardian.ng/saturday-magazine/rainy-season-fears-over-impending-flood-in-the-land/",
+      "publisher": "The Guardian Nigeria",
+      "published_at": "2021-04-24T05:23:00+01:00",
+      "read_status": "read",
+      "deaths": null,
+      "pass": 1
+    },
+    {
+      "id": "r2021-002",
+      "date": "2021-06-26",
+      "date_confidence": "day",
+      "areas": [
+        "Wemco Road, Ogba",
+        "Apple Junction, Amuwo Odofin"
+      ],
+      "impacts": "Saturday morning rain from about 6am for over three hours. Heavy flooding slowed vehicles on Wemco Road, Ogba. Around Apple Junction, Amuwo Odofin, residents waded through water on the way to early business. Shalom Estate, Arepo (Ogun) home flooding in the same piece is not a Lagos area.",
+      "quote": "the rain which began around 6am in Lagos fell for over three hours, causing heavy flooding",
+      "causes": [
+        "heavy_rain"
+      ],
+      "cause_quote": "the rain which began around 6am in Lagos fell for over three hours, causing heavy flooding",
+      "cause_attributed_by": "journalist",
+      "cause_who": null,
+      "url": "https://punchng.com/rain-residents-lament-as-flood-ravages-parts-of-lagos-ogun-bayelsa/",
+      "publisher": "Punch",
+      "published_at": "2021-06-27T00:55:00+01:00",
+      "read_status": "read",
+      "deaths": null,
+      "pass": 1
+    },
+    {
+      "id": "r2021-003",
+      "date": "2021-07-16",
+      "date_confidence": "exact",
+      "areas": [
+        "Alfred Rewane Road, Ikoyi",
+        "Marina",
+        "Lekki Phase 1 inwards Sandfill",
+        "Maroko inwards Chisco",
+        "Akin Adesola inwards Law School",
+        "Ozumba Mbadiwe",
+        "Apogbon",
+        "service lane inwards Airport",
+        "Oluwaga",
+        "Oju-Odo",
+        "Ekoro",
+        "Alapere inwards Ogudu Car Wash",
+        "Awolowo Road"
+      ],
+      "impacts": "Friday downpours about four hours. Highways flooded; LASTMA: vehicles waded on Alfred Rewane Road, Ikoyi; car parks at Marina engulfed. Standstill Akin Adesola inwards Law School around 2pm. Mainland: Airport service lane seriously flooded; Oju-Odo almost overflowing the bridge; Ekoro heavy from flash floods. Fallen trucks added gridlock. A Twitter user said flood past knee length and cars submerged in car parks. No death reported.",
+      "quote": "Alfred Rewane Road, Ikoyi, was flooded, leading to a traffic snarl while vehicles waded through the water",
+      "causes": [
+        "heavy_rain",
+        "drainage_capacity"
+      ],
+      "cause_quote": "the highway was blocked as a result of the flooding caused by no drainage system",
+      "cause_attributed_by": "resident",
+      "cause_who": "Okechukwu Chuckwu, motorist",
+      "url": "https://punchng.com/flood-fallen-trucks-cause-lagos-gridlock-commuters-stranded/",
+      "publisher": "Punch",
+      "published_at": "2021-07-17T09:04:00+01:00",
+      "read_status": "read",
+      "deaths": null,
+      "pass": 1
+    },
+    {
+      "id": "r2021-004",
+      "date": "2021-07-16",
+      "date_confidence": "exact",
+      "areas": [
+        "Marina axis of Lagos Island"
+      ],
+      "impacts": "Friday: several vehicles submerged in parks at Marina as rain lasted hours. Videos showed people struggling to reach parked cars. Traffic flow affected in many parts of the city. No death reported.",
+      "quote": "Several vehicles were submerged underwater in parks at the popular Marina axis of Lagos Island on Friday",
+      "causes": [
+        "heavy_rain"
+      ],
+      "cause_quote": "Several vehicles were submerged underwater in parks at the popular Marina axis of Lagos Island on Friday as heavy rainfall persisted for hours",
+      "cause_attributed_by": "journalist",
+      "cause_who": null,
+      "url": "https://www.channelstv.com/2021/07/16/vehicles-submerged-on-lagos-island-amid-heavy-downpour/",
+      "publisher": "Channels TV",
+      "published_at": "2021-07-16T00:00:00+01:00",
+      "read_status": "read",
+      "deaths": null,
+      "pass": 1
+    },
+    {
+      "id": "r2021-005",
+      "date": "2021-07-16",
+      "date_confidence": "exact",
+      "areas": [
+        "Lagos Island",
+        "Marina axis of Lagos",
+        "Berger"
+      ],
+      "impacts": "Friday rain lasted hours, especially on Lagos Island; most roads flooded. Workers could not reach vehicles in Marina parking lots after close of work. Gridlock lingered into Saturday morning; Sallah travellers stranded around Berger. No death reported.",
+      "quote": "The rain that lasted hours especially in the Lagos Island area left most roads flooded",
+      "causes": [
+        "heavy_rain"
+      ],
+      "cause_quote": "Parts of Lagos State were, on Friday, ravaged by flood after heavy rainfall that lasted for hours",
+      "cause_attributed_by": "journalist",
+      "cause_who": null,
+      "url": "https://www.channelstv.com/2021/07/17/commuters-stranded-cars-submerged-in-lagos-after-heavy-downpour/",
+      "publisher": "Channels TV",
+      "published_at": "2021-07-17T00:00:00+01:00",
+      "read_status": "read",
+      "deaths": null,
+      "pass": 1
+    },
+    {
+      "id": "r2021-006",
+      "date": "2021-07-16",
+      "date_confidence": "exact",
+      "areas": [
+        "Marina",
+        "Lekki",
+        "Agege",
+        "Iju Road",
+        "Victoria Island",
+        "Oshodi",
+        "Ilupeju",
+        "Ogudu",
+        "Ketu"
+      ],
+      "impacts": "Friday torrential rain. Streets covered in floodwater; residents stayed indoors or used makeshift shelters in transit; gridlocks. Nairametrics lists Marina, Lekki, Agege, Iju Road, Victoria Island, Oshodi, Ilupeju, Ogudu, Ketu (Magboro is Ogun). Farinloye issued a safety advisory, not a casualty count. No death reported.",
+      "quote": "various streets were covered in floodwater",
+      "causes": [
+        "heavy_rain"
+      ],
+      "cause_quote": "Friday’s torrential rainfall in various parts of Lagos and Ogun State has led to flood incidents in the two states",
+      "cause_attributed_by": "journalist",
+      "cause_who": null,
+      "url": "https://nairametrics.com/2021/07/16/flood-hits-parts-of-lagos-ogun/",
+      "publisher": "Nairametrics",
+      "published_at": "2021-07-16T00:00:00+01:00",
+      "read_status": "read",
+      "deaths": null,
+      "pass": 1
+    },
+    {
+      "id": "r2021-007",
+      "date": "2021-07-16",
+      "date_confidence": "exact",
+      "areas": [
+        "Lagos Island",
+        "Lagos Marina on Victoria Island"
+      ],
+      "impacts": "NiMet: 16 Jul 2021 heavy rain flooded Lagos; vehicles and buildings washed away, financial loss not yet quantified. Gauge totals 125 mm Oshodi and 66 mm Ikeja are given with the 15 Jul outlook that, with other factors, caused flash floods especially over Lagos Marina on Victoria Island. No death reported.",
+      "quote": "flooded the state and wrecked a yet to be financially quantified havoc accompanied by flood with properties such as vehicles and buildings washed away",
+      "causes": [
+        "heavy_rain"
+      ],
+      "cause_quote": "This with other factors, caused flash flood episodes especially over Lagos Marina on Victoria Island",
+      "cause_attributed_by": "official",
+      "cause_who": "Muntari Yusuf Ibrahim, General Manager, Public Relations, NiMet",
+      "url": "https://dailytrust.com/why-lagos-was-flooded-nimet/",
+      "publisher": "Daily Trust",
+      "published_at": "2021-07-21T17:50:14+01:00",
+      "read_status": "read",
+      "deaths": null,
+      "pass": 1
+    },
+    {
+      "id": "r2021-008",
+      "date": "2021-07-23",
+      "date_confidence": "day",
+      "areas": [
+        "Ile Epo on Lagos-Abeokuta Expressway"
+      ],
+      "impacts": "Photo caption on a 24 Jul 2021 NIHSA-webinar story: residents waded through flood along Ile Epo on the Lagos-Abeokuta Expressway after a downpour yesterday. The article body does not add street or home impacts.",
+      "quote": "Lagos residents wade through flood along Ile Epo on Lagos-Abeokuta Expressway after a downpour… yesterday",
+      "causes": [
+        "heavy_rain"
+      ],
+      "cause_quote": "Lagos residents wade through flood along Ile Epo on Lagos-Abeokuta Expressway after a downpour… yesterday",
+      "cause_attributed_by": "journalist",
+      "cause_who": null,
+      "url": "https://guardian.ng/news/nihsa-dg-warns-nigerians-to-brace-up-for-more-floods/",
+      "publisher": "The Guardian Nigeria",
+      "published_at": "2021-07-24T08:11:00+01:00",
+      "read_status": "read",
+      "deaths": null,
+      "pass": 1
+    },
+    {
+      "id": "r2021-009",
+      "date": "2021-09-02",
+      "date_confidence": "exact",
+      "areas": [
+        "Elias Estate, Owode-Onirin",
+        "Unity Estate, Owode-Onirin"
+      ],
+      "impacts": "Residents of Elias (God’s First CDA) and Unity estates, Owode-Onirin, said they had coped with dam water since 2 Sep 2021. Houses and vehicles submerged; people used floaters and canoes to Ikorodu Road at N100 per head. Mrs Mary and her baby fell from a floater and were pulled out. Schools in the estates submerged. No flood death attributed.",
+      "quote": "The water did not only submerge houses, but also vehicles",
+      "causes": [
+        "dam_release",
+        "canal_overflow",
+        "low_lying_terrain",
+        "drainage_capacity"
+      ],
+      "cause_quote": "This water is from the recently opened Oyan dam",
+      "cause_attributed_by": "resident",
+      "cause_who": "Isaac Osanekwe, resident",
+      "url": "https://www.thisdaylive.com/2021/12/06/cry-from-lagos-estates-submerged-by-water/",
+      "publisher": "THISDAY",
+      "published_at": "2021-12-06T00:00:00+01:00",
+      "read_status": "read",
+      "deaths": null,
+      "pass": 2
+    },
+    {
+      "id": "r2021-010",
+      "date": "2021-09-14",
+      "date_confidence": "approx",
+      "areas": [
+        "Onikoyi/Agelete community, Iba New Town, Iba LCDA",
+        "Isheri North",
+        "Kara",
+        "Itowolo",
+        "Ajegunle",
+        "Majidun",
+        "Ogolonto"
+      ],
+      "impacts": "Lagos statement of Tuesday (published 15 Sep): release from Oyan Dam was being felt at Isheri North, Kara, Itowolo, Ajegunle, Majidun and Ogolonto; downstream of Isheri Olofin to part of Agboyi 'will experience flooding'. Onikoyi/Agelete at Iba New Town 'were also experiencing flooding' from closeness to the Yewa River. Prime View City, Arigbede (Ogun) is not a Lagos area.",
+      "quote": "Onikoyi/Agelete community at Iba New Town at Iba LCDA were also experiencing flooding due to their closeness to the Yewa River",
+      "causes": [
+        "dam_release",
+        "canal_overflow"
+      ],
+      "cause_quote": "Onikoyi/Agelete community at Iba New Town at Iba LCDA were also experiencing flooding due to their closeness to the Yewa River",
+      "cause_attributed_by": "official",
+      "cause_who": "Tunji Bello, Commissioner for the Environment and Water Resources",
+      "url": "https://punchng.com/60-landlords-desert-houses-as-flood-overwhelms-ogun-community/",
+      "publisher": "Punch",
+      "published_at": "2021-09-15T04:19:00+01:00",
+      "read_status": "read",
+      "deaths": null,
+      "pass": 1
+    },
+    {
+      "id": "r2021-011",
+      "date": "2021-09-26",
+      "date_confidence": "approx",
+      "areas": [
+        "Agboyi-Ketu",
+        "Owode Onirin",
+        "Isheri",
+        "Ajegunle",
+        "Agiliti",
+        "Kara",
+        "Majidun",
+        "Unity Street Canal"
+      ],
+      "impacts": "Feature published 3 Oct after a recent / last-week visit: Ogun River / Oyan Dam water had made roads in Ajegunle impassable for about three months; plank bridges and canoes to reach homes. Unity Street Canal blocked and overgrown. Kazeem Bashiru, Agiliti: N1000 a day in canoe fares. Residents said properties worth several millions of naira were lost in the last three months; some at Kara and near the Long Bridge had abandoned homes. Piece also says deaths of teenagers who fell from makeshift bridges 'have also been recorded' with no count, year or named attributer.",
+      "quote": "A recent visit by The Guardian showed that many residents have had to construct plank bridges to access their homes",
+      "causes": [
+        "dam_release",
+        "canal_overflow",
+        "blocked_drainage",
+        "setback_encroachment"
+      ],
+      "cause_quote": "whenever the Oyan Dam in Ogun State is opened and it consequently flows into the Ogun River",
+      "cause_attributed_by": "journalist",
+      "cause_who": null,
+      "url": "https://guardian.ng/news/oyan-dam-agony-of-residents-of-agboyi-ketu-ajegunle-isheri-others/",
+      "publisher": "The Guardian Nigeria",
+      "published_at": "2021-10-03T05:06:00+01:00",
+      "read_status": "read",
+      "deaths": null,
+      "pass": 1
+    },
+    {
+      "id": "r2021-012",
+      "date": "2021-09-26",
+      "date_confidence": "approx",
+      "areas": [
+        "Ajegunle, Ikorodu/Mile-12",
+        "Ogabi Street, Ikorodu",
+        "Balogun Street, Ikorodu",
+        "Ifelodun Street, Ikorodu",
+        "Agiliti, near Mile 12"
+      ],
+      "impacts": "Sunday Vanguard visit after torrential rain in the last few days of September: flood level had increased at Ajegunle along Ikorodu/Mile-12 and 'may begin to flow into homes'. Water-level impact felt on Ogabi, Balogun and Ifelodun streets; traces of flooding around buildings on Ogabi. Unity Street and Con Road little affected. Piece says there had never been any casualty from the downpour. Relocate advisory from Bello is warning copy, not a second flood day.",
+      "quote": "the impact of the water level was felt in streets like Ogabi, Balogun and, Ifelodun Streets, Ikorodu",
+      "causes": [
+        "dam_release",
+        "heavy_rain"
+      ],
+      "cause_quote": "the water level usually gets to the window level of buildings anytime Oyam Dam water is released",
+      "cause_attributed_by": "resident",
+      "cause_who": null,
+      "url": "https://www.vanguardngr.com/2021/10/looming-floods-lagos-residents-say-nowhere-to-go/",
+      "publisher": "Vanguard",
+      "published_at": "2021-10-03T00:00:00+01:00",
+      "read_status": "read",
+      "deaths": null,
+      "pass": 1
+    },
+    {
+      "id": "r2021-013",
+      "date": "2021-10-10",
+      "date_confidence": "exact",
+      "areas": [
+        "Ajegunle, Kosofe",
+        "Itowolo, Ikorodu"
+      ],
+      "impacts": "Reporter visit Sunday 10 Oct: dirty water in houses and rooms in Ajegunle; boats and wooden bridges; worship places and schools taken over; some tenants gone. Itowolo worse: houses and churches partly submerged; Community Primary School pupils said to have been home more than a month. Mary John, Itowolo: flooding started in the last week of August. Adekunle injured after falling from a covered wooden bridge; infections on feet. No flood death attributed.",
+      "quote": "dirty water had snaked its way into houses and rooms, making the entire community a murky mess",
+      "causes": [
+        "dam_release",
+        "canal_overflow"
+      ],
+      "cause_quote": "If there is a way that the government can help dredge the Odo-Ogun river, the flood will reduce drastically",
+      "cause_attributed_by": "resident",
+      "cause_who": "Tope Omotosho, Itowolo",
+      "url": "https://www.thecable.ng/homeowners-flee-schools-shut-as-flooding-becomes-permanent-resident-in-lagos-communities/",
+      "publisher": "TheCable",
+      "published_at": "2021-12-14T10:12:00+01:00",
+      "read_status": "read",
+      "deaths": null,
+      "pass": 2
+    },
+    {
+      "id": "r2021-014",
+      "date": "2021-11-14",
+      "date_confidence": "exact",
+      "areas": [
+        "Egbeda",
+        "Akowonjo",
+        "Ekoro Junction",
+        "Ajisebiara-Mecca",
+        "Agege-Iju Road"
+      ],
+      "impacts": "Sunday rain from about 1.20pm; flash floods forced residents to leave houses in parts of Egbeda, Akowonjo and Ekoro Junction; also overran part of Agege-Iju Road. Farinloye: many buildings affected; about 25 cars grounded; wind felled electricity poles at Ekoro Junction, Ajisebiara-Mecca, Akowonjo and Egbeda. Canal overflowed into houses. He said no life was lost.",
+      "quote": "The flash flood overflowed the banks of the canal and entered into residential houses",
+      "causes": [
+        "heavy_rain",
+        "canal_overflow"
+      ],
+      "cause_quote": "The flash flood overflowed the banks of the canal and entered into residential houses",
+      "cause_attributed_by": "official",
+      "cause_who": "Ibrahim Farinloye, NEMA",
+      "url": "https://dailytrust.com/panic-as-flood-take-over-lagos-community/",
+      "publisher": "Daily Trust",
+      "published_at": "2021-11-14T19:38:50+01:00",
+      "read_status": "read",
+      "deaths": null,
+      "pass": 1
+    }
+  ]
+}
