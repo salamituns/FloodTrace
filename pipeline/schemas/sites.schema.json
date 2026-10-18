@@ -34,6 +34,8 @@
         "located_how",
         "flood_radius_m",
         "floods",
+        "catalog_floods",
+        "catalog_summary",
         "claims",
         "change",
         "promise_ids",
@@ -86,6 +88,16 @@
           "items": {
             "$ref": "#/$defs/flood"
           }
+        },
+        "catalog_floods": {
+          "type": "array",
+          "description": "Task 29: catalog flood days (events/flood_days.json) matched to this site, newest first.",
+          "items": {
+            "$ref": "#/$defs/catalog_flood"
+          }
+        },
+        "catalog_summary": {
+          "$ref": "#/$defs/catalog_summary"
         },
         "claims": {
           "type": "array",
@@ -162,6 +174,183 @@
         "nearest_m": {
           "type": "number",
           "description": "Distance from the site geometry to the nearest matched evidence point."
+        }
+      }
+    },
+    "catalog_flood": {
+      "type": "object",
+      "description": "Task 29: one catalog flood day matched to this site.",
+      "required": [
+        "date",
+        "flood_type",
+        "episode_id",
+        "strength",
+        "matched_areas",
+        "distance_m",
+        "n_outlets",
+        "promote",
+        "tier_a_event_id",
+        "sources"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "date": {
+          "type": "string",
+          "description": "Catalog flood day (events/flood_days.json)."
+        },
+        "flood_type": {
+          "enum": [
+            "pluvial",
+            "riverine",
+            "lagoon"
+          ]
+        },
+        "episode_id": {
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "strength": {
+          "enum": [
+            "name",
+            "near",
+            "area"
+          ],
+          "description": "name: place token in an area name; near: exact/street-confidence area within flood_radius_m + 200 m; area: neighbourhood/area-confidence area within 1,500 m."
+        },
+        "matched_areas": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Area names that established the recorded strength."
+        },
+        "distance_m": {
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "type": "number"
+            }
+          ],
+          "description": "Distance to the nearest matched area with coordinates; null when none geocoded."
+        },
+        "n_outlets": {
+          "type": "integer"
+        },
+        "promote": {
+          "type": "boolean"
+        },
+        "tier_a_event_id": {
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "sources": {
+          "type": "array",
+          "maxItems": 3,
+          "items": {
+            "$ref": "#/$defs/catalog_source"
+          }
+        }
+      }
+    },
+    "catalog_source": {
+      "type": "object",
+      "required": [
+        "url",
+        "publisher",
+        "quote"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "url": {
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "publisher": {
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "quote": {
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        }
+      }
+    },
+    "catalog_summary": {
+      "type": "object",
+      "description": "Task 29: per-site counts, honest about how hard each year was searched.",
+      "required": [
+        "n_days",
+        "n_days_strong",
+        "years_with_flood",
+        "years_searched",
+        "per_searched_year",
+        "riverine_days",
+        "note"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "n_days": {
+          "type": "integer"
+        },
+        "n_days_strong": {
+          "type": "integer",
+          "description": "Days matched at strength name or near."
+        },
+        "years_with_flood": {
+          "type": "array",
+          "items": {
+            "type": "integer"
+          }
+        },
+        "years_searched": {
+          "type": "array",
+          "items": {
+            "type": "integer"
+          },
+          "description": "Years with an April-November entry in flood_days.json meta.search_coverage."
+        },
+        "per_searched_year": {
+          "type": "number",
+          "description": "n_days_strong / len(years_searched), 2 decimals."
+        },
+        "riverine_days": {
+          "type": "integer",
+          "description": "Matched days whose flood_type is riverine."
+        },
+        "note": {
+          "type": "string"
         }
       }
     },

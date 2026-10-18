@@ -1,0 +1,495 @@
+{
+  "meta": {
+    "compiled_at": "2026-10-19T18:30:00Z",
+    "year": 2017,
+    "task": "28-news-sweep-full",
+    "method": "Pass 1: news-first sweep of wet-season months (Apr–Nov) using Task 26 outlets and qualifying rule. Pass 2 (slimmed 2026-10-18): death queries with no site filter; Oyan Dam / Ogun River / lagoon / water-release / Isheri-Ajegunle-Owode-Agboyi queries; Anadolu once per year; out-of-season Jan–Mar and Dec. Qualifying reports name a Lagos State place and a date, and describe water on streets or in homes. Quotes ≤25 words, verbatim, and taken only from that report's own URL. Dates, numbers and quotes are only those in the source. Areas left as named; not geocoded. Flood date is the flood day, not publication day.",
+    "districts_searched": [
+      "Alimosho",
+      "Ajeromi-Ifelodun",
+      "Kosofe",
+      "Mushin",
+      "Oshodi-Isolo",
+      "Ojo",
+      "Ikorodu",
+      "Surulere",
+      "Agege",
+      "Ifako-Ijaiye",
+      "Somolu",
+      "Amuwo-Odofin",
+      "Lagos Mainland",
+      "Ikeja",
+      "Eti-Osa"
+    ],
+    "outlets": [
+      "Punch",
+      "Vanguard",
+      "Guardian NG",
+      "Premium Times",
+      "Channels TV",
+      "TVC",
+      "Daily Trust",
+      "BBC Pidgin",
+      "Nairametrics"
+    ],
+    "notes": [
+      "Thursday 11 May 2017: Punch photo report — Ikeja-axis roads including Akilo Road, Ogba, flooded after Thursday-morning rain. No death reported.",
+      "Friday night 7 Jul into Saturday 8 Jul: citywide rain-flood, worst on the island (Lekki, VI, Ikoyi, Ajah and named estates). Punch, Channels, Daily Trust, Vanguard and Guardian describe water in homes and on roads. Punch Metro (10 Jul) and Guardian (10 Jul) report no fatality from agencies; Daily Trust (15 Jul) quotes NEMA's Ibrahim Farinloye that there was no casualty in Lagos. A Punch Twitter source describes a baby nearly drowned then revived; that is an outcome-unknown rescue, so deaths is null. Taxi driver in Punch Sunday: rain from about 11pm Friday; Daily Trust: rain from about 2am Friday, still raining Sunday 10am. Flood day kept as Saturday 8 Jul, when Punch says flood entered homes.",
+      "Saturday 22 Jul: Punch/NAN — Surulere, Lekki, Ajah and named mainland junctions flooded around 5am on council-poll Saturday. Same day's Meiran/Abule-Egba building collapse (mother and child dead per LASEMA) is a collapse after downpour, not a flood death; not attached to this report.",
+      "Monday 11 Sep: Vanguard (published 15 Sep) — Lagos-Abeokuta, Ikeja, Alimosho and Lagos Island roads shut by flood. Residents blame BRT-corridor works; LAMATA's Kola Ojelabi blames refuse in drains. Date worked from 'Monday' plus 15 Sep publication.",
+      "Saturday 4 Nov: Punch — mainland rainstorm and flood into homes (Abule Egba, Iyana Ipaja, Ogba, Ikeja, Agidingbi). LASEMA on fallen poles, not deaths.",
+      "April 20 flash flood at Guinness roundabout/Agege/Ogba is Encomium only (not a Task 26 outlet); PM News that day is an Adejare warning, not a street/home day. Excluded.",
+      "Tuesday 6 Jun VGC road flood is thenet.ng only; no Task 26 confirmation. Lead only.",
+      "5 Jun Vanguard photos: river overflow at Lafenwa/Otta, Ogun State, blocking entry to Lagos. Excluded (not Lagos State).",
+      "Late August Oyan Dam release (Vanguard 29 Aug): Adejare warning for Ajegunle, Owode-Onirin, Isheri North and others; no contemporaneous street/home overflow day found. Anadolu 2017 Lagos hits are Otodo Gbame evictions (April) and Benue displacement (September), plus an Ilashe boat capsize (20 Aug), not a Lagos flood day. The six-dead Lagos Oyan piece is 23 Oct 2019.",
+      "Vanguard 21 Aug insurance feature recalls 'at least 20 people were killed' after storms in Lagos, with no named person or office. Contemporaneous Punch, Guardian and Farinloye report no Lagos flood death. Not kept as a flood report; the unsourced count is not used as deaths.",
+      "February Mekwen Bridge lagoon crash (pregnant woman drowned) and October Third Mainland Bridge crash are road accidents, not flood deaths.",
+      "Premium Times, TVC, BBC Pidgin and Nairametrics: no qualifying 2017 Lagos street/home flood day found. X accounts of LASEMA, Lagos MoE and NEMA: no dated 2017 flood posts reached."
+    ]
+  },
+  "reports": [
+    {
+      "id": "r2017-001",
+      "date": "2017-05-11",
+      "date_confidence": "exact",
+      "areas": [
+        "Akilo Road, Ogba",
+        "Ikeja"
+      ],
+      "impacts": "Thursday morning heavy rain: some roads in the Ikeja axis flooded; motorists waded. No death reported.",
+      "quote": "As the rains poured heavily on Thursday morning, some roads in Ikeja axis of Lagos State were flooded",
+      "causes": [
+        "heavy_rain"
+      ],
+      "cause_quote": "As the rains poured heavily on Thursday morning, some roads in Ikeja axis of Lagos State were flooded",
+      "cause_attributed_by": "journalist",
+      "cause_who": null,
+      "url": "https://punchng.com/downpour-leads-to-flooding-on-lagos-roads/",
+      "publisher": "Punch",
+      "published_at": "2017-05-11T14:58:00+01:00",
+      "read_status": "read",
+      "deaths": null,
+      "pass": 1
+    },
+    {
+      "id": "r2017-002",
+      "date": "2017-07-08",
+      "date_confidence": "exact",
+      "areas": [
+        "Ajah",
+        "Ikoyi",
+        "Lekki",
+        "Victoria Island",
+        "Lekki Phase I",
+        "Lekki Free Trade Zone",
+        "Lekki Phase II",
+        "Osapa London",
+        "Victoria Garden City",
+        "Banana Island",
+        "Badore",
+        "Bugije",
+        "Igbo Efon",
+        "Awoyaya",
+        "Adetokunbo Ademola, Victoria Island",
+        "Ahmadu Bello Way",
+        "Obalende",
+        "Lekki-Epe Expressway"
+      ],
+      "impacts": "Friday-night and Saturday-morning heavy rain: hundreds of homes and roads flooded. Residents stranded or fled to hotels/friends on the Mainland on Saturday after water entered homes. Commuters paid N1,000 to be carried; some swam. Motorists paid N1,500–N2,500 to have vehicles pushed at Lekki Phase 1. Tricycle fares rose from N50 to N150. Police closed Ahmadu Bello Way after flood reached a filling-station diesel store. No death reported in this article.",
+      "quote": "A heavy rain that fell on Friday night and Saturday morning has left hundreds of homes and roads flooded",
+      "causes": [
+        "heavy_rain",
+        "drainage_capacity",
+        "blocked_drainage"
+      ],
+      "cause_quote": "A lot of drainage channels are blocked or you have people depositing water sachets, tyres",
+      "cause_attributed_by": "expert",
+      "cause_who": "Dr. Ibidun Adelekan, University of Ibadan",
+      "url": "https://punchng.com/flood-wreaks-havoc-in-nigerias-most-expensive-neighbourhoods/",
+      "publisher": "Punch",
+      "published_at": "2017-07-09T07:46:00+01:00",
+      "read_status": "read",
+      "deaths": null,
+      "pass": 1
+    },
+    {
+      "id": "r2017-003",
+      "date": "2017-07-08",
+      "date_confidence": "exact",
+      "areas": [
+        "Jakande First Gate Estate, Lekki Phase I",
+        "Ilasan",
+        "Lekki Phase I",
+        "Lekki Phase II",
+        "Ajah",
+        "Victoria Island",
+        "Ikoyi"
+      ],
+      "impacts": "Friday and Saturday rain: hundreds of homes and roads flooded; residents displaced. Israel Ominyi vacated with wife and four-month-old after water entered his Lekki Phase I house. Justina Odikpo slept in an uncompleted building after flood took her Ilasan apartment on Saturday. PUNCH Metro got no death record from government agencies on Sunday. Radio presenter Temilola Akinmuda said a baby fell into water, lost consciousness and was revived; taken to hospital. LASEMA GM Adeshina Tiamiyu said government was working to bring succour.",
+      "quote": "I stay on Jakande First Gate Estate in Lekki Phase I. The water entered into my house.",
+      "causes": [
+        "land_reclamation"
+      ],
+      "cause_quote": "We had been having flood issue since the LSDPC started filling a swamp beside us.",
+      "cause_attributed_by": "resident",
+      "cause_who": "Mrs. Justina Odikpo, resident, Ilasan",
+      "url": "https://punchng.com/lagos-flood-residents-lament-loss-of-homes-property/",
+      "publisher": "Punch",
+      "published_at": "2017-07-10T06:43:00+01:00",
+      "read_status": "read",
+      "deaths": null,
+      "pass": 1
+    },
+    {
+      "id": "r2017-004",
+      "date": "2017-07-08",
+      "date_confidence": "exact",
+      "areas": [
+        "Lekki",
+        "Victoria Island",
+        "Victoria Garden City",
+        "Ajah",
+        "Ahmadu Bello Way, Victoria Island"
+      ],
+      "impacts": "Heavy downpour lasting several hours: Lekki among worst hit; residents unable to leave homes. Victoria Island, VGC and Ajah also affected. Police commissioner Fatai Owoseni, interviewed Saturday, asked road users to avoid Ahmadu Bello Way until water was drained. No death reported.",
+      "quote": "residents lamented that the deluge is so massive that they are unable to leave their homes",
+      "causes": [
+        "heavy_rain"
+      ],
+      "cause_quote": "following a heavy downpour which lasted for several hours",
+      "cause_attributed_by": "journalist",
+      "cause_who": null,
+      "url": "https://www.channelstv.com/2017/07/08/lagosians-lament-as-flood-hits-lekki-victoria-island/",
+      "publisher": "Channels TV",
+      "published_at": "2017-07-08T00:00:00+01:00",
+      "read_status": "read",
+      "deaths": null,
+      "pass": 1
+    },
+    {
+      "id": "r2017-005",
+      "date": "2017-07-08",
+      "date_confidence": "exact",
+      "areas": [
+        "Lekki",
+        "Victoria Island",
+        "Ikoyi",
+        "Egbeda",
+        "Ikotun",
+        "Satellite Town",
+        "FESTAC",
+        "Ijegun",
+        "Ogombo",
+        "Owode",
+        "New Town estate",
+        "Greenland estate",
+        "Olokonla",
+        "Okun-Ajah",
+        "Ikonta village",
+        "VGC",
+        "Ahmadu Bello Way, Victoria Island",
+        "Adeola Odeku",
+        "Ijanikin",
+        "Mile 2-Badagry expressway"
+      ],
+      "impacts": "Correspondent on Saturday afternoon: water on major roads at Egbeda, Ikotun, Satellite and FESTAC; walking difficult. Highbrow Lekki, VI and Ikoyi used canoes. Taiwo Adejanbi still fetching water from living quarters since Friday; worse after Saturday downpour. Buildings submerged at Ogombo, Owode, New Town, Greenland, Olokonla, Okun-Ajah, Ikonta, VGC; some residents moving property. Ahmadu Bello Way to NTA/Silverbird and part of Adeola Odeku flooded; cars submerged. CMS–Ajah fare N250 to N500. Police PRO Olarinde Famous-Cole: Ahmadu Bello Way temporarily closed. No death reported.",
+      "quote": "residents of highbrow areas of Lekki, Victoria Island and Ikoyi had to resort to local canoes to navigate their vicinities",
+      "causes": [
+        "land_reclamation",
+        "heavy_rain"
+      ],
+      "cause_quote": "the flood experienced this year was as a result of land reclamation",
+      "cause_attributed_by": "resident",
+      "cause_who": "Femi, resident, Ogombo",
+      "url": "https://dailytrust.com/panic-as-flood-takes-over-lagos/",
+      "publisher": "Daily Trust",
+      "published_at": "2017-07-10T14:00:00+01:00",
+      "read_status": "read",
+      "deaths": null,
+      "pass": 1
+    },
+    {
+      "id": "r2017-006",
+      "date": "2017-07-08",
+      "date_confidence": "approx",
+      "areas": [
+        "Osapa, Lekki",
+        "Lekki",
+        "Victoria Island",
+        "Eti-Osa"
+      ],
+      "impacts": "Photo report: flood ravaged Lekki and Victoria Island in Eti-Osa after many days of downpour. No death reported.",
+      "quote": "As usual flood ravaged Lekki, Victoria Island in Eti Osa local government area of Lagos state after many days of down pour",
+      "causes": [
+        "heavy_rain"
+      ],
+      "cause_quote": "after many days of down pour",
+      "cause_attributed_by": "journalist",
+      "cause_who": null,
+      "url": "https://www.vanguardngr.com/2017/07/photos-flood-victoria-island-lekki/",
+      "publisher": "Vanguard",
+      "published_at": "2017-07-08T00:00:00+01:00",
+      "read_status": "read",
+      "deaths": null,
+      "pass": 1
+    },
+    {
+      "id": "r2017-007",
+      "date": "2017-07-08",
+      "date_confidence": "exact",
+      "areas": [
+        "Ikoyi",
+        "Victoria Island",
+        "Lekki Transmission Station",
+        "Agungi",
+        "Lekki",
+        "Ademola",
+        "Anifowoshe",
+        "Victoria Garden City",
+        "Water Front",
+        "Maroko",
+        "Oniru"
+      ],
+      "impacts": "Saturday heavy rain: EKEDC injection substations and equipment submerged. Transformers in the areas submerged. Supply deloaded for safety. VGC, Water Front, Maroko and Oniru injection stations completely out. Power outage in Ikoyi, Victoria Island and environs. No death reported.",
+      "quote": "Victoria Garden City, Water Front, Maroko and Oniru Injection Stations are completely out.",
+      "causes": [
+        "heavy_rain"
+      ],
+      "cause_quote": "as a result of the flood from heavy rains on Saturday",
+      "cause_attributed_by": "official",
+      "cause_who": "Godwin Idemudia, General Manager, Corporate Communications, EKEDC",
+      "url": "https://www.vanguardngr.com/2017/07/flood-eko-disco-announces-power-cut-ikoyi-victoria-island/",
+      "publisher": "Vanguard",
+      "published_at": "2017-07-09T00:00:00+01:00",
+      "read_status": "read",
+      "deaths": null,
+      "pass": 1
+    },
+    {
+      "id": "r2017-008",
+      "date": "2017-07-08",
+      "date_confidence": "exact",
+      "areas": [
+        "Ikoyi",
+        "Lekki Peninsula",
+        "Victoria Island"
+      ],
+      "impacts": "Weekend pounding rains: many homes, shops and roads flooded; residents scooping water from houses; some relocated property. Flood up to six feet high over the roads. No fatality reported. Commissioner Adejare on-the-spot Saturday said the flood had subsided.",
+      "quote": "No fatality has been reported despite the havoc wreaked by the flood, which was up to six feet high over the roads",
+      "causes": [
+        "drainage_capacity"
+      ],
+      "cause_quote": "the master plans provide drainages, which have not been fully dredged",
+      "cause_attributed_by": "expert",
+      "cause_who": "Remi Makinde, former President, Nigerian Institute of Town Planners",
+      "url": "https://guardian.ng/news/how-to-save-lagos-from-flood-disasters-others/",
+      "publisher": "Guardian NG",
+      "published_at": "2017-07-10T05:34:00+01:00",
+      "read_status": "read",
+      "deaths": null,
+      "pass": 1
+    },
+    {
+      "id": "r2017-009",
+      "date": "2017-07-08",
+      "date_confidence": "exact",
+      "areas": [
+        "Lekki",
+        "Victoria Island",
+        "Ahmadu Bello Way, Victoria Island"
+      ],
+      "impacts": "Torrential rainfall over the last few days. Worst hit Lekki–Victoria Island axis: motorists on Saturday spent up to six hours to escape water-logged roads. Heavy floods took over Ahmadu Bello Way; some residents and offices vacated. Police temporarily closed the road. No death reported.",
+      "quote": "Heavy floods took over the entire Ahmadu Bello Way in Victoria Island, Lagos",
+      "causes": [
+        "heavy_rain"
+      ],
+      "cause_quote": "flooding which hit several parts of the city in the last few days as a result of torrential rainfall",
+      "cause_attributed_by": "journalist",
+      "cause_who": null,
+      "url": "https://guardian.ng/news/were-pursuing-holistic-solution-to-lagos-flooding-says-ambode/",
+      "publisher": "Guardian NG",
+      "published_at": "2017-07-10T15:44:00+01:00",
+      "read_status": "read",
+      "deaths": null,
+      "pass": 1
+    },
+    {
+      "id": "r2017-010",
+      "date": "2017-07-08",
+      "date_confidence": "exact",
+      "areas": [
+        "Lekki",
+        "Victoria Island",
+        "Ikoyi"
+      ],
+      "impacts": "Saturday flood in Lekki, Victoria Island and Ikoyi (Punch spelling: Vicroria Island). Ambode said people lost property. Ade Adesanya said torrential rain in the past few days accumulated 477mm of water. No death reported.",
+      "quote": "the torrential rain witnessed in the state in the past few days accumulated a total of 477mm of water",
+      "causes": [
+        "heavy_rain"
+      ],
+      "cause_quote": "the torrential rain witnessed in the state in the past few days accumulated a total of 477mm of water",
+      "cause_attributed_by": "official",
+      "cause_who": "Ade Adesanya, Commissioner for Waterfront Infrastructure Development",
+      "url": "https://punchng.com/lasgll-tackle-flooding-says-ambode/",
+      "publisher": "Punch",
+      "published_at": "2017-07-11T08:43:00+01:00",
+      "read_status": "read",
+      "deaths": null,
+      "pass": 1
+    },
+    {
+      "id": "r2017-011",
+      "date": "2017-07-08",
+      "date_confidence": "approx",
+      "areas": [
+        "Victoria Island",
+        "Lekki",
+        "Oniru",
+        "Ajah",
+        "Epe"
+      ],
+      "impacts": "Flood that wrecked Victoria Island, Lekki, Oniru, Ajah and Epe. Adejare, after inspecting affected areas, said emergency lines 112 and 767 were open. No death reported in this article.",
+      "quote": "The lagoon is swollen up, there is high tide, so it would lock on our outfalls",
+      "causes": [
+        "lagoon_tide",
+        "blocked_drainage",
+        "setback_encroachment"
+      ],
+      "cause_quote": "The lagoon is swollen up, there is high tide, so it would lock on our outfalls",
+      "cause_attributed_by": "official",
+      "cause_who": "Dr. Babatunde Adejare, Lagos Commissioner for Environment",
+      "url": "https://www.vanguardngr.com/2017/07/lagos-flood-lasg-attributes-cause-high-tide-lagoon/",
+      "publisher": "Vanguard",
+      "published_at": "2017-07-17T00:00:00+01:00",
+      "read_status": "read",
+      "deaths": null,
+      "pass": 1
+    },
+    {
+      "id": "r2017-012",
+      "date": "2017-07-08",
+      "date_confidence": "approx",
+      "areas": [
+        "Ibeju",
+        "Lekki",
+        "Ajah",
+        "Ikoyi",
+        "Victoria Island",
+        "Satellite Town",
+        "Egbeda",
+        "Ogombo",
+        "Owode",
+        "New Town Estate",
+        "Greenland Estate",
+        "Olokonla",
+        "Okun-Ajah",
+        "Ikonta village",
+        "VGC",
+        "Sanusi Fafunwa Street, Victoria Island",
+        "Ojo"
+      ],
+      "impacts": "After five days of torrential rain: residents in Ibeju, Lekki, Ajah, Ikoyi, Victoria Island, Satellite Town and Egbeda counting losses. Most buildings submerged at Ogombo, Owode, New Town, Greenland, Olokonla, Okun-Ajah, Ikonta, VGC. NEMA South-West PRO Ibrahim Farinloye: no casualty or major disaster in Lagos after touring flooded areas that had since dried. LASEMA GM Tiamiyu Adesina described preparedness, not deaths.",
+      "quote": "there was no casualty or disaster as a result of the rain in the state",
+      "causes": [
+        "land_reclamation"
+      ],
+      "cause_quote": "the flood was as a result of the land reclamation by the Lagos State Government on other side of Ahmadu Bello Way",
+      "cause_attributed_by": "resident",
+      "cause_who": "Femi Adebosun, Sanusi Fafunwa Street, Victoria Island",
+      "url": "https://dailytrust.com/nigerias-newest-flood-of-tears/",
+      "publisher": "Daily Trust",
+      "published_at": "2017-07-15T14:00:00+01:00",
+      "read_status": "read",
+      "deaths": null,
+      "pass": 1
+    },
+    {
+      "id": "r2017-013",
+      "date": "2017-07-22",
+      "date_confidence": "exact",
+      "areas": [
+        "Surulere",
+        "Lekki",
+        "Ajah",
+        "Iyana-Ejigbo",
+        "NNPC Junction, Ejigbo",
+        "Lawanson",
+        "Isolo Road Junction, Mushin",
+        "Iganmu Interchange, Lagos/Badagry expressway",
+        "Masha, Surulere",
+        "Ikate, Itire"
+      ],
+      "impacts": "Saturday early-morning downpour from about 5:00am: roads and household valuables submerged in Surulere and parts of Lekki and Ajah. Mercy Eneli: entire Masha street flooded; household items floating. Nelson Eta: flooding at Ikate, Itire, above the knee; uncle's house flooded. Cars on streets affected except those on elevated platforms. Comfort Wilson, Lekki: flooding less serious than about two weeks earlier when canoes were used. Rain delayed council-poll voting. No death reported in this flood article.",
+      "quote": "An early morning downpour on Saturday in Lagos brought untold hardships to residents of Surulere, and parts of Lekki and Ajah",
+      "causes": [
+        "heavy_rain",
+        "blocked_drainage"
+      ],
+      "cause_quote": "The flood water also swept some debris in its path, causing some drains and drainage channels to become blocked",
+      "cause_attributed_by": "journalist",
+      "cause_who": null,
+      "url": "https://punchng.com/early-morning-rainfall-roads-homes-flooded-in-lagos/",
+      "publisher": "Punch",
+      "published_at": "2017-07-22T14:13:00+01:00",
+      "read_status": "read",
+      "deaths": null,
+      "pass": 1
+    },
+    {
+      "id": "r2017-014",
+      "date": "2017-09-11",
+      "date_confidence": "day",
+      "areas": [
+        "Lagos-Abeokuta Expressway",
+        "Ikeja",
+        "Alimosho",
+        "Lagos Island",
+        "Oshodi"
+      ],
+      "impacts": "Heavy downpour: motorists and residents stranded for hours. Worst hit Lagos-Abeokuta, Ikeja, Alimosho and Lagos Island; roads shut by flooding; vehicles broke down; gridlock. Mrs Johnson Ebere, Oshodi, said the heavy flooding on Monday was due to BRT-corridor works. LAMATA Public Affairs Coordinator Kola Ojelabi said flooding was not from construction but from blocked drainages and refuse (plastic bottles, nylon, used tyres) on the road. No death reported.",
+      "quote": "The worst hit areas included, Lagos-Abeokuta, Ikeja, Alimosho and Lagos Island, as the roads were practically shut off by flooding",
+      "causes": [
+        "construction"
+      ],
+      "cause_quote": "It only shows that the heavy flooding on Monday, was due to the on-going work by the contractor handling the BRT corridor",
+      "cause_attributed_by": "resident",
+      "cause_who": "Mrs Johnson Ebere, business woman, Oshodi",
+      "url": "https://www.vanguardngr.com/2017/09/residents-groan-heavy-flooding-lagos-abeokuta-expressway/",
+      "publisher": "Vanguard",
+      "published_at": "2017-09-15T00:00:00+01:00",
+      "read_status": "read",
+      "deaths": null,
+      "pass": 1
+    },
+    {
+      "id": "r2017-015",
+      "date": "2017-11-04",
+      "date_confidence": "exact",
+      "areas": [
+        "Ogba",
+        "Ikeja",
+        "Agidingbi",
+        "Iyana Ipaja",
+        "Abule Egba",
+        "Santos Avenue, Abule Egba",
+        "Lagos-Abeokuta Expressway",
+        "Abiodun Aina Street, Agbado Oke Odo"
+      ],
+      "impacts": "Saturday afternoon heavy rain from about 1–2pm: hundreds of homes and roads flooded; commuters stranded; gridlock on the mainland; residents trapped in homes. Boluwaji James, Santos Avenue: flood entered many buildings; canal beside a mechanic workshop overrun; his car submerged; okadas swept. Kunle Phillips, Iyana Ipaja: as of 4pm no vehicle could move; vehicles almost submerged on Lagos-Abeokuta Expressway. Storm also blew roofs and felled high-tension poles (Adeyemi counted five roofs, four damaged vehicles). LASEMA GM Adesina Tiamiyu: officials deployed for a fallen pole at Abiodun Aina Street; asked residents to call 112. No death reported.",
+      "quote": "A heavy rain on Saturday afternoon left hundreds of homes and roads flooded in different parts of Lagos State",
+      "causes": [
+        "heavy_rain",
+        "canal_overflow"
+      ],
+      "cause_quote": "A canal beside a mechanic workshop on the street was overun by the flood",
+      "cause_attributed_by": "resident",
+      "cause_who": "Boluwaji James, Santos Avenue, Abule Egba",
+      "url": "https://punchng.com/rainstorm-destroys-buildings-cars-in-lagos/",
+      "publisher": "Punch",
+      "published_at": "2017-11-05T04:29:00+01:00",
+      "read_status": "read",
+      "deaths": null,
+      "pass": 1
+    }
+  ]
+}

@@ -120,6 +120,37 @@ DOSSIER_KEYWORDS = {
     ],
 }
 
+# Task 29: hand-checked place tokens for catalog-flood name matching. The place
+# token, NOT a word from the structure name ("collector", "canal", "expressway"
+# would match anything). Tokens are matched against a day's area names with case,
+# hyphens, spaces and punctuation removed, so "Olopo Meji" matches "Olopomeji" and
+# "Ketu-Alapere" matches "Alapere". Deliberately NOT tokens, after checking every
+# hit against the catalog:
+#   "Ikorodu"        - Ikorodu Road / Ikorodu city are not the Gberigbe corridor;
+#                      its own place, Gberigbe, is never named in the catalog
+#   "Oworo" alone   - would match Oworonshoki, a different place
+#   "Ibeju-Lekki"    - an LGA suffix on far-away names ("Awoyaya, Ibeju-Lekki")
+#   "Lekki-Epe Expressway" / "Ibeju-Lekki Expressway" - structure words; a flood
+#                      named for the road can be km from the site's own stretch
+#                      (e.g. Igbo-Efon, 2018-02-26, is west of the rehab section)
+PLACE_TOKENS = {
+    "alpha-beach-156": ["Alpha Beach"],
+    "agungi-collector": ["Agungi"],
+    # Iyana Oworo is the same junction as Olopo Meji; both spellings appear in
+    # the catalog ("Olopo Meji", "Olopomeji", "Iyana-Oworo-Alapomeji").
+    "olopomeji": ["Olopo Meji", "Alapomeji", "Iyana Oworo"],
+    "ikorodu-dammed": ["Gberigbe"],  # never named in the catalog; near/area still match
+    "agric-bridge": ["Agric"],
+    "ijede-drain": ["Ijede"],
+    "oko-oba-canal": ["Oko Oba"],
+    "alapere-ogudu": ["Alapere"],
+    "marina-drainage": ["Marina"],
+    "lekki-epe-rehab": ["Awoyaya", "Majek", "Abraham Adesanya"],
+    "labora": ["Labora"],  # new site; never named in the catalog
+    "ibeju-lekki-expy": ["Eleko"],
+    "sangotedo-channel-notices": ["Sangotedo"],
+}
+
 BULLET_RE = re.compile(r"^- \*\*(?P<title>.+?)\*\*(?P<body>.*)$")
 STATUS_RE = re.compile(r"Status:\s*\x60([^\x60]+)\x60")
 
@@ -155,6 +186,102 @@ def point_dist_m(g, lon, lat, lat0, lon0) -> float:
     k = math.cos(math.radians(lat0)) * EARTH_R_M * math.radians(1.0)
     p = Point((lon - lon0) * k, (lat - lat0) * EARTH_R_M * math.radians(1.0))
     return g.distance(p)
+
+
+# ------------------------------------------------------- catalog (Tier B) matching
+
+# Task 29: match events/flood_days.json days to a site. Strength is the strongest
+# of name > near > area. city/lga/unknown confidence never match; fallback
+# geocodes (geocoded_from set) count as 'area' at best.
+CATALOG_NEAR_CONF = {"exact", "street"}
+CATALOG_AREA_CONF = {"neighbourhood", "area"}
+CATALOG_AREA_RADIUS_M = 1500.0
+CATALOG_NOTE = "counts reported floods; a year with no report is not proof of no flood"
+
+
+def squash(s: str) -> str:
+    """Case-, hyphen-, space- and punctuation-insensitive form ("Olopo Meji" == "Olopomeji")."""
+    return re.sub(r"[^a-z0-9]", "", (s or "").lower())
+
+
+def _nearest_m(g, areas, lat0, lon0):
+    ds = [point_dist_m(g, a["lon"], a["lat"], lat0, lon0)
+          for a in areas if a.get("lon") is not None and a.get("lat") is not None]
+    return round(min(ds), 1) if ds else None
+
+
+def match_catalog_day(day: dict, site_id: str, g, radius: float, lat0: float, lon0: float):
+    """One catalog flood day vs one site -> (strength, [matched area names], distance_m) | None."""
+    tokens = [squash(t) for t in PLACE_TOKENS.get(site_id, [])]
+    named = []
+    for a in day["areas"]:
+        nm = squash(a.get("name"))
+        if nm and any(t and t in nm for t in tokens):
+            named.append(a)
+    if named:
+        return "name", sorted({a["name"] for a in named}), _nearest_m(g, named, lat0, lon0)
+    near, area = [], []
+    for a in day["areas"]:
+        conf = a.get("confidence")
+        if a.get("lon") is None or a.get("lat") is None or conf not in (CATALOG_NEAR_CONF | CATALOG_AREA_CONF):
+            continue
+        d = point_dist_m(g, a["lon"], a["lat"], lat0, lon0)
+        if conf in CATALOG_NEAR_CONF and not a.get("geocoded_from") and d <= radius + 200:
+            near.append((d, a))
+        elif conf in CATALOG_AREA_CONF and d <= CATALOG_AREA_RADIUS_M:
+            area.append((d, a))
+    if near:
+        return "near", sorted({a["name"] for _, a in near}), round(min(d for d, _ in near), 1)
+    if area:
+        return "area", sorted({a["name"] for _, a in area}), round(min(d for d, _ in area), 1)
+    return None
+
+
+def catalog_sources(day: dict, matched_names: list) -> list:
+    """Up to 3 reports naming a matched area (in quote or cause_quote); else the first ones."""
+    names = [squash(n) for n in matched_names]
+    naming = []
+    for rp in day["reports"]:
+        text = squash((rp.get("quote") or "") + " " + (rp.get("cause_quote") or ""))
+        if any(n and n in text for n in names):
+            naming.append(rp)
+    chosen = naming or day["reports"]
+    return [{"url": rp.get("url"), "publisher": rp.get("publisher"), "quote": rp.get("quote")} for rp in chosen[:3]]
+
+
+def catalog_floods_for_site(site_id: str, g, radius: float, lat0: float, lon0: float, catalog: dict):
+    """Task 29: the site's dated, sourced catalog flood days (newest first) + honest counts."""
+    entries = []
+    for day in catalog["days"]:
+        m = match_catalog_day(day, site_id, g, radius, lat0, lon0)
+        if m is None:
+            continue
+        strength, names, dist = m
+        entries.append({
+            "date": day["date"],
+            "flood_type": day["flood_type"],
+            "episode_id": day.get("episode_id"),
+            "strength": strength,
+            "matched_areas": names,
+            "distance_m": dist,
+            "n_outlets": day["n_outlets"],
+            "promote": day["promote"],
+            "tier_a_event_id": day.get("tier_a_event_id"),
+            "sources": catalog_sources(day, names),
+        })
+    entries.sort(key=lambda e: e["date"], reverse=True)
+    n_strong = sum(e["strength"] in ("name", "near") for e in entries)
+    years_searched = catalog["years_searched"]
+    summary = {
+        "n_days": len(entries),
+        "n_days_strong": n_strong,
+        "years_with_flood": sorted({int(e["date"][:4]) for e in entries}),
+        "years_searched": years_searched,
+        "per_searched_year": round(n_strong / len(years_searched), 2) if years_searched else 0,
+        "riverine_days": sum(e["flood_type"] == "riverine" for e in entries),
+        "note": CATALOG_NOTE,
+    }
+    return entries, summary
 
 
 # ---------------------------------------------------------------- dossier parsing
@@ -403,6 +530,10 @@ def build_site(src, ctx) -> dict:
             if f["properties"].get("location_name"):
                 aliases.add(f["properties"]["location_name"])
 
+    # Task 29: the site's catalog (Tier B) flood days and honest per-year counts.
+    catalog_floods, catalog_summary = catalog_floods_for_site(
+        sid, g, radius, lat0, lon0, ctx["catalog"])
+
     change = {
         "wayback": wayback_list(ctx["imagery"].get(sid, {})),
         "s2_wet_season": s2_wet_season(ctx["s2"].get(sid, {}), sid),
@@ -422,6 +553,8 @@ def build_site(src, ctx) -> dict:
         "located_how": src["located_how"],
         "flood_radius_m": radius,
         "floods": floods,
+        "catalog_floods": catalog_floods,
+        "catalog_summary": catalog_summary,
         "claims": claims,
         "change": change,
         "promise_ids": sorted(ctx["promises"].get(sid, [])),
@@ -432,8 +565,10 @@ def build_site(src, ctx) -> dict:
 # ---------------------------------------------------------------- reviewer carry
 
 def computed_view(site: dict) -> str:
-    """Everything the builder computes — i.e. the site minus the reviewer fields."""
-    s = {k: v for k, v in site.items() if k != "verdict"}
+    """Everything the builder computes — i.e. the site minus the reviewer fields
+    and the Task 29 catalog counts (a reported-flood tally doesn't invalidate a
+    verdict written on the evidence chain; it's shown alongside it)."""
+    s = {k: v for k, v in site.items() if k not in ("verdict", "catalog_floods", "catalog_summary")}
     ch = dict(s.get("change") or {})
     ch.pop("summary", None)
     ch.pop("stale", None)
@@ -474,6 +609,15 @@ def main() -> int:
     catalog = load(EVENTS / "catalog.json")
     dates = {e["id"]: e.get("date") for e in catalog["events"]}
 
+    tier_b = load(EVENTS / "flood_days.json")
+    # Task 29: years searched = years with an April-November month in the catalog's
+    # frozen meta.search_coverage, not the live search log, so a year Cursor
+    # hasn't finished sweeping doesn't count as searched.
+    years_searched = sorted({
+        int(e["year_month"][:4]) for e in tier_b["meta"].get("search_coverage", [])
+        if "04" <= e["year_month"][5:7] <= "11"
+    })
+
     promises_path = EVENTS / "promises.json"
     promises_by_site = {}
     if promises_path.exists():
@@ -506,6 +650,7 @@ def main() -> int:
         "buildings": buildings,
         "baseline_segs": baseline_segs,
         "promises": promises_by_site,
+        "catalog": {"days": tier_b["days"], "years_searched": years_searched},
     }
 
     sites = []
@@ -533,6 +678,30 @@ def main() -> int:
             "event_ids": event_ids,
             "event_dates_from": "events/catalog.json",
             "promises_present": promises_path.exists(),
+            "catalog_floods": {
+                "task": "29-site-flood-counts (docs/tasks/29-site-flood-counts.md)",
+                "method": "each Tier B flood day (events/flood_days.json) matched to the site; "
+                          "strength is the strongest of name > near > area; catalog days are "
+                          "reported floods, so a year with no report is not proof of no flood",
+                "flood_days_sha256": sha256(EVENTS / "flood_days.json"),
+                "years_searched": years_searched,
+                "rules": {
+                    "name": "a hand-checked place token (PLACE_TOKENS in pipeline/build_sites.py) "
+                            "appears in a day's area name, compared with case, hyphens, spaces and "
+                            "punctuation removed",
+                    "near": "an area with confidence exact or street (not a fallback geocode) within "
+                            "flood_radius_m + 200 m of the site geometry",
+                    "area": "an area with confidence neighbourhood or area within 1,500 m; fallback "
+                            "geocodes (geocoded_from set) count as area at best",
+                    "never": "confidence city, lga or unknown, and un-geocoded areas, never match",
+                    "sources": "up to 3 of the day's reports naming a matched area, else the first "
+                               "reports; url, publisher, quote",
+                    "years_searched": "years with an April-November entry in flood_days.json "
+                                      "meta.search_coverage (not the live search log)",
+                    "per_searched_year": "n_days_strong / len(years_searched), rounded to 2 decimals",
+                    "riverine_days": "matched days whose flood_type is riverine",
+                },
+            },
             "inputs": {rel(p): sha256(p) for p in sorted(input_files)},
             "rules": {
                 "floods": "per event, evidence features within flood_radius_m of the site geometry "
@@ -584,6 +753,31 @@ def main() -> int:
     tot_c = sum(len(s["claims"]) for s in sites)
     print(f"totals: {len(sites)} sites, {tot_f} site-floods, {tot_c} claims, promises_present={promises_path.exists()}")
     print("* = buildings block excluded (corridor is not a channel / no channel line)")
+
+    # Task 29: per-site catalog flood counts and the area-strength matches to review.
+    print()
+    hdr = ("site", "days", "strong", "years with flood", "per yr", "river", "newest dates")
+    print(f"{hdr[0]:28s} {hdr[1]:>5s} {hdr[2]:>6s}  {hdr[3]:<34s} {hdr[4]:>6s} {hdr[5]:>5s}  {hdr[6]}")
+    for s in sites:
+        cs = s["catalog_summary"]
+        yrs = ",".join(str(y) for y in cs["years_with_flood"]) or "-"
+        dates = ", ".join(e["date"] for e in s["catalog_floods"][:3]) or "-"
+        print(f"{s['site_id']:28s} {cs['n_days']:>5d} {cs['n_days_strong']:>6d}  {yrs:<34s} "
+              f"{cs['per_searched_year']:>6.2f} {cs['riverine_days']:>5d}  {dates}")
+    print(f"years searched (Apr-Nov entry in flood_days.json meta.search_coverage): {years_searched}")
+
+    print()
+    print("area-strength catalog matches (check these on the map):")
+    n_area = 0
+    for s in sites:
+        for e in s["catalog_floods"]:
+            if e["strength"] == "area":
+                n_area += 1
+                dm = "-" if e["distance_m"] is None else f"{e['distance_m']:.1f}"
+                print(f"  {s['site_id']:28s} {e['date']}  {dm:>8s} m  {', '.join(e['matched_areas'])}")
+    if not n_area:
+        print("  (none)")
+    print(f"  ({n_area} area-strength matches)")
     return 0
 
 

@@ -141,3 +141,15 @@ even without an event folder.
   `who_reported` is null, so the claim doesn't promote; the conflict is noted on the report.
 - **The rain-gauge check is shelved.** The only GHCN-Daily station in Lagos (NIM00065201, Murtala Muhammed airport) has
   precipitation for 40–69 days a year since 2010, and only 2 of the 12 low-rain flood dates. It can't settle the question.
+- **2017 done.** 5 days, including 8 Jul (VI, Lekki, Ikoyi, Ajah; 5 outlets). Commissioner Adesanya's "477mm of water"
+  over "the past few days" was verified on Punch's page. The catalog has 74 days for 2017–2026, 23 promoted.
+- **Reviewer fix: no "Lagos" fallback.** A failed geocode such as "Ile Epo on Lagos-Abeokuta Expressway" fell back to
+  "Lagos", the city centroid next to Marina. That made Long Bridge, Ile-Epo and Trade Fair floods look like Marina floods.
+  City-level names are now never a fallback.
+- **Site flood counts (Task 29) are in `sites.json`:** `catalog_floods[]` and `catalog_summary` per site, over 10 searched
+  years. Strong matches (the site's place named, or a street-level point near it) per searched year:
+  - 0.6: Lekki-Epe rehab (Awoyaya, Abraham Adesanya);
+  - 0.5: Agungi, Alapere-Ogudu, Olopo Meji;
+  - 0.3: Agric bridge, Marina, Oko-Oba;
+  - 0.1 or 0: the rest.
+  These count reported floods only. The app doesn't show them yet.

@@ -87,6 +87,8 @@ NAMED_ROAD_PROJECT_RE = re.compile(
 NATURAL_CAUSE_TAGS = {"heavy_rain", "lagoon_tide", "dam_release"}
 # Task 27b fix 2: a known district immediately followed by one of these is
 # part of a route name ("Lagos-Badagry Expressway"), not the district.
+# never a district fallback: these resolve to a city or state centroid
+CITY_LEVEL_NAMES = {"lagos", "lagos state"}
 ROUTE_AFTER_RE = re.compile(r"^(expressway|road|street|way|avenue|boulevard|link)$", re.I)
 # Task 28b: flood type triggers. Riverine floods are fed from rain far
 # upstream, so local rain says nothing about them.
@@ -247,6 +249,10 @@ def geocode_areas(areas: list[str], extra_districts: list[str]) -> tuple[dict[st
         if results.get(area) is not None:
             continue
         for query in district_fallback_queries(area, sorted(known)):
+            # "Lagos" alone is the city (usually from a road name such as
+            # "Lagos-Abeokuta Expressway"); its centroid sits at Marina
+            if norm_name(query) in CITY_LEVEL_NAMES:
+                continue
             cand = geocode.geocode(query, geocode.LAGOS_BBOX, cache=cache)
             if cand is not None and is_neighbourhood_hit(cand):
                 results[area] = cand

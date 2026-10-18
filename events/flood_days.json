@@ -26,8 +26,11 @@
       "rule": "riverine flood days less than 21 days apart share one episode_id (ep-<first date>-riverine); reports keep their own dates. Pluvial and lagoon days are not grouped (episode_id null).",
       "fields": "areas are the union over the episode's days; deaths_note is the first that exists (earliest day); n_outlets is distinct publishers over all the episode's reports; promote applies the day promotion rule over all the episode's reports."
     },
-    "generated_at": "2026-10-18T23:04:38Z",
+    "generated_at": "2026-10-18T23:19:22Z",
     "sources": [
+      {
+        "path": "events/intake/reports_2017.json"
+      },
       {
         "path": "events/intake/reports_2018.json"
       },
@@ -57,6 +60,429 @@
       }
     ],
     "search_coverage": [
+      {
+        "year_month": "2017-01",
+        "outlets": {
+          "note": "out-of-season check; pass 1 not run"
+        },
+        "hits_screened": 3,
+        "kept": 0,
+        "excluded": 0,
+        "minutes": 5,
+        "pass2": {
+          "queries": [
+            "flood Lagos January 2017",
+            "\"Lagos flood\" dead OR died OR drowned OR killed OR \"swept away\" OR bodies 2017"
+          ],
+          "outlets": {
+            "Anadolu": "year_query_is_otodo_gbame_april_and_benue_sept_not_lagos_street; six_dead_oyan_is_2019"
+          },
+          "hits_screened": 3,
+          "kept": 0,
+          "excluded": 0,
+          "minutes": 6
+        },
+        "n_queries": 1
+      },
+      {
+        "year_month": "2017-02",
+        "outlets": {
+          "note": "out-of-season check; pass 1 not run"
+        },
+        "hits_screened": 4,
+        "kept": 0,
+        "excluded": 1,
+        "minutes": 6,
+        "pass2": {
+          "queries": [
+            "flood Lagos February 2017",
+            "\"Lagos flood\" dead OR died OR drowned OR killed OR \"swept away\" OR bodies 2017"
+          ],
+          "outlets": {
+            "Anadolu": "year_query_is_otodo_gbame_april_and_benue_sept_not_lagos_street; six_dead_oyan_is_2019",
+            "Punch": "mekwen_bridge_lagoon_crash_not_flood"
+          },
+          "hits_screened": 5,
+          "kept": 0,
+          "excluded": 1,
+          "minutes": 8
+        },
+        "n_queries": 1
+      },
+      {
+        "year_month": "2017-03",
+        "outlets": {
+          "note": "out-of-season check; pass 1 not run"
+        },
+        "hits_screened": 2,
+        "kept": 0,
+        "excluded": 0,
+        "minutes": 4,
+        "pass2": {
+          "queries": [
+            "flood Lagos March 2017",
+            "\"Lagos flood\" dead OR died OR drowned OR killed OR \"swept away\" OR bodies 2017"
+          ],
+          "outlets": {
+            "Anadolu": "year_query_is_otodo_gbame_april_and_benue_sept_not_lagos_street; six_dead_oyan_is_2019"
+          },
+          "hits_screened": 2,
+          "kept": 0,
+          "excluded": 0,
+          "minutes": 5
+        },
+        "n_queries": 1
+      },
+      {
+        "year_month": "2017-04",
+        "outlets": {
+          "Punch": "reached_meiran_drainage_complaint_not_day",
+          "Vanguard": "reached_ogun_nimet_warning_excluded",
+          "Guardian NG": "reached_no_qualifying_day",
+          "Premium Times": "reached_no_qualifying_day",
+          "Channels TV": "reached_no_qualifying_day",
+          "TVC": "reached_no_qualifying_day",
+          "Daily Trust": "reached_no_qualifying_day",
+          "BBC Pidgin": "reached_no_qualifying_day",
+          "Nairametrics": "reached_no_qualifying_day",
+          "X:LASEMA": "not_reached",
+          "X:Lagos_MoE": "not_reached",
+          "X:NEMA": "not_reached"
+        },
+        "hits_screened": 10,
+        "kept": 0,
+        "excluded": 3,
+        "minutes": 22,
+        "pass2": {
+          "queries": [
+            "\"Lagos flood\" dead OR died OR drowned OR killed OR \"swept away\" OR bodies 2017",
+            "\"Oyan Dam\" Lagos 2017",
+            "\"Ogun River\" overflow Lagos",
+            "\"Lagos lagoon\" overflow",
+            "\"release of water\" Lagos",
+            "Isheri OR Ajegunle OR \"Owode Onirin\" OR Agboyi flood 2017"
+          ],
+          "outlets": {
+            "Anadolu": "otodo_gbame_eviction_not_flood_day",
+            "Encomium": "april_20_guinness_roundabout_lead_not_task26_outlet",
+            "PM News": "adejare_warning_not_street_home_day"
+          },
+          "hits_screened": 6,
+          "kept": 0,
+          "excluded": 2,
+          "minutes": 10
+        },
+        "n_queries": 4
+      },
+      {
+        "year_month": "2017-05",
+        "outlets": {
+          "Punch": "reached",
+          "Vanguard": "reached_ogun_river_summit_not_street_day",
+          "Guardian NG": "reached_outlook_not_day",
+          "Premium Times": "reached_no_qualifying_day",
+          "Channels TV": "reached_no_qualifying_day",
+          "TVC": "reached_no_qualifying_day",
+          "Daily Trust": "reached_no_qualifying_day",
+          "BBC Pidgin": "reached_no_qualifying_day",
+          "Nairametrics": "reached_no_qualifying_day",
+          "X:LASEMA": "not_reached",
+          "X:Lagos_MoE": "not_reached",
+          "X:NEMA": "not_reached"
+        },
+        "hits_screened": 12,
+        "kept": 1,
+        "excluded": 3,
+        "minutes": 24,
+        "pass2": {
+          "queries": [
+            "\"Lagos flood\" dead OR died OR drowned OR killed OR \"swept away\" OR bodies 2017",
+            "\"Oyan Dam\" Lagos 2017",
+            "\"Ogun River\" overflow Lagos",
+            "\"Lagos lagoon\" overflow",
+            "\"release of water\" Lagos",
+            "Isheri OR Ajegunle OR \"Owode Onirin\" OR Agboyi flood 2017"
+          ],
+          "outlets": {
+            "Anadolu": "year_query_is_otodo_gbame_april_and_benue_sept_not_lagos_street; six_dead_oyan_is_2019",
+            "Punch": "already_pass1_11_may"
+          },
+          "hits_screened": 4,
+          "kept": 0,
+          "excluded": 0,
+          "minutes": 8
+        },
+        "n_queries": 3
+      },
+      {
+        "year_month": "2017-06",
+        "outlets": {
+          "Punch": "reached_nihsa_outlook_excluded",
+          "Vanguard": "reached_otta_ogun_state_excluded",
+          "Guardian NG": "reached_no_qualifying_day",
+          "Premium Times": "reached_no_qualifying_day",
+          "Channels TV": "reached_no_qualifying_day",
+          "TVC": "reached_no_qualifying_day",
+          "Daily Trust": "reached_no_qualifying_day",
+          "BBC Pidgin": "reached_no_qualifying_day",
+          "Nairametrics": "reached_no_qualifying_day",
+          "X:LASEMA": "not_reached",
+          "X:Lagos_MoE": "not_reached",
+          "X:NEMA": "not_reached"
+        },
+        "hits_screened": 11,
+        "kept": 0,
+        "excluded": 3,
+        "minutes": 20,
+        "pass2": {
+          "queries": [
+            "\"Lagos flood\" dead OR died OR drowned OR killed OR \"swept away\" OR bodies 2017",
+            "\"Oyan Dam\" Lagos 2017",
+            "\"Ogun River\" overflow Lagos",
+            "\"Lagos lagoon\" overflow",
+            "\"release of water\" Lagos",
+            "Isheri OR Ajegunle OR \"Owode Onirin\" OR Agboyi flood 2017"
+          ],
+          "outlets": {
+            "Anadolu": "year_query_is_otodo_gbame_april_and_benue_sept_not_lagos_street; six_dead_oyan_is_2019",
+            "thenet.ng": "vgc_6_jun_lead_not_task26_outlet",
+            "Vanguard": "5_jun_otta_ogun_not_lagos_state"
+          },
+          "hits_screened": 5,
+          "kept": 0,
+          "excluded": 2,
+          "minutes": 8
+        },
+        "n_queries": 3
+      },
+      {
+        "year_month": "2017-07",
+        "outlets": {
+          "Punch": "reached",
+          "Vanguard": "reached",
+          "Guardian NG": "reached",
+          "Premium Times": "reached_no_qualifying_day",
+          "Channels TV": "reached",
+          "TVC": "reached_no_qualifying_day",
+          "Daily Trust": "reached",
+          "BBC Pidgin": "reached_no_qualifying_day",
+          "Nairametrics": "reached_no_qualifying_day",
+          "X:LASEMA": "not_reached",
+          "X:Lagos_MoE": "not_reached",
+          "X:NEMA": "not_reached"
+        },
+        "hits_screened": 28,
+        "kept": 12,
+        "excluded": 6,
+        "minutes": 55,
+        "pass2": {
+          "queries": [
+            "\"Lagos flood\" dead OR died OR drowned OR killed OR \"swept away\" OR bodies 2017",
+            "\"Oyan Dam\" Lagos 2017",
+            "\"Ogun River\" overflow Lagos",
+            "\"Lagos lagoon\" overflow",
+            "\"release of water\" Lagos",
+            "Isheri OR Ajegunle OR \"Owode Onirin\" OR Agboyi flood 2017"
+          ],
+          "outlets": {
+            "Anadolu": "year_query_is_otodo_gbame_april_and_benue_sept_not_lagos_street; six_dead_oyan_is_2019",
+            "Punch": "baby_revived_not_death; meiran_collapse_not_flood_death",
+            "Vanguard": "meiran_collapse_and_insurance_20_killed_unsourced_excluded",
+            "Daily Trust": "farinloye_no_lagos_casualty"
+          },
+          "hits_screened": 8,
+          "kept": 0,
+          "excluded": 3,
+          "minutes": 12
+        },
+        "n_queries": 6
+      },
+      {
+        "year_month": "2017-08",
+        "outlets": {
+          "Punch": "reached_no_qualifying_day",
+          "Vanguard": "reached_oyan_warning_and_insurance_feature_excluded",
+          "Guardian NG": "reached_no_qualifying_day",
+          "Premium Times": "reached_no_qualifying_day",
+          "Channels TV": "reached_drainage_roadmap_not_day",
+          "TVC": "reached_no_qualifying_day",
+          "Daily Trust": "reached_no_qualifying_day",
+          "BBC Pidgin": "reached_no_qualifying_day",
+          "Nairametrics": "reached_no_qualifying_day",
+          "X:LASEMA": "not_reached",
+          "X:Lagos_MoE": "not_reached",
+          "X:NEMA": "not_reached"
+        },
+        "hits_screened": 10,
+        "kept": 0,
+        "excluded": 4,
+        "minutes": 18,
+        "pass2": {
+          "queries": [
+            "\"Lagos flood\" dead OR died OR drowned OR killed OR \"swept away\" OR bodies 2017",
+            "\"Oyan Dam\" Lagos 2017",
+            "\"Ogun River\" overflow Lagos",
+            "\"Lagos lagoon\" overflow",
+            "\"release of water\" Lagos",
+            "Isheri OR Ajegunle OR \"Owode Onirin\" OR Agboyi flood 2017"
+          ],
+          "outlets": {
+            "Anadolu": "ilashe_boat_capsize_20_aug_not_flood",
+            "Vanguard": "oyan_release_warning_28_29_aug_not_observed_day; insurance_20_killed_unsourced"
+          },
+          "hits_screened": 7,
+          "kept": 0,
+          "excluded": 3,
+          "minutes": 10
+        },
+        "n_queries": 3
+      },
+      {
+        "year_month": "2017-09",
+        "outlets": {
+          "Punch": "reached_no_same_day_keep",
+          "Vanguard": "reached",
+          "Guardian NG": "reached_sandfill_comment_not_day",
+          "Premium Times": "reached_no_qualifying_day",
+          "Channels TV": "reached_no_qualifying_day",
+          "TVC": "reached_no_qualifying_day",
+          "Daily Trust": "reached_no_qualifying_day",
+          "BBC Pidgin": "reached_no_qualifying_day",
+          "Nairametrics": "reached_no_qualifying_day",
+          "X:LASEMA": "not_reached",
+          "X:Lagos_MoE": "not_reached",
+          "X:NEMA": "not_reached"
+        },
+        "hits_screened": 14,
+        "kept": 1,
+        "excluded": 3,
+        "minutes": 28,
+        "pass2": {
+          "queries": [
+            "\"Lagos flood\" dead OR died OR drowned OR killed OR \"swept away\" OR bodies 2017",
+            "\"Oyan Dam\" Lagos 2017",
+            "\"Ogun River\" overflow Lagos",
+            "\"Lagos lagoon\" overflow",
+            "\"release of water\" Lagos",
+            "Isheri OR Ajegunle OR \"Owode Onirin\" OR Agboyi flood 2017"
+          ],
+          "outlets": {
+            "Anadolu": "benue_displacement_not_lagos_street",
+            "Vanguard": "already_pass1_11_sep",
+            "The Nation": "11_sep_lead_confirmed_in_vanguard"
+          },
+          "hits_screened": 5,
+          "kept": 0,
+          "excluded": 1,
+          "minutes": 8
+        },
+        "n_queries": 3
+      },
+      {
+        "year_month": "2017-10",
+        "outlets": {
+          "Punch": "reached_planners_feature_not_dated_street_day",
+          "Vanguard": "reached_no_qualifying_day",
+          "Guardian NG": "reached_roads_whenever_it_rains_excluded",
+          "Premium Times": "reached_no_qualifying_day",
+          "Channels TV": "reached_no_qualifying_day",
+          "TVC": "reached_no_qualifying_day",
+          "Daily Trust": "reached_no_qualifying_day",
+          "BBC Pidgin": "reached_no_qualifying_day",
+          "Nairametrics": "reached_no_qualifying_day",
+          "X:LASEMA": "not_reached",
+          "X:Lagos_MoE": "not_reached",
+          "X:NEMA": "not_reached"
+        },
+        "hits_screened": 10,
+        "kept": 0,
+        "excluded": 3,
+        "minutes": 18,
+        "pass2": {
+          "queries": [
+            "\"Lagos flood\" dead OR died OR drowned OR killed OR \"swept away\" OR bodies 2017",
+            "\"Oyan Dam\" Lagos 2017",
+            "\"Ogun River\" overflow Lagos",
+            "\"Lagos lagoon\" overflow",
+            "\"release of water\" Lagos",
+            "Isheri OR Ajegunle OR \"Owode Onirin\" OR Agboyi flood 2017"
+          ],
+          "outlets": {
+            "Anadolu": "year_query_is_otodo_gbame_april_and_benue_sept_not_lagos_street; six_dead_oyan_is_2019",
+            "Punch": "third_mainland_crash_and_lekki_bridge_jump_not_flood"
+          },
+          "hits_screened": 5,
+          "kept": 0,
+          "excluded": 2,
+          "minutes": 8
+        },
+        "n_queries": 3
+      },
+      {
+        "year_month": "2017-11",
+        "outlets": {
+          "Punch": "reached",
+          "Vanguard": "reached_apapa_gridlock_not_flood",
+          "Guardian NG": "reached_no_qualifying_day",
+          "Premium Times": "reached_no_qualifying_day",
+          "Channels TV": "reached_no_qualifying_day",
+          "TVC": "reached_no_qualifying_day",
+          "Daily Trust": "reached_no_qualifying_day",
+          "BBC Pidgin": "reached_no_qualifying_day",
+          "Nairametrics": "reached_no_qualifying_day",
+          "X:LASEMA": "not_reached",
+          "X:Lagos_MoE": "not_reached",
+          "X:NEMA": "not_reached"
+        },
+        "hits_screened": 9,
+        "kept": 1,
+        "excluded": 1,
+        "minutes": 22,
+        "pass2": {
+          "queries": [
+            "\"Lagos flood\" dead OR died OR drowned OR killed OR \"swept away\" OR bodies 2017",
+            "\"Oyan Dam\" Lagos 2017",
+            "\"Ogun River\" overflow Lagos",
+            "\"Lagos lagoon\" overflow",
+            "\"release of water\" Lagos",
+            "Isheri OR Ajegunle OR \"Owode Onirin\" OR Agboyi flood 2017"
+          ],
+          "outlets": {
+            "Anadolu": "year_query_is_otodo_gbame_april_and_benue_sept_not_lagos_street; six_dead_oyan_is_2019",
+            "Punch": "already_pass1_4_nov"
+          },
+          "hits_screened": 4,
+          "kept": 0,
+          "excluded": 0,
+          "minutes": 6
+        },
+        "n_queries": 3
+      },
+      {
+        "year_month": "2017-12",
+        "outlets": {
+          "note": "out-of-season check; pass 1 not run"
+        },
+        "hits_screened": 2,
+        "kept": 0,
+        "excluded": 0,
+        "minutes": 4,
+        "pass2": {
+          "queries": [
+            "flood Lagos December 2017",
+            "\"Lagos flood\" dead OR died OR drowned OR killed OR \"swept away\" OR bodies 2017"
+          ],
+          "outlets": {
+            "Anadolu": "year_query_is_otodo_gbame_april_and_benue_sept_not_lagos_street; six_dead_oyan_is_2019",
+            "Punch": "reached_no_dec_flood_day"
+          },
+          "hits_screened": 3,
+          "kept": 0,
+          "excluded": 0,
+          "minutes": 6
+        },
+        "n_queries": 1
+      },
       {
         "year_month": "2018-01",
         "outlets": {
@@ -3860,6 +4286,1542 @@
   },
   "days": [
     {
+      "date": "2017-05-11",
+      "areas": [
+        {
+          "name": "Akilo Road, Ogba",
+          "lon": 3.3355685,
+          "lat": 6.6170208,
+          "confidence": "street",
+          "geocoded_from": null,
+          "display_name": "Akilo Road/Ogba, Akilo Road, Agege, Lagos, 100282, Nigeria"
+        },
+        {
+          "name": "Ikeja",
+          "lon": 3.3515981,
+          "lat": 6.601627,
+          "confidence": "city",
+          "geocoded_from": null,
+          "display_name": "Ikeja, Lagos, Nigeria"
+        }
+      ],
+      "n_sources": 1,
+      "n_outlets": 1,
+      "impacts": [
+        "Thursday morning heavy rain: some roads in the Ikeja axis flooded; motorists waded. No death reported."
+      ],
+      "causes": [
+        "heavy_rain"
+      ],
+      "flood_type": "pluvial",
+      "flood_type_reports": {
+        "pluvial": 1,
+        "riverine": 0,
+        "lagoon": 0
+      },
+      "episode_id": null,
+      "rain": {
+        "date_covered": true,
+        "aoi_mean_mm": 9.13,
+        "wettest_cell": {
+          "id": "c6.75N3.15E",
+          "mm": 21.68,
+          "place": "Alimosho / Ipaja"
+        },
+        "cells_ge_50mm": 0,
+        "pop_weighted_rain_mm": 11.41,
+        "area_cells": {
+          "Akilo Road, Ogba": {
+            "cell_id": "c6.65N3.35E",
+            "place": "Ojodu Berger",
+            "total_mm": 19.39
+          },
+          "Ikeja": {
+            "cell_id": "c6.65N3.35E",
+            "place": "Ojodu Berger",
+            "total_mm": 19.39
+          }
+        },
+        "local": {
+          "n_areas_geocoded": 2,
+          "n_cells": 1,
+          "flood_day": {
+            "date": "2017-05-11",
+            "max_total_mm": 19.39,
+            "median_total_mm": 19.39
+          },
+          "previous_day": {
+            "date": "2017-05-10",
+            "max_total_mm": 0.0,
+            "median_total_mm": 0.0
+          },
+          "local_max_2d_mm": 19.39,
+          "max_30min_mm_h_2d": 12.17
+        }
+      },
+      "candidate_rank": null,
+      "tier_a_event_id": null,
+      "promote": false,
+      "promote_reasons": [],
+      "deaths_note": null,
+      "deaths_review": [
+        {
+          "id": "r2017-001",
+          "matched": "death"
+        }
+      ],
+      "reports": [
+        {
+          "url": "https://punchng.com/downpour-leads-to-flooding-on-lagos-roads/",
+          "publisher": "Punch",
+          "published_at": "2017-05-11T14:58:00+01:00",
+          "read_status": "read",
+          "date": "2017-05-11",
+          "date_confidence": "exact",
+          "quote": "As the rains poured heavily on Thursday morning, some roads in Ikeja axis of Lagos State were flooded",
+          "causes": [
+            "heavy_rain"
+          ],
+          "cause_attributed_by": "journalist",
+          "cause_who": null,
+          "cause_quote": "As the rains poured heavily on Thursday morning, some roads in Ikeja axis of Lagos State were flooded"
+        }
+      ]
+    },
+    {
+      "date": "2017-07-08",
+      "areas": [
+        {
+          "name": "Ajah",
+          "lon": 3.5623861,
+          "lat": 6.4694716,
+          "confidence": "area",
+          "geocoded_from": null,
+          "display_name": "Ajah, Eti Osa, Lagos, 101245, Nigeria"
+        },
+        {
+          "name": "Ikoyi",
+          "lon": 3.4280523,
+          "lat": 6.4523431,
+          "confidence": "area",
+          "geocoded_from": null,
+          "display_name": "Ikoyi, Eti Osa, Lagos, 332222, Nigeria"
+        },
+        {
+          "name": "Lekki",
+          "lon": 3.4704698,
+          "lat": 6.4413987,
+          "confidence": "area",
+          "geocoded_from": null,
+          "display_name": "Lekki Phase I, Eti Osa, Lagos, 101244, Nigeria"
+        },
+        {
+          "name": "Victoria Island",
+          "lon": 3.4259904,
+          "lat": 6.4300279,
+          "confidence": "area",
+          "geocoded_from": null,
+          "display_name": "Victoria Island, Eti Osa, Lagos, 500001, Nigeria"
+        },
+        {
+          "name": "Lekki Phase I",
+          "lon": 3.4704698,
+          "lat": 6.4413987,
+          "confidence": "area",
+          "geocoded_from": null,
+          "display_name": "Lekki Phase I, Eti Osa, Lagos, 101244, Nigeria"
+        },
+        {
+          "name": "Lekki Free Trade Zone",
+          "lon": 4.0004157,
+          "lat": 6.5307684,
+          "confidence": "area",
+          "geocoded_from": null,
+          "display_name": "Lekki Free Trade Zone, Epe, Lagos, Nigeria"
+        },
+        {
+          "name": "Lekki Phase II",
+          "lon": 3.5781822,
+          "lat": 6.4538491,
+          "confidence": "area",
+          "geocoded_from": null,
+          "display_name": "Lekki Phase II, Ajah, Eti Osa, Lagos, 101245, Nigeria"
+        },
+        {
+          "name": "Osapa London",
+          "lon": 3.5083077,
+          "lat": 6.4445362,
+          "confidence": "area",
+          "geocoded_from": null,
+          "display_name": "Osapa London, Jakande, Eti Osa, Lagos, 101244, Nigeria"
+        },
+        {
+          "name": "Victoria Garden City",
+          "lon": 3.5465209,
+          "lat": 6.4640452,
+          "confidence": "area",
+          "geocoded_from": null,
+          "display_name": "Victoria Garden City, Eleganza, Ajah, Eti Osa, Lagos, Nigeria"
+        },
+        {
+          "name": "Banana Island",
+          "lon": 3.452867,
+          "lat": 6.4642221,
+          "confidence": "area",
+          "geocoded_from": null,
+          "display_name": "Banana Island, Ikoyi, Eti Osa, Lagos, 101001, Nigeria"
+        },
+        {
+          "name": "Badore",
+          "lon": 3.6159537,
+          "lat": 6.5099252,
+          "confidence": "area",
+          "geocoded_from": null,
+          "display_name": "Badore, Eti Osa, Lagos, 101245, Nigeria"
+        },
+        {
+          "name": "Bugije",
+          "lon": null,
+          "lat": null,
+          "confidence": null,
+          "geocoded_from": null,
+          "display_name": null
+        },
+        {
+          "name": "Igbo Efon",
+          "lon": 3.5230757,
+          "lat": 6.4370225,
+          "confidence": "area",
+          "geocoded_from": null,
+          "display_name": "Igbo-Efon, Lekki Peninsula II, Eti Osa, Lagos, Nigeria"
+        },
+        {
+          "name": "Awoyaya",
+          "lon": 3.7045571,
+          "lat": 6.4697148,
+          "confidence": "area",
+          "geocoded_from": null,
+          "display_name": "Awoyaya, Ibeju Lekki, Lagos, Nigeria"
+        },
+        {
+          "name": "Adetokunbo Ademola, Victoria Island",
+          "lon": 3.4259904,
+          "lat": 6.4300279,
+          "confidence": "neighbourhood",
+          "geocoded_from": "Victoria Island",
+          "display_name": "Victoria Island, Eti Osa, Lagos, 500001, Nigeria"
+        },
+        {
+          "name": "Ahmadu Bello Way",
+          "lon": 3.4091233,
+          "lat": 6.4271554,
+          "confidence": "street",
+          "geocoded_from": null,
+          "display_name": "Ahmadu Bello Way, Eko Atlantic, Eti Osa, Lagos, 101241, Nigeria"
+        },
+        {
+          "name": "Obalende",
+          "lon": 3.4061391,
+          "lat": 6.449079,
+          "confidence": "area",
+          "geocoded_from": null,
+          "display_name": "Obalende, Lagos, Lagos Island, Lagos, 101222, Nigeria"
+        },
+        {
+          "name": "Lekki-Epe Expressway",
+          "lon": 3.5295098,
+          "lat": 6.4408494,
+          "confidence": "street",
+          "geocoded_from": null,
+          "display_name": "Lekki-Epe Expressway, Eleganza, Lekki Peninsula II, Eti Osa, Lagos, Nigeria"
+        },
+        {
+          "name": "Jakande First Gate Estate, Lekki Phase I",
+          "lon": 3.4704698,
+          "lat": 6.4413987,
+          "confidence": "neighbourhood",
+          "geocoded_from": "Lekki Phase I",
+          "display_name": "Lekki Phase I, Eti Osa, Lagos, 101244, Nigeria"
+        },
+        {
+          "name": "Ilasan",
+          "lon": 3.496132,
+          "lat": 6.4288319,
+          "confidence": "area",
+          "geocoded_from": null,
+          "display_name": "Ilasan New Road, Alaguntan, Eti Osa, Lagos, Nigeria"
+        },
+        {
+          "name": "Ahmadu Bello Way, Victoria Island",
+          "lon": 3.4114086,
+          "lat": 6.4225484,
+          "confidence": "street",
+          "geocoded_from": null,
+          "display_name": "Ahmadu Bello Way, Victoria Island, Eti Osa, Lagos, 101241, Nigeria"
+        },
+        {
+          "name": "Egbeda",
+          "lon": 3.288964,
+          "lat": 6.5912072,
+          "confidence": "area",
+          "geocoded_from": null,
+          "display_name": "Egbeda, Alimosho, Lagos, 102213, Nigeria"
+        },
+        {
+          "name": "Ikotun",
+          "lon": 3.2682658,
+          "lat": 6.5522982,
+          "confidence": "area",
+          "geocoded_from": null,
+          "display_name": "Ikotun, Alimosho, Lagos, 102214, Nigeria"
+        },
+        {
+          "name": "Satellite Town",
+          "lon": 3.2558405,
+          "lat": 6.4497407,
+          "confidence": "area",
+          "geocoded_from": null,
+          "display_name": "Satellite Town, Aiyetoto-Asogun, Amuwo Odofin, Lagos, 102113, Nigeria"
+        },
+        {
+          "name": "FESTAC",
+          "lon": 3.2839374,
+          "lat": 6.4682727,
+          "confidence": "area",
+          "geocoded_from": null,
+          "display_name": "Festac, Amuwo Odofin, Lagos, 102102, Nigeria"
+        },
+        {
+          "name": "Ijegun",
+          "lon": 3.254866,
+          "lat": 6.516155,
+          "confidence": "area",
+          "geocoded_from": null,
+          "display_name": "Ijegun, Ije Ododo, Alimosho, Lagos, 102113, Nigeria"
+        },
+        {
+          "name": "Ogombo",
+          "lon": 3.6137358,
+          "lat": 6.4503484,
+          "confidence": "area",
+          "geocoded_from": null,
+          "display_name": "Ogombo, Sangotedo, Eti Osa, Lagos, 101245, Nigeria"
+        },
+        {
+          "name": "Owode",
+          "lon": 2.9827021,
+          "lat": 6.6979989,
+          "confidence": "area",
+          "geocoded_from": null,
+          "display_name": "Owode, Yewa South, Ogun, Nigeria"
+        },
+        {
+          "name": "New Town estate",
+          "lon": null,
+          "lat": null,
+          "confidence": null,
+          "geocoded_from": null,
+          "display_name": null
+        },
+        {
+          "name": "Greenland estate",
+          "lon": null,
+          "lat": null,
+          "confidence": null,
+          "geocoded_from": null,
+          "display_name": null
+        },
+        {
+          "name": "Olokonla",
+          "lon": 3.6083292,
+          "lat": 6.4677902,
+          "confidence": "area",
+          "geocoded_from": null,
+          "display_name": "Olokonla, Sangotedo, Eti Osa, Lagos, 101245, Nigeria"
+        },
+        {
+          "name": "Okun-Ajah",
+          "lon": 3.5926861,
+          "lat": 6.4270724,
+          "confidence": "area",
+          "geocoded_from": null,
+          "display_name": "Okun-Ajah, Eti Osa, Lagos, 101245, Nigeria"
+        },
+        {
+          "name": "Ikonta village",
+          "lon": null,
+          "lat": null,
+          "confidence": null,
+          "geocoded_from": null,
+          "display_name": null
+        },
+        {
+          "name": "VGC",
+          "lon": null,
+          "lat": null,
+          "confidence": null,
+          "geocoded_from": null,
+          "display_name": null
+        },
+        {
+          "name": "Adeola Odeku",
+          "lon": null,
+          "lat": null,
+          "confidence": null,
+          "geocoded_from": null,
+          "display_name": null
+        },
+        {
+          "name": "Ijanikin",
+          "lon": 3.1207995,
+          "lat": 6.4966575,
+          "confidence": "area",
+          "geocoded_from": null,
+          "display_name": "Ijanikin, Ojo, Lagos, Nigeria"
+        },
+        {
+          "name": "Mile 2-Badagry expressway",
+          "lon": 3.3134047,
+          "lat": 6.4587943,
+          "confidence": "neighbourhood",
+          "geocoded_from": "Mile 2",
+          "display_name": "Mile 2, Amuwo Odofin, Lagos, 102102, Nigeria"
+        },
+        {
+          "name": "Osapa, Lekki",
+          "lon": 3.5083077,
+          "lat": 6.4445362,
+          "confidence": "area",
+          "geocoded_from": null,
+          "display_name": "Osapa London, Jakande, Eti Osa, Lagos, 101244, Nigeria"
+        },
+        {
+          "name": "Eti-Osa",
+          "lon": null,
+          "lat": null,
+          "confidence": null,
+          "geocoded_from": null,
+          "display_name": null
+        },
+        {
+          "name": "Lekki Transmission Station",
+          "lon": 3.4704698,
+          "lat": 6.4413987,
+          "confidence": "neighbourhood",
+          "geocoded_from": "Lekki",
+          "display_name": "Lekki Phase I, Eti Osa, Lagos, 101244, Nigeria"
+        },
+        {
+          "name": "Agungi",
+          "lon": 3.5181123,
+          "lat": 6.4470015,
+          "confidence": "area",
+          "geocoded_from": null,
+          "display_name": "Agungi, Lekki Peninsula II, Eti Osa, Lagos, 101244, Nigeria"
+        },
+        {
+          "name": "Ademola",
+          "lon": null,
+          "lat": null,
+          "confidence": null,
+          "geocoded_from": null,
+          "display_name": null
+        },
+        {
+          "name": "Anifowoshe",
+          "lon": null,
+          "lat": null,
+          "confidence": null,
+          "geocoded_from": null,
+          "display_name": null
+        },
+        {
+          "name": "Water Front",
+          "lon": null,
+          "lat": null,
+          "confidence": null,
+          "geocoded_from": null,
+          "display_name": null
+        },
+        {
+          "name": "Maroko",
+          "lon": 3.4551385,
+          "lat": 6.4288783,
+          "confidence": "area",
+          "geocoded_from": null,
+          "display_name": "Maroko, Lekki Phase I, Eti Osa, Lagos, 023401, Nigeria"
+        },
+        {
+          "name": "Oniru",
+          "lon": null,
+          "lat": null,
+          "confidence": null,
+          "geocoded_from": null,
+          "display_name": null
+        },
+        {
+          "name": "Lekki Peninsula",
+          "lon": 3.5271864,
+          "lat": 6.4432965,
+          "confidence": "area",
+          "geocoded_from": null,
+          "display_name": "Chevyview Estate, Lekki, Chevron, Lekki Peninsula II, Eti Osa, Lagos, Nigeria"
+        },
+        {
+          "name": "Epe",
+          "lon": 3.975694,
+          "lat": 6.5857286,
+          "confidence": "city",
+          "geocoded_from": null,
+          "display_name": "Epe, Lagos, 106102, Nigeria"
+        },
+        {
+          "name": "Ibeju",
+          "lon": 3.8883472,
+          "lat": 6.4848676,
+          "confidence": "area",
+          "geocoded_from": null,
+          "display_name": "Ibeju, Ibeju Lekki, Lagos, Nigeria"
+        },
+        {
+          "name": "New Town Estate",
+          "lon": null,
+          "lat": null,
+          "confidence": null,
+          "geocoded_from": null,
+          "display_name": null
+        },
+        {
+          "name": "Greenland Estate",
+          "lon": null,
+          "lat": null,
+          "confidence": null,
+          "geocoded_from": null,
+          "display_name": null
+        },
+        {
+          "name": "Sanusi Fafunwa Street, Victoria Island",
+          "lon": 3.4272267,
+          "lat": 6.4311286,
+          "confidence": "street",
+          "geocoded_from": null,
+          "display_name": "Sanusi Fafunwa Street, Victoria Island, Eti Osa, Lagos, 500001, Nigeria"
+        },
+        {
+          "name": "Ojo",
+          "lon": 3.1902415,
+          "lat": 6.4643342,
+          "confidence": "area",
+          "geocoded_from": null,
+          "display_name": "Ojo, Lagos, 102113, Nigeria"
+        }
+      ],
+      "n_sources": 11,
+      "n_outlets": 5,
+      "impacts": [
+        "Friday-night and Saturday-morning heavy rain: hundreds of homes and roads flooded. Residents stranded or fled to hotels/friends on the Mainland on Saturday after water entered homes. Commuters paid N1,000 to be carried; some swam. Motorists paid N1,500\u2013N2,500 to have vehicles pushed at Lekki Phase 1. Tricycle fares rose from N50 to N150. Police closed Ahmadu Bello Way after flood reached a filling-station diesel store. No death reported in this article.",
+        "Friday and Saturday rain: hundreds of homes and roads flooded; residents displaced. Israel Ominyi vacated with wife and four-month-old after water entered his Lekki Phase I house. Justina Odikpo slept in an uncompleted building after flood took her Ilasan apartment on Saturday. PUNCH Metro got no death record from government agencies on Sunday. Radio presenter Temilola Akinmuda said a baby fell into water, lost consciousness and was revived; taken to hospital. LASEMA GM Adeshina Tiamiyu said government was working to bring succour.",
+        "Heavy downpour lasting several hours: Lekki among worst hit; residents unable to leave homes. Victoria Island, VGC and Ajah also affected. Police commissioner Fatai Owoseni, interviewed Saturday, asked road users to avoid Ahmadu Bello Way until water was drained. No death reported.",
+        "Correspondent on Saturday afternoon: water on major roads at Egbeda, Ikotun, Satellite and FESTAC; walking difficult. Highbrow Lekki, VI and Ikoyi used canoes. Taiwo Adejanbi still fetching water from living quarters since Friday; worse after Saturday downpour. Buildings submerged at Ogombo, Owode, New Town, Greenland, Olokonla, Okun-Ajah, Ikonta, VGC; some residents moving property. Ahmadu Bello Way to NTA/Silverbird and part of Adeola Odeku flooded; cars submerged. CMS\u2013Ajah fare N250 to N500. Police PRO Olarinde Famous-Cole: Ahmadu Bello Way temporarily closed. No death reported.",
+        "Photo report: flood ravaged Lekki and Victoria Island in Eti-Osa after many days of downpour. No death reported.",
+        "Saturday heavy rain: EKEDC injection substations and equipment submerged. Transformers in the areas submerged. Supply deloaded for safety. VGC, Water Front, Maroko and Oniru injection stations completely out. Power outage in Ikoyi, Victoria Island and environs. No death reported.",
+        "Weekend pounding rains: many homes, shops and roads flooded; residents scooping water from houses; some relocated property. Flood up to six feet high over the roads. No fatality reported. Commissioner Adejare on-the-spot Saturday said the flood had subsided.",
+        "Torrential rainfall over the last few days. Worst hit Lekki\u2013Victoria Island axis: motorists on Saturday spent up to six hours to escape water-logged roads. Heavy floods took over Ahmadu Bello Way; some residents and offices vacated. Police temporarily closed the road. No death reported.",
+        "Saturday flood in Lekki, Victoria Island and Ikoyi (Punch spelling: Vicroria Island). Ambode said people lost property. Ade Adesanya said torrential rain in the past few days accumulated 477mm of water. No death reported.",
+        "Flood that wrecked Victoria Island, Lekki, Oniru, Ajah and Epe. Adejare, after inspecting affected areas, said emergency lines 112 and 767 were open. No death reported in this article.",
+        "After five days of torrential rain: residents in Ibeju, Lekki, Ajah, Ikoyi, Victoria Island, Satellite Town and Egbeda counting losses. Most buildings submerged at Ogombo, Owode, New Town, Greenland, Olokonla, Okun-Ajah, Ikonta, VGC. NEMA South-West PRO Ibrahim Farinloye: no casualty or major disaster in Lagos after touring flooded areas that had since dried. LASEMA GM Tiamiyu Adesina described preparedness, not deaths."
+      ],
+      "causes": [
+        "blocked_drainage",
+        "drainage_capacity",
+        "heavy_rain",
+        "lagoon_tide",
+        "land_reclamation",
+        "setback_encroachment"
+      ],
+      "flood_type": "pluvial",
+      "flood_type_reports": {
+        "pluvial": 11,
+        "riverine": 0,
+        "lagoon": 0
+      },
+      "episode_id": null,
+      "rain": {
+        "date_covered": true,
+        "aoi_mean_mm": 27.45,
+        "wettest_cell": {
+          "id": "c6.45N2.95E",
+          "mm": 73.41,
+          "place": "Badagry"
+        },
+        "cells_ge_50mm": 5,
+        "pop_weighted_rain_mm": 33.99,
+        "area_cells": {
+          "Ajah": {
+            "cell_id": "c6.45N3.55E",
+            "place": "Ajah",
+            "total_mm": 61.56
+          },
+          "Ikoyi": {
+            "cell_id": "c6.45N3.45E",
+            "place": "Ikoyi",
+            "total_mm": 44.41
+          },
+          "Lekki": {
+            "cell_id": "c6.45N3.45E",
+            "place": "Ikoyi",
+            "total_mm": 44.41
+          },
+          "Victoria Island": {
+            "cell_id": "c6.45N3.45E",
+            "place": "Ikoyi",
+            "total_mm": 44.41
+          },
+          "Lekki Phase I": {
+            "cell_id": "c6.45N3.45E",
+            "place": "Ikoyi",
+            "total_mm": 44.41
+          },
+          "Lekki Free Trade Zone": {
+            "cell_id": "c6.55N4.05E",
+            "place": "Epe",
+            "total_mm": 19.74
+          },
+          "Lekki Phase II": {
+            "cell_id": "c6.45N3.55E",
+            "place": "Ajah",
+            "total_mm": 61.56
+          },
+          "Osapa London": {
+            "cell_id": "c6.45N3.55E",
+            "place": "Ajah",
+            "total_mm": 61.56
+          },
+          "Victoria Garden City": {
+            "cell_id": "c6.45N3.55E",
+            "place": "Ajah",
+            "total_mm": 61.56
+          },
+          "Banana Island": {
+            "cell_id": "c6.45N3.45E",
+            "place": "Ikoyi",
+            "total_mm": 44.41
+          },
+          "Badore": {
+            "cell_id": "c6.55N3.65E",
+            "place": "Sangotedo",
+            "total_mm": 37.72
+          },
+          "Igbo Efon": {
+            "cell_id": "c6.45N3.55E",
+            "place": "Ajah",
+            "total_mm": 61.56
+          },
+          "Awoyaya": {
+            "cell_id": "c6.45N3.75E",
+            "place": "Sangotedo",
+            "total_mm": 40.48
+          },
+          "Adetokunbo Ademola, Victoria Island": {
+            "cell_id": "c6.45N3.45E",
+            "place": "Ikoyi",
+            "total_mm": 44.41
+          },
+          "Ahmadu Bello Way": {
+            "cell_id": "c6.45N3.45E",
+            "place": "Ikoyi",
+            "total_mm": 44.41
+          },
+          "Obalende": {
+            "cell_id": "c6.45N3.45E",
+            "place": "Ikoyi",
+            "total_mm": 44.41
+          },
+          "Lekki-Epe Expressway": {
+            "cell_id": "c6.45N3.55E",
+            "place": "Ajah",
+            "total_mm": 61.56
+          },
+          "Jakande First Gate Estate, Lekki Phase I": {
+            "cell_id": "c6.45N3.45E",
+            "place": "Ikoyi",
+            "total_mm": 44.41
+          },
+          "Ilasan": {
+            "cell_id": "c6.45N3.45E",
+            "place": "Ikoyi",
+            "total_mm": 44.41
+          },
+          "Ahmadu Bello Way, Victoria Island": {
+            "cell_id": "c6.45N3.45E",
+            "place": "Ikoyi",
+            "total_mm": 44.41
+          },
+          "Egbeda": {
+            "cell_id": "c6.55N3.25E",
+            "place": "Igando",
+            "total_mm": 39.45
+          },
+          "Ikotun": {
+            "cell_id": "c6.55N3.25E",
+            "place": "Igando",
+            "total_mm": 39.45
+          },
+          "Satellite Town": {
+            "cell_id": "c6.45N3.25E",
+            "place": "Festac Town",
+            "total_mm": 46.53
+          },
+          "FESTAC": {
+            "cell_id": "c6.45N3.25E",
+            "place": "Festac Town",
+            "total_mm": 46.53
+          },
+          "Ijegun": {
+            "cell_id": "c6.55N3.25E",
+            "place": "Igando",
+            "total_mm": 39.45
+          },
+          "Ogombo": {
+            "cell_id": "c6.45N3.65E",
+            "place": "Sangotedo",
+            "total_mm": 60.52
+          },
+          "Owode": {
+            "cell_id": "c6.65N2.95E",
+            "place": "Badagry",
+            "total_mm": 20.97
+          },
+          "Olokonla": {
+            "cell_id": "c6.45N3.65E",
+            "place": "Sangotedo",
+            "total_mm": 60.52
+          },
+          "Okun-Ajah": {
+            "cell_id": "c6.45N3.55E",
+            "place": "Ajah",
+            "total_mm": 61.56
+          },
+          "Ijanikin": {
+            "cell_id": "c6.45N3.15E",
+            "place": "Ijanikin",
+            "total_mm": 36.24
+          },
+          "Mile 2-Badagry expressway": {
+            "cell_id": "c6.45N3.35E",
+            "place": "Apapa",
+            "total_mm": 48.99
+          },
+          "Osapa, Lekki": {
+            "cell_id": "c6.45N3.55E",
+            "place": "Ajah",
+            "total_mm": 61.56
+          },
+          "Lekki Transmission Station": {
+            "cell_id": "c6.45N3.45E",
+            "place": "Ikoyi",
+            "total_mm": 44.41
+          },
+          "Agungi": {
+            "cell_id": "c6.45N3.55E",
+            "place": "Ajah",
+            "total_mm": 61.56
+          },
+          "Maroko": {
+            "cell_id": "c6.45N3.45E",
+            "place": "Ikoyi",
+            "total_mm": 44.41
+          },
+          "Lekki Peninsula": {
+            "cell_id": "c6.45N3.55E",
+            "place": "Ajah",
+            "total_mm": 61.56
+          },
+          "Epe": {
+            "cell_id": "c6.55N3.95E",
+            "place": "Ibeju",
+            "total_mm": 23.81
+          },
+          "Ibeju": {
+            "cell_id": "c6.45N3.85E",
+            "place": "Ibeju",
+            "total_mm": 39.29
+          },
+          "Sanusi Fafunwa Street, Victoria Island": {
+            "cell_id": "c6.45N3.45E",
+            "place": "Ikoyi",
+            "total_mm": 44.41
+          },
+          "Ojo": {
+            "cell_id": "c6.45N3.15E",
+            "place": "Ijanikin",
+            "total_mm": 36.24
+          }
+        },
+        "local": {
+          "n_areas_geocoded": 40,
+          "n_cells": 13,
+          "flood_day": {
+            "date": "2017-07-08",
+            "max_total_mm": 61.56,
+            "median_total_mm": 39.45
+          },
+          "previous_day": {
+            "date": "2017-07-07",
+            "max_total_mm": 5.84,
+            "median_total_mm": 1.35
+          },
+          "local_max_2d_mm": 62.95,
+          "max_30min_mm_h_2d": 19.39
+        }
+      },
+      "candidate_rank": 101,
+      "tier_a_event_id": null,
+      "promote": true,
+      "promote_reasons": [
+        "three_independent_outlets (5)"
+      ],
+      "deaths_note": null,
+      "deaths_review": [
+        {
+          "id": "r2017-002",
+          "matched": "death"
+        },
+        {
+          "id": "r2017-003",
+          "matched": "death"
+        },
+        {
+          "id": "r2017-004",
+          "matched": "death"
+        },
+        {
+          "id": "r2017-005",
+          "matched": "death"
+        },
+        {
+          "id": "r2017-006",
+          "matched": "death"
+        },
+        {
+          "id": "r2017-007",
+          "matched": "death"
+        },
+        {
+          "id": "r2017-009",
+          "matched": "death"
+        },
+        {
+          "id": "r2017-010",
+          "matched": "death"
+        },
+        {
+          "id": "r2017-011",
+          "matched": "death"
+        },
+        {
+          "id": "r2017-012",
+          "matched": "deaths"
+        }
+      ],
+      "reports": [
+        {
+          "url": "https://punchng.com/flood-wreaks-havoc-in-nigerias-most-expensive-neighbourhoods/",
+          "publisher": "Punch",
+          "published_at": "2017-07-09T07:46:00+01:00",
+          "read_status": "read",
+          "date": "2017-07-08",
+          "date_confidence": "exact",
+          "quote": "A heavy rain that fell on Friday night and Saturday morning has left hundreds of homes and roads flooded",
+          "causes": [
+            "heavy_rain",
+            "drainage_capacity",
+            "blocked_drainage"
+          ],
+          "cause_attributed_by": "expert",
+          "cause_who": "Dr. Ibidun Adelekan, University of Ibadan",
+          "cause_quote": "A lot of drainage channels are blocked or you have people depositing water sachets, tyres"
+        },
+        {
+          "url": "https://punchng.com/lagos-flood-residents-lament-loss-of-homes-property/",
+          "publisher": "Punch",
+          "published_at": "2017-07-10T06:43:00+01:00",
+          "read_status": "read",
+          "date": "2017-07-08",
+          "date_confidence": "exact",
+          "quote": "I stay on Jakande First Gate Estate in Lekki Phase I. The water entered into my house.",
+          "causes": [
+            "land_reclamation"
+          ],
+          "cause_attributed_by": "resident",
+          "cause_who": "Mrs. Justina Odikpo, resident, Ilasan",
+          "cause_quote": "We had been having flood issue since the LSDPC started filling a swamp beside us."
+        },
+        {
+          "url": "https://www.channelstv.com/2017/07/08/lagosians-lament-as-flood-hits-lekki-victoria-island/",
+          "publisher": "Channels TV",
+          "published_at": "2017-07-08T00:00:00+01:00",
+          "read_status": "read",
+          "date": "2017-07-08",
+          "date_confidence": "exact",
+          "quote": "residents lamented that the deluge is so massive that they are unable to leave their homes",
+          "causes": [
+            "heavy_rain"
+          ],
+          "cause_attributed_by": "journalist",
+          "cause_who": null,
+          "cause_quote": "following a heavy downpour which lasted for several hours"
+        },
+        {
+          "url": "https://dailytrust.com/panic-as-flood-takes-over-lagos/",
+          "publisher": "Daily Trust",
+          "published_at": "2017-07-10T14:00:00+01:00",
+          "read_status": "read",
+          "date": "2017-07-08",
+          "date_confidence": "exact",
+          "quote": "residents of highbrow areas of Lekki, Victoria Island and Ikoyi had to resort to local canoes to navigate their vicinities",
+          "causes": [
+            "land_reclamation",
+            "heavy_rain"
+          ],
+          "cause_attributed_by": "resident",
+          "cause_who": "Femi, resident, Ogombo",
+          "cause_quote": "the flood experienced this year was as a result of land reclamation"
+        },
+        {
+          "url": "https://www.vanguardngr.com/2017/07/photos-flood-victoria-island-lekki/",
+          "publisher": "Vanguard",
+          "published_at": "2017-07-08T00:00:00+01:00",
+          "read_status": "read",
+          "date": "2017-07-08",
+          "date_confidence": "approx",
+          "quote": "As usual flood ravaged Lekki, Victoria Island in Eti Osa local government area of Lagos state after many days of down pour",
+          "causes": [
+            "heavy_rain"
+          ],
+          "cause_attributed_by": "journalist",
+          "cause_who": null,
+          "cause_quote": "after many days of down pour"
+        },
+        {
+          "url": "https://www.vanguardngr.com/2017/07/flood-eko-disco-announces-power-cut-ikoyi-victoria-island/",
+          "publisher": "Vanguard",
+          "published_at": "2017-07-09T00:00:00+01:00",
+          "read_status": "read",
+          "date": "2017-07-08",
+          "date_confidence": "exact",
+          "quote": "Victoria Garden City, Water Front, Maroko and Oniru Injection Stations are completely out.",
+          "causes": [
+            "heavy_rain"
+          ],
+          "cause_attributed_by": "official",
+          "cause_who": "Godwin Idemudia, General Manager, Corporate Communications, EKEDC",
+          "cause_quote": "as a result of the flood from heavy rains on Saturday"
+        },
+        {
+          "url": "https://guardian.ng/news/how-to-save-lagos-from-flood-disasters-others/",
+          "publisher": "Guardian NG",
+          "published_at": "2017-07-10T05:34:00+01:00",
+          "read_status": "read",
+          "date": "2017-07-08",
+          "date_confidence": "exact",
+          "quote": "No fatality has been reported despite the havoc wreaked by the flood, which was up to six feet high over the roads",
+          "causes": [
+            "drainage_capacity"
+          ],
+          "cause_attributed_by": "expert",
+          "cause_who": "Remi Makinde, former President, Nigerian Institute of Town Planners",
+          "cause_quote": "the master plans provide drainages, which have not been fully dredged"
+        },
+        {
+          "url": "https://guardian.ng/news/were-pursuing-holistic-solution-to-lagos-flooding-says-ambode/",
+          "publisher": "Guardian NG",
+          "published_at": "2017-07-10T15:44:00+01:00",
+          "read_status": "read",
+          "date": "2017-07-08",
+          "date_confidence": "exact",
+          "quote": "Heavy floods took over the entire Ahmadu Bello Way in Victoria Island, Lagos",
+          "causes": [
+            "heavy_rain"
+          ],
+          "cause_attributed_by": "journalist",
+          "cause_who": null,
+          "cause_quote": "flooding which hit several parts of the city in the last few days as a result of torrential rainfall"
+        },
+        {
+          "url": "https://punchng.com/lasgll-tackle-flooding-says-ambode/",
+          "publisher": "Punch",
+          "published_at": "2017-07-11T08:43:00+01:00",
+          "read_status": "read",
+          "date": "2017-07-08",
+          "date_confidence": "exact",
+          "quote": "the torrential rain witnessed in the state in the past few days accumulated a total of 477mm of water",
+          "causes": [
+            "heavy_rain"
+          ],
+          "cause_attributed_by": "official",
+          "cause_who": "Ade Adesanya, Commissioner for Waterfront Infrastructure Development",
+          "cause_quote": "the torrential rain witnessed in the state in the past few days accumulated a total of 477mm of water"
+        },
+        {
+          "url": "https://www.vanguardngr.com/2017/07/lagos-flood-lasg-attributes-cause-high-tide-lagoon/",
+          "publisher": "Vanguard",
+          "published_at": "2017-07-17T00:00:00+01:00",
+          "read_status": "read",
+          "date": "2017-07-08",
+          "date_confidence": "approx",
+          "quote": "The lagoon is swollen up, there is high tide, so it would lock on our outfalls",
+          "causes": [
+            "lagoon_tide",
+            "blocked_drainage",
+            "setback_encroachment"
+          ],
+          "cause_attributed_by": "official",
+          "cause_who": "Dr. Babatunde Adejare, Lagos Commissioner for Environment",
+          "cause_quote": "The lagoon is swollen up, there is high tide, so it would lock on our outfalls"
+        },
+        {
+          "url": "https://dailytrust.com/nigerias-newest-flood-of-tears/",
+          "publisher": "Daily Trust",
+          "published_at": "2017-07-15T14:00:00+01:00",
+          "read_status": "read",
+          "date": "2017-07-08",
+          "date_confidence": "approx",
+          "quote": "there was no casualty or disaster as a result of the rain in the state",
+          "causes": [
+            "land_reclamation"
+          ],
+          "cause_attributed_by": "resident",
+          "cause_who": "Femi Adebosun, Sanusi Fafunwa Street, Victoria Island",
+          "cause_quote": "the flood was as a result of the land reclamation by the Lagos State Government on other side of Ahmadu Bello Way"
+        }
+      ]
+    },
+    {
+      "date": "2017-07-22",
+      "areas": [
+        {
+          "name": "Surulere",
+          "lon": 3.3571159,
+          "lat": 6.5008027,
+          "confidence": "area",
+          "geocoded_from": null,
+          "display_name": "Surulere, Lagos, 102215, Nigeria"
+        },
+        {
+          "name": "Lekki",
+          "lon": 3.4704698,
+          "lat": 6.4413987,
+          "confidence": "area",
+          "geocoded_from": null,
+          "display_name": "Lekki Phase I, Eti Osa, Lagos, 101244, Nigeria"
+        },
+        {
+          "name": "Ajah",
+          "lon": 3.5623861,
+          "lat": 6.4694716,
+          "confidence": "area",
+          "geocoded_from": null,
+          "display_name": "Ajah, Eti Osa, Lagos, 101245, Nigeria"
+        },
+        {
+          "name": "Iyana-Ejigbo",
+          "lon": 3.293436,
+          "lat": 6.5494509,
+          "confidence": "neighbourhood",
+          "geocoded_from": "Ejigbo",
+          "display_name": "Ejigbo, Isolo, Oshodi/Isolo, Lagos, 102214, Nigeria"
+        },
+        {
+          "name": "NNPC Junction, Ejigbo",
+          "lon": 3.293436,
+          "lat": 6.5494509,
+          "confidence": "neighbourhood",
+          "geocoded_from": "Ejigbo",
+          "display_name": "Ejigbo, Isolo, Oshodi/Isolo, Lagos, 102214, Nigeria"
+        },
+        {
+          "name": "Lawanson",
+          "lon": null,
+          "lat": null,
+          "confidence": null,
+          "geocoded_from": null,
+          "display_name": null
+        },
+        {
+          "name": "Isolo Road Junction, Mushin",
+          "lon": 3.3508701,
+          "lat": 6.5275837,
+          "confidence": "neighbourhood",
+          "geocoded_from": "Mushin",
+          "display_name": "Mushin, Lagos, 102215, Nigeria"
+        },
+        {
+          "name": "Iganmu Interchange, Lagos/Badagry expressway",
+          "lon": 3.3641616,
+          "lat": 6.4824237,
+          "confidence": "neighbourhood",
+          "geocoded_from": "Iganmu",
+          "display_name": "Iganmu, Surulere, Lagos, 101212, Nigeria"
+        },
+        {
+          "name": "Masha, Surulere",
+          "lon": 3.3571159,
+          "lat": 6.5008027,
+          "confidence": "neighbourhood",
+          "geocoded_from": "Surulere",
+          "display_name": "Surulere, Lagos, 102215, Nigeria"
+        },
+        {
+          "name": "Ikate, Itire",
+          "lon": 3.3300486,
+          "lat": 6.5081363,
+          "confidence": "neighbourhood",
+          "geocoded_from": "Itire",
+          "display_name": "Itire, Mushin, Lagos, 100263, Nigeria"
+        }
+      ],
+      "n_sources": 1,
+      "n_outlets": 1,
+      "impacts": [
+        "Saturday early-morning downpour from about 5:00am: roads and household valuables submerged in Surulere and parts of Lekki and Ajah. Mercy Eneli: entire Masha street flooded; household items floating. Nelson Eta: flooding at Ikate, Itire, above the knee; uncle's house flooded. Cars on streets affected except those on elevated platforms. Comfort Wilson, Lekki: flooding less serious than about two weeks earlier when canoes were used. Rain delayed council-poll voting. No death reported in this flood article."
+      ],
+      "causes": [
+        "blocked_drainage",
+        "heavy_rain"
+      ],
+      "flood_type": "pluvial",
+      "flood_type_reports": {
+        "pluvial": 1,
+        "riverine": 0,
+        "lagoon": 0
+      },
+      "episode_id": null,
+      "rain": {
+        "date_covered": true,
+        "aoi_mean_mm": 27.66,
+        "wettest_cell": {
+          "id": "c6.45N3.05E",
+          "mm": 55.88,
+          "place": "Ijanikin"
+        },
+        "cells_ge_50mm": 2,
+        "pop_weighted_rain_mm": 31.91,
+        "area_cells": {
+          "Surulere": {
+            "cell_id": "c6.55N3.35E",
+            "place": "Mushin",
+            "total_mm": 30.05
+          },
+          "Lekki": {
+            "cell_id": "c6.45N3.45E",
+            "place": "Ikoyi",
+            "total_mm": 23.85
+          },
+          "Ajah": {
+            "cell_id": "c6.45N3.55E",
+            "place": "Ajah",
+            "total_mm": 19.41
+          },
+          "Iyana-Ejigbo": {
+            "cell_id": "c6.55N3.25E",
+            "place": "Igando",
+            "total_mm": 35.66
+          },
+          "NNPC Junction, Ejigbo": {
+            "cell_id": "c6.55N3.25E",
+            "place": "Igando",
+            "total_mm": 35.66
+          },
+          "Isolo Road Junction, Mushin": {
+            "cell_id": "c6.55N3.35E",
+            "place": "Mushin",
+            "total_mm": 30.05
+          },
+          "Iganmu Interchange, Lagos/Badagry expressway": {
+            "cell_id": "c6.45N3.35E",
+            "place": "Apapa",
+            "total_mm": 28.36
+          },
+          "Masha, Surulere": {
+            "cell_id": "c6.55N3.35E",
+            "place": "Mushin",
+            "total_mm": 30.05
+          },
+          "Ikate, Itire": {
+            "cell_id": "c6.55N3.35E",
+            "place": "Mushin",
+            "total_mm": 30.05
+          }
+        },
+        "local": {
+          "n_areas_geocoded": 9,
+          "n_cells": 5,
+          "flood_day": {
+            "date": "2017-07-22",
+            "max_total_mm": 35.66,
+            "median_total_mm": 28.36
+          },
+          "previous_day": {
+            "date": "2017-07-21",
+            "max_total_mm": 1.17,
+            "median_total_mm": 0.47
+          },
+          "local_max_2d_mm": 36.83,
+          "max_30min_mm_h_2d": 7.66
+        }
+      },
+      "candidate_rank": 273,
+      "tier_a_event_id": null,
+      "promote": false,
+      "promote_reasons": [],
+      "deaths_note": null,
+      "deaths_review": [
+        {
+          "id": "r2017-013",
+          "matched": "death"
+        }
+      ],
+      "reports": [
+        {
+          "url": "https://punchng.com/early-morning-rainfall-roads-homes-flooded-in-lagos/",
+          "publisher": "Punch",
+          "published_at": "2017-07-22T14:13:00+01:00",
+          "read_status": "read",
+          "date": "2017-07-22",
+          "date_confidence": "exact",
+          "quote": "An early morning downpour on Saturday in Lagos brought untold hardships to residents of Surulere, and parts of Lekki and Ajah",
+          "causes": [
+            "heavy_rain",
+            "blocked_drainage"
+          ],
+          "cause_attributed_by": "journalist",
+          "cause_who": null,
+          "cause_quote": "The flood water also swept some debris in its path, causing some drains and drainage channels to become blocked"
+        }
+      ]
+    },
+    {
+      "date": "2017-09-11",
+      "areas": [
+        {
+          "name": "Lagos-Abeokuta Expressway",
+          "lon": 3.2779096,
+          "lat": 6.6666387,
+          "confidence": "street",
+          "geocoded_from": null,
+          "display_name": "Lagos-Abeokuta Expressway, Alagbado, Abule Egba, Alimosho, Lagos, 100314, Nigeria"
+        },
+        {
+          "name": "Ikeja",
+          "lon": 3.3515981,
+          "lat": 6.601627,
+          "confidence": "city",
+          "geocoded_from": null,
+          "display_name": "Ikeja, Lagos, Nigeria"
+        },
+        {
+          "name": "Alimosho",
+          "lon": 3.2782319,
+          "lat": 6.630026,
+          "confidence": "area",
+          "geocoded_from": null,
+          "display_name": "Alimosho, Abule Egba, Alimosho, Lagos, 100276, Nigeria"
+        },
+        {
+          "name": "Lagos Island",
+          "lon": 3.3897024,
+          "lat": 6.4545947,
+          "confidence": "area",
+          "geocoded_from": null,
+          "display_name": "Lagos Island, Lagos, 100242, Nigeria"
+        },
+        {
+          "name": "Oshodi",
+          "lon": 3.3494422,
+          "lat": 6.5570254,
+          "confidence": "area",
+          "geocoded_from": null,
+          "display_name": "Oshodi, Oshodi/Isolo, Lagos, 100271, Nigeria"
+        }
+      ],
+      "n_sources": 1,
+      "n_outlets": 1,
+      "impacts": [
+        "Heavy downpour: motorists and residents stranded for hours. Worst hit Lagos-Abeokuta, Ikeja, Alimosho and Lagos Island; roads shut by flooding; vehicles broke down; gridlock. Mrs Johnson Ebere, Oshodi, said the heavy flooding on Monday was due to BRT-corridor works. LAMATA Public Affairs Coordinator Kola Ojelabi said flooding was not from construction but from blocked drainages and refuse (plastic bottles, nylon, used tyres) on the road. No death reported."
+      ],
+      "causes": [
+        "construction"
+      ],
+      "flood_type": "pluvial",
+      "flood_type_reports": {
+        "pluvial": 1,
+        "riverine": 0,
+        "lagoon": 0
+      },
+      "episode_id": null,
+      "rain": {
+        "date_covered": true,
+        "aoi_mean_mm": 34.01,
+        "wettest_cell": {
+          "id": "c6.55N3.75E",
+          "mm": 60.92,
+          "place": "Imota"
+        },
+        "cells_ge_50mm": 12,
+        "pop_weighted_rain_mm": 28.94,
+        "area_cells": {
+          "Lagos-Abeokuta Expressway": {
+            "cell_id": "c6.65N3.25E",
+            "place": "Alimosho / Ipaja",
+            "total_mm": 19.66
+          },
+          "Ikeja": {
+            "cell_id": "c6.65N3.35E",
+            "place": "Ojodu Berger",
+            "total_mm": 23.5
+          },
+          "Alimosho": {
+            "cell_id": "c6.65N3.25E",
+            "place": "Alimosho / Ipaja",
+            "total_mm": 19.66
+          },
+          "Lagos Island": {
+            "cell_id": "c6.45N3.35E",
+            "place": "Apapa",
+            "total_mm": 35.81
+          },
+          "Oshodi": {
+            "cell_id": "c6.55N3.35E",
+            "place": "Mushin",
+            "total_mm": 26.52
+          }
+        },
+        "local": {
+          "n_areas_geocoded": 5,
+          "n_cells": 4,
+          "flood_day": {
+            "date": "2017-09-11",
+            "max_total_mm": 35.81,
+            "median_total_mm": 25.01
+          },
+          "previous_day": {
+            "date": "2017-09-10",
+            "max_total_mm": 0.35,
+            "median_total_mm": 0.18
+          },
+          "local_max_2d_mm": 36.16,
+          "max_30min_mm_h_2d": 12.52
+        }
+      },
+      "candidate_rank": 314,
+      "tier_a_event_id": null,
+      "promote": false,
+      "promote_reasons": [],
+      "deaths_note": null,
+      "deaths_review": [
+        {
+          "id": "r2017-014",
+          "matched": "death"
+        }
+      ],
+      "reports": [
+        {
+          "url": "https://www.vanguardngr.com/2017/09/residents-groan-heavy-flooding-lagos-abeokuta-expressway/",
+          "publisher": "Vanguard",
+          "published_at": "2017-09-15T00:00:00+01:00",
+          "read_status": "read",
+          "date": "2017-09-11",
+          "date_confidence": "day",
+          "quote": "The worst hit areas included, Lagos-Abeokuta, Ikeja, Alimosho and Lagos Island, as the roads were practically shut off by flooding",
+          "causes": [
+            "construction"
+          ],
+          "cause_attributed_by": "resident",
+          "cause_who": "Mrs Johnson Ebere, business woman, Oshodi",
+          "cause_quote": "It only shows that the heavy flooding on Monday, was due to the on-going work by the contractor handling the BRT corridor"
+        }
+      ]
+    },
+    {
+      "date": "2017-11-04",
+      "areas": [
+        {
+          "name": "Ogba",
+          "lon": 3.3407753,
+          "lat": 6.632608,
+          "confidence": "area",
+          "geocoded_from": null,
+          "display_name": "Ogba, Ifako/Ijaye, Lagos, 100216, Nigeria"
+        },
+        {
+          "name": "Ikeja",
+          "lon": 3.3515981,
+          "lat": 6.601627,
+          "confidence": "city",
+          "geocoded_from": null,
+          "display_name": "Ikeja, Lagos, Nigeria"
+        },
+        {
+          "name": "Agidingbi",
+          "lon": 3.3556086,
+          "lat": 6.6222623,
+          "confidence": "area",
+          "geocoded_from": null,
+          "display_name": "Agidingbi, Alausa, Ikeja, Lagos, 100581, Nigeria"
+        },
+        {
+          "name": "Iyana Ipaja",
+          "lon": 3.2973386,
+          "lat": 6.6173097,
+          "confidence": "area",
+          "geocoded_from": null,
+          "display_name": "Iyana Ipaja, Abule Egba, Alimosho, Lagos, 102213, Nigeria"
+        },
+        {
+          "name": "Abule Egba",
+          "lon": 3.3046224,
+          "lat": 6.6478943,
+          "confidence": "area",
+          "geocoded_from": null,
+          "display_name": "Abule Egba, Alimosho, Lagos, 101232, Nigeria"
+        },
+        {
+          "name": "Santos Avenue, Abule Egba",
+          "lon": 3.3046224,
+          "lat": 6.6478943,
+          "confidence": "neighbourhood",
+          "geocoded_from": "Abule Egba",
+          "display_name": "Abule Egba, Alimosho, Lagos, 101232, Nigeria"
+        },
+        {
+          "name": "Lagos-Abeokuta Expressway",
+          "lon": 3.2779096,
+          "lat": 6.6666387,
+          "confidence": "street",
+          "geocoded_from": null,
+          "display_name": "Lagos-Abeokuta Expressway, Alagbado, Abule Egba, Alimosho, Lagos, 100314, Nigeria"
+        },
+        {
+          "name": "Abiodun Aina Street, Agbado Oke Odo",
+          "lon": null,
+          "lat": null,
+          "confidence": null,
+          "geocoded_from": null,
+          "display_name": null
+        }
+      ],
+      "n_sources": 1,
+      "n_outlets": 1,
+      "impacts": [
+        "Saturday afternoon heavy rain from about 1\u20132pm: hundreds of homes and roads flooded; commuters stranded; gridlock on the mainland; residents trapped in homes. Boluwaji James, Santos Avenue: flood entered many buildings; canal beside a mechanic workshop overrun; his car submerged; okadas swept. Kunle Phillips, Iyana Ipaja: as of 4pm no vehicle could move; vehicles almost submerged on Lagos-Abeokuta Expressway. Storm also blew roofs and felled high-tension poles (Adeyemi counted five roofs, four damaged vehicles). LASEMA GM Adesina Tiamiyu: officials deployed for a fallen pole at Abiodun Aina Street; asked residents to call 112. No death reported."
+      ],
+      "causes": [
+        "canal_overflow",
+        "heavy_rain"
+      ],
+      "flood_type": "pluvial",
+      "flood_type_reports": {
+        "pluvial": 1,
+        "riverine": 0,
+        "lagoon": 0
+      },
+      "episode_id": null,
+      "rain": {
+        "date_covered": true,
+        "aoi_mean_mm": 7.86,
+        "wettest_cell": {
+          "id": "c6.75N3.25E",
+          "mm": 37.88,
+          "place": "Agege"
+        },
+        "cells_ge_50mm": 0,
+        "pop_weighted_rain_mm": 9.35,
+        "area_cells": {
+          "Ogba": {
+            "cell_id": "c6.65N3.35E",
+            "place": "Ojodu Berger",
+            "total_mm": 18.76
+          },
+          "Ikeja": {
+            "cell_id": "c6.65N3.35E",
+            "place": "Ojodu Berger",
+            "total_mm": 18.76
+          },
+          "Agidingbi": {
+            "cell_id": "c6.65N3.35E",
+            "place": "Ojodu Berger",
+            "total_mm": 18.76
+          },
+          "Iyana Ipaja": {
+            "cell_id": "c6.65N3.25E",
+            "place": "Alimosho / Ipaja",
+            "total_mm": 27.99
+          },
+          "Abule Egba": {
+            "cell_id": "c6.65N3.35E",
+            "place": "Ojodu Berger",
+            "total_mm": 18.76
+          },
+          "Santos Avenue, Abule Egba": {
+            "cell_id": "c6.65N3.35E",
+            "place": "Ojodu Berger",
+            "total_mm": 18.76
+          },
+          "Lagos-Abeokuta Expressway": {
+            "cell_id": "c6.65N3.25E",
+            "place": "Alimosho / Ipaja",
+            "total_mm": 27.99
+          }
+        },
+        "local": {
+          "n_areas_geocoded": 7,
+          "n_cells": 2,
+          "flood_day": {
+            "date": "2017-11-04",
+            "max_total_mm": 27.99,
+            "median_total_mm": 23.38
+          },
+          "previous_day": {
+            "date": "2017-11-03",
+            "max_total_mm": 0.0,
+            "median_total_mm": 0.0
+          },
+          "local_max_2d_mm": 27.99,
+          "max_30min_mm_h_2d": 6.99
+        }
+      },
+      "candidate_rank": null,
+      "tier_a_event_id": null,
+      "promote": false,
+      "promote_reasons": [],
+      "deaths_note": null,
+      "deaths_review": [
+        {
+          "id": "r2017-015",
+          "matched": "death"
+        }
+      ],
+      "reports": [
+        {
+          "url": "https://punchng.com/rainstorm-destroys-buildings-cars-in-lagos/",
+          "publisher": "Punch",
+          "published_at": "2017-11-05T04:29:00+01:00",
+          "read_status": "read",
+          "date": "2017-11-04",
+          "date_confidence": "exact",
+          "quote": "A heavy rain on Saturday afternoon left hundreds of homes and roads flooded in different parts of Lagos State",
+          "causes": [
+            "heavy_rain",
+            "canal_overflow"
+          ],
+          "cause_attributed_by": "resident",
+          "cause_who": "Boluwaji James, Santos Avenue, Abule Egba",
+          "cause_quote": "A canal beside a mechanic workshop on the street was overun by the flood"
+        }
+      ]
+    },
+    {
       "date": "2018-02-10",
       "areas": [
         {
@@ -5148,11 +7110,11 @@
         },
         {
           "name": "Ogudu end of the Lagos-Ibadan Expressway",
-          "lon": 3.3941795,
-          "lat": 6.4550575,
+          "lon": 3.3905268,
+          "lat": 6.5750008,
           "confidence": "neighbourhood",
-          "geocoded_from": "Lagos",
-          "display_name": "Lagos, Lagos Island, Lagos, 100242, Nigeria"
+          "geocoded_from": "Ogudu",
+          "display_name": "Ogudu, Ketu, Kosofe, Lagos, 100234, Nigeria"
         },
         {
           "name": "Abule Egba",
@@ -5268,11 +7230,11 @@
         },
         {
           "name": "Lagos Mainland",
-          "lon": 3.3941795,
-          "lat": 6.4550575,
-          "confidence": "neighbourhood",
-          "geocoded_from": "Lagos",
-          "display_name": "Lagos, Lagos Island, Lagos, 100242, Nigeria"
+          "lon": null,
+          "lat": null,
+          "confidence": null,
+          "geocoded_from": null,
+          "display_name": null
         },
         {
           "name": "Oworonshoki",
@@ -5408,9 +7370,9 @@
             "total_mm": 48.41
           },
           "Ogudu end of the Lagos-Ibadan Expressway": {
-            "cell_id": "c6.45N3.35E",
-            "place": "Apapa",
-            "total_mm": 63.06
+            "cell_id": "c6.55N3.35E",
+            "place": "Mushin",
+            "total_mm": 48.41
           },
           "Abule Egba": {
             "cell_id": "c6.65N3.35E",
@@ -5472,11 +7434,6 @@
             "place": "Mushin",
             "total_mm": 48.41
           },
-          "Lagos Mainland": {
-            "cell_id": "c6.45N3.35E",
-            "place": "Apapa",
-            "total_mm": 63.06
-          },
           "Ebute Metta": {
             "cell_id": "c6.45N3.35E",
             "place": "Apapa",
@@ -5514,7 +7471,7 @@
           }
         },
         "local": {
-          "n_areas_geocoded": 24,
+          "n_areas_geocoded": 23,
           "n_cells": 5,
           "flood_day": {
             "date": "2019-05-20",
@@ -7029,11 +8986,11 @@
         },
         {
           "name": "Long Bridge, Lagos-Ibadan Expressway",
-          "lon": 3.3941795,
-          "lat": 6.4550575,
-          "confidence": "neighbourhood",
-          "geocoded_from": "Lagos",
-          "display_name": "Lagos, Lagos Island, Lagos, 100242, Nigeria"
+          "lon": null,
+          "lat": null,
+          "confidence": null,
+          "geocoded_from": null,
+          "display_name": null
         },
         {
           "name": "God First",
@@ -7117,11 +9074,11 @@
         },
         {
           "name": "Owode Elede",
-          "lon": null,
-          "lat": null,
-          "confidence": null,
-          "geocoded_from": null,
-          "display_name": null
+          "lon": 2.9827021,
+          "lat": 6.6979989,
+          "confidence": "neighbourhood",
+          "geocoded_from": "Owode",
+          "display_name": "Owode, Yewa South, Ogun, Nigeria"
         },
         {
           "name": "Ikorodu road",
@@ -7256,11 +9213,6 @@
             "place": "Ojodu Berger",
             "total_mm": 41.43
           },
-          "Long Bridge, Lagos-Ibadan Expressway": {
-            "cell_id": "c6.45N3.35E",
-            "place": "Apapa",
-            "total_mm": 37.64
-          },
           "Ajegunle": {
             "cell_id": "c6.45N3.35E",
             "place": "Apapa",
@@ -7291,6 +9243,11 @@
             "place": "Apapa",
             "total_mm": 37.64
           },
+          "Owode Elede": {
+            "cell_id": "c6.65N2.95E",
+            "place": "Badagry",
+            "total_mm": 51.58
+          },
           "Ikorodu road": {
             "cell_id": "c6.55N3.35E",
             "place": "Mushin",
@@ -7309,18 +9266,18 @@
         },
         "local": {
           "n_areas_geocoded": 23,
-          "n_cells": 8,
+          "n_cells": 9,
           "flood_day": {
             "date": "2019-10-20",
-            "max_total_mm": 49.06,
-            "median_total_mm": 36.84
+            "max_total_mm": 51.58,
+            "median_total_mm": 37.64
           },
           "previous_day": {
             "date": "2019-10-19",
             "max_total_mm": 12.35,
-            "median_total_mm": 9.98
+            "median_total_mm": 10.24
           },
-          "local_max_2d_mm": 57.54,
+          "local_max_2d_mm": 63.88,
           "max_30min_mm_h_2d": 10.15
         }
       },
@@ -8598,11 +10555,11 @@
         },
         {
           "name": "Owode-Ibeshe",
-          "lon": null,
-          "lat": null,
-          "confidence": null,
-          "geocoded_from": null,
-          "display_name": null
+          "lon": 2.9827021,
+          "lat": 6.6979989,
+          "confidence": "neighbourhood",
+          "geocoded_from": "Owode",
+          "display_name": "Owode, Yewa South, Ogun, Nigeria"
         },
         {
           "name": "Agunfoye",
@@ -8683,6 +10640,11 @@
             "place": "Ikorodu",
             "total_mm": 83.67
           },
+          "Owode-Ibeshe": {
+            "cell_id": "c6.65N2.95E",
+            "place": "Badagry",
+            "total_mm": 46.55
+          },
           "Agunfoye": {
             "cell_id": "c6.65N3.55E",
             "place": "Ikorodu",
@@ -8690,17 +10652,17 @@
           }
         },
         "local": {
-          "n_areas_geocoded": 8,
-          "n_cells": 6,
+          "n_areas_geocoded": 9,
+          "n_cells": 7,
           "flood_day": {
             "date": "2020-07-04",
             "max_total_mm": 83.67,
-            "median_total_mm": 75.67
+            "median_total_mm": 74.71
           },
           "previous_day": {
             "date": "2020-07-03",
             "max_total_mm": 6.17,
-            "median_total_mm": 2.15
+            "median_total_mm": 1.21
           },
           "local_max_2d_mm": 86.75,
           "max_30min_mm_h_2d": 18.7
@@ -8865,11 +10827,11 @@
       "areas": [
         {
           "name": "Lagos/Abeokuta Expressway by Ile-Epo market",
-          "lon": 3.3941795,
-          "lat": 6.4550575,
-          "confidence": "neighbourhood",
-          "geocoded_from": "Lagos",
-          "display_name": "Lagos, Lagos Island, Lagos, 100242, Nigeria"
+          "lon": null,
+          "lat": null,
+          "confidence": null,
+          "geocoded_from": null,
+          "display_name": null
         }
       ],
       "n_sources": 1,
@@ -8897,29 +10859,8 @@
         },
         "cells_ge_50mm": 6,
         "pop_weighted_rain_mm": 39.14,
-        "area_cells": {
-          "Lagos/Abeokuta Expressway by Ile-Epo market": {
-            "cell_id": "c6.45N3.35E",
-            "place": "Apapa",
-            "total_mm": 51.63
-          }
-        },
-        "local": {
-          "n_areas_geocoded": 1,
-          "n_cells": 1,
-          "flood_day": {
-            "date": "2021-04-18",
-            "max_total_mm": 51.63,
-            "median_total_mm": 51.63
-          },
-          "previous_day": {
-            "date": "2021-04-17",
-            "max_total_mm": 1.06,
-            "median_total_mm": 1.06
-          },
-          "local_max_2d_mm": 52.69,
-          "max_30min_mm_h_2d": 29.44
-        }
+        "area_cells": {},
+        "local": null
       },
       "candidate_rank": 206,
       "tier_a_event_id": null,
@@ -9072,11 +11013,11 @@
         },
         {
           "name": "Maroko inwards Chisco",
-          "lon": null,
-          "lat": null,
-          "confidence": null,
-          "geocoded_from": null,
-          "display_name": null
+          "lon": 3.4551385,
+          "lat": 6.4288783,
+          "confidence": "neighbourhood",
+          "geocoded_from": "Maroko",
+          "display_name": "Maroko, Lekki Phase I, Eti Osa, Lagos, 023401, Nigeria"
         },
         {
           "name": "Akin Adesola inwards Law School",
@@ -9168,11 +11109,11 @@
         },
         {
           "name": "Marina axis of Lagos",
-          "lon": 3.3941795,
-          "lat": 6.4550575,
-          "confidence": "neighbourhood",
-          "geocoded_from": "Lagos",
-          "display_name": "Lagos, Lagos Island, Lagos, 100242, Nigeria"
+          "lon": null,
+          "lat": null,
+          "confidence": null,
+          "geocoded_from": null,
+          "display_name": null
         },
         {
           "name": "Berger",
@@ -9296,6 +11237,11 @@
             "place": "Ajah",
             "total_mm": 90.84
           },
+          "Maroko inwards Chisco": {
+            "cell_id": "c6.45N3.45E",
+            "place": "Ikoyi",
+            "total_mm": 104.78
+          },
           "Alapere inwards Ogudu Car Wash": {
             "cell_id": "c6.55N3.35E",
             "place": "Mushin",
@@ -9312,11 +11258,6 @@
             "total_mm": 105.81
           },
           "Lagos Island": {
-            "cell_id": "c6.45N3.35E",
-            "place": "Apapa",
-            "total_mm": 105.81
-          },
-          "Marina axis of Lagos": {
             "cell_id": "c6.45N3.35E",
             "place": "Apapa",
             "total_mm": 105.81
@@ -9502,11 +11443,11 @@
       "areas": [
         {
           "name": "Ile Epo on Lagos-Abeokuta Expressway",
-          "lon": 3.3941795,
-          "lat": 6.4550575,
-          "confidence": "neighbourhood",
-          "geocoded_from": "Lagos",
-          "display_name": "Lagos, Lagos Island, Lagos, 100242, Nigeria"
+          "lon": null,
+          "lat": null,
+          "confidence": null,
+          "geocoded_from": null,
+          "display_name": null
         }
       ],
       "n_sources": 1,
@@ -9534,29 +11475,8 @@
         },
         "cells_ge_50mm": 0,
         "pop_weighted_rain_mm": 1.2,
-        "area_cells": {
-          "Ile Epo on Lagos-Abeokuta Expressway": {
-            "cell_id": "c6.45N3.35E",
-            "place": "Apapa",
-            "total_mm": 0.0
-          }
-        },
-        "local": {
-          "n_areas_geocoded": 1,
-          "n_cells": 1,
-          "flood_day": {
-            "date": "2021-07-23",
-            "max_total_mm": 0.0,
-            "median_total_mm": 0.0
-          },
-          "previous_day": {
-            "date": "2021-07-22",
-            "max_total_mm": 0.46,
-            "median_total_mm": 0.46
-          },
-          "local_max_2d_mm": 0.46,
-          "max_30min_mm_h_2d": 0.35
-        }
+        "area_cells": {},
+        "local": null
       },
       "candidate_rank": null,
       "tier_a_event_id": null,
@@ -10338,11 +12258,11 @@
         },
         {
           "name": "Long Bridge, Lagos-Ibadan Expressway",
-          "lon": 3.3941795,
-          "lat": 6.4550575,
-          "confidence": "neighbourhood",
-          "geocoded_from": "Lagos",
-          "display_name": "Lagos, Lagos Island, Lagos, 100242, Nigeria"
+          "lon": null,
+          "lat": null,
+          "confidence": null,
+          "geocoded_from": null,
+          "display_name": null
         },
         {
           "name": "Otedola Bridge",
@@ -10397,11 +12317,6 @@
             "place": "Mushin",
             "total_mm": 7.89
           },
-          "Long Bridge, Lagos-Ibadan Expressway": {
-            "cell_id": "c6.45N3.35E",
-            "place": "Apapa",
-            "total_mm": 8.2
-          },
           "Berger bus stop": {
             "cell_id": "c6.65N3.35E",
             "place": "Ojodu Berger",
@@ -10409,12 +12324,12 @@
           }
         },
         "local": {
-          "n_areas_geocoded": 4,
-          "n_cells": 3,
+          "n_areas_geocoded": 3,
+          "n_cells": 2,
           "flood_day": {
             "date": "2022-04-06",
             "max_total_mm": 8.81,
-            "median_total_mm": 8.2
+            "median_total_mm": 8.35
           },
           "previous_day": {
             "date": "2022-04-05",
@@ -10422,7 +12337,7 @@
             "median_total_mm": 0.0
           },
           "local_max_2d_mm": 8.81,
-          "max_30min_mm_h_2d": 4.04
+          "max_30min_mm_h_2d": 3.81
         }
       },
       "candidate_rank": null,
@@ -12036,11 +13951,11 @@
       "areas": [
         {
           "name": "Trade Fair axis, Lagos-Badagry Expressway",
-          "lon": 3.3941795,
-          "lat": 6.4550575,
-          "confidence": "neighbourhood",
-          "geocoded_from": "Lagos",
-          "display_name": "Lagos, Lagos Island, Lagos, 100242, Nigeria"
+          "lon": null,
+          "lat": null,
+          "confidence": null,
+          "geocoded_from": null,
+          "display_name": null
         },
         {
           "name": "Abule-Ado",
@@ -12301,11 +14216,6 @@
         "cells_ge_50mm": 63,
         "pop_weighted_rain_mm": 84.16,
         "area_cells": {
-          "Trade Fair axis, Lagos-Badagry Expressway": {
-            "cell_id": "c6.45N3.35E",
-            "place": "Apapa",
-            "total_mm": 72.78
-          },
           "Barracks, Ojo": {
             "cell_id": "c6.45N3.15E",
             "place": "Ijanikin",
@@ -12398,7 +14308,7 @@
           }
         },
         "local": {
-          "n_areas_geocoded": 19,
+          "n_areas_geocoded": 18,
           "n_cells": 8,
           "flood_day": {
             "date": "2023-09-16",
@@ -18128,11 +20038,11 @@
         },
         {
           "name": "Long Bridge, Lagos-Ibadan Expressway",
-          "lon": 3.3941795,
-          "lat": 6.4550575,
-          "confidence": "neighbourhood",
-          "geocoded_from": "Lagos",
-          "display_name": "Lagos, Lagos Island, Lagos, 100242, Nigeria"
+          "lon": null,
+          "lat": null,
+          "confidence": null,
+          "geocoded_from": null,
+          "display_name": null
         },
         {
           "name": "God First",
@@ -18216,11 +20126,11 @@
         },
         {
           "name": "Owode Elede",
-          "lon": null,
-          "lat": null,
-          "confidence": null,
-          "geocoded_from": null,
-          "display_name": null
+          "lon": 2.9827021,
+          "lat": 6.6979989,
+          "confidence": "neighbourhood",
+          "geocoded_from": "Owode",
+          "display_name": "Owode, Yewa South, Ogun, Nigeria"
         },
         {
           "name": "Ikorodu road",

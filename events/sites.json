@@ -1,5 +1,32 @@
 {
   "meta": {
+    "catalog_floods": {
+      "flood_days_sha256": "b1302d2f270b444d0fb8d01ea473da3ef214fba10e51abf0f53d4e9bfd76ebce",
+      "method": "each Tier B flood day (events/flood_days.json) matched to the site; strength is the strongest of name > near > area; catalog days are reported floods, so a year with no report is not proof of no flood",
+      "rules": {
+        "area": "an area with confidence neighbourhood or area within 1,500 m; fallback geocodes (geocoded_from set) count as area at best",
+        "name": "a hand-checked place token (PLACE_TOKENS in pipeline/build_sites.py) appears in a day's area name, compared with case, hyphens, spaces and punctuation removed",
+        "near": "an area with confidence exact or street (not a fallback geocode) within flood_radius_m + 200 m of the site geometry",
+        "never": "confidence city, lga or unknown, and un-geocoded areas, never match",
+        "per_searched_year": "n_days_strong / len(years_searched), rounded to 2 decimals",
+        "riverine_days": "matched days whose flood_type is riverine",
+        "sources": "up to 3 of the day's reports naming a matched area, else the first reports; url, publisher, quote",
+        "years_searched": "years with an April-November entry in flood_days.json meta.search_coverage (not the live search log)"
+      },
+      "task": "29-site-flood-counts (docs/tasks/29-site-flood-counts.md)",
+      "years_searched": [
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ]
+    },
     "event_dates_from": "events/catalog.json",
     "event_ids": [
       "lagos-2011-07-10",
@@ -59,6 +86,115 @@
       "aliases": [
         "Agric, Ikorodu"
       ],
+      "catalog_floods": [
+        {
+          "date": "2019-10-12",
+          "distance_m": null,
+          "episode_id": null,
+          "flood_type": "pluvial",
+          "matched_areas": [
+            "Agric-Isawo Road, Ikorodu"
+          ],
+          "n_outlets": 4,
+          "promote": true,
+          "sources": [
+            {
+              "publisher": "The Guardian Nigeria",
+              "quote": "This rain started almost four or five days ago but the one of last night was one of the heaviest.",
+              "url": "https://guardian.ng/news/flood-sweeps-11-year-old-boy-rescuer-to-death-destroys-property-in-lagos/"
+            },
+            {
+              "publisher": "Vanguard",
+              "quote": "residents of Aboru and Iyana-Ipaja in the Alimosho area of Lagos on Saturday as the flood swept away an 11-year-old boy and his rescuer",
+              "url": "https://www.vanguardngr.com/2019/10/tragedy-as-flood-sweeps-two-destroys-property-in-lagos/"
+            },
+            {
+              "publisher": "Punch",
+              "quote": "The flood also caused gridlock and destroyed homes at Jakande, Lekki, Ebute-Meta, Ijegun, Idimu, Agege, Randle and Maryland areas of Lagos State.",
+              "url": "https://punchng.com/downpour-gas-man-drowns-lekki-ikorodu-residents-landlords-flee/"
+            }
+          ],
+          "strength": "name",
+          "tier_a_event_id": null
+        },
+        {
+          "date": "2019-07-01",
+          "distance_m": null,
+          "episode_id": null,
+          "flood_type": "pluvial",
+          "matched_areas": [
+            "Isawo Road, Agric"
+          ],
+          "n_outlets": 2,
+          "promote": false,
+          "sources": [
+            {
+              "publisher": "Vanguard",
+              "quote": "Many vehicles, tricycles and motorcycles were on Monday morning submerged in flood at Mushin, Agege Motor Road, Lagos.",
+              "url": "https://www.vanguardngr.com/2019/07/photos-lagos-flooded/"
+            },
+            {
+              "publisher": "Daily Trust",
+              "quote": "flash floods were experienced in major areas in Ikeja, Agege, Ikorodu, Iju, Obalende, Lekki, Badagry, Ojodu, among hundreds of other areas in Lagos.",
+              "url": "https://dailytrust.com/lagos-more-rains-more-pains/"
+            }
+          ],
+          "strength": "name",
+          "tier_a_event_id": null
+        },
+        {
+          "date": "2019-05-20",
+          "distance_m": null,
+          "episode_id": null,
+          "flood_type": "pluvial",
+          "matched_areas": [
+            "Agric, Ikorodu"
+          ],
+          "n_outlets": 3,
+          "promote": true,
+          "sources": [
+            {
+              "publisher": "Channels Television",
+              "quote": "Floods have taken over parts of Lagos State following an early morning heavy rainfall.",
+              "url": "https://www.channelstv.com/2019/05/20/floods-hit-parts-of-lagos-after-heavy-rains/"
+            },
+            {
+              "publisher": "Punch",
+              "quote": "Many residents of the two states could not go about their daily businesses as a result of flood that accompanied the heavy rainfall.",
+              "url": "https://punchng.com/rain-wreaks-havoc-in-lagos-ogun-destroys-buildings-others/"
+            },
+            {
+              "publisher": "The Guardian Nigeria",
+              "quote": "The flood in some parts of the city left thousands of residents stranded as it made many major roads impassable and went into living homes.",
+              "url": "https://guardian.ng/news/how-lagos-downpour-wreaked-havoc-gridlock/"
+            }
+          ],
+          "strength": "name",
+          "tier_a_event_id": null
+        }
+      ],
+      "catalog_summary": {
+        "n_days": 3,
+        "n_days_strong": 3,
+        "note": "counts reported floods; a year with no report is not proof of no flood",
+        "per_searched_year": 0.3,
+        "riverine_days": 0,
+        "years_searched": [
+          2017,
+          2018,
+          2019,
+          2020,
+          2021,
+          2022,
+          2023,
+          2024,
+          2025,
+          2026
+        ],
+        "years_with_flood": [
+          2019
+        ]
+      },
       "change": {
         "buildings_0_10m": {
           "by_year": {
@@ -191,6 +327,301 @@
       "aliases": [
         "Agungi"
       ],
+      "catalog_floods": [
+        {
+          "date": "2026-06-28",
+          "distance_m": 33.7,
+          "episode_id": null,
+          "flood_type": "pluvial",
+          "matched_areas": [
+            "Agungi"
+          ],
+          "n_outlets": 4,
+          "promote": true,
+          "sources": [
+            {
+              "publisher": "Premium Times",
+              "quote": "Heavy rainfall on Sunday left many parts of Lagos under water, flooding major roads and residential communities",
+              "url": "https://www.premiumtimesng.com/regional/ssouth-west/891405-heavy-rainfall-floods-lagos-communities-disrupts-airport-operations.html"
+            },
+            {
+              "publisher": "Guardian NG",
+              "quote": "Residents of Lagos endured a difficult day yesterday after torrential rainfall on Sunday triggered widespread flooding",
+              "url": "https://guardian.ng/news/nigeria/metro/lagos-residents-lament-as-flooding-cripples-transport-businesses/"
+            },
+            {
+              "publisher": "Punch",
+              "quote": "Floodwaters entered residential buildings in many parts of Lagos, leaving the ground floors of some homes almost completely submerged.",
+              "url": "https://punchng.com/heavy-rain-floods-lagos-roads-agencies-warn-of-more-risks/"
+            }
+          ],
+          "strength": "name",
+          "tier_a_event_id": null
+        },
+        {
+          "date": "2025-09-16",
+          "distance_m": 892.8,
+          "episode_id": null,
+          "flood_type": "pluvial",
+          "matched_areas": [
+            "Osapa London"
+          ],
+          "n_outlets": 1,
+          "promote": false,
+          "sources": [
+            {
+              "publisher": "Punch",
+              "quote": "Some parts of Lagos State, on Tuesday morning, were once again submerged by heavy flooding following a downpour",
+              "url": "https://punchng.com/motorists-residents-lament-as-flood-submerges-lagos-roads/"
+            }
+          ],
+          "strength": "area",
+          "tier_a_event_id": null
+        },
+        {
+          "date": "2025-08-04",
+          "distance_m": 33.7,
+          "episode_id": null,
+          "flood_type": "pluvial",
+          "matched_areas": [
+            "Agungi"
+          ],
+          "n_outlets": 7,
+          "promote": true,
+          "sources": [
+            {
+              "publisher": "Channels Television",
+              "quote": "Some communities in Lagos State, Nigeria's commercial capital, were flooded on Monday after marathon rainfall",
+              "url": "https://www.channelstv.com/2025/08/04/lagos-communities-flooded-vehicles-submerged-after-marathon-rainfall/"
+            },
+            {
+              "publisher": "Daily Trust",
+              "quote": "We can't even enter our homes. The flood has destroyed everything.",
+              "url": "https://dailytrust.com/residents-motorists-stranded-as-flood-hits-lagos/"
+            },
+            {
+              "publisher": "Vanguard",
+              "quote": "The flash floods affected roads and submerged various homes across the metropolis.",
+              "url": "https://www.vanguardngr.com/2025/08/flash-floods-ground-lagos-paralyse-businesses/"
+            }
+          ],
+          "strength": "name",
+          "tier_a_event_id": "lagos-2025-08-04"
+        },
+        {
+          "date": "2025-05-18",
+          "distance_m": 675.6,
+          "episode_id": null,
+          "flood_type": "pluvial",
+          "matched_areas": [
+            "Lekki Phase 1"
+          ],
+          "n_outlets": 1,
+          "promote": false,
+          "sources": [
+            {
+              "publisher": "Vanguard",
+              "quote": "residents of Lekki Phase 1 and surrounding areas, who experienced severe flooding over the weekend following heavy rainfall",
+              "url": "https://www.vanguardngr.com/2025/05/flash-floods-in-lagos-caused-by-high-tidal-levels-says-environment-commissioner/"
+            }
+          ],
+          "strength": "area",
+          "tier_a_event_id": null
+        },
+        {
+          "date": "2024-06-27",
+          "distance_m": 33.7,
+          "episode_id": null,
+          "flood_type": "pluvial",
+          "matched_areas": [
+            "Agungi"
+          ],
+          "n_outlets": 2,
+          "promote": true,
+          "sources": [
+            {
+              "publisher": "Vanguard",
+              "quote": "the flooding incidents experienced as a result of the 48 hours of continuous rainfall experienced in the state",
+              "url": "https://www.vanguardngr.com/2024/06/48hrs-rainfall-agungi-lekki-environs-in-lagos-submerge-in-flood/"
+            },
+            {
+              "publisher": "Lagos State Ministry of the Environment and Water Resources",
+              "quote": "following the flooding incidents experienced as a result of the 48hrs continous rainfall experienced in the state",
+              "url": "https://moelagos.gov.ng/flooding-lagos-to-construct-additional-drainage-collector-on-agungi-to-bring-relief/"
+            }
+          ],
+          "strength": "name",
+          "tier_a_event_id": null
+        },
+        {
+          "date": "2021-07-16",
+          "distance_m": 675.6,
+          "episode_id": null,
+          "flood_type": "pluvial",
+          "matched_areas": [
+            "Lekki Phase 1 inwards Sandfill"
+          ],
+          "n_outlets": 4,
+          "promote": true,
+          "sources": [
+            {
+              "publisher": "Punch",
+              "quote": "Alfred Rewane Road, Ikoyi, was flooded, leading to a traffic snarl while vehicles waded through the water",
+              "url": "https://punchng.com/flood-fallen-trucks-cause-lagos-gridlock-commuters-stranded/"
+            },
+            {
+              "publisher": "Channels TV",
+              "quote": "Several vehicles were submerged underwater in parks at the popular Marina axis of Lagos Island on Friday",
+              "url": "https://www.channelstv.com/2021/07/16/vehicles-submerged-on-lagos-island-amid-heavy-downpour/"
+            },
+            {
+              "publisher": "Channels TV",
+              "quote": "The rain that lasted hours especially in the Lagos Island area left most roads flooded",
+              "url": "https://www.channelstv.com/2021/07/17/commuters-stranded-cars-submerged-in-lagos-after-heavy-downpour/"
+            }
+          ],
+          "strength": "area",
+          "tier_a_event_id": "lagos-2021-07-16"
+        },
+        {
+          "date": "2019-10-12",
+          "distance_m": 652.7,
+          "episode_id": null,
+          "flood_type": "pluvial",
+          "matched_areas": [
+            "Jakande, Lekki"
+          ],
+          "n_outlets": 4,
+          "promote": true,
+          "sources": [
+            {
+              "publisher": "Punch",
+              "quote": "The flood also caused gridlock and destroyed homes at Jakande, Lekki, Ebute-Meta, Ijegun, Idimu, Agege, Randle and Maryland areas of Lagos State.",
+              "url": "https://punchng.com/downpour-gas-man-drowns-lekki-ikorodu-residents-landlords-flee/"
+            }
+          ],
+          "strength": "area",
+          "tier_a_event_id": null
+        },
+        {
+          "date": "2018-08-13",
+          "distance_m": 652.7,
+          "episode_id": null,
+          "flood_type": "pluvial",
+          "matched_areas": [
+            "Jakande, Lekki"
+          ],
+          "n_outlets": 2,
+          "promote": false,
+          "sources": [
+            {
+              "publisher": "Punch",
+              "quote": "Twitter user, Wale Alakija, has shared videos and photos of a street in Jakande, Lekki, Lagos flooded after Monday’s rain.",
+              "url": "https://punchng.com/videos-floods-sack-lekki-road-as-lagos-is-drenched-by-rains/"
+            }
+          ],
+          "strength": "area",
+          "tier_a_event_id": null
+        },
+        {
+          "date": "2018-06-06",
+          "distance_m": 675.6,
+          "episode_id": null,
+          "flood_type": "pluvial",
+          "matched_areas": [
+            "Itedo Grammar School, Lekki Phase 1"
+          ],
+          "n_outlets": 1,
+          "promote": false,
+          "sources": [
+            {
+              "publisher": "Punch",
+              "quote": "The video showed the flooded school and students, who were trying to sweep away the water, that had taken over the corridors of their classrooms.",
+              "url": "https://punchng.com/video-nigerians-react-as-flood-overruns-primary-school-in-affluent-lekki/"
+            }
+          ],
+          "strength": "area",
+          "tier_a_event_id": null
+        },
+        {
+          "date": "2018-02-26",
+          "distance_m": 364.6,
+          "episode_id": null,
+          "flood_type": "pluvial",
+          "matched_areas": [
+            "Igbo-Efon, Lekki-Epe Expressway"
+          ],
+          "n_outlets": 1,
+          "promote": false,
+          "sources": [
+            {
+              "publisher": "BBC Pidgin",
+              "quote": "For Igbo-Efon side for Lekki-Epe expressway, people don begin pump water comot for dia compound as water full dia house",
+              "url": "https://www.bbc.com/pidgin/tori-43204030"
+            }
+          ],
+          "strength": "near",
+          "tier_a_event_id": null
+        },
+        {
+          "date": "2017-07-08",
+          "distance_m": 33.7,
+          "episode_id": null,
+          "flood_type": "pluvial",
+          "matched_areas": [
+            "Agungi"
+          ],
+          "n_outlets": 5,
+          "promote": true,
+          "sources": [
+            {
+              "publisher": "Punch",
+              "quote": "A heavy rain that fell on Friday night and Saturday morning has left hundreds of homes and roads flooded",
+              "url": "https://punchng.com/flood-wreaks-havoc-in-nigerias-most-expensive-neighbourhoods/"
+            },
+            {
+              "publisher": "Punch",
+              "quote": "I stay on Jakande First Gate Estate in Lekki Phase I. The water entered into my house.",
+              "url": "https://punchng.com/lagos-flood-residents-lament-loss-of-homes-property/"
+            },
+            {
+              "publisher": "Channels TV",
+              "quote": "residents lamented that the deluge is so massive that they are unable to leave their homes",
+              "url": "https://www.channelstv.com/2017/07/08/lagosians-lament-as-flood-hits-lekki-victoria-island/"
+            }
+          ],
+          "strength": "name",
+          "tier_a_event_id": null
+        }
+      ],
+      "catalog_summary": {
+        "n_days": 11,
+        "n_days_strong": 5,
+        "note": "counts reported floods; a year with no report is not proof of no flood",
+        "per_searched_year": 0.5,
+        "riverine_days": 0,
+        "years_searched": [
+          2017,
+          2018,
+          2019,
+          2020,
+          2021,
+          2022,
+          2023,
+          2024,
+          2025,
+          2026
+        ],
+        "years_with_flood": [
+          2017,
+          2018,
+          2019,
+          2021,
+          2024,
+          2025,
+          2026
+        ]
+      },
       "change": {
         "buildings_0_10m": {
           "by_year": {
@@ -397,6 +828,439 @@
         "Ketu",
         "Ogudu"
       ],
+      "catalog_floods": [
+        {
+          "date": "2026-06-28",
+          "distance_m": 130.1,
+          "episode_id": null,
+          "flood_type": "pluvial",
+          "matched_areas": [
+            "Ogudu"
+          ],
+          "n_outlets": 4,
+          "promote": true,
+          "sources": [
+            {
+              "publisher": "Premium Times",
+              "quote": "Heavy rainfall on Sunday left many parts of Lagos under water, flooding major roads and residential communities",
+              "url": "https://www.premiumtimesng.com/regional/ssouth-west/891405-heavy-rainfall-floods-lagos-communities-disrupts-airport-operations.html"
+            },
+            {
+              "publisher": "Guardian NG",
+              "quote": "Residents of Lagos endured a difficult day yesterday after torrential rainfall on Sunday triggered widespread flooding",
+              "url": "https://guardian.ng/news/nigeria/metro/lagos-residents-lament-as-flooding-cripples-transport-businesses/"
+            },
+            {
+              "publisher": "Punch",
+              "quote": "Floodwaters entered residential buildings in many parts of Lagos, leaving the ground floors of some homes almost completely submerged.",
+              "url": "https://punchng.com/heavy-rain-floods-lagos-roads-agencies-warn-of-more-risks/"
+            }
+          ],
+          "strength": "area",
+          "tier_a_event_id": null
+        },
+        {
+          "date": "2024-10-17",
+          "distance_m": null,
+          "episode_id": null,
+          "flood_type": "pluvial",
+          "matched_areas": [
+            "Alapere"
+          ],
+          "n_outlets": 1,
+          "promote": false,
+          "sources": [
+            {
+              "publisher": "Punch",
+              "quote": "A downpour in the early hours of Thursday, caused widespread flooding in several parts of Lagos State, leaving commuters and motorists stranded.",
+              "url": "https://punchng.com/commuters-motorists-stranded-as-downpour-floods-lagos-roads/"
+            }
+          ],
+          "strength": "name",
+          "tier_a_event_id": null
+        },
+        {
+          "date": "2024-07-03",
+          "distance_m": 93.2,
+          "episode_id": null,
+          "flood_type": "pluvial",
+          "matched_areas": [
+            "Alapere",
+            "Ketu-Alapere"
+          ],
+          "n_outlets": 5,
+          "promote": true,
+          "sources": [
+            {
+              "publisher": "Channels Television",
+              "quote": "A heavy rainfall early Wednesday morning has flooded many parts of Lagos, making it difficult for commuters to move to their destinations.",
+              "url": "https://www.channelstv.com/2024/07/03/commuters-stranded-as-heavy-downpour-floods-lagos-roads/"
+            },
+            {
+              "publisher": "Vanguard",
+              "quote": "Lagos has experienced about nine hours of non-stop rainfall since the early hours of Wednesday.",
+              "url": "https://www.vanguardngr.com/2024/07/lagos-calls-for-calm-as-floods-sack-residents-after-9hrs-rainfall/"
+            },
+            {
+              "publisher": "Channels Television",
+              "quote": "the flash floods which inundated areas like Iyana Oworo linking the Third Mainland and several other areas",
+              "url": "https://www.channelstv.com/2024/07/03/lagos-calls-for-calm-after-wednesdays-torrential-rainfall/"
+            }
+          ],
+          "strength": "name",
+          "tier_a_event_id": "lagos-2024-07-03"
+        },
+        {
+          "date": "2023-04-24",
+          "distance_m": 1250.5,
+          "episode_id": null,
+          "flood_type": "pluvial",
+          "matched_areas": [
+            "Odo Iya-Alaro Bridge inward Ojota"
+          ],
+          "n_outlets": 1,
+          "promote": false,
+          "sources": [
+            {
+              "publisher": "Vanguard",
+              "quote": "dislodging rain floods into open drains on the main carriageway, Odo Iya-Alaro Bridge inward Ojota, Lagos",
+              "url": "https://www.vanguardngr.com/2023/04/lagos-traffic-lastma-dislodges-flood-into-open-drains/"
+            }
+          ],
+          "strength": "area",
+          "tier_a_event_id": null
+        },
+        {
+          "date": "2022-07-08",
+          "distance_m": 1293.0,
+          "episode_id": null,
+          "flood_type": "pluvial",
+          "matched_areas": [
+            "Kosofe"
+          ],
+          "n_outlets": 3,
+          "promote": true,
+          "sources": [
+            {
+              "publisher": "Vanguard",
+              "quote": "a 15-year-old student, Erinle Mouturayo Mary was also found dead in the same canal at Idi-Oro Mushin",
+              "url": "https://www.vanguardngr.com/2022/07/rainstorms-flood-rages-in-lagos-as-residents-get-fresh-danger-alert/"
+            },
+            {
+              "publisher": "Punch",
+              "quote": "about seven people – three children of the same parent and four adults – died",
+              "url": "https://punchng.com/lagos-flood-killed-three-siblings-four-adults-nema/"
+            },
+            {
+              "publisher": "Channels Television",
+              "quote": "Three siblings and four adults have died from a two-day continuous rainfall in Lagos State.",
+              "url": "https://www.channelstv.com/2022/07/13/lagos-flood-killed-three-siblings-four-adults-nema/"
+            }
+          ],
+          "strength": "area",
+          "tier_a_event_id": "lagos-2022-07-08"
+        },
+        {
+          "date": "2022-06-18",
+          "distance_m": 93.2,
+          "episode_id": null,
+          "flood_type": "pluvial",
+          "matched_areas": [
+            "Alapere, Ketu"
+          ],
+          "n_outlets": 1,
+          "promote": false,
+          "sources": [
+            {
+              "publisher": "Punch",
+              "quote": "Roads and houses were flooded and property destroyed in Lagos on Saturday after a downpour which lasted for hours.",
+              "url": "https://punchng.com/rain-pounds-lagos-houses-roads-flooded-property-destroyed/"
+            }
+          ],
+          "strength": "name",
+          "tier_a_event_id": null
+        },
+        {
+          "date": "2021-10-10",
+          "distance_m": 1293.0,
+          "episode_id": "ep-2021-09-02-riverine",
+          "flood_type": "riverine",
+          "matched_areas": [
+            "Ajegunle, Kosofe"
+          ],
+          "n_outlets": 1,
+          "promote": false,
+          "sources": [
+            {
+              "publisher": "TheCable",
+              "quote": "dirty water had snaked its way into houses and rooms, making the entire community a murky mess",
+              "url": "https://www.thecable.ng/homeowners-flee-schools-shut-as-flooding-becomes-permanent-resident-in-lagos-communities/"
+            }
+          ],
+          "strength": "area",
+          "tier_a_event_id": null
+        },
+        {
+          "date": "2021-09-26",
+          "distance_m": 1260.1,
+          "episode_id": "ep-2021-09-02-riverine",
+          "flood_type": "riverine",
+          "matched_areas": [
+            "Agboyi-Ketu"
+          ],
+          "n_outlets": 2,
+          "promote": false,
+          "sources": [
+            {
+              "publisher": "The Guardian Nigeria",
+              "quote": "A recent visit by The Guardian showed that many residents have had to construct plank bridges to access their homes",
+              "url": "https://guardian.ng/news/oyan-dam-agony-of-residents-of-agboyi-ketu-ajegunle-isheri-others/"
+            },
+            {
+              "publisher": "Vanguard",
+              "quote": "the impact of the water level was felt in streets like Ogabi, Balogun and, Ifelodun Streets, Ikorodu",
+              "url": "https://www.vanguardngr.com/2021/10/looming-floods-lagos-residents-say-nowhere-to-go/"
+            }
+          ],
+          "strength": "area",
+          "tier_a_event_id": null
+        },
+        {
+          "date": "2021-07-16",
+          "distance_m": 130.1,
+          "episode_id": null,
+          "flood_type": "pluvial",
+          "matched_areas": [
+            "Alapere inwards Ogudu Car Wash"
+          ],
+          "n_outlets": 4,
+          "promote": true,
+          "sources": [
+            {
+              "publisher": "Punch",
+              "quote": "Alfred Rewane Road, Ikoyi, was flooded, leading to a traffic snarl while vehicles waded through the water",
+              "url": "https://punchng.com/flood-fallen-trucks-cause-lagos-gridlock-commuters-stranded/"
+            },
+            {
+              "publisher": "Channels TV",
+              "quote": "Several vehicles were submerged underwater in parks at the popular Marina axis of Lagos Island on Friday",
+              "url": "https://www.channelstv.com/2021/07/16/vehicles-submerged-on-lagos-island-amid-heavy-downpour/"
+            },
+            {
+              "publisher": "Channels TV",
+              "quote": "The rain that lasted hours especially in the Lagos Island area left most roads flooded",
+              "url": "https://www.channelstv.com/2021/07/17/commuters-stranded-cars-submerged-in-lagos-after-heavy-downpour/"
+            }
+          ],
+          "strength": "name",
+          "tier_a_event_id": "lagos-2021-07-16"
+        },
+        {
+          "date": "2020-09-12",
+          "distance_m": 93.2,
+          "episode_id": null,
+          "flood_type": "pluvial",
+          "matched_areas": [
+            "Oyebanjo Solarin Street, Ketu",
+            "Oyebanjo street, Ketu"
+          ],
+          "n_outlets": 1,
+          "promote": true,
+          "sources": [
+            {
+              "publisher": "Punch",
+              "quote": "around 8 pm, two children had been caught up by floodwater",
+              "url": "https://punchng.com/flood-sweeps-away-two-children-in-lagos/"
+            }
+          ],
+          "strength": "area",
+          "tier_a_event_id": null
+        },
+        {
+          "date": "2020-06-18",
+          "distance_m": 130.1,
+          "episode_id": null,
+          "flood_type": "pluvial",
+          "matched_areas": [
+            "Ifako",
+            "Ogudu"
+          ],
+          "n_outlets": 6,
+          "promote": true,
+          "sources": [
+            {
+              "publisher": "Punch",
+              "quote": "some other residents were seen using buckets to bail out water from their various homes",
+              "url": "https://punchng.com/flood-sweeps-away-four-year-old-girl-in-lagos/"
+            },
+            {
+              "publisher": "Vanguard",
+              "quote": "Anifowose Community, Ikeja, Agege, and most parts of Lekki stranded as roads and houses were flooded",
+              "url": "https://www.vanguardngr.com/2020/06/early-morning-downpour-in-lagos-leaves-roads-homes-flooded/"
+            },
+            {
+              "publisher": "Premium Times",
+              "quote": "Lagos residents battled heavy flood after a Thursday morning rainfall submerged various parts of the city",
+              "url": "https://www.premiumtimesng.com/regional/ssouth-west/398304-lagos-residents-battle-flood-after-downpour.html"
+            }
+          ],
+          "strength": "area",
+          "tier_a_event_id": null
+        },
+        {
+          "date": "2019-10-20",
+          "distance_m": 93.2,
+          "episode_id": "ep-2019-10-04-riverine",
+          "flood_type": "riverine",
+          "matched_areas": [
+            "Agboyi-Ketu",
+            "Ketu"
+          ],
+          "n_outlets": 5,
+          "promote": true,
+          "sources": [
+            {
+              "publisher": "The Guardian Nigeria",
+              "quote": "residents of Lagos State were trapped in their homes and some others spent hours in traffic as a result of the flood",
+              "url": "https://guardian.ng/news/again-flood-wreaks-havoc-in-lagos/"
+            },
+            {
+              "publisher": "Vanguard",
+              "quote": "several communities were completely taken over by heavy flood, leaving many residents trapped in their homes",
+              "url": "https://www.vanguardngr.com/2019/10/flood-sacks-lagos-ogun-border-residents-after-heavy-downpour/"
+            },
+            {
+              "publisher": "Punch",
+              "quote": "Hundreds of communities and estates in parts of Lagos and Ogun states have been submerged by flood",
+              "url": "https://punchng.com/flooding-lagos-ogun-brainstorm-over-oyan-dam-water-release/"
+            }
+          ],
+          "strength": "area",
+          "tier_a_event_id": null
+        },
+        {
+          "date": "2019-10-04",
+          "distance_m": 1260.1,
+          "episode_id": "ep-2019-10-04-riverine",
+          "flood_type": "riverine",
+          "matched_areas": [
+            "Agboyi"
+          ],
+          "n_outlets": 1,
+          "promote": false,
+          "sources": [
+            {
+              "publisher": "Independent Nigeria",
+              "quote": "homes around some of these areas were already flooded, with no end in sight",
+              "url": "https://independent.ng/overflowing-river-ogun-wreaks-havoc-on-lagos-communities/"
+            }
+          ],
+          "strength": "area",
+          "tier_a_event_id": null
+        },
+        {
+          "date": "2019-06-28",
+          "distance_m": null,
+          "episode_id": null,
+          "flood_type": "pluvial",
+          "matched_areas": [
+            "Alapere"
+          ],
+          "n_outlets": 1,
+          "promote": false,
+          "sources": [
+            {
+              "publisher": "Daily Trust",
+              "quote": "This was because of the downpour that made the Estate at Alapere and Ogudu ends flooded.",
+              "url": "https://dailytrust.com/lagos-more-rains-more-pains/"
+            }
+          ],
+          "strength": "name",
+          "tier_a_event_id": null
+        },
+        {
+          "date": "2019-05-20",
+          "distance_m": 93.2,
+          "episode_id": null,
+          "flood_type": "pluvial",
+          "matched_areas": [
+            "Ketu",
+            "Ogudu end of the Lagos-Ibadan Expressway",
+            "Ojota"
+          ],
+          "n_outlets": 3,
+          "promote": true,
+          "sources": [
+            {
+              "publisher": "Channels Television",
+              "quote": "Floods have taken over parts of Lagos State following an early morning heavy rainfall.",
+              "url": "https://www.channelstv.com/2019/05/20/floods-hit-parts-of-lagos-after-heavy-rains/"
+            },
+            {
+              "publisher": "Punch",
+              "quote": "Many residents of the two states could not go about their daily businesses as a result of flood that accompanied the heavy rainfall.",
+              "url": "https://punchng.com/rain-wreaks-havoc-in-lagos-ogun-destroys-buildings-others/"
+            },
+            {
+              "publisher": "The Guardian Nigeria",
+              "quote": "The flood in some parts of the city left thousands of residents stranded as it made many major roads impassable and went into living homes.",
+              "url": "https://guardian.ng/news/how-lagos-downpour-wreaked-havoc-gridlock/"
+            }
+          ],
+          "strength": "area",
+          "tier_a_event_id": null
+        },
+        {
+          "date": "2018-05-25",
+          "distance_m": 93.2,
+          "episode_id": null,
+          "flood_type": "pluvial",
+          "matched_areas": [
+            "Ketu",
+            "Ojota"
+          ],
+          "n_outlets": 1,
+          "promote": false,
+          "sources": [
+            {
+              "publisher": "Channels TV",
+              "quote": "Residents of the affected areas of the commercial city woke up to flooded streets especially in areas like Ketu, Bariga and Ojota",
+              "url": "https://www.channelstv.com/2018/05/25/flood-hits-lagos-after-early-morning-downpour/"
+            }
+          ],
+          "strength": "area",
+          "tier_a_event_id": null
+        }
+      ],
+      "catalog_summary": {
+        "n_days": 16,
+        "n_days_strong": 5,
+        "note": "counts reported floods; a year with no report is not proof of no flood",
+        "per_searched_year": 0.5,
+        "riverine_days": 4,
+        "years_searched": [
+          2017,
+          2018,
+          2019,
+          2020,
+          2021,
+          2022,
+          2023,
+          2024,
+          2025,
+          2026
+        ],
+        "years_with_flood": [
+          2018,
+          2019,
+          2020,
+          2021,
+          2022,
+          2023,
+          2024,
+          2026
+        ]
+      },
       "change": {
         "buildings_0_10m": {
           "by_year": {
@@ -622,6 +1486,364 @@
         "Jakande Estate, Lekki",
         "Oba Elegushi New Market, Jakande Estate"
       ],
+      "catalog_floods": [
+        {
+          "date": "2026-06-30",
+          "distance_m": 1288.9,
+          "episode_id": null,
+          "flood_type": "pluvial",
+          "matched_areas": [
+            "Festac Extension, Jakande Estate"
+          ],
+          "n_outlets": 5,
+          "promote": true,
+          "sources": [
+            {
+              "publisher": "Punch",
+              "quote": "Floodwaters swept through several communities in Lagos State on Tuesday following hours of heavy rainfall, submerging homes and roads",
+              "url": "https://punchng.com/floodwaters-submerge-homes-disrupt-power-supply-in-lagos/"
+            },
+            {
+              "publisher": "Channels Television",
+              "quote": "flash floods were reported in several parts of the city following hours-long rainfall on Tuesday",
+              "url": "https://www.channelstv.com/2026/06/30/lagos-govt-sues-for-calm-following-persistent-rainfalls-flash-floods/"
+            },
+            {
+              "publisher": "Guardian NG",
+              "quote": "Flooded Festac town yesterday.",
+              "url": "https://guardian.ng/news/nigeria/metro/heavy-rain-triggers-flooding-across-lagos-strands-commuters-businesses/"
+            }
+          ],
+          "strength": "area",
+          "tier_a_event_id": null
+        },
+        {
+          "date": "2026-06-28",
+          "distance_m": 1333.3,
+          "episode_id": null,
+          "flood_type": "pluvial",
+          "matched_areas": [
+            "Agungi"
+          ],
+          "n_outlets": 4,
+          "promote": true,
+          "sources": [
+            {
+              "publisher": "Premium Times",
+              "quote": "Heavy rainfall on Sunday left many parts of Lagos under water, flooding major roads and residential communities",
+              "url": "https://www.premiumtimesng.com/regional/ssouth-west/891405-heavy-rainfall-floods-lagos-communities-disrupts-airport-operations.html"
+            },
+            {
+              "publisher": "Guardian NG",
+              "quote": "Residents of Lagos endured a difficult day yesterday after torrential rainfall on Sunday triggered widespread flooding",
+              "url": "https://guardian.ng/news/nigeria/metro/lagos-residents-lament-as-flooding-cripples-transport-businesses/"
+            },
+            {
+              "publisher": "Punch",
+              "quote": "Floodwaters entered residential buildings in many parts of Lagos, leaving the ground floors of some homes almost completely submerged.",
+              "url": "https://punchng.com/heavy-rain-floods-lagos-roads-agencies-warn-of-more-risks/"
+            }
+          ],
+          "strength": "area",
+          "tier_a_event_id": null
+        },
+        {
+          "date": "2025-09-16",
+          "distance_m": 407.0,
+          "episode_id": null,
+          "flood_type": "pluvial",
+          "matched_areas": [
+            "Osapa London"
+          ],
+          "n_outlets": 1,
+          "promote": false,
+          "sources": [
+            {
+              "publisher": "Punch",
+              "quote": "Some parts of Lagos State, on Tuesday morning, were once again submerged by heavy flooding following a downpour",
+              "url": "https://punchng.com/motorists-residents-lament-as-flood-submerges-lagos-roads/"
+            }
+          ],
+          "strength": "area",
+          "tier_a_event_id": null
+        },
+        {
+          "date": "2025-08-04",
+          "distance_m": 1333.3,
+          "episode_id": null,
+          "flood_type": "pluvial",
+          "matched_areas": [
+            "Agungi"
+          ],
+          "n_outlets": 7,
+          "promote": true,
+          "sources": [
+            {
+              "publisher": "Channels Television",
+              "quote": "Some communities in Lagos State, Nigeria's commercial capital, were flooded on Monday after marathon rainfall",
+              "url": "https://www.channelstv.com/2025/08/04/lagos-communities-flooded-vehicles-submerged-after-marathon-rainfall/"
+            },
+            {
+              "publisher": "Daily Trust",
+              "quote": "We can't even enter our homes. The flood has destroyed everything.",
+              "url": "https://dailytrust.com/residents-motorists-stranded-as-flood-hits-lagos/"
+            },
+            {
+              "publisher": "Vanguard",
+              "quote": "The flash floods affected roads and submerged various homes across the metropolis.",
+              "url": "https://www.vanguardngr.com/2025/08/flash-floods-ground-lagos-paralyse-businesses/"
+            }
+          ],
+          "strength": "area",
+          "tier_a_event_id": "lagos-2025-08-04"
+        },
+        {
+          "date": "2025-05-18",
+          "distance_m": 756.8,
+          "episode_id": null,
+          "flood_type": "pluvial",
+          "matched_areas": [
+            "Lekki Phase 1"
+          ],
+          "n_outlets": 1,
+          "promote": false,
+          "sources": [
+            {
+              "publisher": "Vanguard",
+              "quote": "residents of Lekki Phase 1 and surrounding areas, who experienced severe flooding over the weekend following heavy rainfall",
+              "url": "https://www.vanguardngr.com/2025/05/flash-floods-in-lagos-caused-by-high-tidal-levels-says-environment-commissioner/"
+            }
+          ],
+          "strength": "area",
+          "tier_a_event_id": null
+        },
+        {
+          "date": "2024-07-03",
+          "distance_m": 1288.9,
+          "episode_id": null,
+          "flood_type": "pluvial",
+          "matched_areas": [
+            "Jakande Estate"
+          ],
+          "n_outlets": 5,
+          "promote": true,
+          "sources": [
+            {
+              "publisher": "Channels Television",
+              "quote": "A heavy rainfall early Wednesday morning has flooded many parts of Lagos, making it difficult for commuters to move to their destinations.",
+              "url": "https://www.channelstv.com/2024/07/03/commuters-stranded-as-heavy-downpour-floods-lagos-roads/"
+            },
+            {
+              "publisher": "Vanguard",
+              "quote": "Lagos has experienced about nine hours of non-stop rainfall since the early hours of Wednesday.",
+              "url": "https://www.vanguardngr.com/2024/07/lagos-calls-for-calm-as-floods-sack-residents-after-9hrs-rainfall/"
+            },
+            {
+              "publisher": "Channels Television",
+              "quote": "the flash floods which inundated areas like Iyana Oworo linking the Third Mainland and several other areas",
+              "url": "https://www.channelstv.com/2024/07/03/lagos-calls-for-calm-after-wednesdays-torrential-rainfall/"
+            }
+          ],
+          "strength": "area",
+          "tier_a_event_id": "lagos-2024-07-03"
+        },
+        {
+          "date": "2024-06-27",
+          "distance_m": null,
+          "episode_id": null,
+          "flood_type": "pluvial",
+          "matched_areas": [
+            "Alpha Beach Road"
+          ],
+          "n_outlets": 2,
+          "promote": true,
+          "sources": [
+            {
+              "publisher": "Vanguard",
+              "quote": "the flooding incidents experienced as a result of the 48 hours of continuous rainfall experienced in the state",
+              "url": "https://www.vanguardngr.com/2024/06/48hrs-rainfall-agungi-lekki-environs-in-lagos-submerge-in-flood/"
+            },
+            {
+              "publisher": "Lagos State Ministry of the Environment and Water Resources",
+              "quote": "following the flooding incidents experienced as a result of the 48hrs continous rainfall experienced in the state",
+              "url": "https://moelagos.gov.ng/flooding-lagos-to-construct-additional-drainage-collector-on-agungi-to-bring-relief/"
+            }
+          ],
+          "strength": "name",
+          "tier_a_event_id": null
+        },
+        {
+          "date": "2021-07-16",
+          "distance_m": 756.8,
+          "episode_id": null,
+          "flood_type": "pluvial",
+          "matched_areas": [
+            "Lekki Phase 1 inwards Sandfill"
+          ],
+          "n_outlets": 4,
+          "promote": true,
+          "sources": [
+            {
+              "publisher": "Punch",
+              "quote": "Alfred Rewane Road, Ikoyi, was flooded, leading to a traffic snarl while vehicles waded through the water",
+              "url": "https://punchng.com/flood-fallen-trucks-cause-lagos-gridlock-commuters-stranded/"
+            },
+            {
+              "publisher": "Channels TV",
+              "quote": "Several vehicles were submerged underwater in parks at the popular Marina axis of Lagos Island on Friday",
+              "url": "https://www.channelstv.com/2021/07/16/vehicles-submerged-on-lagos-island-amid-heavy-downpour/"
+            },
+            {
+              "publisher": "Channels TV",
+              "quote": "The rain that lasted hours especially in the Lagos Island area left most roads flooded",
+              "url": "https://www.channelstv.com/2021/07/17/commuters-stranded-cars-submerged-in-lagos-after-heavy-downpour/"
+            }
+          ],
+          "strength": "area",
+          "tier_a_event_id": "lagos-2021-07-16"
+        },
+        {
+          "date": "2019-10-12",
+          "distance_m": 654.2,
+          "episode_id": null,
+          "flood_type": "pluvial",
+          "matched_areas": [
+            "Jakande, Lekki"
+          ],
+          "n_outlets": 4,
+          "promote": true,
+          "sources": [
+            {
+              "publisher": "Punch",
+              "quote": "The flood also caused gridlock and destroyed homes at Jakande, Lekki, Ebute-Meta, Ijegun, Idimu, Agege, Randle and Maryland areas of Lagos State.",
+              "url": "https://punchng.com/downpour-gas-man-drowns-lekki-ikorodu-residents-landlords-flee/"
+            }
+          ],
+          "strength": "area",
+          "tier_a_event_id": null
+        },
+        {
+          "date": "2018-08-13",
+          "distance_m": 654.2,
+          "episode_id": null,
+          "flood_type": "pluvial",
+          "matched_areas": [
+            "Jakande, Lekki"
+          ],
+          "n_outlets": 2,
+          "promote": false,
+          "sources": [
+            {
+              "publisher": "Punch",
+              "quote": "Twitter user, Wale Alakija, has shared videos and photos of a street in Jakande, Lekki, Lagos flooded after Monday’s rain.",
+              "url": "https://punchng.com/videos-floods-sack-lekki-road-as-lagos-is-drenched-by-rains/"
+            }
+          ],
+          "strength": "area",
+          "tier_a_event_id": null
+        },
+        {
+          "date": "2018-06-06",
+          "distance_m": 756.8,
+          "episode_id": null,
+          "flood_type": "pluvial",
+          "matched_areas": [
+            "Itedo Grammar School, Lekki Phase 1"
+          ],
+          "n_outlets": 1,
+          "promote": false,
+          "sources": [
+            {
+              "publisher": "Punch",
+              "quote": "The video showed the flooded school and students, who were trying to sweep away the water, that had taken over the corridors of their classrooms.",
+              "url": "https://punchng.com/video-nigerians-react-as-flood-overruns-primary-school-in-affluent-lekki/"
+            }
+          ],
+          "strength": "area",
+          "tier_a_event_id": null
+        },
+        {
+          "date": "2018-02-26",
+          "distance_m": 407.0,
+          "episode_id": null,
+          "flood_type": "pluvial",
+          "matched_areas": [
+            "Osapa London"
+          ],
+          "n_outlets": 1,
+          "promote": false,
+          "sources": [
+            {
+              "publisher": "BBC Pidgin",
+              "quote": "For Igbo-Efon side for Lekki-Epe expressway, people don begin pump water comot for dia compound as water full dia house",
+              "url": "https://www.bbc.com/pidgin/tori-43204030"
+            }
+          ],
+          "strength": "area",
+          "tier_a_event_id": null
+        },
+        {
+          "date": "2017-07-08",
+          "distance_m": 407.0,
+          "episode_id": null,
+          "flood_type": "pluvial",
+          "matched_areas": [
+            "Agungi",
+            "Igbo Efon",
+            "Osapa London",
+            "Osapa, Lekki"
+          ],
+          "n_outlets": 5,
+          "promote": true,
+          "sources": [
+            {
+              "publisher": "Punch",
+              "quote": "A heavy rain that fell on Friday night and Saturday morning has left hundreds of homes and roads flooded",
+              "url": "https://punchng.com/flood-wreaks-havoc-in-nigerias-most-expensive-neighbourhoods/"
+            },
+            {
+              "publisher": "Punch",
+              "quote": "I stay on Jakande First Gate Estate in Lekki Phase I. The water entered into my house.",
+              "url": "https://punchng.com/lagos-flood-residents-lament-loss-of-homes-property/"
+            },
+            {
+              "publisher": "Channels TV",
+              "quote": "residents lamented that the deluge is so massive that they are unable to leave their homes",
+              "url": "https://www.channelstv.com/2017/07/08/lagosians-lament-as-flood-hits-lekki-victoria-island/"
+            }
+          ],
+          "strength": "area",
+          "tier_a_event_id": null
+        }
+      ],
+      "catalog_summary": {
+        "n_days": 13,
+        "n_days_strong": 1,
+        "note": "counts reported floods; a year with no report is not proof of no flood",
+        "per_searched_year": 0.1,
+        "riverine_days": 0,
+        "years_searched": [
+          2017,
+          2018,
+          2019,
+          2020,
+          2021,
+          2022,
+          2023,
+          2024,
+          2025,
+          2026
+        ],
+        "years_with_flood": [
+          2017,
+          2018,
+          2019,
+          2021,
+          2024,
+          2025,
+          2026
+        ]
+      },
       "change": {
         "buildings_0_10m": {
           "by_year": {
@@ -835,6 +2057,122 @@
       "aliases": [
         "Ibeju-Lekki Expressway"
       ],
+      "catalog_floods": [
+        {
+          "date": "2024-07-03",
+          "distance_m": 231.9,
+          "episode_id": null,
+          "flood_type": "pluvial",
+          "matched_areas": [
+            "Ibeju-Lekki"
+          ],
+          "n_outlets": 5,
+          "promote": true,
+          "sources": [
+            {
+              "publisher": "Channels Television",
+              "quote": "A heavy rainfall early Wednesday morning has flooded many parts of Lagos, making it difficult for commuters to move to their destinations.",
+              "url": "https://www.channelstv.com/2024/07/03/commuters-stranded-as-heavy-downpour-floods-lagos-roads/"
+            },
+            {
+              "publisher": "Vanguard",
+              "quote": "Lagos has experienced about nine hours of non-stop rainfall since the early hours of Wednesday.",
+              "url": "https://www.vanguardngr.com/2024/07/lagos-calls-for-calm-as-floods-sack-residents-after-9hrs-rainfall/"
+            },
+            {
+              "publisher": "Channels Television",
+              "quote": "the flash floods which inundated areas like Iyana Oworo linking the Third Mainland and several other areas",
+              "url": "https://www.channelstv.com/2024/07/03/lagos-calls-for-calm-after-wednesdays-torrential-rainfall/"
+            }
+          ],
+          "strength": "area",
+          "tier_a_event_id": "lagos-2024-07-03"
+        },
+        {
+          "date": "2018-09-08",
+          "distance_m": 423.2,
+          "episode_id": null,
+          "flood_type": "pluvial",
+          "matched_areas": [
+            "Eleko"
+          ],
+          "n_outlets": 3,
+          "promote": true,
+          "sources": [
+            {
+              "publisher": "Punch",
+              "quote": "the early morning downpour left several roads and homes in the area flooded",
+              "url": "https://punchng.com/ibeju-lekki-residents-lose-valuables-to-flood/"
+            },
+            {
+              "publisher": "Daily Trust",
+              "quote": "the early morning downpour left several roads and homes in the area flooded",
+              "url": "https://dailytrust.com/millions-lost-in-ibeju-lekki-flood/"
+            },
+            {
+              "publisher": "Guardian NG",
+              "quote": "the early morning downpour left several roads and homes in the area flooded",
+              "url": "https://guardian.ng/news/ibeju-lekki-residents-lose-valuables-worth-millions-to-flood/"
+            }
+          ],
+          "strength": "name",
+          "tier_a_event_id": null
+        },
+        {
+          "date": "2017-07-08",
+          "distance_m": 874.7,
+          "episode_id": null,
+          "flood_type": "pluvial",
+          "matched_areas": [
+            "Ibeju"
+          ],
+          "n_outlets": 5,
+          "promote": true,
+          "sources": [
+            {
+              "publisher": "Punch",
+              "quote": "A heavy rain that fell on Friday night and Saturday morning has left hundreds of homes and roads flooded",
+              "url": "https://punchng.com/flood-wreaks-havoc-in-nigerias-most-expensive-neighbourhoods/"
+            },
+            {
+              "publisher": "Punch",
+              "quote": "I stay on Jakande First Gate Estate in Lekki Phase I. The water entered into my house.",
+              "url": "https://punchng.com/lagos-flood-residents-lament-loss-of-homes-property/"
+            },
+            {
+              "publisher": "Channels TV",
+              "quote": "residents lamented that the deluge is so massive that they are unable to leave their homes",
+              "url": "https://www.channelstv.com/2017/07/08/lagosians-lament-as-flood-hits-lekki-victoria-island/"
+            }
+          ],
+          "strength": "area",
+          "tier_a_event_id": null
+        }
+      ],
+      "catalog_summary": {
+        "n_days": 3,
+        "n_days_strong": 1,
+        "note": "counts reported floods; a year with no report is not proof of no flood",
+        "per_searched_year": 0.1,
+        "riverine_days": 0,
+        "years_searched": [
+          2017,
+          2018,
+          2019,
+          2020,
+          2021,
+          2022,
+          2023,
+          2024,
+          2025,
+          2026
+        ],
+        "years_with_flood": [
+          2017,
+          2018,
+          2024
+        ]
+      },
       "change": {
         "buildings_0_10m": {
           "by_year": {},
@@ -1026,6 +2364,62 @@
         "Ijede, Ikorodu",
         "Oko Ope, Ijede"
       ],
+      "catalog_floods": [
+        {
+          "date": "2025-08-04",
+          "distance_m": 0.4,
+          "episode_id": null,
+          "flood_type": "pluvial",
+          "matched_areas": [
+            "Ijede",
+            "Ijede, Ikorodu",
+            "Oko Ope, Ijede"
+          ],
+          "n_outlets": 7,
+          "promote": true,
+          "sources": [
+            {
+              "publisher": "Channels Television",
+              "quote": "Some communities in Lagos State, Nigeria's commercial capital, were flooded on Monday after marathon rainfall",
+              "url": "https://www.channelstv.com/2025/08/04/lagos-communities-flooded-vehicles-submerged-after-marathon-rainfall/"
+            },
+            {
+              "publisher": "Daily Trust",
+              "quote": "We can't even enter our homes. The flood has destroyed everything.",
+              "url": "https://dailytrust.com/residents-motorists-stranded-as-flood-hits-lagos/"
+            },
+            {
+              "publisher": "Vanguard",
+              "quote": "The flash floods affected roads and submerged various homes across the metropolis.",
+              "url": "https://www.vanguardngr.com/2025/08/flash-floods-ground-lagos-paralyse-businesses/"
+            }
+          ],
+          "strength": "name",
+          "tier_a_event_id": "lagos-2025-08-04"
+        }
+      ],
+      "catalog_summary": {
+        "n_days": 1,
+        "n_days_strong": 1,
+        "note": "counts reported floods; a year with no report is not proof of no flood",
+        "per_searched_year": 0.1,
+        "riverine_days": 0,
+        "years_searched": [
+          2017,
+          2018,
+          2019,
+          2020,
+          2021,
+          2022,
+          2023,
+          2024,
+          2025,
+          2026
+        ],
+        "years_with_flood": [
+          2025
+        ]
+      },
       "change": {
         "buildings_0_10m": {
           "by_year": {
@@ -1198,6 +2592,53 @@
         "Ikorodu",
         "Oko Ope, Ijede"
       ],
+      "catalog_floods": [
+        {
+          "date": "2025-08-04",
+          "distance_m": 0.4,
+          "episode_id": null,
+          "flood_type": "pluvial",
+          "matched_areas": [
+            "Abule Eko",
+            "Ijede",
+            "Ijede, Ikorodu",
+            "Oko Ope, Ijede"
+          ],
+          "n_outlets": 7,
+          "promote": true,
+          "sources": [
+            {
+              "publisher": "Punch",
+              "quote": "It was when it almost reached my shoulder that I had to do the video.",
+              "url": "https://punchng.com/flooding-lagos-community-counts-losses-blames-abandoned-drainage-construction/"
+            }
+          ],
+          "strength": "area",
+          "tier_a_event_id": "lagos-2025-08-04"
+        }
+      ],
+      "catalog_summary": {
+        "n_days": 1,
+        "n_days_strong": 0,
+        "note": "counts reported floods; a year with no report is not proof of no flood",
+        "per_searched_year": 0.0,
+        "riverine_days": 0,
+        "years_searched": [
+          2017,
+          2018,
+          2019,
+          2020,
+          2021,
+          2022,
+          2023,
+          2024,
+          2025,
+          2026
+        ],
+        "years_with_flood": [
+          2025
+        ]
+      },
       "change": {
         "buildings_0_10m": {
           "by_year": {
@@ -1379,6 +2820,27 @@
         "Labora",
         "Labora area of Ibeju-Lekki"
       ],
+      "catalog_floods": [],
+      "catalog_summary": {
+        "n_days": 0,
+        "n_days_strong": 0,
+        "note": "counts reported floods; a year with no report is not proof of no flood",
+        "per_searched_year": 0.0,
+        "riverine_days": 0,
+        "years_searched": [
+          2017,
+          2018,
+          2019,
+          2020,
+          2021,
+          2022,
+          2023,
+          2024,
+          2025,
+          2026
+        ],
+        "years_with_flood": []
+      },
       "change": {
         "buildings_0_10m": {
           "by_year": {},
@@ -1493,6 +2955,212 @@
         "Majek",
         "Sangotedo"
       ],
+      "catalog_floods": [
+        {
+          "date": "2026-07-15",
+          "distance_m": 423.9,
+          "episode_id": null,
+          "flood_type": "pluvial",
+          "matched_areas": [
+            "Abraham Adesanya Estate, Eti-Osa"
+          ],
+          "n_outlets": 2,
+          "promote": false,
+          "sources": [
+            {
+              "publisher": "Channels Television",
+              "quote": "With several roads submerged, some residents have resorted to using canoes to transport people across flooded sections",
+              "url": "https://www.channelstv.com/2026/07/15/video-sanwo-olu-visits-displaced-residents-in-flooded-ogombo-area/"
+            },
+            {
+              "publisher": "Guardian NG",
+              "quote": "Days after the heavy downpour, streets remained submerged, homes were cut off, electricity was disconnected in some areas",
+              "url": "https://guardian.ng/news/nigeria/metro/flood-lagos-residents-count-losses-demand-lasting-drainage-solutions/"
+            }
+          ],
+          "strength": "name",
+          "tier_a_event_id": null
+        },
+        {
+          "date": "2024-07-03",
+          "distance_m": 0.6,
+          "episode_id": null,
+          "flood_type": "pluvial",
+          "matched_areas": [
+            "Awoyaya"
+          ],
+          "n_outlets": 5,
+          "promote": true,
+          "sources": [
+            {
+              "publisher": "Channels Television",
+              "quote": "A heavy rainfall early Wednesday morning has flooded many parts of Lagos, making it difficult for commuters to move to their destinations.",
+              "url": "https://www.channelstv.com/2024/07/03/commuters-stranded-as-heavy-downpour-floods-lagos-roads/"
+            },
+            {
+              "publisher": "Vanguard",
+              "quote": "Lagos has experienced about nine hours of non-stop rainfall since the early hours of Wednesday.",
+              "url": "https://www.vanguardngr.com/2024/07/lagos-calls-for-calm-as-floods-sack-residents-after-9hrs-rainfall/"
+            },
+            {
+              "publisher": "Channels Television",
+              "quote": "the flash floods which inundated areas like Iyana Oworo linking the Third Mainland and several other areas",
+              "url": "https://www.channelstv.com/2024/07/03/lagos-calls-for-calm-after-wednesdays-torrential-rainfall/"
+            }
+          ],
+          "strength": "name",
+          "tier_a_event_id": "lagos-2024-07-03"
+        },
+        {
+          "date": "2020-06-18",
+          "distance_m": 2419.0,
+          "episode_id": null,
+          "flood_type": "pluvial",
+          "matched_areas": [
+            "Abraham Adesanya Estate, Lekki-Epe Expressway",
+            "Awoyaya, Ajah"
+          ],
+          "n_outlets": 6,
+          "promote": true,
+          "sources": [
+            {
+              "publisher": "Punch",
+              "quote": "some other residents were seen using buckets to bail out water from their various homes",
+              "url": "https://punchng.com/flood-sweeps-away-four-year-old-girl-in-lagos/"
+            },
+            {
+              "publisher": "Vanguard",
+              "quote": "Anifowose Community, Ikeja, Agege, and most parts of Lekki stranded as roads and houses were flooded",
+              "url": "https://www.vanguardngr.com/2020/06/early-morning-downpour-in-lagos-leaves-roads-homes-flooded/"
+            },
+            {
+              "publisher": "Premium Times",
+              "quote": "Lagos residents battled heavy flood after a Thursday morning rainfall submerged various parts of the city",
+              "url": "https://www.premiumtimesng.com/regional/ssouth-west/398304-lagos-residents-battle-flood-after-downpour.html"
+            }
+          ],
+          "strength": "name",
+          "tier_a_event_id": null
+        },
+        {
+          "date": "2019-10-12",
+          "distance_m": 0.6,
+          "episode_id": null,
+          "flood_type": "pluvial",
+          "matched_areas": [
+            "Awoyaya, Ibeju-Lekki"
+          ],
+          "n_outlets": 4,
+          "promote": true,
+          "sources": [
+            {
+              "publisher": "The Guardian Nigeria",
+              "quote": "This rain started almost four or five days ago but the one of last night was one of the heaviest.",
+              "url": "https://guardian.ng/news/flood-sweeps-11-year-old-boy-rescuer-to-death-destroys-property-in-lagos/"
+            },
+            {
+              "publisher": "Vanguard",
+              "quote": "residents of Aboru and Iyana-Ipaja in the Alimosho area of Lagos on Saturday as the flood swept away an 11-year-old boy and his rescuer",
+              "url": "https://www.vanguardngr.com/2019/10/tragedy-as-flood-sweeps-two-destroys-property-in-lagos/"
+            },
+            {
+              "publisher": "Punch",
+              "quote": "The flood also caused gridlock and destroyed homes at Jakande, Lekki, Ebute-Meta, Ijegun, Idimu, Agege, Randle and Maryland areas of Lagos State.",
+              "url": "https://punchng.com/downpour-gas-man-drowns-lekki-ikorodu-residents-landlords-flee/"
+            }
+          ],
+          "strength": "name",
+          "tier_a_event_id": null
+        },
+        {
+          "date": "2018-09-08",
+          "distance_m": 0.6,
+          "episode_id": null,
+          "flood_type": "pluvial",
+          "matched_areas": [
+            "Awoyaya",
+            "Majek first-gate"
+          ],
+          "n_outlets": 3,
+          "promote": true,
+          "sources": [
+            {
+              "publisher": "Punch",
+              "quote": "the early morning downpour left several roads and homes in the area flooded",
+              "url": "https://punchng.com/ibeju-lekki-residents-lose-valuables-to-flood/"
+            },
+            {
+              "publisher": "Daily Trust",
+              "quote": "the early morning downpour left several roads and homes in the area flooded",
+              "url": "https://dailytrust.com/millions-lost-in-ibeju-lekki-flood/"
+            },
+            {
+              "publisher": "Guardian NG",
+              "quote": "the early morning downpour left several roads and homes in the area flooded",
+              "url": "https://guardian.ng/news/ibeju-lekki-residents-lose-valuables-worth-millions-to-flood/"
+            }
+          ],
+          "strength": "name",
+          "tier_a_event_id": null
+        },
+        {
+          "date": "2017-07-08",
+          "distance_m": 0.6,
+          "episode_id": null,
+          "flood_type": "pluvial",
+          "matched_areas": [
+            "Awoyaya"
+          ],
+          "n_outlets": 5,
+          "promote": true,
+          "sources": [
+            {
+              "publisher": "Punch",
+              "quote": "A heavy rain that fell on Friday night and Saturday morning has left hundreds of homes and roads flooded",
+              "url": "https://punchng.com/flood-wreaks-havoc-in-nigerias-most-expensive-neighbourhoods/"
+            },
+            {
+              "publisher": "Punch",
+              "quote": "I stay on Jakande First Gate Estate in Lekki Phase I. The water entered into my house.",
+              "url": "https://punchng.com/lagos-flood-residents-lament-loss-of-homes-property/"
+            },
+            {
+              "publisher": "Channels TV",
+              "quote": "residents lamented that the deluge is so massive that they are unable to leave their homes",
+              "url": "https://www.channelstv.com/2017/07/08/lagosians-lament-as-flood-hits-lekki-victoria-island/"
+            }
+          ],
+          "strength": "name",
+          "tier_a_event_id": null
+        }
+      ],
+      "catalog_summary": {
+        "n_days": 6,
+        "n_days_strong": 6,
+        "note": "counts reported floods; a year with no report is not proof of no flood",
+        "per_searched_year": 0.6,
+        "riverine_days": 0,
+        "years_searched": [
+          2017,
+          2018,
+          2019,
+          2020,
+          2021,
+          2022,
+          2023,
+          2024,
+          2025,
+          2026
+        ],
+        "years_with_flood": [
+          2017,
+          2018,
+          2019,
+          2020,
+          2024,
+          2026
+        ]
+      },
       "change": {
         "buildings_0_10m": {
           "by_year": {
@@ -1681,6 +3349,326 @@
         "Apongbon",
         "Marina Road"
       ],
+      "catalog_floods": [
+        {
+          "date": "2025-09-24",
+          "distance_m": 296.4,
+          "episode_id": null,
+          "flood_type": "pluvial",
+          "matched_areas": [
+            "Lagos Island"
+          ],
+          "n_outlets": 3,
+          "promote": true,
+          "sources": [
+            {
+              "publisher": "Punch",
+              "quote": "Vehicular and business activities were paralysed across parts of Lagos State on Wednesday after hours of heavy downpour",
+              "url": "https://punchng.com/motorists-stranded-as-flood-overruns-lagos-communities/"
+            },
+            {
+              "publisher": "Guardian NG",
+              "quote": "Several areas of Lagos State were heavily impacted by flooding on Wednesday morning following a downpour that submerged streets",
+              "url": "https://guardian.ng/news/nigeria/metro/heavy-rainfall-floods-lagos-residents-struggle-to-navigate-streets/"
+            },
+            {
+              "publisher": "Premium Times",
+              "quote": "the flooding recorded in parts of Lagos on Wednesday was a flash flood that had since receded",
+              "url": "https://www.premiumtimesng.com/news/top-news/823455-lagos-govt-appeals-for-calm-as-heavy-floods-submerge-streets.html"
+            }
+          ],
+          "strength": "area",
+          "tier_a_event_id": null
+        },
+        {
+          "date": "2025-09-09",
+          "distance_m": 296.4,
+          "episode_id": null,
+          "flood_type": "pluvial",
+          "matched_areas": [
+            "Lagos Island"
+          ],
+          "n_outlets": 1,
+          "promote": false,
+          "sources": [
+            {
+              "publisher": "Vanguard",
+              "quote": "Motorists and residents across Lagos on Tuesday were trapped in heavy gridlock after several hours of early morning downpour",
+              "url": "https://www.vanguardngr.com/2025/09/gridlock-as-flash-floods-take-over-lagos-roads-paralyse-business-activities/"
+            }
+          ],
+          "strength": "area",
+          "tier_a_event_id": null
+        },
+        {
+          "date": "2025-04-10",
+          "distance_m": 296.4,
+          "episode_id": null,
+          "flood_type": "pluvial",
+          "matched_areas": [
+            "Lagos Island"
+          ],
+          "n_outlets": 1,
+          "promote": false,
+          "sources": [
+            {
+              "publisher": "Punch",
+              "quote": "the Lagos State government has set up pumping stations in the area to pump out the stormwater",
+              "url": "https://punchng.com/video-govt-deploys-pumps-to-address-flooding-in-lagos-island-communities/"
+            }
+          ],
+          "strength": "area",
+          "tier_a_event_id": null
+        },
+        {
+          "date": "2024-07-03",
+          "distance_m": 296.4,
+          "episode_id": null,
+          "flood_type": "pluvial",
+          "matched_areas": [
+            "Lagos Island"
+          ],
+          "n_outlets": 5,
+          "promote": true,
+          "sources": [
+            {
+              "publisher": "Channels Television",
+              "quote": "A heavy rainfall early Wednesday morning has flooded many parts of Lagos, making it difficult for commuters to move to their destinations.",
+              "url": "https://www.channelstv.com/2024/07/03/commuters-stranded-as-heavy-downpour-floods-lagos-roads/"
+            },
+            {
+              "publisher": "Vanguard",
+              "quote": "Lagos has experienced about nine hours of non-stop rainfall since the early hours of Wednesday.",
+              "url": "https://www.vanguardngr.com/2024/07/lagos-calls-for-calm-as-floods-sack-residents-after-9hrs-rainfall/"
+            },
+            {
+              "publisher": "Channels Television",
+              "quote": "the flash floods which inundated areas like Iyana Oworo linking the Third Mainland and several other areas",
+              "url": "https://www.channelstv.com/2024/07/03/lagos-calls-for-calm-after-wednesdays-torrential-rainfall/"
+            }
+          ],
+          "strength": "area",
+          "tier_a_event_id": "lagos-2024-07-03"
+        },
+        {
+          "date": "2022-09-12",
+          "distance_m": 296.4,
+          "episode_id": null,
+          "flood_type": "pluvial",
+          "matched_areas": [
+            "Marina, Lagos Island"
+          ],
+          "n_outlets": 3,
+          "promote": true,
+          "sources": [
+            {
+              "publisher": "Channels Television",
+              "quote": "They were swept away by the floods and Farinloye said they both lost their lives.",
+              "url": "https://www.channelstv.com/2022/09/12/gridlock-outcry-as-floods-hit-lagos-kill-two/"
+            },
+            {
+              "publisher": "Punch",
+              "quote": "Two persons lost their lives during the flood that submerged various communities in Alimosho Local Government Area of Lagos State on Monday.",
+              "url": "https://punchng.com/lagos-flooding-rescuers-recover-two-corpses-save-nine/"
+            },
+            {
+              "publisher": "Vanguard",
+              "quote": "the building started sinking on Monday morning, after it was submerged due to four hours of torrential rainfall",
+              "url": "https://www.vanguardngr.com/2022/09/we-just-renewed-rent-have-no-place-to-go-survivors-of-lagos-sinking-building/"
+            }
+          ],
+          "strength": "name",
+          "tier_a_event_id": null
+        },
+        {
+          "date": "2021-07-16",
+          "distance_m": 296.4,
+          "episode_id": null,
+          "flood_type": "pluvial",
+          "matched_areas": [
+            "Lagos Marina on Victoria Island",
+            "Marina",
+            "Marina axis of Lagos",
+            "Marina axis of Lagos Island"
+          ],
+          "n_outlets": 4,
+          "promote": true,
+          "sources": [
+            {
+              "publisher": "Channels TV",
+              "quote": "Several vehicles were submerged underwater in parks at the popular Marina axis of Lagos Island on Friday",
+              "url": "https://www.channelstv.com/2021/07/16/vehicles-submerged-on-lagos-island-amid-heavy-downpour/"
+            },
+            {
+              "publisher": "Daily Trust",
+              "quote": "flooded the state and wrecked a yet to be financially quantified havoc accompanied by flood with properties such as vehicles and buildings washed away",
+              "url": "https://dailytrust.com/why-lagos-was-flooded-nimet/"
+            }
+          ],
+          "strength": "name",
+          "tier_a_event_id": "lagos-2021-07-16"
+        },
+        {
+          "date": "2020-06-18",
+          "distance_m": null,
+          "episode_id": null,
+          "flood_type": "pluvial",
+          "matched_areas": [
+            "Marina"
+          ],
+          "n_outlets": 6,
+          "promote": true,
+          "sources": [
+            {
+              "publisher": "Punch",
+              "quote": "some other residents were seen using buckets to bail out water from their various homes",
+              "url": "https://punchng.com/flood-sweeps-away-four-year-old-girl-in-lagos/"
+            },
+            {
+              "publisher": "Vanguard",
+              "quote": "Anifowose Community, Ikeja, Agege, and most parts of Lekki stranded as roads and houses were flooded",
+              "url": "https://www.vanguardngr.com/2020/06/early-morning-downpour-in-lagos-leaves-roads-homes-flooded/"
+            },
+            {
+              "publisher": "Premium Times",
+              "quote": "Lagos residents battled heavy flood after a Thursday morning rainfall submerged various parts of the city",
+              "url": "https://www.premiumtimesng.com/regional/ssouth-west/398304-lagos-residents-battle-flood-after-downpour.html"
+            }
+          ],
+          "strength": "name",
+          "tier_a_event_id": null
+        },
+        {
+          "date": "2019-10-20",
+          "distance_m": 296.4,
+          "episode_id": "ep-2019-10-04-riverine",
+          "flood_type": "riverine",
+          "matched_areas": [
+            "Lagos Island"
+          ],
+          "n_outlets": 5,
+          "promote": true,
+          "sources": [
+            {
+              "publisher": "The Guardian Nigeria",
+              "quote": "residents of Lagos State were trapped in their homes and some others spent hours in traffic as a result of the flood",
+              "url": "https://guardian.ng/news/again-flood-wreaks-havoc-in-lagos/"
+            },
+            {
+              "publisher": "Vanguard",
+              "quote": "several communities were completely taken over by heavy flood, leaving many residents trapped in their homes",
+              "url": "https://www.vanguardngr.com/2019/10/flood-sacks-lagos-ogun-border-residents-after-heavy-downpour/"
+            },
+            {
+              "publisher": "Punch",
+              "quote": "Hundreds of communities and estates in parts of Lagos and Ogun states have been submerged by flood",
+              "url": "https://punchng.com/flooding-lagos-ogun-brainstorm-over-oyan-dam-water-release/"
+            }
+          ],
+          "strength": "area",
+          "tier_a_event_id": null
+        },
+        {
+          "date": "2019-05-20",
+          "distance_m": 296.4,
+          "episode_id": null,
+          "flood_type": "pluvial",
+          "matched_areas": [
+            "Apongbon, Lagos Island",
+            "Lagos Island"
+          ],
+          "n_outlets": 3,
+          "promote": true,
+          "sources": [
+            {
+              "publisher": "Channels Television",
+              "quote": "Floods have taken over parts of Lagos State following an early morning heavy rainfall.",
+              "url": "https://www.channelstv.com/2019/05/20/floods-hit-parts-of-lagos-after-heavy-rains/"
+            },
+            {
+              "publisher": "Punch",
+              "quote": "Many residents of the two states could not go about their daily businesses as a result of flood that accompanied the heavy rainfall.",
+              "url": "https://punchng.com/rain-wreaks-havoc-in-lagos-ogun-destroys-buildings-others/"
+            },
+            {
+              "publisher": "The Guardian Nigeria",
+              "quote": "The flood in some parts of the city left thousands of residents stranded as it made many major roads impassable and went into living homes.",
+              "url": "https://guardian.ng/news/how-lagos-downpour-wreaked-havoc-gridlock/"
+            }
+          ],
+          "strength": "area",
+          "tier_a_event_id": null
+        },
+        {
+          "date": "2018-09-18",
+          "distance_m": 296.4,
+          "episode_id": null,
+          "flood_type": "pluvial",
+          "matched_areas": [
+            "Apongbon, Lagos Island"
+          ],
+          "n_outlets": 1,
+          "promote": false,
+          "sources": [
+            {
+              "publisher": "Guardian NG",
+              "quote": "Vehicles wading through flood at Apongbon Area of Lagos Island …yesterday.",
+              "url": "https://guardian.ng/news/disease-outbreak-looms-as-floods-spread/"
+            }
+          ],
+          "strength": "area",
+          "tier_a_event_id": null
+        },
+        {
+          "date": "2017-09-11",
+          "distance_m": 296.4,
+          "episode_id": null,
+          "flood_type": "pluvial",
+          "matched_areas": [
+            "Lagos Island"
+          ],
+          "n_outlets": 1,
+          "promote": false,
+          "sources": [
+            {
+              "publisher": "Vanguard",
+              "quote": "The worst hit areas included, Lagos-Abeokuta, Ikeja, Alimosho and Lagos Island, as the roads were practically shut off by flooding",
+              "url": "https://www.vanguardngr.com/2017/09/residents-groan-heavy-flooding-lagos-abeokuta-expressway/"
+            }
+          ],
+          "strength": "area",
+          "tier_a_event_id": null
+        }
+      ],
+      "catalog_summary": {
+        "n_days": 11,
+        "n_days_strong": 3,
+        "note": "counts reported floods; a year with no report is not proof of no flood",
+        "per_searched_year": 0.3,
+        "riverine_days": 1,
+        "years_searched": [
+          2017,
+          2018,
+          2019,
+          2020,
+          2021,
+          2022,
+          2023,
+          2024,
+          2025,
+          2026
+        ],
+        "years_with_flood": [
+          2017,
+          2018,
+          2019,
+          2020,
+          2021,
+          2022,
+          2024,
+          2025
+        ]
+      },
       "change": {
         "buildings_0_10m": {
           "by_year": {},
@@ -1808,6 +3796,228 @@
         "Ekoro",
         "old Oko-Oba Road"
       ],
+      "catalog_floods": [
+        {
+          "date": "2023-06-20",
+          "distance_m": null,
+          "episode_id": null,
+          "flood_type": "pluvial",
+          "matched_areas": [
+            "Oko-Oba"
+          ],
+          "n_outlets": 1,
+          "promote": false,
+          "sources": [
+            {
+              "publisher": "Punch",
+              "quote": "I'm the headmistress of this place. I'm also a parent. I'm sending the video to our bosses so that they can see the flood.",
+              "url": "https://punchng.com/flooding-lagos-communities-where-residents-dread-rain-over-abandoned-canals/"
+            }
+          ],
+          "strength": "name",
+          "tier_a_event_id": null
+        },
+        {
+          "date": "2022-10-21",
+          "distance_m": 2186.0,
+          "episode_id": null,
+          "flood_type": "pluvial",
+          "matched_areas": [
+            "New Oko Oba, Ojokoro"
+          ],
+          "n_outlets": 1,
+          "promote": false,
+          "sources": [
+            {
+              "publisher": "Punch",
+              "quote": "houses are being submerged, gates and fences being removed and washed away by the flood",
+              "url": "https://punchng.com/flood-overtakes-lagos-community-govt-decries-illegal-structures/"
+            }
+          ],
+          "strength": "name",
+          "tier_a_event_id": null
+        },
+        {
+          "date": "2022-07-08",
+          "distance_m": 2931.8,
+          "episode_id": null,
+          "flood_type": "pluvial",
+          "matched_areas": [
+            "Oko-Oba, Agege",
+            "Oyatoki Street, Oko-Oba",
+            "old Oko Oba Road, Agege"
+          ],
+          "n_outlets": 3,
+          "promote": true,
+          "sources": [
+            {
+              "publisher": "Vanguard",
+              "quote": "a 15-year-old student, Erinle Mouturayo Mary was also found dead in the same canal at Idi-Oro Mushin",
+              "url": "https://www.vanguardngr.com/2022/07/rainstorms-flood-rages-in-lagos-as-residents-get-fresh-danger-alert/"
+            },
+            {
+              "publisher": "Punch",
+              "quote": "about seven people – three children of the same parent and four adults – died",
+              "url": "https://punchng.com/lagos-flood-killed-three-siblings-four-adults-nema/"
+            },
+            {
+              "publisher": "Channels Television",
+              "quote": "Three siblings and four adults have died from a two-day continuous rainfall in Lagos State.",
+              "url": "https://www.channelstv.com/2022/07/13/lagos-flood-killed-three-siblings-four-adults-nema/"
+            }
+          ],
+          "strength": "name",
+          "tier_a_event_id": "lagos-2022-07-08"
+        },
+        {
+          "date": "2019-10-12",
+          "distance_m": 1090.7,
+          "episode_id": null,
+          "flood_type": "pluvial",
+          "matched_areas": [
+            "Abule Egba"
+          ],
+          "n_outlets": 4,
+          "promote": true,
+          "sources": [
+            {
+              "publisher": "The Guardian Nigeria",
+              "quote": "This rain started almost four or five days ago but the one of last night was one of the heaviest.",
+              "url": "https://guardian.ng/news/flood-sweeps-11-year-old-boy-rescuer-to-death-destroys-property-in-lagos/"
+            },
+            {
+              "publisher": "Vanguard",
+              "quote": "residents of Aboru and Iyana-Ipaja in the Alimosho area of Lagos on Saturday as the flood swept away an 11-year-old boy and his rescuer",
+              "url": "https://www.vanguardngr.com/2019/10/tragedy-as-flood-sweeps-two-destroys-property-in-lagos/"
+            },
+            {
+              "publisher": "Punch",
+              "quote": "The flood also caused gridlock and destroyed homes at Jakande, Lekki, Ebute-Meta, Ijegun, Idimu, Agege, Randle and Maryland areas of Lagos State.",
+              "url": "https://punchng.com/downpour-gas-man-drowns-lekki-ikorodu-residents-landlords-flee/"
+            }
+          ],
+          "strength": "area",
+          "tier_a_event_id": null
+        },
+        {
+          "date": "2019-07-01",
+          "distance_m": 1028.5,
+          "episode_id": null,
+          "flood_type": "pluvial",
+          "matched_areas": [
+            "Iju"
+          ],
+          "n_outlets": 2,
+          "promote": false,
+          "sources": [
+            {
+              "publisher": "Daily Trust",
+              "quote": "flash floods were experienced in major areas in Ikeja, Agege, Ikorodu, Iju, Obalende, Lekki, Badagry, Ojodu, among hundreds of other areas in Lagos.",
+              "url": "https://dailytrust.com/lagos-more-rains-more-pains/"
+            }
+          ],
+          "strength": "area",
+          "tier_a_event_id": null
+        },
+        {
+          "date": "2019-05-20",
+          "distance_m": 1090.7,
+          "episode_id": null,
+          "flood_type": "pluvial",
+          "matched_areas": [
+            "Abule Egba",
+            "Abule-Egba"
+          ],
+          "n_outlets": 3,
+          "promote": true,
+          "sources": [
+            {
+              "publisher": "Channels Television",
+              "quote": "Floods have taken over parts of Lagos State following an early morning heavy rainfall.",
+              "url": "https://www.channelstv.com/2019/05/20/floods-hit-parts-of-lagos-after-heavy-rains/"
+            },
+            {
+              "publisher": "Punch",
+              "quote": "Many residents of the two states could not go about their daily businesses as a result of flood that accompanied the heavy rainfall.",
+              "url": "https://punchng.com/rain-wreaks-havoc-in-lagos-ogun-destroys-buildings-others/"
+            },
+            {
+              "publisher": "The Guardian Nigeria",
+              "quote": "The flood in some parts of the city left thousands of residents stranded as it made many major roads impassable and went into living homes.",
+              "url": "https://guardian.ng/news/how-lagos-downpour-wreaked-havoc-gridlock/"
+            }
+          ],
+          "strength": "area",
+          "tier_a_event_id": null
+        },
+        {
+          "date": "2018-10-29",
+          "distance_m": 1090.7,
+          "episode_id": null,
+          "flood_type": "pluvial",
+          "matched_areas": [
+            "Abule Egba"
+          ],
+          "n_outlets": 1,
+          "promote": false,
+          "sources": [
+            {
+              "publisher": "Punch",
+              "quote": "the water spilled over to the window level of my one storey building and pulled down my fence",
+              "url": "https://punchng.com/aboru-residents-groan-as-flood-wreaks-havoc-across-lagos/"
+            }
+          ],
+          "strength": "area",
+          "tier_a_event_id": null
+        },
+        {
+          "date": "2017-11-04",
+          "distance_m": 1090.7,
+          "episode_id": null,
+          "flood_type": "pluvial",
+          "matched_areas": [
+            "Abule Egba",
+            "Santos Avenue, Abule Egba"
+          ],
+          "n_outlets": 1,
+          "promote": false,
+          "sources": [
+            {
+              "publisher": "Punch",
+              "quote": "A heavy rain on Saturday afternoon left hundreds of homes and roads flooded in different parts of Lagos State",
+              "url": "https://punchng.com/rainstorm-destroys-buildings-cars-in-lagos/"
+            }
+          ],
+          "strength": "area",
+          "tier_a_event_id": null
+        }
+      ],
+      "catalog_summary": {
+        "n_days": 8,
+        "n_days_strong": 3,
+        "note": "counts reported floods; a year with no report is not proof of no flood",
+        "per_searched_year": 0.3,
+        "riverine_days": 0,
+        "years_searched": [
+          2017,
+          2018,
+          2019,
+          2020,
+          2021,
+          2022,
+          2023,
+          2024,
+          2025,
+          2026
+        ],
+        "years_with_flood": [
+          2017,
+          2018,
+          2019,
+          2022,
+          2023
+        ]
+      },
       "change": {
         "buildings_0_10m": {
           "by_year": {
@@ -2036,6 +4246,295 @@
         "Olopo Meji inward 3rd Mainland",
         "Olopomeji"
       ],
+      "catalog_floods": [
+        {
+          "date": "2026-06-30",
+          "distance_m": 1010.4,
+          "episode_id": null,
+          "flood_type": "pluvial",
+          "matched_areas": [
+            "Gbagada"
+          ],
+          "n_outlets": 5,
+          "promote": true,
+          "sources": [
+            {
+              "publisher": "Punch",
+              "quote": "Floodwaters swept through several communities in Lagos State on Tuesday following hours of heavy rainfall, submerging homes and roads",
+              "url": "https://punchng.com/floodwaters-submerge-homes-disrupt-power-supply-in-lagos/"
+            },
+            {
+              "publisher": "Channels Television",
+              "quote": "flash floods were reported in several parts of the city following hours-long rainfall on Tuesday",
+              "url": "https://www.channelstv.com/2026/06/30/lagos-govt-sues-for-calm-following-persistent-rainfalls-flash-floods/"
+            },
+            {
+              "publisher": "Guardian NG",
+              "quote": "Flooded Festac town yesterday.",
+              "url": "https://guardian.ng/news/nigeria/metro/heavy-rain-triggers-flooding-across-lagos-strands-commuters-businesses/"
+            }
+          ],
+          "strength": "area",
+          "tier_a_event_id": null
+        },
+        {
+          "date": "2026-06-28",
+          "distance_m": 459.8,
+          "episode_id": null,
+          "flood_type": "pluvial",
+          "matched_areas": [
+            "Gbagada Expressway"
+          ],
+          "n_outlets": 4,
+          "promote": true,
+          "sources": [
+            {
+              "publisher": "Premium Times",
+              "quote": "Heavy rainfall on Sunday left many parts of Lagos under water, flooding major roads and residential communities",
+              "url": "https://www.premiumtimesng.com/regional/ssouth-west/891405-heavy-rainfall-floods-lagos-communities-disrupts-airport-operations.html"
+            },
+            {
+              "publisher": "Guardian NG",
+              "quote": "Residents of Lagos endured a difficult day yesterday after torrential rainfall on Sunday triggered widespread flooding",
+              "url": "https://guardian.ng/news/nigeria/metro/lagos-residents-lament-as-flooding-cripples-transport-businesses/"
+            },
+            {
+              "publisher": "Punch",
+              "quote": "Floodwaters entered residential buildings in many parts of Lagos, leaving the ground floors of some homes almost completely submerged.",
+              "url": "https://punchng.com/heavy-rain-floods-lagos-roads-agencies-warn-of-more-risks/"
+            }
+          ],
+          "strength": "near",
+          "tier_a_event_id": null
+        },
+        {
+          "date": "2024-10-17",
+          "distance_m": null,
+          "episode_id": null,
+          "flood_type": "pluvial",
+          "matched_areas": [
+            "Iyana-Oworo"
+          ],
+          "n_outlets": 1,
+          "promote": false,
+          "sources": [
+            {
+              "publisher": "Punch",
+              "quote": "A downpour in the early hours of Thursday, caused widespread flooding in several parts of Lagos State, leaving commuters and motorists stranded.",
+              "url": "https://punchng.com/commuters-motorists-stranded-as-downpour-floods-lagos-roads/"
+            }
+          ],
+          "strength": "name",
+          "tier_a_event_id": null
+        },
+        {
+          "date": "2024-07-03",
+          "distance_m": null,
+          "episode_id": null,
+          "flood_type": "pluvial",
+          "matched_areas": [
+            "Iyana Oworo",
+            "Iyana-Oworo",
+            "Iyana-Oworo-Alapomeji",
+            "Olopo Meji",
+            "Olopomeji"
+          ],
+          "n_outlets": 5,
+          "promote": true,
+          "sources": [
+            {
+              "publisher": "Channels Television",
+              "quote": "the flash floods which inundated areas like Iyana Oworo linking the Third Mainland and several other areas",
+              "url": "https://www.channelstv.com/2024/07/03/lagos-calls-for-calm-after-wednesdays-torrential-rainfall/"
+            },
+            {
+              "publisher": "BBC Pidgin",
+              "quote": "Iyana-Oworo, Olopo Meji areas wey be di main entry point for 3rd mainland bridge bin dey seriously flooded",
+              "url": "https://www.bbc.com/pidgin/articles/czvxdzwr97go"
+            }
+          ],
+          "strength": "name",
+          "tier_a_event_id": "lagos-2024-07-03"
+        },
+        {
+          "date": "2022-09-12",
+          "distance_m": 450.6,
+          "episode_id": null,
+          "flood_type": "pluvial",
+          "matched_areas": [
+            "Ajayi Street"
+          ],
+          "n_outlets": 3,
+          "promote": true,
+          "sources": [
+            {
+              "publisher": "Channels Television",
+              "quote": "They were swept away by the floods and Farinloye said they both lost their lives.",
+              "url": "https://www.channelstv.com/2022/09/12/gridlock-outcry-as-floods-hit-lagos-kill-two/"
+            },
+            {
+              "publisher": "Punch",
+              "quote": "Two persons lost their lives during the flood that submerged various communities in Alimosho Local Government Area of Lagos State on Monday.",
+              "url": "https://punchng.com/lagos-flooding-rescuers-recover-two-corpses-save-nine/"
+            },
+            {
+              "publisher": "Vanguard",
+              "quote": "the building started sinking on Monday morning, after it was submerged due to four hours of torrential rainfall",
+              "url": "https://www.vanguardngr.com/2022/09/we-just-renewed-rent-have-no-place-to-go-survivors-of-lagos-sinking-building/"
+            }
+          ],
+          "strength": "near",
+          "tier_a_event_id": null
+        },
+        {
+          "date": "2022-06-18",
+          "distance_m": 1010.4,
+          "episode_id": null,
+          "flood_type": "pluvial",
+          "matched_areas": [
+            "Gbagada"
+          ],
+          "n_outlets": 1,
+          "promote": false,
+          "sources": [
+            {
+              "publisher": "Punch",
+              "quote": "Roads and houses were flooded and property destroyed in Lagos on Saturday after a downpour which lasted for hours.",
+              "url": "https://punchng.com/rain-pounds-lagos-houses-roads-flooded-property-destroyed/"
+            }
+          ],
+          "strength": "area",
+          "tier_a_event_id": null
+        },
+        {
+          "date": "2020-06-18",
+          "distance_m": null,
+          "episode_id": null,
+          "flood_type": "pluvial",
+          "matched_areas": [
+            "Iyana Oworo"
+          ],
+          "n_outlets": 6,
+          "promote": true,
+          "sources": [
+            {
+              "publisher": "The Guardian Nigeria",
+              "quote": "The flood took over Iyana Oworo inwards Third Mainland Bridge, leaving many vehicles stuck in the water",
+              "url": "https://guardian.ng/news/flood-sweeps-four-year-old-girl-displaces-over-20-families-in-lagos/"
+            }
+          ],
+          "strength": "name",
+          "tier_a_event_id": null
+        },
+        {
+          "date": "2019-10-12",
+          "distance_m": 972.0,
+          "episode_id": null,
+          "flood_type": "pluvial",
+          "matched_areas": [
+            "Bariga"
+          ],
+          "n_outlets": 4,
+          "promote": true,
+          "sources": [
+            {
+              "publisher": "The Guardian Nigeria",
+              "quote": "This rain started almost four or five days ago but the one of last night was one of the heaviest.",
+              "url": "https://guardian.ng/news/flood-sweeps-11-year-old-boy-rescuer-to-death-destroys-property-in-lagos/"
+            },
+            {
+              "publisher": "Vanguard",
+              "quote": "residents of Aboru and Iyana-Ipaja in the Alimosho area of Lagos on Saturday as the flood swept away an 11-year-old boy and his rescuer",
+              "url": "https://www.vanguardngr.com/2019/10/tragedy-as-flood-sweeps-two-destroys-property-in-lagos/"
+            },
+            {
+              "publisher": "Punch",
+              "quote": "The flood also caused gridlock and destroyed homes at Jakande, Lekki, Ebute-Meta, Ijegun, Idimu, Agege, Randle and Maryland areas of Lagos State.",
+              "url": "https://punchng.com/downpour-gas-man-drowns-lekki-ikorodu-residents-landlords-flee/"
+            }
+          ],
+          "strength": "area",
+          "tier_a_event_id": null
+        },
+        {
+          "date": "2019-05-20",
+          "distance_m": 1010.4,
+          "episode_id": null,
+          "flood_type": "pluvial",
+          "matched_areas": [
+            "Gbagada",
+            "Somolu"
+          ],
+          "n_outlets": 3,
+          "promote": true,
+          "sources": [
+            {
+              "publisher": "Channels Television",
+              "quote": "Floods have taken over parts of Lagos State following an early morning heavy rainfall.",
+              "url": "https://www.channelstv.com/2019/05/20/floods-hit-parts-of-lagos-after-heavy-rains/"
+            },
+            {
+              "publisher": "Punch",
+              "quote": "Many residents of the two states could not go about their daily businesses as a result of flood that accompanied the heavy rainfall.",
+              "url": "https://punchng.com/rain-wreaks-havoc-in-lagos-ogun-destroys-buildings-others/"
+            },
+            {
+              "publisher": "The Guardian Nigeria",
+              "quote": "The flood in some parts of the city left thousands of residents stranded as it made many major roads impassable and went into living homes.",
+              "url": "https://guardian.ng/news/how-lagos-downpour-wreaked-havoc-gridlock/"
+            }
+          ],
+          "strength": "area",
+          "tier_a_event_id": null
+        },
+        {
+          "date": "2018-05-25",
+          "distance_m": 972.0,
+          "episode_id": null,
+          "flood_type": "pluvial",
+          "matched_areas": [
+            "Bariga"
+          ],
+          "n_outlets": 1,
+          "promote": false,
+          "sources": [
+            {
+              "publisher": "Channels TV",
+              "quote": "Residents of the affected areas of the commercial city woke up to flooded streets especially in areas like Ketu, Bariga and Ojota",
+              "url": "https://www.channelstv.com/2018/05/25/flood-hits-lagos-after-early-morning-downpour/"
+            }
+          ],
+          "strength": "area",
+          "tier_a_event_id": null
+        }
+      ],
+      "catalog_summary": {
+        "n_days": 10,
+        "n_days_strong": 5,
+        "note": "counts reported floods; a year with no report is not proof of no flood",
+        "per_searched_year": 0.5,
+        "riverine_days": 0,
+        "years_searched": [
+          2017,
+          2018,
+          2019,
+          2020,
+          2021,
+          2022,
+          2023,
+          2024,
+          2025,
+          2026
+        ],
+        "years_with_flood": [
+          2018,
+          2019,
+          2020,
+          2022,
+          2024,
+          2026
+        ]
+      },
       "change": {
         "buildings_0_10m": {
           "by_year": {
@@ -2217,6 +4716,91 @@
       "aliases": [
         "Sangotedo"
       ],
+      "catalog_floods": [
+        {
+          "date": "2024-07-03",
+          "distance_m": 3536.9,
+          "episode_id": null,
+          "flood_type": "pluvial",
+          "matched_areas": [
+            "Sangotedo"
+          ],
+          "n_outlets": 5,
+          "promote": true,
+          "sources": [
+            {
+              "publisher": "Channels Television",
+              "quote": "A heavy rainfall early Wednesday morning has flooded many parts of Lagos, making it difficult for commuters to move to their destinations.",
+              "url": "https://www.channelstv.com/2024/07/03/commuters-stranded-as-heavy-downpour-floods-lagos-roads/"
+            },
+            {
+              "publisher": "Vanguard",
+              "quote": "Lagos has experienced about nine hours of non-stop rainfall since the early hours of Wednesday.",
+              "url": "https://www.vanguardngr.com/2024/07/lagos-calls-for-calm-as-floods-sack-residents-after-9hrs-rainfall/"
+            },
+            {
+              "publisher": "Channels Television",
+              "quote": "the flash floods which inundated areas like Iyana Oworo linking the Third Mainland and several other areas",
+              "url": "https://www.channelstv.com/2024/07/03/lagos-calls-for-calm-after-wednesdays-torrential-rainfall/"
+            }
+          ],
+          "strength": "name",
+          "tier_a_event_id": "lagos-2024-07-03"
+        },
+        {
+          "date": "2017-07-08",
+          "distance_m": 654.2,
+          "episode_id": null,
+          "flood_type": "pluvial",
+          "matched_areas": [
+            "Olokonla"
+          ],
+          "n_outlets": 5,
+          "promote": true,
+          "sources": [
+            {
+              "publisher": "Punch",
+              "quote": "A heavy rain that fell on Friday night and Saturday morning has left hundreds of homes and roads flooded",
+              "url": "https://punchng.com/flood-wreaks-havoc-in-nigerias-most-expensive-neighbourhoods/"
+            },
+            {
+              "publisher": "Punch",
+              "quote": "I stay on Jakande First Gate Estate in Lekki Phase I. The water entered into my house.",
+              "url": "https://punchng.com/lagos-flood-residents-lament-loss-of-homes-property/"
+            },
+            {
+              "publisher": "Channels TV",
+              "quote": "residents lamented that the deluge is so massive that they are unable to leave their homes",
+              "url": "https://www.channelstv.com/2017/07/08/lagosians-lament-as-flood-hits-lekki-victoria-island/"
+            }
+          ],
+          "strength": "area",
+          "tier_a_event_id": null
+        }
+      ],
+      "catalog_summary": {
+        "n_days": 2,
+        "n_days_strong": 1,
+        "note": "counts reported floods; a year with no report is not proof of no flood",
+        "per_searched_year": 0.1,
+        "riverine_days": 0,
+        "years_searched": [
+          2017,
+          2018,
+          2019,
+          2020,
+          2021,
+          2022,
+          2023,
+          2024,
+          2025,
+          2026
+        ],
+        "years_with_flood": [
+          2017,
+          2024
+        ]
+      },
       "change": {
         "buildings_0_10m": {
           "by_year": {
