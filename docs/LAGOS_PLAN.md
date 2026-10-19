@@ -197,6 +197,7 @@ different city each year, which is why rain alone didn't explain flood days. Rea
    `pipeline/storm_replay.py` → `events/site_rain_response.json`, `events/site_rain_summary.json`.
 7. *Per-site flood odds.* P(flood | rain intensity, site drainage state: blocked / built-over / fixed). It needs many more
    events than 5, so it depends on step 1.
+   **Covered by step 6's per-site rates (2026-10-19).**
 8. *Pre-season watch list.* Each March, rank sites with repeated flooding, named drainage failure and no visible fix.
    Sea and lagoon level rise and projected rain intensification enter later as boundary conditions; drainage dominates on the
    app's timescales.
