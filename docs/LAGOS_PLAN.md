@@ -189,11 +189,21 @@ different city each year, which is why rain alone didn't explain flood days. Rea
    `events/drainage_sites_terrain.json`, `events/terrain/`.
 6. *Storm replay.* Run past IMERG storms over present conditions (the 2011 storm on 2025 Lagos) and over hypothetical fixes
    (the 2024 storm with the Agungi collector built). This is the most direct use of the principle.
+   **Done 2026-10-19 as rain-matched history (Task 31), not simulation:** step 5 showed the 30 m DEMs can't place floods,
+   so storms are replayed against the record instead. City-wide, the share of flood days rises from 0.5% (<10 mm 2-day
+   rain) to 13.8% (>=80 mm). Per site: storm rates at 20/40/60/80 mm, replays of the five Tier A storms with sourced
+   analogs, and before/after each promise. Every before/after has too few storms after the promise to tell. Rates
+   reflect how often news names a place, so compare sites, don't read them as probabilities.
+   `pipeline/storm_replay.py` → `events/site_rain_response.json`, `events/site_rain_summary.json`.
 7. *Per-site flood odds.* P(flood | rain intensity, site drainage state: blocked / built-over / fixed). It needs many more
    events than 5, so it depends on step 1.
 8. *Pre-season watch list.* Each March, rank sites with repeated flooding, named drainage failure and no visible fix.
    Sea and lagoon level rise and projected rain intensification enter later as boundary conditions; drainage dominates on the
    app's timescales.
+   **Done 2026-10-19 (Task 32):** `src/lib/watchList.ts`, a card at the top of Sites mode with an as-of date. Three yes/no
+   tests (repeated flooding, named drainage failure, no visible fix); tier = tests passed, each with its reason. As of
+   2026-03-01: Olopo Meji and Agungi pass all three. "No visible fix" passes everywhere for now, since no promise shows as
+   delivered in imagery. Upkeep each season: re-run the news sweep, re-check promises against imagery, read the March list.
 Limits to state everywhere: no public gauges, few events, reporting bias, coarse DEM. Outputs are comparative ("worse than",
 "this fix helps more than that one"), which is exactly the comparison a drainage agency needs to prioritise.
 
