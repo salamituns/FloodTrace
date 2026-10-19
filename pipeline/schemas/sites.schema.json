@@ -202,7 +202,8 @@
           "enum": [
             "pluvial",
             "riverine",
-            "lagoon"
+            "lagoon",
+            "coastal"
           ]
         },
         "episode_id": {

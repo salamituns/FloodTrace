@@ -58,6 +58,10 @@ months, say so; the reviewer may then drop pass 2 for older years.
 - Task 03 and Task 26 rules apply.
 - Never invent dates, numbers or quotes. Quotes are verbatim and at most 25 words, and **every `quote` and `cause_quote`
   must appear in that report's own URL**. Don't copy a quote from another outlet's article, even about the same statement.
+- **`date_confidence: "period"`** is for a roundup that names no flood day or week ("over the last few weeks", "this
+  rainy season", "in the past month"). Set `date` to the publication date. merge.py lists these reports apart and never
+  makes them flood days. Use `approx` only when the article lets you place the flood within a few days ("last week's
+  downpour").
 - **The date is the flood day, not the publication day.** When an article says "on Saturday", work out the date and set
   `date_confidence: "day"`.
 - A month with nothing found is a valid result. Log it.

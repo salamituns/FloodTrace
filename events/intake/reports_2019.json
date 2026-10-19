@@ -636,8 +636,8 @@
     {
       "id": "r2019-021",
       "pass": 2,
-      "date": "2019-10-21",
-      "date_confidence": "approx",
+      "date": "2019-11-16",
+      "date_confidence": "period",
       "areas": [
         "Isheri",
         "Riverview Estate"
@@ -654,7 +654,8 @@
       "publisher": "The Guardian Nigeria",
       "published_at": "2019-11-16T03:07:11+00:00",
       "read_status": "read",
-      "deaths": null
+      "deaths": null,
+      "review_note": "2026-10-18 reviewer: article names no flood day or week (roundup / ongoing inundation); date_confidence set to period; date is the publication date."
     }
   ],
   "excluded": [

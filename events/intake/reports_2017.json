@@ -339,8 +339,8 @@
     },
     {
       "id": "r2017-011",
-      "date": "2017-07-08",
-      "date_confidence": "approx",
+      "date": "2017-07-17",
+      "date_confidence": "period",
       "areas": [
         "Victoria Island",
         "Lekki",
@@ -363,7 +363,8 @@
       "published_at": "2017-07-17T00:00:00+01:00",
       "read_status": "read",
       "deaths": null,
-      "pass": 1
+      "pass": 1,
+      "review_note": "2026-10-18 reviewer: article names no flood day or week (roundup / ongoing inundation); date_confidence set to period; date is the publication date."
     },
     {
       "id": "r2017-012",

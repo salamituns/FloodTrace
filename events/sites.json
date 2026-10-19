@@ -1,7 +1,7 @@
 {
   "meta": {
     "catalog_floods": {
-      "flood_days_sha256": "b1302d2f270b444d0fb8d01ea473da3ef214fba10e51abf0f53d4e9bfd76ebce",
+      "flood_days_sha256": "f4f88e2f65e28ec97087be58d17212dd01657baebd30fd7c068790f1cce5700d",
       "method": "each Tier B flood day (events/flood_days.json) matched to the site; strength is the strongest of name > near > area; catalog days are reported floods, so a year with no report is not proof of no flood",
       "rules": {
         "area": "an area with confidence neighbourhood or area within 1,500 m; fallback geocodes (geocoded_from set) count as area at best",
@@ -15,6 +15,9 @@
       },
       "task": "29-site-flood-counts (docs/tasks/29-site-flood-counts.md)",
       "years_searched": [
+        2014,
+        2015,
+        2016,
         2017,
         2018,
         2019,
@@ -177,9 +180,12 @@
         "n_days": 3,
         "n_days_strong": 3,
         "note": "counts reported floods; a year with no report is not proof of no flood",
-        "per_searched_year": 0.3,
+        "per_searched_year": 0.23,
         "riverine_days": 0,
         "years_searched": [
+          2014,
+          2015,
+          2016,
           2017,
           2018,
           2019,
@@ -598,9 +604,12 @@
         "n_days": 11,
         "n_days_strong": 5,
         "note": "counts reported floods; a year with no report is not proof of no flood",
-        "per_searched_year": 0.5,
+        "per_searched_year": 0.38,
         "riverine_days": 0,
         "years_searched": [
+          2014,
+          2015,
+          2016,
           2017,
           2018,
           2019,
@@ -1001,31 +1010,6 @@
           "tier_a_event_id": null
         },
         {
-          "date": "2021-09-26",
-          "distance_m": 1260.1,
-          "episode_id": "ep-2021-09-02-riverine",
-          "flood_type": "riverine",
-          "matched_areas": [
-            "Agboyi-Ketu"
-          ],
-          "n_outlets": 2,
-          "promote": false,
-          "sources": [
-            {
-              "publisher": "The Guardian Nigeria",
-              "quote": "A recent visit by The Guardian showed that many residents have had to construct plank bridges to access their homes",
-              "url": "https://guardian.ng/news/oyan-dam-agony-of-residents-of-agboyi-ketu-ajegunle-isheri-others/"
-            },
-            {
-              "publisher": "Vanguard",
-              "quote": "the impact of the water level was felt in streets like Ogabi, Balogun and, Ifelodun Streets, Ikorodu",
-              "url": "https://www.vanguardngr.com/2021/10/looming-floods-lagos-residents-say-nowhere-to-go/"
-            }
-          ],
-          "strength": "area",
-          "tier_a_event_id": null
-        },
-        {
           "date": "2021-07-16",
           "distance_m": 130.1,
           "episode_id": null,
@@ -1230,15 +1214,84 @@
           ],
           "strength": "area",
           "tier_a_event_id": null
+        },
+        {
+          "date": "2016-10-05",
+          "distance_m": 93.2,
+          "episode_id": "ep-2016-09-17-riverine",
+          "flood_type": "riverine",
+          "matched_areas": [
+            "Agboyi",
+            "Ketu"
+          ],
+          "n_outlets": 1,
+          "promote": false,
+          "sources": [
+            {
+              "publisher": "Punch",
+              "quote": "No fewer than 300 houses have been flooded and 860 households displaced following the opening of Oyan Dam water",
+              "url": "https://punchng.com/300-houses-flooded-agency-releases-oyan-dam-water/"
+            }
+          ],
+          "strength": "area",
+          "tier_a_event_id": null
+        },
+        {
+          "date": "2016-08-28",
+          "distance_m": null,
+          "episode_id": null,
+          "flood_type": "pluvial",
+          "matched_areas": [
+            "Alapere"
+          ],
+          "n_outlets": 2,
+          "promote": false,
+          "sources": [
+            {
+              "publisher": "Punch",
+              "quote": "downpours on Saturday and Sunday left many streets and homes flooded",
+              "url": "https://punchng.com/floods-windstorm-wreak-havoc-lagos-ogun-sokoto/"
+            },
+            {
+              "publisher": "Vanguard",
+              "quote": "Flood at Ladipo Bus Stop along Lagos Abeokuta express road before Oshodi due to heavy down pour",
+              "url": "https://www.vanguardngr.com/2016/08/photos-flood-lagos/"
+            }
+          ],
+          "strength": "name",
+          "tier_a_event_id": null
+        },
+        {
+          "date": "2014-04-20",
+          "distance_m": 130.1,
+          "episode_id": null,
+          "flood_type": "pluvial",
+          "matched_areas": [
+            "Ogudu"
+          ],
+          "n_outlets": 1,
+          "promote": false,
+          "sources": [
+            {
+              "publisher": "Vanguard",
+              "quote": "An afternoon downpour across Lagos yesterday flooded parts of the metropolis, causing serious gridlocks on major roads.",
+              "url": "https://www.vanguardngr.com/2014/04/heavy-downpour-floods-lagos/"
+            }
+          ],
+          "strength": "area",
+          "tier_a_event_id": null
         }
       ],
       "catalog_summary": {
-        "n_days": 16,
-        "n_days_strong": 5,
+        "n_days": 18,
+        "n_days_strong": 6,
         "note": "counts reported floods; a year with no report is not proof of no flood",
-        "per_searched_year": 0.5,
+        "per_searched_year": 0.46,
         "riverine_days": 4,
         "years_searched": [
+          2014,
+          2015,
+          2016,
           2017,
           2018,
           2019,
@@ -1251,6 +1304,8 @@
           2026
         ],
         "years_with_flood": [
+          2014,
+          2016,
           2018,
           2019,
           2020,
@@ -1814,15 +1869,38 @@
           ],
           "strength": "area",
           "tier_a_event_id": null
+        },
+        {
+          "date": "2014-05-30",
+          "distance_m": null,
+          "episode_id": null,
+          "flood_type": "coastal",
+          "matched_areas": [
+            "Alpha Beach"
+          ],
+          "n_outlets": 1,
+          "promote": false,
+          "sources": [
+            {
+              "publisher": "Daily Trust",
+              "quote": "Homes were flooded, shops were washed away, electricity poles and cables were torn down.",
+              "url": "https://dailytrust.com/the-ocean-can-consume-us-yet-we-can-t-help-ourselves/"
+            }
+          ],
+          "strength": "name",
+          "tier_a_event_id": null
         }
       ],
       "catalog_summary": {
-        "n_days": 13,
-        "n_days_strong": 1,
+        "n_days": 14,
+        "n_days_strong": 2,
         "note": "counts reported floods; a year with no report is not proof of no flood",
-        "per_searched_year": 0.1,
+        "per_searched_year": 0.15,
         "riverine_days": 0,
         "years_searched": [
+          2014,
+          2015,
+          2016,
           2017,
           2018,
           2019,
@@ -1835,6 +1913,7 @@
           2026
         ],
         "years_with_flood": [
+          2014,
           2017,
           2018,
           2019,
@@ -2147,15 +2226,43 @@
           ],
           "strength": "area",
           "tier_a_event_id": null
+        },
+        {
+          "date": "2016-06-21",
+          "distance_m": 231.9,
+          "episode_id": null,
+          "flood_type": "pluvial",
+          "matched_areas": [
+            "Ibeju-Lekki"
+          ],
+          "n_outlets": 2,
+          "promote": false,
+          "sources": [
+            {
+              "publisher": "Vanguard",
+              "quote": "Our streets have turned into p‘River Nile’ to the extent that flood is flowing into our houses.",
+              "url": "https://www.vanguardngr.com/2016/06/residents-groan-flooding-rain-persists-lagos/"
+            },
+            {
+              "publisher": "Guardian NG",
+              "quote": "The entire stretch of the Lekki-Epe Expressway became waterlogged",
+              "url": "https://guardian.ng/news/flood-takes-over-lekki-epe-expressway/"
+            }
+          ],
+          "strength": "area",
+          "tier_a_event_id": null
         }
       ],
       "catalog_summary": {
-        "n_days": 3,
+        "n_days": 4,
         "n_days_strong": 1,
         "note": "counts reported floods; a year with no report is not proof of no flood",
-        "per_searched_year": 0.1,
+        "per_searched_year": 0.08,
         "riverine_days": 0,
         "years_searched": [
+          2014,
+          2015,
+          2016,
           2017,
           2018,
           2019,
@@ -2168,6 +2275,7 @@
           2026
         ],
         "years_with_flood": [
+          2016,
           2017,
           2018,
           2024
@@ -2402,9 +2510,12 @@
         "n_days": 1,
         "n_days_strong": 1,
         "note": "counts reported floods; a year with no report is not proof of no flood",
-        "per_searched_year": 0.1,
+        "per_searched_year": 0.08,
         "riverine_days": 0,
         "years_searched": [
+          2014,
+          2015,
+          2016,
           2017,
           2018,
           2019,
@@ -2624,6 +2735,9 @@
         "per_searched_year": 0.0,
         "riverine_days": 0,
         "years_searched": [
+          2014,
+          2015,
+          2016,
           2017,
           2018,
           2019,
@@ -2828,6 +2942,9 @@
         "per_searched_year": 0.0,
         "riverine_days": 0,
         "years_searched": [
+          2014,
+          2015,
+          2016,
           2017,
           2018,
           2019,
@@ -3132,15 +3249,43 @@
           ],
           "strength": "name",
           "tier_a_event_id": null
+        },
+        {
+          "date": "2016-06-21",
+          "distance_m": 0.6,
+          "episode_id": null,
+          "flood_type": "pluvial",
+          "matched_areas": [
+            "Awoyaya"
+          ],
+          "n_outlets": 2,
+          "promote": false,
+          "sources": [
+            {
+              "publisher": "Vanguard",
+              "quote": "Our streets have turned into p‘River Nile’ to the extent that flood is flowing into our houses.",
+              "url": "https://www.vanguardngr.com/2016/06/residents-groan-flooding-rain-persists-lagos/"
+            },
+            {
+              "publisher": "Guardian NG",
+              "quote": "The entire stretch of the Lekki-Epe Expressway became waterlogged",
+              "url": "https://guardian.ng/news/flood-takes-over-lekki-epe-expressway/"
+            }
+          ],
+          "strength": "name",
+          "tier_a_event_id": null
         }
       ],
       "catalog_summary": {
-        "n_days": 6,
-        "n_days_strong": 6,
+        "n_days": 7,
+        "n_days_strong": 7,
         "note": "counts reported floods; a year with no report is not proof of no flood",
-        "per_searched_year": 0.6,
+        "per_searched_year": 0.54,
         "riverine_days": 0,
         "years_searched": [
+          2014,
+          2015,
+          2016,
           2017,
           2018,
           2019,
@@ -3153,6 +3298,7 @@
           2026
         ],
         "years_with_flood": [
+          2016,
           2017,
           2018,
           2019,
@@ -3644,9 +3790,12 @@
         "n_days": 11,
         "n_days_strong": 3,
         "note": "counts reported floods; a year with no report is not proof of no flood",
-        "per_searched_year": 0.3,
+        "per_searched_year": 0.23,
         "riverine_days": 1,
         "years_searched": [
+          2014,
+          2015,
+          2016,
           2017,
           2018,
           2019,
@@ -3797,26 +3946,6 @@
         "old Oko-Oba Road"
       ],
       "catalog_floods": [
-        {
-          "date": "2023-06-20",
-          "distance_m": null,
-          "episode_id": null,
-          "flood_type": "pluvial",
-          "matched_areas": [
-            "Oko-Oba"
-          ],
-          "n_outlets": 1,
-          "promote": false,
-          "sources": [
-            {
-              "publisher": "Punch",
-              "quote": "I'm the headmistress of this place. I'm also a parent. I'm sending the video to our bosses so that they can see the flood.",
-              "url": "https://punchng.com/flooding-lagos-communities-where-residents-dread-rain-over-abandoned-canals/"
-            }
-          ],
-          "strength": "name",
-          "tier_a_event_id": null
-        },
         {
           "date": "2022-10-21",
           "distance_m": 2186.0,
@@ -3990,15 +4119,63 @@
           ],
           "strength": "area",
           "tier_a_event_id": null
+        },
+        {
+          "date": "2016-08-28",
+          "distance_m": null,
+          "episode_id": null,
+          "flood_type": "pluvial",
+          "matched_areas": [
+            "Oko Oba Street"
+          ],
+          "n_outlets": 2,
+          "promote": false,
+          "sources": [
+            {
+              "publisher": "Punch",
+              "quote": "downpours on Saturday and Sunday left many streets and homes flooded",
+              "url": "https://punchng.com/floods-windstorm-wreak-havoc-lagos-ogun-sokoto/"
+            },
+            {
+              "publisher": "Vanguard",
+              "quote": "Flood at Ladipo Bus Stop along Lagos Abeokuta express road before Oshodi due to heavy down pour",
+              "url": "https://www.vanguardngr.com/2016/08/photos-flood-lagos/"
+            }
+          ],
+          "strength": "name",
+          "tier_a_event_id": null
+        },
+        {
+          "date": "2015-03-11",
+          "distance_m": null,
+          "episode_id": null,
+          "flood_type": "pluvial",
+          "matched_areas": [
+            "Oko-Oba"
+          ],
+          "n_outlets": 1,
+          "promote": false,
+          "sources": [
+            {
+              "publisher": "Guardian NG",
+              "quote": "the overflowing Arigbanla Canal, which was recently reconstructed by the Lagos State government, flooded the surrounding streets",
+              "url": "https://guardian.ng/news/fear-of-flood-heightens-as-rains-begin/"
+            }
+          ],
+          "strength": "name",
+          "tier_a_event_id": null
         }
       ],
       "catalog_summary": {
-        "n_days": 8,
-        "n_days_strong": 3,
+        "n_days": 9,
+        "n_days_strong": 4,
         "note": "counts reported floods; a year with no report is not proof of no flood",
-        "per_searched_year": 0.3,
+        "per_searched_year": 0.31,
         "riverine_days": 0,
         "years_searched": [
+          2014,
+          2015,
+          2016,
           2017,
           2018,
           2019,
@@ -4011,11 +4188,12 @@
           2026
         ],
         "years_with_flood": [
+          2015,
+          2016,
           2017,
           2018,
           2019,
-          2022,
-          2023
+          2022
         ]
       },
       "change": {
@@ -4506,15 +4684,89 @@
           ],
           "strength": "area",
           "tier_a_event_id": null
+        },
+        {
+          "date": "2016-09-17",
+          "distance_m": 622.6,
+          "episode_id": "ep-2016-09-17-riverine",
+          "flood_type": "riverine",
+          "matched_areas": [
+            "Olaosebikan Street"
+          ],
+          "n_outlets": 1,
+          "promote": false,
+          "sources": [
+            {
+              "publisher": "Daily Trust",
+              "quote": "vehicular movement has been paralyzed in the rural area while residents now resort to using canoes",
+              "url": "https://dailytrust.com/lagos-community-paralysed-by-flood-resorts-to-canoes/"
+            }
+          ],
+          "strength": "near",
+          "tier_a_event_id": null
+        },
+        {
+          "date": "2016-08-28",
+          "distance_m": 323.0,
+          "episode_id": null,
+          "flood_type": "pluvial",
+          "matched_areas": [
+            "Agberin Street",
+            "Akewusola Street"
+          ],
+          "n_outlets": 2,
+          "promote": false,
+          "sources": [
+            {
+              "publisher": "Punch",
+              "quote": "downpours on Saturday and Sunday left many streets and homes flooded",
+              "url": "https://punchng.com/floods-windstorm-wreak-havoc-lagos-ogun-sokoto/"
+            },
+            {
+              "publisher": "Vanguard",
+              "quote": "Flood at Ladipo Bus Stop along Lagos Abeokuta express road before Oshodi due to heavy down pour",
+              "url": "https://www.vanguardngr.com/2016/08/photos-flood-lagos/"
+            }
+          ],
+          "strength": "near",
+          "tier_a_event_id": null
+        },
+        {
+          "date": "2016-06-21",
+          "distance_m": 87.5,
+          "episode_id": null,
+          "flood_type": "pluvial",
+          "matched_areas": [
+            "Oworonsoki"
+          ],
+          "n_outlets": 2,
+          "promote": false,
+          "sources": [
+            {
+              "publisher": "Vanguard",
+              "quote": "Our streets have turned into p‘River Nile’ to the extent that flood is flowing into our houses.",
+              "url": "https://www.vanguardngr.com/2016/06/residents-groan-flooding-rain-persists-lagos/"
+            },
+            {
+              "publisher": "Guardian NG",
+              "quote": "The entire stretch of the Lekki-Epe Expressway became waterlogged",
+              "url": "https://guardian.ng/news/flood-takes-over-lekki-epe-expressway/"
+            }
+          ],
+          "strength": "area",
+          "tier_a_event_id": null
         }
       ],
       "catalog_summary": {
-        "n_days": 10,
-        "n_days_strong": 5,
+        "n_days": 13,
+        "n_days_strong": 7,
         "note": "counts reported floods; a year with no report is not proof of no flood",
-        "per_searched_year": 0.5,
-        "riverine_days": 0,
+        "per_searched_year": 0.54,
+        "riverine_days": 1,
         "years_searched": [
+          2014,
+          2015,
+          2016,
           2017,
           2018,
           2019,
@@ -4527,6 +4779,7 @@
           2026
         ],
         "years_with_flood": [
+          2016,
           2018,
           2019,
           2020,
@@ -4782,9 +5035,12 @@
         "n_days": 2,
         "n_days_strong": 1,
         "note": "counts reported floods; a year with no report is not proof of no flood",
-        "per_searched_year": 0.1,
+        "per_searched_year": 0.08,
         "riverine_days": 0,
         "years_searched": [
+          2014,
+          2015,
+          2016,
           2017,
           2018,
           2019,

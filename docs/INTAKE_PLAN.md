@@ -153,3 +153,21 @@ even without an event folder.
   - 0.3: Agric bridge, Marina, Oko-Oba;
   - 0.1 or 0: the rest.
   These count reported floods only. The app doesn't show them yet.
+- **2016 done.** 9 days, among them a third Ogun River / Oyan Dam episode (17 Sep–7 Oct 2016). The Ogun-Osun River Basin
+  MD said most of the flooded places "are in the flood plain of Ogun River" (verified). So there are river episodes in
+  2016, 2019 and 2021. No 2016 flood deaths with a named source. The catalog has 83 days for 2016–2026.
+- **2015 done.** 4 flood days, each from a single outlet, plus 2 roundup reports. The news record thins before ~2016, as
+  the plan expected. **New `date_confidence: "period"`:** a roundup with no identifiable flood day ("over the last few
+  weeks") is kept in `flood_days.json` → `period_reports[]`, but never becomes a flood day with an invented date and rain
+  signature.
+- **2014 done.** 3 days (20 Apr, 14 May, 30 May), each from a single outlet. Cursor found several drownings in 2014 only as
+  dead Punch URLs (lost in a site redesign), so they're unusable. That's preservation bias in action.
+- **The approx audit** moved 6 more roundup reports (2016–2023) to `period`. The three riverine episodes keep their
+  promotion. The catalog has 87 days for 2014–2026, plus 8 period reports.
+- **New flood type `coastal`:** ocean surge as the only cause (Alpha Beach, 30 May 2014). Like river and lagoon floods,
+  it's outside the drainage signal.
+- **Caution on site rates:** the thin early years (2014–2015) count as searched years, which dilutes per-year rates.
+  Compare sites with each other, not with an absolute rate.
+- **Sweep stopped at 2014 (decided 2026-10-18).** Yield fell to 3–5 single-outlet days a year at about 6 h a year, and
+  older online archives are thin (dead Punch URLs). 2010–2013 stay unsearched; `meta.search_coverage` says so, and the
+  site rates count only searched years. Reopen only if a new archive source turns up.

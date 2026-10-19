@@ -1,0 +1,139 @@
+{
+  "meta": {
+    "compiled_at": "2026-10-19T00:30:00Z",
+    "year": 2014,
+    "task": "28-news-sweep-full",
+    "method": "Pass 1: news-first sweep of wet-season months (Apr–Nov) using Task 26 outlets and qualifying rule. Pass 2 (slimmed 2026-10-18): death queries with no site filter; Oyan Dam / Ogun River / lagoon / water-release / Isheri-Ajegunle-Owode-Agboyi queries; Anadolu once per year; out-of-season Jan–Mar and Dec. Qualifying reports name a Lagos State place and a date, and describe water on streets or in homes. Quotes ≤25 words, verbatim, and taken only from that report's own URL. Dates, numbers and quotes are only those in the source. Areas left as named; not geocoded. Flood date is the flood day, not publication day.",
+    "districts_searched": [
+      "Alimosho",
+      "Ajeromi-Ifelodun",
+      "Kosofe",
+      "Mushin",
+      "Oshodi-Isolo",
+      "Ojo",
+      "Ikorodu",
+      "Surulere",
+      "Agege",
+      "Ifako-Ijaiye",
+      "Somolu",
+      "Amuwo-Odofin",
+      "Lagos Mainland",
+      "Ikeja",
+      "Eti-Osa"
+    ],
+    "outlets": [
+      "Punch",
+      "Vanguard",
+      "Guardian NG",
+      "Premium Times",
+      "Channels TV",
+      "TVC",
+      "Daily Trust",
+      "BBC Pidgin",
+      "Nairametrics"
+    ],
+    "notes": [
+      "January: Vanguard 21 Jan — Tunji Bello flood-combat strategies after Friday-night rain; no named street or home flood. Excluded.",
+      "February: Vanguard 21 Feb / 4 Feb Premium Times — pre-rainy-season cleaning, Osborne wetland demolition, wetland encroachment. Warnings and policy. Excluded.",
+      "March: no Task 26 street/home flood day found.",
+      "April 1 Vanguard: Bello rainfall prediction and relocate-if-needed alert (Ikorodu, Owode, Iwaya, Makoko, Ijora Badia). Warning. Excluded.",
+      "Easter Sunday 20 Apr (afternoon): Vanguard 21 Apr — yesterday's downpour flooded Oshodi–Apapa Expressway, Lagos–Ibadan Expressway (Ojodu/Berger to Ogudu), Ikorodu Road inward Western Avenue, Alimosho roads, Agege Motor Road, Ikeja, Ogba, Surulere, Iganmu, Orile and Ajegunle; vehicles stuck; Bar Beach picnickers driven indoors. date_confidence exact. No death reported.",
+      "Wednesday 14 May night (~7:30pm–11:47pm): Vanguard 16 May — four-hour downpour; heavy flood took over Abeokuta Expressway at Pleasure bus stop, Agbado-Okeodo LCDA; Nissan plunged into a canal; Fire Service Director Rasak Fadipe recovered one unidentified dead from the flooded car and rescued three. Vehicle-into-canal death is in impacts; deaths is null (crash/canal, not a named flood drowning). Same night house fires at Odunjo Street Aguda and Court Estate Alagomeji are not floods.",
+      "Midnight 30 May: Daily Trust 19 Jul — ocean surge at Okun Alfa / Alpha Beach, Eti-Osa; homes and shops flooded; lone tarred road under water; palace half-submerged; waist-deep water; vehicles submerged. Elegushi: seven days of disruption. Article: 'The surge claimed no life'. Ocean_surge. EnviroNews 5 Jun and YNaija 31 May are leads on the same surge, not Task 26 outlets.",
+      "June: NIHSA/Premium Times national outlook (Lagos not in the high-risk inland list). No Task 26 dated June street/home flood day found.",
+      "July 15 Nation (Amu, Mushin canal blockage) is fear of flood, not a dated inundation. Vanguard 30 Jul Eid rain kept traders indoors; does not describe water on streets or in homes. Daily Trust 2 Jul NIHSA outlook. Excluded.",
+      "August: Punch Metro pieces on Waheed Ewenla Street (Egbe-Idimu, whenever it rains) and Victoria Island blocked drains survive only as blog copies after the Punch redesign; no readable punchng.com URL. Gbenga Oladejo (Agege Motor Road, Mushin, ~29 Jul) is Punch via a blog; not a Task 26 readable URL. Nation Ilasamaja siblings (1 Oct) is not a Task 26 outlet. Leads only.",
+      "September 24 Nation: Bello — water spread within 30.00m of the Ogun Riverbanks at Ajegunle, Owode-Onirin, Owode Elelede; not a dam release; residents advised to stay alert. Warning, not streets/homes flooded. SCOAN building collapse 12 Sep is not a flood.",
+      "October 19 NAN/SundiataPost: Onikoyi / Iba (Obadore Bridge, alleged Ogun dam water, buildings submerged). Not a Task 26 outlet. No Punch/Vanguard/Guardian/Daily Trust/Channels confirmation found. Lead only. Vanguard Oct Apapa–Oshodi 'usually flooded whenever it rains' is chronic road condition, not a dated day.",
+      "November 5 P.M. News citywide flash flood and InformationNG mainland roundup are not Task 26 outlets. Punch 10-year-old Stephen Ola-Atunbi (Ijaiye/Abule Tailor, ~20 Nov) is blog-only after the Punch redesign. Leads only; no qualifying November day.",
+      "December: Guardian 31 Dec Mafoluku/Oshodi uncompleted-bridge perennial flooding (2011 losses; rainy season 'fast approaching'). Vanguard 10 Dec Omigbodun opinion (2011 Funsho Williams / Maryland–Onipanu). Not a dated 2014 flood day. Excluded.",
+      "Anadolu year query: 2013 Lagos flood and 2014 SCOAN collapse, no 2014 Lagos flood day. BBC Pidgin launched 2017. Punch 2014 flood URLs largely unresolved after the site redesign (same as 2015). TVC, Channels TV, Nairametrics, X:LASEMA/MoE/NEMA: no dated 2014 Lagos street/home flood post reached.",
+      "No 2014 flood death with a named person or named office in a qualifying Task 26 report. Unnamed vehicle occupant (14 May) and unnamed residents' 'lost lives' claims in non-qualifying roundups are not used for who_reported."
+    ]
+  },
+  "reports": [
+    {
+      "id": "r2014-001",
+      "date": "2014-04-20",
+      "date_confidence": "exact",
+      "areas": [
+        "Oshodi-Apapa Expressway",
+        "Lagos/Ibadan Expressway",
+        "Ojodu/Berger",
+        "Ogudu",
+        "Ikorodu Road",
+        "Alimosho",
+        "Agege Motor Road",
+        "Ikeja",
+        "Ogba",
+        "Surulere",
+        "Iganmu",
+        "Orile",
+        "Ajegunle",
+        "Bar Beach, Victoria Island"
+      ],
+      "impacts": "Afternoon downpour on Easter Sunday flooded dual carriageways and major roads; hours of gridlock on Oshodi–Apapa Expressway; Lagos/Ibadan Expressway snarl from Ojodu/Berger to Ogudu; Ikorodu Road inward Western Avenue flooded; Alimosho, Agege Motor Road, Ikeja, Ogba, Surulere, Iganmu, Orile and Ajegunle taken over; vehicles stuck; Bar Beach families stayed in cars. No death reported.",
+      "quote": "An afternoon downpour across Lagos yesterday flooded parts of the metropolis, causing serious gridlocks on major roads.",
+      "causes": [
+        "heavy_rain"
+      ],
+      "cause_quote": "An afternoon downpour across Lagos yesterday flooded parts of the metropolis, causing serious gridlocks on major roads.",
+      "cause_attributed_by": "journalist",
+      "cause_who": null,
+      "url": "https://www.vanguardngr.com/2014/04/heavy-downpour-floods-lagos/",
+      "publisher": "Vanguard",
+      "published_at": "2014-04-21T00:00:00+01:00",
+      "read_status": "read",
+      "deaths": null,
+      "pass": 1
+    },
+    {
+      "id": "r2014-002",
+      "date": "2014-05-14",
+      "date_confidence": "exact",
+      "areas": [
+        "Pleasure bus stop, Abeokuta Expressway",
+        "Agbado-Okeodo LCDA"
+      ],
+      "impacts": "Wednesday-night downpour from about 7:30pm lasted over four hours. Heavy flood took over the Abeokuta Expressway at Pleasure bus stop. A Nissan (PST 496 CD) could not wade through and plunged into a canal about 11:47pm. Fire Service Director Rasak Fadipe: car covered by the flood; one unidentified person recovered dead, three rescued. Vehicle-into-canal death is not recorded as a flood drowning. Same night house fires at 27 Odunjo Street, Aguda, Surulere and Court Estate, Alagomeji, Yaba are not floods.",
+      "quote": "the vehicle which was on high speed could not wade through the heavy flood which took over the road",
+      "causes": [
+        "heavy_rain"
+      ],
+      "cause_quote": "during the downpour which lasted for over four hours across the state",
+      "cause_attributed_by": "journalist",
+      "cause_who": null,
+      "url": "https://www.vanguardngr.com/2014/05/one-dies-3-injured-vehicle-plunges-canal/",
+      "publisher": "Vanguard",
+      "published_at": "2014-05-16T00:00:00+01:00",
+      "read_status": "read",
+      "deaths": null,
+      "pass": 1
+    },
+    {
+      "id": "r2014-003",
+      "date": "2014-05-30",
+      "date_confidence": "exact",
+      "areas": [
+        "Okun Alfa",
+        "Alpha Beach",
+        "Eti-Osa",
+        "Lekki"
+      ],
+      "impacts": "Midnight ocean surge 30 May, more intense than earlier ones; community grounded for seven days. Homes flooded; shops washed away; electricity poles and cables torn down; lone tarred road under water; schools flooded; public health centre ransacked; Baale's palace submerged half-way; clothes and mattresses floating; waist-deep water; parked vehicles submerged. Sheriff Elegushi (councillor). Article: the surge claimed no life.",
+      "quote": "Homes were flooded, shops were washed away, electricity poles and cables were torn down.",
+      "causes": [
+        "ocean_surge"
+      ],
+      "cause_quote": "The latest in a series of surges was midnight of May 30.",
+      "cause_attributed_by": "journalist",
+      "cause_who": null,
+      "url": "https://dailytrust.com/the-ocean-can-consume-us-yet-we-can-t-help-ourselves/",
+      "publisher": "Daily Trust",
+      "published_at": "2014-07-19T04:00:00+01:00",
+      "read_status": "read",
+      "deaths": null,
+      "pass": 1
+    }
+  ]
+}

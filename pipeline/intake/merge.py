@@ -58,7 +58,7 @@ DEFAULT_OUT = EVENTS_DIR / "flood_days.json"
 
 AREA_OVERLAP_KM = 2.0
 DRAINAGE_SIGNAL_MM = 20.0
-DATE_CONFIDENCE_ORDER = {"exact": 0, "day": 1, "approx": 2}
+DATE_CONFIDENCE_ORDER = {"exact": 0, "day": 1, "approx": 2, "period": 3}
 
 # docs/INTAKE_PLAN.md decision 3 (promotion to Tier A)
 # Task 28c: death words are a REVIEW AID ONLY. They never promote; a hit
@@ -527,6 +527,7 @@ def flood_type_report(report: dict) -> str:
       quote, cause_quote) names Oyan Dam, Owena or a "release of water",
       or the Ogun River near overflow wording (overflow, over its banks,
       burst, rising). canal_overflow alone is NOT riverine.
+    - "coastal": ocean_surge is the ONLY cause (sea water, no rain).
     - "lagoon": lagoon_tide is the ONLY non-rain cause, and the text
       says the lagoon or tide overflowed into an area. Lagoon backflow
       that slows drainage during rain stays pluvial.
@@ -538,6 +539,8 @@ def flood_type_report(report: dict) -> str:
                                   report.get("cause_quote")]))
     if "dam_release" in causes or RIVERINE_TEXT_RE.search(text):
         return "riverine"
+    if causes == {"ocean_surge"}:
+        return "coastal"
     if causes - {"heavy_rain"} == {"lagoon_tide"} \
             and LAGOON_OVERFLOW_RE.search(text):
         return "lagoon"
@@ -546,9 +549,11 @@ def flood_type_report(report: dict) -> str:
 
 def flood_type_day(report_types: list[str]) -> str:
     """Day type: riverine if any report of the day is riverine; else
-    lagoon if any is; else pluvial."""
+    coastal, then lagoon, if any is; else pluvial."""
     if "riverine" in report_types:
         return "riverine"
+    if "coastal" in report_types:
+        return "coastal"
     if "lagoon" in report_types:
         return "lagoon"
     return "pluvial"
@@ -747,6 +752,10 @@ def main() -> None:
         reports.append(report)
     if not reports:
         raise SystemExit("no reports found")
+    # "period" reports ("over the last few weeks") name no flood day, so a
+    # date and a rain signature for them would be invented; list them apart
+    period_reports = [r for r in reports if r["date_confidence"] == "period"]
+    reports = [r for r in reports if r["date_confidence"] != "period"]
 
     areas_all = sorted({a for r in reports for a in r["areas"]})
     print(f"\ngeocoding {len(areas_all)} area(s) (Nominatim, 1 req/s, cached),\n"
@@ -789,6 +798,7 @@ def main() -> None:
             "pluvial": report_types.count("pluvial"),
             "riverine": report_types.count("riverine"),
             "lagoon": report_types.count("lagoon"),
+            "coastal": report_types.count("coastal"),
         }
         days.append({
             "date": day.isoformat(),
@@ -899,6 +909,11 @@ def main() -> None:
             },
         },
         "days": days,
+        "period_reports": [
+            {k: r.get(k) for k in ("id", "date", "areas", "impacts", "quote",
+                                   "url", "publisher", "published_at")}
+            for r in sorted(period_reports, key=lambda r: r["date"])
+        ],
         "episodes": episodes,
     }
     args.out.parent.mkdir(parents=True, exist_ok=True)
@@ -914,14 +929,14 @@ def main() -> None:
     for year in sorted(per_year):
         print(f"  {year}: {per_year[year]}")
 
-    per_type: dict[str, int] = {"pluvial": 0, "riverine": 0, "lagoon": 0}
+    per_type: dict[str, int] = {"pluvial": 0, "riverine": 0, "lagoon": 0, "coastal": 0}
     for day in days:
         per_type[day["flood_type"]] += 1
     print("\nflood days per type:")
     for ftype, count in per_type.items():
         print(f"  {ftype}: {count}")
 
-    for ftype in ("riverine", "lagoon"):
+    for ftype in ("riverine", "lagoon", "coastal"):
         marked = [d for d in days if d["flood_type"] == ftype]
         print(f"\n{ftype} day(s), with episode:")
         if not marked:

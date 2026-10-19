@@ -304,8 +304,8 @@
     },
     {
       "id": "r2021-011",
-      "date": "2021-09-26",
-      "date_confidence": "approx",
+      "date": "2021-10-03",
+      "date_confidence": "period",
       "areas": [
         "Agboyi-Ketu",
         "Owode Onirin",
@@ -332,7 +332,8 @@
       "published_at": "2021-10-03T05:06:00+01:00",
       "read_status": "read",
       "deaths": null,
-      "pass": 1
+      "pass": 1,
+      "review_note": "2026-10-18 reviewer: article names no flood day or week (roundup / ongoing inundation); date_confidence set to period; date is the publication date."
     },
     {
       "id": "r2021-012",

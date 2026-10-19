@@ -1,0 +1,250 @@
+{
+  "meta": {
+    "compiled_at": "2026-10-18T23:45:00Z",
+    "year": 2015,
+    "task": "28-news-sweep-full",
+    "method": "Pass 1: news-first sweep of wet-season months (Apr–Nov) using Task 26 outlets and qualifying rule. Pass 2 (slimmed 2026-10-18): death queries with no site filter; Oyan Dam / Ogun River / lagoon / water-release / Isheri-Ajegunle-Owode-Agboyi queries; Anadolu once per year; out-of-season Jan–Mar and Dec. Qualifying reports name a Lagos State place and a date, and describe water on streets or in homes. Quotes ≤25 words, verbatim, and taken only from that report's own URL. Dates, numbers and quotes are only those in the source. Areas left as named; not geocoded. Flood date is the flood day, not publication day.",
+    "districts_searched": [
+      "Alimosho",
+      "Ajeromi-Ifelodun",
+      "Kosofe",
+      "Mushin",
+      "Oshodi-Isolo",
+      "Ojo",
+      "Ikorodu",
+      "Surulere",
+      "Agege",
+      "Ifako-Ijaiye",
+      "Somolu",
+      "Amuwo-Odofin",
+      "Lagos Mainland",
+      "Ikeja",
+      "Eti-Osa"
+    ],
+    "outlets": [
+      "Punch",
+      "Vanguard",
+      "Guardian NG",
+      "Premium Times",
+      "Channels TV",
+      "TVC",
+      "Daily Trust",
+      "BBC Pidgin",
+      "Nairametrics"
+    ],
+    "notes": [
+      "Punch 2015 flood URLs largely unresolved after the site redesign; pass 1 still queried site:punchng.com each month. No qualifying Punch street/home flood day found that still reads.",
+      "January: Punch coastal-pupils/lagoon-tide travel piece is not a dated street/home flood. Channels/Vanguard NEMA 8,046 South-West victims are fire and windstorm (Iwaya, Berlin/Marina). Excluded.",
+      "February: no Task 26 street/home flood day found.",
+      "March (out of season): Guardian 18 Mar — last week's downpour, overflowing Arigbanla Canal flooded Orile-Agege streets (Oko-Oba, Alaramimo, Alexandra, Egbatedo, Adelekan, Shoritire Close) and destroyed cars; Aboru, Egbeda, Abesan, Ayobo, Abule-Egba, Akowonjo also named. Fashola visited Papa-Ashafa at the weekend after a rainstorm. No death reported. Kept.",
+      "April: Nairametrics/Nation Tunji Bello seasonal rainfall prediction (Marina 1,824mm). Warnings only. Excluded.",
+      "May: Nation (not Task 26) Adenekan dredging inspection. No Task 26 dated street/home flood day found.",
+      "June 9–10: Vanguard Adenekan relocate advice (lagoon/river back-flow). Warning with a file photo of Ogudu; excluded as a standalone report. Same warning is cited inside the 17 Jun Vanguard piece that is kept.",
+      "Mid-June: Vanguard 17 Jun — floods over the last few weeks; residents sacked from homes; Satellite Town roads flooded this rainy season (shops on drains). Adenekan: rains since March, lagoon and river back-flow. Kept, date_confidence approx.",
+      "Guardian 21 Jun ('Rains of Pains'): past month of downpours; Iyana Ejigbo stretch flooded and impassable; Coconut bus stop and Point Road Apapa flood when it rains. Kept, date_confidence approx. Okota Alhaji Olusesi Street is potholes, not used as a flood area.",
+      "Weekend 20–21 Jun (Sat–Sun) into Monday 22 Jun: Daily Trust — three-day downpour; cars stuck in drainages Sat–Sun; houses submerged at Apapa, Amukoko, Badia, Mushin, Itire, Agege, Okoko; Ijora-Badia and Isolo residents moving property; Apapa end of Oshodi Expressway almost cut off; Mile 2–Apapa and Agege Motor Road gridlock; VGC, Lekki, Ikoyi approach roads waterlogged. 'No life has been reported lost in the flooding.' 14 Ijaye Street, Agege mud house collapsed over the weekend (Farinloye: no casualty); collapse is in impacts, deaths is null. Vanguard 21 Jun is the collapse only; not kept as a flood report.",
+      "Vanguard 23 Jun Ajegunle: roads/potholes visit last Monday; 'every rainy season, we are sacked by flood' is perennial. Excluded as chronic roads, not a dated flood day.",
+      "Nairametrics 27 Jun LSPWC 90-road repairs after recent downpour: no named flooded street/home. Excluded.",
+      "July 19 Guardian Sunday: photos of flooding in Apapa; Ajegunle (Opeleye Street shop destroyed), Mile 2, Apapa; flood entered a house. No weekday. date_confidence approx. No death reported.",
+      "P.M. News 22 Jul editorial says Monday last week (13 Jul) rain claimed lives and left 200+ homeless. Not a Task 26 outlet. Punch/Vanguard/Guardian/Daily Trust/Channels did not confirm a dated 13 Jul street/home flood or named-source death. Lead only.",
+      "August: Onisarotu Lagdo Dam (Cameroon) warning. Forecast. Excluded. Starconnect 24 Aug photo of Ogunnusi Road, Ojodu that morning is not a Task 26 outlet.",
+      "September: Alpha Beach/Okun Alfa ocean flood is Nairaland/BellaNaija (30 Sep). Lead only; no Task 26 confirmation. Premium Times 20 Sep national flood deaths are northern states, not Lagos. Anadolu 22 Sep is Kaduna. Vanguard 'Preparing against flood' is a warning. No qualifying September day.",
+      "October: Onisarotu/TheNEWS heavy-rain warning. Guardian 22 Oct Swamp Street Lagos Island collapse is not a flood. No qualifying October day.",
+      "Saturday 7 Nov: Daily Trust (8 Nov) — 2:30pm downpour took over Lagos–Abeokuta Expressway at Alagbado; vehicles submerged; filling station taken over; ~30 minutes before the road reopened. Same Saturday: Maryland Road, Ikeja, flooded. Lack of drainage on the expressway (residents/motorists). No death in this article.",
+      "Same morning 7 Nov: mudslide at Orisha Street, Isheri Magodo (Ojodu Berger) killed four Odiah siblings. Vanguard, Channels, Anadolu: Farinloye — mud detached from a hill beside River Ogun during heavy rain. deaths is not attached; mudslide is not a flood drowning (same call as 2016 Agidingbi). Not kept as a flood report.",
+      "December: Guardian 17 Dec Oke Afa / Peace Home Valley Estate perennial flooding; no dated 2015 flood day. Nation (not Task 26) same community. Excluded.",
+      "Oyan Dam / Ogun River 2015: Tunji Bello '30.00m of the Ogun Riverbanks' is The Nation 24 Sep 2014, not 2015. No 2015 Oyan-release street/home flood found in Task 26 outlets. Anadolu year query: no 2015 Lagos flood day.",
+      "TVC, BBC Pidgin: no dated 2015 Lagos street/home flood post reached (BBC Pidgin launched 2017). X:LASEMA/MoE/NEMA: not reached.",
+      "No 2015 flood death with a named person or named office in a qualifying report. Unnamed witnesses are not used for who_reported."
+    ]
+  },
+  "reports": [
+    {
+      "id": "r2015-001",
+      "date": "2015-03-11",
+      "date_confidence": "approx",
+      "areas": [
+        "Orile-Agege",
+        "Oko-Oba",
+        "Alaramimo",
+        "Alexandra",
+        "Egbatedo",
+        "Adelekan",
+        "Shoritire Close",
+        "Arigbanla Street",
+        "Aboru",
+        "Egbeda",
+        "Abesan",
+        "Ayobo",
+        "Abule-Egba",
+        "Akowonjo road"
+      ],
+      "impacts": "Last week's downpour: overflowing Arigbanla Canal flooded surrounding Orile-Agege streets and destroyed property including cars, valued at millions of naira. Rain started in the early hours. Other mainland areas named as worst hit: Aboru, Egbeda, Abesan, Ayobo, Abule-Egba, Akowonjo road. No death reported. Fashola inspected Papa-Ashafa, Agege, at the weekend after a rainstorm that damaged property.",
+      "quote": "the overflowing Arigbanla Canal, which was recently reconstructed by the Lagos State government, flooded the surrounding streets",
+      "causes": [
+        "heavy_rain",
+        "canal_overflow",
+        "blocked_drainage"
+      ],
+      "cause_quote": "don't dump them in the drains, they would constrict the drains that we have built",
+      "cause_attributed_by": "official",
+      "cause_who": "Babatunde Fashola, Governor of Lagos State",
+      "url": "https://guardian.ng/news/fear-of-flood-heightens-as-rains-begin/",
+      "publisher": "Guardian NG",
+      "published_at": "2015-03-18T08:22:00+01:00",
+      "read_status": "read",
+      "deaths": null,
+      "pass": 2
+    },
+    {
+      "id": "r2015-002",
+      "date": "2015-06-10",
+      "date_confidence": "period",
+      "areas": [
+        "Satellite Town",
+        "Atiporomeh, Badagry",
+        "Ajegunle",
+        "Mushin",
+        "Ayobo-Ipaja",
+        "Amukoko",
+        "Ijora Badia",
+        "Ahmadu Bello Way, Victoria Island",
+        "Onitire, Surulere",
+        "Itire"
+      ],
+      "impacts": "Over the last few weeks: floods from heavy downpour (often early morning to mid-evening); several residents sacked from their homes; traffic snarls. Ejike Agwuegbo, Satellite Town: roads in the neighbourhood flooded this rainy season, still flooded even when it does not rain for days. Dapo Oluwa, Atiporomeh, Badagry: access roads no-go areas in the rainy season (fear of a major disaster; not itself a counted death). No death reported.",
+      "quote": "several residents have been sacked from their homes",
+      "causes": [
+        "heavy_rain",
+        "lagoon_tide",
+        "blocked_drainage",
+        "setback_encroachment"
+      ],
+      "cause_quote": "the rains had led to the rise in water level of the lagoons and rivers as a result of back-flow",
+      "cause_attributed_by": "official",
+      "cause_who": "Ayodeji Adenekan, Permanent Secretary, Office of Drainage Services",
+      "url": "https://www.vanguardngr.com/2015/06/residents-lament-as-flood-wreaks-havoc-in-low-line-areas/",
+      "publisher": "Vanguard",
+      "published_at": "2015-06-17T00:00:00+01:00",
+      "read_status": "read",
+      "deaths": null,
+      "pass": 1,
+      "review_note": "2026-10-18 reviewer: a roundup ('over the last few weeks' / 'in the past month') with no identifiable flood day; date_confidence set to period."
+    },
+    {
+      "id": "r2015-003",
+      "date": "2015-06-15",
+      "date_confidence": "period",
+      "areas": [
+        "Iyana Ejigbo",
+        "Coconut bus stop",
+        "Point Road, Apapa"
+      ],
+      "impacts": "Lagos in the past month: several downpours. Iyana Ejigbo: an entire stretch of the road flooded and impassable; motorists forced one way. Coconut bus stop: the road becomes flooded whenever rain falls. Point Road, Apapa: the entire street becomes flooded when it rains. No death reported.",
+      "quote": "an entire stretch of the road has become flooded and impassable",
+      "causes": [
+        "heavy_rain",
+        "drainage_capacity",
+        "blocked_drainage"
+      ],
+      "cause_quote": "The absence of gutters on either side of the road causes flowing water to run on the road",
+      "cause_attributed_by": "resident",
+      "cause_who": "Michael Johnson, commercial bus operator",
+      "url": "https://guardian.ng/news/rains-of-pains-in-lagos/",
+      "publisher": "Guardian NG",
+      "published_at": "2015-06-21T03:32:00+01:00",
+      "read_status": "read",
+      "deaths": null,
+      "pass": 1,
+      "review_note": "2026-10-18 reviewer: a roundup ('over the last few weeks' / 'in the past month') with no identifiable flood day; date_confidence set to period."
+    },
+    {
+      "id": "r2015-004",
+      "date": "2015-06-20",
+      "date_confidence": "day",
+      "areas": [
+        "Apapa",
+        "Amukoko",
+        "Badia",
+        "Ijora-Badia",
+        "Mushin",
+        "Itire",
+        "Agege",
+        "Okoko",
+        "Isolo",
+        "Oshodi Expressway, Apapa end",
+        "Mile 2-Apapa expressway",
+        "Agege motor road",
+        "Victoria Garden City",
+        "Lekki",
+        "Ikoyi"
+      ],
+      "impacts": "Downpour for the past three days (published Monday 22 Jun): cars and trucks stuck in drainages on Saturday and Sunday; several houses at Apapa, Amukoko, Badia, Mushin, Itire, Agege and Okoko submerged. Ijora-Badia: residents salvaging property. Isolo: residents moving property to safer places. Some weak-foundation houses brought down by flood. Apapa end of Oshodi Expressway almost completely cut off. Gridlock on Mile 2–Apapa expressway and Agege motor road. Pedestrians stranded; Tin-Can to Mile 2 on foot or bikes. Approach roads to VGC, Lekki and Ikoyi submerged. 'Although no life has been reported lost in the flooding.' Over the weekend a 50-year-old mud house at 14 Ijaye Street, Agege, collapsed after rainwater entered the foundation; Farinloye said no casualty. Collapse is in impacts, not a flood death.",
+      "quote": "Several cars and trucks were seen stuck in drainages on Saturday and Sunday",
+      "causes": [
+        "heavy_rain"
+      ],
+      "cause_quote": "Most parts of Lagos metropolis have been taken over by flood following the continued downpour",
+      "cause_attributed_by": "journalist",
+      "cause_who": null,
+      "url": "https://dailytrust.com/3-day-rain-causes-flood-in-lagos/",
+      "publisher": "Daily Trust",
+      "published_at": "2015-06-22T17:26:22+01:00",
+      "read_status": "read",
+      "deaths": null,
+      "pass": 1
+    },
+    {
+      "id": "r2015-005",
+      "date": "2015-07-18",
+      "date_confidence": "approx",
+      "areas": [
+        "Apapa",
+        "Ajegunle",
+        "Opeleye Street, Ajegunle",
+        "Mile 2"
+      ],
+      "impacts": "Photographs of flooding in Apapa. Tunde Owolabi, trader, Opeleye Street, Ajegunle: shop destroyed by flood. Ola Opeyemi: flood entered his house and destroyed his property. Residents of Ajegunle, Mile 2 and Apapa ask the state to clear blocked canals. No death reported. No weekday given for the photographed flood.",
+      "quote": "It is unacceptable that homes are still being submerged in Lagos.",
+      "causes": [
+        "blocked_drainage",
+        "setback_encroachment",
+        "drainage_capacity"
+      ],
+      "cause_quote": "People have blocked drainage channels provided some years ago with refuse, or have built houses on them",
+      "cause_attributed_by": "resident",
+      "cause_who": "Tunde Owolabi, trader, Opeleye Street, Ajegunle",
+      "url": "https://guardian.ng/sunday-magazine/cityfile/residents-want-lagos-govts-intervention-on-flooding/",
+      "publisher": "Guardian NG",
+      "published_at": "2015-07-19T13:41:00+01:00",
+      "read_status": "read",
+      "deaths": null,
+      "pass": 1
+    },
+    {
+      "id": "r2015-006",
+      "date": "2015-11-07",
+      "date_confidence": "exact",
+      "areas": [
+        "Alagbado",
+        "Lagos-Abeokuta expressway",
+        "Maryland road, Ikeja"
+      ],
+      "impacts": "Yesterday (Saturday 7 Nov, published Sunday): rain from about 2:30pm took over parts of Lagos–Abeokuta Expressway; many vehicles submerged. Correspondent saw commercial buses and cabs towards Sango-Ota and Tollgate submerged in the flood at Alagbado. One carriageway locked; the other passable at a snail's pace. About 30 minutes before the road reopened. A filling station taken over by water. Same Saturday: Maryland road in Ikeja virtually closed; motorists spent hours on the flooded road. No death reported in this article.",
+      "quote": "A heavy downpour in Lagos yesterday took over some parts of Lagos-Abeokuta expressway with many vehicles submerged",
+      "causes": [
+        "heavy_rain",
+        "drainage_capacity"
+      ],
+      "cause_quote": "Residents and motorists attribute the downpour to lack of proper drainage in the expressway",
+      "cause_attributed_by": "resident",
+      "cause_who": null,
+      "url": "https://dailytrust.com/flood-takes-over-lagos-abeokuta-expressway/",
+      "publisher": "Daily Trust",
+      "published_at": "2015-11-08T23:44:05+01:00",
+      "read_status": "read",
+      "deaths": null,
+      "pass": 1
+    }
+  ]
+}

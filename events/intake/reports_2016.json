@@ -1,0 +1,400 @@
+{
+  "meta": {
+    "compiled_at": "2026-10-19T01:30:00Z",
+    "year": 2016,
+    "task": "28-news-sweep-full",
+    "method": "Pass 1: news-first sweep of wet-season months (Apr–Nov) using Task 26 outlets and qualifying rule. Pass 2 (slimmed 2026-10-18): death queries with no site filter; Oyan Dam / Ogun River / lagoon / water-release / Isheri-Ajegunle-Owode-Agboyi queries; Anadolu once per year; out-of-season Jan–Mar and Dec. Qualifying reports name a Lagos State place and a date, and describe water on streets or in homes. Quotes ≤25 words, verbatim, and taken only from that report's own URL. Dates, numbers and quotes are only those in the source. Areas left as named; not geocoded. Flood date is the flood day, not publication day.",
+    "districts_searched": [
+      "Alimosho",
+      "Ajeromi-Ifelodun",
+      "Kosofe",
+      "Mushin",
+      "Oshodi-Isolo",
+      "Ojo",
+      "Ikorodu",
+      "Surulere",
+      "Agege",
+      "Ifako-Ijaiye",
+      "Somolu",
+      "Amuwo-Odofin",
+      "Lagos Mainland",
+      "Ikeja",
+      "Eti-Osa"
+    ],
+    "outlets": [
+      "Punch",
+      "Vanguard",
+      "Guardian NG",
+      "Premium Times",
+      "Channels TV",
+      "TVC",
+      "Daily Trust",
+      "BBC Pidgin",
+      "Nairametrics"
+    ],
+    "notes": [
+      "Tuesday 19 Jan 2016: Guardian records Lagos's first rain (~8am, ~1 hour) and 'flash floods in some areas', with no named Lagos street or home. A February blog (thenigerianbloggers) names Oworonshoki homes; not a Task 26 outlet. Lead only; not kept.",
+      "March 18 Punch (Meiran Ishaga/Oroja): chronic canal/drainage complaint. Two pupils drowned in 2014, attributed to residents, not a 2016 flood day. Excluded.",
+      "April 27 Ojota Bridge / Ikorodu Road rain-flood is The Nation only (Adejare on cane weavers blocking a drain). No Task 26 confirmation. Lead only.",
+      "Saturday 14 May: Sunday Vanguard (29 May) visited Iyana Dopemu–Iyana Ipaja 'penultimate Saturday while it was raining'; flood on the road wrecked homes; shop owners relocated. Date worked from publication Sunday. No death reported.",
+      "Guardian Sunday magazine 19 Jun describes a recent Lagos street flood (Ahmadu Bello Way, Lawanson, Diya Street Gbagada, Adeshina Street Ijesha). No weekday for the Lagos night; date_confidence period (publication date). The same feature's Sunday 2:30pm–dusk rain and a drowned four-year-old are Ifo LGA, Ogun State, and are not attached as Lagos deaths.",
+      "Monday evening 20 Jun into Tuesday 21 Jun: torrential rain. Vanguard (22 Jun) — Lekki roads and homes, Ilubinrin, Park View, Banana Island, Oshodi–Anthony/Oworonsoki. Guardian (22 Jun) — Lekki-Epe Expressway at Awoyaya, Lakowe, Ibeju-Lekki waterlogged. The 'couple swept away a few years back' at UPS/Oworonsoki is historical. No 2016 death.",
+      "July: NIHSA/Channels/Punch outlooks only. No Task 26 street/home flood day found.",
+      "Saturday night 27 Aug (~8.40–9pm) into Sunday 28 Aug: citywide rain-flood. Punch (29 Aug) names Oworonshoki, Bariga, Ketu/Alapere, Ikorodu/Owutu, Ifako, Lekki; water in homes and churches. LASEMA GM Michael Akindele: millions in property damaged, 'no life was lost'; flood exacerbated by blocked drainages. Vanguard photos: Ladipo Bus Stop on Lagos-Abeokuta Expressway. Punch 'don't panic' (28 Aug) is an Adejare warning, excluded as a standalone report. Unity Estate Ita Oluwo (~50 houses) is Ogun State. Nation/illuminaija/Radio Nigeria are leads confirming the same Sunday; not Task 26 outlets.",
+      "Tuesday 6 Sep: Punch and Vanguard — 12-hour / Monday-night rain flooded Ikeja, Iyana-Ipaja, Agege, Ikorodu, Mile 2, Ojo and named mainland streets and homes. Same day, a mudslide collapsed shanties at Kurata/Kuata, Amara Olu Street, Agidingbi; Faisa (Punch 16; Vanguard 18, Faisa Muritala) died, two rescued. LASEMA's Akindele and NEMA's Farinloye call it a mudslide/landslide on a canal-side slum, not a flood drowning. deaths is null; the mudslide is in impacts. Joshua Moses, 27, electrocuted by a fallen pole in River Valley Estate, Ojodu Berger, Ogun State, is not a Lagos flood death. Channels 6 Sep is the collapse only, excluded as a flood report. Lagos–Ibadan Expressway flooding near Mountain Top University is Ogun State; excluded.",
+      "Oyan/Ogun riverine episode, mid-September into early October: Guardian 22 Sep — Maidan Orile and Agiliti, Mile 12, Ogun River overflow, homes abandoned. Daily Trust 1 Oct — Agiliti Phase II flood 'penultimate weekend' (17–18 Sep from a Saturday 1 Oct issue); canoes; Oyan Dam alleged by residents, denied by an OORBDA spokesman (gradual releases since May; other tributaries). Punch 6 Oct — 300 houses / 860 households (Farinloye; Soyemi: 15% Oyan release, floodplain building); Lagos areas Agiliti/Maidan, Orile, Owode, Agboyi, Araromi, Ketu, Mile 12, Isheri North GRA, LSDPC Estate. Farinloye: no life lost. Anadolu photo gallery dated 7 Oct: people and cars in flood after Ogun overflow in Lagos. Sikiru Elegushi in Daily Trust: no life lost in that community.",
+      "April–May Punch 'Lagos water' at Iludun, Oke-Aro, Ifo LGA is Ogun State. Dried Ogun River at Kara (June) is not a flood. Oct 25 Punch Abule-Oki canal protest recalls deaths 'since 2012', not a dated 2016 day. Otodo Gbame Nov fires are not floods. Premium Times 22 Sep NIHSA national 29 dead does not name a Lagos flood death. TVC, BBC Pidgin, Nairametrics, X:LASEMA/MoE/NEMA: no dated 2016 Lagos street/home flood post reached."
+    ]
+  },
+  "reports": [
+    {
+      "id": "r2016-001",
+      "date": "2016-05-14",
+      "date_confidence": "day",
+      "areas": [
+        "Iyana Dopemu",
+        "Iyana Ipaja"
+      ],
+      "impacts": "Sunday Vanguard visited Iyana Dopemu to Iyana Ipaja on the Saturday before last while it rained: one side of the road taken over by flood; shop owners relocated; traffic heavy. The piece says the flood wrecks homes. No death reported.",
+      "quote": "When Sunday Vanguard visited the site penultimate Saturday while it was raining, shop owners had to relocate",
+      "causes": [
+        "drainage_capacity"
+      ],
+      "cause_quote": "From the Iyana Dopemu junction down to Iyana Ipaja, there is no drainage system",
+      "cause_attributed_by": "journalist",
+      "cause_who": null,
+      "url": "https://www.vanguardngr.com/2016/05/rage-flood-lagos-road/",
+      "publisher": "Vanguard",
+      "published_at": "2016-05-29T00:00:00+01:00",
+      "read_status": "read",
+      "deaths": null,
+      "pass": 1
+    },
+    {
+      "id": "r2016-002",
+      "date": "2016-06-19",
+      "date_confidence": "period",
+      "areas": [
+        "Ahmadu Bello Way, Victoria Island",
+        "Adetokunbo Ademola Street",
+        "Lawanson, Surulere",
+        "Diya Street, Ifako, Gbagada",
+        "Adeshina Street, Ijesha"
+      ],
+      "impacts": "Recent downpour: Ahmadu Bello Way flooded so salon-car motorists struggled; some cars veered into drainages or uncovered manholes. Lawanson Bus Stop to Pako Bus Stop road flooded; flood into shops. Diya Street Gbagada and Adeshina Street Ijesha flooded. No Lagos death in this article. A four-year-old drowned in Ifo LGA, Ogun State, in a separate section.",
+      "quote": "Ahmadu Bello Way on Victoria Island was so flooded that motorists found it hard to maneuver",
+      "causes": [
+        "blocked_drainage",
+        "construction"
+      ],
+      "cause_quote": "It's unfortunate that people around this area are used to pouring their wastes into the drainage",
+      "cause_attributed_by": "resident",
+      "cause_who": "Uchenna Nwafor, fridge seller, Lawanson",
+      "url": "https://guardian.ng/sunday-magazine/lagos-ogun-residents-shiver-as-rainy-season-peaks/",
+      "publisher": "Guardian NG",
+      "published_at": "2016-06-19T05:01:00+01:00",
+      "read_status": "read",
+      "deaths": null,
+      "pass": 1,
+      "review_note": "2026-10-18 reviewer: article names no flood day or week (roundup / ongoing inundation); date_confidence set to period; date is the publication date."
+    },
+    {
+      "id": "r2016-003",
+      "date": "2016-06-21",
+      "date_confidence": "exact",
+      "areas": [
+        "Lekki",
+        "Lekki-Epe Expressway",
+        "Ilubinrin",
+        "Park View",
+        "Banana Island",
+        "Oshodi",
+        "Anthony",
+        "Oworonsoki"
+      ],
+      "impacts": "Rain of the past few days, lamented yesterday (Monday 21 Jun): Lekki roads totally submerged; Ilubinrin, Park View and Banana Island said to have been submerged; Oshodi–Anthony–Oworonsoki threatened. Gridlock on Lekki-Epe Expressway. Adewale Akintayo: flood flowing into houses. No death reported. A couple swept away at UPS/Oworonsoki is 'a few years back'.",
+      "quote": "Our streets have turned into p‘River Nile’ to the extent that flood is flowing into our houses.",
+      "causes": [
+        "heavy_rain",
+        "construction"
+      ],
+      "cause_quote": "the failed portions of the roads also contribute to the flooding that has innundated the area",
+      "cause_attributed_by": "journalist",
+      "cause_who": null,
+      "url": "https://www.vanguardngr.com/2016/06/residents-groan-flooding-rain-persists-lagos/",
+      "publisher": "Vanguard",
+      "published_at": "2016-06-22T00:00:00+01:00",
+      "read_status": "read",
+      "deaths": null,
+      "pass": 1
+    },
+    {
+      "id": "r2016-004",
+      "date": "2016-06-21",
+      "date_confidence": "exact",
+      "areas": [
+        "Lekki-Epe Expressway",
+        "Awoyaya",
+        "Lakowe",
+        "Ibeju-Lekki",
+        "Ajah"
+      ],
+      "impacts": "Torrential rain from Monday evening continued till yesterday evening (Tuesday 21 Jun): Lekki-Ajah residents in Awoyaya, Lakowe and Ibeju-Lekki exposed to hardship; entire Lekki-Epe Expressway waterlogged; huge traffic gridlock. No death reported.",
+      "quote": "The entire stretch of the Lekki-Epe Expressway became waterlogged",
+      "causes": [
+        "heavy_rain",
+        "construction"
+      ],
+      "cause_quote": "The situation, according to the residents, becomes aggravated as a result of neglect of some portion of the highway",
+      "cause_attributed_by": "resident",
+      "cause_who": "Alhaji Ayuba, community leader",
+      "url": "https://guardian.ng/news/flood-takes-over-lekki-epe-expressway/",
+      "publisher": "Guardian NG",
+      "published_at": "2016-06-22T01:23:00+01:00",
+      "read_status": "read",
+      "deaths": null,
+      "pass": 1
+    },
+    {
+      "id": "r2016-005",
+      "date": "2016-08-28",
+      "date_confidence": "exact",
+      "areas": [
+        "Oworonshoki",
+        "Fasasi Ojomu Street",
+        "Ogunyomi Street",
+        "Abiola Street",
+        "Akewusola Street",
+        "Adebanmwo Street",
+        "Unity Street",
+        "Oduduwa Street",
+        "Agberin Street",
+        "Bariga",
+        "Oko Oba Street",
+        "Amodu Street",
+        "Arobadade Street",
+        "Ilaje Road",
+        "Ayedun Street",
+        "Ketu",
+        "Alapere",
+        "Bakare Street",
+        "Oriola Street",
+        "Ifako",
+        "Ikorodu",
+        "Hassan Street, Owutu",
+        "Lekki"
+      ],
+      "impacts": "Downpours Saturday and Sunday: thousands of Lagos and Ogun residents displaced; streets and homes flooded; some Sunday church services cancelled. Alapere: waist-deep water; TVs and fridges submerged; Bakare and Oriola streets taken over. Bariga streets impassable. LASEMA GM Michael Akindele: distress calls from Oworonshoki, Ifako, Ikorodu and Lekki; property worth millions damaged; no life lost. Unity Estate Ita Oluwo (~50 houses, ~200 displaced) is Ogun State.",
+      "quote": "downpours on Saturday and Sunday left many streets and homes flooded",
+      "causes": [
+        "heavy_rain",
+        "blocked_drainage"
+      ],
+      "cause_quote": "The flood was exacerbated by blockages of some of the major drainages in the affected areas",
+      "cause_attributed_by": "official",
+      "cause_who": "Michael Akindele, LASEMA General Manager",
+      "url": "https://punchng.com/floods-windstorm-wreak-havoc-lagos-ogun-sokoto/",
+      "publisher": "Punch",
+      "published_at": "2016-08-29T08:05:00+01:00",
+      "read_status": "read",
+      "deaths": null,
+      "pass": 1
+    },
+    {
+      "id": "r2016-006",
+      "date": "2016-08-28",
+      "date_confidence": "exact",
+      "areas": [
+        "Ladipo Bus Stop",
+        "Lagos Abeokuta Express Road",
+        "Oshodi"
+      ],
+      "impacts": "Photo captions: flood at Ladipo Bus Stop along Lagos-Abeokuta Express Road before Oshodi after heavy downpour that started about 9pm Saturday and lasted till Sunday evening. No death reported.",
+      "quote": "Flood at Ladipo Bus Stop along Lagos Abeokuta express road before Oshodi due to heavy down pour",
+      "causes": [
+        "heavy_rain"
+      ],
+      "cause_quote": "heavy down pour which started at about 9pm on Saturday and lasted till Sunday evening",
+      "cause_attributed_by": "journalist",
+      "cause_who": null,
+      "url": "https://www.vanguardngr.com/2016/08/photos-flood-lagos/",
+      "publisher": "Vanguard",
+      "published_at": "2016-08-28T00:00:00+01:00",
+      "read_status": "read",
+      "deaths": null,
+      "pass": 1
+    },
+    {
+      "id": "r2016-007",
+      "date": "2016-09-06",
+      "date_confidence": "exact",
+      "areas": [
+        "Jimoh Street, Egbeda",
+        "Disu Akogun Street, Dopemu, Agege",
+        "Jimoh Akinremi Street, Akowonjo",
+        "Iju Road, Fagba",
+        "Gafaru Street, Ijegun, Isheri Osun",
+        "Afolabi Street, LASU/Iyana Iba Expressway",
+        "Idi-Araba, Mushin",
+        "Idimu"
+      ],
+      "impacts": "Rain for about 12 hours: residents abandoned houses; streets in Egbeda and Idimu flooded; named streets' houses flooded; cars and buses submerged on a Dopemu street. Same Tuesday: mudslide at Kurata slum, Dosumu Street off Amara Olu Road, Agidingbi, killed 16-year-old Faisa (newly wed); two others rescued. LASEMA GM Akindele: three trapped in mud, one recovered dead. NEMA SW Ibrahim Farinloye: 'a mudslide which collapsed on shanties'. Joshua Moses, 27, electrocuted by a fallen pole at River Valley Estate, Ojodu Berger, Ogun State. The mudslide and Ogun electrocution are not flood drownings.",
+      "quote": "The rainfall, which lasted for about 12 hours in several areas in Lagos and Ogun states, forced some residents to abandon their houses",
+      "causes": [
+        "heavy_rain"
+      ],
+      "cause_quote": "The rainfall, which lasted for about 12 hours in several areas in Lagos and Ogun states, forced some residents to abandon their houses",
+      "cause_attributed_by": "journalist",
+      "cause_who": null,
+      "url": "https://punchng.com/incessant-rain-wreaks-havoc-lagos-ogun/",
+      "publisher": "Punch",
+      "published_at": "2016-09-07T08:26:00+01:00",
+      "read_status": "read",
+      "deaths": null,
+      "pass": 1
+    },
+    {
+      "id": "r2016-008",
+      "date": "2016-09-06",
+      "date_confidence": "exact",
+      "areas": [
+        "Ikeja",
+        "Iyana-Ipaja",
+        "Agege",
+        "Ikorodu",
+        "Mile 2",
+        "Ojo",
+        "Kuata, Amara-Olu Street, Mechanic Village, Agidingbi, Ikeja"
+      ],
+      "impacts": "Persistent rainfall from late Monday evening: heavy flooding and traffic gridlock in Ikeja, Iyana-Ipaja, Agege, Ikorodu, Mile 2, Ojo and others. Same Tuesday morning: mudslide at Kuata/Amara-Olu Street, Agidingbi; Faisa Muritala recovered dead (article gives age 18); two rescued. LASEMA GM Micheal Akindele: distress call 10.54am 6 Sep 2016; three trapped under mud; one adult female lost her life. Not reported as a flood drowning.",
+      "quote": "The persistent rainfall, which started late Monday evening, resulted in heavy flooding across the metropolis.",
+      "causes": [
+        "heavy_rain"
+      ],
+      "cause_quote": "The persistent rainfall, which started late Monday evening, resulted in heavy flooding across the metropolis.",
+      "cause_attributed_by": "journalist",
+      "cause_who": null,
+      "url": "https://www.vanguardngr.com/2016/09/mudslide-kills-newly-wed-teenager-two-others-rescued-heavy-downpour-lagos/",
+      "publisher": "Vanguard",
+      "published_at": "2016-09-07T00:00:00+01:00",
+      "read_status": "read",
+      "deaths": null,
+      "pass": 1
+    },
+    {
+      "id": "r2016-009",
+      "date": "2016-09-22",
+      "date_confidence": "period",
+      "areas": [
+        "Maidan Orile",
+        "Agiliti",
+        "Mile 12",
+        "Ikosi-Isheri"
+      ],
+      "impacts": "Incessant downpour caused Ogun River to overflow: flood took over Maidan Orile and Agiliti; many homeless or abandoned the area; property worth millions of naira lost; community-built link bridge to Mile 12 threatened. No death reported.",
+      "quote": "They are groaning under the heavy flood that has taken over their community due to the incessant downpour",
+      "causes": [
+        "heavy_rain",
+        "canal_overflow"
+      ],
+      "cause_quote": "incessant downpour in the state which has caused Ogun River to overflow its banks",
+      "cause_attributed_by": "journalist",
+      "cause_who": null,
+      "url": "https://guardian.ng/news/lagos-communities-seek-help-over-ogun-river-flood/",
+      "publisher": "Guardian NG",
+      "published_at": "2016-09-22T03:33:00+01:00",
+      "read_status": "read",
+      "deaths": null,
+      "pass": 1,
+      "review_note": "2026-10-18 reviewer: article names no flood day or week (roundup / ongoing inundation); date_confidence set to period; date is the publication date."
+    },
+    {
+      "id": "r2016-010",
+      "date": "2016-09-17",
+      "date_confidence": "day",
+      "areas": [
+        "Agiliti Phase II, Mile 12",
+        "Olaosebikan Street",
+        "Oluwabukumi Street",
+        "Ore ofe",
+        "Magodo",
+        "Alafia",
+        "Igbeyinadun",
+        "Oluyole",
+        "Ifewasowapo",
+        "Agiliti Phase 1",
+        "Itowolo",
+        "Ajegunle"
+      ],
+      "impacts": "Flood that visited Agiliti Phase II 'penultimate weekend' (from Saturday 1 Oct issue: 17–18 Sep): homes relocated from; vehicular movement paralysed; residents using canoes; businesses collapsed from Agiliti Phase 1 to Itowolo and Ajegunle; pupils kept from school. Mummy Mariam: water here for the past two weeks. Sikiru Elegushi: no life has been lost since the community started experiencing the flood. OORBDA spokesman: not true that dam releases flood Lagos; gradual opening since May; other tributaries and recent rain.",
+      "quote": "vehicular movement has been paralyzed in the rural area while residents now resort to using canoes",
+      "causes": [
+        "dam_release",
+        "heavy_rain"
+      ],
+      "cause_quote": "We are used to it, whenever the dam is open and water is released, the whole community is flooded",
+      "cause_attributed_by": "resident",
+      "cause_who": "Taiwo Mohammed, Oluwabukumi Street, Agiliti Phase II",
+      "url": "https://dailytrust.com/lagos-community-paralysed-by-flood-resorts-to-canoes/",
+      "publisher": "Daily Trust",
+      "published_at": "2016-10-01T02:00:00+01:00",
+      "read_status": "read",
+      "deaths": null,
+      "pass": 2
+    },
+    {
+      "id": "r2016-011",
+      "date": "2016-10-05",
+      "date_confidence": "approx",
+      "areas": [
+        "Agiliti/Maidan",
+        "Orile",
+        "Owode",
+        "Agboyi",
+        "Araromi",
+        "Ketu",
+        "Mile 12",
+        "Isheri North GRA",
+        "LSDPC Estate"
+      ],
+      "impacts": "No fewer than 300 houses flooded and 860 households displaced after Oyan Dam water opened (Farinloye; same figures in the lead). Residents: floodwater about two weeks ago, volume increased last week, houses overrun; some reach homes by canoe (N100–N500). Riverview Estate chairman Abayomi Akinde: flooding started about three weeks ago; no OORBDA notice. OORBDA MD Akintunde Soyemi: 15% controlled release; floodplain building. Farinloye: no life was lost. Kara and Warewa in Ifo LGA, Ogun State, also named in his assessment.",
+      "quote": "No fewer than 300 houses have been flooded and 860 households displaced following the opening of Oyan Dam water",
+      "causes": [
+        "dam_release",
+        "setback_encroachment"
+      ],
+      "cause_quote": "Most of those flooded places are in the flood plain of Ogun River",
+      "cause_attributed_by": "official",
+      "cause_who": "Akintunde Soyemi, Managing Director, Ogun/Osun River Basin Development Authority",
+      "url": "https://punchng.com/300-houses-flooded-agency-releases-oyan-dam-water/",
+      "publisher": "Punch",
+      "published_at": "2016-10-06T07:16:00+01:00",
+      "read_status": "read",
+      "deaths": null,
+      "pass": 1
+    },
+    {
+      "id": "r2016-012",
+      "date": "2016-10-07",
+      "date_confidence": "exact",
+      "areas": [
+        "Lagos"
+      ],
+      "impacts": "Photo gallery dated 7 Oct 2016: people walking in a flooded area, a car in flood water, people on boats, after a day-long torrential rain caused the Ogun river to overflow in Lagos. No death stated.",
+      "quote": "People walk in a flooded area after the Ogun region flooded following a day long torrential rain",
+      "causes": [
+        "heavy_rain",
+        "canal_overflow"
+      ],
+      "cause_quote": "a day long torrential rain caused Ogun river to overflow in Lagos, Nigeria on October 7, 2016",
+      "cause_attributed_by": "journalist",
+      "cause_who": null,
+      "url": "https://www.aa.com.tr/en/pg/photo-gallery/flood-in-nigeria-",
+      "publisher": "Anadolu",
+      "published_at": "2016-10-07T00:00:00+03:00",
+      "read_status": "read",
+      "deaths": null,
+      "pass": 2
+    }
+  ]
+}

@@ -87,8 +87,8 @@
     },
     {
       "id": "r2023-003",
-      "date": "2023-06-20",
-      "date_confidence": "approx",
+      "date": "2023-08-05",
+      "date_confidence": "period",
       "areas": [
         "Oko-Oba",
         "Orile-Agege",
@@ -109,7 +109,8 @@
       "publisher": "Punch",
       "published_at": "2023-08-05T06:12:00+01:00",
       "read_status": "read",
-      "deaths": null
+      "deaths": null,
+      "review_note": "2026-10-18 reviewer: article names no flood day or week (roundup / ongoing inundation); date_confidence set to period; date is the publication date."
     },
     {
       "id": "r2023-004",
