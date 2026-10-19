@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from 'react';
 import { loadEvent } from '../events/load';
 import { SiteHistory } from './SiteHistory';
+import { WatchList } from './WatchList';
 import { causeLabel, CAUSES } from '../lib/causes';
 import type { PromiseStatus } from '../lib/promises';
 import { VERDICT_COLOR, verdictKey } from '../sites/geo';
@@ -335,7 +336,12 @@ export function SitePanel() {
           {error && <button className="link" onClick={() => useStore.getState().setSites(null)}>Retry</button>}
         </section>
       )}
-      {loaded && !site && <SiteList sites={loaded.sites} promises={loaded.promises} />}
+      {loaded && !site && (
+        <>
+          <WatchList sites={loaded.sites} promises={loaded.promises} />
+          <SiteList sites={loaded.sites} promises={loaded.promises} />
+        </>
+      )}
       {loaded && site && <SiteDetail key={site.site_id} site={site} promises={loaded.promises} />}
     </aside>
   );

@@ -1,0 +1,127 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://floodtrace.local/pipeline/schemas/site_rain_summary.schema.json",
+  "title": "FloodTrace events/site_rain_summary.json",
+  "description": "Slim per-site digest of events/site_rain_response.json, built by pipeline/storm_replay.py (Task 32, docs/tasks/32-watch-list.md). Never hand-edited.",
+  "type": "object",
+  "required": ["meta", "sites"],
+  "additionalProperties": false,
+  "properties": {
+    "meta": {
+      "type": "object",
+      "required": [
+        "method",
+        "source",
+        "built_by",
+        "task",
+        "schema",
+        "threshold_mm",
+        "well_searched_years",
+        "thin_years",
+        "reference_events",
+        "caveats",
+        "generated_at"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "method": { "type": "string" },
+        "source": {
+          "type": "object",
+          "required": ["file", "sha256", "note"],
+          "additionalProperties": false,
+          "properties": {
+            "file": { "type": "string" },
+            "sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+            "note": { "type": "string" }
+          }
+        },
+        "built_by": { "type": "string" },
+        "task": { "type": "string" },
+        "schema": { "type": "string" },
+        "threshold_mm": { "type": "number" },
+        "well_searched_years": {
+          "type": "array",
+          "items": { "type": "string", "pattern": "^[0-9]{4}$" }
+        },
+        "thin_years": {
+          "type": "array",
+          "items": { "type": "string", "pattern": "^[0-9]{4}$" }
+        },
+        "reference_events": { "type": "array", "items": { "type": "string" } },
+        "caveats": { "type": "array", "items": { "type": "string" } },
+        "generated_at": { "type": "string" }
+      }
+    },
+    "sites": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/site" }
+    }
+  },
+  "$defs": {
+    "stats": {
+      "type": "object",
+      "required": ["n_storms", "n_flooded", "rate", "wilson_95"],
+      "additionalProperties": false,
+      "properties": {
+        "n_storms": { "type": "integer" },
+        "n_flooded": { "type": "integer" },
+        "rate": { "type": ["number", "null"] },
+        "wilson_95": {
+          "type": "array",
+          "items": { "type": ["number", "null"] },
+          "minItems": 2,
+          "maxItems": 2
+        }
+      }
+    },
+    "replay_headline": {
+      "type": "object",
+      "required": ["reference_date", "site_cell_2d_mm", "not_a_storm_here", "n_analogs", "n_flooded"],
+      "additionalProperties": false,
+      "properties": {
+        "reference_date": { "type": "string", "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$" },
+        "site_cell_2d_mm": { "type": ["number", "null"] },
+        "not_a_storm_here": { "type": "boolean" },
+        "n_analogs": { "type": ["integer", "null"] },
+        "n_flooded": { "type": ["integer", "null"] }
+      }
+    },
+    "site": {
+      "type": "object",
+      "required": ["site_id", "name", "cell_id", "threshold_40mm", "replays"],
+      "additionalProperties": false,
+      "properties": {
+        "site_id": { "type": "string" },
+        "name": { "type": "string" },
+        "cell_id": { "type": "string" },
+        "threshold_40mm": {
+          "type": "object",
+          "required": ["all_years", "well_searched_years"],
+          "additionalProperties": false,
+          "properties": {
+            "all_years": { "$ref": "#/$defs/stats" },
+            "well_searched_years": { "$ref": "#/$defs/stats" }
+          }
+        },
+        "replays": {
+          "type": "object",
+          "required": [
+            "lagos-2011-07-10",
+            "lagos-2021-07-16",
+            "lagos-2022-07-08",
+            "lagos-2024-07-03",
+            "lagos-2025-08-04"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "lagos-2011-07-10": { "$ref": "#/$defs/replay_headline" },
+            "lagos-2021-07-16": { "$ref": "#/$defs/replay_headline" },
+            "lagos-2022-07-08": { "$ref": "#/$defs/replay_headline" },
+            "lagos-2024-07-03": { "$ref": "#/$defs/replay_headline" },
+            "lagos-2025-08-04": { "$ref": "#/$defs/replay_headline" }
+          }
+        }
+      }
+    }
+  }
+}

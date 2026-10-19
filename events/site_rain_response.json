@@ -77,7 +77,7 @@
       "a strong match means the news named the place or a point near it, not a measured depth",
       "flooded counts only strong (name/near) pluvial matches inside the April-November searched window; riverine, lagoon and coastal days are listed per site in excluded_matches but stay out of the rates"
     ],
-    "generated_at": "2026-10-19T14:31:00+00:00",
+    "generated_at": "2026-10-19T14:53:16+00:00",
     "inputs": {
       "events/flood_days.json": "f4f88e2f65e28ec97087be58d17212dd01657baebd30fd7c068790f1cce5700d",
       "events/promises.json": "ad04e289208b374d831cf2d29bcab9e46ece8ad35cb06dd6b56dec929f496e96",

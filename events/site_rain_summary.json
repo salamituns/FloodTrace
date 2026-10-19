@@ -1,0 +1,854 @@
+{
+  "meta": {
+    "built_by": "pipeline/storm_replay.py",
+    "caveats": [
+      "unreported is not dry: the catalog is news coverage, not a gauge, so a storm with no report is counted as not flooded even if it flooded",
+      "IMERG cells are ~10 km and smooth storm cores: the cell total can miss or dilute the rain that actually fell at a site",
+      "thin years: catalog flood days per year are in years[]; years with fewer than 5 are thin and are excluded from the well_searched rates",
+      "a strong match means the news named the place or a point near it, not a measured depth",
+      "flooded counts only strong (name/near) pluvial matches inside the April-November searched window; riverine, lagoon and coastal days are listed per site in excluded_matches but stay out of the rates"
+    ],
+    "generated_at": "2026-10-19T14:53:16+00:00",
+    "method": "Slim per-site digest of events/site_rain_response.json for the pre-season watch list (LAGOS_PLAN roadmap step 8). Per site: the IMERG cell id, the storms >= 40 mm all-years and well-searched-years stats, and each reference storm's replay headline (reference 2-day rain at the site cell, analog count, flooded count, not_a_storm_here).",
+    "reference_events": [
+      "lagos-2011-07-10",
+      "lagos-2021-07-16",
+      "lagos-2022-07-08",
+      "lagos-2024-07-03",
+      "lagos-2025-08-04"
+    ],
+    "schema": "pipeline/schemas/site_rain_summary.schema.json",
+    "source": {
+      "file": "events/site_rain_response.json",
+      "note": "digest of the response file as written by this run; its meta.generated_at is included, so the digest changes on re-run",
+      "sha256": "06caa3239c2a4581e5b02b4c320b8733a38e5b0acb41bdb60b3b539fed901e95"
+    },
+    "task": "32-watch-list (docs/tasks/32-watch-list.md)",
+    "thin_years": [
+      "2014",
+      "2015",
+      "2023",
+      "2024"
+    ],
+    "threshold_mm": 40,
+    "well_searched_years": [
+      "2016",
+      "2017",
+      "2018",
+      "2019",
+      "2020",
+      "2021",
+      "2022",
+      "2025",
+      "2026"
+    ]
+  },
+  "sites": [
+    {
+      "cell_id": "c6.65N3.45E",
+      "name": "Agric – AFA Bridge",
+      "replays": {
+        "lagos-2011-07-10": {
+          "n_analogs": 4,
+          "n_flooded": 0,
+          "not_a_storm_here": false,
+          "reference_date": "2011-07-10",
+          "site_cell_2d_mm": 117.3
+        },
+        "lagos-2021-07-16": {
+          "n_analogs": 14,
+          "n_flooded": 1,
+          "not_a_storm_here": false,
+          "reference_date": "2021-07-16",
+          "site_cell_2d_mm": 83.59
+        },
+        "lagos-2022-07-08": {
+          "n_analogs": 0,
+          "n_flooded": 0,
+          "not_a_storm_here": false,
+          "reference_date": "2022-07-08",
+          "site_cell_2d_mm": 165.5
+        },
+        "lagos-2024-07-03": {
+          "n_analogs": 17,
+          "n_flooded": 1,
+          "not_a_storm_here": false,
+          "reference_date": "2024-07-03",
+          "site_cell_2d_mm": 81.54
+        },
+        "lagos-2025-08-04": {
+          "n_analogs": 3,
+          "n_flooded": 0,
+          "not_a_storm_here": false,
+          "reference_date": "2025-08-04",
+          "site_cell_2d_mm": 118.3
+        }
+      },
+      "site_id": "agric-bridge",
+      "threshold_40mm": {
+        "all_years": {
+          "n_flooded": 2,
+          "n_storms": 103,
+          "rate": 0.0194,
+          "wilson_95": [
+            0.0053,
+            0.0681
+          ]
+        },
+        "well_searched_years": {
+          "n_flooded": 2,
+          "n_storms": 71,
+          "rate": 0.0282,
+          "wilson_95": [
+            0.0078,
+            0.097
+          ]
+        }
+      }
+    },
+    {
+      "cell_id": "c6.45N3.55E",
+      "name": "Agungi – Collector",
+      "replays": {
+        "lagos-2011-07-10": {
+          "n_analogs": 0,
+          "n_flooded": 0,
+          "not_a_storm_here": false,
+          "reference_date": "2011-07-10",
+          "site_cell_2d_mm": 171.92
+        },
+        "lagos-2021-07-16": {
+          "n_analogs": 22,
+          "n_flooded": 2,
+          "not_a_storm_here": false,
+          "reference_date": "2021-07-16",
+          "site_cell_2d_mm": 91.73
+        },
+        "lagos-2022-07-08": {
+          "n_analogs": 1,
+          "n_flooded": 1,
+          "not_a_storm_here": false,
+          "reference_date": "2022-07-08",
+          "site_cell_2d_mm": 148.83
+        },
+        "lagos-2024-07-03": {
+          "n_analogs": 13,
+          "n_flooded": 2,
+          "not_a_storm_here": false,
+          "reference_date": "2024-07-03",
+          "site_cell_2d_mm": 105.06
+        },
+        "lagos-2025-08-04": {
+          "n_analogs": 0,
+          "n_flooded": 0,
+          "not_a_storm_here": false,
+          "reference_date": "2025-08-04",
+          "site_cell_2d_mm": 159.73
+        }
+      },
+      "site_id": "agungi-collector",
+      "threshold_40mm": {
+        "all_years": {
+          "n_flooded": 4,
+          "n_storms": 148,
+          "rate": 0.027,
+          "wilson_95": [
+            0.0106,
+            0.0674
+          ]
+        },
+        "well_searched_years": {
+          "n_flooded": 3,
+          "n_storms": 99,
+          "rate": 0.0303,
+          "wilson_95": [
+            0.0104,
+            0.0853
+          ]
+        }
+      }
+    },
+    {
+      "cell_id": "c6.55N3.35E",
+      "name": "Alapere–Ogudu",
+      "replays": {
+        "lagos-2011-07-10": {
+          "n_analogs": 1,
+          "n_flooded": 0,
+          "not_a_storm_here": false,
+          "reference_date": "2011-07-10",
+          "site_cell_2d_mm": 132.54
+        },
+        "lagos-2021-07-16": {
+          "n_analogs": 14,
+          "n_flooded": 1,
+          "not_a_storm_here": false,
+          "reference_date": "2021-07-16",
+          "site_cell_2d_mm": 94.68
+        },
+        "lagos-2022-07-08": {
+          "n_analogs": 0,
+          "n_flooded": 0,
+          "not_a_storm_here": false,
+          "reference_date": "2022-07-08",
+          "site_cell_2d_mm": 154.55
+        },
+        "lagos-2024-07-03": {
+          "n_analogs": 8,
+          "n_flooded": 0,
+          "not_a_storm_here": false,
+          "reference_date": "2024-07-03",
+          "site_cell_2d_mm": 101.5
+        },
+        "lagos-2025-08-04": {
+          "n_analogs": 12,
+          "n_flooded": 1,
+          "not_a_storm_here": false,
+          "reference_date": "2025-08-04",
+          "site_cell_2d_mm": 95.4
+        }
+      },
+      "site_id": "alapere-ogudu",
+      "threshold_40mm": {
+        "all_years": {
+          "n_flooded": 5,
+          "n_storms": 135,
+          "rate": 0.037,
+          "wilson_95": [
+            0.0159,
+            0.0838
+          ]
+        },
+        "well_searched_years": {
+          "n_flooded": 4,
+          "n_storms": 89,
+          "rate": 0.0449,
+          "wilson_95": [
+            0.0176,
+            0.1099
+          ]
+        }
+      }
+    },
+    {
+      "cell_id": "c6.45N3.55E",
+      "name": "Alpha Beach – System 156",
+      "replays": {
+        "lagos-2011-07-10": {
+          "n_analogs": 0,
+          "n_flooded": 0,
+          "not_a_storm_here": false,
+          "reference_date": "2011-07-10",
+          "site_cell_2d_mm": 171.92
+        },
+        "lagos-2021-07-16": {
+          "n_analogs": 22,
+          "n_flooded": 0,
+          "not_a_storm_here": false,
+          "reference_date": "2021-07-16",
+          "site_cell_2d_mm": 91.73
+        },
+        "lagos-2022-07-08": {
+          "n_analogs": 1,
+          "n_flooded": 0,
+          "not_a_storm_here": false,
+          "reference_date": "2022-07-08",
+          "site_cell_2d_mm": 148.83
+        },
+        "lagos-2024-07-03": {
+          "n_analogs": 13,
+          "n_flooded": 0,
+          "not_a_storm_here": false,
+          "reference_date": "2024-07-03",
+          "site_cell_2d_mm": 105.06
+        },
+        "lagos-2025-08-04": {
+          "n_analogs": 0,
+          "n_flooded": 0,
+          "not_a_storm_here": false,
+          "reference_date": "2025-08-04",
+          "site_cell_2d_mm": 159.73
+        }
+      },
+      "site_id": "alpha-beach-156",
+      "threshold_40mm": {
+        "all_years": {
+          "n_flooded": 1,
+          "n_storms": 148,
+          "rate": 0.0068,
+          "wilson_95": [
+            0.0012,
+            0.0373
+          ]
+        },
+        "well_searched_years": {
+          "n_flooded": 0,
+          "n_storms": 99,
+          "rate": 0.0,
+          "wilson_95": [
+            0.0,
+            0.0374
+          ]
+        }
+      }
+    },
+    {
+      "cell_id": "c6.45N3.85E",
+      "name": "Ibeju-Lekki Expressway Drains",
+      "replays": {
+        "lagos-2011-07-10": {
+          "n_analogs": 0,
+          "n_flooded": 0,
+          "not_a_storm_here": false,
+          "reference_date": "2011-07-10",
+          "site_cell_2d_mm": 177.27
+        },
+        "lagos-2021-07-16": {
+          "n_analogs": 11,
+          "n_flooded": 0,
+          "not_a_storm_here": false,
+          "reference_date": "2021-07-16",
+          "site_cell_2d_mm": 108.7
+        },
+        "lagos-2022-07-08": {
+          "n_analogs": 3,
+          "n_flooded": 0,
+          "not_a_storm_here": false,
+          "reference_date": "2022-07-08",
+          "site_cell_2d_mm": 130.95
+        },
+        "lagos-2024-07-03": {
+          "n_analogs": 40,
+          "n_flooded": 1,
+          "not_a_storm_here": false,
+          "reference_date": "2024-07-03",
+          "site_cell_2d_mm": 76.05
+        },
+        "lagos-2025-08-04": {
+          "n_analogs": 0,
+          "n_flooded": 0,
+          "not_a_storm_here": false,
+          "reference_date": "2025-08-04",
+          "site_cell_2d_mm": 159.86
+        }
+      },
+      "site_id": "ibeju-lekki-expy",
+      "threshold_40mm": {
+        "all_years": {
+          "n_flooded": 1,
+          "n_storms": 154,
+          "rate": 0.0065,
+          "wilson_95": [
+            0.0011,
+            0.0359
+          ]
+        },
+        "well_searched_years": {
+          "n_flooded": 1,
+          "n_storms": 101,
+          "rate": 0.0099,
+          "wilson_95": [
+            0.0017,
+            0.054
+          ]
+        }
+      }
+    },
+    {
+      "cell_id": "c6.55N3.65E",
+      "name": "Ijede – Oko Ope Drain",
+      "replays": {
+        "lagos-2011-07-10": {
+          "n_analogs": 1,
+          "n_flooded": 0,
+          "not_a_storm_here": false,
+          "reference_date": "2011-07-10",
+          "site_cell_2d_mm": 154.28
+        },
+        "lagos-2021-07-16": {
+          "n_analogs": 20,
+          "n_flooded": 1,
+          "not_a_storm_here": false,
+          "reference_date": "2021-07-16",
+          "site_cell_2d_mm": 90.2
+        },
+        "lagos-2022-07-08": {
+          "n_analogs": 0,
+          "n_flooded": 0,
+          "not_a_storm_here": false,
+          "reference_date": "2022-07-08",
+          "site_cell_2d_mm": 190.35
+        },
+        "lagos-2024-07-03": {
+          "n_analogs": 17,
+          "n_flooded": 1,
+          "not_a_storm_here": false,
+          "reference_date": "2024-07-03",
+          "site_cell_2d_mm": 91.03
+        },
+        "lagos-2025-08-04": {
+          "n_analogs": 1,
+          "n_flooded": 0,
+          "not_a_storm_here": false,
+          "reference_date": "2025-08-04",
+          "site_cell_2d_mm": 132.74
+        }
+      },
+      "site_id": "ijede-drain",
+      "threshold_40mm": {
+        "all_years": {
+          "n_flooded": 1,
+          "n_storms": 133,
+          "rate": 0.0075,
+          "wilson_95": [
+            0.0013,
+            0.0414
+          ]
+        },
+        "well_searched_years": {
+          "n_flooded": 1,
+          "n_storms": 89,
+          "rate": 0.0112,
+          "wilson_95": [
+            0.002,
+            0.0609
+          ]
+        }
+      }
+    },
+    {
+      "cell_id": "c6.55N3.65E",
+      "name": "Ikorodu – Dammed Waterway",
+      "replays": {
+        "lagos-2011-07-10": {
+          "n_analogs": 1,
+          "n_flooded": 0,
+          "not_a_storm_here": false,
+          "reference_date": "2011-07-10",
+          "site_cell_2d_mm": 154.28
+        },
+        "lagos-2021-07-16": {
+          "n_analogs": 20,
+          "n_flooded": 0,
+          "not_a_storm_here": false,
+          "reference_date": "2021-07-16",
+          "site_cell_2d_mm": 90.2
+        },
+        "lagos-2022-07-08": {
+          "n_analogs": 0,
+          "n_flooded": 0,
+          "not_a_storm_here": false,
+          "reference_date": "2022-07-08",
+          "site_cell_2d_mm": 190.35
+        },
+        "lagos-2024-07-03": {
+          "n_analogs": 17,
+          "n_flooded": 0,
+          "not_a_storm_here": false,
+          "reference_date": "2024-07-03",
+          "site_cell_2d_mm": 91.03
+        },
+        "lagos-2025-08-04": {
+          "n_analogs": 1,
+          "n_flooded": 0,
+          "not_a_storm_here": false,
+          "reference_date": "2025-08-04",
+          "site_cell_2d_mm": 132.74
+        }
+      },
+      "site_id": "ikorodu-dammed",
+      "threshold_40mm": {
+        "all_years": {
+          "n_flooded": 0,
+          "n_storms": 133,
+          "rate": 0.0,
+          "wilson_95": [
+            -0.0,
+            0.0281
+          ]
+        },
+        "well_searched_years": {
+          "n_flooded": 0,
+          "n_storms": 89,
+          "rate": 0.0,
+          "wilson_95": [
+            0.0,
+            0.0414
+          ]
+        }
+      }
+    },
+    {
+      "cell_id": "c6.45N3.65E",
+      "name": "Labora (Abijo GRA)",
+      "replays": {
+        "lagos-2011-07-10": {
+          "n_analogs": 0,
+          "n_flooded": 0,
+          "not_a_storm_here": false,
+          "reference_date": "2011-07-10",
+          "site_cell_2d_mm": 186.19
+        },
+        "lagos-2021-07-16": {
+          "n_analogs": 19,
+          "n_flooded": 0,
+          "not_a_storm_here": false,
+          "reference_date": "2021-07-16",
+          "site_cell_2d_mm": 94.41
+        },
+        "lagos-2022-07-08": {
+          "n_analogs": 1,
+          "n_flooded": 0,
+          "not_a_storm_here": false,
+          "reference_date": "2022-07-08",
+          "site_cell_2d_mm": 135.75
+        },
+        "lagos-2024-07-03": {
+          "n_analogs": 24,
+          "n_flooded": 0,
+          "not_a_storm_here": false,
+          "reference_date": "2024-07-03",
+          "site_cell_2d_mm": 90.21
+        },
+        "lagos-2025-08-04": {
+          "n_analogs": 0,
+          "n_flooded": 0,
+          "not_a_storm_here": false,
+          "reference_date": "2025-08-04",
+          "site_cell_2d_mm": 148.12
+        }
+      },
+      "site_id": "labora",
+      "threshold_40mm": {
+        "all_years": {
+          "n_flooded": 0,
+          "n_storms": 150,
+          "rate": 0.0,
+          "wilson_95": [
+            0.0,
+            0.025
+          ]
+        },
+        "well_searched_years": {
+          "n_flooded": 0,
+          "n_storms": 101,
+          "rate": 0.0,
+          "wilson_95": [
+            -0.0,
+            0.0366
+          ]
+        }
+      }
+    },
+    {
+      "cell_id": "c6.45N3.65E",
+      "name": "Lekki–Epe Expressway",
+      "replays": {
+        "lagos-2011-07-10": {
+          "n_analogs": 0,
+          "n_flooded": 0,
+          "not_a_storm_here": false,
+          "reference_date": "2011-07-10",
+          "site_cell_2d_mm": 186.19
+        },
+        "lagos-2021-07-16": {
+          "n_analogs": 19,
+          "n_flooded": 3,
+          "not_a_storm_here": false,
+          "reference_date": "2021-07-16",
+          "site_cell_2d_mm": 94.41
+        },
+        "lagos-2022-07-08": {
+          "n_analogs": 1,
+          "n_flooded": 0,
+          "not_a_storm_here": false,
+          "reference_date": "2022-07-08",
+          "site_cell_2d_mm": 135.75
+        },
+        "lagos-2024-07-03": {
+          "n_analogs": 24,
+          "n_flooded": 4,
+          "not_a_storm_here": false,
+          "reference_date": "2024-07-03",
+          "site_cell_2d_mm": 90.21
+        },
+        "lagos-2025-08-04": {
+          "n_analogs": 0,
+          "n_flooded": 0,
+          "not_a_storm_here": false,
+          "reference_date": "2025-08-04",
+          "site_cell_2d_mm": 148.12
+        }
+      },
+      "site_id": "lekki-epe-rehab",
+      "threshold_40mm": {
+        "all_years": {
+          "n_flooded": 7,
+          "n_storms": 150,
+          "rate": 0.0467,
+          "wilson_95": [
+            0.0228,
+            0.0932
+          ]
+        },
+        "well_searched_years": {
+          "n_flooded": 6,
+          "n_storms": 101,
+          "rate": 0.0594,
+          "wilson_95": [
+            0.0275,
+            0.1236
+          ]
+        }
+      }
+    },
+    {
+      "cell_id": "c6.45N3.35E",
+      "name": "Marina Road",
+      "replays": {
+        "lagos-2011-07-10": {
+          "n_analogs": 0,
+          "n_flooded": 0,
+          "not_a_storm_here": false,
+          "reference_date": "2011-07-10",
+          "site_cell_2d_mm": 217.46
+        },
+        "lagos-2021-07-16": {
+          "n_analogs": 9,
+          "n_flooded": 0,
+          "not_a_storm_here": false,
+          "reference_date": "2021-07-16",
+          "site_cell_2d_mm": 108.8
+        },
+        "lagos-2022-07-08": {
+          "n_analogs": 1,
+          "n_flooded": 0,
+          "not_a_storm_here": false,
+          "reference_date": "2022-07-08",
+          "site_cell_2d_mm": 146.22
+        },
+        "lagos-2024-07-03": {
+          "n_analogs": 2,
+          "n_flooded": 0,
+          "not_a_storm_here": false,
+          "reference_date": "2024-07-03",
+          "site_cell_2d_mm": 136.87
+        },
+        "lagos-2025-08-04": {
+          "n_analogs": 17,
+          "n_flooded": 1,
+          "not_a_storm_here": false,
+          "reference_date": "2025-08-04",
+          "site_cell_2d_mm": 95.92
+        }
+      },
+      "site_id": "marina-drainage",
+      "threshold_40mm": {
+        "all_years": {
+          "n_flooded": 3,
+          "n_storms": 143,
+          "rate": 0.021,
+          "wilson_95": [
+            0.0072,
+            0.0599
+          ]
+        },
+        "well_searched_years": {
+          "n_flooded": 3,
+          "n_storms": 94,
+          "rate": 0.0319,
+          "wilson_95": [
+            0.0109,
+            0.0897
+          ]
+        }
+      }
+    },
+    {
+      "cell_id": "c6.65N3.35E",
+      "name": "Oko-Oba Canal",
+      "replays": {
+        "lagos-2011-07-10": {
+          "n_analogs": 1,
+          "n_flooded": 1,
+          "not_a_storm_here": false,
+          "reference_date": "2011-07-10",
+          "site_cell_2d_mm": 114.38
+        },
+        "lagos-2021-07-16": {
+          "n_analogs": 9,
+          "n_flooded": 1,
+          "not_a_storm_here": false,
+          "reference_date": "2021-07-16",
+          "site_cell_2d_mm": 95.03
+        },
+        "lagos-2022-07-08": {
+          "n_analogs": 0,
+          "n_flooded": 0,
+          "not_a_storm_here": false,
+          "reference_date": "2022-07-08",
+          "site_cell_2d_mm": 149.11
+        },
+        "lagos-2024-07-03": {
+          "n_analogs": 20,
+          "n_flooded": 2,
+          "not_a_storm_here": false,
+          "reference_date": "2024-07-03",
+          "site_cell_2d_mm": 81.15
+        },
+        "lagos-2025-08-04": {
+          "n_analogs": 6,
+          "n_flooded": 1,
+          "not_a_storm_here": false,
+          "reference_date": "2025-08-04",
+          "site_cell_2d_mm": 100.29
+        }
+      },
+      "site_id": "oko-oba-canal",
+      "threshold_40mm": {
+        "all_years": {
+          "n_flooded": 2,
+          "n_storms": 102,
+          "rate": 0.0196,
+          "wilson_95": [
+            0.0054,
+            0.0687
+          ]
+        },
+        "well_searched_years": {
+          "n_flooded": 2,
+          "n_storms": 68,
+          "rate": 0.0294,
+          "wilson_95": [
+            0.0081,
+            0.101
+          ]
+        }
+      }
+    },
+    {
+      "cell_id": "c6.55N3.35E",
+      "name": "Olopo Meji (Iyana Oworo)",
+      "replays": {
+        "lagos-2011-07-10": {
+          "n_analogs": 1,
+          "n_flooded": 0,
+          "not_a_storm_here": false,
+          "reference_date": "2011-07-10",
+          "site_cell_2d_mm": 132.54
+        },
+        "lagos-2021-07-16": {
+          "n_analogs": 14,
+          "n_flooded": 1,
+          "not_a_storm_here": false,
+          "reference_date": "2021-07-16",
+          "site_cell_2d_mm": 94.68
+        },
+        "lagos-2022-07-08": {
+          "n_analogs": 0,
+          "n_flooded": 0,
+          "not_a_storm_here": false,
+          "reference_date": "2022-07-08",
+          "site_cell_2d_mm": 154.55
+        },
+        "lagos-2024-07-03": {
+          "n_analogs": 8,
+          "n_flooded": 0,
+          "not_a_storm_here": false,
+          "reference_date": "2024-07-03",
+          "site_cell_2d_mm": 101.5
+        },
+        "lagos-2025-08-04": {
+          "n_analogs": 12,
+          "n_flooded": 1,
+          "not_a_storm_here": false,
+          "reference_date": "2025-08-04",
+          "site_cell_2d_mm": 95.4
+        }
+      },
+      "site_id": "olopomeji",
+      "threshold_40mm": {
+        "all_years": {
+          "n_flooded": 5,
+          "n_storms": 135,
+          "rate": 0.037,
+          "wilson_95": [
+            0.0159,
+            0.0838
+          ]
+        },
+        "well_searched_years": {
+          "n_flooded": 4,
+          "n_storms": 89,
+          "rate": 0.0449,
+          "wilson_95": [
+            0.0176,
+            0.1099
+          ]
+        }
+      }
+    },
+    {
+      "cell_id": "c6.45N3.65E",
+      "name": "Sangotedo – System 63b",
+      "replays": {
+        "lagos-2011-07-10": {
+          "n_analogs": 0,
+          "n_flooded": 0,
+          "not_a_storm_here": false,
+          "reference_date": "2011-07-10",
+          "site_cell_2d_mm": 186.19
+        },
+        "lagos-2021-07-16": {
+          "n_analogs": 19,
+          "n_flooded": 0,
+          "not_a_storm_here": false,
+          "reference_date": "2021-07-16",
+          "site_cell_2d_mm": 94.41
+        },
+        "lagos-2022-07-08": {
+          "n_analogs": 1,
+          "n_flooded": 0,
+          "not_a_storm_here": false,
+          "reference_date": "2022-07-08",
+          "site_cell_2d_mm": 135.75
+        },
+        "lagos-2024-07-03": {
+          "n_analogs": 24,
+          "n_flooded": 0,
+          "not_a_storm_here": false,
+          "reference_date": "2024-07-03",
+          "site_cell_2d_mm": 90.21
+        },
+        "lagos-2025-08-04": {
+          "n_analogs": 0,
+          "n_flooded": 0,
+          "not_a_storm_here": false,
+          "reference_date": "2025-08-04",
+          "site_cell_2d_mm": 148.12
+        }
+      },
+      "site_id": "sangotedo-channel-notices",
+      "threshold_40mm": {
+        "all_years": {
+          "n_flooded": 1,
+          "n_storms": 150,
+          "rate": 0.0067,
+          "wilson_95": [
+            0.0012,
+            0.0368
+          ]
+        },
+        "well_searched_years": {
+          "n_flooded": 0,
+          "n_storms": 101,
+          "rate": 0.0,
+          "wilson_95": [
+            -0.0,
+            0.0366
+          ]
+        }
+      }
+    }
+  ]
+}

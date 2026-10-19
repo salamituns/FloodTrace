@@ -12,9 +12,14 @@ day, 2000-06-01 to 2026-10-16), flood_days.json (the catalog), sites.json
 and promises.json (dated official commitments, with updates).
 
 Output: events/site_rain_response.json, validated against
-pipeline/schemas/site_rain_response.schema.json.
+pipeline/schemas/site_rain_response.schema.json, plus events/site_rain_summary.json
+(a slim per-site digest of the response file for the pre-season watch list, Task 32,
+docs/tasks/32-watch-list.md), validated against
+pipeline/schemas/site_rain_summary.schema.json.
 
-Deterministic: two runs give identical output apart from meta.generated_at.
+Deterministic: two runs give identical output apart from meta.generated_at (the
+summary's meta.source.sha256 covers the response file as written, so it moves with
+that file's generated_at; the summary's own generated_at moves too).
 
 Run: pipeline/.venv/bin/python pipeline/storm_replay.py
 """
@@ -33,6 +38,8 @@ ROOT = Path(__file__).resolve().parent.parent
 EVENTS = ROOT / "events"
 SCHEMA_PATH = ROOT / "pipeline" / "schemas" / "site_rain_response.schema.json"
 OUT_PATH = EVENTS / "site_rain_response.json"
+SUMMARY_SCHEMA_PATH = ROOT / "pipeline" / "schemas" / "site_rain_summary.schema.json"
+SUMMARY_PATH = EVENTS / "site_rain_summary.json"
 
 THRESHOLDS = [20, 40, 60, 80]
 # A storm is a wet spell of consecutive days with 2-day rain at or above this;
@@ -556,6 +563,8 @@ def main() -> None:
         "listed per site in excluded_matches but stay out of the rates",
     ]
 
+    generated_at = datetime.now(timezone.utc).isoformat(timespec="seconds")
+
     out = {
         "meta": {
             "method": (
@@ -591,7 +600,7 @@ def main() -> None:
             "searched_years": searched_years,
             "well_searched_years": sorted(well_years),
             "caveats": caveats,
-            "generated_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
+            "generated_at": generated_at,
         },
         "citywide": {
             "bins": bins_out,
@@ -621,6 +630,70 @@ def main() -> None:
     jsonschema.Draft202012Validator(schema).validate(out)
     OUT_PATH.write_text(
         json.dumps(out, indent=2, sort_keys=True, ensure_ascii=False) + "\n",
+        encoding="utf-8")
+
+    # ---- slim summary for the watch list (Task 32) -------------------------
+    # A digest of what was just written: per site the cell id, the >= 40 mm
+    # stats, and each reference storm's replay headline. src/lib/watchList.ts
+    # ranks on this instead of loading the 2 MB response file in the browser.
+    summary_sites = []
+    for s in sites_out:
+        t40 = s["thresholds"]["40"]
+        summary_sites.append({
+            "site_id": s["site_id"],
+            "name": s["name"],
+            "cell_id": s["cell"]["id"],
+            "threshold_40mm": {
+                "all_years": t40["all_years"],
+                "well_searched_years": t40["well_searched_years"],
+            },
+            "replays": {
+                event_id: {
+                    "reference_date": rec["reference_date"],
+                    "site_cell_2d_mm": rec["site_cell_2d_mm"],
+                    "not_a_storm_here": rec["not_a_storm_here"],
+                    "n_analogs": rec.get("n_analogs"),
+                    "n_flooded": rec.get("n_flooded"),
+                }
+                for event_id, rec in s["replays"].items()
+            },
+        })
+
+    summary = {
+        "meta": {
+            "method": (
+                "Slim per-site digest of events/site_rain_response.json for the "
+                "pre-season watch list (LAGOS_PLAN roadmap step 8). Per site: the "
+                "IMERG cell id, the storms >= 40 mm all-years and "
+                "well-searched-years stats, and each reference storm's replay "
+                "headline (reference 2-day rain at the site cell, analog count, "
+                "flooded count, not_a_storm_here)."
+            ),
+            "source": {
+                "file": "events/site_rain_response.json",
+                "sha256": sha256(OUT_PATH),
+                "note": (
+                    "digest of the response file as written by this run; its "
+                    "meta.generated_at is included, so the digest changes on re-run"
+                ),
+            },
+            "built_by": "pipeline/storm_replay.py",
+            "task": "32-watch-list (docs/tasks/32-watch-list.md)",
+            "schema": "pipeline/schemas/site_rain_summary.schema.json",
+            "threshold_mm": 40,
+            "well_searched_years": sorted(well_years),
+            "thin_years": sorted(thin_years),
+            "reference_events": [e for e, _ in REFERENCES],
+            "caveats": caveats,
+            "generated_at": generated_at,
+        },
+        "sites": summary_sites,
+    }
+    with open(SUMMARY_SCHEMA_PATH, encoding="utf-8") as f:
+        summary_schema = json.load(f)
+    jsonschema.Draft202012Validator(summary_schema).validate(summary)
+    SUMMARY_PATH.write_text(
+        json.dumps(summary, indent=2, sort_keys=True, ensure_ascii=False) + "\n",
         encoding="utf-8")
 
     # ---- console summary ----------------------------------------------------
@@ -655,6 +728,7 @@ def main() -> None:
             print(f"  {'':>28} {ba['reading']}")
     print()
     print(f"wrote {OUT_PATH.relative_to(ROOT)} ({OUT_PATH.stat().st_size} bytes)")
+    print(f"wrote {SUMMARY_PATH.relative_to(ROOT)} ({SUMMARY_PATH.stat().st_size} bytes)")
 
 
 if __name__ == "__main__":

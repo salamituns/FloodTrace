@@ -1,4 +1,5 @@
 import { promiseStatus, type OfficialPromise } from '../lib/promises';
+import type { RainSummary } from '../lib/watchList';
 import type { LoadedSites, SitePromise, SiteRecord } from './types';
 
 /**
@@ -29,4 +30,9 @@ export async function loadSites(today = new Date()): Promise<LoadedSites> {
     .catch(() => [] as OfficialPromise[]);
   for (const p of list) promises[p.promise_id] = { ...p, updates: p.updates ?? [], status: promiseStatus(p, today) };
   return { sites, promises };
+}
+
+/** The slim per-site digest of the rain replay (pipeline/storm_replay.py, Task 32) that the watch list ranks on. */
+export function loadRainSummary(): Promise<RainSummary> {
+  return fetchJson<RainSummary>('/events/site_rain_summary.json');
 }

@@ -323,3 +323,24 @@ h3, h4 { margin: 0; font-size: 12.5px; font-weight: 600; }
 }
 .year-strip__cell--strong { background: var(--accent); border-color: var(--accent); color: #fff; }
 .year-strip__cell--area { background: none; border-color: var(--accent); color: var(--accent); }
+
+/* ── Pre-season watch list (Task 32) ──────────────────── */
+.watch { list-style: none; margin: 0; padding: 0; }
+.watch li + li { border-top: 1px solid var(--border); }
+.watch__row { display: flex; align-items: stretch; }
+.watch__open { flex: 1; min-width: 0; display: flex; align-items: center; gap: 7px; padding: 6px 2px; text-align: left; }
+.watch__open:hover { background: var(--panel-2); }
+.watch__tier { font-size: 10px; font-weight: 700; padding: 1px 6px; border-radius: 10px; background: #ece7de; color: #5d574e; white-space: nowrap; }
+.watch__tier--3 { background: #8e2a1a; color: #fff; }
+.watch__tier--2 { background: var(--danger-soft); color: #a3361f; }
+.watch__tier--1 { background: #f6ead6; color: #8a5a17; }
+.watch__name { flex: 1; min-width: 0; font-weight: 600; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.watch__tick, .watch__cross { font-size: 13px; font-weight: 700; cursor: help; }
+.watch__tick { color: #2c6b41; }
+.watch__cross { color: #a3361f; }
+.watch__why { color: var(--muted); font-size: 11px; padding: 0 4px; white-space: nowrap; align-self: center; }
+.watch__why:hover { color: var(--text); }
+.watch__reasons { list-style: none; margin: 0 0 6px; padding: 0 4px; color: var(--muted); font-size: 11.5px; display: flex; flex-direction: column; gap: 3px; }
+.watch__reasons b { color: var(--text); }
+.watch__asof { color: var(--muted); font-size: 11px; display: flex; align-items: center; gap: 4px; }
+.watch__asof input { font: inherit; font-size: 11px; padding: 1px 4px; border: 1px solid var(--border); border-radius: 4px; background: var(--panel-2); color: var(--text); }
