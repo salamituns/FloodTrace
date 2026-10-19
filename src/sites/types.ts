@@ -15,6 +15,40 @@ export interface SiteFlood {
   nearest_m: number;
 }
 
+/** How a catalog flood day matched a site (docs/tasks/29-site-flood-counts.md). */
+export type FloodStrength = 'name' | 'near' | 'area';
+export type FloodType = 'pluvial' | 'riverine' | 'lagoon' | 'coastal';
+
+export interface CatalogSource {
+  url: string;
+  publisher: string;
+  quote: string;
+}
+
+/** One Tier B flood-day catalog entry that matched this site. */
+export interface CatalogFlood {
+  date: string;
+  flood_type: FloodType;
+  episode_id: string | null;
+  strength: FloodStrength;
+  matched_areas: string[];
+  distance_m: number | null;
+  n_outlets: number;
+  promote: boolean;
+  tier_a_event_id: string | null;
+  sources: CatalogSource[];
+}
+
+export interface CatalogSummary {
+  n_days: number;
+  n_days_strong: number;
+  years_with_flood: number[];
+  years_searched: number[];
+  per_searched_year: number;
+  riverine_days: number;
+  note: string;
+}
+
 export interface SiteClaim {
   claim_id: string;
   event_id: string;
@@ -72,6 +106,9 @@ export interface SiteRecord {
   location_confidence: string;
   located_how?: string;
   floods: SiteFlood[];
+  /** Catalog matches; optional so an older sites.json without them still loads. */
+  catalog_floods?: CatalogFlood[];
+  catalog_summary?: CatalogSummary;
   claims: SiteClaim[];
   change: SiteChange;
   promise_ids: string[];

@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from 'react';
 import { loadEvent } from '../events/load';
+import { SiteHistory } from './SiteHistory';
 import { causeLabel, CAUSES } from '../lib/causes';
 import type { PromiseStatus } from '../lib/promises';
 import { VERDICT_COLOR, verdictKey } from '../sites/geo';
@@ -40,7 +41,10 @@ function SiteList({ sites, promises }: { sites: SiteRecord[]; promises: Record<s
   const ranked = useMemo(
     () =>
       [...sites].sort(
-        (a, b) => new Set(b.floods.map((f) => f.event_id)).size - new Set(a.floods.map((f) => f.event_id)).size || a.name.localeCompare(b.name),
+        (a, b) =>
+          (b.catalog_summary?.n_days_strong ?? 0) - (a.catalog_summary?.n_days_strong ?? 0) ||
+          new Set(b.floods.map((f) => f.event_id)).size - new Set(a.floods.map((f) => f.event_id)).size ||
+          a.name.localeCompare(b.name),
       ),
     [sites],
   );
@@ -53,6 +57,7 @@ function SiteList({ sites, promises }: { sites: SiteRecord[]; promises: Record<s
       <ul className="site-list">
         {ranked.map((s) => {
           const nEvents = new Set(s.floods.map((f) => f.event_id)).size;
+          const nStrong = s.catalog_summary?.n_days_strong ?? 0;
           const worst = worstPromise(s, promises);
           return (
             <li key={s.site_id}>
@@ -60,7 +65,8 @@ function SiteList({ sites, promises }: { sites: SiteRecord[]; promises: Record<s
                 <span className="site-dot" style={{ background: rgb(VERDICT_COLOR[verdictKey(s)]) }} />
                 <span className="site-list__name">{s.name}</span>
                 <span className="site-list__meta">
-                  {nEvents} event{nEvents === 1 ? '' : 's'} · {s.claims.length} claim{s.claims.length === 1 ? '' : 's'}
+                  {nEvents} event{nEvents === 1 ? '' : 's'} · {nStrong} strong flood day{nStrong === 1 ? '' : 's'} · {s.claims.length} claim
+                  {s.claims.length === 1 ? '' : 's'}
                   {worst && <span className={`status status--${worst}`}>{PROMISE_LABEL[worst]}</span>}
                 </span>
               </button>
@@ -249,6 +255,8 @@ function SiteDetail({ site, promises }: { site: SiteRecord; promises: Record<str
         </ul>
       </section>
 
+      <SiteHistory site={site} openEvent={openEvent} opening={opening} />
+
       <section className="card">
         <header className="card__head">
           <h3>What changed</h3>
@@ -328,7 +336,7 @@ export function SitePanel() {
         </section>
       )}
       {loaded && !site && <SiteList sites={loaded.sites} promises={loaded.promises} />}
-      {loaded && site && <SiteDetail site={site} promises={loaded.promises} />}
+      {loaded && site && <SiteDetail key={site.site_id} site={site} promises={loaded.promises} />}
     </aside>
   );
 }

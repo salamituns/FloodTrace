@@ -306,3 +306,20 @@ h3, h4 { margin: 0; font-size: 12.5px; font-weight: 600; }
 .site-tl__built { fill: #c9852f; }
 .segmented--small { align-self: flex-start; flex-wrap: wrap; }
 .segmented--small button { font-size: 10.5px; padding: 3px 7px; }
+
+/* ── Flood history year strip ─────────────────────────── */
+.year-strip { display: flex; gap: 2px; margin: 0 0 10px; }
+.year-strip__cell {
+  flex: 1 1 0;
+  height: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 8.5px;
+  color: var(--muted);
+  background: var(--panel-2);
+  border: 1px solid var(--border);
+  border-radius: 3px;
+}
+.year-strip__cell--strong { background: var(--accent); border-color: var(--accent); color: #fff; }
+.year-strip__cell--area { background: none; border-color: var(--accent); color: var(--accent); }
