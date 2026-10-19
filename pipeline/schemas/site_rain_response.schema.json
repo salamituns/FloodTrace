@@ -1,0 +1,320 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://floodtrace.local/pipeline/schemas/site_rain_response.schema.json",
+  "title": "FloodTrace events/site_rain_response.json",
+  "description": "Built by pipeline/storm_replay.py (Task 31, docs/tasks/31-rain-matched-replay.md). Never hand-edited.",
+  "type": "object",
+  "required": ["meta", "citywide", "years", "sites"],
+  "additionalProperties": false,
+  "properties": {
+    "meta": {
+      "type": "object"
+    },
+    "citywide": {
+      "type": "object",
+      "required": ["bins", "rises_with_rain", "strictly_monotone", "criterion", "days_in_window", "days_missing_rain", "note"],
+      "additionalProperties": false,
+      "properties": {
+        "bins": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/bin" }
+        },
+        "rises_with_rain": { "type": "boolean" },
+        "strictly_monotone": { "type": "boolean" },
+        "criterion": { "type": "string" },
+        "days_in_window": { "type": "integer" },
+        "days_missing_rain": { "type": "integer" },
+        "note": { "type": "string" }
+      }
+    },
+    "years": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["year", "catalog_flood_days", "in_window_catalog_flood_days", "thin"],
+        "additionalProperties": false,
+        "properties": {
+          "year": { "type": "string", "pattern": "^[0-9]{4}$" },
+          "catalog_flood_days": { "type": "integer" },
+          "in_window_catalog_flood_days": { "type": "integer" },
+          "thin": { "type": "boolean" }
+        }
+      }
+    },
+    "sites": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/site" }
+    }
+  },
+  "$defs": {
+    "bin": {
+      "type": "object",
+      "required": ["bin", "min_mm", "days", "catalog_flood_days", "share"],
+      "additionalProperties": false,
+      "properties": {
+        "bin": { "type": "string" },
+        "min_mm": { "type": "number" },
+        "max_mm": { "type": ["number", "null"] },
+        "days": { "type": "integer" },
+        "catalog_flood_days": { "type": "integer" },
+        "pluvial_flood_days": { "type": "integer" },
+        "share": { "type": ["number", "null"] },
+        "share_pluvial": { "type": ["number", "null"] }
+      }
+    },
+    "stats": {
+      "type": "object",
+      "required": ["n_storms", "n_flooded", "rate", "wilson_95"],
+      "additionalProperties": false,
+      "properties": {
+        "n_storms": { "type": "integer" },
+        "n_flooded": { "type": "integer" },
+        "rate": { "type": ["number", "null"] },
+        "wilson_95": {
+          "type": "array",
+          "items": { "type": ["number", "null"] },
+          "minItems": 2,
+          "maxItems": 2
+        }
+      }
+    },
+    "storm": {
+      "type": "object",
+      "required": ["start", "end", "n_days", "rain_mm", "max_30min_mm_h_2d", "flooded", "matched_dates"],
+      "additionalProperties": false,
+      "properties": {
+        "start": { "type": "string", "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$" },
+        "end": { "type": "string", "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$" },
+        "n_days": { "type": "integer" },
+        "rain_mm": { "type": "number" },
+        "max_30min_mm_h_2d": { "type": ["number", "null"] },
+        "flooded": { "type": "boolean" },
+        "matched_dates": {
+          "type": "array",
+          "items": { "type": "string", "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$" }
+        }
+      }
+    },
+    "threshold": {
+      "type": "object",
+      "required": ["storms", "all_years", "well_searched_years"],
+      "additionalProperties": false,
+      "properties": {
+        "storms": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/storm" }
+        },
+        "all_years": { "$ref": "#/$defs/stats" },
+        "well_searched_years": { "$ref": "#/$defs/stats" }
+      }
+    },
+    "replay": {
+      "type": "object",
+      "required": ["reference_date", "reference_days", "site_cell_2d_mm"],
+      "additionalProperties": false,
+      "properties": {
+        "reference_date": { "type": "string", "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$" },
+        "reference_days": {
+          "type": "array",
+          "items": { "type": "string", "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$" }
+        },
+        "site_cell_2d_mm": { "type": ["number", "null"] },
+        "not_a_storm_here": { "type": "boolean" },
+        "analogs": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["start", "end", "rain_mm", "flooded"],
+            "additionalProperties": false,
+            "properties": {
+              "start": { "type": "string", "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$" },
+              "end": { "type": "string", "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$" },
+              "rain_mm": { "type": "number" },
+              "flooded": { "type": "boolean" },
+              "sources": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "required": ["publisher", "url"],
+                  "additionalProperties": false,
+                  "properties": {
+                    "publisher": { "type": "string" },
+                    "url": { "type": ["string", "null"] }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "n_analogs": { "type": "integer" },
+        "n_flooded": { "type": "integer" },
+        "rate": { "type": ["number", "null"] },
+        "well_searched_years": { "$ref": "#/$defs/stats" }
+      }
+    },
+    "before_after": {
+      "type": "object",
+      "required": ["split_date", "split_source", "candidate_dates", "storms_ge_40mm", "reading"],
+      "additionalProperties": false,
+      "properties": {
+        "split_date": { "type": "string", "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$" },
+        "split_source": { "type": "string" },
+        "candidate_dates": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["date", "source"],
+            "additionalProperties": false,
+            "properties": {
+              "date": { "type": "string", "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$" },
+              "source": { "type": "string" }
+            }
+          }
+        },
+        "storms_ge_40mm": {
+          "type": "object",
+          "required": ["before", "after"],
+          "additionalProperties": false,
+          "properties": {
+            "before": { "$ref": "#/$defs/stats" },
+            "after": { "$ref": "#/$defs/stats" }
+          }
+        },
+        "reading": { "type": "string" }
+      }
+    },
+    "site": {
+      "type": "object",
+      "required": [
+        "site_id",
+        "name",
+        "cell",
+        "cells_3x3",
+        "strong_pluvial_match_dates",
+        "excluded_matches",
+        "thresholds",
+        "sensitivity_3x3",
+        "replays",
+        "before_after"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "site_id": { "type": "string" },
+        "name": { "type": "string" },
+        "cell": {
+          "type": "object",
+          "required": ["id", "lon", "lat", "place", "assigned_by"],
+          "additionalProperties": false,
+          "properties": {
+            "id": { "type": "string" },
+            "lon": { "type": "number" },
+            "lat": { "type": "number" },
+            "place": { "type": ["string", "null"] },
+            "assigned_by": { "enum": ["contains", "nearest"] }
+          }
+        },
+        "cells_3x3": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "strong_pluvial_match_dates": {
+          "type": "array",
+          "items": { "type": "string", "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$" }
+        },
+        "excluded_matches": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["date", "flood_type", "strength", "excluded_because"],
+            "additionalProperties": false,
+            "properties": {
+              "date": { "type": "string", "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$" },
+              "flood_type": { "type": ["string", "null"] },
+              "strength": { "type": "string" },
+              "matched_areas": { "type": "array", "items": { "type": "string" } },
+              "excluded_because": { "enum": ["non_pluvial", "out_of_window"] }
+            }
+          }
+        },
+        "thresholds": {
+          "type": "object",
+          "required": ["20", "40", "60", "80"],
+          "additionalProperties": false,
+          "properties": {
+            "20": { "$ref": "#/$defs/threshold" },
+            "40": { "$ref": "#/$defs/threshold" },
+            "60": { "$ref": "#/$defs/threshold" },
+            "80": { "$ref": "#/$defs/threshold" }
+          }
+        },
+        "sensitivity_3x3": {
+          "type": "object",
+          "required": ["20", "40", "60", "80"],
+          "additionalProperties": false,
+          "properties": {
+            "20": {
+              "type": "object",
+              "required": ["all_years", "well_searched_years"],
+              "additionalProperties": false,
+              "properties": {
+                "all_years": { "$ref": "#/$defs/stats" },
+                "well_searched_years": { "$ref": "#/$defs/stats" }
+              }
+            },
+            "40": {
+              "type": "object",
+              "required": ["all_years", "well_searched_years"],
+              "additionalProperties": false,
+              "properties": {
+                "all_years": { "$ref": "#/$defs/stats" },
+                "well_searched_years": { "$ref": "#/$defs/stats" }
+              }
+            },
+            "60": {
+              "type": "object",
+              "required": ["all_years", "well_searched_years"],
+              "additionalProperties": false,
+              "properties": {
+                "all_years": { "$ref": "#/$defs/stats" },
+                "well_searched_years": { "$ref": "#/$defs/stats" }
+              }
+            },
+            "80": {
+              "type": "object",
+              "required": ["all_years", "well_searched_years"],
+              "additionalProperties": false,
+              "properties": {
+                "all_years": { "$ref": "#/$defs/stats" },
+                "well_searched_years": { "$ref": "#/$defs/stats" }
+              }
+            }
+          }
+        },
+        "replays": {
+          "type": "object",
+          "required": [
+            "lagos-2011-07-10",
+            "lagos-2021-07-16",
+            "lagos-2022-07-08",
+            "lagos-2024-07-03",
+            "lagos-2025-08-04"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "lagos-2011-07-10": { "$ref": "#/$defs/replay" },
+            "lagos-2021-07-16": { "$ref": "#/$defs/replay" },
+            "lagos-2022-07-08": { "$ref": "#/$defs/replay" },
+            "lagos-2024-07-03": { "$ref": "#/$defs/replay" },
+            "lagos-2025-08-04": { "$ref": "#/$defs/replay" }
+          }
+        },
+        "before_after": {
+          "oneOf": [
+            { "$ref": "#/$defs/before_after" },
+            { "type": "null" }
+          ]
+        }
+      }
+    }
+  }
+}
