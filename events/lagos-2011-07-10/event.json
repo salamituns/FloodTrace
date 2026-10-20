@@ -49,6 +49,7 @@
     }
   },
   "cause_prelim": "~16 h of rain (07:00–23:00) with two intense cores (44 mm/h at 09:30, 45.6 mm/h at 17:00); the morning core fell on a rising tide into the 12:00 high — plausible rain–tide compounding (EOT20 + IMERG)",
+  "cause_plain": "About 16 hours of rain (07:00–23:00) with two intense bursts: 44 mm/h at 09:30 and 45.6 mm/h at 17:00. The morning burst fell as the tide rose toward the 12:00 high, so high tide during heavy rain was plausible.",
   "open_questions": [
     "No tide data for 2011 from the open model — tidal lock cannot be assessed yet (FES/TPXO need registration)",
     "No Sentinel-1/2 imagery exists for 2011; Landsat 7 / ENVISAT ASAR not yet checked",
@@ -56,10 +57,18 @@
     "IFRC (unverified here) says rain started ~05:00; IMERG shows Ikeja 6.7 mm/h at 05:00 then the citywide core from 08:00 — consistent",
     "PM News reported 264 mm of rain (gauge unknown) vs IMERG max cell 213 mm/day — consistent given 10 km smoothing"
   ],
+  "open_questions_plain": [
+    "There is no open tide data for 2011, so we cannot yet say whether high tide during heavy rain made it worse.",
+    "No radar satellite images exist for 2011; Landsat 7 and ENVISAT radar have not been checked yet.",
+    "The drain map is today's network, not 2011's.",
+    "IFRC (unverified here) says rain started around 05:00; rain maps show 6.7 mm/h at Ikeja at 05:00, then the citywide burst from 08:00 — consistent.",
+    "PM News reported 264 mm of rain (gauge unknown) versus a mapped high of 213 mm in a day — consistent given 10 km smoothing."
+  ],
   "key_events": [
     {
       "id": "rain-onset",
       "name": "Heavy rain begins (IMERG)",
+      "name_plain": "Heavy rain begins",
       "time": "2011-07-10T07:00:00+01:00",
       "time_confidence": "approx",
       "source": "imerg"
@@ -67,6 +76,7 @@
     {
       "id": "core-1",
       "name": "Morning core 44 mm/h, Lagos Island/Apapa (IMERG)",
+      "name_plain": "Morning burst 44 mm/h, Lagos Island/Apapa",
       "time": "2011-07-10T09:30:00+01:00",
       "time_confidence": "exact",
       "source": "imerg"
@@ -74,6 +84,7 @@
     {
       "id": "core-2",
       "name": "Evening core 45.6 mm/h, Ikeja/Oshodi (IMERG)",
+      "name_plain": "Evening burst 45.6 mm/h, Ikeja/Oshodi",
       "time": "2011-07-10T17:00:00+01:00",
       "time_confidence": "exact",
       "source": "imerg"
@@ -81,6 +92,7 @@
     {
       "id": "rain-end",
       "name": "Rain eases below 3 mm/h (IMERG)",
+      "name_plain": "Rain eases below 3 mm/h",
       "time": "2011-07-10T23:00:00+01:00",
       "time_confidence": "approx",
       "source": "imerg"

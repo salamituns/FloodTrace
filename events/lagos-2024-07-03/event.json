@@ -68,6 +68,7 @@
     {
       "id": "sar-pass",
       "name": "Sentinel-1A radar pass",
+      "name_plain": "Radar satellite passes over",
       "time": "2024-07-03T06:30:17+01:00",
       "time_confidence": "exact",
       "source": "copernicus-s1a-20240703"
@@ -100,6 +101,12 @@
     "arise-2024-07-04": "https://www.arise.tv/lagos-floods-rainwater-slow-to-recede-due-to-high-tide-says-environment-commissioner-wahab/"
   },
   "cause_prelim": "Intense rain on saturated ground (IMERG core 19–31 mm/h over Apapa/Mile 2, 06:00–08:30); tidal lock unlikely for the morning, possible for the afternoon",
+  "cause_plain": "Intense rain on saturated ground (19–31 mm/h over Apapa/Mile 2, 06:00–08:30). High tide during heavy rain was unlikely in the morning, possible in the afternoon.",
+  "open_questions_plain": [
+    "The lagoon water level on 3 Jul 2024 is unknown (no public gauge), which decides whether high tide during heavy rain made it worse.",
+    "Was the lagoon already higher after a week of rain? (ThisDay, 4 Jul: lagoon rising \"since last week\")",
+    "Rain maps show about 22 mm/h over Lekki/Lagos Island on 2 Jul 11:00–15:30, but no flood report was found for that day."
+  ],
   "open_questions": [
     "Lagoon water level on 3 Jul 2024 (no public gauge) — decides the tidal-lock question",
     "Was the lagoon baseline already raised by a week of rain? (ThisDay 4 Jul: lagoon rising \"since last week\")",

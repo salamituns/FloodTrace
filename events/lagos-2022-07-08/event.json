@@ -50,16 +50,24 @@
     }
   },
   "cause_prelim": "Two days of citywide rain on wet ground (70–98 mm in the prior 7 days): 8 Jul 07:00–19:00 (AOI 70 mm, cores to 47 mm/h over the lagoon), 9 Jul 06:00–16:00 (AOI 41 mm). Both days' cores fell within an hour of high tide (12:00, 13:00) — rain–tide compounding plausible near the lagoon; Alimosho (where the deaths were) is ~20 km inland, so local drainage/canals more likely there. Alimosho cell: 85 + 71 mm (IMERG + EOT20)",
+  "cause_plain": "Two days of citywide rain (8–9 Jul) on wet ground (70–98 mm in the prior 7 days), with bursts to 47 mm/h. High tide during heavy rain was plausible near the lagoon; Alimosho, about 20 km inland, was more likely local drains.",
   "open_questions": [
     "Exact timing of the deaths in Oke Isagun / Agbado Oke is not reported — which day's rain?",
     "Alimosho is inland: was the killer flood a canal/stream overflow (local drainage) rather than tide-locked lagoon outflow?",
     "No Sentinel-1 pass during the flood (none within the window)",
     "Media evidence: 9 of 14 quotes verified; 5 behind blocked sites (see evidence meta.review)"
   ],
+  "open_questions_plain": [
+    "The exact timing of the deaths in Oke Isagun / Agbado Oke is not reported, so it is unknown which day's rain it was.",
+    "Alimosho is inland: was the flood that killed people a canal or stream overflow (local drains) rather than high tide holding back lagoon outflow?",
+    "No radar satellite pass during the flood (none in this flood's time window).",
+    "News reports: 9 of 14 quotes verified; 5 behind blocked sites."
+  ],
   "key_events": [
     {
       "id": "rain-onset-1",
       "name": "Citywide rain begins (IMERG)",
+      "name_plain": "Citywide rain begins",
       "time": "2022-07-08T06:30:00+01:00",
       "time_confidence": "approx",
       "source": "imerg"
@@ -67,6 +75,7 @@
     {
       "id": "core-1",
       "name": "Core 47 mm/h over Lagos Lagoon (north); AOI mean peaks 7.6 mm/h (IMERG)",
+      "name_plain": "Heaviest burst 47 mm/h over Lagos Lagoon (north); citywide average peaks 7.6 mm/h",
       "time": "2022-07-08T12:30:00+01:00",
       "time_confidence": "exact",
       "source": "imerg"
@@ -74,6 +83,7 @@
     {
       "id": "rain-end-1",
       "name": "Rain eases (IMERG)",
+      "name_plain": "Rain eases",
       "time": "2022-07-08T19:30:00+01:00",
       "time_confidence": "approx",
       "source": "imerg"
@@ -81,6 +91,7 @@
     {
       "id": "core-2",
       "name": "Day-2 core 26 mm/h, Lagos Island (IMERG)",
+      "name_plain": "Day-2 burst 26 mm/h, Lagos Island",
       "time": "2022-07-09T13:00:00+01:00",
       "time_confidence": "exact",
       "source": "imerg"
@@ -88,6 +99,7 @@
     {
       "id": "rain-end-2",
       "name": "Day-2 rain eases (IMERG)",
+      "name_plain": "Day-2 rain eases",
       "time": "2022-07-09T16:00:00+01:00",
       "time_confidence": "approx",
       "source": "imerg"

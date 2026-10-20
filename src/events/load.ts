@@ -58,10 +58,19 @@ interface EventJson {
   window: { start: string; end: string };
   focus: { start: string; end: string };
   aoi: { bbox: [number, number, number, number]; points: Record<string, [number, number]> };
-  key_events: { id: string; name: string; time: string; time_confidence: KeyEvent['timeConfidence']; source: string }[];
+  key_events: {
+    id: string;
+    name: string;
+    name_plain?: string;
+    time: string;
+    time_confidence: KeyEvent['timeConfidence'];
+    source: string;
+  }[];
   sources: Record<string, string>;
   cause_prelim?: string;
+  cause_plain?: string;
   open_questions?: string[];
+  open_questions_plain?: string[];
 }
 
 interface PassesJson {
@@ -161,6 +170,7 @@ export async function loadEvent(id: string): Promise<LoadedEvent> {
     ...ev.key_events.map((k) => ({
       id: k.id,
       name: k.name,
+      namePlain: k.name_plain,
       t: Date.parse(k.time),
       kind: (k.id === 'sar-pass' ? 'satellite' : k.id === 'rain-onset' ? 'rain-onset' : 'documented') as KeyEvent['kind'],
       timeConfidence: k.time_confidence,
@@ -193,7 +203,9 @@ export async function loadEvent(id: string): Promise<LoadedEvent> {
     id: ev.id,
     name: ev.name,
     causePrelim: ev.cause_prelim ?? null,
+    causePlain: ev.cause_plain ?? ev.cause_prelim ?? null,
     openQuestions: ev.open_questions ?? [],
+    openQuestionsPlain: ev.open_questions_plain ?? ev.open_questions ?? [],
     timezone: ev.timezone,
     window: { start: Date.parse(ev.window.start), end: Date.parse(ev.window.end) },
     focus,

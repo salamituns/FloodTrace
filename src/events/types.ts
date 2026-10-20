@@ -26,6 +26,8 @@ export type KeyEventKind = 'documented' | 'satellite' | 'tide-high' | 'rain-onse
 export interface KeyEvent {
   id: string;
   name: string;
+  /** Resident wording; fall back to `name` when absent. */
+  namePlain?: string;
   t: number;
   kind: KeyEventKind;
   timeConfidence: 'exact' | 'approx' | 'day' | 'unknown';
@@ -129,7 +131,11 @@ export interface LoadedEvent {
   id: string;
   name: string;
   causePrelim: string | null;
+  /** Resident wording of the likely cause; falls back to `causePrelim`. */
+  causePlain: string | null;
   openQuestions: string[];
+  /** Resident wording of each open question; falls back to `openQuestions`. */
+  openQuestionsPlain: string[];
   timezone: string;
   window: { start: number; end: number };
   focus: { start: number; end: number };

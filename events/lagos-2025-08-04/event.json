@@ -50,16 +50,24 @@
     }
   },
   "cause_prelim": "~13 h of overnight rain (19:30 3 Aug → ~08:30 4 Aug) on dry ground (7–13 mm prior week); AOI mean peak 7.9 mm/h at 01:30, cells to 31 mm/h; 120–160 mm over Lekki/Lagos Island/Ikorodu. The 01:30 peak coincided with a weak high tide (0.10 m) — little tidal contribution. Duration matches Wahab's '12 hours' (IMERG + EOT20)",
+  "cause_plain": "About 13 hours of overnight rain from 19:30 3 Aug on dry ground (7–13 mm the week before), 120–160 mm over Lekki, Lagos Island and Ikorodu. A weak high tide (0.10 m) at the 01:30 peak added little.",
   "open_questions": [
     "ClimaMeter's 191 deaths is unverified against Nigerian reporting — not used",
     "Only Sentinel-1 pass (S1A, 3 Aug 06:30) is ~13 h before the rain — usable only as a dry 'before' image",
     "Ijede/Ikorodu flooding may involve lagoon backwater from the Lagos Lagoon's north shore — not modelled",
     "Media evidence: 16 of 22 quotes unverifiable (Guardian NG / Channels TV block automated checks)"
   ],
+  "open_questions_plain": [
+    "A figure of 191 deaths is unverified against Nigerian reporting and is not used.",
+    "The only radar satellite pass (3 Aug 06:30) is about 13 hours before the rain, so it is usable only as a dry 'before' image.",
+    "Ijede/Ikorodu flooding may involve lagoon backwater from the Lagos Lagoon's north shore — this is not modelled.",
+    "News reports: 16 of 22 quotes unverifiable (Guardian NG / Channels TV block automated checks)."
+  ],
   "key_events": [
     {
       "id": "rain-onset",
       "name": "Rain begins, east (Epe/Lekki) moving west (IMERG)",
+      "name_plain": "Rain begins in the east (Epe/Lekki) moving west",
       "time": "2025-08-03T19:30:00+01:00",
       "time_confidence": "approx",
       "source": "imerg"
@@ -67,6 +75,7 @@
     {
       "id": "core-1",
       "name": "Peak: 31 mm/h over Lekki, AOI mean 7.9 mm/h (IMERG)",
+      "name_plain": "Peak: 31 mm/h over Lekki, citywide average 7.9 mm/h",
       "time": "2025-08-04T01:30:00+01:00",
       "time_confidence": "exact",
       "source": "imerg"
@@ -74,6 +83,7 @@
     {
       "id": "core-2",
       "name": "Second core 30 mm/h, east Lagos Lagoon (IMERG)",
+      "name_plain": "Second burst 30 mm/h, east Lagos Lagoon",
       "time": "2025-08-04T05:00:00+01:00",
       "time_confidence": "exact",
       "source": "imerg"
@@ -81,6 +91,7 @@
     {
       "id": "rain-end",
       "name": "Rain eases below 3 mm/h AOI mean (IMERG)",
+      "name_plain": "Rain eases below 3 mm/h citywide",
       "time": "2025-08-04T08:30:00+01:00",
       "time_confidence": "approx",
       "source": "imerg"

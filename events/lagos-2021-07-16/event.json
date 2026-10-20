@@ -50,16 +50,24 @@
     }
   },
   "cause_prelim": "~12 h of rain (06:00–18:00 Fri 16 Jul), heaviest 10:00–17:00 (AOI mean to 9.9 mm/h at 12:00; 40 mm/h cell over Ikotun/Egbeda at 16:00); ~90–105 mm at every analysis point. The midday peak fell on a falling tide (high 09:00, low 15:00) — like 2024, rain-driven rather than tide-locked (IMERG + EOT20)",
+  "cause_plain": "About 12 hours of rain (06:00–18:00 Fri 16 Jul) left about 90–105 mm at every chart point. The midday peak fell as the tide was falling (high 09:00, low 15:00), so rain drove it rather than high tide during heavy rain.",
   "open_questions": [
     "Media say '~4 h' of rain; IMERG shows ~12 h, with ~6 h of heavy rain — likely the peak period people noticed",
     "NiMet totals (125 mm Oshodi, 66 mm Ikeja) are dated 15 Jul, but IMERG has only 5–8 mm on 15 Jul and 87–90 mm on 16 Jul — the statement's date likely means the 16th. If so: Oshodi IMERG 90 vs gauge 125 (−28 %), Ikeja 87 vs 66 (+32 %)",
     "No Sentinel-1 pass during the flood",
     "Media evidence: 43 of 51 quotes verified"
   ],
+  "open_questions_plain": [
+    "News reports said about 4 hours of rain; rain maps show about 12 hours, with about 6 hours of heavy rain — likely the peak period people noticed.",
+    "The weather agency's totals (125 mm Oshodi, 66 mm Ikeja) are dated 15 Jul, but rain maps show only 5–8 mm on 15 Jul and 87–90 mm on 16 Jul — the statement's date likely means the 16th, which would mean Oshodi 90 vs gauge 125 (−28 %) and Ikeja 87 vs 66 (+32 %).",
+    "No radar satellite pass during the flood.",
+    "News reports: 43 of 51 quotes verified."
+  ],
   "key_events": [
     {
       "id": "rain-onset",
       "name": "Rain begins offshore/east (IMERG)",
+      "name_plain": "Rain begins offshore/east",
       "time": "2021-07-16T06:00:00+01:00",
       "time_confidence": "approx",
       "source": "imerg"
@@ -67,6 +75,7 @@
     {
       "id": "core-1",
       "name": "AOI mean peak 9.9 mm/h, rain over the whole city (IMERG)",
+      "name_plain": "Citywide average rain peaks at 9.9 mm/h",
       "time": "2021-07-16T12:00:00+01:00",
       "time_confidence": "exact",
       "source": "imerg"
@@ -74,6 +83,7 @@
     {
       "id": "core-2",
       "name": "Core 40 mm/h over Ikotun/Egbeda, west of Oshodi (IMERG)",
+      "name_plain": "Heaviest burst 40 mm/h over Ikotun/Egbeda, west of Oshodi",
       "time": "2021-07-16T16:00:00+01:00",
       "time_confidence": "exact",
       "source": "imerg"
@@ -81,6 +91,7 @@
     {
       "id": "rain-end",
       "name": "Rain eases (IMERG)",
+      "name_plain": "Rain eases",
       "time": "2021-07-16T18:00:00+01:00",
       "time_confidence": "approx",
       "source": "imerg"
@@ -95,6 +106,7 @@
     {
       "id": "nimet",
       "name": "NiMet: rainfall 'was expected'",
+      "name_plain": "Weather agency: rainfall 'was expected'",
       "time": "2021-07-21T12:00:00+01:00",
       "time_confidence": "day",
       "source": "thecable-2021-07-21"
