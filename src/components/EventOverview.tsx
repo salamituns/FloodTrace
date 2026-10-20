@@ -1,80 +1,132 @@
-import { countCauses } from '../lib/causes';
+import { useState } from 'react';
 import { fmtDateTime } from '../lib/time';
-import { useEvent } from '../state/store';
+import { useEvent, useStore } from '../state/store';
+import { ClampText } from './ClampText';
+import { InfoTip } from './InfoTip';
+import '../styles/flood.css';
 
-/** What we know about the event and how well each dataset covers it. */
+const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+
+/** Calendar date as "3 Jul 2024" — from YYYY-MM-DD, so timezone does not shift the day. */
+function proseIso(iso: string): string {
+  const [y, mo, d] = iso.split('-').map(Number);
+  return `${d} ${MONTHS[mo - 1]} ${y}`;
+}
+
+function peakReportIso(times: number[], timeZone: string): string | null {
+  const counts = new Map<string, number>();
+  for (const t of times) {
+    const iso = new Intl.DateTimeFormat('en-CA', { timeZone, year: 'numeric', month: '2-digit', day: '2-digit' }).format(t);
+    counts.set(iso, (counts.get(iso) ?? 0) + 1);
+  }
+  let best: string | null = null;
+  let n = 0;
+  for (const [iso, c] of counts) {
+    if (c > n) {
+      best = iso;
+      n = c;
+    }
+  }
+  return best;
+}
+
+function mainDayIso(id: string, catalogDate: string | undefined, reportTimes: number[], timeZone: string): string {
+  if (catalogDate && /^\d{4}-\d{2}-\d{2}$/.test(catalogDate)) return catalogDate;
+  const fromId = id.match(/(\d{4}-\d{2}-\d{2})/);
+  if (fromId) return fromId[1];
+  return peakReportIso(reportTimes, timeZone) ?? 'unknown';
+}
+
+function placePhrase(areas: string[]): string {
+  if (!areas.length) return 'across Lagos';
+  if (areas.length === 1) return `in ${areas[0]}`;
+  if (areas.length === 2) return `across ${areas[0]} and ${areas[1]}`;
+  return `across ${areas[0]}, ${areas[1]} and the mainland`;
+}
+
+function leadCause(cause: string | null): string {
+  if (!cause) return 'Flooding';
+  if (/rain/i.test(cause)) return 'Heavy rain';
+  if (/tide/i.test(cause)) return 'High water';
+  return 'Flooding';
+}
+
+/** One-sentence answer, then main hours, likely cause, and what is still unknown. */
 export function EventOverview() {
   const event = useEvent();
-  const s1 = event.passes.filter((p) => p.collection === 'SENTINEL-1' && p.t >= event.window.start && p.t <= event.window.end);
-  const s2Clear = event.passes.filter((p) => p.collection === 'SENTINEL-2' && (p.cloudCover ?? 100) < 30);
-  const read = event.evidence.filter((e) => e.props.read_status === 'read').length;
-  const causes = countCauses(event.evidence, event.citywideCauses);
-  const maxCause = Math.max(1, ...causes.map((c) => c.total));
-
-  const rows: [string, string, 'ok' | 'warn' | 'gap'][] = [
-    ['Rainfall', event.rainfall.kind === 'imerg' ? 'IMERG 30-min' : 'ERA5 hourly (context only)', event.rainfall.kind === 'imerg' ? 'ok' : 'warn'],
-    ['Tide', event.tide.t.length ? `${event.tideProduct}, offshore, hourly` : 'No model data for this period', event.tide.t.length ? 'warn' : 'gap'],
-    ['Radar (S1)', event.sar ? `During-event pass ${fmtDateTime(event.sar.observedAt)}` : s1.length ? `${s1.length} passes, none processed` : 'None (Sentinel-1 launched 2014)', event.sar ? 'ok' : 'gap'],
-    ['Optical (S2)', s2Clear.length ? `${s2Clear.length} clear scenes` : 'All scenes cloud-covered', s2Clear.length ? 'ok' : 'gap'],
-    ['Media evidence', event.evidence.length ? `${event.evidence.length} reports (${read} read in full)` : 'Not collected yet', event.evidence.length ? 'ok' : 'gap'],
-    ['Drainage', `${event.drainage.features.length.toLocaleString()} OSM features; state network not public`, 'warn'],
-  ];
+  const catalog = useStore((s) => s.catalog);
+  const [techOpen, setTechOpen] = useState(false);
+  const entry = catalog.find((c) => c.id === event.id);
+  const areas = entry?.areas ?? [];
+  const n = event.evidence.length;
+  const reports = n === 1 ? '1 news report' : `${n} news reports`;
+  const day = proseIso(mainDayIso(event.id, entry?.date, event.evidence.flatMap((e) => (e.t === null ? [] : [e.t])), event.timezone));
+  const causeForLead = event.causePlain ?? event.causePrelim;
+  const lead = `${leadCause(causeForLead)} on ${day} flooded roads ${placePhrase(areas)}; ${reports}.`;
+  const cause = event.causePlain ?? event.causePrelim ?? 'Under investigation';
+  const questions = event.openQuestionsPlain;
+  const hasTech = Boolean(event.causePrelim) || event.openQuestions.length > 0;
 
   return (
     <section className="card">
       <header className="card__head">
-        <h3>Event Overview</h3>
-        <span className="card__hint">{event.id}</span>
+        <h2>What happened</h2>
       </header>
+      <p className="overview__lead">{lead}</p>
       <dl className="kv">
         <div>
-          <dt>Focus window</dt>
+          <dt>
+            Main hours
+            <InfoTip label="What Main hours means">The hours this replay covers.</InfoTip>
+          </dt>
           <dd>
             {fmtDateTime(event.focus.start)} – {fmtDateTime(event.focus.end)}
           </dd>
         </div>
         <div>
-          <dt>Cause (prelim.)</dt>
-          <dd>{event.causePrelim ?? 'Under investigation'}</dd>
+          <dt>
+            Likely cause
+            <InfoTip label="What Likely cause means">Our first reading of what drove this flood.</InfoTip>
+          </dt>
+          <dd>
+            <ClampText text={cause} className="reading__text" />
+          </dd>
         </div>
       </dl>
-      {event.openQuestions.length > 0 && (
+      {questions.length > 0 && (
         <>
-          <h4 className="subhead">Open questions</h4>
+          <h3 className="subhead">Still unknown</h3>
           <ul className="questions">
-            {event.openQuestions.map((q) => (
+            {questions.map((q) => (
               <li key={q}>{q}</li>
             ))}
           </ul>
         </>
       )}
-      {causes.length > 0 && (
-        <>
-          <h4 className="subhead">Reported causes</h4>
-          <ul className="causes">
-            {causes.map((c) => (
-              <li key={c.tag}>
-                <span>{c.label}</span>
-                <span className="causes__n">
-                  {c.total} {c.official > 0 && `· ${c.official} official`}
-                </span>
-                <span className={`causes__bar${c.human ? ' causes__bar--human' : ''}`} style={{ width: `${(c.total / maxCause) * 100}%` }} />
-              </li>
-            ))}
-          </ul>
-          <p className="causes__note">What sources blamed, not a verdict. Brown = human factors.</p>
-        </>
+      {hasTech && (
+        <div className="tech-detail">
+          <button
+            type="button"
+            className="tech-detail__toggle"
+            aria-expanded={techOpen}
+            onClick={() => setTechOpen((o) => !o)}
+          >
+            Technical detail {techOpen ? '▴' : '▾'}
+          </button>
+          {techOpen && (
+            <div className="tech-detail__body">
+              {event.causePrelim && <p>{event.causePrelim}</p>}
+              {event.openQuestions.length > 0 && (
+                <ul>
+                  {event.openQuestions.map((q) => (
+                    <li key={q}>{q}</li>
+                  ))}
+                </ul>
+              )}
+            </div>
+          )}
+        </div>
       )}
-      <h4 className="subhead">Evidence coverage</h4>
-      <ul className="coverage">
-        {rows.map(([k, v, level]) => (
-          <li key={k}>
-            <span className={`dot dot--${level}`} />
-            <span className="coverage__k">{k}</span>
-            <span className="coverage__v">{v}</span>
-          </li>
-        ))}
-      </ul>
     </section>
   );
 }

@@ -1,0 +1,333 @@
+/* Task 37: phone (≤720), mid widths, tap targets, contrast leftovers. */
+
+h1, h2, h3, h4 { margin: 0; }
+h1.brand__name { font-size: 16px; font-weight: 700; letter-spacing: -0.01em; }
+h2 { font-size: 12.5px; font-weight: 600; }
+.howto__head h2 { font-size: 12.5px; }
+
+.info-tip { position: relative; display: inline-flex; vertical-align: middle; }
+.info-tip__btn {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 1px solid var(--border-strong);
+  background: #fff;
+  color: #4a453e;
+  font-size: 11px;
+  font-weight: 700;
+  font-style: italic;
+  line-height: 1;
+}
+.info-tip__pop {
+  position: absolute;
+  z-index: 30;
+  top: calc(100% + 6px);
+  left: 0;
+  width: min(240px, 70vw);
+  padding: 8px 10px;
+  background: #fff;
+  border: 1px solid var(--border-strong);
+  border-radius: 6px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  color: var(--text);
+  font-size: 11.5px;
+  font-weight: 400;
+  line-height: 1.4;
+  white-space: normal;
+  text-align: left;
+}
+
+.layer__note {
+  flex: 1 1 100%;
+  margin: 0 0 6px 28px;
+  color: #4a453e;
+  font-size: 11px;
+  line-height: 1.4;
+}
+
+.events__toggle {
+  display: none;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 40px;
+  font-weight: 600;
+}
+
+.site-tl__fold { display: none; }
+.site-tl-body { min-width: 0; }
+.site-tl { overflow-x: auto; max-width: 100%; }
+
+.mode__narrow { display: none; }
+
+.kv dt { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+
+.clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  width: 100%;
+  min-width: 0;
+  max-height: 4.5em;
+}
+
+.read-more {
+  margin-top: 4px;
+  color: var(--accent);
+  font-size: 11.5px;
+  font-weight: 600;
+}
+
+.app {
+  grid-template-areas:
+    "topbar topbar"
+    "map    panel"
+    "bottom panel";
+  grid-template-rows: var(--topbar-h) minmax(0, 1fr) var(--bottom-h);
+}
+.topbar { grid-area: topbar; }
+.map { grid-area: map; min-width: 0; }
+.right { grid-area: panel; min-width: 0; }
+.bottom { grid-area: bottom; min-width: 0; }
+
+.topbar {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto auto;
+  grid-template-areas: "brand event modes actions";
+  align-items: center;
+  white-space: normal;
+  overflow: hidden;
+}
+.brand { grid-area: brand; white-space: nowrap; }
+.topbar__event {
+  grid-area: event;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+}
+.incident-select {
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.topbar .modes { grid-area: modes; justify-self: end; margin-left: 0; }
+.topbar__actions { grid-area: actions; }
+.map { height: 100%; }
+
+/* ── Mid widths: shrink the map, keep the panel readable ─ */
+@media (min-width: 721px) and (max-width: 1100px) {
+  .app { --right-w: 320px; }
+  .app--sites { --right-w: 360px; }
+  .brand__sub,
+  .topbar__muted,
+  .topbar__date { display: none; }
+  .topbar__action-label { display: none; }
+}
+
+/* ── Phone: one column, no sideways page scroll ───────── */
+@media (max-width: 720px) {
+  html, body, #root {
+    height: auto;
+    min-height: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+  body { overflow: auto; overflow-x: hidden; }
+
+  .app {
+    height: auto;
+    min-height: 100dvh;
+    max-width: 100%;
+    overflow-x: hidden;
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: auto 40vh auto auto;
+    grid-template-areas:
+      "topbar"
+      "map"
+      "panel"
+      "bottom";
+  }
+  .app:not(.app--sites) {
+    grid-template-rows: auto 45vh auto auto auto auto;
+    grid-template-areas:
+      "topbar"
+      "map"
+      "timeline"
+      "panel"
+      "charts"
+      "events";
+  }
+  .app:not(.app--sites) .bottom { display: contents; }
+  .app:not(.app--sites) .timeline,
+  .app:not(.app--sites) .charts,
+  .app:not(.app--sites) .events {
+    grid-column: auto;
+    grid-row: auto;
+  }
+
+  .map { height: 40vh; min-height: 40vh; }
+  .app:not(.app--sites) .map { height: 45vh; min-height: 45vh; }
+
+  .right {
+    max-height: none;
+    overflow: visible;
+    border-left: 0;
+    border-top: 1px solid var(--border);
+  }
+
+  .topbar {
+    height: auto;
+    min-height: var(--topbar-h);
+    white-space: normal;
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    grid-template-areas:
+      "brand modes actions"
+      "event event event";
+    gap: 6px 8px;
+    padding: 6px 10px;
+  }
+  .brand__sub,
+  .topbar__muted,
+  .topbar__date { display: none; }
+  .brand__name { font-size: 14px; }
+  .topbar__action-label { display: none; }
+  .mode__wide { display: none; }
+  .mode__narrow { display: inline; }
+  .mode { min-height: 40px; padding: 4px 8px; white-space: nowrap; }
+  .topbar__action { min-width: 40px; min-height: 40px; justify-content: center; }
+  .topbar__event { width: 100%; }
+  .incident-select {
+    min-height: 40px;
+    white-space: normal;
+    text-align: left;
+    max-width: 100%;
+  }
+  .switcher { min-width: 0; max-width: 100%; }
+  .switcher__menu {
+    width: min(360px, calc(100% - 0px));
+    max-width: calc(100vw - 16px);
+    left: 0;
+    right: auto;
+  }
+
+  .howto {
+    left: 8px;
+    right: 8px;
+    width: auto;
+  }
+
+  button,
+  .icon-btn,
+  .speed,
+  .places__why,
+  .places__open,
+  .fold__toggle,
+  .read-more,
+  .link,
+  .map-key__toggle,
+  .info-tip__btn,
+  .layers-card__toggle,
+  .charts__toggle,
+  .events__toggle,
+  .site-tl__fold,
+  .tech-detail__toggle {
+    min-height: 40px;
+  }
+  /* 40 px tap area, but the visible circle stays small: the extra size is a transparent border. */
+  .info-tip__btn { width: 22px; height: 22px; min-width: 0; min-height: 0; box-sizing: content-box; border: 9px solid transparent; background-clip: padding-box; box-shadow: inset 0 0 0 1px var(--border-strong); }
+  .places__why { width: 40px; min-width: 40px; }
+  .places__cols,
+  .places__row {
+    grid-template-columns: minmax(0, 1fr) 44px 44px 44px 40px;
+  }
+  .places__open {
+    grid-template-columns: minmax(0, 1fr) 44px 44px 44px;
+  }
+
+  .timeline {
+    grid-area: timeline;
+    position: sticky;
+    top: 0;
+    z-index: 6;
+    background: var(--panel);
+    border-bottom: 1px solid var(--border);
+    padding: 8px 10px 10px;
+  }
+  .timeline__head { flex-wrap: wrap; }
+  .transport .icon-btn,
+  .speed {
+    width: 40px;
+    height: 40px;
+  }
+
+  .charts {
+    grid-area: charts;
+    grid-template-columns: minmax(0, 1fr);
+    border-top: 1px solid var(--border);
+  }
+  .chart + .chart { border-left: 0; border-top: 1px solid var(--border); }
+  .chart { min-height: 140px; }
+  .charts.is-folded { grid-template-columns: minmax(0, 1fr); }
+
+  .events {
+    grid-area: events;
+    border-left: 0;
+    border-top: 1px solid var(--border);
+  }
+  .events__toggle { display: flex; }
+  .events__head h2 { display: none; }
+  .events.is-folded ul { display: none; }
+
+  .site-tl__fold {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 40px;
+    font-weight: 600;
+    padding: 0 4px;
+  }
+  .site-tl-body { display: none; }
+  .site-tl-body.is-open { display: block; }
+
+  .map-controls {
+    top: 10px;
+    right: 10px;
+    bottom: auto;
+    z-index: 3;
+  }
+  .map-key {
+    left: 10px;
+    bottom: 10px;
+    max-width: calc(100% - 72px);
+  }
+  .rain-legend--built {
+    left: 10px;
+    bottom: auto;
+    top: 10px;
+    max-width: 46%;
+  }
+  .snapshot-badge {
+    max-width: calc(100% - 24px);
+    white-space: normal;
+    text-align: center;
+  }
+  .maplibregl-ctrl-bottom-left .maplibregl-ctrl-scale { display: none; }
+  .maplibregl-ctrl-attrib {
+    max-width: 46vw;
+  }
+  .maplibregl-ctrl-attrib.maplibregl-compact:not(.maplibregl-compact-show) {
+    min-height: 24px;
+    width: 24px;
+    overflow: hidden;
+  }
+}
+
+@media (min-width: 721px) {
+  .events__toggle { display: none; }
+  .events ul { display: block; }
+  .site-tl__fold { display: none; }
+  .site-tl-body { display: block; }
+}

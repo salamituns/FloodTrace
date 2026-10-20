@@ -1,8 +1,11 @@
-import { useMemo, useRef, useState, type PointerEvent } from 'react';
+import { useEffect, useMemo, useRef, useState, type PointerEvent } from 'react';
 import type { KeyEventKind } from '../events/types';
 import { fmtClock, fmtDateTime, fmtDay, localTicks } from '../lib/time';
 import { useEvent, useStore } from '../state/store';
 import { PauseIcon, PlayIcon, StepIcon } from './Icons';
+import '../styles/flood.css';
+
+const HINT_KEY = 'floodtrace-play-hint';
 
 export const KIND_COLORS: Record<KeyEventKind, string> = {
   documented: '#d4452f',
@@ -21,9 +24,17 @@ export function Timeline() {
   const { setTime, togglePlay, cycleSpeed, setPlaying, selectEvent } = useStore.getState();
   const track = useRef<HTMLDivElement>(null);
   const [hover, setHover] = useState<number | null>(null);
+  const [hint, setHint] = useState(() => (typeof sessionStorage === 'undefined' ? true : sessionStorage.getItem(HINT_KEY) !== '1'));
 
   const frac = (x: number) => (x - t0) / (t1 - t0);
-  const ticks = useMemo(() => localTicks(t0, t1, 6), [t0, t1]);
+  // A phone-width scrubber has room for daily ticks only; 6-hourly labels run into each other.
+  const [narrow, setNarrow] = useState(() => typeof window !== 'undefined' && window.innerWidth <= 720);
+  useEffect(() => {
+    const onResize = () => setNarrow(window.innerWidth <= 720);
+    window.addEventListener('resize', onResize);
+    return () => window.removeEventListener('resize', onResize);
+  }, []);
+  const ticks = useMemo(() => localTicks(t0, t1, narrow ? 24 : 6), [t0, t1, narrow]);
   const visibleEvents = event.keyEvents.filter((e) => e.t >= t0 && e.t <= t1);
 
   const timeAt = (clientX: number) => {
@@ -52,20 +63,31 @@ export function Timeline() {
   return (
     <section className="timeline">
       <header className="timeline__head">
-        <h3>Timeline</h3>
+        <h2>Timeline</h2>
+        {hint && !playing && <span className="play-hint">Press play to replay the flood</span>}
         <span className="timeline__range">
           {fmtDateTime(t0)} – {fmtDateTime(t1)} (WAT)
         </span>
       </header>
       <div className="timeline__body">
         <div className="transport">
-          <button className="icon-btn" onClick={togglePlay} aria-label={playing ? 'Pause' : 'Play'}>
+          <button
+            className="icon-btn"
+            onClick={() => {
+              togglePlay();
+              if (hint) {
+                sessionStorage.setItem(HINT_KEY, '1');
+                setHint(false);
+              }
+            }}
+            aria-label={playing ? 'Pause' : 'Play'}
+          >
             {playing ? <PauseIcon /> : <PlayIcon />}
           </button>
           <button className="icon-btn" onClick={stepToNextEvent} aria-label="Next event">
             <StepIcon />
           </button>
-          <button className="speed" onClick={cycleSpeed} title="Simulation hours per second">
+          <button className="speed" onClick={cycleSpeed} title="Replay speed: how many flood hours pass in one second">
             {speed}×
           </button>
         </div>

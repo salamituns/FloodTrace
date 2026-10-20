@@ -123,7 +123,7 @@ const deliveredPromise: SitePromise = {
   check(promiseStatus(deliveredPromise, asOf) === 'delivered', 'fixture promise really is delivered under promiseStatus');
   const rows = buildWatchList([withDelivery], { 'p-delivered': deliveredPromise }, rain(['delivered-site']), asOf);
   const t3 = rows[0].tests[2];
-  check(!t3.pass && /delivered/i.test(t3.reason), `delivered promise fails test 3 (reason: ${t3.reason})`);
+  check(!t3.pass && /is done/.test(t3.reason), `delivered promise fails test 3 (reason: ${t3.reason})`);
   check(rows[0].tier === 2, `delivered site is tier 2, below the no-promise tier 3 (got tier ${rows[0].tier})`);
 }
 
@@ -135,7 +135,7 @@ const deliveredPromise: SitePromise = {
   });
   const rows = buildWatchList([thinOnly], {}, rain(['thin-only']), asOf);
   const t1 = rows[0].tests[0];
-  check(t1.pass && /2 strong/.test(t1.reason), `thin-year floods count for test 1 (reason: ${t1.reason})`);
+  check(t1.pass && /2 flood days reported/.test(t1.reason), `thin-year floods count for test 1 (reason: ${t1.reason})`);
 }
 
 // ── case 4: building on a channel setback is a drainage failure for test 2 ─
@@ -155,7 +155,7 @@ const deliveredPromise: SitePromise = {
   });
   const rows = buildWatchList([supported], {}, rain(['resident-supported']), asOf);
   const t2 = rows[0].tests[1];
-  check(t2.pass && /imagery supports it/i.test(t2.reason), `resident's claim with supporting imagery passes test 2 (reason: ${t2.reason})`);
+  check(t2.pass && /imagery agrees/i.test(t2.reason), `resident's claim with supporting imagery passes test 2 (reason: ${t2.reason})`);
 }
 
 // ── the real list, printed ──────────────────────────────────────────────
@@ -169,7 +169,7 @@ for (const iso of ['2026-03-01', '2027-03-01']) {
   const rows = buildWatchList(sites, promiseMap, summary, new Date(`${iso}T00:00:00`));
   console.log(`\n=== Pre-season watch list as of ${iso} ===`);
   for (const r of rows) {
-    console.log(`Tier ${r.tier} · ${r.name} (${r.site_id}) · tie-breaks: ${r.recent_strong_days} recent strong day(s), well-searched >=40 mm rate ${r.well_searched_rate_40mm ?? 'n/a'}`);
+    console.log(`${['Lowest', 'Low', 'Medium', 'High'][r.tier]} priority (tier ${r.tier}) · ${r.name} (${r.site_id}) · tie-breaks: ${r.recent_strong_days} recent flood day(s), well-searched >=40 mm rate ${r.well_searched_rate_40mm ?? 'n/a'}`);
     for (const t of r.tests) console.log(`  ${t.pass ? 'PASS' : 'FAIL'}  ${t.label}: ${t.reason}`);
   }
 }

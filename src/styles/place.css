@@ -1,0 +1,42 @@
+/* Task 35: the place page (SiteDetail) and the bottom-timeline additions.
+   Imported by SitePanel.tsx and SiteTimeline.tsx. Wording and colours follow docs/design/WORDS.md. */
+
+/* ── Header: back link, place name, the structure in plain words ── */
+.place-head { background: var(--panel); border: 1px solid var(--border); border-radius: var(--radius); padding: 10px 12px; }
+.place-head .back { margin-bottom: 4px; }
+.place-head .site__name { font-size: 14px; }
+.place-head .site__structure { margin: 2px 0 0; color: #5d574e; }
+
+/* ── At a glance: sign + sentence, each line jumps to its evidence ── */
+.glance { list-style: none; margin: 0; padding: 0; }
+.glance li + li { border-top: 1px solid var(--border); }
+.glance__line { width: 100%; display: flex; gap: 8px; align-items: baseline; padding: 6px 2px; text-align: left; }
+.glance__line:hover { background: var(--panel-2); }
+.glance__text { flex: 1; min-width: 0; line-height: 1.45; }
+.glance__text b { margin-right: 2px; }
+.glance__go { color: var(--muted); flex: none; }
+.glance__line .places__tick, .glance__line .places__cross { flex: none; }
+
+/* ── Our reading: strength label, text clamped to three lines, reviewed date ── */
+.reading__strength { display: inline-block; font-size: 10.5px; font-weight: 600; padding: 1px 6px; border-radius: 10px; background: #ece7de; color: #5d574e; }
+.reading__text { margin: 8px 0 0; line-height: 1.5; }
+.reading__text--clamped { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+.reading__text + .link { margin-top: 4px; }
+.reading__meta { display: block; margin-top: 6px; color: var(--muted); }
+
+/* ── Folded section (Measurements) ── */
+.fold { margin-top: 10px; border-top: 1px solid var(--border); padding-top: 8px; }
+.fold__toggle { display: flex; align-items: center; gap: 5px; color: #4a453e; font-weight: 600; padding: 2px 0; }
+.fold__toggle:hover { color: var(--text); }
+.fold__toggle svg { transition: transform 0.15s; }
+.fold__toggle[aria-expanded='true'] svg { transform: rotate(180deg); }
+.fold__body { margin-top: 4px; }
+
+/* ── Then and now: the slider's ends carry their dates ── */
+.ba__end { display: flex; align-items: center; gap: 5px; }
+
+/* ── Bottom timeline: hollow dots for river/sea floods, greyed unsearched years ── */
+.site-tl__flood--hollow { fill: #fff; }
+.site-tl__unsearched { fill: rgba(151, 144, 132, 0.14); }
+
+.place-floods__breakdown { margin: -4px 0 8px; }

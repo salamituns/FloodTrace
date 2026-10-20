@@ -69,3 +69,9 @@ export const HouseIcon = (p: P) => (
 export const ArrowIcon = (p: P) => (
   <svg {...base} {...p}><path d="M3 10h12M11 6l4 4-4 4" /></svg>
 );
+export const LinkIcon = (p: P) => (
+  <svg {...base} {...p}><path d="M8.4 11.6l3.2-3.2" /><path d="M10 6.6l1.4-1.4a3 3 0 014.2 4.2l-1.4 1.4" /><path d="M10 13.4l-1.4 1.4a3 3 0 01-4.2-4.2l1.4-1.4" /></svg>
+);
+export const HelpIcon = (p: P) => (
+  <svg {...base} {...p}><path d="M7.4 7.3c0-2 1.6-3.2 3.4-3.2 1.8 0 3.3 1.2 3.3 3 0 1.4-.9 2-1.7 2.7-.7.5-1 1-1 1.7" /><circle cx="11.3" cy="14.9" r="0.7" fill="currentColor" stroke="none" /></svg>
+);

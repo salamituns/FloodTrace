@@ -1,10 +1,23 @@
 import { useMemo, useState } from 'react';
-import type { CatalogFlood, CatalogSource, CatalogSummary, SiteRecord } from '../sites/types';
+import type { CatalogFlood, CatalogSource, CatalogSummary, FloodType, SiteFlood, SiteRecord } from '../sites/types';
+import { fmtOn } from './SitePanel';
 
-/** "Flood history": the catalog flood days that matched this site, each with its sources, and honest search coverage. */
+/** The Floods card: every flood day the news reported for this place, merged with the floods we mapped in detail,
+ *  plus the nearby, less certain matches and honest search coverage (Task 35). */
 
 const plural = (n: number, word: string) => `${n} ${word}${n === 1 ? '' : 's'}`;
 const yearOf = (iso: string) => +iso.slice(0, 4);
+
+/** Non-rain flood types in plain words (Task 35 addendum); the rain type needs no tag. */
+const TYPE_TAG: Partial<Record<FloodType, string>> = { riverine: 'river', coastal: 'sea' };
+
+/** One row of the card: a strong flood day, a mapped flood, or both on the same date. */
+interface FloodRow {
+  date: string;
+  flood: CatalogFlood | null;
+  mapped: SiteFlood | null;
+  eventId: string | null;
+}
 
 /** One cell per searched year: filled = a strong day, outlined = only nearby matches. Titles carry the dates. */
 function YearStrip({ summary, strong, nearby }: { summary: CatalogSummary; strong: CatalogFlood[]; nearby: CatalogFlood[] }) {
@@ -17,13 +30,13 @@ function YearStrip({ summary, strong, nearby }: { summary: CatalogSummary; stron
   const nearbyBy = datesBy(nearby);
   const years = [...summary.years_searched].sort((a, b) => a - b);
   return (
-    <div className="year-strip" role="img" aria-label="Flooded years">
+    <div className="year-strip" role="img" aria-label="Flooded years" title={summary.note}>
       {years.map((y) => {
         const s = strongBy.get(y);
         const n = nearbyBy.get(y);
         const cls = s ? ' year-strip__cell--strong' : n ? ' year-strip__cell--area' : '';
         const title = s
-          ? `${y}: ${s.join(', ')} (strong match)`
+          ? `${y}: ${s.join(', ')} (flood day reported)`
           : n
             ? `${y}: ${n.join(', ')} (nearby, less certain)`
             : `${y}: no matched flood day`;
@@ -61,41 +74,90 @@ export function SiteHistory({
   const all = site.catalog_floods ?? [];
   const strong = useMemo(() => all.filter((f) => f.strength !== 'area').sort((a, b) => b.date.localeCompare(a.date)), [all]);
   const nearby = useMemo(() => all.filter((f) => f.strength === 'area').sort((a, b) => b.date.localeCompare(a.date)), [all]);
+  // One row per date: a strong flood day, a mapped flood, or both. Newest first, matching the timeline's dots.
+  const rows = useMemo(() => {
+    const byDate = new Map<string, FloodRow>();
+    for (const f of strong) byDate.set(f.date, { date: f.date, flood: f, mapped: null, eventId: f.tier_a_event_id });
+    for (const fl of site.floods) {
+      const ex = byDate.get(fl.date);
+      if (ex) {
+        if (!ex.eventId) ex.eventId = fl.event_id;
+        if (!ex.mapped) ex.mapped = fl;
+      } else {
+        byDate.set(fl.date, { date: fl.date, flood: null, mapped: fl, eventId: fl.event_id });
+      }
+    }
+    return [...byDate.values()].sort((a, b) => b.date.localeCompare(a.date));
+  }, [strong, site.floods]);
   const [expanded, setExpanded] = useState<Record<string, boolean>>({});
   const [showNearby, setShowNearby] = useState(false);
   // No catalog yet (older sites.json): nothing honest to say, so no card.
   if (!summary) return null;
+  const nRain = strong.filter((f) => f.flood_type === 'pluvial').length;
+  // Header counts every row, so it matches the bottom timeline's dots; the breakdown says where each came from.
+  const nMappedOnly = rows.length - strong.length;
+  const parts = [
+    ...(nMappedOnly > 0 ? [`${strong.length} named in the news`] : []),
+    ...(strong.length !== nRain ? [`${nRain} from rain`] : []),
+    ...(nMappedOnly > 0 ? [`${nMappedOnly} mapped`] : []),
+  ];
+  const headCount = `${plural(rows.length, 'flood day')} ${nMappedOnly > 0 ? 'on record' : 'reported'}`;
+  const breakdown = parts.length ? `${parts.join(', ')}.` : null;
   const years = [...summary.years_searched].sort((a, b) => a - b);
-  const range = years.length === 0 ? '' : years.length === 1 ? `${years[0]}` : `${years[0]}–${years[years.length - 1]}`;
+  const firstSearched = years[0];
+  const replay = (row: FloodRow) =>
+    row.eventId && (
+      <button className="link" onClick={() => openEvent(row.eventId!)} disabled={opening !== null}>
+        {opening === row.eventId ? 'Loading…' : 'Replay this flood →'}
+      </button>
+    );
   return (
-    <section className="card">
+    <section className="card" id="place-floods">
       <header className="card__head">
-        <h3>Flood history</h3>
-        <span className="card__hint">
-          {plural(summary.n_days_strong, 'strong day')} in {summary.years_searched.length} years searched
-        </span>
+        <h3>Floods</h3>
+        <span className="card__hint">{headCount}</span>
       </header>
+      {breakdown && <p className="card__hint place-floods__breakdown">{breakdown[0].toUpperCase() + breakdown.slice(1)}</p>}
       <YearStrip summary={summary} strong={strong} nearby={nearby} />
-      {strong.length === 0 && (
-        <p className="empty">No reported floods matched in {summary.years_searched.length} years searched.</p>
-      )}
-      {strong.length > 0 && (
+      {rows.length === 0 && <p className="empty">No flood days reported in {summary.years_searched.length} years searched.</p>}
+      {rows.length > 0 && (
         <ul className="site-floods">
-          {strong.map((f) => {
+          {rows.map((row) => {
+            const f = row.flood;
+            if (!f) {
+              // A flood we mapped in detail on a day the catalog search did not match to this place.
+              return (
+                <li key={row.date}>
+                  <span>
+                    <span>
+                      <b title={row.date}>{fmtOn(row.date)}</b>{' '}
+                      <span className="cause-chip" title="A flood we mapped in detail, report by report.">mapped flood</span>
+                      <small>
+                        {row.mapped!.n_reports} report{row.mapped!.n_reports === 1 ? '' : 's'} · nearest {Math.round(row.mapped!.nearest_m)} m
+                      </small>
+                    </span>
+                  </span>
+                  {replay(row)}
+                </li>
+              );
+            }
             const [first, ...rest] = f.sources;
             const isOpen = !!expanded[f.date];
             return (
-              <li key={f.date}>
+              <li key={row.date}>
                 <span>
                   <span>
-                    <b>{f.date}</b>
-                    {f.flood_type !== 'pluvial' && <span className="cause-chip">{f.flood_type}</span>}{' '}
-                    <small>
-                      {f.n_outlets} outlet{f.n_outlets === 1 ? '' : 's'}
-                    </small>
+                    <b title={f.date}>{fmtOn(f.date)}</b>
+                    {f.flood_type !== 'pluvial' && (
+                      <>
+                        {' '}
+                        <span className="cause-chip">{TYPE_TAG[f.flood_type] ?? f.flood_type}</span>
+                      </>
+                    )}{' '}
+                    <small>{plural(f.n_outlets, 'news outlet')}</small>
                   </span>
                   <small>
-                    {f.matched_areas.join(', ')} · {f.strength === 'name' ? 'named' : `within ${Math.round(f.distance_m ?? 0)} m`}
+                    {f.matched_areas.join(', ')} · {f.strength === 'name' ? 'named this place' : `a spot within ${Math.round(f.distance_m ?? 0)} m`}
                   </small>
                   {first && <SourceLine src={first} />}
                   {rest.length > 0 && (
@@ -111,11 +173,7 @@ export function SiteHistory({
                   )}
                   {isOpen && rest.map((s) => <SourceLine key={s.url} src={s} />)}
                 </span>
-                {f.tier_a_event_id && (
-                  <button className="link" onClick={() => openEvent(f.tier_a_event_id!)} disabled={opening !== null}>
-                    {opening === f.tier_a_event_id ? 'Opening…' : 'Open event →'}
-                  </button>
-                )}
+                {replay(row)}
               </li>
             );
           })}
@@ -131,7 +189,7 @@ export function SiteHistory({
               {nearby.map((f) => (
                 <li key={f.date}>
                   <span>
-                    <b>{f.date}</b>
+                    <b title={f.date}>{fmtOn(f.date)}</b>
                     <small>
                       {f.matched_areas.join(', ')} · {Math.round(f.distance_m ?? 0)} m away
                     </small>
@@ -143,8 +201,7 @@ export function SiteHistory({
         </div>
       )}
       <small className="causes__note">
-        {summary.note}.
-        {range && ` Searched ${range}; earlier years not searched.`}
+        Searched news from {firstSearched}; earlier years not searched.
       </small>
     </section>
   );

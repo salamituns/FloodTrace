@@ -11,6 +11,7 @@ import { loadCatalog, loadEvent } from './events/load';
 import { HOUR } from './lib/time';
 import { loadSites } from './sites/load';
 import { useStore } from './state/store';
+import './styles/phone.css';
 
 const DEFAULT_EVENT = 'lagos-2024-07-03';
 
@@ -83,6 +84,14 @@ export default function App() {
   useHashSync();
   useSitesLoader();
 
+  // Front door (Task 33): with no ?event= and no hash, land on the places list instead of the flood map.
+  // The store's own default stays "incident"; ?event=… and #site=… still take you straight there.
+  useEffect(() => {
+    if (!new URLSearchParams(location.search).has('event') && !location.hash) {
+      useStore.getState().setMode('sites');
+    }
+  }, []);
+
   useEffect(() => {
     const id = new URLSearchParams(location.search).get('event') ?? DEFAULT_EVENT;
     loadEvent(id)
@@ -96,24 +105,24 @@ export default function App() {
   if (!event) {
     return <div className="loading">{loadError ? `Could not load event: ${loadError}` : 'Loading event data…'}</div>;
   }
+  // DOM order is the keyboard order (top bar → panel → map → timeline). Grid areas place
+  // the map to the left on desktop and above the panel on a phone.
   return (
     <div className={`app${mode === 'sites' ? ' app--sites' : ''}`}>
       <TopBar />
-      <main className="workspace">
-        <MapView />
-        {mode === 'sites' ? (
-          <div className="bottom bottom--sites">
-            <SiteTimeline />
-          </div>
-        ) : (
-          <div className="bottom">
-            <Timeline />
-            <Charts />
-            <KeyEvents />
-          </div>
-        )}
-      </main>
       {mode === 'sites' ? <SitePanel /> : <RightPanel />}
+      <MapView />
+      {mode === 'sites' ? (
+        <div className="bottom bottom--sites">
+          <SiteTimeline />
+        </div>
+      ) : (
+        <div className="bottom">
+          <Timeline />
+          <Charts />
+          <KeyEvents />
+        </div>
+      )}
     </div>
   );
 }

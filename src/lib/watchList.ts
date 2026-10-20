@@ -11,7 +11,7 @@ import { promiseStatus, type PromiseStatus } from './promises';
 import type { EvidenceStatus, FloodStrength, SiteClaim, SitePromise, SiteRecord } from '../sites/types';
 
 // ── The three rules, in one place ────────────────────────────────────────
-/** Rule 1 (repeated flooding): at least this many strong pluvial catalog days, … */
+/** Rule 1 (floods often): at least this many flood days reported, … */
 const RULE_1_MIN_STRONG_DAYS = 2;
 /** … and at least one of them inside this many recent seasons before the as-of date. Kept at 3 (decided 2026-10-19):
  *  Marina and Oko-Oba, last strong day 2022, drop out as of March 2026 and return if they flood again. */
@@ -39,21 +39,21 @@ const PROMISE_SEVERITY: PromiseStatus[] = ['overdue', 'no_visible_work', 'stalle
 // ─────────────────────────────────────────────────────────────────────────
 
 const PROMISE_LABEL: Record<PromiseStatus, string> = {
-  delivered: 'delivered',
-  in_progress: 'in progress',
+  delivered: 'done',
+  in_progress: 'work under way',
   stalled: 'stalled',
-  no_visible_work: 'no visible work',
+  no_visible_work: 'no work seen',
   overdue: 'overdue',
-  unverifiable: 'unverifiable',
+  unverifiable: "can't check from imagery",
 };
 
 const EVIDENCE_PHRASE: Record<EvidenceStatus, string> = {
-  supports: 'imagery supports it',
-  weak: 'imagery weakly supports it',
-  inconclusive: 'imagery is inconclusive',
-  contradicts: 'imagery contradicts it',
-  not_checked: 'it was never checked against imagery',
-  no_imagery_after: 'no imagery was taken after the event',
+  supports: 'imagery agrees',
+  weak: 'imagery partly agrees',
+  inconclusive: "imagery can't tell",
+  contradicts: 'imagery disagrees',
+  not_checked: 'not checked yet',
+  no_imagery_after: 'no imagery after the flood',
 };
 
 /** `events/site_rain_summary.json` — the slim digest of the rain replay (pipeline/storm_replay.py). */
@@ -99,7 +99,7 @@ export interface WatchRow {
   /** The tier is the number of tests passed; the list orders by tier, then the tie-breaks below. */
   tier: number;
   tests: WatchTest[];
-  /** Tie-break 1: strong pluvial days in the last RECENT_SEASONS seasons. */
+  /** Tie-break 1: flood days reported in the last RECENT_SEASONS seasons. */
   recent_strong_days: number;
   /** Tie-break 2: well-searched-years flood rate for storms >= 40 mm at the site cell; null when there are none. */
   well_searched_rate_40mm: number | null;
@@ -108,6 +108,9 @@ export interface WatchRow {
 
 const pad = (n: number) => (n < 10 ? '0' : '') + n;
 const isoDate = (d: Date) => `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`;
+const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+/** "28 Jun 2026" — the prose date form (WORDS.md); ISO dates stay in hover notes. */
+const fmtOn = (iso: string) => `${+iso.slice(8, 10)} ${MONTHS[+iso.slice(5, 7) - 1]} ${iso.slice(0, 4)}`;
 
 /**
  * A season is one flood year (Apr–Nov, with the once-a-year Dec–Mar search attached to it). The last n seasons before
@@ -122,7 +125,7 @@ function lastSeasons(asOf: Date, n: number): string[] {
   return years;
 }
 
-/** Rule 1: strong pluvial catalog days on or before asOf. Every year counts: a flood on record is a flood, and the
+/** Rule 1: flood days reported on or before asOf. Every year counts: a flood on record is a flood, and the
  *  thin-year flag only adjusts rates (the rain replay), never discards an observed flood. */
 function repeatedFlooding(site: SiteRecord, recentYears: Set<string>, asOfIso: string): { test: WatchTest; recentDays: number } {
   const strong = (site.catalog_floods ?? []).filter(
@@ -130,20 +133,20 @@ function repeatedFlooding(site: SiteRecord, recentYears: Set<string>, asOfIso: s
   );
   const last = strong.length ? [...strong].sort((a, b) => a.date.localeCompare(b.date))[strong.length - 1].date : null;
   const recentDays = strong.filter((f) => recentYears.has(f.date.slice(0, 4))).length;
-  const days = (n: number) => `${n} strong pluvial flood day${n === 1 ? '' : 's'}`;
+  const days = (n: number) => `${n} flood day${n === 1 ? '' : 's'} reported`;
   const pass = strong.length >= RULE_1_MIN_STRONG_DAYS && recentDays >= 1;
   let reason: string;
   if (pass) {
-    reason = `${days(strong.length)}; last ${last}`;
+    reason = `${days(strong.length)}; last ${fmtOn(last!)}`;
   } else if (strong.length === 0) {
-    reason = 'no strong pluvial flood day on record';
+    reason = 'No flood days reported on record';
   } else if (strong.length < RULE_1_MIN_STRONG_DAYS) {
-    reason = `only ${days(strong.length)} (${last})`;
+    reason = `Only ${days(strong.length)} (last ${fmtOn(last!)})`;
   } else {
-    reason = `${days(strong.length)}, but the most recent (${last}) is outside the last ${RECENT_SEASONS} seasons`;
+    reason = `${days(strong.length)}, but the most recent (last ${fmtOn(last!)}) is outside the last ${RECENT_SEASONS} rainy seasons`;
   }
   return {
-    test: { key: 'repeated_flooding', label: 'Repeated flooding', pass, reason },
+    test: { key: 'repeated_flooding', label: 'Floods often', pass, reason },
     recentDays,
   };
 }
@@ -159,15 +162,15 @@ function namedDrainage(site: SiteRecord): WatchTest {
     (c.evidence_status === 'supports' ? 0 : c.evidence_status === 'weak' ? 1 : 2);
   const pool = hits.length ? hits : candidates;
   const best = [...pool].sort((a, b) => rank(a) - rank(b) || (b.date ?? '').localeCompare(a.date ?? ''))[0] ?? null;
-  const whoBit = (c: SiteClaim) =>
-    c.who && c.attributed_by ? `${c.who} (${c.attributed_by})` : c.who ?? (c.attributed_by ? `A ${c.attributed_by}` : 'An unattributed claim');
+  const whoBit = (c: SiteClaim) => c.who ?? (c.attributed_by ? `A ${c.attributed_by}` : 'An unnamed source');
   let reason: string;
   if (!best) {
-    reason = 'no claim names a drainage cause here';
+    reason = 'Nothing on record blames the drains here';
   } else {
-    reason = `${whoBit(best)} blamed ${causeLabel(best.cause).toLowerCase()} ${hits.length ? '—' : 'but'} ${EVIDENCE_PHRASE[best.evidence_status]}`;
+    const joiner = SUPPORTING_EVIDENCE.includes(best.evidence_status) ? 'and' : 'but';
+    reason = `${whoBit(best)} blamed ${causeLabel(best.cause).toLowerCase()}, ${joiner} ${EVIDENCE_PHRASE[best.evidence_status]}`;
   }
-  return { key: 'named_drainage_failure', label: 'Named drainage failure', pass: hits.length > 0, reason };
+  return { key: 'named_drainage_failure', label: 'Drains blamed', pass: hits.length > 0, reason };
 }
 
 function noVisibleFix(site: SiteRecord, promises: Record<string, SitePromise>, asOf: Date, asOfIso: string): WatchTest {
@@ -182,15 +185,15 @@ function noVisibleFix(site: SiteRecord, promises: Record<string, SitePromise>, a
   const pass = !delivered && !verdictFixed;
   let reason: string;
   if (delivered) {
-    reason = `a promise shows delivered in imagery: "${delivered.what}"${verdictFixed ? '; the verdict also says the problem is fixed' : ''}`;
+    reason = `A promised fix is done: "${delivered.what}"${verdictFixed ? '; our reading also says the problem is fixed' : ''}`;
   } else if (verdictFixed) {
-    reason = 'the verdict says the problem is fixed';
+    reason = 'Our reading says the problem is fixed';
   } else if (mine.length === 0) {
-    reason = 'no promise on record; nothing was promised and nothing is visibly fixed';
+    reason = 'No promise on record';
   } else {
-    reason = `no promise delivered as of ${asOfIso}; worst status: ${PROMISE_LABEL[worst!]}`;
+    reason = `No promised fix is done as of ${fmtOn(asOfIso)}; worst on record: ${PROMISE_LABEL[worst!]}`;
   }
-  return { key: 'no_visible_fix', label: 'No visible fix', pass, reason };
+  return { key: 'no_visible_fix', label: 'Not fixed', pass, reason };
 }
 
 /** Ranks every site by the three rules above, as of `asOf`. Pure: same inputs, same rows. */
@@ -217,7 +220,7 @@ export function buildWatchList(
       as_of: asOfIso,
     };
   });
-  // Tier first, then the tie-breaks: recent strong days, the well-searched >= 40 mm rate, then the name.
+  // Priority first, then the tie-breaks: recent flood days, the well-searched >= 40 mm rate, then the name.
   rows.sort(
     (a, b) =>
       b.tier - a.tier ||

@@ -14,8 +14,15 @@ export function EventSwitcher() {
     const close = (e: MouseEvent) => {
       if (!ref.current?.contains(e.target as Node)) setOpen(false);
     };
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setOpen(false);
+    };
     document.addEventListener('mousedown', close);
-    return () => document.removeEventListener('mousedown', close);
+    window.addEventListener('keydown', onKey);
+    return () => {
+      document.removeEventListener('mousedown', close);
+      window.removeEventListener('keydown', onKey);
+    };
   }, [open]);
 
   const choose = (id: string) => {
@@ -31,7 +38,7 @@ export function EventSwitcher() {
         {event.name} <Chevron />
       </button>
       {open && (
-        <ul className="switcher__menu" role="listbox" aria-label="Events">
+        <ul className="switcher__menu" role="listbox" aria-label="Mapped floods">
           {catalog.map((c) => (
             <li key={c.id}>
               <button
@@ -51,7 +58,7 @@ export function EventSwitcher() {
               </button>
             </li>
           ))}
-          <li className="switcher__foot">Grid scan: 641 candidates (2000–2026), ranked by population-weighted rain · top 25: 6 confirmed/known, 1 likely, 18 no flood report</li>
+          <li className="switcher__foot">From 641 rainy days scanned (2000–2026). Six mapped floods confirmed so far; 18 of the wettest days had no flood report.</li>
         </ul>
       )}
     </div>

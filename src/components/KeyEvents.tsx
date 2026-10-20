@@ -1,7 +1,9 @@
+import { useState } from 'react';
 import type { KeyEventKind } from '../events/types';
 import { fmtDateTime } from '../lib/time';
 import { useEvent, useQuantTime, useStore } from '../state/store';
 import { KIND_COLORS } from './Timeline';
+import '../styles/flood.css';
 
 function EventGlyph({ kind }: { kind: KeyEventKind }) {
   const c = KIND_COLORS[kind];
@@ -24,11 +26,14 @@ export function KeyEvents() {
   const t1 = useStore((s) => s.t1);
   const selected = useStore((s) => s.selectedEventId);
   const { setTime, selectEvent, setPlaying } = useStore.getState();
+  const [open, setOpen] = useState(() => typeof window === 'undefined' || window.matchMedia('(min-width: 721px)').matches);
   return (
-    <section className="events">
+    <section className={`events${open ? '' : ' is-folded'}`}>
       <header className="events__head">
-        <h3>Key Events</h3>
-        <button className="add-btn">+ Add</button>
+        <h2>Key Events</h2>
+        <button type="button" className="events__toggle" aria-expanded={open} onClick={() => setOpen((v) => !v)}>
+          Key Events {open ? '▾' : '▸'}
+        </button>
       </header>
       <ul>
         {event.keyEvents.map((ev) => {
@@ -38,7 +43,7 @@ export function KeyEvents() {
               <button
                 className={`event ${selected === ev.id ? 'is-selected' : ''} ${ev.t > t ? 'is-future' : ''}`}
                 disabled={!inWindow}
-                title={inWindow ? (ev.sourceUrl ?? '') : 'Outside the focus window'}
+                title={inWindow ? `${ev.name}. Jump the replay to ${fmtDateTime(ev.t)}` : ev.name}
                 onClick={() => {
                   setPlaying(false);
                   setTime(ev.t);
@@ -46,8 +51,8 @@ export function KeyEvents() {
                 }}
               >
                 <EventGlyph kind={ev.kind} />
-                <span className="event__name">
-                  {ev.name}
+                <span className="event__name" title={ev.name}>
+                  {ev.namePlain ?? ev.name}
                   {ev.timeConfidence !== 'exact' && <em> ({ev.timeConfidence === 'day' ? 'day only' : 'approx.'})</em>}
                 </span>
                 <span className="event__time">{fmtDateTime(ev.t)}</span>

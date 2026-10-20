@@ -10,15 +10,15 @@ export interface LayerState {
   opacity: number;
 }
 
-export const LAYER_DEFS: { id: LayerId; label: string; swatch: string; hasOpacity: boolean }[] = [
-  { id: 'evidence', label: 'Media evidence', swatch: 'radial-gradient(circle,#d4452f 30%,#f3d9d2 34%)', hasOpacity: true },
-  { id: 'rainGrid', label: 'Rainfall rate (IMERG)', swatch: 'linear-gradient(135deg,#bfe0f5,#3d7fc4 55%,#7a3fb0)', hasOpacity: true },
-  { id: 'sarFlood', label: 'Radar flood extent (S1)', swatch: 'linear-gradient(135deg,#f08a5d,#e2572b)', hasOpacity: true },
-  { id: 'rainCells', label: 'Radar rain cells (S1)', swatch: 'linear-gradient(135deg,#9be3f2,#22c3e6)', hasOpacity: true },
-  { id: 'drainage', label: 'Drainage & canals (OSM)', swatch: 'repeating-linear-gradient(160deg,#cfe0ec 0 2px,#2f7fb6 2px 4px)', hasOpacity: true },
-  { id: 'builtup', label: 'Built over since 2000 (GHSL)', swatch: 'linear-gradient(135deg,#f6e7c8,#c9852f 55%,#7a3b12)', hasOpacity: true },
-  { id: 'points', label: 'Analysis points', swatch: 'radial-gradient(circle,#2b2824 25%,#eee 28%)', hasOpacity: false },
-  { id: 'buildings3d', label: 'Buildings (3D view)', swatch: 'repeating-conic-gradient(#ece6da 0 25%,#b9b1a2 0 50%) 0 0/8px 8px', hasOpacity: false },
+export const LAYER_DEFS: { id: LayerId; label: string; note?: string; swatch: string; hasOpacity: boolean }[] = [
+  { id: 'evidence', label: 'News reports', note: 'News reports pinned to a place.', swatch: 'radial-gradient(circle,#d4452f 30%,#f3d9d2 34%)', hasOpacity: true },
+  { id: 'rainGrid', label: 'Rain', note: 'NASA GPM IMERG, 30-min, ~10 km cells.', swatch: 'linear-gradient(135deg,#bfe0f5,#3d7fc4 55%,#7a3fb0)', hasOpacity: true },
+  { id: 'sarFlood', label: 'Water seen by radar', note: 'Sentinel-1 radar pass; open water only, misses water under buildings.', swatch: 'linear-gradient(135deg,#f08a5d,#e2572b)', hasOpacity: true },
+  { id: 'rainCells', label: 'Storm cells seen by radar', note: 'Sentinel-1 radar; storm cells in that pass.', swatch: 'linear-gradient(135deg,#9be3f2,#22c3e6)', hasOpacity: true },
+  { id: 'drainage', label: 'Drains and canals', note: 'OpenStreetMap.', swatch: 'repeating-linear-gradient(160deg,#cfe0ec 0 2px,#2f7fb6 2px 4px)', hasOpacity: true },
+  { id: 'builtup', label: 'Land built over since 2000', note: 'GHSL built-up surface, 2000 → latest.', swatch: 'linear-gradient(135deg,#f6e7c8,#c9852f 55%,#7a3b12)', hasOpacity: true },
+  { id: 'points', label: 'Chart points', note: 'The spots the rain and tide charts read from. Not real gauges.', swatch: 'radial-gradient(circle,#2b2824 25%,#eee 28%)', hasOpacity: false },
+  { id: 'buildings3d', label: 'Buildings (3D)', note: 'On only in the 3D view.', swatch: 'repeating-conic-gradient(#ece6da 0 25%,#b9b1a2 0 50%) 0 0/8px 8px', hasOpacity: false },
 ];
 
 /** Incident = one event on its own clock; Sites = places across all events and years. */
@@ -74,11 +74,11 @@ export const useStore = create<AppState>()((set, get) => ({
   viewMode: '2d',
   layers: {
     evidence: { visible: true, opacity: 1 },
-    rainGrid: { visible: true, opacity: 0.4 },
+    rainGrid: { visible: true, opacity: 0.25 },
     sarFlood: { visible: true, opacity: 0.85 },
-    rainCells: { visible: true, opacity: 0.6 },
-    drainage: { visible: true, opacity: 0.8 },
-    points: { visible: true, opacity: 1 },
+    rainCells: { visible: false, opacity: 0.6 },
+    drainage: { visible: false, opacity: 0.8 },
+    points: { visible: false, opacity: 1 },
     builtup: { visible: false, opacity: 0.6 },
     buildings3d: { visible: true, opacity: 1 },
   },

@@ -1,82 +1,231 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useState, type ReactNode } from 'react';
 import { loadEvent } from '../events/load';
 import { SiteHistory } from './SiteHistory';
-import { WatchList } from './WatchList';
+import { PlacesList } from './WatchList';
 import { causeLabel, CAUSES } from '../lib/causes';
-import type { PromiseStatus } from '../lib/promises';
-import { VERDICT_COLOR, verdictKey } from '../sites/geo';
-import type { EvidenceStatus, SitePromise, SiteRecord, WaybackImage } from '../sites/types';
+import { promiseStatus, type PromiseStatus, type PromiseUpdate } from '../lib/promises';
+import { buildWatchList, type RainSummary, type WatchTest } from '../lib/watchList';
+import type { CauseAttribution, CauseTag } from '../events/types';
+import type { EvidenceStatus, SiteClaim, SitePromise, SiteRecord, WaybackImage } from '../sites/types';
+import { ClampText } from './ClampText';
+import { Chevron } from './Icons';
+import { InfoTip } from './InfoTip';
 import { useStore } from '../state/store';
+import '../styles/place.css';
 
+/** The place page (Task 35, docs/tasks/35-place-page.md). Screen question: does it flood, why, and did anyone fix
+ *  it? The answer (At a glance) comes first; the evidence sits underneath in the same words as WORDS.md. */
+
+/** On-screen words for the imagery check on each claim (docs/design/WORDS.md). */
 export const EVIDENCE_LABEL: Record<EvidenceStatus, string> = {
-  supports: 'Imagery supports',
-  weak: 'Weak support',
-  inconclusive: 'Inconclusive',
-  contradicts: 'Imagery contradicts',
-  not_checked: 'Not checked',
-  no_imagery_after: 'No imagery after event',
+  supports: 'Imagery agrees',
+  weak: 'Imagery partly agrees',
+  inconclusive: "Imagery can't tell",
+  contradicts: 'Imagery disagrees',
+  not_checked: 'Not checked yet',
+  no_imagery_after: 'No imagery after the flood',
 };
 
+/** On-screen words for promise statuses (docs/design/WORDS.md). */
 export const PROMISE_LABEL: Record<PromiseStatus, string> = {
-  delivered: 'Delivered',
-  in_progress: 'In progress',
+  delivered: 'Done',
+  in_progress: 'Work under way',
   stalled: 'Stalled',
-  no_visible_work: 'No visible work',
+  no_visible_work: 'No work seen',
   overdue: 'Overdue',
-  unverifiable: 'Unverifiable',
+  unverifiable: "Can't check from imagery",
 };
-/** Worst first: what the site list shows when a site has several promises. */
+
+/** Tier → on-screen word (WORDS.md: 3/2/1/0 → High/Medium/Low/Lowest). Mirrors the list's badge words. */
+export const PRIORITY: Record<number, string> = { 3: 'High', 2: 'Medium', 1: 'Low', 0: 'Lowest' };
+
+/** Marker and line colours per priority tier, matching the badge colours in places.css. */
+export const PRIORITY_RGB: Record<number, [number, number, number]> = {
+  3: [163, 54, 31], // High, #a3361f
+  2: [185, 123, 16], // Medium, #b97b10
+  1: [93, 87, 78], // Low, #5d574e
+  0: [154, 147, 133], // Lowest, #9a9385
+};
+
+/** buildWatchList needs the rain digest, but only its tie-breaks read it — the tiers and the three tests do not.
+ *  Passing an empty digest gives the same signs as the list without a fetch, so the two can never disagree. */
+export const EMPTY_RAIN_SUMMARY: RainSummary = { meta: { well_searched_years: [] }, sites: [] };
+
+const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+/** "28 Jun 2026" — the prose date form (WORDS.md); ISO dates stay in hover notes. */
+export const fmtOn = (iso: string) => `${+iso.slice(8, 10)} ${MONTHS[+iso.slice(5, 7) - 1]} ${iso.slice(0, 4)}`;
+/** "Jun 2026", the month-year form for promise lines. */
+const fmtMY = (iso: string) => `${MONTHS[+iso.slice(5, 7) - 1]} ${iso.slice(0, 4)}`;
+const pad = (n: number) => (n < 10 ? '0' : '') + n;
+const isoDay = (d: Date) => `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`;
+const plural = (n: number, word: string) => `${n} ${word}${n === 1 ? '' : 's'}`;
+const year = (iso: string) => iso.slice(0, 4);
+const asset = (f: string) => (f.startsWith('/') ? f : `/${f}`);
+
+/** Findings in words: what an imagery check or an official claim showed (docs/design/WORDS.md wording). */
+const FINDING_WORDS: Record<PromiseUpdate['finding'], string> = {
+  done: 'done',
+  work_seen: 'work seen',
+  no_change: 'no work seen',
+  claimed_done: 'said done',
+  claimed_ongoing: 'said under way',
+};
+
+/** Worst first, mirroring watchList.ts. The tick comes from buildWatchList; this only picks which promise to quote. */
 const PROMISE_SEVERITY: PromiseStatus[] = ['overdue', 'no_visible_work', 'stalled', 'in_progress', 'unverifiable', 'delivered'];
 
-const rgb = (c: [number, number, number]) => `rgb(${c.join(',')})`;
-const asset = (f: string) => (f.startsWith('/') ? f : `/${f}`);
-const year = (iso: string) => iso.slice(0, 4);
+/** The drainage causes and attributions watchList.ts counts (its rule block, mirrored here for the quote only). */
+const DRAINAGE_CAUSES: CauseTag[] = ['blocked_drainage', 'drainage_capacity', 'setback_encroachment'];
+const PASSING_ATTRIBUTIONS: CauseAttribution[] = ['official', 'journalist'];
+const SUPPORTING_EVIDENCE: EvidenceStatus[] = ['supports', 'weak'];
 
-function worstPromise(site: SiteRecord, promises: Record<string, SitePromise>): PromiseStatus | null {
-  const st = site.promise_ids.map((id) => promises[id]?.status).filter(Boolean) as PromiseStatus[];
-  return st.length ? PROMISE_SEVERITY.find((s) => st.includes(s)) ?? null : null;
+/** The claim the "Drains blamed" line quotes: same ranking as namedDrainage in watchList.ts. The tick itself
+ *  always comes from buildWatchList, so the sign can never disagree with the list. */
+function bestDrainageClaim(site: SiteRecord): SiteClaim | null {
+  const candidates = (site.claims ?? []).filter((c) => DRAINAGE_CAUSES.includes(c.cause));
+  if (candidates.length === 0) return null;
+  const hits = candidates.filter(
+    (c) => (c.attributed_by !== null && PASSING_ATTRIBUTIONS.includes(c.attributed_by)) || SUPPORTING_EVIDENCE.includes(c.evidence_status),
+  );
+  const rank = (c: SiteClaim) =>
+    (c.attributed_by !== null && PASSING_ATTRIBUTIONS.includes(c.attributed_by) ? 0 : 1) * 2 +
+    (c.evidence_status === 'supports' ? 0 : c.evidence_status === 'weak' ? 1 : 2);
+  const pool = hits.length ? hits : candidates;
+  return [...pool].sort((a, b) => rank(a) - rank(b) || (b.date ?? '').localeCompare(a.date ?? ''))[0] ?? null;
 }
 
-function SiteList({ sites, promises }: { sites: SiteRecord[]; promises: Record<string, SitePromise> }) {
-  const selectSite = useStore((s) => s.selectSite);
-  const ranked = useMemo(
-    () =>
-      [...sites].sort(
-        (a, b) =>
-          (b.catalog_summary?.n_days_strong ?? 0) - (a.catalog_summary?.n_days_strong ?? 0) ||
-          new Set(b.floods.map((f) => f.event_id)).size - new Set(a.floods.map((f) => f.event_id)).size ||
-          a.name.localeCompare(b.name),
-      ),
-    [sites],
-  );
+/** The promise the "Not fixed" line quotes: worst status first, as in watchList.ts and the places list. */
+function worstFixPromise(
+  site: SiteRecord,
+  promises: Record<string, SitePromise>,
+  asOf: Date,
+  asOfIso: string,
+): { promise: SitePromise; status: PromiseStatus } | null {
+  const mine = (site.promise_ids ?? [])
+    .map((id) => promises[id])
+    .filter((p): p is SitePromise => !!p)
+    .filter((p) => p.date_made <= asOfIso);
+  const statuses = mine.map((p) => promiseStatus(p, asOf));
+  const worst = PROMISE_SEVERITY.find((s) => statuses.includes(s));
+  return worst ? { promise: mine[statuses.indexOf(worst)], status: worst } : null;
+}
+
+/** One "At a glance" line: the sign, the sentence, and a jump to the section it comes from. */
+function GlanceLine({ test, text, target }: { test: WatchTest; text: string; target: string }) {
   return (
-    <section className="card">
+    <li>
+      <button
+        className="glance__line"
+        onClick={() => document.getElementById(target)?.scrollIntoView({ block: 'start', behavior: 'smooth' })}
+        title={`${test.label}: ${test.reason}`}
+        aria-label={`${test.label}: ${text}. Jump to the evidence.`}
+      >
+        <span className={test.pass ? 'places__tick' : 'places__cross'} aria-hidden="true">
+          {test.pass ? '✓' : '✗'}
+        </span>
+        <span className="glance__text">
+          <b>{test.label}:</b> {text}
+        </span>
+        <span className="glance__go" aria-hidden="true">
+          ↓
+        </span>
+      </button>
+    </li>
+  );
+}
+
+/** The three warning signs and the priority badge, computed with buildWatchList exactly as the places list does
+ *  (same as-of default: today), so the two screens can never disagree. */
+function AtAGlance({ site, promises }: { site: SiteRecord; promises: Record<string, SitePromise> }) {
+  const asOf = useMemo(() => new Date(), []);
+  const asOfIso = isoDay(asOf);
+  const row = useMemo(() => buildWatchList([site], promises, EMPTY_RAIN_SUMMARY, asOf)[0], [site, promises, asOf]);
+  const [tFloods, tDrains, tFix] = row.tests;
+
+  // Floods often: the rain flood days the list counts (rule 1), with the addendum's "from rain" wording.
+  const firstSearched = site.catalog_summary ? Math.min(...site.catalog_summary.years_searched) : 2014;
+  const rainDays = (site.catalog_floods ?? []).filter(
+    (f) => f.strength !== 'area' && f.flood_type === 'pluvial' && f.date <= asOfIso,
+  );
+  const lastRain = rainDays.reduce((a, f) => (f.date > a ? f.date : a), '');
+  const floodsText = rainDays.length
+    ? `${plural(rainDays.length, 'flood day')} from rain reported since ${firstSearched}; last ${fmtOn(lastRain)}`
+    : `No flood days from rain reported since ${firstSearched}`;
+
+  // Drains blamed: quote the best claim; when the sign fails, buildWatchList's reason already says why.
+  const best = bestDrainageClaim(site);
+  const drainsText =
+    tDrains.pass && best
+      ? `${best.who ?? (best.attributed_by ? `A ${best.attributed_by}` : 'An unnamed source')}: ${causeLabel(best.cause)} (${best.date ? year(best.date) : 'undated'}); ${EVIDENCE_LABEL[best.evidence_status]}`
+      : tDrains.reason;
+
+  // Not fixed: quote the promise in the worst state; the sign still comes from the test.
+  const worst = tFix.pass ? worstFixPromise(site, promises, asOf, asOfIso) : null;
+  const fixText = worst
+    ? (() => {
+        const last = worst.promise.updates[worst.promise.updates.length - 1];
+        const finding = last ? `, ${FINDING_WORDS[last.finding]}` : '';
+        return `${worst.promise.what} promised ${fmtMY(worst.promise.date_made)}: ${PROMISE_LABEL[worst.status].toLowerCase()}${finding}`;
+      })()
+    : tFix.reason;
+
+  const prio = PRIORITY[row.tier] ?? 'Lowest';
+  return (
+    <section className="card" id="place-glance" aria-label="At a glance">
       <header className="card__head">
-        <h3>Sites</h3>
-        <span className="card__hint">{sites.length} places · most-flooded first</span>
+        <h3>At a glance</h3>
+        <span className={`places__prio places__prio--${prio.toLowerCase()}`}>
+          <span className="places__prio-shape" aria-hidden="true" />
+          {prio}
+          <InfoTip label={`${prio} priority`}>
+            {`${prio} priority: ${row.tier} of 3 warning signs.`}
+          </InfoTip>
+        </span>
       </header>
-      <ul className="site-list">
-        {ranked.map((s) => {
-          const nEvents = new Set(s.floods.map((f) => f.event_id)).size;
-          const nStrong = s.catalog_summary?.n_days_strong ?? 0;
-          const worst = worstPromise(s, promises);
-          return (
-            <li key={s.site_id}>
-              <button onClick={() => selectSite(s.site_id)}>
-                <span className="site-dot" style={{ background: rgb(VERDICT_COLOR[verdictKey(s)]) }} />
-                <span className="site-list__name">{s.name}</span>
-                <span className="site-list__meta">
-                  {nEvents} event{nEvents === 1 ? '' : 's'} · {nStrong} strong flood day{nStrong === 1 ? '' : 's'} · {s.claims.length} claim
-                  {s.claims.length === 1 ? '' : 's'}
-                  {worst && <span className={`status status--${worst}`}>{PROMISE_LABEL[worst]}</span>}
-                </span>
-              </button>
-            </li>
-          );
-        })}
+      <ul className="glance">
+        <GlanceLine test={tFloods} text={floodsText} target="place-floods" />
+        <GlanceLine test={tDrains} text={drainsText} target="place-causes" />
+        <GlanceLine test={tFix} text={fixText} target="place-promises" />
       </ul>
-      <p className="causes__note">Dot = verdict strength (dark red strong → grey unreviewed). Label = worst promise status.</p>
     </section>
+  );
+}
+
+/** The verdict, clamped to three lines with a Read more toggle, dated and signed. */
+function OurReading({ site }: { site: SiteRecord }) {
+  const v = site.verdict;
+  return (
+    <section className="card" id="place-reading">
+      <header className="card__head">
+        <h3>Our reading</h3>
+        {v?.stale && <span className="card__hint">numbers changed since review</span>}
+      </header>
+      {!v ? (
+        <p className="empty">Not yet reviewed.</p>
+      ) : (
+        <>
+          <span className="reading__strength">Evidence: {v.confidence}</span>
+          <ClampText text={v.text} className="reading__text" />
+          <small className="reading__meta">
+            Reviewed {fmtOn(v.reviewed_at)} by {v.reviewed_by}
+          </small>
+        </>
+      )}
+    </section>
+  );
+}
+
+/** A section that starts folded and opens on demand (the folding pattern from the places list). */
+function Fold({ title, children }: { title: string; children: ReactNode }) {
+  const [open, setOpen] = useState(false);
+  return (
+    <div className="fold">
+      <button className="fold__toggle" onClick={() => setOpen(!open)} aria-expanded={open}>
+        <Chevron />
+        {title}
+      </button>
+      {open && <div className="fold__body">{children}</div>}
+    </div>
   );
 }
 
@@ -144,19 +293,22 @@ function BeforeAfter({ images }: { images: WaybackImage[] }) {
         </div>
       )}
       <div className="ba__frame">
-        <img src={src(before)} alt={`Imagery ${before.acq_date}`} />
-        <img src={src(after)} alt={`Imagery ${after.acq_date}`} className="ba__top" style={{ clipPath: `inset(0 0 0 ${split}%)` }} />
+        <img src={src(before)} alt={`Imagery ${fmtOn(before.acq_date)}`} />
+        <img src={src(after)} alt={`Imagery ${fmtOn(after.acq_date)}`} className="ba__top" style={{ clipPath: `inset(0 0 0 ${split}%)` }} />
         <span className="ba__divider" style={{ left: `${split}%` }} />
       </div>
       <input type="range" min={0} max={100} value={split} onChange={(e) => setSplit(+e.target.value)} aria-label="Before/after split" />
       <div className="ba__dates">
-        <select value={bi} onChange={(e) => setBi(+e.target.value)} aria-label="Before date">
-          {usable.map((im, i) => <option key={im.acq_date} value={i}>{im.acq_date}</option>)}
-        </select>
-        <span>← before · after →</span>
-        <select value={ai} onChange={(e) => setAi(+e.target.value)} aria-label="After date">
-          {usable.map((im, i) => <option key={im.acq_date} value={i}>{im.acq_date}</option>)}
-        </select>
+        <label className="ba__end">
+          Before <select value={bi} onChange={(e) => setBi(+e.target.value)} aria-label="Before date">
+            {usable.map((im, i) => <option key={im.acq_date} value={i}>{im.acq_date}</option>)}
+          </select>
+        </label>
+        <label className="ba__end">
+          After <select value={ai} onChange={(e) => setAi(+e.target.value)} aria-label="After date">
+            {usable.map((im, i) => <option key={im.acq_date} value={i}>{im.acq_date}</option>)}
+          </select>
+        </label>
       </div>
       <small className="causes__note">Esri World Imagery Wayback (acquisition dates) · Esri, Maxar, Earthstar Geographics</small>
     </div>
@@ -170,16 +322,16 @@ function SiteDetail({ site, promises }: { site: SiteRecord; promises: Record<str
   useEffect(() => {
     if (focusClaimId) document.getElementById(`claim-${focusClaimId}`)?.scrollIntoView({ block: 'center', behavior: 'smooth' });
   }, [focusClaimId, site.site_id]);
-  const catalog = useStore((s) => s.catalog);
   const [opening, setOpening] = useState<string | null>(null);
-  const floodYears = [...new Set(site.floods.map((f) => year(f.date)))];
-  const byEvent = useMemo(() => {
-    const m = new Map<string, { date: string; n: number; nearest: number }>();
-    for (const f of site.floods) m.set(f.event_id, { date: f.date, n: f.n_reports, nearest: f.nearest_m });
-    return [...m.entries()].sort((a, b) => a[1].date.localeCompare(b[1].date));
-  }, [site]);
   const sitePromises = site.promise_ids.map((id) => promises[id]).filter(Boolean);
   const ch = site.change;
+  // Years with a reported flood (mapped or a catalog flood day) shade the sparklines.
+  const floodYears = useMemo(() => {
+    const ys = new Set<string>();
+    for (const f of site.floods) ys.add(year(f.date));
+    for (const f of site.catalog_floods ?? []) if (f.strength !== 'area') ys.add(year(f.date));
+    return [...ys];
+  }, [site]);
 
   const openEvent = (id: string) => {
     setOpening(id);
@@ -193,27 +345,64 @@ function SiteDetail({ site, promises }: { site: SiteRecord; promises: Record<str
 
   return (
     <>
-      <section className="card">
-        <button className="back" onClick={() => selectSite(null)}>← All sites</button>
-        <h3 className="site__name">{site.name}</h3>
-        <p className="site__structure">
-          {site.structure_name} · <span className="card__hint">location: {site.location_confidence}</span>
+      <header className="place-head">
+        <button className="back" onClick={() => selectSite(null)}>← All places</button>
+        <h2 className="site__name">{site.name}</h2>
+        <p
+          className="site__structure"
+          title={`Location known to ${site.location_confidence} precision.${site.located_how ? ` ${site.located_how}` : ''}`}
+        >
+          {site.structure_name}
         </p>
-        {site.verdict ? (
-          <p className="verdict" style={{ borderColor: rgb(VERDICT_COLOR[site.verdict.confidence]) }}>
-            <b>{site.verdict.confidence[0].toUpperCase() + site.verdict.confidence.slice(1)} evidence.</b> {site.verdict.text}
-            {site.verdict.stale && <em> (numbers changed since review)</em>}
-            <small>Reviewed {site.verdict.reviewed_at} by {site.verdict.reviewed_by}</small>
-          </p>
-        ) : (
-          <p className="verdict verdict--none">Not yet reviewed.</p>
-        )}
+      </header>
+
+      <AtAGlance site={site} promises={promises} />
+
+      <OurReading site={site} />
+
+      <SiteHistory site={site} openEvent={openEvent} opening={opening} />
+
+      <section className="card" id="place-promises">
+        <header className="card__head">
+          <h3>Promises</h3>
+          <span className="card__hint">status from imagery only</span>
+        </header>
+        {sitePromises.length === 0 && <p className="empty">No promises on record for this place.</p>}
+        <ul className="promises">
+          {sitePromises.map((p) => {
+            const last = p.updates[p.updates.length - 1];
+            return (
+              <li key={p.promise_id}>
+                <span className={`status status--${p.status}`}>{PROMISE_LABEL[p.status]}</span>
+                <b>{p.what}</b>
+                <small>
+                  {p.made_by}
+                  {p.role ? `, ${p.role}` : ''} · {fmtOn(p.date_made)}
+                </small>
+                <small title={`Due date basis: ${p.due.basis}${p.due.note ? ` — ${p.due.note}` : ''}`}>
+                  {p.due.date ? `Due: ${fmtOn(p.due.date)}` : 'No date given: we allow 12 months'}
+                </small>
+                {p.quote && (
+                  <q>
+                    <a href={p.url} target="_blank" rel="noreferrer">{p.quote}</a>
+                  </q>
+                )}
+                {last && (
+                  <small title={`Checked via ${last.kind}`}>
+                    Last checked {fmtOn(last.date)}: {FINDING_WORDS[last.finding]}
+                    {last.note && ` — ${last.note}`}
+                  </small>
+                )}
+              </li>
+            );
+          })}
+        </ul>
       </section>
 
-      <section className="card">
+      <section className="card" id="place-causes">
         <header className="card__head">
-          <h3>Evidence chain</h3>
-          <span className="card__hint">claim → structure → change → flood → status</span>
+          <h3>Who blamed what</h3>
+          <span className="card__hint">each claim, who made it, and what satellite images show</span>
         </header>
         {site.claims.length === 0 && <p className="empty">No source named a cause here.</p>}
         <ol className="chain">
@@ -221,8 +410,8 @@ function SiteDetail({ site, promises }: { site: SiteRecord; promises: Record<str
             <li key={c.claim_id} id={`claim-${c.claim_id}`} className={c.claim_id === focusClaimId ? 'is-focus' : undefined}>
               <span className={`cause-chip${CAUSES.find((x) => x.tag === c.cause)?.human ? ' cause-chip--human' : ''}`}>{causeLabel(c.cause)}</span>
               <span className="chain__who">
-                {c.who ?? c.attributed_by ?? 'unattributed'}
-                {c.date && ` · ${c.date}`}
+                {c.who ?? (c.attributed_by ? `A ${c.attributed_by}` : 'No one named')}
+                {c.date && ` · ${fmtOn(c.date)}`}
               </span>
               {c.quote && (
                 <q>
@@ -236,88 +425,40 @@ function SiteDetail({ site, promises }: { site: SiteRecord; promises: Record<str
         </ol>
       </section>
 
-      <section className="card">
+      <section className="card" id="place-change">
         <header className="card__head">
-          <h3>Floods here</h3>
-          <span className="card__hint">{byEvent.length} event{byEvent.length === 1 ? '' : 's'}</span>
-        </header>
-        <ul className="site-floods">
-          {byEvent.map(([id, f]) => (
-            <li key={id}>
-              <span>
-                <b>{catalog.find((c) => c.id === id)?.name ?? id}</b>
-                <small>{f.date} · {f.n} report{f.n === 1 ? '' : 's'} · nearest {Math.round(f.nearest)} m</small>
-              </span>
-              <button className="link" onClick={() => openEvent(id)} disabled={opening !== null}>
-                {opening === id ? 'Opening…' : 'Open event →'}
-              </button>
-            </li>
-          ))}
-        </ul>
-      </section>
-
-      <SiteHistory site={site} openEvent={openEvent} opening={opening} />
-
-      <section className="card">
-        <header className="card__head">
-          <h3>What changed</h3>
+          <h3>What changed on the ground</h3>
           {ch.stale && <span className="card__hint">numbers changed since review</span>}
         </header>
         {ch.summary && <p className="site__summary">{ch.summary}</p>}
+        <h4 className="subhead">Then and now</h4>
         <BeforeAfter images={ch.wayback} />
-        {ch.s2_wet_season && (
-          <>
-            <h4 className="subhead">Vegetation, wet season (Sentinel-2)</h4>
-            <Sparkline byYear={ch.s2_wet_season.by_year} floodYears={floodYears} fmt={(v) => `${Math.round(v * 100)}%`} />
-          </>
-        )}
-        {ch.buildings_0_10m && !ch.buildings_0_10m.excluded && (
-          <>
-            <h4 className="subhead">Built within 10 m of the channel (Open Buildings)</h4>
-            <Sparkline byYear={ch.buildings_0_10m.by_year} floodYears={floodYears} fmt={(v) => `${(v * 100).toFixed(1)}%`} />
-            {ch.buildings_0_10m.matched_pct != null && (
-              <p className="causes__note">
-                2016→2023 change higher than {Math.round(ch.buildings_0_10m.matched_pct)}% of {ch.buildings_0_10m.matched_n} similar city channel
-                stretches. Shaded = flood years.
-              </p>
+        {(ch.s2_wet_season || ch.buildings_0_10m) && (
+          <Fold title="Measurements">
+            {ch.s2_wet_season && (
+              <>
+                <h4 className="subhead" title="Sentinel-2, wet-season images">Green cover in the rainy season</h4>
+                <Sparkline byYear={ch.s2_wet_season.by_year} floodYears={floodYears} fmt={(v) => `${Math.round(v * 100)}%`} />
+              </>
             )}
-          </>
+            {ch.buildings_0_10m && !ch.buildings_0_10m.excluded && (
+              <>
+                <h4 className="subhead" title="Google Open Buildings: share of the land within 10 m of the channel that is built on">
+                  Building close by (within 10 m)
+                </h4>
+                <Sparkline byYear={ch.buildings_0_10m.by_year} floodYears={floodYears} fmt={(v) => `${(v * 100).toFixed(1)}%`} />
+                {ch.buildings_0_10m.matched_pct != null && (
+                  <p className="causes__note">
+                    2016→2023 change higher than {Math.round(ch.buildings_0_10m.matched_pct)}% of {ch.buildings_0_10m.matched_n} similar city
+                    channel stretches.
+                  </p>
+                )}
+              </>
+            )}
+            {ch.buildings_0_10m?.excluded && <p className="causes__note">Open Buildings not used here: {ch.buildings_0_10m.excluded}.</p>}
+            <small className="causes__note">Shaded columns: years with a reported flood.</small>
+          </Fold>
         )}
-        {ch.buildings_0_10m?.excluded && <p className="causes__note">Open Buildings not used here: {ch.buildings_0_10m.excluded}.</p>}
-      </section>
-
-      <section className="card">
-        <header className="card__head">
-          <h3>Promises</h3>
-          <span className="card__hint">status from imagery only</span>
-        </header>
-        {sitePromises.length === 0 && <p className="empty">No official commitment found for this site yet.</p>}
-        <ul className="promises">
-          {sitePromises.map((p) => {
-            const last = p.updates[p.updates.length - 1];
-            return (
-              <li key={p.promise_id}>
-                <span className={`status status--${p.status}`}>{PROMISE_LABEL[p.status]}</span>
-                <b>{p.what}</b>
-                <small>
-                  {p.made_by} · {p.date_made}
-                  {p.due.date ? ` · due ${p.due.date} (${p.due.basis})` : ' · no due date (12-month grace)'}
-                </small>
-                {p.quote && (
-                  <q>
-                    <a href={p.url} target="_blank" rel="noreferrer">{p.quote}</a>
-                  </q>
-                )}
-                {last && (
-                  <small>
-                    Latest: {last.date} · {last.kind} · {last.finding.replace(/_/g, ' ')}
-                    {last.note && ` (${last.note})`}
-                  </small>
-                )}
-              </li>
-            );
-          })}
-        </ul>
       </section>
     </>
   );
@@ -329,19 +470,14 @@ export function SitePanel() {
   const selectedId = useStore((s) => s.selectedSiteId);
   const site = loaded?.sites.find((s) => s.site_id === selectedId);
   return (
-    <aside className="right right--sites">
+    <aside className="right right--sites" id="place-panel">
       {!loaded && (
         <section className="card">
           <p className="empty">{error ? `Could not load sites: ${error}` : 'Loading sites…'}</p>
           {error && <button className="link" onClick={() => useStore.getState().setSites(null)}>Retry</button>}
         </section>
       )}
-      {loaded && !site && (
-        <>
-          <WatchList sites={loaded.sites} promises={loaded.promises} />
-          <SiteList sites={loaded.sites} promises={loaded.promises} />
-        </>
-      )}
+      {loaded && !site && <PlacesList sites={loaded.sites} promises={loaded.promises} />}
       {loaded && site && <SiteDetail key={site.site_id} site={site} promises={loaded.promises} />}
     </aside>
   );

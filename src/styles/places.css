@@ -1,0 +1,132 @@
+/* Task 33: the front door (top-bar actions, the How-to-read guide) and the one list of places.
+   Imported by TopBar.tsx, HowToRead.tsx and WatchList.tsx. Text colours here keep at least 4.5:1 contrast. */
+
+/* ── Top bar: actions on the right ────────────────────── */
+.topbar .modes { margin-left: auto; }
+.topbar__actions { display: flex; align-items: center; gap: 8px; }
+.topbar__action { display: flex; align-items: center; gap: 6px; color: #4a453e; padding: 4px 7px; border-radius: 6px; }
+.topbar__action:hover { background: var(--panel-2); color: var(--text); }
+
+/* ── How to read this (panel over the side panel) ─────── */
+.howto {
+  position: fixed;
+  top: calc(var(--topbar-h) + 10px);
+  right: 10px;
+  z-index: 40;
+  width: min(330px, calc(var(--right-w) - 16px));
+  background: #fff;
+  border: 1px solid var(--border-strong);
+  border-radius: 10px;
+  box-shadow: 0 10px 32px rgba(0, 0, 0, 0.18);
+  padding: 12px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  white-space: normal; /* the top bar is nowrap; the panel must wrap at any width */
+}
+.howto__head { display: flex; justify-content: space-between; align-items: center; }
+.howto__close { color: #5d574e; font-size: 13px; line-height: 1; padding: 3px 6px; border-radius: 5px; }
+.howto__close:hover { background: var(--panel-2); color: var(--text); }
+.howto p { margin: 0; line-height: 1.45; }
+.howto__steps { margin: 0; padding-left: 18px; display: flex; flex-direction: column; gap: 3px; line-height: 1.4; }
+.howto__key { list-style: none; margin: 0; padding: 8px 0 0; border-top: 1px solid var(--border); display: flex; flex-direction: column; gap: 3px; }
+.howto__key li { display: flex; align-items: center; gap: 7px; }
+.howto__dot { width: 9px; height: 9px; border-radius: 50%; flex: none; }
+.howto__dot--red { background: #a3361f; }
+.howto__dot--amber { background: #b97b10; }
+.howto__dot--green { background: #2c6b41; }
+.howto__dot--blue { background: #2f7fb6; }
+.howto__dot--grey { background: #9a9385; }
+.howto__caveat { color: #5d574e; }
+
+/* ── The one list of places ───────────────────────────── */
+.places__sort { display: flex; align-items: center; margin: 0 0 8px; color: #5d574e; font-size: 11px; white-space: nowrap; }
+.places__sortlabel { margin-right: 4px; }
+.places__sort button { color: #5d574e; padding: 2px 7px; border: 1px solid var(--border); background: var(--panel-2); }
+.places__sort button + button { margin-left: -1px; }
+.places__sort button:first-of-type { border-radius: 5px 0 0 5px; }
+.places__sort button:last-of-type { border-radius: 0 5px 5px 0; }
+.places__sort button:hover { background: #ece7de; }
+.places__sort button.is-active { background: #ece7de; color: var(--text); font-weight: 600; }
+
+.places__answer { margin: 0 0 3px; line-height: 1.4; }
+.places__asof { margin: 0 0 8px; color: #5d574e; font-size: 11px; display: flex; align-items: center; gap: 5px; flex-wrap: wrap; }
+.places__asof .link { font-size: 11px; }
+.places__asof input { font: inherit; font-size: 11px; padding: 1px 4px; border: 1px solid var(--border); border-radius: 4px; background: var(--panel-2); color: var(--text); }
+
+/* One grid shared by the header row and every place row, so each sign sits exactly over its column at any
+   width. The open button spans the first four tracks and repeats the same track list minus the chevron column. */
+.places__cols,
+.places__row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 44px 44px 44px 20px;
+  column-gap: 6px;
+}
+.places__cols { padding: 0 2px 3px; align-items: end; }
+.places__col { font-size: 10px; font-weight: 600; color: #5d574e; text-align: center; line-height: 1.25; display: flex; flex-direction: column; align-items: center; gap: 2px; }
+.places__col--place { align-items: flex-start; text-align: left; }
+
+.places { list-style: none; margin: 0; padding: 0; }
+.places li + li { border-top: 1px solid var(--border); }
+.places__row { align-items: stretch; }
+.places__open {
+  grid-column: 1 / 5;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 44px 44px 44px;
+  column-gap: 6px;
+  align-items: center;
+  padding: 6px 2px;
+  min-width: 0;
+  text-align: left;
+}
+.places__open:hover { background: var(--panel-2); }
+.places__main { min-width: 0; display: flex; flex-direction: column; gap: 1px; }
+.places__name { display: flex; align-items: baseline; gap: 6px; min-width: 0; font-weight: 600; }
+.places__nametext {
+  min-width: 0;
+  overflow-wrap: break-word;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.places__meta { color: #5d574e; font-size: 11px; line-height: 1.4; }
+.places__promise { white-space: nowrap; }
+.places__sep { color: #5d574e; }
+
+/* Priority: shape and colour both carry the meaning (WORDS.md principle 7). */
+.places__prio { display: inline-flex; align-items: center; gap: 4px; font-size: 10px; font-weight: 700; white-space: nowrap; flex: none; }
+.places__prio-shape { width: 10px; height: 10px; flex: none; display: inline-block; }
+.places__prio--high { color: #a3361f; }
+.places__prio--high .places__prio-shape { background: #a3361f; clip-path: polygon(50% 0, 100% 100%, 0 100%); }
+.places__prio--medium { color: #8a5a17; }
+.places__prio--medium .places__prio-shape { background: #b97b10; border-radius: 1.5px; }
+.places__prio--low { color: #5d574e; }
+.places__prio--low .places__prio-shape { background: #5d574e; border-radius: 50%; }
+.places__prio--lowest { color: #5d574e; }
+.places__prio--lowest .places__prio-shape { background: transparent; border: 1.5px solid #9a9385; border-radius: 50%; }
+
+.places__tick,
+.places__cross { text-align: center; font-size: 13px; font-weight: 700; cursor: help; }
+.places__tick { color: #a3361f; }
+.places__cross { color: #5d574e; }
+
+.places__why { grid-column: 5; display: grid; place-items: center; width: 20px; color: #5d574e; }
+.places__why:hover { color: var(--text); }
+.places__why[aria-expanded='true'] svg { transform: rotate(180deg); }
+.places__reasons { list-style: none; margin: 0 0 6px; padding: 0 26px 2px 2px; color: #5d574e; font-size: 11.5px; display: flex; flex-direction: column; gap: 3px; }
+.places__reasons b { color: var(--text); }
+
+/* ── Phone width: fit without horizontal scroll ──────── */
+@media (max-width: 480px) {
+  .topbar { gap: 8px; padding: 0 8px; }
+  .topbar .brand { gap: 6px; }
+  .topbar .brand__name { font-size: 14px; }
+  .brand__sub { display: none; }
+  .topbar__muted { display: none; }
+  .topbar__date { display: none; }
+  .topbar .mode { padding: 4px 6px; font-size: 11px; gap: 4px; }
+  .topbar__action { padding: 4px 5px; }
+  .topbar__action-label { display: none; }
+  .howto { right: 8px; width: calc(100vw - 16px); }
+}
