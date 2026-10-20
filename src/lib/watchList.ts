@@ -13,14 +13,16 @@ import type { EvidenceStatus, FloodStrength, SiteClaim, SitePromise, SiteRecord 
 // ── The three rules, in one place ────────────────────────────────────────
 /** Rule 1 (repeated flooding): at least this many strong pluvial catalog days, … */
 const RULE_1_MIN_STRONG_DAYS = 2;
-/** … and at least one of them inside this many recent seasons before the as-of date. */
+/** … and at least one of them inside this many recent seasons before the as-of date. Kept at 3 (decided 2026-10-19):
+ *  Marina and Oko-Oba, last strong day 2022, drop out as of March 2026 and return if they flood again. */
 const RECENT_SEASONS = 3;
 /** Rule 1: strong catalog matches, as in the rain replay — the news named the place or a point near it. */
 const STRONG_STRENGTHS: FloodStrength[] = ['name', 'near'];
 
 /** Rule 2 (named drainage failure): cause tags that count as drainage. Building on a channel's setback blocks it as
  *  surely as silt does (System 156), so encroachment counts; construction and reclamation stay out unless a claim says
- *  drains were blocked or undersized. */
+ *  drains were blocked or undersized. Canal overflow stays out too (decided 2026-10-19): it names the rain overwhelming
+ *  a canal, not a drain that failed, so Oko-Oba fails this test until a claim says otherwise. */
 const DRAINAGE_CAUSES: CauseTag[] = ['blocked_drainage', 'drainage_capacity', 'setback_encroachment'];
 /** Rule 2: attributions that pass on their own; anyone else needs imagery on their side. */
 const PASSING_ATTRIBUTIONS: CauseAttribution[] = ['official', 'journalist'];

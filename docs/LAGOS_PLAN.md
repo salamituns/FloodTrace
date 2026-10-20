@@ -205,6 +205,8 @@ different city each year, which is why rain alone didn't explain flood days. Rea
    tests (repeated flooding, named drainage failure, no visible fix); tier = tests passed, each with its reason. As of
    2026-03-01: Olopo Meji and Agungi pass all three. "No visible fix" passes everywhere for now, since no promise shows as
    delivered in imagery. Upkeep each season: re-run the news sweep, re-check promises against imagery, read the March list.
+   Rules kept as built (decided 2026-10-19): canal overflow is not a drainage failure (Oko-Oba fails test 2), and the
+   recent-flood window stays at 3 seasons (Marina and Oko-Oba, last strong day 2022, fail test 1 as of 2026-03-01).
 Limits to state everywhere: no public gauges, few events, reporting bias, coarse DEM. Outputs are comparative ("worse than",
 "this fix helps more than that one"), which is exactly the comparison a drainage agency needs to prioritise.
 
