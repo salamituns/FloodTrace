@@ -36,7 +36,18 @@
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.06);
 }
 .week-strip__name { font-weight: 600; font-size: 10.5px; }
-.week-strip__chance { font-size: 9.5px; color: #5d574e; line-height: 1.2; }
+.week-strip__chance {
+  font-size: 10.5px;
+  color: #5d574e;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+.week-strip__note {
+  margin: 6px 0 0;
+  color: #5d574e;
+  font-size: 11px;
+  line-height: 1.35;
+}
 .week-strip__day.is-stale .places__prio { color: #5d574e; }
 .week-strip__day.is-stale .places__prio-shape { background: #9a9385; }
 

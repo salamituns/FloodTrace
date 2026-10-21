@@ -83,6 +83,15 @@ DEPTH_CONTEXT_RE = re.compile(
     re.I,
 )
 
+# One on-screen name per outlet. Applied when writing spots so the JSON
+# and the area panel stay in lockstep.
+PUBLISHER_CANON = {
+    "the guardian nigeria": "Guardian NG",
+    "guardian ng": "Guardian NG",
+    "channels television": "Channels TV",
+    "channels tv": "Channels TV",
+}
+
 
 def haversine_m(lon1: float, lat1: float, lon2: float, lat2: float) -> float:
     r = 6371000.0
@@ -96,6 +105,13 @@ def haversine_m(lon1: float, lat1: float, lon2: float, lat2: float) -> float:
 def norm_name(name: str) -> str:
     primary = (name or "").split(",")[0]
     return re.sub(r"[^a-z0-9]+", " ", primary.casefold()).strip()
+
+
+def normalise_publisher(name: str) -> str:
+    raw = (name or "").strip()
+    if not raw:
+        return raw
+    return PUBLISHER_CANON.get(raw.casefold(), raw)
 
 
 def names_match(a: str, b: str) -> bool:
@@ -193,7 +209,12 @@ def name_in_sentence(sentence: str, name: str) -> bool:
 
 
 def mention_needles(mention: dict[str, Any]) -> list[str]:
-    """Spot name, geocode fallback, and the report's own area string."""
+    """Spot name, geocode fallback, and the report's own area string.
+
+    Aliases shorter than the spot name are dropped: "Ipaja" must not stand
+    in for "Iyana Ipaja". A shorter spot may still match a longer phrase
+    in the sentence ("Ipaja" in "Iyana Ipaja").
+    """
     names: list[str] = []
     for raw in (mention.get("name"), mention.get("geocoded_from"), mention.get("report_area")):
         if not raw:
@@ -202,11 +223,14 @@ def mention_needles(mention: dict[str, Any]) -> list[str]:
         primary = str(raw).split(",")[0].strip()
         if primary:
             names.append(primary)
+    primary = norm_name(mention.get("name") or "")
     seen: set[str] = set()
     out: list[str] = []
     for n in names:
         k = n.casefold()
         if k in seen:
+            continue
+        if primary and len(norm_name(n)) < len(primary):
             continue
         seen.add(k)
         out.append(n)
@@ -233,7 +257,7 @@ def attribute_report_depths(
     phrases = extract_depth_phrases(blob)
     sentences = report_sentences(report)
     url = report.get("url") or ""
-    publisher = report.get("publisher") or ""
+    publisher = normalise_publisher(report.get("publisher") or "")
     areas = [a for a in (report.get("areas") or []) if a]
     placed: list[list[dict[str, Any]]] = [[] for _ in mentions]
     unplaced: list[dict[str, Any]] = []
@@ -340,14 +364,18 @@ def build_spot(group: list[dict[str, Any]]) -> dict[str, Any]:
     lat = sum(m["lat"] for m in group) / len(group)
     conf = min((m["confidence"] for m in group), key=lambda c: CONF_RANK.get(c, 9))
     dates = sorted({m["date"] for m in group})
-    reports: list[dict[str, str]] = []
-    seen_url: set[str] = set()
+    by_url: dict[str, dict[str, str]] = {}
     for m in group:
         for r in m["reports"]:
-            if r["url"] in seen_url:
+            url = r["url"]
+            if not url:
                 continue
-            seen_url.add(r["url"])
-            reports.append({"url": r["url"], "publisher": r["publisher"]})
+            pub = normalise_publisher(r.get("publisher") or "")
+            date = r.get("date") or m["date"]
+            prev = by_url.get(url)
+            if prev is None or (date and date > (prev.get("date") or "")):
+                by_url[url] = {"url": url, "publisher": pub, "date": date}
+    reports = list(by_url.values())
     depths: list[dict[str, Any]] = []
     seen_phrase: set[str] = set()
     for m in group:
@@ -361,7 +389,8 @@ def build_spot(group: list[dict[str, Any]]) -> dict[str, Any]:
                     "phrase": row["phrase"],
                     "metres": row["metres"],
                     "url": row.get("url") or None,
-                    "publisher": row.get("publisher") or None,
+                    "publisher": normalise_publisher(row.get("publisher") or "") or None,
+                    "date": row.get("date") or m.get("date") or None,
                     "placed_by": row["placed_by"],
                     "sentence": row["sentence"],
                 }
@@ -467,7 +496,11 @@ def main() -> None:
                     "geocoded_from": area.get("geocoded_from"),
                     "date": date,
                     "reports": [
-                        {"url": r.get("url") or "", "publisher": r.get("publisher") or ""}
+                        {
+                            "url": r.get("url") or "",
+                            "publisher": normalise_publisher(r.get("publisher") or ""),
+                            "date": r.get("date") or date,
+                        }
                         for r in matched
                     ],
                     "report_areas": report_areas,

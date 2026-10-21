@@ -13,8 +13,7 @@ export type LayerId =
   | 'rainGrid'
   | 'evidence'
   | 'points'
-  | 'waterEvidence'
-  | 'waterModel';
+  | 'waterEvidence';
 
 export interface LayerState {
   visible: boolean;
@@ -30,7 +29,6 @@ export const LAYER_DEFS: { id: LayerId; label: string; note?: string; swatch: st
   { id: 'builtup', label: 'Land built over since 2000', note: 'GHSL built-up surface, 2000 → latest.', swatch: 'linear-gradient(135deg,#f6e7c8,#c9852f 55%,#7a3b12)', hasOpacity: true },
   { id: 'points', label: 'Chart points', note: 'The spots the rain and tide charts read from. Not real gauges.', swatch: 'radial-gradient(circle,#2b2824 25%,#eee 28%)', hasOpacity: false },
   { id: 'waterEvidence', label: 'Evidence water', note: 'Water drawn from what was reported or seen: reported depths as water bodies, flooded spots without a depth as dashed outlines, and the flood the radar satellite saw on 3 Jul 2024. On only in the 3D view. Water heights are drawn 20× taller so depths stay visible beside buildings.', swatch: 'linear-gradient(135deg,#9fcbe8,#1f6a9a)', hasOpacity: true },
-  { id: 'waterModel', label: 'Rough model (low ground)', note: 'Where rain the drains can\u2019t take away could collect, from terrain alone. Not a measurement; in our test it matched reported floods no better than chance. On only in the 3D view.', swatch: 'repeating-linear-gradient(45deg,#cfe8f7 0 3px,#9fcbe8 3px 5px)', hasOpacity: false },
   { id: 'buildings3d', label: 'Buildings (3D)', note: 'Extruded from the basemap where OSM has outlines, so only a sample shows even in dense districts. Fades in from zoom 14, on only in the 3D view.', swatch: 'repeating-conic-gradient(#ece6da 0 25%,#b9b1a2 0 50%) 0 0/8px 8px', hasOpacity: false },
 ];
 
@@ -49,8 +47,6 @@ interface AppState {
   playing: boolean;
   speed: number;
   viewMode: '2d' | '3d';
-  /** Which rough-model rain scenario is shown (Task 40). */
-  modelScenario: number;
   /** A pending "Show me in 3D" camera request; MapView performs it and clears it. */
   showMe: { lon: number; lat: number; nonce: number } | null;
   /** Selected forecast day (Places map layer). Null = layer off. */
@@ -82,7 +78,6 @@ interface AppState {
   togglePlay: () => void;
   cycleSpeed: () => void;
   setViewMode: (m: '2d' | '3d') => void;
-  setModelScenario: (mm: number) => void;
   requestShowMe3D: (lon: number, lat: number) => void;
   clearShowMe3D: () => void;
   selectForecastDay: (date: string | null) => void;
@@ -111,7 +106,6 @@ export const useStore = create<AppState>()((set, get) => ({
   playing: false,
   speed: 1,
   viewMode: '2d',
-  modelScenario: 40,
   showMe: null,
   forecastDay: null,
   forecastHour: null,
@@ -127,7 +121,6 @@ export const useStore = create<AppState>()((set, get) => ({
     builtup: { visible: false, opacity: 0.6 },
     buildings3d: { visible: true, opacity: 1 },
     waterEvidence: { visible: true, opacity: 1 },
-    waterModel: { visible: false, opacity: 1 },
   },
   selectedEventId: null,
   rainPoint: 'lekki',
@@ -155,7 +148,6 @@ export const useStore = create<AppState>()((set, get) => ({
     set((s) => (s.playing ? { playing: false } : { playing: true, currentTime: s.currentTime >= s.t1 ? s.t0 : s.currentTime })),
   cycleSpeed: () => set((s) => ({ speed: SPEEDS[(SPEEDS.indexOf(s.speed) + 1) % SPEEDS.length] })),
   setViewMode: (viewMode) => set({ viewMode }),
-  setModelScenario: (modelScenario) => set({ modelScenario }),
   requestShowMe3D: (lon, lat) => set((s) => ({ showMe: { lon, lat, nonce: (s.showMe?.nonce ?? 0) + 1 } })),
   clearShowMe3D: () => set({ showMe: null }),
   selectForecastDay: (forecastDay) => set({ forecastDay, forecastHour: null }),

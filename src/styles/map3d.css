@@ -1,42 +1,5 @@
 /* 3D water view (Task 40). */
 
-/* The rough-model honesty banner sits over the map while the model layer is on. */
-.map3d-banner {
-  position: absolute;
-  left: 12px;
-  right: 12px;
-  top: 46px;
-  z-index: 5;
-  background: rgba(255, 255, 255, 0.92);
-  border: 1px solid #9fcbe8;
-  border-left: 4px solid #4a90c9;
-  border-radius: 8px;
-  padding: 8px 12px;
-  font-size: 13px;
-  line-height: 1.45;
-  color: #2b2824;
-  box-shadow: 0 1px 4px rgba(30, 40, 60, 0.18);
-}
-
-.map3d-banner__toggle {
-  margin-left: 8px;
-  border: 0;
-  background: none;
-  padding: 0;
-  font: inherit;
-  font-weight: 600;
-  color: #1f6a9a;
-  cursor: pointer;
-  text-decoration: underline;
-  text-underline-offset: 2px;
-}
-
-.map3d-banner__numbers {
-  margin: 6px 0 0;
-  font-size: 12.5px;
-  color: #5d574e;
-}
-
 /* "Show me in 3D", wherever water is shown. */
 .show-me-3d {
   display: inline-block;
@@ -55,40 +18,9 @@
   background: #eaf2f8;
 }
 
-/* The rough-model scenario slider inside the layers card. */
-.layer__scenario {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  gap: 4px 8px;
-  align-items: center;
-  margin: 4px 0 6px;
-}
-
-.layer__scenario-label {
-  font-size: 12.5px;
-  color: #5d574e;
-}
-
-.layer__scenario input[type='range'] {
-  grid-column: 1 / -1;
-  width: 100%;
-}
-
-/* Map key: stippled swatch for the model water. */
-.map-key__swatch--stippled {
-  background: repeating-linear-gradient(45deg, #cfe8f7 0 3px, #9fcbe8 3px 5px) !important;
-  border: 1px solid #4a90c9 !important;
-}
-
 /* Depth quotes in water tooltips. */
 .tip .tip__depth q {
   display: block;
   margin-top: 3px;
 }
 
-@media (max-width: 720px) {
-  .map3d-banner {
-    top: 10px;
-    font-size: 12px;
-  }
-}

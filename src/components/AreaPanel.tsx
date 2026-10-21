@@ -8,8 +8,12 @@ import {
 	loadFloodSpots,
 	NEARBY_PLACES_M,
 	nearestRainCell,
+	NEWS_LINKS_SHOWN,
+	newsLinkText,
 	spotsWithin,
+	uniqueNewsLinks,
 	type AreaRainFile,
+	type FloodSpot,
 	type FloodSpotsFile,
 } from '../lib/area'
 import { buildWatchList } from '../lib/watchList'
@@ -21,6 +25,32 @@ import { ShowMeIn3DButton } from './Map3DShowMe'
 import '../styles/area.css'
 import '../styles/place.css'
 import '../styles/places.css'
+
+function SpotNews({ reports }: { reports: FloodSpot['reports'] }) {
+	const [open, setOpen] = useState(false)
+	const links = uniqueNewsLinks(reports)
+	if (!links.length) return null
+	const extra = links.length - NEWS_LINKS_SHOWN
+	const shown = open || extra <= 0 ? links : links.slice(0, NEWS_LINKS_SHOWN)
+	return (
+		<span className="area-reports">
+			{shown.map((r) => (
+				<a key={r.url} className="link" href={r.url} target="_blank" rel="noreferrer">
+					{newsLinkText(r)}
+				</a>
+			))}
+			{extra > 0 && (
+				<button
+					type="button"
+					className="area-more"
+					onClick={() => setOpen((v) => !v)}
+				>
+					{open ? 'Show fewer' : `+${extra} more`}
+				</button>
+			)}
+		</span>
+	)
+}
 
 export function AreaPanel() {
 	const sel = useStore((s) => s.selectedArea)!
@@ -105,25 +135,22 @@ export function AreaPanel() {
 								{spot.depths
 									.filter((d) => d.placed_by === 'same_sentence' || d.placed_by === 'single_area')
 									.map((d) => (
-										<q key={d.phrase}>
+										<span className="area-quote" key={d.phrase}>
+											<q>{d.phrase}</q>
 											{d.url ? (
-												<a href={d.url} target="_blank" rel="noreferrer">
-													{d.phrase}
+												<a className="link" href={d.url} target="_blank" rel="noreferrer">
+													{newsLinkText({
+														url: d.url,
+														publisher: d.publisher ?? 'news report',
+														date: d.date ?? undefined,
+													})}
 												</a>
 											) : (
-												d.phrase
+												d.publisher && <span className="area-quote__src">{d.publisher}</span>
 											)}
-										</q>
+										</span>
 									))}
-								{spot.reports.length > 0 && (
-									<span className="area-reports">
-										{spot.reports.map((r) => (
-											<a key={r.url} href={r.url} target="_blank" rel="noreferrer">
-												{r.publisher}
-											</a>
-										))}
-									</span>
-								)}
+								<SpotNews reports={spot.reports} />
 							</li>
 						))}
 					</ul>

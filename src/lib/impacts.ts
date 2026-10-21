@@ -2,19 +2,14 @@
  *
  * Everything runs in the browser against static files; nothing is sent anywhere.
  * "Wet" means: inside evidence water (a reported flood spot's water body, its
- * depth-not-reported disc, or the July 2024 radar flood map), or inside the
- * rough model's water for one rain scenario.
+ * depth-not-reported disc, or the July 2024 radar flood map).
  *
- * impactsAt() is the one-call summary Task 41 will show in plain words:
+ * impactsAt() is the one-call summary Task 41 shows in plain words:
  * roads with the length that sits under water, facilities inside the water,
  * and an estimate of how many buildings stand in it.
  */
 
 import { haversineM, loadFloodSpots, type FloodSpot } from './area';
-
-export const MODEL_SCENARIOS_MM = [20, 40, 60, 80, 100, 150] as const;
-export type ModelScenario = (typeof MODEL_SCENARIOS_MM)[number];
-export const DEFAULT_SCENARIO_MM: ModelScenario = 40;
 
 /** Evidence-water disc radius by geocode confidence (Task 40, section B). */
 export function discRadiusM(spot: Pick<FloodSpot, 'confidence'>): number {
@@ -35,44 +30,11 @@ async function getOptional<T>(url: string): Promise<T | null> {
   }
 }
 
-// ── rough-model data (events/rough_model/) ────────────────────────────────
-
-export interface ScenarioValidation {
-  wet_share_of_built_up: number;
-  n_spots_tested: number;
-  spots_in_model_water: number;
-  spot_hit_rate: number;
-  random_baseline_hit_rate: number;
-  random_expected_hits: number;
-  radar_cells_built_up?: number;
-  radar_cells_in_model_water?: number;
-  radar_match_rate?: number;
-}
-
-export interface RoughModelMeta {
-  generated_at: string;
-  method: { summary: string; stipple: string; crop: { bounds: number[]; note: string } } & Record<string, unknown>;
-  parameters: { scenarios_mm: number[]; storm_note: string; min_depth_m: number } & Record<string, unknown>;
-  terrain_verdict: { summary: string; source: string };
-  validation: { note?: string } & Record<string, ScenarioValidation | undefined>;
-  building_coverage: {
-    share_of_built_up_area_with_outlines: number;
-    tiles_checked: number;
-    tiles_with_buildings: number;
-    good_areas: { area: string; median_buildings: number }[];
-    poor_areas: { area: string; median_buildings: number }[];
-    note: string;
-  };
-  bounds: [number, number, number, number];
-  total_bytes: number;
-}
+// ── impact data (events/rough_model/, events/osm_facilities.geojson) ──────
+// roads.json and building_counts.json live under rough_model/ but serve the
+// evidence impacts; the water files themselves were dropped with the layer.
 
 export type Ring = number[][];
-export interface WaterPolygonsFile {
-  meta: { depth_min_m: number; bounds: number[]; note: string };
-  /** scenario mm -> polygons -> rings (lon/lat) */
-  scenarios: Record<string, Ring[][]>;
-}
 
 export interface RoadLine {
   name: string;
@@ -95,16 +57,6 @@ export interface FacilityProps {
   area: string | null;
 }
 export type FacilitiesFile = GeoJSON.FeatureCollection<GeoJSON.Point, FacilityProps>;
-
-let metaP: Promise<RoughModelMeta | null> | null = null;
-export function loadRoughModelMeta(): Promise<RoughModelMeta | null> {
-  return (metaP ??= getOptional<RoughModelMeta>('/events/rough_model/meta.json'));
-}
-
-let polysP: Promise<WaterPolygonsFile | null> | null = null;
-export function loadWaterPolygons(): Promise<WaterPolygonsFile | null> {
-  return (polysP ??= getOptional<WaterPolygonsFile>('/events/rough_model/water_polygons.json'));
-}
 
 let roadsP: Promise<RoadsFile | null> | null = null;
 export function loadRoads(): Promise<RoadsFile | null> {
@@ -221,28 +173,6 @@ export function evidenceWaterTest(spots: FloodSpot[], radar: GeoJSON.FeatureColl
   };
 }
 
-export function modelWaterTest(file: WaterPolygonsFile | null, scenario: number): WaterTest {
-  const polys = polyOf(file?.scenarios[String(scenario)] ?? []);
-  return {
-    isEmpty: polys.length === 0,
-    isWet(lon, lat) {
-      for (const p of polys) {
-        if (lon >= p.w && lon <= p.e && lat >= p.s && lat <= p.n && pointInRings(lon, lat, p.rings)) return true;
-      }
-      return false;
-    },
-  };
-}
-
-export function combineWaterTests(tests: WaterTest[]): WaterTest {
-  return {
-    isEmpty: tests.every((t) => t.isEmpty),
-    isWet(lon, lat) {
-      return tests.some((t) => t.isWet(lon, lat));
-    },
-  };
-}
-
 // ── roads through water ──────────────────────────────────────────────────
 
 export interface RoadSegment {
@@ -337,26 +267,16 @@ export interface Impacts {
   buildingsAreEstimate: boolean;
 }
 
-export async function impactsAt(
-  lon: number,
-  lat: number,
-  radiusM: number,
-  source: 'evidence' | 'model',
-  scenario: ModelScenario = DEFAULT_SCENARIO_MM,
-): Promise<Impacts> {
-  const [spotsFile, radar, roadsFile, facilities, counts, polys] = await Promise.all([
+export async function impactsAt(lon: number, lat: number, radiusM: number): Promise<Impacts> {
+  const [spotsFile, radar, roadsFile, facilities, counts] = await Promise.all([
     loadFloodSpots().catch(() => null),
     loadRadarFlood(),
     loadRoads(),
     loadFacilities(),
     loadBuildingCounts(),
-    loadWaterPolygons(),
   ]);
   const spots = spotsFile?.spots ?? [];
-  const test =
-    source === 'evidence'
-      ? evidenceWaterTest(spots, radar)
-      : modelWaterTest(polys, scenario);
+  const test = evidenceWaterTest(spots, radar);
   if (test.isEmpty) {
     return { pointWet: false, roads: [], facilities: [], buildings: 0, buildingsAreEstimate: true };
   }

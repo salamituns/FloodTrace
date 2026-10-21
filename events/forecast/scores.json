@@ -1,0 +1,195 @@
+{
+ "meta": {
+  "built_by": "pipeline/score_forecasts.py",
+  "task": "42-forecast-scoring (docs/tasks/42-forecast-scoring.md), part A",
+  "generated_at": "2026-10-21T23:34:37+00:00",
+  "method": "Every archived forecast run is compared with what the IMERG satellite later measured for the same cell and day. Brier scores use the run's chance of at least 20 / 40 mm against the observed total; the climatology baseline is that cell's own frequency of such days in the April-November window (the year-months the catalog searched, 2014 onward), and skill = 1 - Brier / Brier_climatology. A medium or high level counts as a warning, scored as hits, misses and false alarms against IMERG >= 40 mm in that cell and against a flood reported within 5 km (the same rule as pipeline/forecast.py). Grouped by lead time, day 1 to day 7. Below 30 scored cell-days for a lead day, enough_data is false.",
+  "imerg_last_day": "2026-10-16",
+  "archive_runs": [
+   "2026-10-21-1933.json",
+   "2026-10-21-2116.json",
+   "2026-10-21.json"
+  ],
+  "archive_first_run_date": "2026-10-21-1933",
+  "imerg_refresh": "The IMERG history (events/rain_history_grid_daily.json) is refreshed separately: run pipeline/imerg_history_grid.py first (it needs Earthdata credentials), then run this script. Days the satellite record does not yet cover are not scored.",
+  "note": "Nothing to score yet: no archived forecast day is covered by the IMERG history. The archive starts 2026-10-21-1933 and IMERG covers through 2026-10-16. Refresh IMERG (see imerg_refresh) and run again."
+ },
+ "n_scored": 0,
+ "enough_data": false,
+ "totals": {
+  "n_scored": 0,
+  "enough_data": false,
+  "brier_ge_20mm": null,
+  "brier_clim_ge_20mm": null,
+  "skill_ge_20mm": null,
+  "brier_ge_40mm": null,
+  "brier_clim_ge_40mm": null,
+  "skill_ge_40mm": null,
+  "vs_imerg_ge_40mm": {
+   "hits": 0,
+   "misses": 0,
+   "false_alarms": 0
+  },
+  "vs_flood_reported_5km": {
+   "hits": 0,
+   "misses": 0,
+   "false_alarms": 0
+  }
+ },
+ "warnings_vs_flood_days_lead1": {
+  "flood_days_covered": 0,
+  "flood_days_flagged": 0,
+  "warning_cell_days": 0,
+  "warning_cell_days_without_flood_reported_within_5km": 0,
+  "false_alarm_share": null
+ },
+ "by_lead_day": [
+  {
+   "lead_day": 1,
+   "n_scored": 0,
+   "enough_data": false,
+   "brier_ge_20mm": null,
+   "brier_clim_ge_20mm": null,
+   "skill_ge_20mm": null,
+   "brier_ge_40mm": null,
+   "brier_clim_ge_40mm": null,
+   "skill_ge_40mm": null,
+   "vs_imerg_ge_40mm": {
+    "hits": 0,
+    "misses": 0,
+    "false_alarms": 0
+   },
+   "vs_flood_reported_5km": {
+    "hits": 0,
+    "misses": 0,
+    "false_alarms": 0
+   }
+  },
+  {
+   "lead_day": 2,
+   "n_scored": 0,
+   "enough_data": false,
+   "brier_ge_20mm": null,
+   "brier_clim_ge_20mm": null,
+   "skill_ge_20mm": null,
+   "brier_ge_40mm": null,
+   "brier_clim_ge_40mm": null,
+   "skill_ge_40mm": null,
+   "vs_imerg_ge_40mm": {
+    "hits": 0,
+    "misses": 0,
+    "false_alarms": 0
+   },
+   "vs_flood_reported_5km": {
+    "hits": 0,
+    "misses": 0,
+    "false_alarms": 0
+   }
+  },
+  {
+   "lead_day": 3,
+   "n_scored": 0,
+   "enough_data": false,
+   "brier_ge_20mm": null,
+   "brier_clim_ge_20mm": null,
+   "skill_ge_20mm": null,
+   "brier_ge_40mm": null,
+   "brier_clim_ge_40mm": null,
+   "skill_ge_40mm": null,
+   "vs_imerg_ge_40mm": {
+    "hits": 0,
+    "misses": 0,
+    "false_alarms": 0
+   },
+   "vs_flood_reported_5km": {
+    "hits": 0,
+    "misses": 0,
+    "false_alarms": 0
+   }
+  },
+  {
+   "lead_day": 4,
+   "n_scored": 0,
+   "enough_data": false,
+   "brier_ge_20mm": null,
+   "brier_clim_ge_20mm": null,
+   "skill_ge_20mm": null,
+   "brier_ge_40mm": null,
+   "brier_clim_ge_40mm": null,
+   "skill_ge_40mm": null,
+   "vs_imerg_ge_40mm": {
+    "hits": 0,
+    "misses": 0,
+    "false_alarms": 0
+   },
+   "vs_flood_reported_5km": {
+    "hits": 0,
+    "misses": 0,
+    "false_alarms": 0
+   }
+  },
+  {
+   "lead_day": 5,
+   "n_scored": 0,
+   "enough_data": false,
+   "brier_ge_20mm": null,
+   "brier_clim_ge_20mm": null,
+   "skill_ge_20mm": null,
+   "brier_ge_40mm": null,
+   "brier_clim_ge_40mm": null,
+   "skill_ge_40mm": null,
+   "vs_imerg_ge_40mm": {
+    "hits": 0,
+    "misses": 0,
+    "false_alarms": 0
+   },
+   "vs_flood_reported_5km": {
+    "hits": 0,
+    "misses": 0,
+    "false_alarms": 0
+   }
+  },
+  {
+   "lead_day": 6,
+   "n_scored": 0,
+   "enough_data": false,
+   "brier_ge_20mm": null,
+   "brier_clim_ge_20mm": null,
+   "skill_ge_20mm": null,
+   "brier_ge_40mm": null,
+   "brier_clim_ge_40mm": null,
+   "skill_ge_40mm": null,
+   "vs_imerg_ge_40mm": {
+    "hits": 0,
+    "misses": 0,
+    "false_alarms": 0
+   },
+   "vs_flood_reported_5km": {
+    "hits": 0,
+    "misses": 0,
+    "false_alarms": 0
+   }
+  },
+  {
+   "lead_day": 7,
+   "n_scored": 0,
+   "enough_data": false,
+   "brier_ge_20mm": null,
+   "brier_clim_ge_20mm": null,
+   "skill_ge_20mm": null,
+   "brier_ge_40mm": null,
+   "brier_clim_ge_40mm": null,
+   "skill_ge_40mm": null,
+   "vs_imerg_ge_40mm": {
+    "hits": 0,
+    "misses": 0,
+    "false_alarms": 0
+   },
+   "vs_flood_reported_5km": {
+    "hits": 0,
+    "misses": 0,
+    "false_alarms": 0
+   }
+  }
+ ]
+}

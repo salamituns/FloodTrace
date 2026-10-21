@@ -52,6 +52,7 @@ export interface FloodSpotDepth {
   metres: number
   url: string | null
   publisher: string | null
+  date?: string | null
   placed_by?: DepthPlacedBy
   sentence?: string
 }
@@ -64,7 +65,7 @@ export interface FloodSpot {
   dates: string[]
   count: number
   latest: string
-  reports: { url: string; publisher: string }[]
+  reports: { url: string; publisher: string; date?: string }[]
   depths: FloodSpotDepth[]
 }
 
@@ -261,15 +262,83 @@ export function scoreItem(query: string, item: SearchItem): number {
   return best
 }
 
+export const NEWS_LINKS_SHOWN = 4
+export const SEARCH_COLLAPSE_M = 600
+
+export interface NewsLink {
+  url: string
+  publisher: string
+  date?: string
+}
+
+/** One row per URL, newest date first. */
+export function uniqueNewsLinks(reports: NewsLink[]): NewsLink[] {
+  const byUrl = new Map<string, NewsLink>()
+  for (const r of reports) {
+    if (!r.url) continue
+    const prev = byUrl.get(r.url)
+    if (!prev || (r.date ?? '') > (prev.date ?? '')) byUrl.set(r.url, r)
+  }
+  return [...byUrl.values()].sort((a, b) => (b.date ?? '').localeCompare(a.date ?? ''))
+}
+
+export function newsLinkText(r: NewsLink): string {
+  return r.date ? `${r.publisher}, ${fmtOn(r.date)}` : r.publisher
+}
+
+function searchDetail(item: SearchItem): number {
+  return (item.alt?.length ?? 0) * 10 + (item.area ? 1 : 0) + item.name.length / 100
+}
+
+/** Same normalised name and kind within 600 m → keep the more detailed row.
+ *  300 m left both ends of a named bridge (Ojuelegba Road, 563 m) as two hits.
+ */
+export function collapseNearbySearchHits(
+  items: SearchItem[],
+  metres = SEARCH_COLLAPSE_M,
+): SearchItem[] {
+  const keep: SearchItem[] = []
+  for (const item of items) {
+    const hit = keep.findIndex(
+      (other) =>
+        other.kind === item.kind &&
+        fold(other.name) === fold(item.name) &&
+        haversineM(other.lon, other.lat, item.lon, item.lat) <= metres,
+    )
+    if (hit < 0) {
+      keep.push(item)
+      continue
+    }
+    const cur = keep[hit]
+    const winner = searchDetail(item) > searchDetail(cur) ? item : cur
+    const alts = [...(winner.alt ?? [])]
+    const seen = new Set([winner.name, ...alts])
+    for (const a of item.alt ?? []) {
+      if (!seen.has(a)) {
+        seen.add(a)
+        alts.push(a)
+      }
+    }
+    for (const a of cur.alt ?? []) {
+      if (!seen.has(a)) {
+        seen.add(a)
+        alts.push(a)
+      }
+    }
+    keep[hit] = alts.length ? { ...winner, alt: alts } : winner
+  }
+  return keep
+}
+
 export function searchPlaces(query: string, items: SearchItem[], limit = 8): SearchItem[] {
   const q = fold(query)
   if (q.length < 2) return []
-  return items
+  const ranked = items
     .map((item) => ({ item, score: scoreItem(query, item) }))
     .filter((x) => x.score < Infinity)
     .sort((a, b) => a.score - b.score || a.item.name.localeCompare(b.item.name) || (a.item.area ?? '').localeCompare(b.item.area ?? ''))
-    .slice(0, limit)
     .map((x) => x.item)
+  return collapseNearbySearchHits(ranked, SEARCH_COLLAPSE_M).slice(0, limit)
 }
 
 export function spotsWithin(spots: FloodSpot[], lon: number, lat: number, radiusM: number): { spot: FloodSpot; m: number }[] {

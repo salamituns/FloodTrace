@@ -17,6 +17,7 @@ import {
 	licenceFootnote,
 	mappedFloodId,
 	pct40,
+	pctChance,
 	whatToDo,
 	windowStartPhrase,
 	type ForecastDay,
@@ -76,7 +77,7 @@ check(
 );
 check(
 	comingUpHeadline([day({ date: '2026-10-21', level: 'none' })]) ===
-		'No heavy rain expected in the next 7 days.',
+		'No heavy rain in the forecast for the next 7 days.',
 	'quiet-week headline',
 );
 check(
@@ -116,6 +117,7 @@ check(
 );
 
 check(pct40(0.41) === '40 mm+: 41% chance', 'chance label');
+check(pctChance(0.02) === '2%', 'week-strip chance is the percent only');
 check(
 	analoguesLine(41, 7) ===
 		'Of 41 past days with similar rain here, 7 had floods reported within 5 km.',
@@ -124,7 +126,7 @@ check(
 
 check(windowStartPhrase(heavyThu) === '14:00 on Thursday', 'action window start');
 check(
-	whatToDo('none', null, []).join('|') === 'No action needed. Check again before the weekend.',
+	whatToDo('none', null, []).join('|') === "Nothing to do yet. Forecasts often miss Lagos downpours, so if heavy rain starts, move valuables off the floor and keep off flooded roads.",
 	'quiet what-to-do is one line',
 );
 const highDo = whatToDo('high', '14:00 on Thursday', ['Ikorodu Road', 'Fashoro Street']);
@@ -132,7 +134,8 @@ check(highDo[0] === 'Move valuables and documents off the floor before 14:00 on 
 check(highDo.some((s) => s.includes('Avoid Ikorodu Road and Fashoro Street during the window.')), 'high: roads');
 check(highDo.some((s) => s.includes("you can't see how deep it is or what is under it")), 'high: flood water');
 check(highDo.some((s) => s.includes('Check on neighbours who may need help.')), 'high: neighbours');
-check(highDo.some((s) => s.includes('767') && s.includes('112')), 'high: LASEMA lines from lagosstate.gov.ng');
+// No emergency numbers: none could be confirmed on an official Lagos State or LASEMA page.
+check(!highDo.some((s) => s.includes('767')), 'high: no unconfirmed emergency numbers');
 
 const impacts: ImpactsSummary = {
 	roads: [{ name: 'Ikorodu Road', lengthUnderWaterM: 400 }, { name: 'Fashoro Street', lengthUnderWaterM: 80 }],
@@ -141,7 +144,7 @@ const impacts: ImpactsSummary = {
 };
 check(
 	impactsLine(impacts) ===
-		'Roads under water last time: Ikorodu Road, Fashoro Street. Near a school: St Agnes. About 12 buildings stood in the water.',
+		'Roads in spots reported flooded nearby: Ikorodu Road, Fashoro Street. Near a school: St Agnes. About 12 mapped buildings sit inside those spots (their edges are rough).',
 	`impacts line: ${impactsLine(impacts)}`,
 );
 
@@ -164,19 +167,23 @@ const cityQuiet: Pick<ForecastFile, 'citywide' | 'meta'> = {
 const quiet = citywideHeadline(cityQuiet as ForecastFile, Date.parse('2026-10-21T20:00:00+00:00'));
 check(quiet.quiet, 'citywide quiet flag');
 check(
-	quiet.text === 'No heavy rain expected in Lagos in the next 7 days (forecast made Wednesday, 19:31).',
+	quiet.text === 'No heavy rain in the forecast for Lagos in the next 7 days (forecast made Wednesday, 19:31).',
 	`quiet citywide: ${quiet.text}`,
 );
 
+const foot = licenceFootnote({
+	sources: [
+		{ name: 'Open-Meteo Ensemble API, ECMWF IFS 0.25 deg ensemble', licence: 'CC BY 4.0 (attribution required); ECMWF IFS data (c) ECMWF', url: '', note: '' },
+		{ name: 'EOT20 global ocean tide model', licence: 'CC BY 4.0', url: '', note: '' },
+	],
+} as ForecastFile['meta']);
 check(
-	licenceFootnote({
-		sources: [
-			{ name: 'Open-Meteo Ensemble API, ECMWF IFS 0.25 deg ensemble', licence: 'CC BY 4.0 (attribution required); ECMWF IFS data (c) ECMWF', url: '', note: '' },
-			{ name: 'EOT20 global ocean tide model', licence: 'CC BY 4.0', url: '', note: '' },
-		],
-	} as ForecastFile['meta']).includes('CC BY 4.0'),
-	'footnote includes source licences',
+	foot.includes(
+		'ECMWF IFS © ECMWF, GFS © NOAA, GloFAS © Copernicus CEMS, all CC BY 4.0 via Open-Meteo; NASA IMERG open data; news reports compiled by FloodTrace.',
+	),
+	'footnote has one tidy licence line',
 );
+check(!foot.includes('attribution required'), 'no repeated CC BY 4.0 attribution clause');
 
 check(forecastUrl(false, '?forecast=fixture') === '/events/forecast/latest.json', 'fixture query is a no-op outside DEV');
 check(forecastUrl(true, '?forecast=fixture') === '/events/forecast/_fixture_storm.json', 'DEV loads the fixture');

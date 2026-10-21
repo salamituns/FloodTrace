@@ -1,0 +1,111 @@
+{
+ "meta": {
+  "built_by": "pipeline/hindcast.py",
+  "task": "42-forecast-scoring (docs/tasks/42-forecast-scoring.md), part B",
+  "generated_at": "2026-10-21T23:36:16+00:00",
+  "endpoint": "https://previous-runs-api.open-meteo.com/v1/forecast",
+  "model": "ecmwf_ifs025 \u2014 the ECMWF IFS 0.25 deg DETERMINISTIC run (one member), served by the Open-Meteo Previous Runs API, whose archive for this model starts January 2024",
+  "variables": "precipitation_previous_day1, precipitation_previous_day2, precipitation_previous_day3, precipitation_previous_day4, precipitation_previous_day5, precipitation_previous_day6, precipitation_previous_day7 (hourly mm, summed to Africa/Lagos calendar days)",
+  "period": {
+   "start": "2024-04-01",
+   "end": "2026-10-21",
+   "months": "April to November of every year the archive covers",
+   "years": [
+    2024,
+    2025,
+    2026
+   ]
+  },
+  "cells": "68 IMERG 0.1 deg cell centres, same as the live forecast",
+  "observations": "events/rain_history_grid_daily.json (NASA GPM IMERG daily totals per cell)",
+  "flood_days": "events/flood_days.json; a cell matches a flood day when a reported area lies within 5 km",
+  "cache": "pipeline/cache/hindcast/",
+  "licence": "CC BY 4.0 (Open-Meteo); ECMWF IFS data (c) ECMWF; NASA IMERG open data",
+  "caveat": "ROUGH GUIDE ONLY: this hindcast scores a single deterministic ECMWF IFS run per lead time, not the 51-member ensemble the live forecast uses. A single run is noisier than an ensemble median, and a storm placed one cell off counts as a miss. Treat these numbers as an early estimate until the live archive (events/forecast/scores.json, score_forecasts.py) has enough days of its own.",
+  "method": "For each day of April-November 2024-2026 covered by the archive and every cell, the day total forecast at lead times 1-7 days is compared with the IMERG observed total: hits, misses and false alarms at the 40 mm threshold. A reported flood day is counted as flagged when the forecast for its lead day reached the threshold in at least one cell within 5 km of a reported area. The false-alarm share is the fraction of forecast-40 mm cell-days with no flood reported within 5 km of that cell."
+ },
+ "period": {
+  "start": "2024-04-01",
+  "end": "2026-10-21"
+ },
+ "n_flood_days_total": 87,
+ "flood_days": {
+  "n_in_period": 19,
+  "n_with_forecast_data": 18,
+  "day1_ge40": 1,
+  "day1_ge20": 6,
+  "day3_ge40": 1,
+  "day3_ge20": 2
+ },
+ "warnings": {
+  "day1_cell_days": 110,
+  "day1_with_flood_reported_within_5km": 1,
+  "day1_without_flood_reported_within_5km": 109,
+  "day1_false_alarm_share": 0.991
+ },
+ "by_lead_day": [
+  {
+   "lead_day": 1,
+   "n_scored": 46716,
+   "hits": 29,
+   "misses": 1147,
+   "false_alarms": 81,
+   "n_warnings": 110,
+   "warnings_no_flood_nearby": 109
+  },
+  {
+   "lead_day": 2,
+   "n_scored": 46716,
+   "hits": 10,
+   "misses": 1166,
+   "false_alarms": 144,
+   "n_warnings": 154,
+   "warnings_no_flood_nearby": 154
+  },
+  {
+   "lead_day": 3,
+   "n_scored": 46716,
+   "hits": 54,
+   "misses": 1122,
+   "false_alarms": 198,
+   "n_warnings": 252,
+   "warnings_no_flood_nearby": 250
+  },
+  {
+   "lead_day": 4,
+   "n_scored": 46716,
+   "hits": 57,
+   "misses": 1119,
+   "false_alarms": 75,
+   "n_warnings": 132,
+   "warnings_no_flood_nearby": 130
+  },
+  {
+   "lead_day": 5,
+   "n_scored": 46308,
+   "hits": 63,
+   "misses": 1112,
+   "false_alarms": 69,
+   "n_warnings": 132,
+   "warnings_no_flood_nearby": 132
+  },
+  {
+   "lead_day": 6,
+   "n_scored": 46716,
+   "hits": 56,
+   "misses": 1120,
+   "false_alarms": 50,
+   "n_warnings": 106,
+   "warnings_no_flood_nearby": 106
+  },
+  {
+   "lead_day": 7,
+   "n_scored": 46308,
+   "hits": 24,
+   "misses": 1151,
+   "false_alarms": 100,
+   "n_warnings": 124,
+   "warnings_no_flood_nearby": 124
+  }
+ ]
+}

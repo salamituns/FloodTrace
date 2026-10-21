@@ -11,14 +11,28 @@ const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
 const index = JSON.parse(readFileSync(path.join(root, 'events/search_index.json'), 'utf8')) as SearchIndex
 const queries = ['Agungi', 'allen avenue', 'lekki phase 1', 'ojuelegba', 'Yaba bus stop', 'ikorodu road']
 
+let failed = 0
 for (const q of queries) {
-  const hits = searchPlaces(q, index.items, 3)
+  const hits = searchPlaces(q, index.items, 8)
   console.log(`\n${JSON.stringify(q)}`)
   if (!hits.length) {
     console.log('  (no hits)')
     continue
   }
-  hits.forEach((h, i) => {
+  hits.slice(0, 3).forEach((h, i) => {
     console.log(`  ${i + 1}. ${h.name} [${h.kind}] ${h.area ?? '—'}  ${h.lon.toFixed(4)},${h.lat.toFixed(4)}`)
   })
+  if (q === 'ojuelegba') {
+    const keys = hits.map((h) => `${h.kind}|${h.name.toLowerCase()}`)
+    const dup = [...new Set(keys.filter((k, i) => keys.indexOf(k) !== i))]
+    if (dup.length) {
+      failed += 1
+      console.error(`  duplicates: ${dup.join(', ')}`)
+    }
+  }
+}
+
+if (failed) {
+  console.error('\nojuelegba still has duplicate name+kind hits')
+  process.exit(1)
 }

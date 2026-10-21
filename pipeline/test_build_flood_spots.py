@@ -9,6 +9,7 @@ from build_flood_spots import (
     attribute_report_depths,
     extract_depth_phrases,
     name_in_sentence,
+    normalise_publisher,
     split_sentences,
 )
 
@@ -141,6 +142,52 @@ class AttributeReportDepthsTests(unittest.TestCase):
         placed, unplaced = attribute_report_depths(report, [])
         self.assertEqual(placed, [])
         self.assertEqual(unplaced[0]["reason"], "area_not_geocoded")
+
+    def test_longer_spot_name_does_not_match_a_shorter_phrase(self) -> None:
+        # "Ipaja" in the sentence is not "Iyana Ipaja".
+        report = {
+            "url": "https://punchng.com/heavy-rain-floods-lagos-roads-agencies-warn-of-more-risks/",
+            "publisher": "Punch",
+            "areas": ["Gbagada", "Ipaja", "Surulere", "Iyana Ipaja"],
+            "impacts": (
+                "Knee-deep flooding in parts of Gbagada, Ipaja and Surulere."
+            ),
+            "quote": "",
+        }
+        mentions = [
+            {"name": "Gbagada", "report_area": "Gbagada"},
+            {"name": "Ipaja", "report_area": "Ipaja"},
+            {"name": "Surulere", "report_area": "Surulere"},
+            {"name": "Iyana Ipaja", "report_area": "Ipaja"},
+        ]
+        placed, _unplaced = attribute_report_depths(report, mentions)
+        self.assertEqual([row["phrase"] for row in placed[0]], ["Knee-deep"])
+        self.assertEqual([row["phrase"] for row in placed[1]], ["Knee-deep"])
+        self.assertEqual([row["phrase"] for row in placed[2]], ["Knee-deep"])
+        self.assertEqual(placed[3], [])
+
+    def test_shorter_spot_name_may_match_a_longer_phrase(self) -> None:
+        report = {
+            "url": "https://example.test/iyana",
+            "publisher": "Punch",
+            "areas": ["Ipaja"],
+            "impacts": "Knee-deep flooding in Iyana Ipaja after the rain.",
+            "quote": "",
+        }
+        mentions = [{"name": "Ipaja", "report_area": "Ipaja"}]
+        placed, unplaced = attribute_report_depths(report, mentions)
+        self.assertEqual(unplaced, [])
+        self.assertEqual(placed[0][0]["phrase"], "Knee-deep")
+        self.assertEqual(placed[0][0]["placed_by"], "same_sentence")
+
+
+class PublisherNameTests(unittest.TestCase):
+    def test_one_name_per_outlet(self) -> None:
+        self.assertEqual(normalise_publisher("The Guardian Nigeria"), "Guardian NG")
+        self.assertEqual(normalise_publisher("Guardian NG"), "Guardian NG")
+        self.assertEqual(normalise_publisher("Channels Television"), "Channels TV")
+        self.assertEqual(normalise_publisher("Channels TV"), "Channels TV")
+        self.assertEqual(normalise_publisher("Punch"), "Punch")
 
 
 if __name__ == "__main__":

@@ -1,27 +1,20 @@
-/** 3D water (Task 40). Evidence water is primary; the rough model is a clearly
- *  labelled simulation that can never pass for a real flood: cooler, paler
- *  colours, a baked-in stipple, and a banner that says what it is.
- *
- *  Two kinds of water, never confused:
- *  - evidence water: what was reported (depth quotes, drawn as water) or seen (radar);
- *  - rough-model water: terrain plus rain, off by default, honest about its weakness.
+/** 3D water (Task 40). Evidence water only: what was reported (depth quotes,
+ *  drawn as water bodies) or seen (radar satellite). The terrain-only "rough
+ *  model" layer was dropped on 21 Oct 2026: it matched reported floods no
+ *  better than chance (events/rough_model/meta.json).
  */
 
 import { GeoJsonLayer, PathLayer, PolygonLayer, ScatterplotLayer } from '@deck.gl/layers';
 import type { Layer } from '@deck.gl/core';
-import { useEffect, useState } from 'react';
 import { KIND_LABEL, fmtDistance, fmtOn, ringPolygon, type FloodSpot } from '../lib/area';
 import {
   classifyRoads,
   discRadiusM,
-  loadRoughModelMeta,
   type FacilitiesFile,
   type RoadLine,
   type RoadSegment,
-  type RoughModelMeta,
   type WaterTest,
 } from '../lib/impacts';
-import { useStore } from '../state/store';
 
 /** Water surfaces are drawn this many times taller than reality so depths stay
  *  visible beside real-scale buildings; every depth number shown is the real one. */
@@ -239,38 +232,4 @@ export function waterImpactLayers(opts: {
     );
   }
   return out;
-}
-
-// ── the honesty banner ───────────────────────────────────────────────────
-
-/** While the rough model is on, it must say what it is and link to its own score. */
-export function Map3DBanner() {
-  const viewMode = useStore((s) => s.viewMode);
-  const on = useStore((s) => s.layers.waterModel.visible);
-  const scenario = useStore((s) => s.modelScenario);
-  const [meta, setMeta] = useState<RoughModelMeta | null>(null);
-  const [open, setOpen] = useState(false);
-  useEffect(() => {
-    if (viewMode === '3d' && on) loadRoughModelMeta().then(setMeta).catch(() => setMeta(null));
-  }, [viewMode, on]);
-  if (viewMode !== '3d' || !on) return null;
-  const v = meta?.validation[String(scenario)];
-  return (
-    <div className="map3d-banner" role="status">
-      <span>
-        <b>Rough model:</b> shows low ground where water could collect. It is not a measurement. In our test it matched
-        reported floods no better than chance.
-      </span>
-      <button type="button" className="map3d-banner__toggle" aria-expanded={open} onClick={() => setOpen((x) => !x)}>
-        {open ? 'Hide the numbers' : 'How well does it match real floods?'}
-      </button>
-      {open && (
-        <p className="map3d-banner__numbers">
-          {meta && v
-            ? `${scenario} mm scenario: ${v.spots_in_model_water} of ${v.n_spots_tested} reported flood spots fall inside the model's water; placing the spots at random would put about ${Math.max(0, Math.round(v.random_expected_hits))} there. Of the built-up cells the radar saw flooded on 3 Jul 2024, ${Math.round((v.radar_match_rate ?? 0) * 100)}% are model-wet.`
-            : 'Loading the validation numbers…'}
-        </p>
-      )}
-    </div>
-  );
 }

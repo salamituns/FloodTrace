@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-10-21T18:35:09Z",
+    "generated_at": "2026-10-21T23:31:41Z",
     "source": "events/flood_days.json",
     "cluster_m": 300.0,
     "near_identical_m": 50.0,
@@ -9,7 +9,7 @@
     "mentions_clustered": 576,
     "n_spots": 178,
     "n_clusters": 178,
-    "n_with_depth": 6,
+    "n_with_depth": 5,
     "n_depth_unplaced": 9,
     "depth_table_m": {
       "ankle-deep": 0.1,
@@ -116,207 +116,258 @@
       "reports": [
         {
           "url": "https://dailytrust.com/the-ocean-can-consume-us-yet-we-can-t-help-ourselves/",
-          "publisher": "Daily Trust"
+          "publisher": "Daily Trust",
+          "date": "2014-05-30"
         },
         {
           "url": "https://dailytrust.com/3-day-rain-causes-flood-in-lagos/",
-          "publisher": "Daily Trust"
+          "publisher": "Daily Trust",
+          "date": "2015-06-20"
         },
         {
           "url": "https://www.vanguardngr.com/2016/06/residents-groan-flooding-rain-persists-lagos/",
-          "publisher": "Vanguard"
+          "publisher": "Vanguard",
+          "date": "2016-06-21"
         },
         {
           "url": "https://guardian.ng/news/flood-takes-over-lekki-epe-expressway/",
-          "publisher": "Guardian NG"
+          "publisher": "Guardian NG",
+          "date": "2016-06-21"
         },
         {
           "url": "https://punchng.com/floods-windstorm-wreak-havoc-lagos-ogun-sokoto/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2016-08-28"
         },
         {
           "url": "https://punchng.com/flood-wreaks-havoc-in-nigerias-most-expensive-neighbourhoods/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2017-07-08"
         },
         {
           "url": "https://punchng.com/lagos-flood-residents-lament-loss-of-homes-property/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2017-07-08"
         },
         {
           "url": "https://www.channelstv.com/2017/07/08/lagosians-lament-as-flood-hits-lekki-victoria-island/",
-          "publisher": "Channels TV"
+          "publisher": "Channels TV",
+          "date": "2017-07-08"
         },
         {
           "url": "https://dailytrust.com/panic-as-flood-takes-over-lagos/",
-          "publisher": "Daily Trust"
+          "publisher": "Daily Trust",
+          "date": "2017-07-08"
         },
         {
           "url": "https://www.vanguardngr.com/2017/07/photos-flood-victoria-island-lekki/",
-          "publisher": "Vanguard"
+          "publisher": "Vanguard",
+          "date": "2017-07-08"
         },
         {
           "url": "https://www.vanguardngr.com/2017/07/flood-eko-disco-announces-power-cut-ikoyi-victoria-island/",
-          "publisher": "Vanguard"
+          "publisher": "Vanguard",
+          "date": "2017-07-08"
         },
         {
           "url": "https://guardian.ng/news/how-to-save-lagos-from-flood-disasters-others/",
-          "publisher": "Guardian NG"
+          "publisher": "Guardian NG",
+          "date": "2017-07-08"
         },
         {
           "url": "https://guardian.ng/news/were-pursuing-holistic-solution-to-lagos-flooding-says-ambode/",
-          "publisher": "Guardian NG"
+          "publisher": "Guardian NG",
+          "date": "2017-07-08"
         },
         {
           "url": "https://punchng.com/lasgll-tackle-flooding-says-ambode/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2017-07-08"
         },
         {
           "url": "https://dailytrust.com/nigerias-newest-flood-of-tears/",
-          "publisher": "Daily Trust"
+          "publisher": "Daily Trust",
+          "date": "2017-07-08"
         },
         {
           "url": "https://punchng.com/early-morning-rainfall-roads-homes-flooded-in-lagos/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2017-07-22"
         },
         {
           "url": "https://punchng.com/videos-floods-sack-lekki-road-as-lagos-is-drenched-by-rains/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2018-08-13"
         },
         {
           "url": "https://dailytrust.com/lagos-more-rains-more-pains/",
-          "publisher": "Daily Trust"
+          "publisher": "Daily Trust",
+          "date": "2019-07-01"
         },
         {
           "url": "https://punchng.com/downpour-gas-man-drowns-lekki-ikorodu-residents-landlords-flee/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2019-10-12"
         },
         {
           "url": "https://www.vanguardngr.com/2020/06/early-morning-downpour-in-lagos-leaves-roads-homes-flooded/",
-          "publisher": "Vanguard"
+          "publisher": "Vanguard",
+          "date": "2020-06-18"
         },
         {
           "url": "https://www.premiumtimesng.com/regional/ssouth-west/398304-lagos-residents-battle-flood-after-downpour.html",
-          "publisher": "Premium Times"
+          "publisher": "Premium Times",
+          "date": "2020-06-18"
         },
         {
           "url": "https://guardian.ng/news/flood-sweeps-four-year-old-girl-displaces-over-20-families-in-lagos/",
-          "publisher": "The Guardian Nigeria"
+          "publisher": "Guardian NG",
+          "date": "2020-06-18"
         },
         {
           "url": "https://www.bbc.com/pidgin/tori-53104678",
-          "publisher": "BBC Pidgin"
+          "publisher": "BBC Pidgin",
+          "date": "2020-06-18"
         },
         {
           "url": "https://punchng.com/lagos-rain-four-year-old-girl-swept-away-woman-dies-buildings-collapse/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2020-06-18"
         },
         {
           "url": "https://punchng.com/flood-fallen-trucks-cause-lagos-gridlock-commuters-stranded/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2021-07-16"
         },
         {
           "url": "https://nairametrics.com/2021/07/16/flood-hits-parts-of-lagos-ogun/",
-          "publisher": "Nairametrics"
+          "publisher": "Nairametrics",
+          "date": "2021-07-16"
         },
         {
           "url": "https://punchng.com/rainfall-lagos-residents-lament-flooding-transport-fare-hike/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2022-07-09"
         },
         {
           "url": "https://punchng.com/10-hour-rainfall-businesses-grounded-house-collapses-as-flood-overtakes-lagos/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2024-07-03"
         },
         {
           "url": "https://www.vanguardngr.com/2024/07/aftermath-of-heavy-rain-chaos-lamentations-as-flood-grounds-lagos/",
-          "publisher": "Vanguard"
+          "publisher": "Vanguard",
+          "date": "2024-07-03"
         },
         {
           "url": "https://punchng.com/10-hour-rainfall-lekki-ikoyi-residents-flee-luxury-mansions-as-flood-ravages-homes-streets/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2024-07-03"
         },
         {
           "url": "https://www.thisdaylive.com/2024/07/03/torrential-rain-causes-widespread-flooding-in-lagos/",
-          "publisher": "THISDAY"
+          "publisher": "THISDAY",
+          "date": "2024-07-03"
         },
         {
           "url": "https://www.channelstv.com/2025/08/04/lagos-communities-flooded-vehicles-submerged-after-marathon-rainfall/",
-          "publisher": "Channels Television"
+          "publisher": "Channels TV",
+          "date": "2025-08-04"
         },
         {
           "url": "https://dailytrust.com/residents-motorists-stranded-as-flood-hits-lagos/",
-          "publisher": "Daily Trust"
+          "publisher": "Daily Trust",
+          "date": "2025-08-04"
         },
         {
           "url": "https://nairametrics.com/2025/08/07/lagos-state-govt-reassures-residents-over-flash-floods-says-infrastructure-in-place-to-manage-flooding/",
-          "publisher": "Nairametrics"
+          "publisher": "Nairametrics",
+          "date": "2025-08-04"
         },
         {
           "url": "https://www.tvcnews.tv/lagos-warns-lekki-ikorodu-other-residents-to-relocate-over-flood-risk/",
-          "publisher": "TVC"
+          "publisher": "TVC",
+          "date": "2025-08-04"
         },
         {
           "url": "https://www.bbc.com/pidgin/articles/clyrq7qzzjxo",
-          "publisher": "BBC Pidgin"
+          "publisher": "BBC Pidgin",
+          "date": "2025-08-04"
         },
         {
           "url": "https://www.vanguardngr.com/2025/09/gridlock-as-flash-floods-take-over-lagos-roads-paralyse-business-activities/",
-          "publisher": "Vanguard"
+          "publisher": "Vanguard",
+          "date": "2025-09-09"
         },
         {
           "url": "https://punchng.com/motorists-residents-lament-as-flood-submerges-lagos-roads/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2025-09-16"
         },
         {
           "url": "https://www.tvcnews.tv/lagos-blames-illegal-structures-waste-disposal-for-lekki-flooding/",
-          "publisher": "TVC"
+          "publisher": "TVC",
+          "date": "2025-09-23"
         },
         {
           "url": "https://www.channelstv.com/2025/09/27/flood-ikota-lekki-residents-urge-govt-to-act-against-illegal-structures-on-waterways/",
-          "publisher": "Channels Television"
+          "publisher": "Channels TV",
+          "date": "2025-09-23"
         },
         {
           "url": "https://punchng.com/motorists-stranded-as-flood-overruns-lagos-communities/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2025-09-24"
         },
         {
           "url": "https://punchng.com/rains-trigger-flooding-traffic-gridlock-in-lagos/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2026-02-10"
         },
         {
           "url": "https://www.tvcnews.tv/lagos-govt-reacts-as-heavy-rain-triggers-flash-flooding-traffic-gridlock/",
-          "publisher": "TVC"
+          "publisher": "TVC",
+          "date": "2026-02-10"
         },
         {
           "url": "https://guardian.ng/news/nigeria/metro/lagos-residents-lament-as-flooding-cripples-transport-businesses/",
-          "publisher": "Guardian NG"
+          "publisher": "Guardian NG",
+          "date": "2026-06-28"
         },
         {
           "url": "https://www.vanguardngr.com/2026/06/motorists-commuters-stranded-as-floods-submerge-lagos-roads/",
-          "publisher": "Vanguard"
+          "publisher": "Vanguard",
+          "date": "2026-06-28"
         },
         {
           "url": "https://punchng.com/lagos-residents-count-losses-after-flooding-nightmare/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2026-06-28"
         },
         {
           "url": "https://punchng.com/floodwaters-submerge-homes-disrupt-power-supply-in-lagos/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2026-06-30"
         },
         {
           "url": "https://www.channelstv.com/2026/06/30/lagos-govt-sues-for-calm-following-persistent-rainfalls-flash-floods/",
-          "publisher": "Channels Television"
+          "publisher": "Channels TV",
+          "date": "2026-06-30"
         },
         {
           "url": "https://guardian.ng/news/nigeria/metro/heavy-rain-triggers-flooding-across-lagos-strands-commuters-businesses/",
-          "publisher": "Guardian NG"
+          "publisher": "Guardian NG",
+          "date": "2026-06-30"
         },
         {
           "url": "https://www.vanguardngr.com/2026/07/residents-count-losses-as-torrential-rain-floods-lagos-communities/",
-          "publisher": "Vanguard"
+          "publisher": "Vanguard",
+          "date": "2026-07-10"
         },
         {
           "url": "https://punchng.com/downpour-cripples-lagos-flood-submerges-cars-strands-motorists/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2026-07-13"
         }
       ],
       "depths": []
@@ -354,163 +405,203 @@
       "reports": [
         {
           "url": "https://guardian.ng/news/fear-of-flood-heightens-as-rains-begin/",
-          "publisher": "Guardian NG"
+          "publisher": "Guardian NG",
+          "date": "2015-03-11"
         },
         {
           "url": "https://dailytrust.com/3-day-rain-causes-flood-in-lagos/",
-          "publisher": "Daily Trust"
+          "publisher": "Daily Trust",
+          "date": "2015-06-20"
         },
         {
           "url": "https://punchng.com/incessant-rain-wreaks-havoc-lagos-ogun/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2016-09-06"
         },
         {
           "url": "https://www.vanguardngr.com/2016/09/mudslide-kills-newly-wed-teenager-two-others-rescued-heavy-downpour-lagos/",
-          "publisher": "Vanguard"
+          "publisher": "Vanguard",
+          "date": "2016-09-06"
         },
         {
           "url": "https://punchng.com/aboru-residents-groan-as-flood-wreaks-havoc-across-lagos/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2018-10-29"
         },
         {
           "url": "https://punchng.com/rain-wreaks-havoc-in-lagos-ogun-destroys-buildings-others/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2019-05-20"
         },
         {
           "url": "https://guardian.ng/news/how-lagos-downpour-wreaked-havoc-gridlock/",
-          "publisher": "The Guardian Nigeria"
+          "publisher": "Guardian NG",
+          "date": "2019-05-20"
         },
         {
           "url": "https://www.vanguardngr.com/2019/07/photos-lagos-flooded/",
-          "publisher": "Vanguard"
+          "publisher": "Vanguard",
+          "date": "2019-07-01"
         },
         {
           "url": "https://dailytrust.com/lagos-more-rains-more-pains/",
-          "publisher": "Daily Trust"
+          "publisher": "Daily Trust",
+          "date": "2019-07-01"
         },
         {
           "url": "https://dailytrust.com/flood-refuse-potholes-take-over-agege-communities-photos/",
-          "publisher": "Daily Trust"
+          "publisher": "Daily Trust",
+          "date": "2019-09-19"
         },
         {
           "url": "https://guardian.ng/news/flood-overruns-lagos-community-traps-pupils-in-school/",
-          "publisher": "The Guardian Nigeria"
+          "publisher": "Guardian NG",
+          "date": "2019-10-11"
         },
         {
           "url": "https://punchng.com/downpour-gas-man-drowns-lekki-ikorodu-residents-landlords-flee/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2019-10-12"
         },
         {
           "url": "https://www.vanguardngr.com/2019/10/flood-sacks-lagos-ogun-border-residents-after-heavy-downpour/",
-          "publisher": "Vanguard"
+          "publisher": "Vanguard",
+          "date": "2019-10-20"
         },
         {
           "url": "https://punchng.com/flood-sweeps-away-four-year-old-girl-in-lagos/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2020-06-18"
         },
         {
           "url": "https://www.vanguardngr.com/2020/06/early-morning-downpour-in-lagos-leaves-roads-homes-flooded/",
-          "publisher": "Vanguard"
+          "publisher": "Vanguard",
+          "date": "2020-06-18"
         },
         {
           "url": "https://www.premiumtimesng.com/regional/ssouth-west/398304-lagos-residents-battle-flood-after-downpour.html",
-          "publisher": "Premium Times"
+          "publisher": "Premium Times",
+          "date": "2020-06-18"
         },
         {
           "url": "https://www.bbc.com/pidgin/tori-53104678",
-          "publisher": "BBC Pidgin"
+          "publisher": "BBC Pidgin",
+          "date": "2020-06-18"
         },
         {
           "url": "https://punchng.com/lagos-rain-four-year-old-girl-swept-away-woman-dies-buildings-collapse/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2020-06-18"
         },
         {
           "url": "https://dailytrust.com/flood-sweeps-away-4-year-old-girl-in-lagos/",
-          "publisher": "Daily Trust"
+          "publisher": "Daily Trust",
+          "date": "2020-06-18"
         },
         {
           "url": "https://guardian.ng/news/flood-sweeps-four-year-old-girl-displaces-over-20-families-in-lagos/",
-          "publisher": "The Guardian Nigeria"
+          "publisher": "Guardian NG",
+          "date": "2020-06-18"
         },
         {
           "url": "https://nairametrics.com/2021/07/16/flood-hits-parts-of-lagos-ogun/",
-          "publisher": "Nairametrics"
+          "publisher": "Nairametrics",
+          "date": "2021-07-16"
         },
         {
           "url": "https://www.vanguardngr.com/2022/07/rainstorms-flood-rages-in-lagos-as-residents-get-fresh-danger-alert/",
-          "publisher": "Vanguard"
+          "publisher": "Vanguard",
+          "date": "2022-07-08"
         },
         {
           "url": "https://www.vanguardngr.com/2022/07/how-flood-swept-3-siblings-4-others-in-lagos-ogun-nema/",
-          "publisher": "Vanguard"
+          "publisher": "Vanguard",
+          "date": "2022-07-08"
         },
         {
           "url": "https://punchng.com/lagos-flood-killed-three-siblings-four-adults-nema/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2022-07-08"
         },
         {
           "url": "https://guardian.ng/news/heavy-rains-wreak-havoc-sweep-vehicles-occupants-into-drainage/",
-          "publisher": "The Guardian Nigeria"
+          "publisher": "Guardian NG",
+          "date": "2022-07-09"
         },
         {
           "url": "https://guardian.ng/news/emergency-responders-rescue-three-persons-from-lagos-flood/",
-          "publisher": "The Guardian Nigeria"
+          "publisher": "Guardian NG",
+          "date": "2022-07-09"
         },
         {
           "url": "https://punchng.com/rainfall-lagos-residents-lament-flooding-transport-fare-hike/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2022-07-09"
         },
         {
           "url": "https://www.channelstv.com/2022/09/12/gridlock-outcry-as-floods-hit-lagos-kill-two/",
-          "publisher": "Channels Television"
+          "publisher": "Channels TV",
+          "date": "2022-09-12"
         },
         {
           "url": "https://www.vanguardngr.com/2023/09/downpour-lagos-postpones-3rd-mainland-bridge-repairs-floods-sack-communities-motorists-stranded/",
-          "publisher": "Vanguard"
+          "publisher": "Vanguard",
+          "date": "2023-09-16"
         },
         {
           "url": "https://dailytrust.com/flood-submerges-houses-destroys-property-in-lagos/",
-          "publisher": "Daily Trust"
+          "publisher": "Daily Trust",
+          "date": "2023-09-16"
         },
         {
           "url": "https://www.vanguardngr.com/2023/09/photos-cyclist-drowns-200-displaced-as-downpour-wreaks-havoc-on-lagos-communities/",
-          "publisher": "Vanguard"
+          "publisher": "Vanguard",
+          "date": "2023-09-16"
         },
         {
           "url": "https://www.vanguardngr.com/2023/09/floods-wreak-havoc-in-lagos-delta-anambra-sweep-away-motorcyclist/",
-          "publisher": "Vanguard"
+          "publisher": "Vanguard",
+          "date": "2023-09-16"
         },
         {
           "url": "https://punchng.com/10-hour-rainfall-businesses-grounded-house-collapses-as-flood-overtakes-lagos/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2024-07-03"
         },
         {
           "url": "https://www.vanguardngr.com/2024/07/aftermath-of-heavy-rain-chaos-lamentations-as-flood-grounds-lagos/",
-          "publisher": "Vanguard"
+          "publisher": "Vanguard",
+          "date": "2024-07-03"
         },
         {
           "url": "https://www.channelstv.com/2025/08/04/lagos-communities-flooded-vehicles-submerged-after-marathon-rainfall/",
-          "publisher": "Channels Television"
+          "publisher": "Channels TV",
+          "date": "2025-08-04"
         },
         {
           "url": "https://dailytrust.com/residents-motorists-stranded-as-flood-hits-lagos/",
-          "publisher": "Daily Trust"
+          "publisher": "Daily Trust",
+          "date": "2025-08-04"
         },
         {
           "url": "https://www.vanguardngr.com/2025/09/gridlock-as-flash-floods-take-over-lagos-roads-paralyse-business-activities/",
-          "publisher": "Vanguard"
+          "publisher": "Vanguard",
+          "date": "2025-09-09"
         },
         {
           "url": "https://punchng.com/motorists-residents-lament-as-flood-submerges-lagos-roads/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2025-09-16"
         },
         {
           "url": "https://www.vanguardngr.com/2026/06/motorists-commuters-stranded-as-floods-submerge-lagos-roads/",
-          "publisher": "Vanguard"
+          "publisher": "Vanguard",
+          "date": "2026-06-28"
         },
         {
           "url": "https://punchng.com/lagos-residents-count-losses-after-flooding-nightmare/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2026-06-28"
         }
       ],
       "depths": []
@@ -539,83 +630,103 @@
       "reports": [
         {
           "url": "https://www.vanguardngr.com/2014/04/heavy-downpour-floods-lagos/",
-          "publisher": "Vanguard"
+          "publisher": "Vanguard",
+          "date": "2014-04-20"
         },
         {
           "url": "https://www.vanguardngr.com/2017/09/residents-groan-heavy-flooding-lagos-abeokuta-expressway/",
-          "publisher": "Vanguard"
+          "publisher": "Vanguard",
+          "date": "2017-09-11"
         },
         {
           "url": "https://punchng.com/aboru-residents-groan-as-flood-wreaks-havoc-across-lagos/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2018-10-29"
         },
         {
           "url": "https://guardian.ng/news/flood-sweeps-11-year-old-boy-rescuer-to-death-destroys-property-in-lagos/",
-          "publisher": "The Guardian Nigeria"
+          "publisher": "Guardian NG",
+          "date": "2019-10-12"
         },
         {
           "url": "https://www.vanguardngr.com/2019/10/tragedy-as-flood-sweeps-two-destroys-property-in-lagos/",
-          "publisher": "Vanguard"
+          "publisher": "Vanguard",
+          "date": "2019-10-12"
         },
         {
           "url": "https://guardian.ng/news/residents-seek-action-as-flood-sacks-lagos-communities/",
-          "publisher": "The Guardian Nigeria"
+          "publisher": "Guardian NG",
+          "date": "2020-07-04"
         },
         {
           "url": "https://punchng.com/lagos-flood-killed-three-siblings-four-adults-nema/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2022-07-08"
         },
         {
           "url": "https://www.channelstv.com/2022/07/13/lagos-flood-killed-three-siblings-four-adults-nema/",
-          "publisher": "Channels Television"
+          "publisher": "Channels TV",
+          "date": "2022-07-08"
         },
         {
           "url": "https://www.vanguardngr.com/2022/07/how-flood-swept-3-siblings-4-others-in-lagos-ogun-nema/",
-          "publisher": "Vanguard"
+          "publisher": "Vanguard",
+          "date": "2022-07-08"
         },
         {
           "url": "https://www.channelstv.com/2022/09/12/gridlock-outcry-as-floods-hit-lagos-kill-two/",
-          "publisher": "Channels Television"
+          "publisher": "Channels TV",
+          "date": "2022-09-12"
         },
         {
           "url": "https://punchng.com/lagos-flooding-rescuers-recover-two-corpses-save-nine/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2022-09-12"
         },
         {
           "url": "https://www.vanguardngr.com/2023/09/downpour-lagos-postpones-3rd-mainland-bridge-repairs-floods-sack-communities-motorists-stranded/",
-          "publisher": "Vanguard"
+          "publisher": "Vanguard",
+          "date": "2023-09-16"
         },
         {
           "url": "https://www.vanguardngr.com/2023/09/photos-cyclist-drowns-200-displaced-as-downpour-wreaks-havoc-on-lagos-communities/",
-          "publisher": "Vanguard"
+          "publisher": "Vanguard",
+          "date": "2023-09-16"
         },
         {
           "url": "https://www.vanguardngr.com/2023/09/floods-wreak-havoc-in-lagos-delta-anambra-sweep-away-motorcyclist/",
-          "publisher": "Vanguard"
+          "publisher": "Vanguard",
+          "date": "2023-09-16"
         },
         {
           "url": "https://www.vanguardngr.com/2024/02/photos-151-houses-7-communities-submerged-in-lagos-flood/",
-          "publisher": "Vanguard"
+          "publisher": "Vanguard",
+          "date": "2024-02-20"
         },
         {
           "url": "https://www.channelstv.com/2025/08/04/lagos-communities-flooded-vehicles-submerged-after-marathon-rainfall/",
-          "publisher": "Channels Television"
+          "publisher": "Channels TV",
+          "date": "2025-08-04"
         },
         {
           "url": "https://dailytrust.com/residents-motorists-stranded-as-flood-hits-lagos/",
-          "publisher": "Daily Trust"
+          "publisher": "Daily Trust",
+          "date": "2025-08-04"
         },
         {
           "url": "https://www.vanguardngr.com/2025/09/gridlock-as-flash-floods-take-over-lagos-roads-paralyse-business-activities/",
-          "publisher": "Vanguard"
+          "publisher": "Vanguard",
+          "date": "2025-09-09"
         },
         {
           "url": "https://www.vanguardngr.com/2026/06/motorists-commuters-stranded-as-floods-submerge-lagos-roads/",
-          "publisher": "Vanguard"
+          "publisher": "Vanguard",
+          "date": "2026-06-28"
         },
         {
           "url": "https://punchng.com/lagos-residents-count-losses-after-flooding-nightmare/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2026-06-28"
         }
       ],
       "depths": []
@@ -643,75 +754,93 @@
       "reports": [
         {
           "url": "https://www.vanguardngr.com/2016/06/residents-groan-flooding-rain-persists-lagos/",
-          "publisher": "Vanguard"
+          "publisher": "Vanguard",
+          "date": "2016-06-21"
         },
         {
           "url": "https://www.vanguardngr.com/2016/08/photos-flood-lagos/",
-          "publisher": "Vanguard"
+          "publisher": "Vanguard",
+          "date": "2016-08-28"
         },
         {
           "url": "https://www.vanguardngr.com/2017/09/residents-groan-heavy-flooding-lagos-abeokuta-expressway/",
-          "publisher": "Vanguard"
+          "publisher": "Vanguard",
+          "date": "2017-09-11"
         },
         {
           "url": "https://guardian.ng/news/how-lagos-downpour-wreaked-havoc-gridlock/",
-          "publisher": "The Guardian Nigeria"
+          "publisher": "Guardian NG",
+          "date": "2019-05-20"
         },
         {
           "url": "https://nairametrics.com/2021/07/16/flood-hits-parts-of-lagos-ogun/",
-          "publisher": "Nairametrics"
+          "publisher": "Nairametrics",
+          "date": "2021-07-16"
         },
         {
           "url": "https://guardian.ng/news/okota-residents-commuters-stranded-as-flood-takes-over-roads/",
-          "publisher": "The Guardian Nigeria"
+          "publisher": "Guardian NG",
+          "date": "2022-09-26"
         },
         {
           "url": "https://www.channelstv.com/2024/07/03/commuters-stranded-as-heavy-downpour-floods-lagos-roads/",
-          "publisher": "Channels Television"
+          "publisher": "Channels TV",
+          "date": "2024-07-03"
         },
         {
           "url": "https://www.vanguardngr.com/2024/07/aftermath-of-heavy-rain-chaos-lamentations-as-flood-grounds-lagos/",
-          "publisher": "Vanguard"
+          "publisher": "Vanguard",
+          "date": "2024-07-03"
         },
         {
           "url": "https://www.thisdaylive.com/2024/07/03/torrential-rain-causes-widespread-flooding-in-lagos/",
-          "publisher": "THISDAY"
+          "publisher": "THISDAY",
+          "date": "2024-07-03"
         },
         {
           "url": "https://dailytrust.com/residents-motorists-stranded-as-flood-hits-lagos/",
-          "publisher": "Daily Trust"
+          "publisher": "Daily Trust",
+          "date": "2025-08-04"
         },
         {
           "url": "https://www.vanguardngr.com/2025/09/gridlock-as-flash-floods-take-over-lagos-roads-paralyse-business-activities/",
-          "publisher": "Vanguard"
+          "publisher": "Vanguard",
+          "date": "2025-09-09"
         },
         {
           "url": "https://www.premiumtimesng.com/regional/ssouth-west/891405-heavy-rainfall-floods-lagos-communities-disrupts-airport-operations.html",
-          "publisher": "Premium Times"
+          "publisher": "Premium Times",
+          "date": "2026-06-28"
         },
         {
           "url": "https://guardian.ng/news/nigeria/metro/lagos-residents-lament-as-flooding-cripples-transport-businesses/",
-          "publisher": "Guardian NG"
+          "publisher": "Guardian NG",
+          "date": "2026-06-28"
         },
         {
           "url": "https://punchng.com/heavy-rain-floods-lagos-roads-agencies-warn-of-more-risks/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2026-06-28"
         },
         {
           "url": "https://www.vanguardngr.com/2026/06/motorists-commuters-stranded-as-floods-submerge-lagos-roads/",
-          "publisher": "Vanguard"
+          "publisher": "Vanguard",
+          "date": "2026-06-28"
         },
         {
           "url": "https://www.premiumtimesng.com/regional/ssouth-west/891467-lagos-flood-floodwaters-recede-in-oshodi-but-shops-remain-shut.html",
-          "publisher": "Premium Times"
+          "publisher": "Premium Times",
+          "date": "2026-06-28"
         },
         {
           "url": "https://punchng.com/lagos-residents-count-losses-after-flooding-nightmare/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2026-06-28"
         },
         {
           "url": "https://nairametrics.com/2026/07/05/why-kunsela-ologolo-gbagada-and-other-parts-of-lagos-keep-flooding/",
-          "publisher": "Nairametrics"
+          "publisher": "Nairametrics",
+          "date": "2026-06-30"
         }
       ],
       "depths": []
@@ -738,63 +867,78 @@
       "reports": [
         {
           "url": "https://www.vanguardngr.com/2017/09/residents-groan-heavy-flooding-lagos-abeokuta-expressway/",
-          "publisher": "Vanguard"
+          "publisher": "Vanguard",
+          "date": "2017-09-11"
         },
         {
           "url": "https://guardian.ng/news/disease-outbreak-looms-as-floods-spread/",
-          "publisher": "Guardian NG"
+          "publisher": "Guardian NG",
+          "date": "2018-09-18"
         },
         {
           "url": "https://www.channelstv.com/2019/05/20/floods-hit-parts-of-lagos-after-heavy-rains/",
-          "publisher": "Channels Television"
+          "publisher": "Channels TV",
+          "date": "2019-05-20"
         },
         {
           "url": "https://guardian.ng/news/how-lagos-downpour-wreaked-havoc-gridlock/",
-          "publisher": "The Guardian Nigeria"
+          "publisher": "Guardian NG",
+          "date": "2019-05-20"
         },
         {
           "url": "https://www.vanguardngr.com/2019/10/flood-sacks-lagos-ogun-border-residents-after-heavy-downpour/",
-          "publisher": "Vanguard"
+          "publisher": "Vanguard",
+          "date": "2019-10-20"
         },
         {
           "url": "https://punchng.com/flood-fallen-trucks-cause-lagos-gridlock-commuters-stranded/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2021-07-16"
         },
         {
           "url": "https://www.channelstv.com/2021/07/16/vehicles-submerged-on-lagos-island-amid-heavy-downpour/",
-          "publisher": "Channels TV"
+          "publisher": "Channels TV",
+          "date": "2021-07-16"
         },
         {
           "url": "https://www.channelstv.com/2021/07/17/commuters-stranded-cars-submerged-in-lagos-after-heavy-downpour/",
-          "publisher": "Channels TV"
+          "publisher": "Channels TV",
+          "date": "2021-07-16"
         },
         {
           "url": "https://nairametrics.com/2021/07/16/flood-hits-parts-of-lagos-ogun/",
-          "publisher": "Nairametrics"
+          "publisher": "Nairametrics",
+          "date": "2021-07-16"
         },
         {
           "url": "https://dailytrust.com/why-lagos-was-flooded-nimet/",
-          "publisher": "Daily Trust"
+          "publisher": "Daily Trust",
+          "date": "2021-07-16"
         },
         {
           "url": "https://www.channelstv.com/2022/09/12/gridlock-outcry-as-floods-hit-lagos-kill-two/",
-          "publisher": "Channels Television"
+          "publisher": "Channels TV",
+          "date": "2022-09-12"
         },
         {
           "url": "https://punchng.com/10-hour-rainfall-businesses-grounded-house-collapses-as-flood-overtakes-lagos/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2024-07-03"
         },
         {
           "url": "https://punchng.com/video-govt-deploys-pumps-to-address-flooding-in-lagos-island-communities/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2025-04-10"
         },
         {
           "url": "https://www.vanguardngr.com/2025/09/gridlock-as-flash-floods-take-over-lagos-roads-paralyse-business-activities/",
-          "publisher": "Vanguard"
+          "publisher": "Vanguard",
+          "date": "2025-09-09"
         },
         {
           "url": "https://www.premiumtimesng.com/news/top-news/823455-lagos-govt-appeals-for-calm-as-heavy-floods-submerge-streets.html",
-          "publisher": "Premium Times"
+          "publisher": "Premium Times",
+          "date": "2025-09-24"
         }
       ],
       "depths": []
@@ -821,67 +965,83 @@
       "reports": [
         {
           "url": "https://www.vanguardngr.com/2014/04/heavy-downpour-floods-lagos/",
-          "publisher": "Vanguard"
+          "publisher": "Vanguard",
+          "date": "2014-04-20"
         },
         {
           "url": "https://punchng.com/early-morning-rainfall-roads-homes-flooded-in-lagos/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2017-07-22"
         },
         {
           "url": "https://www.channelstv.com/2018/10/10/flood-traffic-hit-lagos-after-early-morning-downpour/",
-          "publisher": "Channels TV"
+          "publisher": "Channels TV",
+          "date": "2018-10-10"
         },
         {
           "url": "https://guardian.ng/news/how-lagos-downpour-wreaked-havoc-gridlock/",
-          "publisher": "The Guardian Nigeria"
+          "publisher": "Guardian NG",
+          "date": "2019-05-20"
         },
         {
           "url": "https://punchng.com/flood-sweeps-away-girl-in-lagos/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2020-06-22"
         },
         {
           "url": "https://punchng.com/body-of-lagos-teenager-swept-away-by-flood-recovered/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2020-06-22"
         },
         {
           "url": "https://dailytrust.com/body-of-teenage-girl-swept-away-by-flood-found-buried/",
-          "publisher": "Daily Trust"
+          "publisher": "Daily Trust",
+          "date": "2020-06-22"
         },
         {
           "url": "https://punchng.com/rain-pounds-lagos-houses-roads-flooded-property-destroyed/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2022-06-18"
         },
         {
           "url": "https://www.vanguardngr.com/2023/04/flood-takes-over-npc-nysc-premises-in-lagos/",
-          "publisher": "Vanguard"
+          "publisher": "Vanguard",
+          "date": "2023-04-27"
         },
         {
           "url": "https://www.channelstv.com/2025/08/04/lagos-communities-flooded-vehicles-submerged-after-marathon-rainfall/",
-          "publisher": "Channels Television"
+          "publisher": "Channels TV",
+          "date": "2025-08-04"
         },
         {
           "url": "https://dailytrust.com/residents-motorists-stranded-as-flood-hits-lagos/",
-          "publisher": "Daily Trust"
+          "publisher": "Daily Trust",
+          "date": "2025-08-04"
         },
         {
           "url": "https://www.premiumtimesng.com/regional/ssouth-west/891405-heavy-rainfall-floods-lagos-communities-disrupts-airport-operations.html",
-          "publisher": "Premium Times"
+          "publisher": "Premium Times",
+          "date": "2026-06-28"
         },
         {
           "url": "https://guardian.ng/news/nigeria/metro/lagos-residents-lament-as-flooding-cripples-transport-businesses/",
-          "publisher": "Guardian NG"
+          "publisher": "Guardian NG",
+          "date": "2026-06-28"
         },
         {
           "url": "https://punchng.com/heavy-rain-floods-lagos-roads-agencies-warn-of-more-risks/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2026-06-28"
         },
         {
           "url": "https://www.premiumtimesng.com/regional/ssouth-west/891467-lagos-flood-floodwaters-recede-in-oshodi-but-shops-remain-shut.html",
-          "publisher": "Premium Times"
+          "publisher": "Premium Times",
+          "date": "2026-06-28"
         },
         {
           "url": "https://punchng.com/downpour-cripples-lagos-flood-submerges-cars-strands-motorists/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2026-07-13"
         }
       ],
       "depths": [
@@ -890,6 +1050,7 @@
           "metres": 0.45,
           "url": "https://punchng.com/heavy-rain-floods-lagos-roads-agencies-warn-of-more-risks/",
           "publisher": "Punch",
+          "date": "2026-06-28",
           "placed_by": "same_sentence",
           "sentence": "Knee-deep flooding in parts of Gbagada, Ipaja and Surulere."
         }
@@ -916,47 +1077,58 @@
       "reports": [
         {
           "url": "https://www.vanguardngr.com/2014/04/heavy-downpour-floods-lagos/",
-          "publisher": "Vanguard"
+          "publisher": "Vanguard",
+          "date": "2014-04-20"
         },
         {
           "url": "https://guardian.ng/sunday-magazine/cityfile/residents-want-lagos-govts-intervention-on-flooding/",
-          "publisher": "Guardian NG"
+          "publisher": "Guardian NG",
+          "date": "2015-07-18"
         },
         {
           "url": "https://dailytrust.com/lagos-community-paralysed-by-flood-resorts-to-canoes/",
-          "publisher": "Daily Trust"
+          "publisher": "Daily Trust",
+          "date": "2016-09-17"
         },
         {
           "url": "https://guardian.ng/news/how-lagos-downpour-wreaked-havoc-gridlock/",
-          "publisher": "The Guardian Nigeria"
+          "publisher": "Guardian NG",
+          "date": "2019-05-20"
         },
         {
           "url": "https://punchng.com/60-landlords-desert-houses-as-flood-overwhelms-ogun-community/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2021-09-14"
         },
         {
           "url": "https://www.vanguardngr.com/2021/10/looming-floods-lagos-residents-say-nowhere-to-go/",
-          "publisher": "Vanguard"
+          "publisher": "Vanguard",
+          "date": "2021-09-26"
         },
         {
           "url": "https://dailytrust.com/flood-submerges-houses-destroys-property-in-lagos/",
-          "publisher": "Daily Trust"
+          "publisher": "Daily Trust",
+          "date": "2023-09-16"
         },
         {
           "url": "https://www.channelstv.com/2025/08/04/lagos-communities-flooded-vehicles-submerged-after-marathon-rainfall/",
-          "publisher": "Channels Television"
+          "publisher": "Channels TV",
+          "date": "2025-08-04"
         },
         {
           "url": "https://dailytrust.com/residents-motorists-stranded-as-flood-hits-lagos/",
-          "publisher": "Daily Trust"
+          "publisher": "Daily Trust",
+          "date": "2025-08-04"
         },
         {
           "url": "https://www.tvcnews.tv/lagos-warns-lekki-ikorodu-other-residents-to-relocate-over-flood-risk/",
-          "publisher": "TVC"
+          "publisher": "TVC",
+          "date": "2025-08-04"
         },
         {
           "url": "https://www.bbc.com/pidgin/articles/clyrq7qzzjxo",
-          "publisher": "BBC Pidgin"
+          "publisher": "BBC Pidgin",
+          "date": "2025-08-04"
         }
       ],
       "depths": []
@@ -982,79 +1154,86 @@
       "reports": [
         {
           "url": "https://www.vanguardngr.com/2016/05/rage-flood-lagos-road/",
-          "publisher": "Vanguard"
+          "publisher": "Vanguard",
+          "date": "2016-05-14"
         },
         {
           "url": "https://www.vanguardngr.com/2016/09/mudslide-kills-newly-wed-teenager-two-others-rescued-heavy-downpour-lagos/",
-          "publisher": "Vanguard"
+          "publisher": "Vanguard",
+          "date": "2016-09-06"
         },
         {
           "url": "https://punchng.com/rainstorm-destroys-buildings-cars-in-lagos/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2017-11-04"
         },
         {
           "url": "https://guardian.ng/news/how-lagos-downpour-wreaked-havoc-gridlock/",
-          "publisher": "The Guardian Nigeria"
+          "publisher": "Guardian NG",
+          "date": "2019-05-20"
         },
         {
           "url": "https://guardian.ng/news/flood-sweeps-11-year-old-boy-rescuer-to-death-destroys-property-in-lagos/",
-          "publisher": "The Guardian Nigeria"
+          "publisher": "Guardian NG",
+          "date": "2019-10-12"
         },
         {
           "url": "https://www.vanguardngr.com/2019/10/tragedy-as-flood-sweeps-two-destroys-property-in-lagos/",
-          "publisher": "Vanguard"
+          "publisher": "Vanguard",
+          "date": "2019-10-12"
         },
         {
           "url": "https://www.premiumtimesng.com/regional/ssouth-west/398304-lagos-residents-battle-flood-after-downpour.html",
-          "publisher": "Premium Times"
+          "publisher": "Premium Times",
+          "date": "2020-06-18"
         },
         {
           "url": "https://punchng.com/lagos-rain-four-year-old-girl-swept-away-woman-dies-buildings-collapse/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2020-06-18"
         },
         {
           "url": "https://guardian.ng/news/flood-sweeps-four-year-old-girl-displaces-over-20-families-in-lagos/",
-          "publisher": "The Guardian Nigeria"
+          "publisher": "Guardian NG",
+          "date": "2020-06-18"
         },
         {
           "url": "https://www.channelstv.com/2022/09/12/gridlock-outcry-as-floods-hit-lagos-kill-two/",
-          "publisher": "Channels Television"
+          "publisher": "Channels TV",
+          "date": "2022-09-12"
         },
         {
           "url": "https://punchng.com/lagos-flooding-rescuers-recover-two-corpses-save-nine/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2022-09-12"
         },
         {
           "url": "https://www.bbc.com/pidgin/articles/czvxdzwr97go",
-          "publisher": "BBC Pidgin"
+          "publisher": "BBC Pidgin",
+          "date": "2024-07-03"
         },
         {
           "url": "https://www.thisdaylive.com/2024/07/03/torrential-rain-causes-widespread-flooding-in-lagos/",
-          "publisher": "THISDAY"
+          "publisher": "THISDAY",
+          "date": "2024-07-03"
         },
         {
           "url": "https://guardian.ng/news/nigeria/metro/lagos-residents-lament-as-flooding-cripples-transport-businesses/",
-          "publisher": "Guardian NG"
+          "publisher": "Guardian NG",
+          "date": "2026-06-28"
         },
         {
           "url": "https://punchng.com/heavy-rain-floods-lagos-roads-agencies-warn-of-more-risks/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2026-06-28"
         },
         {
           "url": "https://punchng.com/lagos-residents-count-losses-after-flooding-nightmare/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2026-06-28"
         }
       ],
-      "depths": [
-        {
-          "phrase": "Knee-deep",
-          "metres": 0.45,
-          "url": "https://punchng.com/heavy-rain-floods-lagos-roads-agencies-warn-of-more-risks/",
-          "publisher": "Punch",
-          "placed_by": "same_sentence",
-          "sentence": "Knee-deep flooding in parts of Gbagada, Ipaja and Surulere."
-        }
-      ]
+      "depths": []
     },
     {
       "name": "Ketu",
@@ -1077,59 +1256,73 @@
       "reports": [
         {
           "url": "https://punchng.com/floods-windstorm-wreak-havoc-lagos-ogun-sokoto/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2016-08-28"
         },
         {
           "url": "https://punchng.com/300-houses-flooded-agency-releases-oyan-dam-water/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2016-10-05"
         },
         {
           "url": "https://www.channelstv.com/2018/05/25/flood-hits-lagos-after-early-morning-downpour/",
-          "publisher": "Channels TV"
+          "publisher": "Channels TV",
+          "date": "2018-05-25"
         },
         {
           "url": "https://guardian.ng/news/how-lagos-downpour-wreaked-havoc-gridlock/",
-          "publisher": "The Guardian Nigeria"
+          "publisher": "Guardian NG",
+          "date": "2019-05-20"
         },
         {
           "url": "https://punchng.com/flooding-lagos-ogun-brainstorm-over-oyan-dam-water-release/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2019-10-20"
         },
         {
           "url": "https://punchng.com/flood-sweeps-away-two-children-in-lagos/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2020-09-12"
         },
         {
           "url": "https://punchng.com/confusion-trails-drowning-of-two-in-lagos-flood/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2020-09-12"
         },
         {
           "url": "https://nairametrics.com/2021/07/16/flood-hits-parts-of-lagos-ogun/",
-          "publisher": "Nairametrics"
+          "publisher": "Nairametrics",
+          "date": "2021-07-16"
         },
         {
           "url": "https://punchng.com/rain-pounds-lagos-houses-roads-flooded-property-destroyed/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2022-06-18"
         },
         {
           "url": "https://www.channelstv.com/2024/07/03/commuters-stranded-as-heavy-downpour-floods-lagos-roads/",
-          "publisher": "Channels Television"
+          "publisher": "Channels TV",
+          "date": "2024-07-03"
         },
         {
           "url": "https://punchng.com/10-hour-rainfall-businesses-grounded-house-collapses-as-flood-overtakes-lagos/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2024-07-03"
         },
         {
           "url": "https://www.vanguardngr.com/2024/07/aftermath-of-heavy-rain-chaos-lamentations-as-flood-grounds-lagos/",
-          "publisher": "Vanguard"
+          "publisher": "Vanguard",
+          "date": "2024-07-03"
         },
         {
           "url": "https://www.bbc.com/pidgin/articles/czvxdzwr97go",
-          "publisher": "BBC Pidgin"
+          "publisher": "BBC Pidgin",
+          "date": "2024-07-03"
         },
         {
           "url": "https://www.thisdaylive.com/2024/07/03/torrential-rain-causes-widespread-flooding-in-lagos/",
-          "publisher": "THISDAY"
+          "publisher": "THISDAY",
+          "date": "2024-07-03"
         }
       ],
       "depths": []
@@ -1155,99 +1348,123 @@
       "reports": [
         {
           "url": "https://www.vanguardngr.com/2014/04/heavy-downpour-floods-lagos/",
-          "publisher": "Vanguard"
+          "publisher": "Vanguard",
+          "date": "2014-04-20"
         },
         {
           "url": "https://punchng.com/flood-wreaks-havoc-in-nigerias-most-expensive-neighbourhoods/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2017-07-08"
         },
         {
           "url": "https://punchng.com/lagos-flood-residents-lament-loss-of-homes-property/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2017-07-08"
         },
         {
           "url": "https://www.channelstv.com/2017/07/08/lagosians-lament-as-flood-hits-lekki-victoria-island/",
-          "publisher": "Channels TV"
+          "publisher": "Channels TV",
+          "date": "2017-07-08"
         },
         {
           "url": "https://dailytrust.com/panic-as-flood-takes-over-lagos/",
-          "publisher": "Daily Trust"
+          "publisher": "Daily Trust",
+          "date": "2017-07-08"
         },
         {
           "url": "https://www.vanguardngr.com/2017/07/photos-flood-victoria-island-lekki/",
-          "publisher": "Vanguard"
+          "publisher": "Vanguard",
+          "date": "2017-07-08"
         },
         {
           "url": "https://www.vanguardngr.com/2017/07/flood-eko-disco-announces-power-cut-ikoyi-victoria-island/",
-          "publisher": "Vanguard"
+          "publisher": "Vanguard",
+          "date": "2017-07-08"
         },
         {
           "url": "https://guardian.ng/news/how-to-save-lagos-from-flood-disasters-others/",
-          "publisher": "Guardian NG"
+          "publisher": "Guardian NG",
+          "date": "2017-07-08"
         },
         {
           "url": "https://guardian.ng/news/were-pursuing-holistic-solution-to-lagos-flooding-says-ambode/",
-          "publisher": "Guardian NG"
+          "publisher": "Guardian NG",
+          "date": "2017-07-08"
         },
         {
           "url": "https://punchng.com/lasgll-tackle-flooding-says-ambode/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2017-07-08"
         },
         {
           "url": "https://dailytrust.com/nigerias-newest-flood-of-tears/",
-          "publisher": "Daily Trust"
+          "publisher": "Daily Trust",
+          "date": "2017-07-08"
         },
         {
           "url": "https://dailytrust.com/lagos-more-rains-more-pains/",
-          "publisher": "Daily Trust"
+          "publisher": "Daily Trust",
+          "date": "2019-07-01"
         },
         {
           "url": "https://guardian.ng/news/again-flood-wreaks-havoc-in-lagos/",
-          "publisher": "The Guardian Nigeria"
+          "publisher": "Guardian NG",
+          "date": "2019-10-20"
         },
         {
           "url": "https://punchng.com/flooding-lagos-ogun-brainstorm-over-oyan-dam-water-release/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2019-10-20"
         },
         {
           "url": "https://www.premiumtimesng.com/regional/ssouth-west/398304-lagos-residents-battle-flood-after-downpour.html",
-          "publisher": "Premium Times"
+          "publisher": "Premium Times",
+          "date": "2020-06-18"
         },
         {
           "url": "https://guardian.ng/news/flood-sweeps-four-year-old-girl-displaces-over-20-families-in-lagos/",
-          "publisher": "The Guardian Nigeria"
+          "publisher": "Guardian NG",
+          "date": "2020-06-18"
         },
         {
           "url": "https://nairametrics.com/2021/07/16/flood-hits-parts-of-lagos-ogun/",
-          "publisher": "Nairametrics"
+          "publisher": "Nairametrics",
+          "date": "2021-07-16"
         },
         {
           "url": "https://dailytrust.com/why-lagos-was-flooded-nimet/",
-          "publisher": "Daily Trust"
+          "publisher": "Daily Trust",
+          "date": "2021-07-16"
         },
         {
           "url": "https://punchng.com/flood-fallen-trucks-cause-lagos-gridlock-commuters-stranded/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2021-07-16"
         },
         {
           "url": "https://www.tvcnews.tv/lagos-blames-illegal-structures-waste-disposal-for-lekki-flooding/",
-          "publisher": "TVC"
+          "publisher": "TVC",
+          "date": "2025-09-23"
         },
         {
           "url": "https://punchng.com/floodwaters-submerge-homes-disrupt-power-supply-in-lagos/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2026-06-30"
         },
         {
           "url": "https://www.channelstv.com/2026/06/30/lagos-govt-sues-for-calm-following-persistent-rainfalls-flash-floods/",
-          "publisher": "Channels Television"
+          "publisher": "Channels TV",
+          "date": "2026-06-30"
         },
         {
           "url": "https://guardian.ng/news/nigeria/metro/heavy-rain-triggers-flooding-across-lagos-strands-commuters-businesses/",
-          "publisher": "Guardian NG"
+          "publisher": "Guardian NG",
+          "date": "2026-06-30"
         },
         {
           "url": "https://punchng.com/downpour-cripples-lagos-flood-submerges-cars-strands-motorists/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2026-07-13"
         }
       ],
       "depths": []
@@ -1272,71 +1489,88 @@
       "reports": [
         {
           "url": "https://guardian.ng/news/flood-takes-over-lekki-epe-expressway/",
-          "publisher": "Guardian NG"
+          "publisher": "Guardian NG",
+          "date": "2016-06-21"
         },
         {
           "url": "https://punchng.com/flood-wreaks-havoc-in-nigerias-most-expensive-neighbourhoods/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2017-07-08"
         },
         {
           "url": "https://punchng.com/lagos-flood-residents-lament-loss-of-homes-property/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2017-07-08"
         },
         {
           "url": "https://www.channelstv.com/2017/07/08/lagosians-lament-as-flood-hits-lekki-victoria-island/",
-          "publisher": "Channels TV"
+          "publisher": "Channels TV",
+          "date": "2017-07-08"
         },
         {
           "url": "https://dailytrust.com/panic-as-flood-takes-over-lagos/",
-          "publisher": "Daily Trust"
+          "publisher": "Daily Trust",
+          "date": "2017-07-08"
         },
         {
           "url": "https://dailytrust.com/nigerias-newest-flood-of-tears/",
-          "publisher": "Daily Trust"
+          "publisher": "Daily Trust",
+          "date": "2017-07-08"
         },
         {
           "url": "https://punchng.com/early-morning-rainfall-roads-homes-flooded-in-lagos/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2017-07-22"
         },
         {
           "url": "https://www.premiumtimesng.com/regional/ssouth-west/398304-lagos-residents-battle-flood-after-downpour.html",
-          "publisher": "Premium Times"
+          "publisher": "Premium Times",
+          "date": "2020-06-18"
         },
         {
           "url": "https://guardian.ng/news/flood-sweeps-four-year-old-girl-displaces-over-20-families-in-lagos/",
-          "publisher": "The Guardian Nigeria"
+          "publisher": "Guardian NG",
+          "date": "2020-06-18"
         },
         {
           "url": "https://punchng.com/lagos-rain-four-year-old-girl-swept-away-woman-dies-buildings-collapse/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2020-06-18"
         },
         {
           "url": "https://guardian.ng/news/residents-seek-action-as-flood-sacks-lagos-communities/",
-          "publisher": "The Guardian Nigeria"
+          "publisher": "Guardian NG",
+          "date": "2020-07-04"
         },
         {
           "url": "https://www.vanguardngr.com/2024/07/aftermath-of-heavy-rain-chaos-lamentations-as-flood-grounds-lagos/",
-          "publisher": "Vanguard"
+          "publisher": "Vanguard",
+          "date": "2024-07-03"
         },
         {
           "url": "https://punchng.com/10-hour-rainfall-lekki-ikoyi-residents-flee-luxury-mansions-as-flood-ravages-homes-streets/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2024-07-03"
         },
         {
           "url": "https://www.thisdaylive.com/2024/07/03/torrential-rain-causes-widespread-flooding-in-lagos/",
-          "publisher": "THISDAY"
+          "publisher": "THISDAY",
+          "date": "2024-07-03"
         },
         {
           "url": "https://www.tvcnews.tv/lagos-blames-illegal-structures-waste-disposal-for-lekki-flooding/",
-          "publisher": "TVC"
+          "publisher": "TVC",
+          "date": "2025-09-23"
         },
         {
           "url": "https://punchng.com/floodwaters-submerge-homes-disrupt-power-supply-in-lagos/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2026-06-30"
         },
         {
           "url": "https://dailytrust.com/flood-lagos-residents-count-losses/",
-          "publisher": "Daily Trust"
+          "publisher": "Daily Trust",
+          "date": "2026-06-30"
         }
       ],
       "depths": []
@@ -1361,39 +1595,48 @@
       "reports": [
         {
           "url": "https://www.vanguardngr.com/2014/04/heavy-downpour-floods-lagos/",
-          "publisher": "Vanguard"
+          "publisher": "Vanguard",
+          "date": "2014-04-20"
         },
         {
           "url": "https://guardian.ng/news/flood-sweeps-four-year-old-girl-displaces-over-20-families-in-lagos/",
-          "publisher": "The Guardian Nigeria"
+          "publisher": "Guardian NG",
+          "date": "2020-06-18"
         },
         {
           "url": "https://www.vanguardngr.com/2024/07/aftermath-of-heavy-rain-chaos-lamentations-as-flood-grounds-lagos/",
-          "publisher": "Vanguard"
+          "publisher": "Vanguard",
+          "date": "2024-07-03"
         },
         {
           "url": "https://www.vanguardngr.com/2025/09/gridlock-as-flash-floods-take-over-lagos-roads-paralyse-business-activities/",
-          "publisher": "Vanguard"
+          "publisher": "Vanguard",
+          "date": "2025-09-09"
         },
         {
           "url": "https://punchng.com/video-rain-floods-lagos-road-causes-gridlock/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2026-01-30"
         },
         {
           "url": "https://guardian.ng/news/nigeria/metro/lagos-residents-lament-as-flooding-cripples-transport-businesses/",
-          "publisher": "Guardian NG"
+          "publisher": "Guardian NG",
+          "date": "2026-06-28"
         },
         {
           "url": "https://www.vanguardngr.com/2026/06/motorists-commuters-stranded-as-floods-submerge-lagos-roads/",
-          "publisher": "Vanguard"
+          "publisher": "Vanguard",
+          "date": "2026-06-28"
         },
         {
           "url": "https://punchng.com/lagos-residents-count-losses-after-flooding-nightmare/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2026-06-28"
         },
         {
           "url": "https://nairametrics.com/2026/07/05/why-kunsela-ologolo-gbagada-and-other-parts-of-lagos-keep-flooding/",
-          "publisher": "Nairametrics"
+          "publisher": "Nairametrics",
+          "date": "2026-06-30"
         }
       ],
       "depths": []
@@ -1418,63 +1661,78 @@
       "reports": [
         {
           "url": "https://dailytrust.com/3-day-rain-causes-flood-in-lagos/",
-          "publisher": "Daily Trust"
+          "publisher": "Daily Trust",
+          "date": "2015-06-20"
         },
         {
           "url": "https://punchng.com/early-morning-rainfall-roads-homes-flooded-in-lagos/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2017-07-22"
         },
         {
           "url": "https://guardian.ng/news/how-lagos-downpour-wreaked-havoc-gridlock/",
-          "publisher": "The Guardian Nigeria"
+          "publisher": "Guardian NG",
+          "date": "2019-05-20"
         },
         {
           "url": "https://www.vanguardngr.com/2019/07/photos-lagos-flooded/",
-          "publisher": "Vanguard"
+          "publisher": "Vanguard",
+          "date": "2019-07-01"
         },
         {
           "url": "https://www.vanguardngr.com/2022/07/rainstorms-flood-rages-in-lagos-as-residents-get-fresh-danger-alert/",
-          "publisher": "Vanguard"
+          "publisher": "Vanguard",
+          "date": "2022-07-08"
         },
         {
           "url": "https://www.vanguardngr.com/2022/07/how-flood-swept-3-siblings-4-others-in-lagos-ogun-nema/",
-          "publisher": "Vanguard"
+          "publisher": "Vanguard",
+          "date": "2022-07-08"
         },
         {
           "url": "https://punchng.com/10-hour-rainfall-businesses-grounded-house-collapses-as-flood-overtakes-lagos/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2024-07-03"
         },
         {
           "url": "https://www.bbc.com/pidgin/articles/czvxdzwr97go",
-          "publisher": "BBC Pidgin"
+          "publisher": "BBC Pidgin",
+          "date": "2024-07-03"
         },
         {
           "url": "https://www.premiumtimesng.com/regional/ssouth-west/891405-heavy-rainfall-floods-lagos-communities-disrupts-airport-operations.html",
-          "publisher": "Premium Times"
+          "publisher": "Premium Times",
+          "date": "2026-06-28"
         },
         {
           "url": "https://guardian.ng/news/nigeria/metro/lagos-residents-lament-as-flooding-cripples-transport-businesses/",
-          "publisher": "Guardian NG"
+          "publisher": "Guardian NG",
+          "date": "2026-06-28"
         },
         {
           "url": "https://punchng.com/heavy-rain-floods-lagos-roads-agencies-warn-of-more-risks/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2026-06-28"
         },
         {
           "url": "https://www.premiumtimesng.com/regional/ssouth-west/891467-lagos-flood-floodwaters-recede-in-oshodi-but-shops-remain-shut.html",
-          "publisher": "Premium Times"
+          "publisher": "Premium Times",
+          "date": "2026-06-28"
         },
         {
           "url": "https://punchng.com/lagos-residents-count-losses-after-flooding-nightmare/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2026-06-28"
         },
         {
           "url": "https://punchng.com/floodwaters-submerge-homes-disrupt-power-supply-in-lagos/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2026-06-30"
         },
         {
           "url": "https://www.channelstv.com/2026/06/30/lagos-govt-sues-for-calm-following-persistent-rainfalls-flash-floods/",
-          "publisher": "Channels Television"
+          "publisher": "Channels TV",
+          "date": "2026-06-30"
         }
       ],
       "depths": []
@@ -1498,31 +1756,38 @@
       "reports": [
         {
           "url": "https://www.vanguardngr.com/2014/04/heavy-downpour-floods-lagos/",
-          "publisher": "Vanguard"
+          "publisher": "Vanguard",
+          "date": "2014-04-20"
         },
         {
           "url": "https://www.channelstv.com/2018/10/10/flood-traffic-hit-lagos-after-early-morning-downpour/",
-          "publisher": "Channels TV"
+          "publisher": "Channels TV",
+          "date": "2018-10-10"
         },
         {
           "url": "https://dailytrust.com/lagos-more-rains-more-pains/",
-          "publisher": "Daily Trust"
+          "publisher": "Daily Trust",
+          "date": "2019-07-01"
         },
         {
           "url": "https://www.channelstv.com/2021/07/17/commuters-stranded-cars-submerged-in-lagos-after-heavy-downpour/",
-          "publisher": "Channels TV"
+          "publisher": "Channels TV",
+          "date": "2021-07-16"
         },
         {
           "url": "https://guardian.ng/news/lagos-bridges-flooded-as-thunderstorm-wreaks-havoc-in-oregun/",
-          "publisher": "The Guardian Nigeria"
+          "publisher": "Guardian NG",
+          "date": "2022-04-06"
         },
         {
           "url": "https://punchng.com/rain-pounds-lagos-houses-roads-flooded-property-destroyed/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2022-06-18"
         },
         {
           "url": "https://www.channelstv.com/2024/07/03/commuters-stranded-as-heavy-downpour-floods-lagos-roads/",
-          "publisher": "Channels Television"
+          "publisher": "Channels TV",
+          "date": "2024-07-03"
         }
       ],
       "depths": []
@@ -1546,63 +1811,78 @@
       "reports": [
         {
           "url": "https://dailytrust.com/3-day-rain-causes-flood-in-lagos/",
-          "publisher": "Daily Trust"
+          "publisher": "Daily Trust",
+          "date": "2015-06-20"
         },
         {
           "url": "https://punchng.com/flood-wreaks-havoc-in-nigerias-most-expensive-neighbourhoods/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2017-07-08"
         },
         {
           "url": "https://punchng.com/lagos-flood-residents-lament-loss-of-homes-property/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2017-07-08"
         },
         {
           "url": "https://dailytrust.com/panic-as-flood-takes-over-lagos/",
-          "publisher": "Daily Trust"
+          "publisher": "Daily Trust",
+          "date": "2017-07-08"
         },
         {
           "url": "https://www.vanguardngr.com/2017/07/flood-eko-disco-announces-power-cut-ikoyi-victoria-island/",
-          "publisher": "Vanguard"
+          "publisher": "Vanguard",
+          "date": "2017-07-08"
         },
         {
           "url": "https://guardian.ng/news/how-to-save-lagos-from-flood-disasters-others/",
-          "publisher": "Guardian NG"
+          "publisher": "Guardian NG",
+          "date": "2017-07-08"
         },
         {
           "url": "https://punchng.com/lasgll-tackle-flooding-says-ambode/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2017-07-08"
         },
         {
           "url": "https://dailytrust.com/nigerias-newest-flood-of-tears/",
-          "publisher": "Daily Trust"
+          "publisher": "Daily Trust",
+          "date": "2017-07-08"
         },
         {
           "url": "https://punchng.com/rain-wreaks-havoc-in-lagos-ogun-destroys-buildings-others/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2019-05-20"
         },
         {
           "url": "https://guardian.ng/news/how-lagos-downpour-wreaked-havoc-gridlock/",
-          "publisher": "The Guardian Nigeria"
+          "publisher": "Guardian NG",
+          "date": "2019-05-20"
         },
         {
           "url": "https://guardian.ng/news/again-flood-wreaks-havoc-in-lagos/",
-          "publisher": "The Guardian Nigeria"
+          "publisher": "Guardian NG",
+          "date": "2019-10-20"
         },
         {
           "url": "https://punchng.com/flooding-lagos-ogun-brainstorm-over-oyan-dam-water-release/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2019-10-20"
         },
         {
           "url": "https://punchng.com/10-hour-rainfall-lekki-ikoyi-residents-flee-luxury-mansions-as-flood-ravages-homes-streets/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2024-07-03"
         },
         {
           "url": "https://www.vanguardngr.com/2025/09/gridlock-as-flash-floods-take-over-lagos-roads-paralyse-business-activities/",
-          "publisher": "Vanguard"
+          "publisher": "Vanguard",
+          "date": "2025-09-09"
         },
         {
           "url": "https://punchng.com/downpour-cripples-lagos-flood-submerges-cars-strands-motorists/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2026-07-13"
         }
       ],
       "depths": []
@@ -1626,39 +1906,48 @@
       "reports": [
         {
           "url": "https://punchng.com/downpour-gas-man-drowns-lekki-ikorodu-residents-landlords-flee/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2019-10-12"
         },
         {
           "url": "https://www.channelstv.com/2022/09/12/gridlock-outcry-as-floods-hit-lagos-kill-two/",
-          "publisher": "Channels Television"
+          "publisher": "Channels TV",
+          "date": "2022-09-12"
         },
         {
           "url": "https://punchng.com/lagos-flooding-rescuers-recover-two-corpses-save-nine/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2022-09-12"
         },
         {
           "url": "https://www.vanguardngr.com/2022/09/we-just-renewed-rent-have-no-place-to-go-survivors-of-lagos-sinking-building/",
-          "publisher": "Vanguard"
+          "publisher": "Vanguard",
+          "date": "2022-09-12"
         },
         {
           "url": "https://dailytrust.com/residents-motorists-stranded-as-flood-hits-lagos/",
-          "publisher": "Daily Trust"
+          "publisher": "Daily Trust",
+          "date": "2025-08-04"
         },
         {
           "url": "https://www.vanguardngr.com/2025/09/gridlock-as-flash-floods-take-over-lagos-roads-paralyse-business-activities/",
-          "publisher": "Vanguard"
+          "publisher": "Vanguard",
+          "date": "2025-09-09"
         },
         {
           "url": "https://punchng.com/motorists-stranded-as-flood-overruns-lagos-communities/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2025-09-24"
         },
         {
           "url": "https://punchng.com/video-rain-floods-lagos-road-causes-gridlock/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2026-01-30"
         },
         {
           "url": "https://punchng.com/lagos-residents-count-losses-after-flooding-nightmare/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2026-06-28"
         }
       ],
       "depths": []
@@ -1681,47 +1970,58 @@
       "reports": [
         {
           "url": "https://dailytrust.com/3-day-rain-causes-flood-in-lagos/",
-          "publisher": "Daily Trust"
+          "publisher": "Daily Trust",
+          "date": "2015-06-20"
         },
         {
           "url": "https://guardian.ng/sunday-magazine/cityfile/residents-want-lagos-govts-intervention-on-flooding/",
-          "publisher": "Guardian NG"
+          "publisher": "Guardian NG",
+          "date": "2015-07-18"
         },
         {
           "url": "https://www.vanguardngr.com/2025/09/gridlock-as-flash-floods-take-over-lagos-roads-paralyse-business-activities/",
-          "publisher": "Vanguard"
+          "publisher": "Vanguard",
+          "date": "2025-09-09"
         },
         {
           "url": "https://punchng.com/residents-blame-blocked-canal-as-flood-overruns-lagos-community/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2026-03-31"
         },
         {
           "url": "https://punchng.com/flood-displaces-lagos-schoolchildren-as-building-project-blocks-canal/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2026-04-10"
         },
         {
           "url": "https://www.premiumtimesng.com/regional/ssouth-west/891405-heavy-rainfall-floods-lagos-communities-disrupts-airport-operations.html",
-          "publisher": "Premium Times"
+          "publisher": "Premium Times",
+          "date": "2026-06-28"
         },
         {
           "url": "https://guardian.ng/news/nigeria/metro/lagos-residents-lament-as-flooding-cripples-transport-businesses/",
-          "publisher": "Guardian NG"
+          "publisher": "Guardian NG",
+          "date": "2026-06-28"
         },
         {
           "url": "https://punchng.com/heavy-rain-floods-lagos-roads-agencies-warn-of-more-risks/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2026-06-28"
         },
         {
           "url": "https://www.vanguardngr.com/2026/06/motorists-commuters-stranded-as-floods-submerge-lagos-roads/",
-          "publisher": "Vanguard"
+          "publisher": "Vanguard",
+          "date": "2026-06-28"
         },
         {
           "url": "https://www.premiumtimesng.com/regional/ssouth-west/891467-lagos-flood-floodwaters-recede-in-oshodi-but-shops-remain-shut.html",
-          "publisher": "Premium Times"
+          "publisher": "Premium Times",
+          "date": "2026-06-28"
         },
         {
           "url": "https://punchng.com/lagos-residents-count-losses-after-flooding-nightmare/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2026-06-28"
         }
       ],
       "depths": []
@@ -1744,35 +2044,43 @@
       "reports": [
         {
           "url": "https://guardian.ng/news/fear-of-flood-heightens-as-rains-begin/",
-          "publisher": "Guardian NG"
+          "publisher": "Guardian NG",
+          "date": "2015-03-11"
         },
         {
           "url": "https://dailytrust.com/panic-as-flood-takes-over-lagos/",
-          "publisher": "Daily Trust"
+          "publisher": "Daily Trust",
+          "date": "2017-07-08"
         },
         {
           "url": "https://dailytrust.com/nigerias-newest-flood-of-tears/",
-          "publisher": "Daily Trust"
+          "publisher": "Daily Trust",
+          "date": "2017-07-08"
         },
         {
           "url": "https://dailytrust.com/panic-as-flood-take-over-lagos-community/",
-          "publisher": "Daily Trust"
+          "publisher": "Daily Trust",
+          "date": "2021-11-14"
         },
         {
           "url": "https://www.vanguardngr.com/2024/07/aftermath-of-heavy-rain-chaos-lamentations-as-flood-grounds-lagos/",
-          "publisher": "Vanguard"
+          "publisher": "Vanguard",
+          "date": "2024-07-03"
         },
         {
           "url": "https://www.thisdaylive.com/2024/07/03/torrential-rain-causes-widespread-flooding-in-lagos/",
-          "publisher": "THISDAY"
+          "publisher": "THISDAY",
+          "date": "2024-07-03"
         },
         {
           "url": "https://punchng.com/commuters-motorists-stranded-as-downpour-floods-lagos-roads/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2024-10-17"
         },
         {
           "url": "https://punchng.com/motorists-residents-lament-as-flood-submerges-lagos-roads/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2025-09-16"
         }
       ],
       "depths": []
@@ -1795,59 +2103,73 @@
       "reports": [
         {
           "url": "https://guardian.ng/news/how-lagos-downpour-wreaked-havoc-gridlock/",
-          "publisher": "The Guardian Nigeria"
+          "publisher": "Guardian NG",
+          "date": "2019-05-20"
         },
         {
           "url": "https://www.premiumtimesng.com/regional/ssouth-west/398304-lagos-residents-battle-flood-after-downpour.html",
-          "publisher": "Premium Times"
+          "publisher": "Premium Times",
+          "date": "2020-06-18"
         },
         {
           "url": "https://guardian.ng/news/flood-sweeps-four-year-old-girl-displaces-over-20-families-in-lagos/",
-          "publisher": "The Guardian Nigeria"
+          "publisher": "Guardian NG",
+          "date": "2020-06-18"
         },
         {
           "url": "https://punchng.com/rain-pounds-lagos-houses-roads-flooded-property-destroyed/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2022-06-18"
         },
         {
           "url": "https://punchng.com/10-hour-rainfall-businesses-grounded-house-collapses-as-flood-overtakes-lagos/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2024-07-03"
         },
         {
           "url": "https://www.premiumtimesng.com/regional/ssouth-west/891405-heavy-rainfall-floods-lagos-communities-disrupts-airport-operations.html",
-          "publisher": "Premium Times"
+          "publisher": "Premium Times",
+          "date": "2026-06-28"
         },
         {
           "url": "https://guardian.ng/news/nigeria/metro/lagos-residents-lament-as-flooding-cripples-transport-businesses/",
-          "publisher": "Guardian NG"
+          "publisher": "Guardian NG",
+          "date": "2026-06-28"
         },
         {
           "url": "https://punchng.com/heavy-rain-floods-lagos-roads-agencies-warn-of-more-risks/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2026-06-28"
         },
         {
           "url": "https://www.premiumtimesng.com/regional/ssouth-west/891467-lagos-flood-floodwaters-recede-in-oshodi-but-shops-remain-shut.html",
-          "publisher": "Premium Times"
+          "publisher": "Premium Times",
+          "date": "2026-06-28"
         },
         {
           "url": "https://punchng.com/lagos-residents-count-losses-after-flooding-nightmare/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2026-06-28"
         },
         {
           "url": "https://punchng.com/floodwaters-submerge-homes-disrupt-power-supply-in-lagos/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2026-06-30"
         },
         {
           "url": "https://www.channelstv.com/2026/06/30/lagos-govt-sues-for-calm-following-persistent-rainfalls-flash-floods/",
-          "publisher": "Channels Television"
+          "publisher": "Channels TV",
+          "date": "2026-06-30"
         },
         {
           "url": "https://guardian.ng/news/nigeria/metro/heavy-rain-triggers-flooding-across-lagos-strands-commuters-businesses/",
-          "publisher": "Guardian NG"
+          "publisher": "Guardian NG",
+          "date": "2026-06-30"
         },
         {
           "url": "https://nairametrics.com/2026/07/05/why-kunsela-ologolo-gbagada-and-other-parts-of-lagos-keep-flooding/",
-          "publisher": "Nairametrics"
+          "publisher": "Nairametrics",
+          "date": "2026-06-30"
         }
       ],
       "depths": [
@@ -1856,6 +2178,7 @@
           "metres": 0.45,
           "url": "https://punchng.com/heavy-rain-floods-lagos-roads-agencies-warn-of-more-risks/",
           "publisher": "Punch",
+          "date": "2026-06-28",
           "placed_by": "same_sentence",
           "sentence": "Knee-deep flooding in parts of Gbagada, Ipaja and Surulere."
         }
@@ -1879,47 +2202,58 @@
       "reports": [
         {
           "url": "https://www.vanguardngr.com/2022/07/rainstorms-flood-rages-in-lagos-as-residents-get-fresh-danger-alert/",
-          "publisher": "Vanguard"
+          "publisher": "Vanguard",
+          "date": "2022-07-08"
         },
         {
           "url": "https://punchng.com/rainfall-lagos-residents-lament-flooding-transport-fare-hike/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2022-07-09"
         },
         {
           "url": "https://dailytrust.com/elderly-woman-rescued-from-lagos-flood-as-government-asks-residents-to-avoid-flood-prone-areas/",
-          "publisher": "Daily Trust"
+          "publisher": "Daily Trust",
+          "date": "2022-07-09"
         },
         {
           "url": "https://www.channelstv.com/2022/09/12/gridlock-outcry-as-floods-hit-lagos-kill-two/",
-          "publisher": "Channels Television"
+          "publisher": "Channels TV",
+          "date": "2022-09-12"
         },
         {
           "url": "https://punchng.com/lagos-flooding-rescuers-recover-two-corpses-save-nine/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2022-09-12"
         },
         {
           "url": "https://nairametrics.com/2024/02/21/flooding-in-lagos-affects-151-houses-says-nema/",
-          "publisher": "Nairametrics"
+          "publisher": "Nairametrics",
+          "date": "2024-02-20"
         },
         {
           "url": "https://www.bbc.com/pidgin/articles/czvxdzwr97go",
-          "publisher": "BBC Pidgin"
+          "publisher": "BBC Pidgin",
+          "date": "2024-07-03"
         },
         {
           "url": "https://www.thisdaylive.com/2024/07/03/torrential-rain-causes-widespread-flooding-in-lagos/",
-          "publisher": "THISDAY"
+          "publisher": "THISDAY",
+          "date": "2024-07-03"
         },
         {
           "url": "https://guardian.ng/news/nigeria/metro/lagos-residents-lament-as-flooding-cripples-transport-businesses/",
-          "publisher": "Guardian NG"
+          "publisher": "Guardian NG",
+          "date": "2026-06-28"
         },
         {
           "url": "https://punchng.com/heavy-rain-floods-lagos-roads-agencies-warn-of-more-risks/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2026-06-28"
         },
         {
           "url": "https://punchng.com/lagos-residents-count-losses-after-flooding-nightmare/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2026-06-28"
         }
       ],
       "depths": [
@@ -1928,6 +2262,7 @@
           "metres": 0.45,
           "url": "https://punchng.com/heavy-rain-floods-lagos-roads-agencies-warn-of-more-risks/",
           "publisher": "Punch",
+          "date": "2026-06-28",
           "placed_by": "same_sentence",
           "sentence": "Knee-deep flooding in parts of Gbagada, Ipaja and Surulere."
         }
@@ -1951,27 +2286,33 @@
       "reports": [
         {
           "url": "https://dailytrust.com/flood-takes-over-lagos-abeokuta-expressway/",
-          "publisher": "Daily Trust"
+          "publisher": "Daily Trust",
+          "date": "2015-11-07"
         },
         {
           "url": "https://www.vanguardngr.com/2017/09/residents-groan-heavy-flooding-lagos-abeokuta-expressway/",
-          "publisher": "Vanguard"
+          "publisher": "Vanguard",
+          "date": "2017-09-11"
         },
         {
           "url": "https://punchng.com/rainstorm-destroys-buildings-cars-in-lagos/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2017-11-04"
         },
         {
           "url": "https://www.vanguardngr.com/2018/02/flood-sacks-irepodun-street-residents-lagos-abeokuta-expressway-traders/",
-          "publisher": "Vanguard"
+          "publisher": "Vanguard",
+          "date": "2018-02-10"
         },
         {
           "url": "https://www.vanguardngr.com/2019/10/flood-sacks-lagos-ogun-border-residents-after-heavy-downpour/",
-          "publisher": "Vanguard"
+          "publisher": "Vanguard",
+          "date": "2019-10-20"
         },
         {
           "url": "https://www.vanguardngr.com/2026/06/motorists-commuters-stranded-as-floods-submerge-lagos-roads/",
-          "publisher": "Vanguard"
+          "publisher": "Vanguard",
+          "date": "2026-06-28"
         }
       ],
       "depths": []
@@ -1994,31 +2335,38 @@
       "reports": [
         {
           "url": "https://www.vanguardngr.com/2014/04/heavy-downpour-floods-lagos/",
-          "publisher": "Vanguard"
+          "publisher": "Vanguard",
+          "date": "2014-04-20"
         },
         {
           "url": "https://punchng.com/rainstorm-destroys-buildings-cars-in-lagos/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2017-11-04"
         },
         {
           "url": "https://punchng.com/rain-residents-lament-as-flood-ravages-parts-of-lagos-ogun-bayelsa/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2021-06-26"
         },
         {
           "url": "https://punchng.com/10-hour-rainfall-businesses-grounded-house-collapses-as-flood-overtakes-lagos/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2024-07-03"
         },
         {
           "url": "https://www.thisdaylive.com/2024/07/03/torrential-rain-causes-widespread-flooding-in-lagos/",
-          "publisher": "THISDAY"
+          "publisher": "THISDAY",
+          "date": "2024-07-03"
         },
         {
           "url": "https://punchng.com/motorists-residents-lament-as-flood-submerges-lagos-roads/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2025-09-16"
         },
         {
           "url": "https://punchng.com/motorists-stranded-as-flood-overruns-lagos-communities/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2025-09-24"
         }
       ],
       "depths": []
@@ -2041,35 +2389,43 @@
       "reports": [
         {
           "url": "https://www.vanguardngr.com/2014/04/heavy-downpour-floods-lagos/",
-          "publisher": "Vanguard"
+          "publisher": "Vanguard",
+          "date": "2014-04-20"
         },
         {
           "url": "https://www.channelstv.com/2019/05/20/floods-hit-parts-of-lagos-after-heavy-rains/",
-          "publisher": "Channels Television"
+          "publisher": "Channels TV",
+          "date": "2019-05-20"
         },
         {
           "url": "https://dailytrust.com/lagos-more-rains-more-pains/",
-          "publisher": "Daily Trust"
+          "publisher": "Daily Trust",
+          "date": "2019-06-28"
         },
         {
           "url": "https://www.premiumtimesng.com/regional/ssouth-west/398304-lagos-residents-battle-flood-after-downpour.html",
-          "publisher": "Premium Times"
+          "publisher": "Premium Times",
+          "date": "2020-06-18"
         },
         {
           "url": "https://guardian.ng/news/flood-sweeps-four-year-old-girl-displaces-over-20-families-in-lagos/",
-          "publisher": "The Guardian Nigeria"
+          "publisher": "Guardian NG",
+          "date": "2020-06-18"
         },
         {
           "url": "https://punchng.com/flood-fallen-trucks-cause-lagos-gridlock-commuters-stranded/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2021-07-16"
         },
         {
           "url": "https://nairametrics.com/2021/07/16/flood-hits-parts-of-lagos-ogun/",
-          "publisher": "Nairametrics"
+          "publisher": "Nairametrics",
+          "date": "2021-07-16"
         },
         {
           "url": "https://punchng.com/lagos-residents-count-losses-after-flooding-nightmare/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2026-06-28"
         }
       ],
       "depths": []
@@ -2092,31 +2448,38 @@
       "reports": [
         {
           "url": "https://www.vanguardngr.com/2016/09/mudslide-kills-newly-wed-teenager-two-others-rescued-heavy-downpour-lagos/",
-          "publisher": "Vanguard"
+          "publisher": "Vanguard",
+          "date": "2016-09-06"
         },
         {
           "url": "https://dailytrust.com/nigerias-newest-flood-of-tears/",
-          "publisher": "Daily Trust"
+          "publisher": "Daily Trust",
+          "date": "2017-07-08"
         },
         {
           "url": "https://dailytrust.com/lagos-more-rains-more-pains/",
-          "publisher": "Daily Trust"
+          "publisher": "Daily Trust",
+          "date": "2019-07-01"
         },
         {
           "url": "https://www.vanguardngr.com/2023/09/downpour-leaves-lagos-badagry-expressway-flooded-residents-groan/",
-          "publisher": "Vanguard"
+          "publisher": "Vanguard",
+          "date": "2023-09-16"
         },
         {
           "url": "https://dailytrust.com/flood-submerges-houses-destroys-property-in-lagos/",
-          "publisher": "Daily Trust"
+          "publisher": "Daily Trust",
+          "date": "2023-09-16"
         },
         {
           "url": "https://punchng.com/10-hour-rainfall-businesses-grounded-house-collapses-as-flood-overtakes-lagos/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2024-07-03"
         },
         {
           "url": "https://punchng.com/video-govt-deploys-pumps-to-address-flooding-in-lagos-island-communities/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2025-04-10"
         }
       ],
       "depths": []
@@ -2138,27 +2501,33 @@
       "reports": [
         {
           "url": "https://guardian.ng/news/fear-of-flood-heightens-as-rains-begin/",
-          "publisher": "Guardian NG"
+          "publisher": "Guardian NG",
+          "date": "2015-03-11"
         },
         {
           "url": "https://punchng.com/rainstorm-destroys-buildings-cars-in-lagos/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2017-11-04"
         },
         {
           "url": "https://punchng.com/aboru-residents-groan-as-flood-wreaks-havoc-across-lagos/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2018-10-29"
         },
         {
           "url": "https://punchng.com/rain-wreaks-havoc-in-lagos-ogun-destroys-buildings-others/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2019-05-20"
         },
         {
           "url": "https://guardian.ng/news/how-lagos-downpour-wreaked-havoc-gridlock/",
-          "publisher": "The Guardian Nigeria"
+          "publisher": "Guardian NG",
+          "date": "2019-05-20"
         },
         {
           "url": "https://punchng.com/downpour-gas-man-drowns-lekki-ikorodu-residents-landlords-flee/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2019-10-12"
         }
       ],
       "depths": []
@@ -2180,31 +2549,38 @@
       "reports": [
         {
           "url": "https://www.vanguardngr.com/2014/04/heavy-downpour-floods-lagos/",
-          "publisher": "Vanguard"
+          "publisher": "Vanguard",
+          "date": "2014-04-20"
         },
         {
           "url": "https://dailytrust.com/3-day-rain-causes-flood-in-lagos/",
-          "publisher": "Daily Trust"
+          "publisher": "Daily Trust",
+          "date": "2015-06-20"
         },
         {
           "url": "https://punchng.com/rain-wreaks-havoc-in-lagos-ogun-destroys-buildings-others/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2019-05-20"
         },
         {
           "url": "https://guardian.ng/news/how-lagos-downpour-wreaked-havoc-gridlock/",
-          "publisher": "The Guardian Nigeria"
+          "publisher": "Guardian NG",
+          "date": "2019-05-20"
         },
         {
           "url": "https://www.vanguardngr.com/2019/07/photos-lagos-flooded/",
-          "publisher": "Vanguard"
+          "publisher": "Vanguard",
+          "date": "2019-07-01"
         },
         {
           "url": "https://dailytrust.com/lagos-more-rains-more-pains/",
-          "publisher": "Daily Trust"
+          "publisher": "Daily Trust",
+          "date": "2019-07-01"
         },
         {
           "url": "https://guardian.ng/news/residents-cry-for-help-as-flood-takes-over-lagos-community/",
-          "publisher": "The Guardian Nigeria"
+          "publisher": "Guardian NG",
+          "date": "2019-11-22"
         }
       ],
       "depths": []
@@ -2226,27 +2602,33 @@
       "reports": [
         {
           "url": "https://punchng.com/incessant-rain-wreaks-havoc-lagos-ogun/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2016-09-06"
         },
         {
           "url": "https://dailytrust.com/panic-as-flood-take-over-lagos-community/",
-          "publisher": "Daily Trust"
+          "publisher": "Daily Trust",
+          "date": "2021-11-14"
         },
         {
           "url": "https://punchng.com/rainfall-lagos-residents-lament-flooding-transport-fare-hike/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2022-07-09"
         },
         {
           "url": "https://www.vanguardngr.com/2024/07/aftermath-of-heavy-rain-chaos-lamentations-as-flood-grounds-lagos/",
-          "publisher": "Vanguard"
+          "publisher": "Vanguard",
+          "date": "2024-07-03"
         },
         {
           "url": "https://www.thisdaylive.com/2024/07/03/torrential-rain-causes-widespread-flooding-in-lagos/",
-          "publisher": "THISDAY"
+          "publisher": "THISDAY",
+          "date": "2024-07-03"
         },
         {
           "url": "https://punchng.com/motorists-residents-lament-as-flood-submerges-lagos-roads/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2025-09-16"
         }
       ],
       "depths": []
@@ -2268,31 +2650,38 @@
       "reports": [
         {
           "url": "https://guardian.ng/news/flood-takes-over-lekki-epe-expressway/",
-          "publisher": "Guardian NG"
+          "publisher": "Guardian NG",
+          "date": "2016-06-21"
         },
         {
           "url": "https://punchng.com/flood-wreaks-havoc-in-nigerias-most-expensive-neighbourhoods/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2017-07-08"
         },
         {
           "url": "https://punchng.com/ibeju-lekki-residents-lose-valuables-to-flood/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2018-09-08"
         },
         {
           "url": "https://dailytrust.com/millions-lost-in-ibeju-lekki-flood/",
-          "publisher": "Daily Trust"
+          "publisher": "Daily Trust",
+          "date": "2018-09-08"
         },
         {
           "url": "https://guardian.ng/news/ibeju-lekki-residents-lose-valuables-worth-millions-to-flood/",
-          "publisher": "Guardian NG"
+          "publisher": "Guardian NG",
+          "date": "2018-09-08"
         },
         {
           "url": "https://punchng.com/downpour-gas-man-drowns-lekki-ikorodu-residents-landlords-flee/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2019-10-12"
         },
         {
           "url": "https://punchng.com/10-hour-rainfall-businesses-grounded-house-collapses-as-flood-overtakes-lagos/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2024-07-03"
         }
       ],
       "depths": []
@@ -2314,23 +2703,28 @@
       "reports": [
         {
           "url": "https://punchng.com/incessant-rain-wreaks-havoc-lagos-ogun/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2016-09-06"
         },
         {
           "url": "https://punchng.com/downpour-gas-man-drowns-lekki-ikorodu-residents-landlords-flee/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2019-10-12"
         },
         {
           "url": "https://www.vanguardngr.com/2022/07/rainstorms-flood-rages-in-lagos-as-residents-get-fresh-danger-alert/",
-          "publisher": "Vanguard"
+          "publisher": "Vanguard",
+          "date": "2022-07-08"
         },
         {
           "url": "https://guardian.ng/news/heavy-rains-wreak-havoc-sweep-vehicles-occupants-into-drainage/",
-          "publisher": "The Guardian Nigeria"
+          "publisher": "Guardian NG",
+          "date": "2022-07-09"
         },
         {
           "url": "https://www.thisdaylive.com/2024/07/03/torrential-rain-causes-widespread-flooding-in-lagos/",
-          "publisher": "THISDAY"
+          "publisher": "THISDAY",
+          "date": "2024-07-03"
         }
       ],
       "depths": []
@@ -2352,27 +2746,33 @@
       "reports": [
         {
           "url": "https://dailytrust.com/panic-as-flood-takes-over-lagos/",
-          "publisher": "Daily Trust"
+          "publisher": "Daily Trust",
+          "date": "2017-07-08"
         },
         {
           "url": "https://www.vanguardngr.com/2023/09/downpour-lagos-postpones-3rd-mainland-bridge-repairs-floods-sack-communities-motorists-stranded/",
-          "publisher": "Vanguard"
+          "publisher": "Vanguard",
+          "date": "2023-09-16"
         },
         {
           "url": "https://dailytrust.com/flood-submerges-houses-destroys-property-in-lagos/",
-          "publisher": "Daily Trust"
+          "publisher": "Daily Trust",
+          "date": "2023-09-16"
         },
         {
           "url": "https://www.vanguardngr.com/2025/08/flash-floods-ground-lagos-paralyse-businesses/",
-          "publisher": "Vanguard"
+          "publisher": "Vanguard",
+          "date": "2025-08-04"
         },
         {
           "url": "https://guardian.ng/news/nigeria/metro/heavy-rain-triggers-flooding-across-lagos-strands-commuters-businesses/",
-          "publisher": "Guardian NG"
+          "publisher": "Guardian NG",
+          "date": "2026-06-30"
         },
         {
           "url": "https://www.vanguardngr.com/2026/07/residents-count-losses-as-torrential-rain-floods-lagos-communities/",
-          "publisher": "Vanguard"
+          "publisher": "Vanguard",
+          "date": "2026-07-10"
         }
       ],
       "depths": []
@@ -2394,23 +2794,28 @@
       "reports": [
         {
           "url": "https://dailytrust.com/lagos-community-paralysed-by-flood-resorts-to-canoes/",
-          "publisher": "Daily Trust"
+          "publisher": "Daily Trust",
+          "date": "2016-09-17"
         },
         {
           "url": "https://punchng.com/300-houses-flooded-agency-releases-oyan-dam-water/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2016-10-05"
         },
         {
           "url": "https://punchng.com/flooding-lagos-ogun-brainstorm-over-oyan-dam-water-release/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2019-10-20"
         },
         {
           "url": "https://www.vanguardngr.com/2021/10/looming-floods-lagos-residents-say-nowhere-to-go/",
-          "publisher": "Vanguard"
+          "publisher": "Vanguard",
+          "date": "2021-09-26"
         },
         {
           "url": "https://punchng.com/rain-pounds-lagos-houses-roads-flooded-property-destroyed/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2022-06-18"
         }
       ],
       "depths": []
@@ -2432,27 +2837,33 @@
       "reports": [
         {
           "url": "https://punchng.com/flood-wreaks-havoc-in-nigerias-most-expensive-neighbourhoods/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2017-07-08"
         },
         {
           "url": "https://dailytrust.com/lagos-more-rains-more-pains/",
-          "publisher": "Daily Trust"
+          "publisher": "Daily Trust",
+          "date": "2019-07-01"
         },
         {
           "url": "https://www.vanguardngr.com/2024/07/aftermath-of-heavy-rain-chaos-lamentations-as-flood-grounds-lagos/",
-          "publisher": "Vanguard"
+          "publisher": "Vanguard",
+          "date": "2024-07-03"
         },
         {
           "url": "https://www.vanguardngr.com/2025/09/gridlock-as-flash-floods-take-over-lagos-roads-paralyse-business-activities/",
-          "publisher": "Vanguard"
+          "publisher": "Vanguard",
+          "date": "2025-09-09"
         },
         {
           "url": "https://www.vanguardngr.com/2026/06/motorists-commuters-stranded-as-floods-submerge-lagos-roads/",
-          "publisher": "Vanguard"
+          "publisher": "Vanguard",
+          "date": "2026-06-28"
         },
         {
           "url": "https://punchng.com/lagos-residents-count-losses-after-flooding-nightmare/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2026-06-28"
         }
       ],
       "depths": []
@@ -2473,19 +2884,23 @@
       "reports": [
         {
           "url": "https://www.vanguardngr.com/2023/09/photos-cyclist-drowns-200-displaced-as-downpour-wreaks-havoc-on-lagos-communities/",
-          "publisher": "Vanguard"
+          "publisher": "Vanguard",
+          "date": "2023-09-16"
         },
         {
           "url": "https://punchng.com/commuters-motorists-stranded-as-downpour-floods-lagos-roads/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2024-10-17"
         },
         {
           "url": "https://guardian.ng/news/nigeria/metro/heavy-rainfall-floods-lagos-residents-struggle-to-navigate-streets/",
-          "publisher": "Guardian NG"
+          "publisher": "Guardian NG",
+          "date": "2025-09-24"
         },
         {
           "url": "https://dailytrust.com/flood-lagos-residents-count-losses/",
-          "publisher": "Daily Trust"
+          "publisher": "Daily Trust",
+          "date": "2026-06-30"
         }
       ],
       "depths": []
@@ -2506,23 +2921,28 @@
       "reports": [
         {
           "url": "https://www.vanguardngr.com/2017/07/flood-eko-disco-announces-power-cut-ikoyi-victoria-island/",
-          "publisher": "Vanguard"
+          "publisher": "Vanguard",
+          "date": "2017-07-08"
         },
         {
           "url": "https://www.vanguardngr.com/2024/06/48hrs-rainfall-agungi-lekki-environs-in-lagos-submerge-in-flood/",
-          "publisher": "Vanguard"
+          "publisher": "Vanguard",
+          "date": "2024-06-27"
         },
         {
           "url": "https://moelagos.gov.ng/flooding-lagos-to-construct-additional-drainage-collector-on-agungi-to-bring-relief/",
-          "publisher": "Lagos State Ministry of the Environment and Water Resources"
+          "publisher": "Lagos State Ministry of the Environment and Water Resources",
+          "date": "2024-06-27"
         },
         {
           "url": "https://nairametrics.com/2025/08/07/lagos-state-govt-reassures-residents-over-flash-floods-says-infrastructure-in-place-to-manage-flooding/",
-          "publisher": "Nairametrics"
+          "publisher": "Nairametrics",
+          "date": "2025-08-04"
         },
         {
           "url": "https://punchng.com/lagos-residents-count-losses-after-flooding-nightmare/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2026-06-28"
         }
       ],
       "depths": []
@@ -2543,31 +2963,38 @@
       "reports": [
         {
           "url": "https://guardian.ng/news/fear-of-flood-heightens-as-rains-begin/",
-          "publisher": "Guardian NG"
+          "publisher": "Guardian NG",
+          "date": "2015-03-11"
         },
         {
           "url": "https://dailytrust.com/lagos-more-rains-more-pains/",
-          "publisher": "Daily Trust"
+          "publisher": "Daily Trust",
+          "date": "2019-07-01"
         },
         {
           "url": "https://punchng.com/commuters-motorists-stranded-as-downpour-floods-lagos-roads/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2024-10-17"
         },
         {
           "url": "https://www.premiumtimesng.com/regional/ssouth-west/891405-heavy-rainfall-floods-lagos-communities-disrupts-airport-operations.html",
-          "publisher": "Premium Times"
+          "publisher": "Premium Times",
+          "date": "2026-06-28"
         },
         {
           "url": "https://guardian.ng/news/nigeria/metro/lagos-residents-lament-as-flooding-cripples-transport-businesses/",
-          "publisher": "Guardian NG"
+          "publisher": "Guardian NG",
+          "date": "2026-06-28"
         },
         {
           "url": "https://punchng.com/heavy-rain-floods-lagos-roads-agencies-warn-of-more-risks/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2026-06-28"
         },
         {
           "url": "https://www.premiumtimesng.com/regional/ssouth-west/891467-lagos-flood-floodwaters-recede-in-oshodi-but-shops-remain-shut.html",
-          "publisher": "Premium Times"
+          "publisher": "Premium Times",
+          "date": "2026-06-28"
         }
       ],
       "depths": []
@@ -2588,27 +3015,33 @@
       "reports": [
         {
           "url": "https://guardian.ng/news/fear-of-flood-heightens-as-rains-begin/",
-          "publisher": "Guardian NG"
+          "publisher": "Guardian NG",
+          "date": "2015-03-11"
         },
         {
           "url": "https://dailytrust.com/lagos-more-rains-more-pains/",
-          "publisher": "Daily Trust"
+          "publisher": "Daily Trust",
+          "date": "2019-07-01"
         },
         {
           "url": "https://www.premiumtimesng.com/regional/ssouth-west/398304-lagos-residents-battle-flood-after-downpour.html",
-          "publisher": "Premium Times"
+          "publisher": "Premium Times",
+          "date": "2020-06-18"
         },
         {
           "url": "https://guardian.ng/news/flood-sweeps-four-year-old-girl-displaces-over-20-families-in-lagos/",
-          "publisher": "The Guardian Nigeria"
+          "publisher": "Guardian NG",
+          "date": "2020-06-18"
         },
         {
           "url": "https://punchng.com/rainfall-lagos-residents-lament-flooding-transport-fare-hike/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2022-07-09"
         },
         {
           "url": "https://dailytrust.com/elderly-woman-rescued-from-lagos-flood-as-government-asks-residents-to-avoid-flood-prone-areas/",
-          "publisher": "Daily Trust"
+          "publisher": "Daily Trust",
+          "date": "2022-07-09"
         }
       ],
       "depths": []
@@ -2629,19 +3062,23 @@
       "reports": [
         {
           "url": "https://www.thisdaylive.com/2024/07/03/torrential-rain-causes-widespread-flooding-in-lagos/",
-          "publisher": "THISDAY"
+          "publisher": "THISDAY",
+          "date": "2024-07-03"
         },
         {
           "url": "https://punchng.com/motorists-stranded-as-flood-overruns-lagos-communities/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2025-09-24"
         },
         {
           "url": "https://nairametrics.com/2026/07/05/why-kunsela-ologolo-gbagada-and-other-parts-of-lagos-keep-flooding/",
-          "publisher": "Nairametrics"
+          "publisher": "Nairametrics",
+          "date": "2026-06-30"
         },
         {
           "url": "https://punchng.com/downpour-cripples-lagos-flood-submerges-cars-strands-motorists/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2026-07-13"
         }
       ],
       "depths": [
@@ -2650,6 +3087,7 @@
           "metres": 0.45,
           "url": "https://nairametrics.com/2026/07/05/why-kunsela-ologolo-gbagada-and-other-parts-of-lagos-keep-flooding/",
           "publisher": "Nairametrics",
+          "date": "2026-06-30",
           "placed_by": "same_sentence",
           "sentence": "Knee-deep flood on Kunsela Road."
         }
@@ -2671,19 +3109,23 @@
       "reports": [
         {
           "url": "https://www.vanguardngr.com/2014/04/heavy-downpour-floods-lagos/",
-          "publisher": "Vanguard"
+          "publisher": "Vanguard",
+          "date": "2014-04-20"
         },
         {
           "url": "https://dailytrust.com/lagos-more-rains-more-pains/",
-          "publisher": "Daily Trust"
+          "publisher": "Daily Trust",
+          "date": "2019-06-28"
         },
         {
           "url": "https://punchng.com/video-rain-floods-lagos-road-causes-gridlock/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2026-01-30"
         },
         {
           "url": "https://www.vanguardngr.com/2026/06/motorists-commuters-stranded-as-floods-submerge-lagos-roads/",
-          "publisher": "Vanguard"
+          "publisher": "Vanguard",
+          "date": "2026-06-28"
         }
       ],
       "depths": []
@@ -2704,27 +3146,33 @@
       "reports": [
         {
           "url": "https://www.vanguardngr.com/2024/07/aftermath-of-heavy-rain-chaos-lamentations-as-flood-grounds-lagos/",
-          "publisher": "Vanguard"
+          "publisher": "Vanguard",
+          "date": "2024-07-03"
         },
         {
           "url": "https://www.thisdaylive.com/2024/07/03/torrential-rain-causes-widespread-flooding-in-lagos/",
-          "publisher": "THISDAY"
+          "publisher": "THISDAY",
+          "date": "2024-07-03"
         },
         {
           "url": "https://dailytrust.com/lagos-residents-stranded-as-flood-cuts-off-ajah-mafoluku-communities/",
-          "publisher": "Daily Trust"
+          "publisher": "Daily Trust",
+          "date": "2026-06-25"
         },
         {
           "url": "https://punchng.com/lagos-residents-count-losses-after-flooding-nightmare/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2026-06-28"
         },
         {
           "url": "https://punchng.com/floodwaters-submerge-homes-disrupt-power-supply-in-lagos/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2026-06-30"
         },
         {
           "url": "https://www.channelstv.com/2026/06/30/lagos-govt-sues-for-calm-following-persistent-rainfalls-flash-floods/",
-          "publisher": "Channels Television"
+          "publisher": "Channels TV",
+          "date": "2026-06-30"
         }
       ],
       "depths": []
@@ -2745,19 +3193,23 @@
       "reports": [
         {
           "url": "https://guardian.ng/sunday-magazine/cityfile/residents-want-lagos-govts-intervention-on-flooding/",
-          "publisher": "Guardian NG"
+          "publisher": "Guardian NG",
+          "date": "2015-07-18"
         },
         {
           "url": "https://www.vanguardngr.com/2016/09/mudslide-kills-newly-wed-teenager-two-others-rescued-heavy-downpour-lagos/",
-          "publisher": "Vanguard"
+          "publisher": "Vanguard",
+          "date": "2016-09-06"
         },
         {
           "url": "https://dailytrust.com/panic-as-flood-takes-over-lagos/",
-          "publisher": "Daily Trust"
+          "publisher": "Daily Trust",
+          "date": "2017-07-08"
         },
         {
           "url": "https://guardian.ng/news/nigeria/metro/heavy-rainfall-floods-lagos-residents-struggle-to-navigate-streets/",
-          "publisher": "Guardian NG"
+          "publisher": "Guardian NG",
+          "date": "2025-09-24"
         }
       ],
       "depths": []
@@ -2778,19 +3230,23 @@
       "reports": [
         {
           "url": "https://www.channelstv.com/2018/05/25/flood-hits-lagos-after-early-morning-downpour/",
-          "publisher": "Channels TV"
+          "publisher": "Channels TV",
+          "date": "2018-05-25"
         },
         {
           "url": "https://guardian.ng/news/how-lagos-downpour-wreaked-havoc-gridlock/",
-          "publisher": "The Guardian Nigeria"
+          "publisher": "Guardian NG",
+          "date": "2019-05-20"
         },
         {
           "url": "https://www.vanguardngr.com/2023/04/lagos-traffic-lastma-dislodges-flood-into-open-drains/",
-          "publisher": "Vanguard"
+          "publisher": "Vanguard",
+          "date": "2023-04-24"
         },
         {
           "url": "https://punchng.com/commuters-motorists-stranded-as-downpour-floods-lagos-roads/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2024-10-17"
         }
       ],
       "depths": []
@@ -2811,15 +3267,18 @@
       "reports": [
         {
           "url": "https://www.vanguardngr.com/2014/04/heavy-downpour-floods-lagos/",
-          "publisher": "Vanguard"
+          "publisher": "Vanguard",
+          "date": "2014-04-20"
         },
         {
           "url": "https://punchng.com/300-houses-flooded-agency-releases-oyan-dam-water/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2016-10-05"
         },
         {
           "url": "https://punchng.com/downpour-cripples-lagos-flood-submerges-cars-strands-motorists/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2026-07-13"
         }
       ],
       "depths": []
@@ -2840,19 +3299,23 @@
       "reports": [
         {
           "url": "https://punchng.com/300-houses-flooded-agency-releases-oyan-dam-water/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2016-10-05"
         },
         {
           "url": "https://dailytrust.com/panic-as-flood-takes-over-lagos/",
-          "publisher": "Daily Trust"
+          "publisher": "Daily Trust",
+          "date": "2017-07-08"
         },
         {
           "url": "https://dailytrust.com/nigerias-newest-flood-of-tears/",
-          "publisher": "Daily Trust"
+          "publisher": "Daily Trust",
+          "date": "2017-07-08"
         },
         {
           "url": "https://guardian.ng/news/residents-seek-action-as-flood-sacks-lagos-communities/",
-          "publisher": "The Guardian Nigeria"
+          "publisher": "Guardian NG",
+          "date": "2020-07-04"
         }
       ],
       "depths": []
@@ -2872,15 +3335,18 @@
       "reports": [
         {
           "url": "https://punchng.com/300-houses-flooded-agency-releases-oyan-dam-water/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2016-10-05"
         },
         {
           "url": "https://independent.ng/overflowing-river-ogun-wreaks-havoc-on-lagos-communities/",
-          "publisher": "Independent Nigeria"
+          "publisher": "Independent Nigeria",
+          "date": "2019-10-04"
         },
         {
           "url": "https://punchng.com/flooding-lagos-ogun-brainstorm-over-oyan-dam-water-release/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2019-10-20"
         }
       ],
       "depths": []
@@ -2900,15 +3366,18 @@
       "reports": [
         {
           "url": "https://dailytrust.com/flood-takes-over-lagos-abeokuta-expressway/",
-          "publisher": "Daily Trust"
+          "publisher": "Daily Trust",
+          "date": "2015-11-07"
         },
         {
           "url": "https://www.vanguardngr.com/2018/03/2-students-found-floating-water-alagbado-lagos-heavy-rain/",
-          "publisher": "Vanguard"
+          "publisher": "Vanguard",
+          "date": "2018-03-29"
         },
         {
           "url": "https://punchng.com/lagos-flood-killed-three-siblings-four-adults-nema/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2022-07-08"
         }
       ],
       "depths": []
@@ -2928,15 +3397,18 @@
       "reports": [
         {
           "url": "https://dailytrust.com/3-day-rain-causes-flood-in-lagos/",
-          "publisher": "Daily Trust"
+          "publisher": "Daily Trust",
+          "date": "2015-06-20"
         },
         {
           "url": "https://punchng.com/residents-blame-blocked-canal-as-flood-overruns-lagos-community/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2026-03-31"
         },
         {
           "url": "https://punchng.com/flood-displaces-lagos-schoolchildren-as-building-project-blocks-canal/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2026-04-10"
         }
       ],
       "depths": []
@@ -2956,15 +3428,18 @@
       "reports": [
         {
           "url": "https://punchng.com/floods-windstorm-wreak-havoc-lagos-ogun-sokoto/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2016-08-28"
         },
         {
           "url": "https://www.channelstv.com/2018/05/25/flood-hits-lagos-after-early-morning-downpour/",
-          "publisher": "Channels TV"
+          "publisher": "Channels TV",
+          "date": "2018-05-25"
         },
         {
           "url": "https://punchng.com/downpour-gas-man-drowns-lekki-ikorodu-residents-landlords-flee/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2019-10-12"
         }
       ],
       "depths": []
@@ -2984,19 +3459,23 @@
       "reports": [
         {
           "url": "https://guardian.ng/news/again-flood-wreaks-havoc-in-lagos/",
-          "publisher": "The Guardian Nigeria"
+          "publisher": "Guardian NG",
+          "date": "2019-10-20"
         },
         {
           "url": "https://punchng.com/flooding-lagos-ogun-brainstorm-over-oyan-dam-water-release/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2019-10-20"
         },
         {
           "url": "https://www.channelstv.com/2022/09/12/gridlock-outcry-as-floods-hit-lagos-kill-two/",
-          "publisher": "Channels Television"
+          "publisher": "Channels TV",
+          "date": "2022-09-12"
         },
         {
           "url": "https://www.vanguardngr.com/2025/09/gridlock-as-flash-floods-take-over-lagos-roads-paralyse-business-activities/",
-          "publisher": "Vanguard"
+          "publisher": "Vanguard",
+          "date": "2025-09-09"
         }
       ],
       "depths": []
@@ -3016,15 +3495,18 @@
       "reports": [
         {
           "url": "https://punchng.com/early-morning-rainfall-roads-homes-flooded-in-lagos/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2017-07-22"
         },
         {
           "url": "https://dailytrust.com/lagos-more-rains-more-pains/",
-          "publisher": "Daily Trust"
+          "publisher": "Daily Trust",
+          "date": "2019-07-01"
         },
         {
           "url": "https://guardian.ng/news/nigeria/metro/heavy-rain-triggers-flooding-across-lagos-strands-commuters-businesses/",
-          "publisher": "Guardian NG"
+          "publisher": "Guardian NG",
+          "date": "2026-06-30"
         }
       ],
       "depths": []
@@ -3044,31 +3526,38 @@
       "reports": [
         {
           "url": "https://www.vanguardngr.com/2016/06/residents-groan-flooding-rain-persists-lagos/",
-          "publisher": "Vanguard"
+          "publisher": "Vanguard",
+          "date": "2016-06-21"
         },
         {
           "url": "https://guardian.ng/news/flood-takes-over-lekki-epe-expressway/",
-          "publisher": "Guardian NG"
+          "publisher": "Guardian NG",
+          "date": "2016-06-21"
         },
         {
           "url": "https://punchng.com/ibeju-lekki-residents-lose-valuables-to-flood/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2018-09-08"
         },
         {
           "url": "https://dailytrust.com/millions-lost-in-ibeju-lekki-flood/",
-          "publisher": "Daily Trust"
+          "publisher": "Daily Trust",
+          "date": "2018-09-08"
         },
         {
           "url": "https://guardian.ng/news/ibeju-lekki-residents-lose-valuables-worth-millions-to-flood/",
-          "publisher": "Guardian NG"
+          "publisher": "Guardian NG",
+          "date": "2018-09-08"
         },
         {
           "url": "https://punchng.com/10-hour-rainfall-businesses-grounded-house-collapses-as-flood-overtakes-lagos/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2024-07-03"
         },
         {
           "url": "https://www.vanguardngr.com/2024/07/aftermath-of-heavy-rain-chaos-lamentations-as-flood-grounds-lagos/",
-          "publisher": "Vanguard"
+          "publisher": "Vanguard",
+          "date": "2024-07-03"
         }
       ],
       "depths": []
@@ -3088,15 +3577,18 @@
       "reports": [
         {
           "url": "https://www.vanguardngr.com/2014/04/heavy-downpour-floods-lagos/",
-          "publisher": "Vanguard"
+          "publisher": "Vanguard",
+          "date": "2014-04-20"
         },
         {
           "url": "https://punchng.com/early-morning-rainfall-roads-homes-flooded-in-lagos/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2017-07-22"
         },
         {
           "url": "https://guardian.ng/news/how-lagos-downpour-wreaked-havoc-gridlock/",
-          "publisher": "The Guardian Nigeria"
+          "publisher": "Guardian NG",
+          "date": "2019-05-20"
         }
       ],
       "depths": []
@@ -3116,15 +3608,18 @@
       "reports": [
         {
           "url": "https://dailytrust.com/panic-as-flood-takes-over-lagos/",
-          "publisher": "Daily Trust"
+          "publisher": "Daily Trust",
+          "date": "2017-07-08"
         },
         {
           "url": "https://punchng.com/downpour-gas-man-drowns-lekki-ikorodu-residents-landlords-flee/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2019-10-12"
         },
         {
           "url": "https://www.thisdaylive.com/2024/07/03/torrential-rain-causes-widespread-flooding-in-lagos/",
-          "publisher": "THISDAY"
+          "publisher": "THISDAY",
+          "date": "2024-07-03"
         }
       ],
       "depths": []
@@ -3144,15 +3639,18 @@
       "reports": [
         {
           "url": "https://punchng.com/incessant-rain-wreaks-havoc-lagos-ogun/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2016-09-06"
         },
         {
           "url": "https://dailytrust.com/lagos-more-rains-more-pains/",
-          "publisher": "Daily Trust"
+          "publisher": "Daily Trust",
+          "date": "2019-07-01"
         },
         {
           "url": "https://nairametrics.com/2021/07/16/flood-hits-parts-of-lagos-ogun/",
-          "publisher": "Nairametrics"
+          "publisher": "Nairametrics",
+          "date": "2021-07-16"
         }
       ],
       "depths": []
@@ -3172,19 +3670,23 @@
       "reports": [
         {
           "url": "https://punchng.com/video-nigerians-react-as-flood-overruns-primary-school-in-affluent-lekki/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2018-06-06"
         },
         {
           "url": "https://punchng.com/flood-fallen-trucks-cause-lagos-gridlock-commuters-stranded/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2021-07-16"
         },
         {
           "url": "https://nairametrics.com/2021/07/16/flood-hits-parts-of-lagos-ogun/",
-          "publisher": "Nairametrics"
+          "publisher": "Nairametrics",
+          "date": "2021-07-16"
         },
         {
           "url": "https://www.vanguardngr.com/2025/05/flash-floods-in-lagos-caused-by-high-tidal-levels-says-environment-commissioner/",
-          "publisher": "Vanguard"
+          "publisher": "Vanguard",
+          "date": "2025-05-18"
         }
       ],
       "depths": []
@@ -3204,15 +3706,18 @@
       "reports": [
         {
           "url": "https://dailytrust.com/3-day-rain-causes-flood-in-lagos/",
-          "publisher": "Daily Trust"
+          "publisher": "Daily Trust",
+          "date": "2015-06-20"
         },
         {
           "url": "https://punchng.com/early-morning-rainfall-roads-homes-flooded-in-lagos/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2017-07-22"
         },
         {
           "url": "https://punchng.com/downpour-cripples-lagos-flood-submerges-cars-strands-motorists/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2026-07-13"
         }
       ],
       "depths": [
@@ -3221,6 +3726,7 @@
           "metres": 0.45,
           "url": "https://punchng.com/early-morning-rainfall-roads-homes-flooded-in-lagos/",
           "publisher": "Punch",
+          "date": "2017-07-22",
           "placed_by": "same_sentence",
           "sentence": "Nelson Eta: flooding at Ikate, Itire, above the knee;"
         }
@@ -3241,55 +3747,68 @@
       "reports": [
         {
           "url": "https://www.vanguardngr.com/2016/06/residents-groan-flooding-rain-persists-lagos/",
-          "publisher": "Vanguard"
+          "publisher": "Vanguard",
+          "date": "2016-06-21"
         },
         {
           "url": "https://guardian.ng/news/flood-takes-over-lekki-epe-expressway/",
-          "publisher": "Guardian NG"
+          "publisher": "Guardian NG",
+          "date": "2016-06-21"
         },
         {
           "url": "https://punchng.com/flood-wreaks-havoc-in-nigerias-most-expensive-neighbourhoods/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2017-07-08"
         },
         {
           "url": "https://www.channelstv.com/2017/07/08/lagosians-lament-as-flood-hits-lekki-victoria-island/",
-          "publisher": "Channels TV"
+          "publisher": "Channels TV",
+          "date": "2017-07-08"
         },
         {
           "url": "https://dailytrust.com/panic-as-flood-takes-over-lagos/",
-          "publisher": "Daily Trust"
+          "publisher": "Daily Trust",
+          "date": "2017-07-08"
         },
         {
           "url": "https://www.vanguardngr.com/2017/07/photos-flood-victoria-island-lekki/",
-          "publisher": "Vanguard"
+          "publisher": "Vanguard",
+          "date": "2017-07-08"
         },
         {
           "url": "https://www.vanguardngr.com/2017/07/flood-eko-disco-announces-power-cut-ikoyi-victoria-island/",
-          "publisher": "Vanguard"
+          "publisher": "Vanguard",
+          "date": "2017-07-08"
         },
         {
           "url": "https://guardian.ng/news/were-pursuing-holistic-solution-to-lagos-flooding-says-ambode/",
-          "publisher": "Guardian NG"
+          "publisher": "Guardian NG",
+          "date": "2017-07-08"
         },
         {
           "url": "https://punchng.com/lasgll-tackle-flooding-says-ambode/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2017-07-08"
         },
         {
           "url": "https://dailytrust.com/nigerias-newest-flood-of-tears/",
-          "publisher": "Daily Trust"
+          "publisher": "Daily Trust",
+          "date": "2017-07-08"
         },
         {
           "url": "https://guardian.ng/news/nigeria/metro/lagos-residents-lament-as-flooding-cripples-transport-businesses/",
-          "publisher": "Guardian NG"
+          "publisher": "Guardian NG",
+          "date": "2026-06-28"
         },
         {
           "url": "https://www.vanguardngr.com/2026/06/motorists-commuters-stranded-as-floods-submerge-lagos-roads/",
-          "publisher": "Vanguard"
+          "publisher": "Vanguard",
+          "date": "2026-06-28"
         },
         {
           "url": "https://punchng.com/lagos-residents-count-losses-after-flooding-nightmare/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2026-06-28"
         }
       ],
       "depths": []
@@ -3309,15 +3828,18 @@
       "reports": [
         {
           "url": "https://www.vanguardngr.com/2020/05/photos-aftermath-monday-downpour-parts-of-ikorodu-flooded/",
-          "publisher": "Vanguard"
+          "publisher": "Vanguard",
+          "date": "2020-05-25"
         },
         {
           "url": "https://punchng.com/we-cry-pray-fear-for-our-lives-every-rainy-season-lagosians-living-in-flood-prone-areas/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2020-06-28"
         },
         {
           "url": "https://guardian.ng/news/residents-seek-action-as-flood-sacks-lagos-communities/",
-          "publisher": "The Guardian Nigeria"
+          "publisher": "Guardian NG",
+          "date": "2020-07-04"
         }
       ],
       "depths": []
@@ -3337,15 +3859,18 @@
       "reports": [
         {
           "url": "https://dailytrust.com/lagos-community-paralysed-by-flood-resorts-to-canoes/",
-          "publisher": "Daily Trust"
+          "publisher": "Daily Trust",
+          "date": "2016-09-17"
         },
         {
           "url": "https://www.bbc.com/pidgin/tori-50028872",
-          "publisher": "BBC News Pidgin"
+          "publisher": "BBC News Pidgin",
+          "date": "2019-10-12"
         },
         {
           "url": "https://punchng.com/lagos-rain-four-year-old-girl-swept-away-woman-dies-buildings-collapse/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2020-06-18"
         }
       ],
       "depths": []
@@ -3365,19 +3890,23 @@
       "reports": [
         {
           "url": "https://punchng.com/flood-wreaks-havoc-in-nigerias-most-expensive-neighbourhoods/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2017-07-08"
         },
         {
           "url": "https://www.vanguardngr.com/2017/07/photos-flood-victoria-island-lekki/",
-          "publisher": "Vanguard"
+          "publisher": "Vanguard",
+          "date": "2017-07-08"
         },
         {
           "url": "https://www.bbc.com/pidgin/tori-43204030",
-          "publisher": "BBC Pidgin"
+          "publisher": "BBC Pidgin",
+          "date": "2018-02-26"
         },
         {
           "url": "https://punchng.com/motorists-residents-lament-as-flood-submerges-lagos-roads/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2025-09-16"
         }
       ],
       "depths": []
@@ -3397,11 +3926,13 @@
       "reports": [
         {
           "url": "https://independent.ng/overflowing-river-ogun-wreaks-havoc-on-lagos-communities/",
-          "publisher": "Independent Nigeria"
+          "publisher": "Independent Nigeria",
+          "date": "2019-10-04"
         },
         {
           "url": "https://www.thisdaylive.com/2021/12/06/cry-from-lagos-estates-submerged-by-water/",
-          "publisher": "THISDAY"
+          "publisher": "THISDAY",
+          "date": "2021-09-02"
         }
       ],
       "depths": []
@@ -3420,11 +3951,13 @@
       "reports": [
         {
           "url": "https://www.channelstv.com/2018/10/10/flood-traffic-hit-lagos-after-early-morning-downpour/",
-          "publisher": "Channels TV"
+          "publisher": "Channels TV",
+          "date": "2018-10-10"
         },
         {
           "url": "https://punchng.com/downpour-cripples-lagos-flood-submerges-cars-strands-motorists/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2026-07-13"
         }
       ],
       "depths": []
@@ -3443,11 +3976,13 @@
       "reports": [
         {
           "url": "https://www.thecable.ng/homeowners-flee-schools-shut-as-flooding-becomes-permanent-resident-in-lagos-communities/",
-          "publisher": "TheCable"
+          "publisher": "TheCable",
+          "date": "2021-10-10"
         },
         {
           "url": "https://www.vanguardngr.com/2022/07/how-flood-swept-3-siblings-4-others-in-lagos-ogun-nema/",
-          "publisher": "Vanguard"
+          "publisher": "Vanguard",
+          "date": "2022-07-08"
         }
       ],
       "depths": []
@@ -3466,11 +4001,13 @@
       "reports": [
         {
           "url": "https://punchng.com/rain-wreaks-havoc-in-lagos-ogun-destroys-buildings-others/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2019-05-20"
         },
         {
           "url": "https://dailytrust.com/lagos-more-rains-more-pains/",
-          "publisher": "Daily Trust"
+          "publisher": "Daily Trust",
+          "date": "2019-06-28"
         }
       ],
       "depths": []
@@ -3489,11 +4026,13 @@
       "reports": [
         {
           "url": "https://www.channelstv.com/2019/05/20/floods-hit-parts-of-lagos-after-heavy-rains/",
-          "publisher": "Channels Television"
+          "publisher": "Channels TV",
+          "date": "2019-05-20"
         },
         {
           "url": "https://punchng.com/flood-fallen-trucks-cause-lagos-gridlock-commuters-stranded/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2021-07-16"
         }
       ],
       "depths": []
@@ -3512,11 +4051,13 @@
       "reports": [
         {
           "url": "https://dailytrust.com/3-day-rain-causes-flood-in-lagos/",
-          "publisher": "Daily Trust"
+          "publisher": "Daily Trust",
+          "date": "2015-06-20"
         },
         {
           "url": "https://www.vanguardngr.com/2026/05/again-lagos-community-cries-for-help-as-flood-threatens-lives-properties/",
-          "publisher": "Vanguard"
+          "publisher": "Vanguard",
+          "date": "2026-05-07"
         }
       ],
       "depths": []
@@ -3535,11 +4076,13 @@
       "reports": [
         {
           "url": "https://punchng.com/rain-residents-lament-as-flood-ravages-parts-of-lagos-ogun-bayelsa/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2021-06-26"
         },
         {
           "url": "https://dailytrust.com/flood-lagos-residents-count-losses/",
-          "publisher": "Daily Trust"
+          "publisher": "Daily Trust",
+          "date": "2026-06-30"
         }
       ],
       "depths": []
@@ -3558,11 +4101,13 @@
       "reports": [
         {
           "url": "https://punchng.com/300-houses-flooded-agency-releases-oyan-dam-water/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2016-10-05"
         },
         {
           "url": "https://www.bbc.com/pidgin/tori-50028872",
-          "publisher": "BBC News Pidgin"
+          "publisher": "BBC News Pidgin",
+          "date": "2019-10-12"
         }
       ],
       "depths": []
@@ -3581,11 +4126,13 @@
       "reports": [
         {
           "url": "https://www.vanguardngr.com/2016/06/residents-groan-flooding-rain-persists-lagos/",
-          "publisher": "Vanguard"
+          "publisher": "Vanguard",
+          "date": "2016-06-21"
         },
         {
           "url": "https://punchng.com/flood-wreaks-havoc-in-nigerias-most-expensive-neighbourhoods/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2017-07-08"
         }
       ],
       "depths": []
@@ -3604,15 +4151,18 @@
       "reports": [
         {
           "url": "https://dailytrust.com/panic-as-flood-takes-over-lagos/",
-          "publisher": "Daily Trust"
+          "publisher": "Daily Trust",
+          "date": "2017-07-08"
         },
         {
           "url": "https://punchng.com/floodwaters-submerge-homes-disrupt-power-supply-in-lagos/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2026-06-30"
         },
         {
           "url": "https://guardian.ng/news/nigeria/metro/heavy-rain-triggers-flooding-across-lagos-strands-commuters-businesses/",
-          "publisher": "Guardian NG"
+          "publisher": "Guardian NG",
+          "date": "2026-06-30"
         }
       ],
       "depths": []
@@ -3631,11 +4181,13 @@
       "reports": [
         {
           "url": "https://punchng.com/incessant-rain-wreaks-havoc-lagos-ogun/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2016-09-06"
         },
         {
           "url": "https://punchng.com/10-hour-rainfall-businesses-grounded-house-collapses-as-flood-overtakes-lagos/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2024-07-03"
         }
       ],
       "depths": []
@@ -3654,27 +4206,33 @@
       "reports": [
         {
           "url": "https://www.vanguardngr.com/2019/07/photos-lagos-flooded/",
-          "publisher": "Vanguard"
+          "publisher": "Vanguard",
+          "date": "2019-07-01"
         },
         {
           "url": "https://www.premiumtimesng.com/regional/ssouth-west/891405-heavy-rainfall-floods-lagos-communities-disrupts-airport-operations.html",
-          "publisher": "Premium Times"
+          "publisher": "Premium Times",
+          "date": "2026-06-28"
         },
         {
           "url": "https://guardian.ng/news/nigeria/metro/lagos-residents-lament-as-flooding-cripples-transport-businesses/",
-          "publisher": "Guardian NG"
+          "publisher": "Guardian NG",
+          "date": "2026-06-28"
         },
         {
           "url": "https://punchng.com/heavy-rain-floods-lagos-roads-agencies-warn-of-more-risks/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2026-06-28"
         },
         {
           "url": "https://www.premiumtimesng.com/regional/ssouth-west/891467-lagos-flood-floodwaters-recede-in-oshodi-but-shops-remain-shut.html",
-          "publisher": "Premium Times"
+          "publisher": "Premium Times",
+          "date": "2026-06-28"
         },
         {
           "url": "https://punchng.com/lagos-residents-count-losses-after-flooding-nightmare/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2026-06-28"
         }
       ],
       "depths": []
@@ -3693,15 +4251,18 @@
       "reports": [
         {
           "url": "https://punchng.com/floods-windstorm-wreak-havoc-lagos-ogun-sokoto/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2016-08-28"
         },
         {
           "url": "https://www.premiumtimesng.com/regional/ssouth-west/398304-lagos-residents-battle-flood-after-downpour.html",
-          "publisher": "Premium Times"
+          "publisher": "Premium Times",
+          "date": "2020-06-18"
         },
         {
           "url": "https://guardian.ng/news/flood-sweeps-four-year-old-girl-displaces-over-20-families-in-lagos/",
-          "publisher": "The Guardian Nigeria"
+          "publisher": "Guardian NG",
+          "date": "2020-06-18"
         }
       ],
       "depths": []
@@ -3720,11 +4281,13 @@
       "reports": [
         {
           "url": "https://dailytrust.com/panic-as-flood-takes-over-lagos/",
-          "publisher": "Daily Trust"
+          "publisher": "Daily Trust",
+          "date": "2017-07-08"
         },
         {
           "url": "https://dailytrust.com/flood-submerges-houses-destroys-property-in-lagos/",
-          "publisher": "Daily Trust"
+          "publisher": "Daily Trust",
+          "date": "2023-09-16"
         }
       ],
       "depths": []
@@ -3743,11 +4306,13 @@
       "reports": [
         {
           "url": "https://www.vanguardngr.com/2024/07/aftermath-of-heavy-rain-chaos-lamentations-as-flood-grounds-lagos/",
-          "publisher": "Vanguard"
+          "publisher": "Vanguard",
+          "date": "2024-07-03"
         },
         {
           "url": "https://punchng.com/downpour-cripples-lagos-flood-submerges-cars-strands-motorists/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2026-07-13"
         }
       ],
       "depths": []
@@ -3766,11 +4331,13 @@
       "reports": [
         {
           "url": "https://www.channelstv.com/2025/09/27/flood-ikota-lekki-residents-urge-govt-to-act-against-illegal-structures-on-waterways/",
-          "publisher": "Channels Television"
+          "publisher": "Channels TV",
+          "date": "2025-09-23"
         },
         {
           "url": "https://guardian.ng/news/nigeria/metro/heavy-rain-triggers-flooding-across-lagos-strands-commuters-businesses/",
-          "publisher": "Guardian NG"
+          "publisher": "Guardian NG",
+          "date": "2026-06-30"
         }
       ],
       "depths": []
@@ -3789,11 +4356,13 @@
       "reports": [
         {
           "url": "https://dailytrust.com/3-day-rain-causes-flood-in-lagos/",
-          "publisher": "Daily Trust"
+          "publisher": "Daily Trust",
+          "date": "2015-06-20"
         },
         {
           "url": "https://guardian.ng/news/residents-cry-for-help-as-flood-takes-over-lagos-community/",
-          "publisher": "The Guardian Nigeria"
+          "publisher": "Guardian NG",
+          "date": "2019-11-22"
         }
       ],
       "depths": []
@@ -3812,11 +4381,13 @@
       "reports": [
         {
           "url": "https://www.vanguardngr.com/2016/05/rage-flood-lagos-road/",
-          "publisher": "Vanguard"
+          "publisher": "Vanguard",
+          "date": "2016-05-14"
         },
         {
           "url": "https://www.vanguardngr.com/2020/06/early-morning-downpour-in-lagos-leaves-roads-homes-flooded/",
-          "publisher": "Vanguard"
+          "publisher": "Vanguard",
+          "date": "2020-06-18"
         }
       ],
       "depths": []
@@ -3835,15 +4406,18 @@
       "reports": [
         {
           "url": "https://www.thisdaylive.com/2024/07/03/torrential-rain-causes-widespread-flooding-in-lagos/",
-          "publisher": "THISDAY"
+          "publisher": "THISDAY",
+          "date": "2024-07-03"
         },
         {
           "url": "https://punchng.com/floodwaters-submerge-homes-disrupt-power-supply-in-lagos/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2026-06-30"
         },
         {
           "url": "https://guardian.ng/news/nigeria/metro/heavy-rain-triggers-flooding-across-lagos-strands-commuters-businesses/",
-          "publisher": "Guardian NG"
+          "publisher": "Guardian NG",
+          "date": "2026-06-30"
         }
       ],
       "depths": []
@@ -3862,11 +4436,13 @@
       "reports": [
         {
           "url": "https://www.bbc.com/pidgin/tori-45174613",
-          "publisher": "BBC Pidgin"
+          "publisher": "BBC Pidgin",
+          "date": "2018-08-13"
         },
         {
           "url": "https://punchng.com/downpour-gas-man-drowns-lekki-ikorodu-residents-landlords-flee/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2019-10-12"
         }
       ],
       "depths": []
@@ -3885,11 +4461,13 @@
       "reports": [
         {
           "url": "https://www.vanguardngr.com/2016/09/mudslide-kills-newly-wed-teenager-two-others-rescued-heavy-downpour-lagos/",
-          "publisher": "Vanguard"
+          "publisher": "Vanguard",
+          "date": "2016-09-06"
         },
         {
           "url": "https://punchng.com/rainstorm-destroys-buildings-cars-in-lagos/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2017-11-04"
         }
       ],
       "depths": []
@@ -3908,19 +4486,23 @@
       "reports": [
         {
           "url": "https://guardian.ng/news/flood-takes-over-lekki-epe-expressway/",
-          "publisher": "Guardian NG"
+          "publisher": "Guardian NG",
+          "date": "2016-06-21"
         },
         {
           "url": "https://punchng.com/ibeju-lekki-residents-lose-valuables-to-flood/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2018-09-08"
         },
         {
           "url": "https://dailytrust.com/millions-lost-in-ibeju-lekki-flood/",
-          "publisher": "Daily Trust"
+          "publisher": "Daily Trust",
+          "date": "2018-09-08"
         },
         {
           "url": "https://guardian.ng/news/ibeju-lekki-residents-lose-valuables-worth-millions-to-flood/",
-          "publisher": "Guardian NG"
+          "publisher": "Guardian NG",
+          "date": "2018-09-08"
         }
       ],
       "depths": []
@@ -3939,43 +4521,53 @@
       "reports": [
         {
           "url": "https://punchng.com/flood-wreaks-havoc-in-nigerias-most-expensive-neighbourhoods/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2017-07-08"
         },
         {
           "url": "https://www.channelstv.com/2017/07/08/lagosians-lament-as-flood-hits-lekki-victoria-island/",
-          "publisher": "Channels TV"
+          "publisher": "Channels TV",
+          "date": "2017-07-08"
         },
         {
           "url": "https://dailytrust.com/panic-as-flood-takes-over-lagos/",
-          "publisher": "Daily Trust"
+          "publisher": "Daily Trust",
+          "date": "2017-07-08"
         },
         {
           "url": "https://www.vanguardngr.com/2017/07/photos-flood-victoria-island-lekki/",
-          "publisher": "Vanguard"
+          "publisher": "Vanguard",
+          "date": "2017-07-08"
         },
         {
           "url": "https://www.vanguardngr.com/2017/07/flood-eko-disco-announces-power-cut-ikoyi-victoria-island/",
-          "publisher": "Vanguard"
+          "publisher": "Vanguard",
+          "date": "2017-07-08"
         },
         {
           "url": "https://guardian.ng/news/how-to-save-lagos-from-flood-disasters-others/",
-          "publisher": "Guardian NG"
+          "publisher": "Guardian NG",
+          "date": "2017-07-08"
         },
         {
           "url": "https://guardian.ng/news/were-pursuing-holistic-solution-to-lagos-flooding-says-ambode/",
-          "publisher": "Guardian NG"
+          "publisher": "Guardian NG",
+          "date": "2017-07-08"
         },
         {
           "url": "https://punchng.com/lasgll-tackle-flooding-says-ambode/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2017-07-08"
         },
         {
           "url": "https://dailytrust.com/nigerias-newest-flood-of-tears/",
-          "publisher": "Daily Trust"
+          "publisher": "Daily Trust",
+          "date": "2017-07-08"
         },
         {
           "url": "https://moelagos.gov.ng/flooding-lagos-to-construct-additional-drainage-collector-on-agungi-to-bring-relief/",
-          "publisher": "Lagos State Ministry of the Environment and Water Resources"
+          "publisher": "Lagos State Ministry of the Environment and Water Resources",
+          "date": "2024-06-27"
         }
       ],
       "depths": []
@@ -3994,51 +4586,63 @@
       "reports": [
         {
           "url": "https://punchng.com/flood-wreaks-havoc-in-nigerias-most-expensive-neighbourhoods/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2017-07-08"
         },
         {
           "url": "https://punchng.com/lagos-flood-residents-lament-loss-of-homes-property/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2017-07-08"
         },
         {
           "url": "https://www.channelstv.com/2017/07/08/lagosians-lament-as-flood-hits-lekki-victoria-island/",
-          "publisher": "Channels TV"
+          "publisher": "Channels TV",
+          "date": "2017-07-08"
         },
         {
           "url": "https://dailytrust.com/panic-as-flood-takes-over-lagos/",
-          "publisher": "Daily Trust"
+          "publisher": "Daily Trust",
+          "date": "2017-07-08"
         },
         {
           "url": "https://www.vanguardngr.com/2017/07/photos-flood-victoria-island-lekki/",
-          "publisher": "Vanguard"
+          "publisher": "Vanguard",
+          "date": "2017-07-08"
         },
         {
           "url": "https://www.vanguardngr.com/2017/07/flood-eko-disco-announces-power-cut-ikoyi-victoria-island/",
-          "publisher": "Vanguard"
+          "publisher": "Vanguard",
+          "date": "2017-07-08"
         },
         {
           "url": "https://guardian.ng/news/were-pursuing-holistic-solution-to-lagos-flooding-says-ambode/",
-          "publisher": "Guardian NG"
+          "publisher": "Guardian NG",
+          "date": "2017-07-08"
         },
         {
           "url": "https://punchng.com/lasgll-tackle-flooding-says-ambode/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2017-07-08"
         },
         {
           "url": "https://dailytrust.com/nigerias-newest-flood-of-tears/",
-          "publisher": "Daily Trust"
+          "publisher": "Daily Trust",
+          "date": "2017-07-08"
         },
         {
           "url": "https://www.vanguardngr.com/2024/07/aftermath-of-heavy-rain-chaos-lamentations-as-flood-grounds-lagos/",
-          "publisher": "Vanguard"
+          "publisher": "Vanguard",
+          "date": "2024-07-03"
         },
         {
           "url": "https://punchng.com/10-hour-rainfall-lekki-ikoyi-residents-flee-luxury-mansions-as-flood-ravages-homes-streets/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2024-07-03"
         },
         {
           "url": "https://www.thisdaylive.com/2024/07/03/torrential-rain-causes-widespread-flooding-in-lagos/",
-          "publisher": "THISDAY"
+          "publisher": "THISDAY",
+          "date": "2024-07-03"
         }
       ],
       "depths": []
@@ -4057,11 +4661,13 @@
       "reports": [
         {
           "url": "https://punchng.com/60-landlords-desert-houses-as-flood-overwhelms-ogun-community/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2021-09-14"
         },
         {
           "url": "https://www.bbc.com/pidgin/articles/clyrq7qzzjxo",
-          "publisher": "BBC Pidgin"
+          "publisher": "BBC Pidgin",
+          "date": "2025-08-04"
         }
       ],
       "depths": []
@@ -4080,11 +4686,13 @@
       "reports": [
         {
           "url": "https://www.vanguardngr.com/2017/07/flood-eko-disco-announces-power-cut-ikoyi-victoria-island/",
-          "publisher": "Vanguard"
+          "publisher": "Vanguard",
+          "date": "2017-07-08"
         },
         {
           "url": "https://punchng.com/flood-fallen-trucks-cause-lagos-gridlock-commuters-stranded/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2021-07-16"
         }
       ],
       "depths": []
@@ -4103,19 +4711,23 @@
       "reports": [
         {
           "url": "https://dailytrust.com/panic-as-flood-takes-over-lagos/",
-          "publisher": "Daily Trust"
+          "publisher": "Daily Trust",
+          "date": "2017-07-08"
         },
         {
           "url": "https://dailytrust.com/nigerias-newest-flood-of-tears/",
-          "publisher": "Daily Trust"
+          "publisher": "Daily Trust",
+          "date": "2017-07-08"
         },
         {
           "url": "https://www.channelstv.com/2026/07/15/video-sanwo-olu-visits-displaced-residents-in-flooded-ogombo-area/",
-          "publisher": "Channels Television"
+          "publisher": "Channels TV",
+          "date": "2026-07-15"
         },
         {
           "url": "https://guardian.ng/news/nigeria/metro/flood-lagos-residents-count-losses-demand-lasting-drainage-solutions/",
-          "publisher": "Guardian NG"
+          "publisher": "Guardian NG",
+          "date": "2026-07-15"
         }
       ],
       "depths": []
@@ -4134,11 +4746,13 @@
       "reports": [
         {
           "url": "https://www.vanguardngr.com/2014/04/heavy-downpour-floods-lagos/",
-          "publisher": "Vanguard"
+          "publisher": "Vanguard",
+          "date": "2014-04-20"
         },
         {
           "url": "https://www.vanguardngr.com/2019/10/flood-sacks-lagos-ogun-border-residents-after-heavy-downpour/",
-          "publisher": "Vanguard"
+          "publisher": "Vanguard",
+          "date": "2019-10-20"
         }
       ],
       "depths": []
@@ -4157,19 +4771,23 @@
       "reports": [
         {
           "url": "https://dailytrust.com/3-day-rain-causes-flood-in-lagos/",
-          "publisher": "Daily Trust"
+          "publisher": "Daily Trust",
+          "date": "2015-06-20"
         },
         {
           "url": "https://punchng.com/flood-wreaks-havoc-in-nigerias-most-expensive-neighbourhoods/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2017-07-08"
         },
         {
           "url": "https://www.channelstv.com/2017/07/08/lagosians-lament-as-flood-hits-lekki-victoria-island/",
-          "publisher": "Channels TV"
+          "publisher": "Channels TV",
+          "date": "2017-07-08"
         },
         {
           "url": "https://www.vanguardngr.com/2017/07/flood-eko-disco-announces-power-cut-ikoyi-victoria-island/",
-          "publisher": "Vanguard"
+          "publisher": "Vanguard",
+          "date": "2017-07-08"
         }
       ],
       "depths": []
@@ -4187,7 +4805,8 @@
       "reports": [
         {
           "url": "https://punchng.com/floods-windstorm-wreak-havoc-lagos-ogun-sokoto/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2016-08-28"
         }
       ],
       "depths": []
@@ -4205,7 +4824,8 @@
       "reports": [
         {
           "url": "https://guardian.ng/news/nigeria/metro/flood-lagos-residents-count-losses-demand-lasting-drainage-solutions/",
-          "publisher": "Guardian NG"
+          "publisher": "Guardian NG",
+          "date": "2026-07-15"
         }
       ],
       "depths": []
@@ -4223,7 +4843,8 @@
       "reports": [
         {
           "url": "https://punchng.com/flooding-lagos-community-counts-losses-blames-abandoned-drainage-construction/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2025-08-04"
         }
       ],
       "depths": []
@@ -4241,15 +4862,18 @@
       "reports": [
         {
           "url": "https://www.channelstv.com/2024/02/20/photos-many-houses-affected-as-downpour-flood-hit-lagos/",
-          "publisher": "Channels Television"
+          "publisher": "Channels TV",
+          "date": "2024-02-20"
         },
         {
           "url": "https://www.vanguardngr.com/2024/02/photos-151-houses-7-communities-submerged-in-lagos-flood/",
-          "publisher": "Vanguard"
+          "publisher": "Vanguard",
+          "date": "2024-02-20"
         },
         {
           "url": "https://nairametrics.com/2024/02/21/flooding-in-lagos-affects-151-houses-says-nema/",
-          "publisher": "Nairametrics"
+          "publisher": "Nairametrics",
+          "date": "2024-02-20"
         }
       ],
       "depths": []
@@ -4267,7 +4891,8 @@
       "reports": [
         {
           "url": "https://punchng.com/floods-windstorm-wreak-havoc-lagos-ogun-sokoto/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2016-08-28"
         }
       ],
       "depths": []
@@ -4285,7 +4910,8 @@
       "reports": [
         {
           "url": "https://dailytrust.com/lagos-residents-stranded-as-flood-cuts-off-ajah-mafoluku-communities/",
-          "publisher": "Daily Trust"
+          "publisher": "Daily Trust",
+          "date": "2026-06-25"
         }
       ],
       "depths": []
@@ -4303,7 +4929,8 @@
       "reports": [
         {
           "url": "https://dailytrust.com/panic-as-flood-take-over-lagos-community/",
-          "publisher": "Daily Trust"
+          "publisher": "Daily Trust",
+          "date": "2021-11-14"
         }
       ],
       "depths": []
@@ -4321,7 +4948,8 @@
       "reports": [
         {
           "url": "https://dailytrust.com/lagos-community-paralysed-by-flood-resorts-to-canoes/",
-          "publisher": "Daily Trust"
+          "publisher": "Daily Trust",
+          "date": "2016-09-17"
         }
       ],
       "depths": []
@@ -4339,7 +4967,8 @@
       "reports": [
         {
           "url": "https://guardian.ng/news/residents-seek-action-as-flood-sacks-lagos-communities/",
-          "publisher": "The Guardian Nigeria"
+          "publisher": "Guardian NG",
+          "date": "2020-07-04"
         }
       ],
       "depths": []
@@ -4357,19 +4986,23 @@
       "reports": [
         {
           "url": "https://punchng.com/flood-wreaks-havoc-in-nigerias-most-expensive-neighbourhoods/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2017-07-08"
         },
         {
           "url": "https://www.channelstv.com/2017/07/08/lagosians-lament-as-flood-hits-lekki-victoria-island/",
-          "publisher": "Channels TV"
+          "publisher": "Channels TV",
+          "date": "2017-07-08"
         },
         {
           "url": "https://dailytrust.com/panic-as-flood-takes-over-lagos/",
-          "publisher": "Daily Trust"
+          "publisher": "Daily Trust",
+          "date": "2017-07-08"
         },
         {
           "url": "https://guardian.ng/news/were-pursuing-holistic-solution-to-lagos-flooding-says-ambode/",
-          "publisher": "Guardian NG"
+          "publisher": "Guardian NG",
+          "date": "2017-07-08"
         }
       ],
       "depths": []
@@ -4387,19 +5020,23 @@
       "reports": [
         {
           "url": "https://punchng.com/flood-wreaks-havoc-in-nigerias-most-expensive-neighbourhoods/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2017-07-08"
         },
         {
           "url": "https://www.channelstv.com/2017/07/08/lagosians-lament-as-flood-hits-lekki-victoria-island/",
-          "publisher": "Channels TV"
+          "publisher": "Channels TV",
+          "date": "2017-07-08"
         },
         {
           "url": "https://dailytrust.com/panic-as-flood-takes-over-lagos/",
-          "publisher": "Daily Trust"
+          "publisher": "Daily Trust",
+          "date": "2017-07-08"
         },
         {
           "url": "https://guardian.ng/news/were-pursuing-holistic-solution-to-lagos-flooding-says-ambode/",
-          "publisher": "Guardian NG"
+          "publisher": "Guardian NG",
+          "date": "2017-07-08"
         }
       ],
       "depths": []
@@ -4417,11 +5054,13 @@
       "reports": [
         {
           "url": "https://www.channelstv.com/2022/09/12/gridlock-outcry-as-floods-hit-lagos-kill-two/",
-          "publisher": "Channels Television"
+          "publisher": "Channels TV",
+          "date": "2022-09-12"
         },
         {
           "url": "https://punchng.com/lagos-flooding-rescuers-recover-two-corpses-save-nine/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2022-09-12"
         }
       ],
       "depths": []
@@ -4439,7 +5078,8 @@
       "reports": [
         {
           "url": "https://punchng.com/floods-windstorm-wreak-havoc-lagos-ogun-sokoto/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2016-08-28"
         }
       ],
       "depths": []
@@ -4457,7 +5097,8 @@
       "reports": [
         {
           "url": "https://punchng.com/downpour-leads-to-flooding-on-lagos-roads/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2017-05-11"
         }
       ],
       "depths": []
@@ -4475,7 +5116,8 @@
       "reports": [
         {
           "url": "https://punchng.com/floods-windstorm-wreak-havoc-lagos-ogun-sokoto/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2016-08-28"
         }
       ],
       "depths": []
@@ -4493,7 +5135,8 @@
       "reports": [
         {
           "url": "https://www.vanguardngr.com/2016/06/residents-groan-flooding-rain-persists-lagos/",
-          "publisher": "Vanguard"
+          "publisher": "Vanguard",
+          "date": "2016-06-21"
         }
       ],
       "depths": []
@@ -4511,7 +5154,8 @@
       "reports": [
         {
           "url": "https://punchng.com/flood-fallen-trucks-cause-lagos-gridlock-commuters-stranded/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2021-07-16"
         }
       ],
       "depths": []
@@ -4529,7 +5173,8 @@
       "reports": [
         {
           "url": "https://punchng.com/floods-windstorm-wreak-havoc-lagos-ogun-sokoto/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2016-08-28"
         }
       ],
       "depths": []
@@ -4547,7 +5192,8 @@
       "reports": [
         {
           "url": "https://punchng.com/flood-wreaks-havoc-in-nigerias-most-expensive-neighbourhoods/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2017-07-08"
         }
       ],
       "depths": []
@@ -4565,7 +5211,8 @@
       "reports": [
         {
           "url": "https://punchng.com/floods-windstorm-wreak-havoc-lagos-ogun-sokoto/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2016-08-28"
         }
       ],
       "depths": []
@@ -4583,7 +5230,8 @@
       "reports": [
         {
           "url": "https://www.vanguardngr.com/2021/10/looming-floods-lagos-residents-say-nowhere-to-go/",
-          "publisher": "Vanguard"
+          "publisher": "Vanguard",
+          "date": "2021-09-26"
         }
       ],
       "depths": []
@@ -4601,7 +5249,8 @@
       "reports": [
         {
           "url": "https://www.vanguardngr.com/2026/07/residents-count-losses-as-torrential-rain-floods-lagos-communities/",
-          "publisher": "Vanguard"
+          "publisher": "Vanguard",
+          "date": "2026-07-10"
         }
       ],
       "depths": []
@@ -4619,7 +5268,8 @@
       "reports": [
         {
           "url": "https://punchng.com/downpour-cripples-lagos-flood-submerges-cars-strands-motorists/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2026-07-13"
         }
       ],
       "depths": []
@@ -4637,7 +5287,8 @@
       "reports": [
         {
           "url": "https://punchng.com/downpour-cripples-lagos-flood-submerges-cars-strands-motorists/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2026-07-13"
         }
       ],
       "depths": []
@@ -4655,7 +5306,8 @@
       "reports": [
         {
           "url": "https://dailytrust.com/flood-lagos-residents-count-losses/",
-          "publisher": "Daily Trust"
+          "publisher": "Daily Trust",
+          "date": "2026-06-30"
         }
       ],
       "depths": []
@@ -4673,7 +5325,8 @@
       "reports": [
         {
           "url": "https://guardian.ng/news/how-lagos-downpour-wreaked-havoc-gridlock/",
-          "publisher": "The Guardian Nigeria"
+          "publisher": "Guardian NG",
+          "date": "2019-05-20"
         }
       ],
       "depths": []
@@ -4691,15 +5344,18 @@
       "reports": [
         {
           "url": "https://punchng.com/ibeju-lekki-residents-lose-valuables-to-flood/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2018-09-08"
         },
         {
           "url": "https://dailytrust.com/millions-lost-in-ibeju-lekki-flood/",
-          "publisher": "Daily Trust"
+          "publisher": "Daily Trust",
+          "date": "2018-09-08"
         },
         {
           "url": "https://guardian.ng/news/ibeju-lekki-residents-lose-valuables-worth-millions-to-flood/",
-          "publisher": "Guardian NG"
+          "publisher": "Guardian NG",
+          "date": "2018-09-08"
         }
       ],
       "depths": []
@@ -4717,7 +5373,8 @@
       "reports": [
         {
           "url": "https://www.vanguardngr.com/2024/07/aftermath-of-heavy-rain-chaos-lamentations-as-flood-grounds-lagos/",
-          "publisher": "Vanguard"
+          "publisher": "Vanguard",
+          "date": "2024-07-03"
         }
       ],
       "depths": []
@@ -4735,19 +5392,23 @@
       "reports": [
         {
           "url": "https://www.premiumtimesng.com/regional/ssouth-west/891405-heavy-rainfall-floods-lagos-communities-disrupts-airport-operations.html",
-          "publisher": "Premium Times"
+          "publisher": "Premium Times",
+          "date": "2026-06-28"
         },
         {
           "url": "https://guardian.ng/news/nigeria/metro/lagos-residents-lament-as-flooding-cripples-transport-businesses/",
-          "publisher": "Guardian NG"
+          "publisher": "Guardian NG",
+          "date": "2026-06-28"
         },
         {
           "url": "https://punchng.com/heavy-rain-floods-lagos-roads-agencies-warn-of-more-risks/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2026-06-28"
         },
         {
           "url": "https://www.premiumtimesng.com/regional/ssouth-west/891467-lagos-flood-floodwaters-recede-in-oshodi-but-shops-remain-shut.html",
-          "publisher": "Premium Times"
+          "publisher": "Premium Times",
+          "date": "2026-06-28"
         }
       ],
       "depths": []
@@ -4765,23 +5426,28 @@
       "reports": [
         {
           "url": "https://www.premiumtimesng.com/regional/ssouth-west/891405-heavy-rainfall-floods-lagos-communities-disrupts-airport-operations.html",
-          "publisher": "Premium Times"
+          "publisher": "Premium Times",
+          "date": "2026-06-28"
         },
         {
           "url": "https://guardian.ng/news/nigeria/metro/lagos-residents-lament-as-flooding-cripples-transport-businesses/",
-          "publisher": "Guardian NG"
+          "publisher": "Guardian NG",
+          "date": "2026-06-28"
         },
         {
           "url": "https://punchng.com/heavy-rain-floods-lagos-roads-agencies-warn-of-more-risks/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2026-06-28"
         },
         {
           "url": "https://www.premiumtimesng.com/regional/ssouth-west/891467-lagos-flood-floodwaters-recede-in-oshodi-but-shops-remain-shut.html",
-          "publisher": "Premium Times"
+          "publisher": "Premium Times",
+          "date": "2026-06-28"
         },
         {
           "url": "https://punchng.com/lagos-residents-count-losses-after-flooding-nightmare/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2026-06-28"
         }
       ],
       "depths": []
@@ -4799,7 +5465,8 @@
       "reports": [
         {
           "url": "https://dailytrust.com/nigerias-newest-flood-of-tears/",
-          "publisher": "Daily Trust"
+          "publisher": "Daily Trust",
+          "date": "2017-07-08"
         }
       ],
       "depths": []
@@ -4817,7 +5484,8 @@
       "reports": [
         {
           "url": "https://guardian.ng/news/residents-seek-action-as-flood-sacks-lagos-communities/",
-          "publisher": "The Guardian Nigeria"
+          "publisher": "Guardian NG",
+          "date": "2020-07-04"
         }
       ],
       "depths": []
@@ -4835,7 +5503,8 @@
       "reports": [
         {
           "url": "https://punchng.com/incessant-rain-wreaks-havoc-lagos-ogun/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2016-09-06"
         }
       ],
       "depths": []
@@ -4853,7 +5522,8 @@
       "reports": [
         {
           "url": "https://punchng.com/downpour-gas-man-drowns-lekki-ikorodu-residents-landlords-flee/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2019-10-12"
         }
       ],
       "depths": []
@@ -4871,7 +5541,8 @@
       "reports": [
         {
           "url": "https://punchng.com/downpour-gas-man-drowns-lekki-ikorodu-residents-landlords-flee/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2019-10-12"
         }
       ],
       "depths": []
@@ -4889,7 +5560,8 @@
       "reports": [
         {
           "url": "https://punchng.com/flood-wreaks-havoc-in-nigerias-most-expensive-neighbourhoods/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2017-07-08"
         }
       ],
       "depths": []
@@ -4907,7 +5579,8 @@
       "reports": [
         {
           "url": "https://www.bbc.com/pidgin/tori-43204030",
-          "publisher": "BBC Pidgin"
+          "publisher": "BBC Pidgin",
+          "date": "2018-02-26"
         }
       ],
       "depths": []
@@ -4925,7 +5598,8 @@
       "reports": [
         {
           "url": "https://punchng.com/rainfall-lagos-residents-lament-flooding-transport-fare-hike/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2022-07-09"
         }
       ],
       "depths": []
@@ -4943,19 +5617,23 @@
       "reports": [
         {
           "url": "https://www.channelstv.com/2025/08/04/lagos-communities-flooded-vehicles-submerged-after-marathon-rainfall/",
-          "publisher": "Channels Television"
+          "publisher": "Channels TV",
+          "date": "2025-08-04"
         },
         {
           "url": "https://punchng.com/flooding-lagos-community-counts-losses-blames-abandoned-drainage-construction/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2025-08-04"
         },
         {
           "url": "https://nairametrics.com/2025/08/07/lagos-state-govt-reassures-residents-over-flash-floods-says-infrastructure-in-place-to-manage-flooding/",
-          "publisher": "Nairametrics"
+          "publisher": "Nairametrics",
+          "date": "2025-08-04"
         },
         {
           "url": "https://dailytrust.com/residents-motorists-stranded-as-flood-hits-lagos/",
-          "publisher": "Daily Trust"
+          "publisher": "Daily Trust",
+          "date": "2025-08-04"
         }
       ],
       "depths": []
@@ -4973,7 +5651,8 @@
       "reports": [
         {
           "url": "https://www.vanguardngr.com/2023/09/downpour-leaves-lagos-badagry-expressway-flooded-residents-groan/",
-          "publisher": "Vanguard"
+          "publisher": "Vanguard",
+          "date": "2023-09-16"
         }
       ],
       "depths": []
@@ -4991,7 +5670,8 @@
       "reports": [
         {
           "url": "https://punchng.com/rain-pounds-lagos-houses-roads-flooded-property-destroyed/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2022-06-18"
         }
       ],
       "depths": []
@@ -5009,11 +5689,13 @@
       "reports": [
         {
           "url": "https://www.vanguardngr.com/2023/09/downpour-lagos-postpones-3rd-mainland-bridge-repairs-floods-sack-communities-motorists-stranded/",
-          "publisher": "Vanguard"
+          "publisher": "Vanguard",
+          "date": "2023-09-16"
         },
         {
           "url": "https://dailytrust.com/flood-submerges-houses-destroys-property-in-lagos/",
-          "publisher": "Daily Trust"
+          "publisher": "Daily Trust",
+          "date": "2023-09-16"
         }
       ],
       "depths": []
@@ -5031,7 +5713,8 @@
       "reports": [
         {
           "url": "https://www.vanguardngr.com/2019/10/flood-sacks-lagos-ogun-border-residents-after-heavy-downpour/",
-          "publisher": "Vanguard"
+          "publisher": "Vanguard",
+          "date": "2019-10-20"
         }
       ],
       "depths": []
@@ -5049,7 +5732,8 @@
       "reports": [
         {
           "url": "https://www.vanguardngr.com/2019/10/flood-sacks-lagos-ogun-border-residents-after-heavy-downpour/",
-          "publisher": "Vanguard"
+          "publisher": "Vanguard",
+          "date": "2019-10-20"
         }
       ],
       "depths": []
@@ -5067,7 +5751,8 @@
       "reports": [
         {
           "url": "https://punchng.com/floods-windstorm-wreak-havoc-lagos-ogun-sokoto/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2016-08-28"
         }
       ],
       "depths": []
@@ -5085,7 +5770,8 @@
       "reports": [
         {
           "url": "https://punchng.com/lagos-flood-residents-lament-loss-of-homes-property/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2017-07-08"
         }
       ],
       "depths": []
@@ -5103,7 +5789,8 @@
       "reports": [
         {
           "url": "https://nairametrics.com/2021/07/16/flood-hits-parts-of-lagos-ogun/",
-          "publisher": "Nairametrics"
+          "publisher": "Nairametrics",
+          "date": "2021-07-16"
         }
       ],
       "depths": []
@@ -5121,15 +5808,18 @@
       "reports": [
         {
           "url": "https://www.premiumtimesng.com/regional/ssouth-west/891405-heavy-rainfall-floods-lagos-communities-disrupts-airport-operations.html",
-          "publisher": "Premium Times"
+          "publisher": "Premium Times",
+          "date": "2026-06-28"
         },
         {
           "url": "https://guardian.ng/news/nigeria/metro/lagos-residents-lament-as-flooding-cripples-transport-businesses/",
-          "publisher": "Guardian NG"
+          "publisher": "Guardian NG",
+          "date": "2026-06-28"
         },
         {
           "url": "https://www.premiumtimesng.com/regional/ssouth-west/891467-lagos-flood-floodwaters-recede-in-oshodi-but-shops-remain-shut.html",
-          "publisher": "Premium Times"
+          "publisher": "Premium Times",
+          "date": "2026-06-28"
         }
       ],
       "depths": []
@@ -5147,7 +5837,8 @@
       "reports": [
         {
           "url": "https://independent.ng/overflowing-river-ogun-wreaks-havoc-on-lagos-communities/",
-          "publisher": "Independent Nigeria"
+          "publisher": "Independent Nigeria",
+          "date": "2019-10-04"
         }
       ],
       "depths": []
@@ -5165,7 +5856,8 @@
       "reports": [
         {
           "url": "https://www.vanguardngr.com/2018/02/flood-sacks-irepodun-street-residents-lagos-abeokuta-expressway-traders/",
-          "publisher": "Vanguard"
+          "publisher": "Vanguard",
+          "date": "2018-02-10"
         }
       ],
       "depths": []
@@ -5183,7 +5875,8 @@
       "reports": [
         {
           "url": "https://www.vanguardngr.com/2026/05/again-lagos-community-cries-for-help-as-flood-threatens-lives-properties/",
-          "publisher": "Vanguard"
+          "publisher": "Vanguard",
+          "date": "2026-05-07"
         }
       ],
       "depths": []
@@ -5201,7 +5894,8 @@
       "reports": [
         {
           "url": "https://punchng.com/lagos-residents-count-losses-after-flooding-nightmare/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2026-06-28"
         }
       ],
       "depths": []
@@ -5219,7 +5913,8 @@
       "reports": [
         {
           "url": "https://punchng.com/incessant-rain-wreaks-havoc-lagos-ogun/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2016-09-06"
         }
       ],
       "depths": []
@@ -5237,7 +5932,8 @@
       "reports": [
         {
           "url": "https://guardian.ng/news/lagos-bridges-flooded-as-thunderstorm-wreaks-havoc-in-oregun/",
-          "publisher": "The Guardian Nigeria"
+          "publisher": "Guardian NG",
+          "date": "2022-04-06"
         }
       ],
       "depths": []
@@ -5255,11 +5951,13 @@
       "reports": [
         {
           "url": "https://punchng.com/flood-sweeps-away-lagos-motorcyclist-body-recovered-in-ogun-river/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2025-05-20"
         },
         {
           "url": "https://guardian.ng/news/nigeria/metro/motorcycle-rider-swept-away-by-flood-on-lagos-abeokuta-expressway-found-dead/",
-          "publisher": "Guardian NG"
+          "publisher": "Guardian NG",
+          "date": "2025-05-20"
         }
       ],
       "depths": []
@@ -5277,7 +5975,8 @@
       "reports": [
         {
           "url": "https://www.vanguardngr.com/2019/10/flood-sacks-lagos-ogun-border-residents-after-heavy-downpour/",
-          "publisher": "Vanguard"
+          "publisher": "Vanguard",
+          "date": "2019-10-20"
         }
       ],
       "depths": []
@@ -5295,7 +5994,8 @@
       "reports": [
         {
           "url": "https://guardian.ng/news/nigeria/metro/heavy-rain-triggers-flooding-across-lagos-strands-commuters-businesses/",
-          "publisher": "Guardian NG"
+          "publisher": "Guardian NG",
+          "date": "2026-06-30"
         }
       ],
       "depths": []
@@ -5313,35 +6013,43 @@
       "reports": [
         {
           "url": "https://punchng.com/flood-wreaks-havoc-in-nigerias-most-expensive-neighbourhoods/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2017-07-08"
         },
         {
           "url": "https://www.channelstv.com/2017/07/08/lagosians-lament-as-flood-hits-lekki-victoria-island/",
-          "publisher": "Channels TV"
+          "publisher": "Channels TV",
+          "date": "2017-07-08"
         },
         {
           "url": "https://dailytrust.com/panic-as-flood-takes-over-lagos/",
-          "publisher": "Daily Trust"
+          "publisher": "Daily Trust",
+          "date": "2017-07-08"
         },
         {
           "url": "https://www.vanguardngr.com/2017/07/photos-flood-victoria-island-lekki/",
-          "publisher": "Vanguard"
+          "publisher": "Vanguard",
+          "date": "2017-07-08"
         },
         {
           "url": "https://www.vanguardngr.com/2017/07/flood-eko-disco-announces-power-cut-ikoyi-victoria-island/",
-          "publisher": "Vanguard"
+          "publisher": "Vanguard",
+          "date": "2017-07-08"
         },
         {
           "url": "https://guardian.ng/news/were-pursuing-holistic-solution-to-lagos-flooding-says-ambode/",
-          "publisher": "Guardian NG"
+          "publisher": "Guardian NG",
+          "date": "2017-07-08"
         },
         {
           "url": "https://punchng.com/lasgll-tackle-flooding-says-ambode/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2017-07-08"
         },
         {
           "url": "https://dailytrust.com/nigerias-newest-flood-of-tears/",
-          "publisher": "Daily Trust"
+          "publisher": "Daily Trust",
+          "date": "2017-07-08"
         }
       ],
       "depths": []
@@ -5359,7 +6067,8 @@
       "reports": [
         {
           "url": "https://www.vanguardngr.com/2024/06/48hrs-rainfall-agungi-lekki-environs-in-lagos-submerge-in-flood/",
-          "publisher": "Vanguard"
+          "publisher": "Vanguard",
+          "date": "2024-06-27"
         }
       ],
       "depths": []
@@ -5377,15 +6086,18 @@
       "reports": [
         {
           "url": "https://www.channelstv.com/2024/02/20/photos-many-houses-affected-as-downpour-flood-hit-lagos/",
-          "publisher": "Channels Television"
+          "publisher": "Channels TV",
+          "date": "2024-02-20"
         },
         {
           "url": "https://www.vanguardngr.com/2024/02/photos-151-houses-7-communities-submerged-in-lagos-flood/",
-          "publisher": "Vanguard"
+          "publisher": "Vanguard",
+          "date": "2024-02-20"
         },
         {
           "url": "https://nairametrics.com/2024/02/21/flooding-in-lagos-affects-151-houses-says-nema/",
-          "publisher": "Nairametrics"
+          "publisher": "Nairametrics",
+          "date": "2024-02-20"
         }
       ],
       "depths": []
@@ -5403,7 +6115,8 @@
       "reports": [
         {
           "url": "https://dailytrust.com/flood-takes-over-lagos-abeokuta-expressway/",
-          "publisher": "Daily Trust"
+          "publisher": "Daily Trust",
+          "date": "2015-11-07"
         }
       ],
       "depths": []
@@ -5421,7 +6134,8 @@
       "reports": [
         {
           "url": "https://punchng.com/motorists-stranded-as-flood-overruns-lagos-communities/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2025-09-24"
         }
       ],
       "depths": []
@@ -5439,7 +6153,8 @@
       "reports": [
         {
           "url": "https://dailytrust.com/3-day-rain-causes-flood-in-lagos/",
-          "publisher": "Daily Trust"
+          "publisher": "Daily Trust",
+          "date": "2015-06-20"
         }
       ],
       "depths": []
@@ -5457,7 +6172,8 @@
       "reports": [
         {
           "url": "https://dailytrust.com/lagos-residents-stranded-as-flood-cuts-off-ajah-mafoluku-communities/",
-          "publisher": "Daily Trust"
+          "publisher": "Daily Trust",
+          "date": "2026-06-25"
         }
       ],
       "depths": []
@@ -5475,7 +6191,8 @@
       "reports": [
         {
           "url": "https://www.vanguardngr.com/2025/09/gridlock-as-flash-floods-take-over-lagos-roads-paralyse-business-activities/",
-          "publisher": "Vanguard"
+          "publisher": "Vanguard",
+          "date": "2025-09-09"
         }
       ],
       "depths": []
@@ -5493,7 +6210,8 @@
       "reports": [
         {
           "url": "https://www.vanguardngr.com/2023/09/downpour-leaves-lagos-badagry-expressway-flooded-residents-groan/",
-          "publisher": "Vanguard"
+          "publisher": "Vanguard",
+          "date": "2023-09-16"
         }
       ],
       "depths": []
@@ -5511,7 +6229,8 @@
       "reports": [
         {
           "url": "https://punchng.com/flood-overtakes-lagos-community-govt-decries-illegal-structures/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2022-10-21"
         }
       ],
       "depths": []
@@ -5529,7 +6248,8 @@
       "reports": [
         {
           "url": "https://independent.ng/overflowing-river-ogun-wreaks-havoc-on-lagos-communities/",
-          "publisher": "Independent Nigeria"
+          "publisher": "Independent Nigeria",
+          "date": "2019-10-04"
         }
       ],
       "depths": []
@@ -5547,7 +6267,8 @@
       "reports": [
         {
           "url": "https://punchng.com/floods-windstorm-wreak-havoc-lagos-ogun-sokoto/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2016-08-28"
         }
       ],
       "depths": []
@@ -5565,7 +6286,8 @@
       "reports": [
         {
           "url": "https://punchng.com/downpour-gas-man-drowns-lekki-ikorodu-residents-landlords-flee/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2019-10-12"
         }
       ],
       "depths": []
@@ -5583,7 +6305,8 @@
       "reports": [
         {
           "url": "https://punchng.com/downpour-gas-man-drowns-lekki-ikorodu-residents-landlords-flee/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2019-10-12"
         }
       ],
       "depths": []
@@ -5601,7 +6324,8 @@
       "reports": [
         {
           "url": "https://www.vanguardngr.com/2026/05/again-lagos-community-cries-for-help-as-flood-threatens-lives-properties/",
-          "publisher": "Vanguard"
+          "publisher": "Vanguard",
+          "date": "2026-05-07"
         }
       ],
       "depths": []
@@ -5619,7 +6343,8 @@
       "reports": [
         {
           "url": "https://dailytrust.com/flood-lagos-residents-count-losses/",
-          "publisher": "Daily Trust"
+          "publisher": "Daily Trust",
+          "date": "2026-06-30"
         }
       ],
       "depths": []
@@ -5637,23 +6362,28 @@
       "reports": [
         {
           "url": "https://punchng.com/flood-wreaks-havoc-in-nigerias-most-expensive-neighbourhoods/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2017-07-08"
         },
         {
           "url": "https://punchng.com/lagos-flood-residents-lament-loss-of-homes-property/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2017-07-08"
         },
         {
           "url": "https://www.channelstv.com/2017/07/08/lagosians-lament-as-flood-hits-lekki-victoria-island/",
-          "publisher": "Channels TV"
+          "publisher": "Channels TV",
+          "date": "2017-07-08"
         },
         {
           "url": "https://dailytrust.com/panic-as-flood-takes-over-lagos/",
-          "publisher": "Daily Trust"
+          "publisher": "Daily Trust",
+          "date": "2017-07-08"
         },
         {
           "url": "https://dailytrust.com/nigerias-newest-flood-of-tears/",
-          "publisher": "Daily Trust"
+          "publisher": "Daily Trust",
+          "date": "2017-07-08"
         }
       ],
       "depths": []
@@ -5671,7 +6401,8 @@
       "reports": [
         {
           "url": "https://dailytrust.com/lagos-community-paralysed-by-flood-resorts-to-canoes/",
-          "publisher": "Daily Trust"
+          "publisher": "Daily Trust",
+          "date": "2016-09-17"
         }
       ],
       "depths": []
@@ -5689,11 +6420,13 @@
       "reports": [
         {
           "url": "https://dailytrust.com/panic-as-flood-takes-over-lagos/",
-          "publisher": "Daily Trust"
+          "publisher": "Daily Trust",
+          "date": "2017-07-08"
         },
         {
           "url": "https://dailytrust.com/nigerias-newest-flood-of-tears/",
-          "publisher": "Daily Trust"
+          "publisher": "Daily Trust",
+          "date": "2017-07-08"
         }
       ],
       "depths": []
@@ -5711,7 +6444,8 @@
       "reports": [
         {
           "url": "https://guardian.ng/news/lagos-bridges-flooded-as-thunderstorm-wreaks-havoc-in-oregun/",
-          "publisher": "The Guardian Nigeria"
+          "publisher": "Guardian NG",
+          "date": "2022-04-06"
         }
       ],
       "depths": []
@@ -5729,7 +6463,8 @@
       "reports": [
         {
           "url": "https://guardian.ng/news/residents-seek-action-as-flood-sacks-lagos-communities/",
-          "publisher": "The Guardian Nigeria"
+          "publisher": "Guardian NG",
+          "date": "2020-07-04"
         }
       ],
       "depths": []
@@ -5747,7 +6482,8 @@
       "reports": [
         {
           "url": "https://punchng.com/floods-windstorm-wreak-havoc-lagos-ogun-sokoto/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2016-08-28"
         }
       ],
       "depths": []
@@ -5765,7 +6501,8 @@
       "reports": [
         {
           "url": "https://www.vanguardngr.com/2016/06/residents-groan-flooding-rain-persists-lagos/",
-          "publisher": "Vanguard"
+          "publisher": "Vanguard",
+          "date": "2016-06-21"
         }
       ],
       "depths": []
@@ -5783,7 +6520,8 @@
       "reports": [
         {
           "url": "https://punchng.com/10-hour-rainfall-businesses-grounded-house-collapses-as-flood-overtakes-lagos/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2024-07-03"
         }
       ],
       "depths": []
@@ -5801,7 +6539,8 @@
       "reports": [
         {
           "url": "https://dailytrust.com/nigerias-newest-flood-of-tears/",
-          "publisher": "Daily Trust"
+          "publisher": "Daily Trust",
+          "date": "2017-07-08"
         }
       ],
       "depths": []
@@ -5819,11 +6558,13 @@
       "reports": [
         {
           "url": "https://dailytrust.com/panic-as-flood-takes-over-lagos/",
-          "publisher": "Daily Trust"
+          "publisher": "Daily Trust",
+          "date": "2017-07-08"
         },
         {
           "url": "https://dailytrust.com/nigerias-newest-flood-of-tears/",
-          "publisher": "Daily Trust"
+          "publisher": "Daily Trust",
+          "date": "2017-07-08"
         }
       ],
       "depths": []
@@ -5841,7 +6582,8 @@
       "reports": [
         {
           "url": "https://guardian.ng/news/how-lagos-downpour-wreaked-havoc-gridlock/",
-          "publisher": "The Guardian Nigeria"
+          "publisher": "Guardian NG",
+          "date": "2019-05-20"
         }
       ],
       "depths": []
@@ -5859,7 +6601,8 @@
       "reports": [
         {
           "url": "https://www.vanguardngr.com/2026/05/again-lagos-community-cries-for-help-as-flood-threatens-lives-properties/",
-          "publisher": "Vanguard"
+          "publisher": "Vanguard",
+          "date": "2026-05-07"
         }
       ],
       "depths": []
@@ -5877,7 +6620,8 @@
       "reports": [
         {
           "url": "https://www.vanguardngr.com/2024/07/aftermath-of-heavy-rain-chaos-lamentations-as-flood-grounds-lagos/",
-          "publisher": "Vanguard"
+          "publisher": "Vanguard",
+          "date": "2024-07-03"
         }
       ],
       "depths": []
@@ -5895,7 +6639,8 @@
       "reports": [
         {
           "url": "https://www.channelstv.com/2019/05/20/floods-hit-parts-of-lagos-after-heavy-rains/",
-          "publisher": "Channels Television"
+          "publisher": "Channels TV",
+          "date": "2019-05-20"
         }
       ],
       "depths": []
@@ -5913,7 +6658,8 @@
       "reports": [
         {
           "url": "https://punchng.com/floods-windstorm-wreak-havoc-lagos-ogun-sokoto/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2016-08-28"
         }
       ],
       "depths": []
@@ -5931,7 +6677,8 @@
       "reports": [
         {
           "url": "https://punchng.com/motorists-residents-lament-as-flood-submerges-lagos-roads/",
-          "publisher": "Punch"
+          "publisher": "Punch",
+          "date": "2025-09-16"
         }
       ],
       "depths": []
@@ -5949,7 +6696,8 @@
       "reports": [
         {
           "url": "https://guardian.ng/news/flood-overruns-lagos-community-traps-pupils-in-school/",
-          "publisher": "The Guardian Nigeria"
+          "publisher": "Guardian NG",
+          "date": "2019-10-11"
         }
       ],
       "depths": []

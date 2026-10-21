@@ -1,6 +1,15 @@
 #!/usr/bin/env python3
 """Rough-model water: where rain the drains can't take away could stand (Task 40, section C).
 
+NOTE (21 Oct 2026): this layer was DROPPED from the app (Task 40b). Its own
+validation, kept in events/rough_model/meta.json, showed it matched reported
+floods no better than chance: at 20-80 mm of excess rain 2.2% of reported flood
+spots fell inside the model's water against a 4-5% random baseline, and at 100
+and 150 mm it reached 45-48% against a 44-45% baseline, because nearly all low
+ground near the lagoon turns wet at once. The app now shows evidence water only.
+This script is kept so the result can be reproduced; it also regenerates
+roads.json and building_counts.json, which the evidence impacts still use.
+
 A deliberately simple model, documented in plain words in the output meta:
 - terrain: FABDEM 30 m (bare earth, buildings removed), smoothed 5x5 so DEM noise
   doesn't read as a pond;

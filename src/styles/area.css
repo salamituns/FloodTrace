@@ -74,9 +74,26 @@
 .area-spots small,
 .area-places small { display: block; color: #5d574e; }
 .area-dates { display: block; margin-top: 2px; color: #5d574e; font-size: 11px; }
-.area-spots q { display: block; margin: 4px 0 0; color: var(--text); }
+.area-quote { display: block; margin: 4px 0 0; color: var(--text); }
+.area-quote q { quotes: '“' '”'; }
+.area-quote .link,
+.area-quote__src {
+  display: inline;
+  margin-left: 6px;
+  white-space: normal;
+  font-size: 12px;
+}
 .area-reports { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 4px; }
-.area-reports a { color: var(--accent); }
+.area-reports .link {
+  color: var(--accent);
+  white-space: normal;
+  font-size: 12px;
+}
+.area-more {
+  color: var(--accent);
+  font-weight: 600;
+  font-size: 12px;
+}
 .area-place {
   width: 100%;
   display: flex;

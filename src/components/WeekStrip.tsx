@@ -1,6 +1,6 @@
 import {
 	LEVEL_WORD,
-	pct40,
+	pctChance,
 	weekdayShort,
 	type ForecastDay,
 	type ForecastLevel,
@@ -56,10 +56,11 @@ export function WeekStrip({
 					>
 						<span className="week-strip__name">{weekdayShort(d.date)}</span>
 						<LevelBadge level={d.level} stale={stale} />
-						<span className="week-strip__chance">{pct40(d.chance_ge_40mm)}</span>
+						<span className="week-strip__chance">{pctChance(d.chance_ge_40mm)}</span>
 					</button>
 				))}
 			</div>
+			<p className="week-strip__note">% = chance of 40 mm or more that day</p>
 			{selected && onClear && (
 				<button type="button" className="week-strip__clear" onClick={onClear}>
 					Clear

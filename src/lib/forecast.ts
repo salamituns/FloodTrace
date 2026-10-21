@@ -169,9 +169,9 @@ function worstDay(days: ForecastDay[]): ForecastDay | null {
 /** One-sentence Coming-up headline from the worst day in the next 7. */
 export function comingUpHeadline(days: ForecastDay[]): string {
 	const worst = worstDay(days);
-	if (!worst || worst.level === 'none') return 'No heavy rain expected in the next 7 days.';
+	if (!worst || worst.level === 'none') return 'No heavy rain in the forecast for the next 7 days.';
 	if (worst.level === 'low') {
-		return `Rain likely ${weekdayFull(worst.date)}, but no heavy rain expected in the next 7 days.`;
+		return `Rain likely ${weekdayFull(worst.date)}, but no heavy rain in the forecast for the next 7 days.`;
 	}
 	const verb = worst.level === 'high' ? 'likely' : 'possible';
 	const { startH } = windowOf(worst);
@@ -211,6 +211,11 @@ export function pct40(chance: number): string {
 	return `40 mm+: ${Math.round(chance * 100)}% chance`;
 }
 
+/** Week-strip tiles: the percent only; the 40 mm threshold sits in a caption. */
+export function pctChance(chance: number): string {
+	return `${Math.round(chance * 100)}%`;
+}
+
 export function analoguesLine(nQualifying: number, nFlood: number): string {
 	const days = nQualifying === 1 ? 'day' : 'days';
 	return `Of ${nQualifying} past ${days} with similar rain here, ${nFlood} had floods reported within 5 km.`;
@@ -223,7 +228,7 @@ function joinAnd(names: string[]): string {
 }
 
 export function whatToDo(level: ForecastLevel, windowStart: string | null, roads: string[]): string[] {
-	if (level === 'none' || level === 'low') return ['No action needed. Check again before the weekend.'];
+	if (level === 'none' || level === 'low') return ["Nothing to do yet. Forecasts often miss Lagos downpours, so if heavy rain starts, move valuables off the floor and keep off flooded roads."];
 	const before = windowStart ?? 'the rain';
 	const lines: string[] = [`Move valuables and documents off the floor before ${before}.`];
 	if (roads.length) {
@@ -271,7 +276,7 @@ export function citywideHeadline(
 	const made = forecastFreshness(file.meta.run.generated_at, now);
 	const madeShort = made.stale ? `forecast made ${fmtOn(file.meta.run.generated_at.slice(0, 10))}` : `forecast made ${made.madeLine.replace('Forecast made ', '').replace(' (Lagos time)', '')}`;
 	if (!worst || worst.overall_level === 'none') {
-		return { quiet: true, text: `No heavy rain expected in Lagos in the next 7 days (${madeShort}).` };
+		return { quiet: true, text: `No heavy rain in the forecast for Lagos in the next 7 days (${madeShort}).` };
 	}
 	const places: string[] = [];
 	for (const d of [...days].sort((a, b) => LEVEL_RANK[b.overall_level] - LEVEL_RANK[a.overall_level])) {
@@ -289,12 +294,10 @@ export function citywideHeadline(
 	return { quiet: false, text: `${lead}.${area}` };
 }
 
-export function licenceFootnote(meta: ForecastFile['meta']): string {
-	const licences = [...new Set(meta.sources.map((s) => s.licence).filter(Boolean))];
-	const licenceBit = licences.length ? ` ${licences.join(' · ')}.` : '';
+export function licenceFootnote(_meta: ForecastFile['meta']): string {
 	return (
-		"Rain forecast: ECMWF ensemble via Open-Meteo. Tides: EOT20. Reported floods undercount real floods, so 'no floods reported' is not proof it's safe." +
-		licenceBit
+		"Rain forecast: ECMWF ensemble via Open-Meteo. Tides: EOT20. Reported floods undercount real floods, so 'no floods reported' is not proof it's safe. " +
+		'ECMWF IFS © ECMWF, GFS © NOAA, GloFAS © Copernicus CEMS, all CC BY 4.0 via Open-Meteo; NASA IMERG open data; news reports compiled by FloodTrace.'
 	);
 }
 

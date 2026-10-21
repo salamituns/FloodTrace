@@ -133,7 +133,7 @@ export function ForecastCard({ lon, lat }: { lon: number; lat: number }) {
 			return;
 		}
 		let dead = false;
-		impactsAt(lon, lat, 1500, 'evidence')
+		impactsAt(lon, lat, 1500)
 			.then((imp) => {
 				if (dead) return;
 				setImpactsText(impactsLine(imp));

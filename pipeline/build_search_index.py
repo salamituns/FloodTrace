@@ -46,6 +46,9 @@ RETRIES = 6
 # Drop kinds in this order if the gzipped index exceeds the budget.
 SIZE_BUDGET_GZ = 1.5 * 1024 * 1024
 DROP_ORDER = ["worship", "estate", "bridge", "mall"]
+# Same name+kind this close is one feature. 300 m left both ends of
+# Ojuelegba Road bridge (563 m) as two search hits.
+DEDUP_M = 600.0
 
 PLACE_KINDS = {"suburb", "neighbourhood", "neighborhood", "quarter", "village", "town"}
 FACILITY_KINDS = {"school", "hospital", "clinic", "market", "bus_station"}
@@ -303,7 +306,7 @@ def merge_streets(items: list[dict[str, Any]], areas: list[dict[str, Any]]) -> l
             )
     for o in others:
         area = nearest_area(o["lon"], o["lat"], areas)
-        # Dedup identical name+kind+area within 300 m.
+        # Nearby same-name entries of this kind are collapsed in dedup().
         o = {
             "name": o["name"],
             "alt": o["alt"],
@@ -316,6 +319,25 @@ def merge_streets(items: list[dict[str, Any]], areas: list[dict[str, Any]]) -> l
     return dedup(merged)
 
 
+def detail_score(item: dict[str, Any]) -> tuple[int, int, int]:
+    """More alt names, a neighbourhood label, then a longer display name."""
+    return (
+        len(item.get("alt") or []),
+        1 if item.get("area") else 0,
+        len(item.get("name") or ""),
+    )
+
+
+def _merge_alts(keep: dict[str, Any], extra: dict[str, Any]) -> list[str]:
+    alts = list(keep.get("alt") or [])
+    seen = {keep["name"], *alts}
+    for a in extra.get("alt") or []:
+        if a not in seen:
+            seen.add(a)
+            alts.append(a)
+    return alts
+
+
 def dedup(items: list[dict[str, Any]]) -> list[dict[str, Any]]:
     keep: list[dict[str, Any]] = []
     for item in items:
@@ -325,28 +347,16 @@ def dedup(items: list[dict[str, Any]]) -> list[dict[str, Any]]:
                 continue
             if norm_name(other["name"]) != norm_name(item["name"]):
                 continue
-            if (other.get("area") or "") != (item.get("area") or ""):
-                continue
-            if haversine_m(other["lon"], other["lat"], item["lon"], item["lat"]) <= 300:
+            if haversine_m(other["lon"], other["lat"], item["lon"], item["lat"]) <= DEDUP_M:
                 hit = i
                 break
         if hit is None:
             keep.append(item)
-        else:
-            # Prefer the longer alt list; average the point.
-            cur = keep[hit]
-            alts = list(cur["alt"])
-            seen = {cur["name"], *alts}
-            for a in item["alt"]:
-                if a not in seen:
-                    seen.add(a)
-                    alts.append(a)
-            keep[hit] = {
-                **cur,
-                "alt": alts,
-                "lon": round((cur["lon"] + item["lon"]) / 2, 6),
-                "lat": round((cur["lat"] + item["lat"]) / 2, 6),
-            }
+            continue
+        cur = keep[hit]
+        alts = _merge_alts(cur, item)
+        winner = item if detail_score(item) > detail_score(cur) else cur
+        keep[hit] = {**winner, "alt": alts}
     return keep
 
 
