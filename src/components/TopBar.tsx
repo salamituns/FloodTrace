@@ -3,6 +3,7 @@ import { fmtDay } from '../lib/time';
 import { useEvent, useStore } from '../state/store';
 import { EventSwitcher } from './EventSwitcher';
 import { HowToRead } from './HowToRead';
+import { PlaceSearch } from './PlaceSearch';
 import { CalendarIcon, HelpIcon, LinkIcon, LogoMark, MapIcon, PinIcon } from './Icons';
 import '../styles/places.css';
 
@@ -67,6 +68,7 @@ export function TopBar() {
         <h1 className="brand__name">FloodTrace</h1>
         <span className="brand__sub">Lagos: where it floods, why, and what was fixed</span>
       </div>
+      <PlaceSearch />
       {mode === 'incident' && (
         <div className="topbar__event">
           <EventSwitcher />

@@ -1,0 +1,490 @@
+{
+  "meta": {
+    "threshold_mm": 40.0,
+    "dates": [
+      "2000-06-01",
+      "2026-10-16"
+    ],
+    "span_years": 26.38,
+    "source": "events/rain_history_grid_daily.json",
+    "note": "NASA GPM IMERG daily totals, WAT days. A day counts when the cell total is 40 mm or more."
+  },
+  "cells": [
+    {
+      "id": "c6.45N2.75E",
+      "lon": 2.75,
+      "lat": 6.45,
+      "heavy_days": 180,
+      "per_year": 6.82
+    },
+    {
+      "id": "c6.45N2.85E",
+      "lon": 2.85,
+      "lat": 6.45,
+      "heavy_days": 198,
+      "per_year": 7.51
+    },
+    {
+      "id": "c6.45N2.95E",
+      "lon": 2.95,
+      "lat": 6.45,
+      "heavy_days": 199,
+      "per_year": 7.54
+    },
+    {
+      "id": "c6.45N3.05E",
+      "lon": 3.05,
+      "lat": 6.45,
+      "heavy_days": 221,
+      "per_year": 8.38
+    },
+    {
+      "id": "c6.45N3.15E",
+      "lon": 3.15,
+      "lat": 6.45,
+      "heavy_days": 225,
+      "per_year": 8.53
+    },
+    {
+      "id": "c6.45N3.25E",
+      "lon": 3.25,
+      "lat": 6.45,
+      "heavy_days": 230,
+      "per_year": 8.72
+    },
+    {
+      "id": "c6.45N3.35E",
+      "lon": 3.35,
+      "lat": 6.45,
+      "heavy_days": 246,
+      "per_year": 9.33
+    },
+    {
+      "id": "c6.45N3.45E",
+      "lon": 3.45,
+      "lat": 6.45,
+      "heavy_days": 265,
+      "per_year": 10.05
+    },
+    {
+      "id": "c6.45N3.55E",
+      "lon": 3.55,
+      "lat": 6.45,
+      "heavy_days": 264,
+      "per_year": 10.01
+    },
+    {
+      "id": "c6.45N3.65E",
+      "lon": 3.65,
+      "lat": 6.45,
+      "heavy_days": 263,
+      "per_year": 9.97
+    },
+    {
+      "id": "c6.45N3.75E",
+      "lon": 3.75,
+      "lat": 6.45,
+      "heavy_days": 275,
+      "per_year": 10.43
+    },
+    {
+      "id": "c6.45N3.85E",
+      "lon": 3.85,
+      "lat": 6.45,
+      "heavy_days": 266,
+      "per_year": 10.08
+    },
+    {
+      "id": "c6.45N3.95E",
+      "lon": 3.95,
+      "lat": 6.45,
+      "heavy_days": 264,
+      "per_year": 10.01
+    },
+    {
+      "id": "c6.45N4.05E",
+      "lon": 4.05,
+      "lat": 6.45,
+      "heavy_days": 276,
+      "per_year": 10.46
+    },
+    {
+      "id": "c6.45N4.15E",
+      "lon": 4.15,
+      "lat": 6.45,
+      "heavy_days": 271,
+      "per_year": 10.27
+    },
+    {
+      "id": "c6.45N4.25E",
+      "lon": 4.25,
+      "lat": 6.45,
+      "heavy_days": 273,
+      "per_year": 10.35
+    },
+    {
+      "id": "c6.45N4.35E",
+      "lon": 4.35,
+      "lat": 6.45,
+      "heavy_days": 272,
+      "per_year": 10.31
+    },
+    {
+      "id": "c6.55N2.75E",
+      "lon": 2.75,
+      "lat": 6.55,
+      "heavy_days": 159,
+      "per_year": 6.03
+    },
+    {
+      "id": "c6.55N2.85E",
+      "lon": 2.85,
+      "lat": 6.55,
+      "heavy_days": 161,
+      "per_year": 6.1
+    },
+    {
+      "id": "c6.55N2.95E",
+      "lon": 2.95,
+      "lat": 6.55,
+      "heavy_days": 181,
+      "per_year": 6.86
+    },
+    {
+      "id": "c6.55N3.05E",
+      "lon": 3.05,
+      "lat": 6.55,
+      "heavy_days": 187,
+      "per_year": 7.09
+    },
+    {
+      "id": "c6.55N3.15E",
+      "lon": 3.15,
+      "lat": 6.55,
+      "heavy_days": 196,
+      "per_year": 7.43
+    },
+    {
+      "id": "c6.55N3.25E",
+      "lon": 3.25,
+      "lat": 6.55,
+      "heavy_days": 197,
+      "per_year": 7.47
+    },
+    {
+      "id": "c6.55N3.35E",
+      "lon": 3.35,
+      "lat": 6.55,
+      "heavy_days": 223,
+      "per_year": 8.45
+    },
+    {
+      "id": "c6.55N3.45E",
+      "lon": 3.45,
+      "lat": 6.55,
+      "heavy_days": 229,
+      "per_year": 8.68
+    },
+    {
+      "id": "c6.55N3.55E",
+      "lon": 3.55,
+      "lat": 6.55,
+      "heavy_days": 223,
+      "per_year": 8.45
+    },
+    {
+      "id": "c6.55N3.65E",
+      "lon": 3.65,
+      "lat": 6.55,
+      "heavy_days": 223,
+      "per_year": 8.45
+    },
+    {
+      "id": "c6.55N3.75E",
+      "lon": 3.75,
+      "lat": 6.55,
+      "heavy_days": 224,
+      "per_year": 8.49
+    },
+    {
+      "id": "c6.55N3.85E",
+      "lon": 3.85,
+      "lat": 6.55,
+      "heavy_days": 227,
+      "per_year": 8.61
+    },
+    {
+      "id": "c6.55N3.95E",
+      "lon": 3.95,
+      "lat": 6.55,
+      "heavy_days": 231,
+      "per_year": 8.76
+    },
+    {
+      "id": "c6.55N4.05E",
+      "lon": 4.05,
+      "lat": 6.55,
+      "heavy_days": 223,
+      "per_year": 8.45
+    },
+    {
+      "id": "c6.55N4.15E",
+      "lon": 4.15,
+      "lat": 6.55,
+      "heavy_days": 220,
+      "per_year": 8.34
+    },
+    {
+      "id": "c6.55N4.25E",
+      "lon": 4.25,
+      "lat": 6.55,
+      "heavy_days": 215,
+      "per_year": 8.15
+    },
+    {
+      "id": "c6.55N4.35E",
+      "lon": 4.35,
+      "lat": 6.55,
+      "heavy_days": 210,
+      "per_year": 7.96
+    },
+    {
+      "id": "c6.65N2.75E",
+      "lon": 2.75,
+      "lat": 6.65,
+      "heavy_days": 142,
+      "per_year": 5.38
+    },
+    {
+      "id": "c6.65N2.85E",
+      "lon": 2.85,
+      "lat": 6.65,
+      "heavy_days": 157,
+      "per_year": 5.95
+    },
+    {
+      "id": "c6.65N2.95E",
+      "lon": 2.95,
+      "lat": 6.65,
+      "heavy_days": 167,
+      "per_year": 6.33
+    },
+    {
+      "id": "c6.65N3.05E",
+      "lon": 3.05,
+      "lat": 6.65,
+      "heavy_days": 164,
+      "per_year": 6.22
+    },
+    {
+      "id": "c6.65N3.15E",
+      "lon": 3.15,
+      "lat": 6.65,
+      "heavy_days": 166,
+      "per_year": 6.29
+    },
+    {
+      "id": "c6.65N3.25E",
+      "lon": 3.25,
+      "lat": 6.65,
+      "heavy_days": 173,
+      "per_year": 6.56
+    },
+    {
+      "id": "c6.65N3.35E",
+      "lon": 3.35,
+      "lat": 6.65,
+      "heavy_days": 178,
+      "per_year": 6.75
+    },
+    {
+      "id": "c6.65N3.45E",
+      "lon": 3.45,
+      "lat": 6.65,
+      "heavy_days": 189,
+      "per_year": 7.17
+    },
+    {
+      "id": "c6.65N3.55E",
+      "lon": 3.55,
+      "lat": 6.65,
+      "heavy_days": 199,
+      "per_year": 7.54
+    },
+    {
+      "id": "c6.65N3.65E",
+      "lon": 3.65,
+      "lat": 6.65,
+      "heavy_days": 194,
+      "per_year": 7.36
+    },
+    {
+      "id": "c6.65N3.75E",
+      "lon": 3.75,
+      "lat": 6.65,
+      "heavy_days": 192,
+      "per_year": 7.28
+    },
+    {
+      "id": "c6.65N3.85E",
+      "lon": 3.85,
+      "lat": 6.65,
+      "heavy_days": 195,
+      "per_year": 7.39
+    },
+    {
+      "id": "c6.65N3.95E",
+      "lon": 3.95,
+      "lat": 6.65,
+      "heavy_days": 206,
+      "per_year": 7.81
+    },
+    {
+      "id": "c6.65N4.05E",
+      "lon": 4.05,
+      "lat": 6.65,
+      "heavy_days": 189,
+      "per_year": 7.17
+    },
+    {
+      "id": "c6.65N4.15E",
+      "lon": 4.15,
+      "lat": 6.65,
+      "heavy_days": 183,
+      "per_year": 6.94
+    },
+    {
+      "id": "c6.65N4.25E",
+      "lon": 4.25,
+      "lat": 6.65,
+      "heavy_days": 172,
+      "per_year": 6.52
+    },
+    {
+      "id": "c6.65N4.35E",
+      "lon": 4.35,
+      "lat": 6.65,
+      "heavy_days": 171,
+      "per_year": 6.48
+    },
+    {
+      "id": "c6.75N2.75E",
+      "lon": 2.75,
+      "lat": 6.75,
+      "heavy_days": 122,
+      "per_year": 4.63
+    },
+    {
+      "id": "c6.75N2.85E",
+      "lon": 2.85,
+      "lat": 6.75,
+      "heavy_days": 145,
+      "per_year": 5.5
+    },
+    {
+      "id": "c6.75N2.95E",
+      "lon": 2.95,
+      "lat": 6.75,
+      "heavy_days": 157,
+      "per_year": 5.95
+    },
+    {
+      "id": "c6.75N3.05E",
+      "lon": 3.05,
+      "lat": 6.75,
+      "heavy_days": 150,
+      "per_year": 5.69
+    },
+    {
+      "id": "c6.75N3.15E",
+      "lon": 3.15,
+      "lat": 6.75,
+      "heavy_days": 152,
+      "per_year": 5.76
+    },
+    {
+      "id": "c6.75N3.25E",
+      "lon": 3.25,
+      "lat": 6.75,
+      "heavy_days": 155,
+      "per_year": 5.88
+    },
+    {
+      "id": "c6.75N3.35E",
+      "lon": 3.35,
+      "lat": 6.75,
+      "heavy_days": 165,
+      "per_year": 6.26
+    },
+    {
+      "id": "c6.75N3.45E",
+      "lon": 3.45,
+      "lat": 6.75,
+      "heavy_days": 160,
+      "per_year": 6.07
+    },
+    {
+      "id": "c6.75N3.55E",
+      "lon": 3.55,
+      "lat": 6.75,
+      "heavy_days": 162,
+      "per_year": 6.14
+    },
+    {
+      "id": "c6.75N3.65E",
+      "lon": 3.65,
+      "lat": 6.75,
+      "heavy_days": 177,
+      "per_year": 6.71
+    },
+    {
+      "id": "c6.75N3.75E",
+      "lon": 3.75,
+      "lat": 6.75,
+      "heavy_days": 168,
+      "per_year": 6.37
+    },
+    {
+      "id": "c6.75N3.85E",
+      "lon": 3.85,
+      "lat": 6.75,
+      "heavy_days": 180,
+      "per_year": 6.82
+    },
+    {
+      "id": "c6.75N3.95E",
+      "lon": 3.95,
+      "lat": 6.75,
+      "heavy_days": 167,
+      "per_year": 6.33
+    },
+    {
+      "id": "c6.75N4.05E",
+      "lon": 4.05,
+      "lat": 6.75,
+      "heavy_days": 150,
+      "per_year": 5.69
+    },
+    {
+      "id": "c6.75N4.15E",
+      "lon": 4.15,
+      "lat": 6.75,
+      "heavy_days": 146,
+      "per_year": 5.54
+    },
+    {
+      "id": "c6.75N4.25E",
+      "lon": 4.25,
+      "lat": 6.75,
+      "heavy_days": 150,
+      "per_year": 5.69
+    },
+    {
+      "id": "c6.75N4.35E",
+      "lon": 4.35,
+      "lat": 6.75,
+      "heavy_days": 152,
+      "per_year": 5.76
+    }
+  ]
+}

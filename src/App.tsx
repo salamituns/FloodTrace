@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import { AreaPanel } from './components/AreaPanel';
 import { Charts } from './components/Charts';
 import { KeyEvents } from './components/KeyEvents';
 import { MapView } from './components/MapView';
@@ -8,6 +9,7 @@ import { SiteTimeline } from './components/SiteTimeline';
 import { Timeline } from './components/Timeline';
 import { TopBar } from './components/TopBar';
 import { loadCatalog, loadEvent } from './events/load';
+import { areaHash, parseAreaHash } from './lib/area';
 import { HOUR } from './lib/time';
 import { loadSites } from './sites/load';
 import { useStore } from './state/store';
@@ -36,10 +38,20 @@ function useClockDriver() {
   }, []);
 }
 
-/** Keeps mode and selected site in the URL hash (#sites, #site=<id>) so a site page can be shared as a link. */
+/** Keeps mode, selected site, and the area pin in the URL hash so a view can be shared. */
 function useHashSync() {
   useEffect(() => {
     const apply = () => {
+      const area = parseAreaHash(location.hash);
+      if (area) {
+        const cur = useStore.getState().selectedArea;
+        if (!cur || cur.lon !== area.lon || cur.lat !== area.lat || cur.label !== area.label) {
+          // A shared area link with no ?event opens over the places map, not a flood replay.
+          if (!new URLSearchParams(location.search).has('event')) useStore.getState().setMode('sites');
+          useStore.getState().openArea(area);
+        }
+        return;
+      }
       const h = new URLSearchParams(location.hash.slice(1));
       const site = h.get('site');
       if (site || h.has('sites')) {
@@ -50,8 +62,14 @@ function useHashSync() {
     apply();
     window.addEventListener('hashchange', apply);
     const unsub = useStore.subscribe((s, prev) => {
-      if (s.mode === prev.mode && s.selectedSiteId === prev.selectedSiteId) return;
-      const next = s.mode === 'sites' ? (s.selectedSiteId ? `#site=${s.selectedSiteId}` : '#sites') : '';
+      if (s.mode === prev.mode && s.selectedSiteId === prev.selectedSiteId && s.selectedArea === prev.selectedArea) return;
+      const next = s.selectedArea
+        ? areaHash(s.selectedArea)
+        : s.mode === 'sites'
+          ? s.selectedSiteId
+            ? `#site=${s.selectedSiteId}`
+            : '#sites'
+          : '';
       if (location.hash !== next) history.replaceState(null, '', `${location.pathname}${location.search}${next}`);
     });
     return () => {
@@ -80,6 +98,7 @@ export default function App() {
   const event = useStore((s) => s.event);
   const loadError = useStore((s) => s.loadError);
   const mode = useStore((s) => s.mode);
+  const selectedArea = useStore((s) => s.selectedArea);
   useClockDriver();
   useHashSync();
   useSitesLoader();
@@ -110,7 +129,7 @@ export default function App() {
   return (
     <div className={`app${mode === 'sites' ? ' app--sites' : ''}`}>
       <TopBar />
-      {mode === 'sites' ? <SitePanel /> : <RightPanel />}
+      {selectedArea ? <AreaPanel /> : mode === 'sites' ? <SitePanel /> : <RightPanel />}
       <MapView />
       {mode === 'sites' ? (
         <div className="bottom bottom--sites">

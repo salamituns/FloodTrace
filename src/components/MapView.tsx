@@ -14,12 +14,60 @@ import { causeLabel } from '../lib/causes';
 import { siteLinksForEvent } from '../sites/links';
 import { RAIN_STOPS, rainColor } from '../lib/rainColor';
 import { fmtClock, fmtDateTime, HOUR } from '../lib/time';
+import { AREA_RADIUS_M, areaBounds, loadFloodSpots, ringPolygon, type FloodSpot } from '../lib/area';
+import {
+  cellPolygon,
+  forecastFreshness,
+  hourlyBand,
+  levelFill,
+  loadForecast,
+  pct40,
+  weekdayFull,
+  windowLabel,
+  type ForecastFile,
+} from '../lib/forecast';
+import {
+  combineWaterTests,
+  discRadiusM,
+  evidenceWaterTest,
+  loadFacilities,
+  loadReportDates,
+  loadRoads,
+  loadRoughModelMeta,
+  loadWaterPolygons,
+  modelWaterTest,
+  type FacilitiesFile,
+  type RoadSegment,
+  type RoadsFile,
+  type RoughModelMeta,
+  type WaterPolygonsFile,
+  type WaterTest,
+} from '../lib/impacts';
 import { LAYER_DEFS, useEvent, useQuantTime, useStore } from '../state/store';
 import { FullscreenIcon } from './Icons';
+import {
+  Map3DBanner,
+  RADAR_WATER_LABEL,
+  evidenceWaterLayers,
+  facilityTooltip,
+  radarWaterTooltip,
+  roadSegmentTooltip,
+  setReportDatesForTooltips,
+  waterImpactLayers,
+  waterSpotTooltip,
+  type FacilityPoint,
+  type WaterBody,
+} from './Map3DWater';
+import type { Layer } from '@deck.gl/core';
 import '../styles/flood.css';
+import '../styles/area.css';
+import '../styles/map3d.css';
 
 const STYLE = 'https://tiles.openfreemap.org/styles/positron';
 const BUILDINGS_LAYER = 'ft-buildings-3d';
+const BUILDINGS_IN_WATER_LAYER = 'ft-buildings-in-water';
+const ROUGH_MODEL_SOURCE = 'ft-rough-model';
+const ROUGH_MODEL_LAYER = 'ft-rough-model-raster';
 
 type RGBA = [number, number, number, number];
 
@@ -47,6 +95,10 @@ function MapKey() {
   const layers = useStore((s) => s.layers);
   const event = useEvent();
   const mode = useStore((s) => s.mode);
+  const viewMode = useStore((s) => s.viewMode);
+  const selectedArea = useStore((s) => s.selectedArea);
+  const selectedSiteId = useStore((s) => s.selectedSiteId);
+  const forecastDay = useStore((s) => s.forecastDay);
   const t = useQuantTime();
   const [open, setOpen] = useState(false);
   useEffect(() => {
@@ -61,7 +113,7 @@ function MapKey() {
   const step = grid ? Math.floor((t - grid.times[0]) / (grid.stepH * HOUR)) : -1;
   const gridStep = grid && step >= 0 && step < grid.times.length ? step : null;
   const rainOn = mode === 'incident' && Boolean(grid && layers.rainGrid.visible);
-  const entries: { key: string; color: string; hollow?: boolean; square?: boolean; label: string }[] = [];
+  const entries: { key: string; color: string; hollow?: boolean; square?: boolean; stippled?: boolean; label: string }[] = [];
   if (mode === 'sites') {
     // Places mode: the markers carry the list's priority tiers (Task 35).
     entries.push(
@@ -87,6 +139,27 @@ function MapKey() {
   if (mode === 'incident' && layers.points.visible) {
     entries.push({ key: 'points', color: '#2b2824', label: LAYER_DEFS.find((d) => d.id === 'points')!.label });
   }
+  if (selectedArea) {
+    entries.push({ key: 'area-ring', color: '#1f6a9a', hollow: true, label: 'Your area (1.5 km)' });
+    entries.push({ key: 'flood-spots', color: '#d4452f', label: 'Flood spot (news, sized by days)' });
+  }
+  if (mode === 'sites' && forecastDay) {
+    entries.push({ key: 'forecast', color: '#a3361f', square: true, label: `Forecast: ${weekdayFull(forecastDay)}` });
+  }
+  if (viewMode === '3d') {
+    if (layers.waterEvidence.visible) {
+      entries.push({ key: 'water-body', color: 'rgb(61,127,196)', label: 'Water at a reported depth' });
+      entries.push({ key: 'water-disc', color: 'rgb(61,127,196)', hollow: true, label: 'Flooded, depth not reported' });
+      if (event.sar) entries.push({ key: 'radar-water', color: 'rgb(61,127,196)', square: true, label: RADAR_WATER_LABEL });
+    }
+    if (layers.waterModel.visible) {
+      entries.push({ key: 'water-model', color: 'rgb(160,200,232)', stippled: true, label: 'Rough model water (low ground)' });
+    }
+    if ((selectedArea || selectedSiteId) && (layers.waterEvidence.visible || layers.waterModel.visible)) {
+      entries.push({ key: 'water-roads', color: 'rgb(47,119,184)', label: 'Road through water' });
+      entries.push({ key: 'water-facilities', color: 'rgb(61,127,196)', label: 'Facility; solid when inside water' });
+    }
+  }
 
   return (
     <div className="map-key">
@@ -99,7 +172,7 @@ function MapKey() {
             {entries.map((row) => (
               <li key={row.key}>
                 <span
-                  className={`map-key__swatch${row.hollow ? ' map-key__swatch--hollow' : ''}${row.square ? ' map-key__swatch--square' : ''}`}
+                  className={`map-key__swatch${row.hollow ? ' map-key__swatch--hollow' : ''}${row.square ? ' map-key__swatch--square' : ''}${row.stippled ? ' map-key__swatch--stippled' : ''}`}
                   style={{ color: row.color, borderColor: row.color }}
                 />
                 {row.label}
@@ -179,6 +252,21 @@ function tooltip({ object, layer }: PickingInfo) {
       html: `<div class="tip"><b>${site.name}</b><span>${site.structure_name}</span><small>${events} mapped flood${events === 1 ? '' : 's'} · ${days} flood day${days === 1 ? '' : 's'} reported${site.verdict ? ` · evidence: ${site.verdict.confidence}` : ' · not yet reviewed'}</small></div>`,
     };
   }
+  if (layer.id === 'forecast-cells') {
+    const c = object as { median_mm: number; chance_ge_40mm: number; hours: string; hourlyMm: number | null };
+    const hour = c.hourlyMm !== null ? `<br>This hour: ${c.hourlyMm.toFixed(1)} mm/h` : '';
+    return {
+      html: `<div class="tip"><b>${c.median_mm.toFixed(1)} mm</b><span>${pct40(c.chance_ge_40mm)}</span><small>${c.hours || 'No hours at risk'}${hour}</small></div>`,
+    };
+  }
+  if (layer.id === 'flood-spots') {
+    const s = object as FloodSpot;
+    return {
+      html: `<div class="tip"><b>${s.name}</b><small>${s.count} flood day${s.count === 1 ? '' : 's'} · last ${s.latest}${
+        s.dates.length ? `<br>${s.dates.join(', ')}` : ''
+      }</small></div>`,
+    };
+  }
   if (layer.id === 'evidence') {
     const e = object as EvidenceItem;
     const when = e.t ? fmtDateTime(e.t) : 'time unknown';
@@ -199,6 +287,22 @@ function tooltip({ object, layer }: PickingInfo) {
           : ''
       }${linked.length ? `<span class="tip__site">Part of place: ${linked.map((l) => l.site.name).join(', ')}</span>` : ''}</div>`,
     };
+  }
+  if (layer.id === 'water-bodies') {
+    return waterSpotTooltip((object as WaterBody).spot);
+  }
+  if (layer.id === 'water-discs' || layer.id === 'water-discs-dash') {
+    return waterSpotTooltip((object as { spot: FloodSpot }).spot);
+  }
+  if (layer.id === 'radar-water') {
+    return radarWaterTooltip();
+  }
+  if (layer.id === 'water-roads') {
+    return roadSegmentTooltip(object as RoadSegment);
+  }
+  if (layer.id === 'water-facilities') {
+    const f = object as FacilityPoint;
+    return facilityTooltip(f.name, f.kind, f.wet);
   }
   const p = (object as { properties?: Record<string, unknown> }).properties;
   if (!p) return null;
@@ -223,6 +327,15 @@ export function MapView() {
   const loaded = useStore((s) => s.sites);
   const sites = loaded?.sites;
   const selectedSiteId = useStore((s) => s.selectedSiteId);
+  const selectedArea = useStore((s) => s.selectedArea);
+  const forecastDay = useStore((s) => s.forecastDay);
+  const forecastHour = useStore((s) => s.forecastHour);
+  const forecastHighlightDate = useStore((s) => s.forecastHighlightDate);
+  const openArea = useStore((s) => s.openArea);
+  const modelScenario = useStore((s) => s.modelScenario);
+  const showMe = useStore((s) => s.showMe);
+  const [rmMeta, setRmMeta] = useState<RoughModelMeta | null>(null);
+  const [waterData, setWaterData] = useState<{ polys: WaterPolygonsFile | null; roads: RoadsFile | null; facilities: FacilitiesFile | null } | null>(null);
   const selectSite = useStore((s) => s.selectSite);
   const openPlaceFromMap = useCallback(
     (id: string) => {
@@ -239,6 +352,38 @@ export function MapView() {
   const mapRef = useRef<MapRef>(null);
   const [hoveredId, setHoveredId] = useState<string | null>(null);
   const [mapReady, setMapReady] = useState(false);
+  const [spots, setSpots] = useState<FloodSpot[]>([]);
+  const [forecast, setForecast] = useState<ForecastFile | null>(null);
+  const [spotMenu, setSpotMenu] = useState<{ lon: number; lat: number; x: number; y: number } | null>(null);
+  const buildingsSourceRef = useRef<string | null>(null);
+
+  useEffect(() => {
+    loadFloodSpots()
+      .then((f) => setSpots(f.spots))
+      .catch(() => setSpots([]));
+    loadForecast().then(setForecast);
+  }, []);
+
+  // 3D water (Task 40): evidence water is the primary layer, the rough model secondary and off by default.
+  const waterOn = viewMode === '3d' && (layers.waterEvidence.visible || layers.waterModel.visible);
+  useEffect(() => {
+    if (!waterOn) return;
+    let dead = false;
+    Promise.all([loadWaterPolygons(), loadRoads(), loadFacilities(), loadReportDates()])
+      .then(([polys, roads, facilities, dates]) => {
+        if (dead) return;
+        setWaterData({ polys, roads, facilities });
+        setReportDatesForTooltips(dates);
+      })
+      .catch(() => undefined);
+    return () => {
+      dead = true;
+    };
+  }, [waterOn]);
+
+  useEffect(() => {
+    if (waterOn && layers.waterModel.visible) loadRoughModelMeta().then(setRmMeta).catch(() => setRmMeta(null));
+  }, [waterOn, layers.waterModel.visible]);
   // The basemap's place-name layers are hidden in Places mode; their visibility is remembered so it can be restored.
   // (A plain record: "Map" here would collide with react-map-gl's Map component.)
   const placeVis = useRef<Record<string, string>>({});
@@ -346,6 +491,15 @@ export function MapView() {
     if (!site) return;
     mapRef.current?.fitBounds(siteBounds(site), { padding: 80, maxZoom: mode === 'sites' ? 16 : 14, duration: 900 });
   }, [mapReady, mode, sites, selectedSiteId]);
+
+  useEffect(() => {
+    if (!mapReady || !selectedArea) return;
+    mapRef.current?.fitBounds(areaBounds(selectedArea.lon, selectedArea.lat, AREA_RADIUS_M), {
+      padding: 60,
+      maxZoom: 14,
+      duration: 900,
+    });
+  }, [mapReady, selectedArea]);
 
   const eventLayers = useMemo(() => {
     const out = [];
@@ -477,14 +631,138 @@ export function MapView() {
     return out;
   }, [event, layers, t, grid, gridStep, rainCells]);
 
+  const areaLayers = useMemo(() => {
+    if (!selectedArea) return [];
+    const ring = ringPolygon(selectedArea.lon, selectedArea.lat, AREA_RADIUS_M);
+    const layersOut = [
+      new GeoJsonLayer({
+        id: 'area-ring',
+        data: { type: 'Feature' as const, geometry: { type: 'Polygon' as const, coordinates: [ring] }, properties: {} },
+        stroked: true,
+        filled: true,
+        getFillColor: [31, 106, 154, 28],
+        getLineColor: [31, 106, 154, 230],
+        getLineWidth: 2,
+        lineWidthUnits: 'pixels',
+        pickable: false,
+      }),
+      new ScatterplotLayer({
+        id: 'area-pin',
+        data: [selectedArea],
+        getPosition: (d: { lon: number; lat: number }) => [d.lon, d.lat],
+        getRadius: 9,
+        radiusUnits: 'pixels',
+        getFillColor: [31, 106, 154, 240],
+        getLineColor: [255, 255, 255, 255],
+        stroked: true,
+        lineWidthMinPixels: 2,
+      }),
+      new TextLayer<{ text: string; position: [number, number] }>({
+        id: 'area-ring-label',
+        data: [{ text: 'Your area (1.5 km)', position: ring[Math.floor(ring.length / 4)] }],
+        getPosition: (d) => d.position,
+        getText: (d) => d.text,
+        getSize: 12,
+        getColor: [31, 106, 154, 255],
+        getPixelOffset: [0, -8],
+        fontFamily: 'Inter, sans-serif',
+        fontWeight: 600,
+        outlineWidth: 3,
+        outlineColor: [255, 255, 255, 230],
+        fontSettings: { sdf: true },
+        characterSet: 'auto',
+      }),
+    ];
+    const shown = forecastHighlightDate ? spots.filter((s) => s.dates.includes(forecastHighlightDate)) : spots;
+    const spotsLayer = shown.length
+      ? new ScatterplotLayer<FloodSpot>({
+          id: 'flood-spots',
+          data: shown,
+          getPosition: (d) => [d.lon, d.lat],
+          getRadius: (d) => (forecastHighlightDate ? 8 + Math.sqrt(d.count) * 2.6 : 4 + Math.sqrt(d.count) * 2.2),
+          radiusUnits: 'pixels',
+          getFillColor: [212, 69, 47, 210],
+          getLineColor: [255, 255, 255, 220],
+          stroked: true,
+          lineWidthMinPixels: 1,
+          pickable: true,
+        })
+      : null;
+    return (spotsLayer ? [...layersOut, spotsLayer] : layersOut) as typeof eventLayers;
+  }, [selectedArea, spots, forecastHighlightDate]);
+
+  // Water layers (Task 40): evidence water bodies/discs, the radar flood in blue, and the
+  // roads/facilities through the water around the chosen place or area.
+  const selectedSite = sites?.find((x) => x.site_id === selectedSiteId);
+  const waterTest = useMemo(() => {
+    if (!waterOn) return null;
+    const tests: WaterTest[] = [];
+    if (layers.waterEvidence.visible) tests.push(evidenceWaterTest(spots, event.sar?.flood ?? null));
+    if (layers.waterModel.visible && waterData?.polys) tests.push(modelWaterTest(waterData.polys, modelScenario));
+    return tests.length ? combineWaterTests(tests) : null;
+  }, [waterOn, layers.waterEvidence.visible, layers.waterModel.visible, spots, event.sar, waterData, modelScenario]);
+
+  const waterLayers = useMemo<Layer[]>(() => {
+    if (!waterOn) return [];
+    const out: Layer[] = [];
+    if (layers.waterEvidence.visible) {
+      out.push(...evidenceWaterLayers({ spots, radarFlood: event.sar?.flood ?? null, opacity: layers.waterEvidence.opacity }));
+    }
+    const center = selectedArea
+      ? { lon: selectedArea.lon, lat: selectedArea.lat }
+      : selectedSite
+        ? { lon: sitePoint(selectedSite)[0], lat: sitePoint(selectedSite)[1] }
+        : null;
+    if (center && waterTest && !waterTest.isEmpty && waterData) {
+      out.push(...waterImpactLayers({ center, radiusM: 1500, test: waterTest, roads: waterData.roads?.roads ?? null, facilities: waterData.facilities }));
+    }
+    return out;
+  }, [waterOn, layers.waterEvidence.visible, layers.waterEvidence.opacity, layers.waterModel.visible, spots, event.sar, selectedArea, selectedSite, waterTest, waterData]);
+
+  const forecastLayers = useMemo(() => {
+    if (mode !== 'sites' || !forecast || !forecastDay) return [];
+    const stale = forecastFreshness(forecast.meta.run.generated_at).stale;
+    const feats = Object.entries(forecast.cells).map(([id, cell]) => {
+      const day = cell.days.find((d) => d.date === forecastDay);
+      const hourlyMm =
+        forecastHour !== null && cell.hourly?.median ? (cell.hourly.median[forecastHour] ?? null) : null;
+      const level = hourlyMm !== null ? hourlyBand(hourlyMm) : (day?.level ?? 'none');
+      return {
+        id,
+        polygon: cellPolygon(cell.centre.lon, cell.centre.lat),
+        median_mm: day?.rain.median_mm ?? 0,
+        chance_ge_40mm: day?.rain.chance_ge_40mm ?? 0,
+        hours: day ? (day.risk.hours.length ? windowLabel(day) : '') : '',
+        hourlyMm,
+        fill: levelFill(level, stale),
+      };
+    });
+    return [
+      new PolygonLayer({
+        id: 'forecast-cells',
+        data: feats,
+        getPolygon: (d: (typeof feats)[number]) => d.polygon,
+        getFillColor: (d: (typeof feats)[number]) => d.fill,
+        getLineColor: [255, 255, 255, 40],
+        lineWidthMinPixels: 0.5,
+        pickable: true,
+        filled: true,
+        extruded: false,
+        updateTriggers: { getFillColor: [forecastDay, forecastHour, stale] },
+      }),
+    ];
+  }, [mode, forecast, forecastDay, forecastHour]);
+
   // Sites mode keeps only context (built-up change, drainage) under the site layers; event layers are hidden.
-  const deckLayers = useMemo(
-    () =>
+  // In 3D, the radar flood map is drawn as blue evidence water instead of the flat red snapshot.
+  const deckLayers = useMemo(() => {
+    const base =
       mode === 'sites'
-        ? [...eventLayers.filter((l) => l.id === 'builtup' || l.id === 'drainage'), ...siteLayers]
-        : eventLayers,
-    [mode, eventLayers, siteLayers],
-  );
+        ? [...eventLayers.filter((l) => l.id === 'builtup' || l.id === 'drainage'), ...forecastLayers, ...siteLayers, ...areaLayers]
+        : [...eventLayers, ...areaLayers];
+    const radarAsWater = viewMode === '3d' && layers.waterEvidence.visible;
+    return [...(radarAsWater ? base.filter((l) => l.id !== 'sar-flood') : base), ...waterLayers];
+  }, [mode, eventLayers, siteLayers, areaLayers, forecastLayers, waterLayers, viewMode, layers.waterEvidence.visible]);
 
   const setBuildingsVisible = useCallback(() => {
     const map = mapRef.current?.getMap();
@@ -509,18 +787,21 @@ export function MapView() {
     }
     if (!map || map.getLayer(BUILDINGS_LAYER)) return;
     const source = Object.keys(map.getStyle().sources).find((k) => map.getSource(k)?.type === 'vector') ?? 'openmaptiles';
+    buildingsSourceRef.current = source;
     map.addLayer({
       id: BUILDINGS_LAYER,
       type: 'fill-extrusion',
       source,
       'source-layer': 'building',
-      minzoom: 13,
+      minzoom: 14,
       layout: { visibility: 'none' },
       paint: {
-        'fill-extrusion-color': '#ddd6ca',
+        // neutral light grey, so water (blue) and flood reports (red) carry the meaning
+        'fill-extrusion-color': '#d9d8d2',
         'fill-extrusion-height': ['coalesce', ['get', 'render_height'], 6],
         'fill-extrusion-base': ['coalesce', ['get', 'render_min_height'], 0],
-        'fill-extrusion-opacity': 0.85,
+        // fade in from zoom 14 so the city view stays light
+        'fill-extrusion-opacity': ['interpolate', ['linear'], ['zoom'], 14, 0, 15, 0.9],
       },
     });
     setBuildingsVisible();
@@ -610,6 +891,147 @@ export function MapView() {
   };
   useEffect(setBuildingsVisible, [setBuildingsVisible]);
 
+  // ── Rough-model water: one PNG per scenario, laid over the ground under the buildings.
+  useEffect(() => {
+    const map = mapRef.current?.getMap();
+    if (!mapReady || !map || !rmMeta) return;
+    const [w, s, e, n] = rmMeta.bounds;
+    const coordinates: [[number, number], [number, number], [number, number], [number, number]] = [
+      [w, n],
+      [e, n],
+      [e, s],
+      [w, s],
+    ];
+    const url = `/events/rough_model/scenario_${modelScenario}mm.png`;
+    if (!map.getSource(ROUGH_MODEL_SOURCE)) {
+      map.addSource(ROUGH_MODEL_SOURCE, { type: 'image', url, coordinates });
+      map.addLayer(
+        {
+          id: ROUGH_MODEL_LAYER,
+          type: 'raster',
+          source: ROUGH_MODEL_SOURCE,
+          paint: { 'raster-opacity': 0.85, 'raster-fade-duration': 150 },
+          layout: { visibility: 'none' },
+        },
+        BUILDINGS_LAYER,
+      );
+    } else {
+      (map.getSource(ROUGH_MODEL_SOURCE) as unknown as { updateImage: (o: { url: string; coordinates: typeof coordinates }) => void }).updateImage({ url, coordinates });
+    }
+  }, [mapReady, rmMeta, modelScenario]);
+
+  useEffect(() => {
+    const map = mapRef.current?.getMap();
+    if (!mapReady || !map || !map.getLayer(ROUGH_MODEL_LAYER)) return;
+    map.setLayoutProperty(ROUGH_MODEL_LAYER, 'visibility', viewMode === '3d' && layers.waterModel.visible ? 'visible' : 'none');
+  }, [mapReady, viewMode, layers.waterModel.visible, modelScenario]);
+
+  // ── Buildings standing in water get a blue wash at the base (section D).
+  // The basemap's own building layer is filtered to the water with a `within`
+  // filter; if the runtime rejects it, the tint just doesn't appear.
+  useEffect(() => {
+    const map = mapRef.current?.getMap();
+    if (!mapReady || !map || !map.getLayer(BUILDINGS_LAYER)) return;
+    const tintOn = viewMode === '3d' && waterTest && !waterTest.isEmpty;
+    if (!map.getLayer(BUILDINGS_IN_WATER_LAYER)) {
+      if (!tintOn || !buildingsSourceRef.current) return;
+      try {
+        map.addLayer({
+          id: BUILDINGS_IN_WATER_LAYER,
+          type: 'fill-extrusion',
+          source: buildingsSourceRef.current,
+          'source-layer': 'building',
+          layout: { visibility: 'none' },
+          paint: { 'fill-extrusion-color': '#4a90c9', 'fill-extrusion-height': 1.5, 'fill-extrusion-opacity': 0.6 },
+        }, BUILDINGS_LAYER);
+      } catch {
+        return;
+      }
+    }
+    if (!tintOn) {
+      map.setLayoutProperty(BUILDINGS_IN_WATER_LAYER, 'visibility', 'none');
+      return;
+    }
+    const b = map.getBounds();
+    const pad = 0.01;
+    const parts: [number, number][][] = [];
+    if (layers.waterEvidence.visible) {
+      for (const s of spots) {
+        if (s.lon < b.getWest() - pad || s.lon > b.getEast() + pad || s.lat < b.getSouth() - pad || s.lat > b.getNorth() + pad) continue;
+        parts.push(ringPolygon(s.lon, s.lat, discRadiusM(s), 48));
+      }
+    }
+    if (layers.waterModel.visible && waterData?.polys) {
+      for (const rings of waterData.polys.scenarios[String(modelScenario)] ?? []) {
+        const outer = rings[0];
+        if (!outer?.length) continue;
+        let w = Infinity;
+        let s2 = Infinity;
+        let e2 = -Infinity;
+        let n2 = -Infinity;
+        for (const [x, y] of outer) {
+          if (x < w) w = x;
+          if (x > e2) e2 = x;
+          if (y < s2) s2 = y;
+          if (y > n2) n2 = y;
+        }
+        if (e2 < b.getWest() - pad || w > b.getEast() + pad || n2 < b.getSouth() - pad || s2 > b.getNorth() + pad) continue;
+        parts.push(outer as [number, number][]);
+      }
+    }
+    if (!parts.length) {
+      map.setLayoutProperty(BUILDINGS_IN_WATER_LAYER, 'visibility', 'none');
+      return;
+    }
+    const water = { type: 'MultiPolygon' as const, coordinates: parts.map((ring) => [ring]) };
+    try {
+      map.setFilter(BUILDINGS_IN_WATER_LAYER, ['within', water] as never);
+      map.setLayoutProperty(BUILDINGS_IN_WATER_LAYER, 'visibility', 'visible');
+    } catch {
+      map.setLayoutProperty(BUILDINGS_IN_WATER_LAYER, 'visibility', 'none');
+    }
+  }, [mapReady, viewMode, waterTest, layers.waterEvidence.visible, layers.waterModel.visible, modelScenario, spots, waterData]);
+
+  // ── "Show me in 3D" (section E): tilt, fly close, orbit once — no orbit if the
+  // user prefers reduced motion. Any pointer or wheel interaction stops the orbit.
+  useEffect(() => {
+    if (!mapReady || !showMe) return;
+    const map = mapRef.current?.getMap();
+    if (!map) return;
+    useStore.getState().clearShowMe3D();
+    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    setViewMode('3d');
+    map.flyTo({ center: [showMe.lon, showMe.lat], zoom: 15.2, pitch: 60, bearing: -20, duration: reduced ? 0 : 1600, essential: true });
+    if (reduced) return; // tilt only
+    let raf = 0;
+    let done = false;
+    let t0 = 0;
+    const stop = () => {
+      done = true;
+      cancelAnimationFrame(raf);
+    };
+    const step = (now: number) => {
+      if (done) return;
+      const k = Math.min(1, (now - t0) / 22000);
+      if (k > 0) map.setBearing(-20 + (k < 0.5 ? 2 * k * k : 1 - (-2 * k + 2) ** 2 / 2) * 360);
+      if (k < 1) raf = requestAnimationFrame(step);
+    };
+    const start = () => {
+      t0 = performance.now();
+      raf = requestAnimationFrame(step);
+    };
+    const onEnd = () => {
+      map.off('moveend', onEnd);
+      start();
+    };
+    map.on('moveend', onEnd);
+    map.getContainer().addEventListener('pointerdown', stop, { once: true });
+    map.getContainer().addEventListener('wheel', stop, { once: true, passive: true });
+    return () => {
+      stop();
+      map.off('moveend', onEnd);
+    };
+  }, [mapReady, showMe, setViewMode]);
   const fullscreen = () => {
     const el = containerRef.current;
     if (!el) return;
@@ -629,6 +1051,19 @@ export function MapView() {
         initialViewState={initialViewState}
         mapStyle={STYLE}
         onLoad={onLoad}
+        onContextMenu={(e) => {
+          e.preventDefault();
+          setSpotMenu({ lon: e.lngLat.lng, lat: e.lngLat.lat, x: e.point.x, y: e.point.y });
+        }}
+        onClick={(e) => {
+          const oe = e.originalEvent as PointerEvent & MouseEvent;
+          const touch = oe.pointerType === 'touch' || 'touches' in oe;
+          if (!touch) {
+            setSpotMenu(null);
+            return;
+          }
+          setSpotMenu({ lon: e.lngLat.lng, lat: e.lngLat.lat, x: e.point.x, y: e.point.y });
+        }}
         maxPitch={70}
         attributionControl={false}
         style={{ width: '100%', height: '100%' }}
@@ -636,8 +1071,24 @@ export function MapView() {
         <DeckOverlay layers={deckLayers} getTooltip={tooltip} />
         <NavigationControl position="top-left" visualizePitch />
         <ScaleControl position="bottom-left" />
-        <AttributionControl compact={true} position="bottom-right" customAttribution={`${event.sar ? `Contains modified Copernicus Sentinel data ${new Date(event.sar.observedAt).getUTCFullYear()} · ` : ''}${event.rainGrid ? 'NASA GPM IMERG · ' : ''}${event.builtup && layers.builtup.visible ? 'GHSL © EC JRC · ' : ''}OSM contributors`} />
+        <AttributionControl compact={true} position="bottom-right" customAttribution={`${event.sar ? `Contains modified Copernicus Sentinel data ${new Date(event.sar.observedAt).getUTCFullYear()} · ` : ''}${event.rainGrid ? 'NASA GPM IMERG · ' : ''}${event.builtup && layers.builtup.visible ? 'GHSL © EC JRC · ' : ''}© OpenStreetMap contributors`} />
       </Map>
+      {spotMenu && (
+        <div className="map-menu" style={{ left: spotMenu.x, top: spotMenu.y }}>
+          <button
+            type="button"
+            onClick={() => {
+              openArea({ lon: spotMenu.lon, lat: spotMenu.lat, label: 'This spot' });
+              setSpotMenu(null);
+              if (window.matchMedia('(max-width: 720px)').matches) {
+                window.setTimeout(() => document.getElementById('area-panel')?.scrollIntoView({ behavior: 'smooth', block: 'start' }), 80);
+              }
+            }}
+          >
+            Check this spot
+          </button>
+        </div>
+      )}
       {mode === 'incident' && event.sar && (
         <div className="snapshot-badge">
           Radar snapshot · {fmtDateTime(event.sar.observedAt)}
@@ -645,6 +1096,7 @@ export function MapView() {
         </div>
       )}
       <MapKey />
+      <Map3DBanner />
       {event.builtup && layers.builtup.visible && (
         <div className="rain-legend rain-legend--built">
           <span className="rain-legend__title">Share of km² built over 2000→2020</span>

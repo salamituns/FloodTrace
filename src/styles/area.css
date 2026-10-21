@@ -1,0 +1,121 @@
+/* Task 39: street search and the Your-area panel. */
+
+.place-search {
+  position: relative;
+  min-width: 0;
+  flex: 1 1 180px;
+  max-width: 280px;
+}
+.place-search__label {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+}
+.place-search__input {
+  width: 100%;
+  min-height: 32px;
+  padding: 4px 10px;
+  border: 1px solid var(--border-strong);
+  border-radius: 6px;
+  background: #fff;
+  color: var(--text);
+  font: inherit;
+}
+.place-search__list {
+  position: absolute;
+  z-index: 50;
+  left: 0;
+  right: 0;
+  top: calc(100% + 4px);
+  margin: 0;
+  padding: 4px;
+  list-style: none;
+  background: #fff;
+  border: 1px solid var(--border-strong);
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  max-height: 280px;
+  overflow-y: auto;
+}
+.place-search__opt {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1px;
+  width: 100%;
+  padding: 6px 8px;
+  border-radius: 5px;
+  text-align: left;
+  white-space: normal;
+}
+.place-search__opt:hover,
+.place-search__opt.is-active {
+  background: var(--accent-soft);
+}
+.place-search__name { font-weight: 600; }
+.place-search__meta { color: #5d574e; font-size: 11px; }
+.place-search__empty {
+  padding: 8px;
+  color: #5d574e;
+}
+
+.area-answer { margin: 6px 0 0; line-height: 1.45; }
+.area-slot .area-answer { color: #5d574e; }
+.area-spots,
+.area-places {
+  list-style: none;
+  margin: 8px 0 0;
+  padding: 0;
+}
+.area-spots li + li,
+.area-places li + li { border-top: 1px solid var(--border); padding-top: 6px; margin-top: 6px; }
+.area-spots small,
+.area-places small { display: block; color: #5d574e; }
+.area-dates { display: block; margin-top: 2px; color: #5d574e; font-size: 11px; }
+.area-spots q { display: block; margin: 4px 0 0; color: var(--text); }
+.area-reports { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 4px; }
+.area-reports a { color: var(--accent); }
+.area-place {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 2px;
+  text-align: left;
+}
+.area-place:hover { background: var(--panel-2); }
+
+.map-menu {
+  position: absolute;
+  z-index: 20;
+  background: #fff;
+  border: 1px solid var(--border-strong);
+  border-radius: 6px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.14);
+  padding: 4px;
+}
+.map-menu button {
+  display: block;
+  width: 100%;
+  padding: 6px 10px;
+  text-align: left;
+  border-radius: 4px;
+  min-height: 32px;
+  white-space: nowrap;
+}
+.map-menu button:hover { background: var(--accent-soft); }
+
+.topbar .place-search { grid-area: search; }
+
+@media (max-width: 720px) {
+  .place-search {
+    max-width: none;
+    flex: 1 1 auto;
+    width: 100%;
+  }
+  .place-search__input { min-height: 40px; }
+  .place-search__list { max-height: 50vh; }
+}

@@ -93,11 +93,14 @@ h2 { font-size: 12.5px; font-weight: 600; }
 
 .topbar {
   display: grid;
-  grid-template-columns: auto minmax(0, 1fr) auto auto;
-  grid-template-areas: "brand event modes actions";
+  grid-template-columns: auto minmax(140px, 240px) minmax(0, 1fr) auto auto;
+  grid-template-areas: "brand search event modes actions";
   align-items: center;
   white-space: normal;
-  overflow: hidden;
+  /* Visible + stacked above the map so the search results list can drop over it. */
+  overflow: visible;
+  position: relative;
+  z-index: 20;
 }
 .brand { grid-area: brand; white-space: nowrap; }
 .topbar__event {
@@ -184,6 +187,7 @@ h2 { font-size: 12.5px; font-weight: 600; }
     grid-template-columns: auto minmax(0, 1fr) auto;
     grid-template-areas:
       "brand modes actions"
+      "search search search"
       "event event event";
     gap: 6px 8px;
     padding: 6px 10px;

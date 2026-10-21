@@ -1,9 +1,20 @@
 import { create } from 'zustand';
 import type { CatalogEntry, LoadedEvent } from '../events/types';
+import type { AreaSelection } from '../lib/area';
 import type { LoadedSites } from '../sites/types';
 import { QUANT, setTimeZone } from '../lib/time';
 
-export type LayerId = 'builtup' | 'buildings3d' | 'drainage' | 'sarFlood' | 'rainCells' | 'rainGrid' | 'evidence' | 'points';
+export type LayerId =
+  | 'builtup'
+  | 'buildings3d'
+  | 'drainage'
+  | 'sarFlood'
+  | 'rainCells'
+  | 'rainGrid'
+  | 'evidence'
+  | 'points'
+  | 'waterEvidence'
+  | 'waterModel';
 
 export interface LayerState {
   visible: boolean;
@@ -18,7 +29,9 @@ export const LAYER_DEFS: { id: LayerId; label: string; note?: string; swatch: st
   { id: 'drainage', label: 'Drains and canals', note: 'OpenStreetMap.', swatch: 'repeating-linear-gradient(160deg,#cfe0ec 0 2px,#2f7fb6 2px 4px)', hasOpacity: true },
   { id: 'builtup', label: 'Land built over since 2000', note: 'GHSL built-up surface, 2000 → latest.', swatch: 'linear-gradient(135deg,#f6e7c8,#c9852f 55%,#7a3b12)', hasOpacity: true },
   { id: 'points', label: 'Chart points', note: 'The spots the rain and tide charts read from. Not real gauges.', swatch: 'radial-gradient(circle,#2b2824 25%,#eee 28%)', hasOpacity: false },
-  { id: 'buildings3d', label: 'Buildings (3D)', note: 'On only in the 3D view.', swatch: 'repeating-conic-gradient(#ece6da 0 25%,#b9b1a2 0 50%) 0 0/8px 8px', hasOpacity: false },
+  { id: 'waterEvidence', label: 'Evidence water', note: 'Water drawn from what was reported or seen: reported depths as water bodies, flooded spots without a depth as dashed outlines, and the flood the radar satellite saw on 3 Jul 2024. On only in the 3D view. Water heights are drawn 20× taller so depths stay visible beside buildings.', swatch: 'linear-gradient(135deg,#9fcbe8,#1f6a9a)', hasOpacity: true },
+  { id: 'waterModel', label: 'Rough model (low ground)', note: 'Where rain the drains can\u2019t take away could collect, from terrain alone. Not a measurement; in our test it matched reported floods no better than chance. On only in the 3D view.', swatch: 'repeating-linear-gradient(45deg,#cfe8f7 0 3px,#9fcbe8 3px 5px)', hasOpacity: false },
+  { id: 'buildings3d', label: 'Buildings (3D)', note: 'Extruded from the basemap where OSM has outlines, so only a sample shows even in dense districts. Fades in from zoom 14, on only in the 3D view.', swatch: 'repeating-conic-gradient(#ece6da 0 25%,#b9b1a2 0 50%) 0 0/8px 8px', hasOpacity: false },
 ];
 
 /** Incident = one event on its own clock; Sites = places across all events and years. */
@@ -36,6 +49,18 @@ interface AppState {
   playing: boolean;
   speed: number;
   viewMode: '2d' | '3d';
+  /** Which rough-model rain scenario is shown (Task 40). */
+  modelScenario: number;
+  /** A pending "Show me in 3D" camera request; MapView performs it and clears it. */
+  showMe: { lon: number; lat: number; nonce: number } | null;
+  /** Selected forecast day (Places map layer). Null = layer off. */
+  forecastDay: string | null;
+  /** Hour index 0–167 while "Play the next 48 hours" is on. */
+  forecastHour: number | null;
+  /** Analogue date whose flood spots should be emphasised. */
+  forecastHighlightDate: string | null;
+  /** Bumped to focus the street search box. */
+  searchFocusNonce: number;
   layers: Record<LayerId, LayerState>;
   selectedEventId: string | null;
   rainPoint: string;
@@ -43,6 +68,10 @@ interface AppState {
   sites: LoadedSites | null;
   sitesError: string | null;
   selectedSiteId: string | null;
+  /** Pin + 1.5 km ring; not a mode and not a place page (Task 39). */
+  selectedArea: AreaSelection | null;
+  /** Panel to restore when the area view is closed. */
+  areaReturn: { mode: AppMode; selectedSiteId: string | null } | null;
   /** Claim to highlight on the site page after following a cause chip from Incident mode. */
   focusClaimId: string | null;
   setEvent: (e: LoadedEvent) => void;
@@ -53,6 +82,14 @@ interface AppState {
   togglePlay: () => void;
   cycleSpeed: () => void;
   setViewMode: (m: '2d' | '3d') => void;
+  setModelScenario: (mm: number) => void;
+  requestShowMe3D: (lon: number, lat: number) => void;
+  clearShowMe3D: () => void;
+  selectForecastDay: (date: string | null) => void;
+  setForecastHour: (h: number | null) => void;
+  setForecastHighlightDate: (date: string | null) => void;
+  clearForecastLayer: () => void;
+  focusStreetSearch: () => void;
   setLayer: (id: LayerId, patch: Partial<LayerState>) => void;
   selectEvent: (id: string | null) => void;
   setRainPoint: (p: string) => void;
@@ -60,6 +97,8 @@ interface AppState {
   setSites: (s: LoadedSites | null, error?: string) => void;
   selectSite: (id: string | null) => void;
   openSite: (siteId: string, claimId?: string) => void;
+  openArea: (sel: AreaSelection) => void;
+  closeArea: () => void;
 }
 
 export const useStore = create<AppState>()((set, get) => ({
@@ -72,6 +111,12 @@ export const useStore = create<AppState>()((set, get) => ({
   playing: false,
   speed: 1,
   viewMode: '2d',
+  modelScenario: 40,
+  showMe: null,
+  forecastDay: null,
+  forecastHour: null,
+  forecastHighlightDate: null,
+  searchFocusNonce: 0,
   layers: {
     evidence: { visible: true, opacity: 1 },
     rainGrid: { visible: true, opacity: 0.25 },
@@ -81,6 +126,8 @@ export const useStore = create<AppState>()((set, get) => ({
     points: { visible: false, opacity: 1 },
     builtup: { visible: false, opacity: 0.6 },
     buildings3d: { visible: true, opacity: 1 },
+    waterEvidence: { visible: true, opacity: 1 },
+    waterModel: { visible: false, opacity: 1 },
   },
   selectedEventId: null,
   rainPoint: 'lekki',
@@ -88,6 +135,8 @@ export const useStore = create<AppState>()((set, get) => ({
   sites: null,
   sitesError: null,
   selectedSiteId: null,
+  selectedArea: null,
+  areaReturn: null,
   focusClaimId: null,
   setEvent: (event) => {
     setTimeZone(event.timezone);
@@ -106,13 +155,40 @@ export const useStore = create<AppState>()((set, get) => ({
     set((s) => (s.playing ? { playing: false } : { playing: true, currentTime: s.currentTime >= s.t1 ? s.t0 : s.currentTime })),
   cycleSpeed: () => set((s) => ({ speed: SPEEDS[(SPEEDS.indexOf(s.speed) + 1) % SPEEDS.length] })),
   setViewMode: (viewMode) => set({ viewMode }),
+  setModelScenario: (modelScenario) => set({ modelScenario }),
+  requestShowMe3D: (lon, lat) => set((s) => ({ showMe: { lon, lat, nonce: (s.showMe?.nonce ?? 0) + 1 } })),
+  clearShowMe3D: () => set({ showMe: null }),
+  selectForecastDay: (forecastDay) => set({ forecastDay, forecastHour: null }),
+  setForecastHour: (forecastHour) => set({ forecastHour }),
+  setForecastHighlightDate: (forecastHighlightDate) => set({ forecastHighlightDate }),
+  clearForecastLayer: () => set({ forecastDay: null, forecastHour: null }),
+  focusStreetSearch: () => set((s) => ({ searchFocusNonce: s.searchFocusNonce + 1 })),
   setLayer: (id, patch) => set((s) => ({ layers: { ...s.layers, [id]: { ...s.layers[id], ...patch } } })),
   selectEvent: (selectedEventId) => set({ selectedEventId }),
   setRainPoint: (rainPoint) => set({ rainPoint }),
   setMode: (mode) => set({ mode, playing: false }),
   setSites: (sites, sitesError) => set({ sites, sitesError: sitesError ?? null }),
-  selectSite: (selectedSiteId) => set({ selectedSiteId, focusClaimId: null }),
-  openSite: (selectedSiteId, claimId) => set({ mode: 'sites', playing: false, selectedSiteId, focusClaimId: claimId ?? null }),
+  selectSite: (selectedSiteId) => set({ selectedSiteId, focusClaimId: null, selectedArea: selectedSiteId ? null : get().selectedArea }),
+  openSite: (selectedSiteId, claimId) =>
+    set({ mode: 'sites', playing: false, selectedSiteId, focusClaimId: claimId ?? null, selectedArea: null, areaReturn: null }),
+  openArea: (selectedArea) => {
+    const s = get();
+    set({
+      selectedArea,
+      selectedSiteId: null,
+      focusClaimId: null,
+      areaReturn: s.selectedArea ? s.areaReturn : { mode: s.mode, selectedSiteId: s.selectedSiteId },
+    });
+  },
+  closeArea: () => {
+    const ret = get().areaReturn;
+    set({
+      selectedArea: null,
+      areaReturn: null,
+      mode: ret?.mode ?? get().mode,
+      selectedSiteId: ret?.selectedSiteId ?? null,
+    });
+  },
 }));
 
 /** Time snapped to 15 min — for panels that shouldn't re-render every frame during playback. */

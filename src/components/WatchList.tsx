@@ -4,6 +4,7 @@ import { buildWatchList, type RainSummary, type WatchTest } from '../lib/watchLi
 import { loadRainSummary } from '../sites/load';
 import type { SitePromise, SiteRecord } from '../sites/types';
 import { useStore } from '../state/store';
+import { ThisWeekCard } from './ForecastCard';
 import { Chevron } from './Icons';
 import { InfoTip } from './InfoTip';
 import '../styles/places.css';
@@ -165,6 +166,8 @@ export function PlacesList({ sites, promises }: { sites: SiteRecord[]; promises:
   }
 
   return (
+    <>
+    <ThisWeekCard />
     <section className="card">
       <header className="card__head">
         <h2>Places that flood</h2>
@@ -310,5 +313,6 @@ export function PlacesList({ sites, promises }: { sites: SiteRecord[]; promises:
       )}
       <p className="card__foot">Ranks places by what's on record, not by forecast. A place with no reports can still flood.</p>
     </section>
+    </>
   );
 }

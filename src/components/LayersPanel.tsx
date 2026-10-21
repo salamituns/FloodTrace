@@ -1,11 +1,15 @@
 import { useState } from 'react';
 import { LAYER_DEFS, useEvent, useStore, type LayerId } from '../state/store';
+import { MODEL_SCENARIOS_MM } from '../lib/impacts';
 import '../styles/flood.css';
+import '../styles/map3d.css';
 
 export function LayersPanel() {
   const layers = useStore((s) => s.layers);
   const setLayer = useStore((s) => s.setLayer);
   const viewMode = useStore((s) => s.viewMode);
+  const modelScenario = useStore((s) => s.modelScenario);
+  const setModelScenario = useStore((s) => s.setModelScenario);
   const event = useEvent();
   const [open, setOpen] = useState(false);
   const [expanded, setExpanded] = useState<LayerId | null>(null);
@@ -17,6 +21,8 @@ export function LayersPanel() {
     drainage: true,
     builtup: event.builtup !== null,
     points: true,
+    waterEvidence: viewMode === '3d',
+    waterModel: viewMode === '3d',
     buildings3d: viewMode === '3d',
   };
   const defs = LAYER_DEFS.filter((def) => available[def.id]);
@@ -53,6 +59,21 @@ export function LayersPanel() {
                   {def.label}
                 </button>
                 {rowOpen && def.note && <p className="layer__note">{def.note}</p>}
+                {rowOpen && def.id === 'waterModel' && (
+                  <span className="layer__scenario">
+                    <span className="layer__scenario-label">If {modelScenario} mm more rain falls than the drains can take</span>
+                    <input
+                      type="range"
+                      min={0}
+                      max={MODEL_SCENARIOS_MM.length - 1}
+                      step={1}
+                      value={Math.max(0, MODEL_SCENARIOS_MM.indexOf(modelScenario as (typeof MODEL_SCENARIOS_MM)[number]))}
+                      disabled={!l.visible}
+                      aria-label="Rough model rain scenario"
+                      onChange={(e) => setModelScenario(MODEL_SCENARIOS_MM[Number(e.target.value)])}
+                    />
+                  </span>
+                )}
                 {def.hasOpacity && rowOpen && (
                   <span className="layer__opacity">
                     <input

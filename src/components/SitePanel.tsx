@@ -11,6 +11,8 @@ import { ClampText } from './ClampText';
 import { Chevron } from './Icons';
 import { InfoTip } from './InfoTip';
 import { useStore } from '../state/store';
+import { ShowMeIn3DButton } from './Map3DShowMe';
+import { sitePoint } from '../sites/geo';
 import '../styles/place.css';
 
 /** The place page (Task 35, docs/tasks/35-place-page.md). Screen question: does it flood, why, and did anyone fix
@@ -354,6 +356,7 @@ function SiteDetail({ site, promises }: { site: SiteRecord; promises: Record<str
         >
           {site.structure_name}
         </p>
+        <ShowMeIn3DButton lon={sitePoint(site)[0]} lat={sitePoint(site)[1]} />
       </header>
 
       <AtAGlance site={site} promises={promises} />

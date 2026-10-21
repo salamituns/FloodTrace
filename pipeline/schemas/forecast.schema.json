@@ -1,0 +1,421 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://floodtrace.local/pipeline/schemas/forecast.schema.json",
+  "title": "FloodTrace events/forecast/<run-date>.json",
+  "description": "Daily 7-day flood-risk forecast per IMERG 0.1 deg cell, built by pipeline/forecast.py (Task 38, docs/tasks/38-forecast-pipeline.md). Never hand-edited. events/forecast/latest.json is a byte-identical copy of the newest run; index.json lists the runs.",
+  "type": "object",
+  "required": ["meta", "tides", "rivers", "cells", "citywide"],
+  "additionalProperties": false,
+  "properties": {
+    "meta": {
+      "type": "object",
+      "required": ["built_by", "task", "schema", "method", "run", "sources", "models", "thresholds", "rules", "caveats", "counts"],
+      "additionalProperties": false,
+      "properties": {
+        "built_by": { "type": "string" },
+        "task": { "type": "string" },
+        "schema": { "type": "string" },
+        "method": { "type": "string" },
+        "run": {
+          "type": "object",
+          "required": ["run_date", "generated_at", "forecast_days", "cache_dir", "api_calls", "cache_reused"],
+          "additionalProperties": false,
+          "properties": {
+            "run_date": { "$ref": "#/$defs/date" },
+            "generated_at": { "type": "string" },
+            "forecast_days": {
+              "type": "array",
+              "minItems": 7,
+              "maxItems": 7,
+              "items": { "$ref": "#/$defs/date" }
+            },
+            "cache_dir": { "type": "string" },
+            "api_calls": { "type": "integer", "minimum": 0 },
+            "cache_reused": { "type": "boolean" }
+          }
+        },
+        "sources": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "required": ["name", "url", "licence", "note"],
+            "additionalProperties": false,
+            "properties": {
+              "name": { "type": "string" },
+              "url": { "type": "string" },
+              "licence": { "type": "string" },
+              "note": { "type": "string" }
+            }
+          }
+        },
+        "models": {
+          "type": "object",
+          "required": ["rain_headline", "rain_second_opinion", "rivers", "tide"],
+          "additionalProperties": false,
+          "properties": {
+            "rain_headline": { "type": "string" },
+            "rain_second_opinion": { "type": "string" },
+            "rivers": { "type": "string" },
+            "tide": { "type": "string" }
+          }
+        },
+        "thresholds": {
+          "type": "object",
+          "required": ["hourly_rate_mm_h", "member_share_for_hourly_rate", "daily_mm", "heavy_rain_mm", "analogue_tolerance", "analogue_min_mm", "max_analogues", "high_tide_overlap_hours", "area_match_km"],
+          "additionalProperties": false,
+          "properties": {
+            "hourly_rate_mm_h": { "type": "number" },
+            "member_share_for_hourly_rate": { "type": "number" },
+            "daily_mm": {
+              "type": "array",
+              "minItems": 3,
+              "maxItems": 3,
+              "items": { "type": "number" }
+            },
+            "heavy_rain_mm": { "type": "number" },
+            "analogue_tolerance": { "type": "number" },
+            "analogue_min_mm": { "type": "number" },
+            "max_analogues": { "type": "integer" },
+            "high_tide_overlap_hours": { "type": "number" },
+            "area_match_km": { "type": "number" }
+          }
+        },
+        "rules": {
+          "type": "object",
+          "required": ["risk_window", "hourly_rate_justification", "risk_level", "analogues", "rivers", "tides"],
+          "additionalProperties": false,
+          "properties": {
+            "risk_window": { "type": "string" },
+            "hourly_rate_justification": { "type": "string" },
+            "risk_level": { "type": "string" },
+            "analogues": { "type": "string" },
+            "rivers": { "type": "string" },
+            "tides": { "type": "string" }
+          }
+        },
+        "caveats": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "type": "string" }
+        },
+        "counts": {
+          "type": "object",
+          "required": ["cells", "ensemble_series_per_cell", "gfs_series_per_cell", "reported_flood_days_in_catalog"],
+          "additionalProperties": false,
+          "properties": {
+            "cells": { "type": "integer" },
+            "ensemble_series_per_cell": { "type": "integer" },
+            "gfs_series_per_cell": { "type": "integer" },
+            "reported_flood_days_in_catalog": { "type": "integer" }
+          }
+        }
+      }
+    },
+    "tides": {
+      "type": "object",
+      "required": ["point", "high_tides"],
+      "additionalProperties": false,
+      "properties": {
+        "point": {
+          "type": "object",
+          "required": ["lon", "lat", "source"],
+          "additionalProperties": false,
+          "properties": {
+            "lon": { "type": "number" },
+            "lat": { "type": "number" },
+            "source": { "type": "string" }
+          }
+        },
+        "high_tides": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["time", "height_m"],
+            "additionalProperties": false,
+            "properties": {
+              "time": { "$ref": "#/$defs/local_time" },
+              "height_m": { "type": "number" }
+            }
+          }
+        }
+      }
+    },
+    "rivers": {
+      "type": "object",
+      "required": ["ogun-ishi", "owo-ikorodu"],
+      "additionalProperties": false,
+      "propertyNames": { "pattern": "^[a-z-]+$" },
+      "properties": {
+        "ogun-ishi": { "$ref": "#/$defs/river" },
+        "owo-ikorodu": { "$ref": "#/$defs/river" }
+      }
+    },
+    "cells": {
+      "type": "object",
+      "propertyNames": { "pattern": "^c[0-9]+\\.[0-9]{2}N[0-9]+\\.[0-9]{2}E$" },
+      "additionalProperties": { "$ref": "#/$defs/cell" }
+    },
+    "citywide": {
+      "type": "object",
+      "required": ["days"],
+      "additionalProperties": false,
+      "properties": {
+        "days": {
+          "type": "array",
+          "minItems": 7,
+          "maxItems": 7,
+          "items": {
+            "type": "object",
+            "required": ["date", "overall_level", "cells_by_level", "most_at_risk"],
+            "additionalProperties": false,
+            "properties": {
+              "date": { "$ref": "#/$defs/date" },
+              "overall_level": { "$ref": "#/$defs/level" },
+              "cells_by_level": {
+                "type": "object",
+                "required": ["high", "medium", "low", "none"],
+                "additionalProperties": false,
+                "properties": {
+                  "high": { "type": "integer" },
+                  "medium": { "type": "integer" },
+                  "low": { "type": "integer" },
+                  "none": { "type": "integer" }
+                }
+              },
+              "most_at_risk": {
+                "type": "array",
+                "maxItems": 3,
+                "items": {
+                  "type": "object",
+                  "required": ["cell", "place", "level", "median_mm", "chance_ge_40mm"],
+                  "additionalProperties": false,
+                  "properties": {
+                    "cell": { "type": "string" },
+                    "place": { "type": ["string", "null"] },
+                    "level": { "$ref": "#/$defs/level" },
+                    "median_mm": { "type": "number" },
+                    "chance_ge_40mm": { "$ref": "#/$defs/chance" }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "date": { "type": "string", "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$" },
+    "local_time": { "type": "string", "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}$" },
+    "level": { "enum": ["none", "low", "medium", "high"] },
+    "chance": { "type": "number", "minimum": 0, "maximum": 1 },
+    "cell": {
+      "type": "object",
+      "required": ["centre", "days", "hourly"],
+      "additionalProperties": false,
+      "properties": {
+        "centre": {
+          "type": "object",
+          "required": ["lon", "lat", "place"],
+          "additionalProperties": false,
+          "properties": {
+            "lon": { "type": "number" },
+            "lat": { "type": "number" },
+            "place": { "type": ["string", "null"] }
+          }
+        },
+        "days": {
+          "type": "array",
+          "minItems": 7,
+          "maxItems": 7,
+          "items": { "$ref": "#/$defs/day_block" }
+        },
+        "hourly": {
+          "type": "object",
+          "required": ["median", "p90"],
+          "additionalProperties": false,
+          "properties": {
+            "median": {
+              "type": "array",
+              "minItems": 168,
+              "maxItems": 168,
+              "items": { "type": "number" }
+            },
+            "p90": {
+              "type": "array",
+              "minItems": 168,
+              "maxItems": 168,
+              "items": { "type": "number" }
+            }
+          }
+        }
+      }
+    },
+    "day_block": {
+      "type": "object",
+      "required": ["date", "rain", "risk", "level", "level_reason"],
+      "additionalProperties": false,
+      "properties": {
+        "date": { "$ref": "#/$defs/date" },
+        "rain": {
+          "type": "object",
+          "required": ["median_mm", "p90_mm", "chance_ge_20mm", "chance_ge_40mm", "chance_ge_60mm", "peak_3h", "second_opinion_gfs"],
+          "additionalProperties": false,
+          "properties": {
+            "median_mm": { "type": "number" },
+            "p90_mm": { "type": "number" },
+            "chance_ge_20mm": { "$ref": "#/$defs/chance" },
+            "chance_ge_40mm": { "$ref": "#/$defs/chance" },
+            "chance_ge_60mm": { "$ref": "#/$defs/chance" },
+            "peak_3h": {
+              "type": "object",
+              "required": ["start_hour_local", "median_mm", "p90_mm"],
+              "additionalProperties": false,
+              "properties": {
+                "start_hour_local": { "type": "string", "pattern": "^[0-2][0-9]:00$" },
+                "median_mm": { "type": "number" },
+                "p90_mm": { "type": "number" }
+              }
+            },
+            "second_opinion_gfs": {
+              "type": "object",
+              "required": ["median_mm", "p90_mm", "chance_ge_40mm"],
+              "additionalProperties": false,
+              "properties": {
+                "median_mm": { "type": "number" },
+                "p90_mm": { "type": "number" },
+                "chance_ge_40mm": { "$ref": "#/$defs/chance" }
+              }
+            }
+          }
+        },
+        "risk": {
+          "type": "object",
+          "required": ["hours", "near_high_tide"],
+          "additionalProperties": false,
+          "properties": {
+            "hours": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "required": ["start", "end"],
+                "additionalProperties": false,
+                "properties": {
+                  "start": { "$ref": "#/$defs/local_time" },
+                  "end": { "$ref": "#/$defs/local_time" }
+                }
+              }
+            },
+            "near_high_tide": { "type": "boolean" }
+          }
+        },
+        "level": { "$ref": "#/$defs/level" },
+        "level_reason": { "type": "string" },
+        "level_history": {
+          "type": "object",
+          "required": ["class_mm", "n_days", "n_flood_days", "share", "nudge"],
+          "additionalProperties": false,
+          "properties": {
+            "class_mm": { "enum": ["10-20 mm", "20-40 mm", "40+ mm"] },
+            "n_days": { "type": "integer" },
+            "n_flood_days": { "type": "integer" },
+            "share": { "type": ["number", "null"] },
+            "nudge": { "enum": ["up", "down", null] }
+          }
+        },
+        "analogues": {
+          "type": "object",
+          "required": ["n_qualifying", "n_qualifying_flood_days", "n_qualifying_citywide_flood_days", "days"],
+          "additionalProperties": false,
+          "properties": {
+            "n_qualifying": { "type": "integer" },
+            "n_qualifying_flood_days": { "type": "integer" },
+            "n_qualifying_citywide_flood_days": { "type": "integer" },
+            "days": {
+              "type": "array",
+              "maxItems": 5,
+              "items": {
+                "type": "object",
+                "required": ["date", "imerg_mm", "flood_day", "citywide_flood_day", "areas_within_5km"],
+                "additionalProperties": false,
+                "properties": {
+                  "date": { "$ref": "#/$defs/date" },
+                  "imerg_mm": { "type": "number" },
+                  "flood_day": { "type": "boolean" },
+                  "citywide_flood_day": { "type": "boolean" },
+                  "areas_within_5km": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "required": ["name", "lon", "lat"],
+                      "additionalProperties": false,
+                      "properties": {
+                        "name": { "type": "string" },
+                        "lon": { "type": "number" },
+                        "lat": { "type": "number" }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "river": {
+      "type": "object",
+      "required": ["name", "requested", "snapped", "history", "days"],
+      "additionalProperties": false,
+      "properties": {
+        "name": { "type": "string" },
+        "requested": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": { "type": "number" }
+        },
+        "snapped": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": { "type": "number" }
+        },
+        "history": {
+          "type": "object",
+          "required": ["start", "end", "n_days", "p90_m3s", "p99_m3s", "max_m3s"],
+          "additionalProperties": false,
+          "properties": {
+            "start": { "$ref": "#/$defs/date" },
+            "end": { "$ref": "#/$defs/date" },
+            "n_days": { "type": "integer" },
+            "p90_m3s": { "type": "number" },
+            "p99_m3s": { "type": "number" },
+            "max_m3s": { "type": "number" }
+          }
+        },
+        "days": {
+          "type": "array",
+          "minItems": 7,
+          "maxItems": 7,
+          "items": {
+            "type": "object",
+            "required": ["date", "median_m3s", "p90_m3s", "flags"],
+            "additionalProperties": false,
+            "properties": {
+              "date": { "$ref": "#/$defs/date" },
+              "median_m3s": { "type": "number" },
+              "p90_m3s": { "type": "number" },
+              "flags": {
+                "type": "array",
+                "uniqueItems": true,
+                "items": { "enum": ["at_or_above_p90_hist", "at_or_above_p99_hist"] }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
