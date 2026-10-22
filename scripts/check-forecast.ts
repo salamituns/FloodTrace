@@ -18,6 +18,7 @@ import {
 	mappedFloodId,
 	pct40,
 	pctChance,
+	trustSentence,
 	whatToDo,
 	windowStartPhrase,
 	type ForecastDay,
@@ -37,6 +38,7 @@ function day(over: Partial<ForecastDay> & Pick<ForecastDay, 'date' | 'level'>): 
 	return {
 		rain: {
 			median_mm: 4,
+			raw_median_mm: 3,
 			p90_mm: 12,
 			chance_ge_20mm: 0.02,
 			chance_ge_40mm: 0.02,
@@ -55,6 +57,7 @@ const heavyThu = day({
 	level: 'high',
 	rain: {
 		median_mm: 52,
+		raw_median_mm: 38,
 		p90_mm: 80,
 		chance_ge_20mm: 0.7,
 		chance_ge_40mm: 0.41,
@@ -89,6 +92,7 @@ check(
 			risk: { hours: [{ start: '2026-10-24T08:00', end: '2026-10-24T11:00' }], near_high_tide: false },
 			rain: {
 				median_mm: 30,
+				raw_median_mm: 22,
 				p90_mm: 50,
 				chance_ge_20mm: 0.5,
 				chance_ge_40mm: 0.15,
@@ -194,6 +198,22 @@ const allNone = Object.values(latest.cells).every((c) => c.days.every((d) => d.l
 check(allNone, 'this week is quiet: every cell-day is none');
 const hourly = Object.values(latest.cells)[0].hourly;
 check(!!hourly && hourly.median.length === 168 && hourly.p90.length === 168, 'hourly export is 168 hours');
+
+// ── Task 44: calibration fields and the trust sentence ───────────────────
+const rawOk = Object.values(latest.cells).every((c) => c.days.every((d) => typeof d.rain.raw_median_mm === 'number'));
+check(rawOk, 'every cell-day keeps the raw median beside the calibrated one');
+const cal = latest.meta.calibration;
+check(!!cal?.applied && !!cal.trust, 'latest run carries calibration and trust numbers');
+check(cal?.level_rule?.threshold_mm === 15, 'level floor threshold came from the calibration file');
+const line = trustSentence(cal);
+check(
+	line ===
+		'How much to trust this: in past seasons, the day-before forecast flagged 11 of 19 days when floods were reported, and nearly all of its warnings passed without a reported flood.',
+	`trust sentence: ${line}`,
+);
+check(trustSentence(null) === null, 'no calibration means no trust sentence');
+check(trustSentence({ applied: false } as never) === null, 'unapplied calibration shows nothing');
+
 check(forecastUrl(false, '?forecast=fixture') === '/events/forecast/latest.json', 'production ignores ?forecast=fixture');
 
 if (failed) {

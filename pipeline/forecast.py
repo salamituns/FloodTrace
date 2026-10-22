@@ -11,6 +11,13 @@ combines them with its own satellite-rain history. Per run it fetches, once:
     river points from the Open-Meteo Flood API (4 calls);
 and computes the EOT20 astronomical tide locally (pyTMD, no network).
 
+Since Task 44 the ensemble's rain is CALIBRATED to Lagos rain before any number
+is computed: pipeline/calibrate.py fits a quantile mapping per lead day on the
+2024-2026 hindcast (ECMWF IFS runs vs IMERG daily totals) and writes it to
+events/forecast/calibration.json, which this script reads and applies to every
+ensemble member's daily total (hourly values scaled by the same daily factor).
+median_mm is calibrated; raw_median_mm keeps the uncalibrated median beside it.
+
 Output, validated against pipeline/schemas/forecast.schema.json:
   events/forecast/<run-date>.json   (never overwritten: a same-day rerun gets a
                                     time suffix, e.g. 2026-10-21-0932.json)
@@ -149,6 +156,43 @@ def day_totals_and_chances(sub: np.ndarray):
     totals = sub.sum(axis=1)
     return totals, float(np.median(totals)), float(np.percentile(totals, 90)), \
         {t: float(np.mean(totals >= t)) for t in DAILY_MM}
+
+
+# ---- calibration (Task 44) -------------------------------------------------
+CAL_PATH = OUT_DIR / "calibration.json"
+
+
+def load_calibration() -> dict:
+    """Read the quantile mapping fitted by pipeline/calibrate.py, plus the
+    level rule and trust numbers from its meta."""
+    if not CAL_PATH.exists():
+        raise SystemExit(
+            "events/forecast/calibration.json is missing: run pipeline/calibrate.py "
+            "first (it needs the hindcast cache built by pipeline/hindcast.py)")
+    doc = json.loads(CAL_PATH.read_text())
+    pct = np.array(doc["percentiles"], dtype=float)
+    maps = {int(k): (np.array(v["model_mm"], dtype=float),
+                     np.array(v["observed_mm"], dtype=float))
+            for k, v in doc["mapping"].items()}
+    meta = doc.get("meta", {})
+    rule = meta.get("level_rule") or {}
+    return {
+        "pct": pct,
+        "maps": maps,
+        # the hindcast-derived floor on the calibrated median (None: not applied)
+        "rule_mm": float(rule["threshold_mm"]) if rule.get("applied") else None,
+        "meta": meta,
+        "fit_period": (meta.get("fit_period") or {}),
+    }
+
+
+def calibrate_mm(values: np.ndarray, pct: np.ndarray, mq: np.ndarray, oq: np.ndarray) -> np.ndarray:
+    """Map model mm to IMERG-equivalent mm through the fitted quantile mapping:
+    the value's percentile in the fit model sample becomes the same percentile
+    of the fit IMERG sample. NaN stays NaN; values above the fit maximum clip
+    to the fit IMERG maximum."""
+    p = np.interp(values, mq, pct)
+    return np.interp(p, pct, oq)
 
 
 def risk_ranges(sub: np.ndarray, times: list) -> list:
@@ -382,6 +426,16 @@ def main() -> None:
     window_days = [x for x in grid_dates if in_window(x)]
     print(f"searched window days (2014+, Apr-Nov): {len(window_days)}")
 
+    print("loading calibration (events/forecast/calibration.json) ...")
+    cal = load_calibration()
+    cal_rule_mm = cal["rule_mm"]
+    cal_trust = cal["meta"].get("trust") or {}
+    cal_fit = cal["fit_period"]
+    print(f"  quantile mapping for lead days {sorted(cal['maps'])}, fitted "
+          f"{cal_fit.get('start')}..{cal_fit.get('end')}; "
+          + (f"level floor at {cal_rule_mm:g} mm calibrated median"
+             if cal_rule_mm is not None else "no level floor"))
+
     # per-cell totals over the window; per-cell flood dates within AREA_MATCH_KM
     totals_by_cell, class_stats, local_flood = {}, {}, {}
     for c in cells:
@@ -484,11 +538,30 @@ def main() -> None:
         cid = c["id"]
         centre = {"lon": c["lon"], "lat": c["lat"], "place": c.get("place")}
         M, G = ecmwf[cid], gfs[cid]
+        # Calibrate each member's daily total through the quantile mapping
+        # (Task 44), then scale that member's hourly values by the same daily
+        # factor, so chances, levels, risk windows and the hourly export are
+        # all computed on IMERG-equivalent rain. A member-day the model keeps
+        # fully dry keeps zero hourly rates; its mapped daily total can still
+        # carry a little IMERG-equivalent drizzle.
+        n_m = M.shape[0]
+        raw_day = M.reshape(n_m, FORECAST_DAYS, 24).sum(axis=2)
+        cal_day = np.empty_like(raw_day)
+        for di in range(FORECAST_DAYS):
+            mq, oq = cal["maps"][di + 1]
+            cal_day[:, di] = calibrate_mm(raw_day[:, di], cal["pct"], mq, oq)
+        factors = np.where(raw_day > 0, cal_day / np.maximum(raw_day, 1e-12), 1.0)
+        Mcal = (M.reshape(n_m, FORECAST_DAYS, 24) * factors[:, :, None]).reshape(
+            n_m, FORECAST_DAYS * 24)
         day_blocks = []
         for di, day in enumerate(forecast_days):
-            sub = M[:, di * 24:(di + 1) * 24]
-            _, med, p90, chances = day_totals_and_chances(sub)
-            gsub = G[:, di * 24:(di + 1) * 24]
+            sub = Mcal[:, di * 24:(di + 1) * 24]   # calibrated hourly rates
+            totals = cal_day[:, di]                # calibrated daily totals
+            med = float(np.median(totals))
+            p90 = float(np.percentile(totals, 90))
+            chances = {t: float(np.mean(totals >= t)) for t in DAILY_MM}
+            raw_med = float(np.median(raw_day[:, di]))
+            gsub = G[:, di * 24:(di + 1) * 24]     # GFS stays uncalibrated
             _, gmed, gp90, gchances = day_totals_and_chances(gsub)
             # peak 3-hour window: highest member-median 3-h total in the day
             best_w, best_med = 0, -1.0
@@ -510,10 +583,24 @@ def main() -> None:
                         break
             _, final, hist, reason = level_for(med, chances[20], chances[40],
                                                class_stats[cid])
+            # Hindcast-derived floor (Task 44, part 3): a calibrated median at
+            # or above the threshold fixed on 2024+2025 raises the day to at
+            # least medium, whatever the ensemble chances say.
+            if cal_rule_mm is not None and med >= cal_rule_mm and final in ("none", "low"):
+                final = "medium"
+                reason = (
+                    f"The calibrated forecast's middle scenario reaches {med:.0f} mm, and "
+                    f"in past seasons the day-before forecast at this level or above "
+                    f"flagged {cal_trust.get('flood_days_flagged')} of the "
+                    f"{cal_trust.get('flood_days_in_period')} days floods were reported "
+                    f"on, so this counts as a risk day even though the chance of 40 mm "
+                    f"is low ({chances[40]:.0%})."
+                )
             block = {
                 "date": day,
                 "rain": {
                     "median_mm": round(med, 1),
+                    "raw_median_mm": round(raw_med, 1),
                     "p90_mm": round(p90, 1),
                     "chance_ge_20mm": round(chances[20], 3),
                     "chance_ge_40mm": round(chances[40], 3),
@@ -542,13 +629,14 @@ def main() -> None:
             day_blocks.append(block)
             all_blocks.append((LEVELS.index(final), chances[40], med, cid, day, block))
         # Member-median and 90th-percentile mm/h for each of the 168 hours
-        # (Task 41). Rounded to 0.1 so the whole file stays under 600 KB.
+        # (Task 41), on the CALIBRATED hourly rates (Task 44). Rounded to 0.1
+        # so the whole file stays under 600 KB.
         cells_out[cid] = {
             "centre": centre,
             "days": day_blocks,
             "hourly": {
-                "median": [round(float(x), 1) for x in np.median(M, axis=0)],
-                "p90": [round(float(x), 1) for x in np.percentile(M, 90, axis=0)],
+                "median": [round(float(x), 1) for x in np.median(Mcal, axis=0)],
+                "p90": [round(float(x), 1) for x in np.percentile(Mcal, 90, axis=0)],
             },
         }
 
@@ -591,7 +679,15 @@ def main() -> None:
             "fetched once for all 68 IMERG 0.1 deg cells (one multi-coordinate "
             "call; the model grid is coarser than the cells, so several cells "
             "share one model point) and drives the headline rain numbers; the "
-            "GFS 0.25 deg ensemble is stored as a second opinion. Per cell and "
+            "GFS 0.25 deg ensemble is stored as a second opinion. Since Task 44 "
+            "every ECMWF member's daily total is first calibrated to Lagos rain "
+            "by a quantile mapping fitted per lead day on the 2024-2026 "
+            "hindcast (events/forecast/calibration.json, built by "
+            "pipeline/calibrate.py), and each member's hourly values are scaled "
+            "by the same daily factor, so the medians, percentiles, chances, "
+            "risk windows and the hourly export are IMERG-equivalent; "
+            "raw_median_mm keeps the uncalibrated median beside the calibrated "
+            "one, and the GFS second opinion stays uncalibrated. Per cell and "
             "Lagos day the pipeline records the ensemble-median and 90th-percentile "
             "24-h rain, the chance of at least 20/40/60 mm (share of the 51 "
             "series), the peak 3-hour window, the hours at risk (member-median "
@@ -666,7 +762,54 @@ def main() -> None:
                         "a day matches a cell when one of its areas lies within "
                         "5 km of the cell centre",
             },
+            {
+                "name": "Forecast calibration (quantile mapping)",
+                "url": "https://previous-runs-api.open-meteo.com/v1/forecast",
+                "licence": "CC BY 4.0 (Open-Meteo); ECMWF IFS data (c) ECMWF; NASA IMERG open data",
+                "note": "events/forecast/calibration.json, built by pipeline/calibrate.py "
+                        "from the 2024-2026 hindcast of ECMWF IFS deterministic runs "
+                        "vs IMERG daily totals; the mapping applied to every member here",
+            },
         ],
+        "calibration": {
+            "applied": True,
+            "method": (
+                "Quantile mapping per lead day (1-7), fitted by pipeline/calibrate.py on "
+                "the 2024-2026 hindcast (ECMWF IFS 0.25 deg deterministic runs vs IMERG "
+                "daily totals), pooling all 68 cells; no per-cell adjustment (tested "
+                "and unstable across seasons). Every ECMWF member's daily total is "
+                "mapped to IMERG-equivalent mm BEFORE chances, levels, risk windows and "
+                "the hourly export are computed; each member's hourly values are scaled "
+                "by that member's same daily factor. median_mm is calibrated; "
+                "raw_median_mm keeps the uncalibrated median beside it. The GFS second "
+                "opinion is NOT calibrated (the mapping was fitted on ECMWF IFS runs). "
+                "Validated leave-one-season-out: the calibrated day-1 p99 matches "
+                "IMERG's (54.4 vs 53.9 mm, model raw 28.9), and flood days flagged at "
+                "40 mm went from 1 of 19 (raw) to 6 of 19 (calibrated) — but most "
+                "flagged days still pass without a reported flood, and with 19 flood "
+                "days the gain may be noise."
+            ),
+            "fit_period": (
+                f"{cal_fit.get('start')} to {cal_fit.get('end')} "
+                f"({', '.join(str(y) for y in cal_fit.get('seasons', []))}), "
+                "April-November; deployed mapping refit on all seasons, validation "
+                "leave-one-season-out"
+            ),
+            "mapping_file": "events/forecast/calibration.json",
+            "level_rule": (
+                {
+                    "threshold_mm": cal_rule_mm,
+                    "rule": cal["meta"]["level_rule"]["rule"],
+                    "criterion": cal["meta"]["level_rule"]["criterion"],
+                    "fit_numbers": next(
+                        (r for r in cal["meta"]["level_rule"]["candidates_2024_2025"]
+                         if r["threshold_mm"] == cal_rule_mm), None),
+                    "test_2026": cal["meta"]["level_rule"]["test_2026_at_threshold"],
+                }
+                if cal_rule_mm is not None else None
+            ),
+            "trust": cal_trust,
+        },
         "models": {
             "rain_headline": f"ecmwf_ifs025 (control + {n_series - 1} perturbed members)",
             "rain_second_opinion": f"gfs025 (control + {n_gfs - 1} perturbed members)",
@@ -707,6 +850,35 @@ def main() -> None:
                 "sentence: heavy rain likely or possible, checked against how "
                 "often rain of that size here actually flooded."
             ),
+            "calibration": (
+                "Every ECMWF member's daily rain total is mapped to IMERG-equivalent mm "
+                "through the quantile mapping in events/forecast/calibration.json "
+                "(fitted per lead day on the 2024-2026 hindcast, pooled over all "
+                "cells; a per-cell adjustment was tested and rejected as unstable "
+                "across seasons). Each member's hourly values are scaled by that "
+                "member's same daily factor, and everything downstream — chances, "
+                "levels, risk windows, the hourly export — is computed on the "
+                "calibrated rain; raw_median_mm keeps the uncalibrated median beside "
+                "the calibrated one. The GFS second opinion is not calibrated. "
+                + (
+                    f"Level floor: a calibrated member-median of at least {cal_rule_mm:g} mm "
+                    "raises a cell-day to at least medium, whatever the ensemble "
+                    "chances say — the day-1 threshold fixed on the 2024 and 2025 "
+                    "seasons as the best balance of flood days caught against false "
+                    "alarms (TSS, out of sample within those seasons) and kept frozen "
+                    "before the 2026 test season, where it flagged "
+                    f"{(cal['meta']['level_rule'].get('test_2026_at_threshold') or {}).get('1', {}).get('flood_days_flagged')} "
+                    "of "
+                    f"{(cal['meta']['level_rule'].get('test_2026_at_threshold') or {}).get('1', {}).get('flood_days_in_season')} "
+                    "flood days against "
+                    f"{(cal['meta']['level_rule'].get('test_2026_at_40mm') or {}).get('1', {}).get('flood_days_flagged')} "
+                    "of "
+                    f"{(cal['meta']['level_rule'].get('test_2026_at_40mm') or {}).get('1', {}).get('flood_days_in_season')} "
+                    "at 40 mm."
+                    if cal_rule_mm is not None else
+                    "No level floor beyond the chance ladder."
+                )
+            ),
             "analogues": (
                 "For medium and high cell-days: past days (April-November of the "
                 "searched months, 2014 onward) whose IMERG 24-h total at the cell "
@@ -740,6 +912,11 @@ def main() -> None:
             "coverage, not a gauge, so floods no outlet reported are missing "
             "and every 'how often it flooded' number here is a floor, not the "
             "truth.",
+            "The calibration corrects how much rain the model forecasts, not "
+            "where it puts it: out of sample it flagged 6 of 19 flood days at "
+            "day 1 against 1 of 19 raw, but most flagged days still pass "
+            "without a reported flood, and with only 19 flood days that gain "
+            "may be noise (see meta.calibration.trust).",
             "The forecast model is coarser than our history cells: the ECMWF "
             "ensemble is 0.25 deg (about 25 km), so several 0.1 deg cells share "
             "one model point and neighbourhood rain is smoothed.",
@@ -783,7 +960,9 @@ def main() -> None:
 
     runs = []
     for p in sorted(OUT_DIR.glob("*.json")):
-        if p.name in ("latest.json", "index.json") or p.name.startswith("_"):
+        # only dated run files; the directory also holds latest.json, index.json,
+        # calibration.json, scores.json and hindcast.json (Task 42/44)
+        if not re.fullmatch(r"\d{4}-\d{2}-\d{2}(-\d{4})?\.json", p.name):
             continue
         m = json.loads(p.read_text())["meta"]["run"]
         runs.append({"file": p.name, "run_date": m["run_date"],
@@ -804,7 +983,8 @@ def main() -> None:
     for li, p40, med, cid, day, block in ranked:
         c_place = cells_out[cid]["centre"]["place"] or ""
         print(f"  {day} {cid} ({c_place}) level {block['level']}, "
-              f"median {block['rain']['median_mm']} mm, "
+              f"median {block['rain']['median_mm']} mm "
+              f"(raw {block['rain']['raw_median_mm']} mm), "
               f"chance>=40mm {block['rain']['chance_ge_40mm']}")
         print(f"    {block['level_reason']}")
         for a in block.get("analogues", {}).get("days", []):

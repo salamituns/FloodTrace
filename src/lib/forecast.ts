@@ -33,6 +33,8 @@ export interface ForecastDay {
 	date: string;
 	rain: {
 		median_mm: number;
+		/** the uncalibrated ensemble median, kept beside the calibrated one (Task 44) */
+		raw_median_mm: number;
 		p90_mm: number;
 		chance_ge_20mm: number;
 		chance_ge_40mm: number;
@@ -63,12 +65,34 @@ export interface ForecastCell {
 	hourly?: { median: number[]; p90: number[] };
 }
 
+/** Out-of-sample numbers the trust sentence is built from (Task 44). */
+export interface CalibrationTrust {
+	lead_day: number;
+	threshold_mm: number;
+	flood_days_in_period: number;
+	flood_days_flagged: number;
+	days_flagged: number;
+	days_flagged_with_flood_reported: number;
+	false_alarm_share: number | null;
+	design: string;
+}
+
+export interface CalibrationMeta {
+	applied: boolean;
+	method: string;
+	fit_period: string;
+	mapping_file: string;
+	level_rule: { threshold_mm: number; rule: string; criterion?: string } | null;
+	trust: CalibrationTrust;
+}
+
 export interface ForecastFile {
 	meta: {
 		run: { run_date: string; generated_at: string; forecast_days: string[] };
 		sources: { name: string; url: string; licence: string; note: string }[];
 		models: { rain_headline: string; tide: string };
 		caveats: string[];
+		calibration?: CalibrationMeta;
 	};
 	tides: { high_tides: { time: string; height_m: number }[] };
 	cells: Record<string, ForecastCell>;
@@ -298,6 +322,44 @@ export function licenceFootnote(_meta: ForecastFile['meta']): string {
 	return (
 		"Rain forecast: ECMWF ensemble via Open-Meteo. Tides: EOT20. Reported floods undercount real floods, so 'no floods reported' is not proof it's safe. " +
 		'ECMWF IFS © ECMWF, GFS © NOAA, GloFAS © Copernicus CEMS, all CC BY 4.0 via Open-Meteo; NASA IMERG open data; news reports compiled by FloodTrace.'
+	);
+}
+
+/** How much the forecast's warnings were worth in past seasons (Task 44 / Task 42 part C).
+ * One plain sentence under the footnote, shown on quiet weeks too — that is when
+ * people most need to know what a quiet forecast is worth. Never invents a number:
+ * everything comes from meta.calibration.trust in the run file. */
+export function trustSentence(cal: CalibrationMeta | null | undefined): string | null {
+	if (!cal?.applied || !cal.trust) return null;
+	const t = cal.trust;
+	const share = t.false_alarm_share;
+	let tail = '';
+	if (share != null) {
+		if (share >= 0.9) tail = ', and nearly all of its warnings passed without a reported flood';
+		else if (share >= 0.7) tail = ', and most of its warnings passed without a reported flood';
+		else if (share >= 0.45) tail = ', and about half of its warnings passed without a reported flood';
+		else tail = `, and ${(100 - Math.round(share * 100))}% of its warnings came with a flood reported`;
+	}
+	return (
+		`How much to trust this: in past seasons, the day-before forecast flagged ${t.flood_days_flagged} of ` +
+		`${t.flood_days_in_period} days when floods were reported${tail}.`
+	);
+}
+
+/** The <details> body behind the trust sentence: the exact numbers, the design,
+ * and the caveats that keep those numbers honest. */
+export function trustDetails(cal: CalibrationMeta | null | undefined): string | null {
+	if (!cal?.applied || !cal.trust) return null;
+	const t = cal.trust;
+	const share = t.false_alarm_share == null ? null : Math.round(t.false_alarm_share * 100);
+	return (
+		`These numbers come from the 2024-2026 hindcast. ${t.design} ` +
+		`A "warning" here means the calibrated forecast reached at least ${t.threshold_mm} mm in a cell near a reported flood, ` +
+		`the day before. It flagged ${t.days_flagged} days in total; floods were reported on ${t.days_flagged_with_flood_reported} of them ` +
+		`(${share == null ? 'unknown' : `${100 - share}%`}), so ${share == null ? 'most' : `${share}%`} of the warnings passed without a reported flood. ` +
+		'The hindcast scored one deterministic ECMWF run per day, not this 51-member ensemble, and reported floods undercount real floods. ' +
+		`With only ${t.flood_days_in_period} flood days in the record these figures are rough. ` +
+		`Full method: ${cal.mapping_file} (meta).`
 	);
 }
 

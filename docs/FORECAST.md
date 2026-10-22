@@ -3,8 +3,32 @@
 The 7-day flood-risk forecast behind "when will it flood, where and what will it
 affect". Built by `pipeline/forecast.py` (Task 38,
 [docs/tasks/38-forecast-pipeline.md](tasks/38-forecast-pipeline.md)); the UI
-comes later (Task 41), and Task 42 will score old runs against what actually
-fell.
+comes later (Task 41), Task 42 scores old runs against what actually fell, and
+Task 44 calibrates the ensemble's rain to Lagos rain.
+
+## Calibrate first (once per season, or when IMERG is refreshed)
+
+The ECMWF ensemble flattens Lagos's heaviest rain: its day-1 99th percentile is
+about 29 mm where IMERG measures 54 mm. `pipeline/calibrate.py` fixes that with
+a quantile mapping per lead day, fitted on the 2024-2026 hindcast
+(`pipeline/hindcast.py`, cached under `pipeline/cache/hindcast/`) against the
+IMERG grid, and validated leave-one-season-out. It also fixes the level rule's
+warning threshold from the 2024+2025 seasons only, then tests it on 2026.
+
+```sh
+pipeline/.venv/bin/python pipeline/hindcast.py    # fetches once, then cached
+pipeline/.venv/bin/python pipeline/calibrate.py   # offline: reads the cache
+```
+
+Order matters: refresh IMERG first (`pipeline/imerg_history_grid.py`, needs
+Earthdata credentials), then `hindcast.py`, then `calibrate.py`, then
+`forecast.py`, which refuses to run without
+`events/forecast/calibration.json`. Everything the calibration found — the
+mapping, the validation tables, the level rule and its numbers, and whether
+the gain is noise — is written into that file's `meta`, and the day-before
+warning numbers it stands behind are copied into each run's
+`meta.calibration.trust`, which the Coming-up card shows as one plain
+sentence under the footnote (also on quiet weeks).
 
 ## Run it once
 

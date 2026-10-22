@@ -18,7 +18,7 @@
         "variable": "GPM_3IMERGHHL_07_precipitation",
         "period": [
           "2025-10-01T00:00:00Z",
-          "2026-10-17T14:00:00Z"
+          "2026-10-22T12:00:00Z"
         ]
       }
     },
@@ -26,7 +26,7 @@
       "api": "https://api.giovanni.earthdata.nasa.gov/timeseries",
       "docs": "https://disc.gsfc.nasa.gov/information/howto?title=Giovanni%20In%20The%20Cloud:%20Time%20Series%20Service"
     },
-    "retrieved_at": "2026-10-17T16:04:51Z",
+    "retrieved_at": "2026-10-22T13:04:00Z",
     "licence": "NASA open data",
     "note": "satellite estimate; ~10 km cells smooth point intensities",
     "thresholds": {
@@ -1403,7 +1403,7 @@
       "max_peak_mm_h": 47.09,
       "cells_over_threshold": 65,
       "antecedent_7d_mean_daily_mm": 11.99,
-      "known_event_id": null,
+      "known_event_id": "lagos-2022-07-08",
       "rank": 3
     },
     {
@@ -4931,7 +4931,7 @@
       "max_peak_mm_h": 34.03,
       "cells_over_threshold": 52,
       "antecedent_7d_mean_daily_mm": 1.29,
-      "known_event_id": null,
+      "known_event_id": "lagos-2025-08-04",
       "rank": 15
     },
     {
@@ -26080,7 +26080,7 @@
       "max_peak_mm_h": 40.09,
       "cells_over_threshold": 57,
       "antecedent_7d_mean_daily_mm": 5.16,
-      "known_event_id": null,
+      "known_event_id": "lagos-2021-07-16",
       "rank": 87
     },
     {

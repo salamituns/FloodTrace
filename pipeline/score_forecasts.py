@@ -43,11 +43,20 @@ RUN_FILE_RE = re.compile(r"^\d{4}-\d{2}-\d{2}(-\d{4})?\.json$")
 def new_bucket() -> dict:
     return {
         "n_scored": 0,
+        "n_scored_calibrated": 0,   # cell-days from runs that carry calibration
         "brier20": 0.0, "clim20": 0.0,
         "brier40": 0.0, "clim40": 0.0,
         "hits_imerg": 0, "misses_imerg": 0, "fa_imerg": 0,
         "hits_flood": 0, "misses_flood": 0, "fa_flood": 0,
+        # median >= 40 mm vs IMERG >= 40 mm, raw vs calibrated (calibrated runs
+        # only): [hits, misses, false alarms]
+        "med40_raw": [0, 0, 0],
+        "med40_cal": [0, 0, 0],
     }
+
+
+def _hmf(triple: list) -> dict:
+    return {"hits": triple[0], "misses": triple[1], "false_alarms": triple[2]}
 
 
 def finish_bucket(b: dict) -> dict:
@@ -73,6 +82,13 @@ def finish_bucket(b: dict) -> dict:
                               "false_alarms": b["fa_imerg"]}
     out["vs_flood_reported_5km"] = {"hits": b["hits_flood"], "misses": b["misses_flood"],
                                     "false_alarms": b["fa_flood"]}
+    # the calibrated runs' two medians (Task 44): raw vs IMERG >= 40 mm, and the
+    # calibrated median_mm vs the same observation
+    out["median_ge_40mm"] = {
+        "n_scored_calibrated_runs": b["n_scored_calibrated"],
+        "raw": _hmf(b["med40_raw"]),
+        "calibrated": _hmf(b["med40_cal"]),
+    }
     return out
 
 
@@ -145,10 +161,13 @@ def main() -> None:
     warn_cell_days_no_flood = 0
     flood_days_covered = 0
     flood_days_flagged = 0
+    calibrated_runs = []   # runs whose rain is calibrated (Task 44)
 
     for name in runs:
         doc = json.loads((F.OUT_DIR / name).read_text())
         fdays = doc["meta"]["run"]["forecast_days"]
+        if doc["meta"].get("calibration", {}).get("applied"):
+            calibrated_runs.append(name)
         for cid, cell in doc["cells"].items():
             raw = series.get(cid)
             for di, block in enumerate(cell["days"]):
@@ -186,6 +205,25 @@ def main() -> None:
                         b["fa_flood"] += 1
                     elif flood:
                         b["misses_flood"] += 1
+                # the two medians of a calibrated run (raw_median_mm is the
+                # uncalibrated one, median_mm the calibrated one)
+                if "raw_median_mm" in block["rain"]:
+                    raw_ge = block["rain"]["raw_median_mm"] >= 40
+                    cal_ge = block["rain"]["median_mm"] >= 40
+                    for b in (lead[li], total):
+                        b["n_scored_calibrated"] += 1
+                        if raw_ge and imerg40:
+                            b["med40_raw"][0] += 1
+                        elif raw_ge:
+                            b["med40_raw"][2] += 1
+                        elif imerg40:
+                            b["med40_raw"][1] += 1
+                        if cal_ge and imerg40:
+                            b["med40_cal"][0] += 1
+                        elif cal_ge:
+                            b["med40_cal"][2] += 1
+                        elif imerg40:
+                            b["med40_cal"][1] += 1
 
     # lead-1 warnings (medium or high in any cell) against reported flood days:
     # a flood day is "flagged" when the newest run issued that day put a warning
@@ -238,6 +276,17 @@ def main() -> None:
         "imerg_last_day": imerg_last_day,
         "archive_runs": runs,
         "archive_first_run_date": runs[0].split(".")[0] if runs else None,
+        "calibrated_runs": calibrated_runs,
+        "calibration": (
+            "Runs listed in calibrated_runs carry CALIBRATED rain (quantile mapping "
+            "fitted by pipeline/calibrate.py; see each run's meta.calibration): their "
+            "chance fields and median_mm are IMERG-equivalent, and raw_median_mm keeps "
+            "the uncalibrated median beside it. Runs before that are raw, so the Brier "
+            "and warning scores mix the two regimes while the archive fills. "
+            "median_ge_40mm scores the raw and the calibrated median of the "
+            "calibrated runs against IMERG >= 40 mm, so the calibration's effect on "
+            "the medians shows there first."
+        ),
         "imerg_refresh": (
             "The IMERG history (events/rain_history_grid_daily.json) is refreshed "
             "separately: run pipeline/imerg_history_grid.py first (it needs "

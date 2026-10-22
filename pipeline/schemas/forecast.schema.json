@@ -9,13 +9,51 @@
   "properties": {
     "meta": {
       "type": "object",
-      "required": ["built_by", "task", "schema", "method", "run", "sources", "models", "thresholds", "rules", "caveats", "counts"],
+      "required": ["built_by", "task", "schema", "method", "run", "sources", "calibration", "models", "thresholds", "rules", "caveats", "counts"],
       "additionalProperties": false,
       "properties": {
         "built_by": { "type": "string" },
         "task": { "type": "string" },
         "schema": { "type": "string" },
         "method": { "type": "string" },
+        "calibration": {
+          "type": "object",
+          "required": ["applied", "method", "fit_period", "mapping_file", "level_rule", "trust"],
+          "additionalProperties": false,
+          "properties": {
+            "applied": { "type": "boolean" },
+            "method": { "type": "string" },
+            "fit_period": { "type": "string" },
+            "mapping_file": { "type": "string" },
+            "level_rule": {
+              "type": ["object", "null"],
+              "required": ["threshold_mm", "rule", "criterion", "fit_numbers", "test_2026"],
+              "additionalProperties": false,
+              "properties": {
+                "threshold_mm": { "type": "number" },
+                "rule": { "type": "string" },
+                "criterion": { "type": "string" },
+                "fit_numbers": { "type": ["object", "null"] },
+                "test_2026": { "type": ["object", "null"] }
+              }
+            },
+            "trust": {
+              "type": "object",
+              "required": ["lead_day", "threshold_mm", "flood_days_in_period", "flood_days_flagged", "days_flagged", "days_flagged_with_flood_reported", "false_alarm_share", "design"],
+              "additionalProperties": false,
+              "properties": {
+                "lead_day": { "type": "integer" },
+                "threshold_mm": { "type": "number" },
+                "flood_days_in_period": { "type": "integer" },
+                "flood_days_flagged": { "type": "integer" },
+                "days_flagged": { "type": "integer" },
+                "days_flagged_with_flood_reported": { "type": "integer" },
+                "false_alarm_share": { "type": ["number", "null"] },
+                "design": { "type": "string" }
+              }
+            }
+          }
+        },
         "run": {
           "type": "object",
           "required": ["run_date", "generated_at", "forecast_days", "cache_dir", "api_calls", "cache_reused"],
@@ -83,12 +121,13 @@
         },
         "rules": {
           "type": "object",
-          "required": ["risk_window", "hourly_rate_justification", "risk_level", "analogues", "rivers", "tides"],
+          "required": ["risk_window", "hourly_rate_justification", "risk_level", "calibration", "analogues", "rivers", "tides"],
           "additionalProperties": false,
           "properties": {
             "risk_window": { "type": "string" },
             "hourly_rate_justification": { "type": "string" },
             "risk_level": { "type": "string" },
+            "calibration": { "type": "string" },
             "analogues": { "type": "string" },
             "rivers": { "type": "string" },
             "tides": { "type": "string" }
@@ -260,10 +299,11 @@
         "date": { "$ref": "#/$defs/date" },
         "rain": {
           "type": "object",
-          "required": ["median_mm", "p90_mm", "chance_ge_20mm", "chance_ge_40mm", "chance_ge_60mm", "peak_3h", "second_opinion_gfs"],
+          "required": ["median_mm", "raw_median_mm", "p90_mm", "chance_ge_20mm", "chance_ge_40mm", "chance_ge_60mm", "peak_3h", "second_opinion_gfs"],
           "additionalProperties": false,
           "properties": {
             "median_mm": { "type": "number" },
+            "raw_median_mm": { "type": "number" },
             "p90_mm": { "type": "number" },
             "chance_ge_20mm": { "$ref": "#/$defs/chance" },
             "chance_ge_40mm": { "$ref": "#/$defs/chance" },

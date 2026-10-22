@@ -11,6 +11,8 @@ import {
 	licenceFootnote,
 	loadForecast,
 	mappedFloodId,
+	trustDetails,
+	trustSentence,
 	whatToDo,
 	windowStartPhrase,
 	weekdayShort,
@@ -236,6 +238,15 @@ export function ForecastCard({ lon, lat }: { lon: number; lat: number }) {
 			)}
 			{selected && dayIndex >= 0 && <Play48 file={file} dayIndex={dayIndex} />}
 			<p className="card__foot">{licenceFootnote(file.meta)}</p>
+			{trustSentence(file.meta.calibration) && (
+				<>
+					<p className="card__foot forecast-trust">{trustSentence(file.meta.calibration)}</p>
+					<details className="forecast-trust__details">
+						<summary>How we know</summary>
+						<p className="card__foot">{trustDetails(file.meta.calibration)}</p>
+					</details>
+				</>
+			)}
 		</section>
 	);
 }

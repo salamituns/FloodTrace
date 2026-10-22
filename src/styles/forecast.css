@@ -71,6 +71,17 @@
 .forecast-todo { margin: 6px 0 0; padding-left: 16px; line-height: 1.45; }
 .forecast-todo li + li { margin-top: 3px; }
 
+/* Task 44: the trust sentence under the footnote, and its <details>. */
+.forecast-trust { margin-top: 6px; }
+.forecast-trust__details { margin: 4px 0 0; font-size: 11px; color: #5d574e; }
+.forecast-trust__details summary {
+	cursor: pointer;
+	color: var(--accent);
+	font-size: 11px;
+	font-weight: 600;
+}
+.forecast-trust__details p { margin: 6px 0 0; }
+
 .forecast-playbar {
   display: flex;
   flex-wrap: wrap;
