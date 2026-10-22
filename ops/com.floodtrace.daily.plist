@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!--
+  FloodTrace daily forecast run (Task 45, docs/tasks/45-daily-run.md).
+
+  Why launchd rather than cron: launchd runs a missed job once when a
+  sleeping Mac wakes up; cron just skips it. A daily forecast that silently
+  did not run while the lid was closed is exactly what this project must
+  avoid, and the app honestly marks a forecast older than 36 hours as out
+  of date.
+
+  Template only: ops/install_daily.sh fills __REPO__ with the repo's
+  absolute path and copies the result to ~/Library/LaunchAgents/.
+-->
+<plist version="1.0">
+<dict>
+	<key>Label</key>
+	<string>com.floodtrace.daily</string>
+
+	<key>ProgramArguments</key>
+	<array>
+		<string>__REPO__/pipeline/.venv/bin/python</string>
+		<string>__REPO__/pipeline/run_daily.py</string>
+	</array>
+
+	<key>WorkingDirectory</key>
+	<string>__REPO__</string>
+
+	<key>StartCalendarInterval</key>
+	<dict>
+		<key>Hour</key>
+		<integer>6</integer>
+		<key>Minute</key>
+		<integer>30</integer>
+	</dict>
+
+	<key>StandardOutPath</key>
+	<string>__REPO__/events/forecast/logs/launchd.out.log</string>
+
+	<key>StandardErrorPath</key>
+	<string>__REPO__/events/forecast/logs/launchd.err.log</string>
+</dict>
+</plist>

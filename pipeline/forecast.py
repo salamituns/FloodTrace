@@ -30,7 +30,7 @@ Usage:
 Run for today (Africa/Lagos). About 6 API calls on a fresh day; raw responses
 are cached under pipeline/cache/forecast/<run-date>/ and reused on a same-day
 rerun, so the archived numbers stay reproducible. Foreground only; no key
-needed for any API. See docs/FORECAST.md for a one-line cron example.
+needed for any API. The daily wrapper is pipeline/run_daily.py (see docs/FORECAST.md).
 """
 from __future__ import annotations
 

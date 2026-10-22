@@ -149,13 +149,21 @@ def main() -> None:
     lead = {i: new_bucket() for i in range(1, 8)}
     total = new_bucket()
     # lead-1 warning behaviour against reported flood days, for the plain sentence
-    newest_run_by_date: dict[str, dict] = {}
+    # One run per forecast date, so a same-day rerun (time-suffixed file) is not
+    # counted twice. Keep the earliest calibrated run: the forecast people saw
+    # that morning, not a rerun made after the rain had already started.
+    def run_rank(doc: dict) -> tuple:
+        return (not doc["meta"].get("calibration", {}).get("applied"),
+                doc["meta"]["run"]["generated_at"])
+
+    chosen_by_date: dict[str, tuple[str, dict]] = {}
     for name in runs:
         doc = json.loads((F.OUT_DIR / name).read_text())
         rd = doc["meta"]["run"]["run_date"]
-        prev = newest_run_by_date.get(rd)
-        if prev is None or doc["meta"]["run"]["generated_at"] > prev["meta"]["run"]["generated_at"]:
-            newest_run_by_date[rd] = doc
+        prev = chosen_by_date.get(rd)
+        if prev is None or run_rank(doc) < run_rank(prev[1]):
+            chosen_by_date[rd] = (name, doc)
+    run_by_date = {rd: doc for rd, (_, doc) in chosen_by_date.items()}
 
     warn_cell_days = 0
     warn_cell_days_no_flood = 0
@@ -163,8 +171,8 @@ def main() -> None:
     flood_days_flagged = 0
     calibrated_runs = []   # runs whose rain is calibrated (Task 44)
 
-    for name in runs:
-        doc = json.loads((F.OUT_DIR / name).read_text())
+    for rd in sorted(chosen_by_date):
+        name, doc = chosen_by_date[rd]
         fdays = doc["meta"]["run"]["forecast_days"]
         if doc["meta"].get("calibration", {}).get("applied"):
             calibrated_runs.append(name)
@@ -231,7 +239,7 @@ def main() -> None:
     for day, areas in areas_by_date.items():
         if not areas:
             continue
-        doc = newest_run_by_date.get(day)
+        doc = run_by_date.get(day)
         if doc is None:
             continue
         flood_days_covered += 1
@@ -306,7 +314,7 @@ def main() -> None:
         )
         print("nothing to score yet")
     else:
-        print(f"scored {n_scored} cell-days across {len(runs)} archived runs")
+        print(f"scored {n_scored} cell-days across {len(chosen_by_date)} forecast dates ({len(runs)} archived runs)")
 
     fa_share = round(warn_cell_days_no_flood / warn_cell_days, 3) if warn_cell_days else None
     out = {

@@ -59,42 +59,69 @@ def month_days(y: int, m: int, last_day: date):
     return first, last
 
 
-def fetch_month(cells, y: int, m: int, first: date, last: date):
+def cache_file(y: int, m: int, model: str = MODEL):
+    """Raw Previous Runs response for one month.
+
+    The ECMWF IFS 0.25 cache stays at pipeline/cache/hindcast/hindcast-YYYY-MM.json
+    so hindcast.py and calibrate.py keep reading the files they already have.
+    Other models go under pipeline/cache/hindcast/<model>/."""
+    name = f"hindcast-{y:04d}-{m:02d}.json"
+    return CACHE / name if model == MODEL else CACHE / model / name
+
+
+def fetch_month(cells, y: int, m: int, first: date, last: date, model: str = MODEL):
     """One multi-coordinate call per calendar month; cached raw under
     pipeline/cache/hindcast/. The free API rate-limits, so a 429 waits and
-    retries rather than failing the run."""
+    retries rather than failing the run. `model` defaults to ECMWF IFS 0.25,
+    so existing callers behave exactly as before."""
     import requests
 
-    CACHE.mkdir(parents=True, exist_ok=True)
-    cache_path = CACHE / f"hindcast-{y:04d}-{m:02d}.json"
+    cache_path = cache_file(y, m, model)
+    cache_path.parent.mkdir(parents=True, exist_ok=True)
     if cache_path.exists():
         return json.loads(cache_path.read_text())
     lats = ",".join(str(c["lat"]) for c in cells)
     lons = ",".join(str(c["lon"]) for c in cells)
     hourly = ",".join(VAR[n] for n in range(1, LEAD_DAYS + 1))
     url = (f"{PREVIOUS_RUNS_URL}?latitude={lats}&longitude={lons}"
-           f"&hourly={hourly}&models={MODEL}&timezone=Africa%2FLagos"
+           f"&hourly={hourly}&models={model}&timezone=Africa%2FLagos"
            f"&start_date={first.isoformat()}&end_date={last.isoformat()}")
-    for attempt in range(6):
+    for attempt in range(12):
         r = requests.get(url, headers=F.UA, timeout=300)
-        if r.status_code == 429 and attempt < 5:
-            wait = 60 * (attempt + 1)
-            print(f"    rate-limited; waiting {wait}s ...", flush=True)
+        # Empty bodies and 5xx happen after a 429; wait and retry the same
+        # way so a flaky month is not written into the cache.
+        retryable = (
+            r.status_code in (429, 502, 503, 504)
+            or not r.content
+            or (r.status_code == 200 and r.text[:1] not in "[{")
+        )
+        if retryable and attempt < 11:
+            wait = 60 * min(attempt + 1, 10)
+            print(f"    rate-limited (HTTP {r.status_code}, "
+                  f"{len(r.content)} bytes); waiting {wait}s ...", flush=True)
             time.sleep(wait)
             continue
         r.raise_for_status()
-        cache_path.write_text(json.dumps(r.json()))
-        return r.json()
+        payload = r.json()
+        if isinstance(payload, dict) and payload.get("error"):
+            raise SystemExit(f"{model} {y}-{m:02d}: {payload.get('reason')}")
+        cache_path.write_text(json.dumps(payload))
+        return payload
     raise SystemExit("still rate-limited after retries; run again later (cached months are kept)")
 
 
 def daily_totals(loc: dict, n_days: int):
-    """Per-lead-day daily rain totals (mm) for one location; None where missing."""
+    """Per-lead-day daily rain totals (mm) for one location; None where missing.
+    A missing hourly key (a model whose horizon is shorter than 7 days) is
+    treated as all-missing, not as an error, so other models can reuse this."""
     out = {}
     for n in range(1, LEAD_DAYS + 1):
-        vals = loc["hourly"][VAR[n]]
+        vals = loc["hourly"].get(VAR[n])
         days = []
         for j in range(n_days):
+            if vals is None:
+                days.append(None)
+                continue
             chunk = vals[j * 24:(j + 1) * 24]
             days.append(None if any(v is None for v in chunk) else float(np.sum(chunk)))
         out[n] = days

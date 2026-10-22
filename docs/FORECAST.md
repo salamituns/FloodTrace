@@ -47,18 +47,72 @@ the EOT20 tide is computed locally (no network). Raw responses are cached under
 `pipeline/cache/forecast/<run-date>/` and reused on a same-day rerun, so an
 archived run stays reproducible.
 
-## Run it daily
+## Run it every day
 
-One cron line, run it as yourself, at whatever local time you like (this
-example is 06:30 Lagos time every day):
+`pipeline/run_daily.py` is the one entry point for the daily maintenance. It
+runs three steps in order, each as a subprocess of the venv's Python:
 
-```cron
-30 6 * * * cd /path/to/FloodTrace && pipeline/.venv/bin/python pipeline/forecast.py >> events/forecast/cron.log 2>&1
+1. `forecast.py` — every day: makes today's forecast (same as "Run it once").
+2. `imerg_history_grid.py` — only when `events/rain_history_grid_daily.json`
+   ends 5 or more days before today (Lagos time), and at most once a day. It
+   reads the Earthdata login from `.env` by itself; the wrapper never touches
+   credentials. The script takes `--start/--end`, but it rewrites
+   `rain_history_grid_daily.json` to cover only the requested window, so a
+   narrow range would throw away the 2000-present history the scorer and the
+   analogues depend on. The default full range is the narrowest safe range,
+   and it is cheap: responses are cached per 2-year chunk, so only the newest
+   chunk hits the API.
+3. `score_forecasts.py` — after a successful IMERG refresh, and on its own
+   when `scores.json` is missing.
+
+A failing step is logged and the run carries on to the next independent step
+(IMERG failing must not cost anyone today's forecast); the run exits non-zero
+if any step failed. Two runs never overlap: the lock file
+`events/forecast/.run_daily.lock` makes a second concurrent run exit
+immediately with "already running".
+
+Every run writes `events/forecast/status.json` (validated against
+`pipeline/schemas/run_daily_status.schema.json`): when the run happened, what
+happened per step (`ok`, `skipped` or `failed`, with a time and, for skips, a
+reason), the last day the IMERG history covers (`imerg_through`), and how many
+forecast cell-days have been scored (`n_scored`, from `scores.json`). Logs go
+to `events/forecast/logs/run_daily-YYYY-MM.log`, one file per month; each step
+gets a timestamp, its duration and its exit code, plus the last 20 lines of
+its output on failure.
+
+Check the last run:
+
+```sh
+cat events/forecast/status.json                                   # what ran, what skipped
+tail -20 events/forecast/logs/run_daily-$(date +%Y-%m).log         # this month's log
 ```
 
-Only the one line is needed: the script fetches, computes, validates and
-archives by itself. It is deliberately not installed anywhere; if you want the
-daily run, add the line with `crontab -e` and change the path.
+Debug flags: `--skip-imerg` never runs the IMERG step (use it when the
+Earthdata refresh should not happen, e.g. in tests), and
+`--fail-step <forecast|imerg|score_forecasts>` forces one step to run and
+fail, to exercise the failure path (the real command for that step is not
+executed).
+
+### Install the daily schedule (macOS)
+
+A launchd LaunchAgent, deliberately not cron: launchd runs a missed job once
+when a sleeping Mac wakes up, cron just skips it, and a forecast that silently
+did not run while the lid was closed is exactly what this project must avoid.
+The agent runs `run_daily.py` at 06:30 local time every day.
+
+```sh
+ops/install_daily.sh      # fills __REPO__ in the template, installs and loads the agent
+ops/uninstall_daily.sh    # unloads it and removes that one plist file
+```
+
+### What the 36-hour "out of date" line in the app means
+
+The app marks a forecast whose `meta.run.generated_at` is more than 36 hours
+old as out of date (`forecastFreshness` in `src/lib/forecast.ts`) and says so
+plainly ("This forecast is out of date (made 21 Oct 2026)") instead of
+pretending it is current. So a missed daily run shows up honestly in the UI on
+its own; nothing else needs to notice. The archive still keeps every run, and
+the next successful `run_daily.py` brings the app current again.
 
 ## What comes out
 

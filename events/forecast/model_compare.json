@@ -1,0 +1,1124 @@
+{
+ "meta": {
+  "built_by": "pipeline/compare_models.py",
+  "task": "46-compare-models (docs/tasks/46-compare-models.md)",
+  "generated_at": "2026-10-22T19:23:48+00:00",
+  "endpoint": "https://previous-runs-api.open-meteo.com/v1/forecast",
+  "period": {
+   "start": "2024-04-01",
+   "end": "2026-10-21",
+   "months": "April\u2013November of 2024, 2025 and 2026 so far",
+   "years": [
+    2024,
+    2025,
+    2026
+   ]
+  },
+  "cells": "68 IMERG 0.1 deg cell centres, same as the live forecast",
+  "observations": "events/rain_history_grid_daily.json (NASA GPM IMERG daily totals per cell)",
+  "flood_days": "events/flood_days.json; a cell matches a flood day when a reported area lies within 5 km",
+  "cache": "pipeline/cache/hindcast/<model>/ (ECMWF IFS 0.25 stays at pipeline/cache/hindcast/)",
+  "licence": "CC BY 4.0 (Open-Meteo); each model's upstream licence is in its row; NASA IMERG open data",
+  "candidates": [
+   {
+    "id": "ecmwf_ifs025",
+    "name": "ECMWF IFS 0.25\u00b0",
+    "resolution": "0.25\u00b0 (~28 km)",
+    "leads": "previous_day1\u20137",
+    "history_start": "2024-01 (Previous Runs; open-data IFS from 2024-02-03)",
+    "licence": "CC BY 4.0 (Open-Meteo); ECMWF IFS open data CC BY 4.0",
+    "usable": true,
+    "drop_reason": null,
+    "docs": "https://open-meteo.com/en/docs/ecmwf-api"
+   },
+   {
+    "id": "ecmwf_ifs",
+    "name": "ECMWF IFS HRES 9 km",
+    "resolution": "9 km (O1280)",
+    "leads": "previous_day1\u20137 on the live Forecast API",
+    "history_start": "Previous Runs at Lagos is empty through 2025; a 2026-04-01 probe had day 1 only",
+    "licence": "CC BY 4.0 (Open-Meteo); ECMWF IFS open data CC BY 4.0",
+    "usable": false,
+    "drop_reason": "Previous Runs has no precipitation_previous_day1\u20133 at Lagos for 2024 or 2025, so the archive cannot cover 2024\u20132026 April\u2013November. The 9 km HRES series lives on the Single Runs / Historical Weather APIs, which are not previous-day leads.",
+    "docs": "https://open-meteo.com/en/docs/ecmwf-api"
+   },
+   {
+    "id": "ecmwf_aifs025_single",
+    "name": "ECMWF AIFS 0.25\u00b0 Single",
+    "resolution": "0.25\u00b0 (~28 km)",
+    "leads": "previous_day1\u20137",
+    "history_start": "2025-02-20",
+    "licence": "CC BY 4.0 (Open-Meteo); ECMWF AIFS open data CC BY 4.0",
+    "usable": false,
+    "drop_reason": "Previous Runs at Lagos starts 2025-02-20, so the 2024 season and the start of 2025 are missing.",
+    "docs": "https://open-meteo.com/en/docs/ecmwf-api"
+   },
+   {
+    "id": "ecmwf_aifs025",
+    "name": "ECMWF AIFS 0.25\u00b0 (superseded)",
+    "resolution": "0.25\u00b0 (~28 km)",
+    "leads": "previous_day1\u20137 while it ran",
+    "history_start": "2024-04 through early 2025; empty by 2025-04",
+    "licence": "CC BY 4.0 (Open-Meteo); ECMWF AIFS open data CC BY 4.0",
+    "usable": false,
+    "drop_reason": "Replaced by ecmwf_aifs025_single. Lagos previous-day precipitation is present in 2024 but gone by April 2025, so 2025\u20132026 is a hole.",
+    "docs": "https://open-meteo.com/en/docs/ecmwf-api"
+   },
+   {
+    "id": "icon_global",
+    "name": "DWD ICON global",
+    "resolution": "0.1\u00b0 (~11 km)",
+    "leads": "previous_day1\u20136 (7.5-day horizon; day 7 empty)",
+    "history_start": "2024-01 (open-data ICON from 2023-12-15)",
+    "licence": "CC BY 4.0 (Open-Meteo); DWD ICON open data (GeoNutzV)",
+    "usable": true,
+    "drop_reason": null,
+    "docs": "https://open-meteo.com/en/docs/dwd-api"
+   },
+   {
+    "id": "ukmo_global_deterministic_10km",
+    "name": "UKMO global 10 km",
+    "resolution": "0.09\u00b0 (~10 km)",
+    "leads": "previous_day1\u20137 when the archive has the run",
+    "history_start": "Historical Forecast from 2022-03-01; Previous Runs at Lagos is gappy",
+    "licence": "CC BY-SA 4.0 (UKMO via Open-Meteo)",
+    "usable": false,
+    "drop_reason": "Previous Runs at Lagos is not continuous: April 2024 is empty, and 2025 months are missing day 1 or day 3. That is too short and too holey to cover 2024\u20132026 April\u2013November.",
+    "docs": "https://open-meteo.com/en/docs/ukmo-api"
+   },
+   {
+    "id": "arpege_world",
+    "name": "M\u00e9t\u00e9o-France ARPEGE world",
+    "resolution": "0.25\u00b0 (~25 km)",
+    "leads": "previous_day1\u20133 (4-day horizon)",
+    "history_start": "2024-01-02",
+    "licence": "CC BY 4.0 (Open-Meteo); M\u00e9t\u00e9o-France open data (Etalab)",
+    "usable": true,
+    "drop_reason": null,
+    "docs": "https://open-meteo.com/en/docs/meteofrance-api"
+   },
+   {
+    "id": "gfs013",
+    "name": "NCEP GFS 0.11\u00b0",
+    "resolution": "0.11\u00b0 (~13 km)",
+    "leads": "previous_day1\u20137",
+    "history_start": "2024-01 (GFS precipitation on Previous Runs from 2024; GFS 2 m T from 2021-03)",
+    "licence": "CC BY 4.0 (Open-Meteo); NOAA GFS public domain",
+    "usable": true,
+    "drop_reason": null,
+    "docs": "https://open-meteo.com/en/docs/gfs-api"
+   },
+   {
+    "id": "gfs025",
+    "name": "NCEP GFS 0.25\u00b0",
+    "resolution": "0.25\u00b0 (~25 km)",
+    "leads": "not populated on Previous Runs for precipitation at Lagos",
+    "history_start": "n/a on Previous Runs precipitation",
+    "licence": "CC BY 4.0 (Open-Meteo); NOAA GFS public domain",
+    "usable": false,
+    "drop_reason": "precipitation_previous_day1\u20137 is all-null at Lagos on every probed date. The 0.11\u00b0 GFS (gfs013) carries the previous-day rain instead.",
+    "docs": "https://open-meteo.com/en/docs/gfs-api"
+   },
+   {
+    "id": "gem_global",
+    "name": "CMC GEM global",
+    "resolution": "0.15\u00b0 (~15 km)",
+    "leads": "previous_day1\u20137",
+    "history_start": "2024-01 (open-data GEM from 2023-12-15)",
+    "licence": "CC BY 4.0 (Open-Meteo); ECCC Open Government Licence",
+    "usable": true,
+    "drop_reason": null,
+    "docs": "https://open-meteo.com/en/docs/gem-api"
+   },
+   {
+    "id": "jma_gsm",
+    "name": "JMA GSM",
+    "resolution": "0.5\u00b0 (~55 km)",
+    "leads": "previous_day1\u20137",
+    "history_start": "2018 on Previous Runs (JMA); 2023-12-15 in the AWS open-data table",
+    "licence": "CC BY 4.0 (Open-Meteo); JMA GSM redistributed as open data",
+    "usable": true,
+    "drop_reason": null,
+    "docs": "https://open-meteo.com/en/docs/jma-api"
+   },
+   {
+    "id": "cma_grapes_global",
+    "name": "CMA GRAPES global",
+    "resolution": "0.125\u00b0 (~13 km)",
+    "leads": "previous_day1\u20137",
+    "history_start": "2024-01-01",
+    "licence": "CC BY 4.0 (Open-Meteo); CMA GRAPES open data as served by Open-Meteo",
+    "usable": true,
+    "drop_reason": null,
+    "docs": "https://open-meteo.com/en/docs/cma-api"
+   },
+   {
+    "id": "bom_access_global",
+    "name": "BOM ACCESS-G",
+    "resolution": "0.175\u00b0/0.117\u00b0 (~15 km)",
+    "leads": "previous_day1\u20137 when the archive has the run",
+    "history_start": "Present at Lagos on 2024-04 and 2025-04; empty by 2025-11",
+    "licence": "CC BY 4.0 (Open-Meteo); BoM ACCESS open data",
+    "usable": false,
+    "drop_reason": "Previous Runs at Lagos is empty for every probed 2026 date (April\u2013October) and for 2025-11-01, so the archive cannot cover 2024\u20132026 April\u2013November.",
+    "docs": "https://open-meteo.com/en/docs"
+   }
+  ],
+  "usable": [
+   "ecmwf_ifs025",
+   "icon_global",
+   "arpege_world",
+   "gfs013",
+   "gem_global",
+   "jma_gsm",
+   "cma_grapes_global"
+  ],
+  "dropped": [
+   {
+    "id": "ecmwf_ifs",
+    "reason": "Previous Runs has no precipitation_previous_day1\u20133 at Lagos for 2024 or 2025, so the archive cannot cover 2024\u20132026 April\u2013November. The 9 km HRES series lives on the Single Runs / Historical Weather APIs, which are not previous-day leads."
+   },
+   {
+    "id": "ecmwf_aifs025_single",
+    "reason": "Previous Runs at Lagos starts 2025-02-20, so the 2024 season and the start of 2025 are missing."
+   },
+   {
+    "id": "ecmwf_aifs025",
+    "reason": "Replaced by ecmwf_aifs025_single. Lagos previous-day precipitation is present in 2024 but gone by April 2025, so 2025\u20132026 is a hole."
+   },
+   {
+    "id": "ukmo_global_deterministic_10km",
+    "reason": "Previous Runs at Lagos is not continuous: April 2024 is empty, and 2025 months are missing day 1 or day 3. That is too short and too holey to cover 2024\u20132026 April\u2013November."
+   },
+   {
+    "id": "gfs025",
+    "reason": "precipitation_previous_day1\u20137 is all-null at Lagos on every probed date. The 0.11\u00b0 GFS (gfs013) carries the previous-day rain instead."
+   },
+   {
+    "id": "bom_access_global",
+    "reason": "Previous Runs at Lagos is empty for every probed 2026 date (April\u2013October) and for 2025-11-01, so the archive cannot cover 2024\u20132026 April\u2013November."
+   }
+  ],
+  "method": "Each usable model is fetched from the Open-Meteo Previous Runs API for the same 68 cells and April\u2013November 2024\u20132026 window as pipeline/hindcast.py, one multi-coordinate call per model per month (all previous-day leads in that one call). Hourly precipitation is summed to Africa/Lagos calendar days. Each model is then quantile-mapped to IMERG per lead day, pooling cells, with the same trust folds as pipeline/calibrate.py (2024 fit on 2025, 2025 fit on 2024, 2026 fit on 2024+2025) so every flood-day number is out of sample. The fair comparison is at a fixed alarm budget: on 2024+2025, ECMWF IFS at its 15 mm calibrated rule flags a known number of days; every other model (and each blend) gets the threshold that flags as close as possible to that many days on 2024+2025. That threshold is frozen before 2026 is scored. Brier skill for \u2265 20 mm and the calibrated p99 use full leave-one-season-out. Blends are the mean of the calibrated totals; the best two models are the two with the most 2024+2025 day-1 flood days caught at the matched budget, frozen before 2026 is looked at.",
+  "alarm_budget": {
+   "baseline": "ecmwf_ifs025",
+   "rule_mm": 15.0,
+   "fit_seasons": [
+    2024,
+    2025
+   ],
+   "day1_days_flagged_2024_2025": 138,
+   "day3_days_flagged_2024_2025": 148
+  },
+  "blend": {
+   "rule": "mean of calibrated daily totals (all members must be present)",
+   "best_two": [
+    "ecmwf_ifs025",
+    "gem_global"
+   ],
+   "best_two_chosen_by": "most 2024+2025 day-1 flood days flagged at the matched budget; 2026 was not used to pick the members"
+  },
+  "recommendation": {
+   "choice": "keep ECMWF",
+   "why": "No usable model caught more of the 19 flood days than ECMWF IFS (11) at the same alarm budget. The best-two blend (ecmwf_ifs025+gem_global) caught 10 (p = 1.0). Stay on the ECMWF 51-member ensemble; a deterministic other model is not earning its extra API call."
+  },
+  "api_cost": {
+   "live_today": "The live run makes 1 Open-Meteo Ensemble call for ECMWF IFS 0.25 (51 members) and 1 for GFS 0.25 as an uncalibrated second opinion, plus 4 Flood API calls. Weather-model cost is 2 forecast calls/day.",
+   "keep_ecmwf": "0 extra weather-model calls/day.",
+   "switch_headline_to_other_ensemble": "Still 1 headline ensemble call/day if that model has an ensemble on the Ensemble API (ICON and GFS do; ARPEGE/GEM/JMA/CMA/BOM deterministic would replace the 51-member chance ladder with a single run). Recalibrate first. Do not do this from this file alone.",
+   "add_second_opinion": "1 extra Ensemble or Forecast API call/day per added model. A deterministic second opinion can raise or lower a cell's level when it disagrees with the ECMWF ensemble median, but it cannot replace the 51-member chances.",
+   "blend": "1 Forecast/Ensemble call/day per member of the blend. A mean of deterministic totals is not an ensemble: it can be a second opinion on the daily total, not a replacement for P(\u2265 40 mm)."
+  },
+  "caveats": [
+   "This comparison scores one deterministic Previous Runs series per model, not the 51-member ECMWF ensemble the live product uses. A deterministic model can only adjust those chances or act as a second opinion.",
+   "Quantile mapping restores the size of rain a model already saw; it cannot invent a storm the model never placed on Lagos.",
+   "The reported-flood catalog undercounts real floods, so a flagged day with no report is not proof no flood happened.",
+   "With 19 flood days, McNemar will usually call a difference noise. The vs_ecmwf.plain field on each row says so when it is."
+  ],
+  "sources": [
+   "https://open-meteo.com/en/docs/previous-runs-api",
+   "https://open-meteo.com/en/docs",
+   "https://github.com/open-meteo/open-data/blob/main/README.md"
+  ]
+ },
+ "models": [
+  {
+   "id": "ecmwf_ifs025",
+   "name": "ECMWF IFS 0.25\u00b0",
+   "kind": "model",
+   "resolution": "0.25\u00b0 (~28 km)",
+   "leads": "previous_day1\u20137",
+   "history_start": "2024-01 (Previous Runs; open-data IFS from 2024-02-03)",
+   "licence": "CC BY 4.0 (Open-Meteo); ECMWF IFS open data CC BY 4.0",
+   "day1": {
+    "threshold_mm": 15.0,
+    "threshold_source": "ECMWF IFS 15 mm rule (the live warning line)",
+    "fit_2024_2025": {
+     "flood_days_in_period": 11,
+     "flood_days_flagged": 8,
+     "days_flagged": 138,
+     "days_flagged_with_flood_reported": 9,
+     "false_alarm_share": 0.935
+    },
+    "all_seasons": {
+     "flood_days_in_period": 19,
+     "flood_days_flagged": 11,
+     "days_flagged": 211,
+     "days_flagged_with_flood_reported": 13,
+     "false_alarm_share": 0.938
+    },
+    "test_2026": {
+     "flood_days_in_period": 8,
+     "flood_days_flagged": 3,
+     "days_flagged": 73,
+     "days_flagged_with_flood_reported": 4,
+     "false_alarm_share": 0.945
+    },
+    "calibrated_p99_mm": 54.4,
+    "raw_p99_mm": 28.9,
+    "imerg_p99_mm": 53.9,
+    "brier_ge_20mm": {
+     "n_scored": 46852,
+     "hits": 1174,
+     "misses": 2876,
+     "false_alarms": 2890,
+     "brier": 0.1231,
+     "brier_clim": 0.0791,
+     "skill": -0.557
+    },
+    "vs_ecmwf": {
+     "gained": 0,
+     "lost": 0,
+     "n_common": 18,
+     "mcnemar_p": 1.0,
+     "plain": "baseline."
+    }
+   },
+   "day3": {
+    "threshold_mm": 15.0,
+    "threshold_source": "ECMWF IFS 15 mm rule (the live warning line)",
+    "fit_2024_2025": {
+     "flood_days_in_period": 11,
+     "flood_days_flagged": 3,
+     "days_flagged": 148,
+     "days_flagged_with_flood_reported": 6,
+     "false_alarm_share": 0.959
+    },
+    "all_seasons": {
+     "flood_days_in_period": 19,
+     "flood_days_flagged": 7,
+     "days_flagged": 213,
+     "days_flagged_with_flood_reported": 11,
+     "false_alarm_share": 0.948
+    },
+    "test_2026": {
+     "flood_days_in_period": 8,
+     "flood_days_flagged": 4,
+     "days_flagged": 65,
+     "days_flagged_with_flood_reported": 5,
+     "false_alarm_share": 0.923
+    },
+    "calibrated_p99_mm": 54.1,
+    "raw_p99_mm": 30.8,
+    "imerg_p99_mm": 53.9,
+    "brier_ge_20mm": {
+     "n_scored": 46852,
+     "hits": 961,
+     "misses": 3089,
+     "false_alarms": 3055,
+     "brier": 0.1311,
+     "brier_clim": 0.0791,
+     "skill": -0.659
+    },
+    "vs_ecmwf": {
+     "gained": 0,
+     "lost": 0,
+     "n_common": 18,
+     "mcnemar_p": 1.0,
+     "plain": "baseline."
+    }
+   }
+  },
+  {
+   "id": "icon_global",
+   "name": "DWD ICON global",
+   "kind": "model",
+   "resolution": "0.1\u00b0 (~11 km)",
+   "leads": "previous_day1\u20136 (7.5-day horizon; day 7 empty)",
+   "history_start": "2024-01 (open-data ICON from 2023-12-15)",
+   "licence": "CC BY 4.0 (Open-Meteo); DWD ICON open data (GeoNutzV)",
+   "day1": {
+    "threshold_mm": 16.74,
+    "threshold_source": "matched to ECMWF's 138 flagged days on 2024+2025",
+    "fit_2024_2025": {
+     "flood_days_in_period": 11,
+     "flood_days_flagged": 6,
+     "days_flagged": 137,
+     "days_flagged_with_flood_reported": 6,
+     "false_alarm_share": 0.956
+    },
+    "all_seasons": {
+     "flood_days_in_period": 19,
+     "flood_days_flagged": 8,
+     "days_flagged": 190,
+     "days_flagged_with_flood_reported": 8,
+     "false_alarm_share": 0.958
+    },
+    "test_2026": {
+     "flood_days_in_period": 8,
+     "flood_days_flagged": 2,
+     "days_flagged": 53,
+     "days_flagged_with_flood_reported": 2,
+     "false_alarm_share": 0.962
+    },
+    "calibrated_p99_mm": 54.9,
+    "raw_p99_mm": 26.4,
+    "imerg_p99_mm": 54.0,
+    "brier_ge_20mm": {
+     "n_scored": 46580,
+     "hits": 1040,
+     "misses": 3006,
+     "false_alarms": 2980,
+     "brier": 0.1285,
+     "brier_clim": 0.0794,
+     "skill": -0.618
+    },
+    "vs_ecmwf": {
+     "gained": 1,
+     "lost": 4,
+     "n_common": 17,
+     "mcnemar_p": 0.375,
+     "plain": "gained 1 flood days on ECMWF IFS, lost 4 (exact McNemar p = 0.38); with 19 flood days this difference is within noise."
+    }
+   },
+   "day3": {
+    "threshold_mm": 15.889,
+    "threshold_source": "matched to ECMWF's 148 flagged days on 2024+2025",
+    "fit_2024_2025": {
+     "flood_days_in_period": 11,
+     "flood_days_flagged": 4,
+     "days_flagged": 147,
+     "days_flagged_with_flood_reported": 7,
+     "false_alarm_share": 0.952
+    },
+    "all_seasons": {
+     "flood_days_in_period": 19,
+     "flood_days_flagged": 8,
+     "days_flagged": 212,
+     "days_flagged_with_flood_reported": 13,
+     "false_alarm_share": 0.939
+    },
+    "test_2026": {
+     "flood_days_in_period": 8,
+     "flood_days_flagged": 4,
+     "days_flagged": 65,
+     "days_flagged_with_flood_reported": 6,
+     "false_alarm_share": 0.908
+    },
+    "calibrated_p99_mm": 53.5,
+    "raw_p99_mm": 26.3,
+    "imerg_p99_mm": 53.9,
+    "brier_ge_20mm": {
+     "n_scored": 46852,
+     "hits": 1106,
+     "misses": 2944,
+     "false_alarms": 2960,
+     "brier": 0.126,
+     "brier_clim": 0.0791,
+     "skill": -0.594
+    },
+    "vs_ecmwf": {
+     "gained": 3,
+     "lost": 2,
+     "n_common": 18,
+     "mcnemar_p": 1.0,
+     "plain": "gained 3 flood days on ECMWF IFS, lost 2 (exact McNemar p = 1.00); with 19 flood days this difference is within noise."
+    }
+   }
+  },
+  {
+   "id": "arpege_world",
+   "name": "M\u00e9t\u00e9o-France ARPEGE world",
+   "kind": "model",
+   "resolution": "0.25\u00b0 (~25 km)",
+   "leads": "previous_day1\u20133 (4-day horizon)",
+   "history_start": "2024-01-02",
+   "licence": "CC BY 4.0 (Open-Meteo); M\u00e9t\u00e9o-France open data (Etalab)",
+   "day1": {
+    "threshold_mm": 17.963,
+    "threshold_source": "matched to ECMWF's 138 flagged days on 2024+2025",
+    "fit_2024_2025": {
+     "flood_days_in_period": 11,
+     "flood_days_flagged": 5,
+     "days_flagged": 137,
+     "days_flagged_with_flood_reported": 6,
+     "false_alarm_share": 0.956
+    },
+    "all_seasons": {
+     "flood_days_in_period": 19,
+     "flood_days_flagged": 8,
+     "days_flagged": 208,
+     "days_flagged_with_flood_reported": 11,
+     "false_alarm_share": 0.947
+    },
+    "test_2026": {
+     "flood_days_in_period": 8,
+     "flood_days_flagged": 3,
+     "days_flagged": 71,
+     "days_flagged_with_flood_reported": 5,
+     "false_alarm_share": 0.93
+    },
+    "calibrated_p99_mm": 54.3,
+    "raw_p99_mm": 18.1,
+    "imerg_p99_mm": 54.0,
+    "brier_ge_20mm": {
+     "n_scored": 46580,
+     "hits": 791,
+     "misses": 3259,
+     "false_alarms": 3293,
+     "brier": 0.1407,
+     "brier_clim": 0.0795,
+     "skill": -0.77
+    },
+    "vs_ecmwf": {
+     "gained": 1,
+     "lost": 4,
+     "n_common": 17,
+     "mcnemar_p": 0.375,
+     "plain": "gained 1 flood days on ECMWF IFS, lost 4 (exact McNemar p = 0.38); with 19 flood days this difference is within noise."
+    }
+   },
+   "day3": {
+    "threshold_mm": 15.879,
+    "threshold_source": "matched to ECMWF's 148 flagged days on 2024+2025",
+    "fit_2024_2025": {
+     "flood_days_in_period": 11,
+     "flood_days_flagged": 5,
+     "days_flagged": 147,
+     "days_flagged_with_flood_reported": 6,
+     "false_alarm_share": 0.959
+    },
+    "all_seasons": {
+     "flood_days_in_period": 19,
+     "flood_days_flagged": 8,
+     "days_flagged": 217,
+     "days_flagged_with_flood_reported": 11,
+     "false_alarm_share": 0.949
+    },
+    "test_2026": {
+     "flood_days_in_period": 8,
+     "flood_days_flagged": 3,
+     "days_flagged": 70,
+     "days_flagged_with_flood_reported": 5,
+     "false_alarm_share": 0.929
+    },
+    "calibrated_p99_mm": 53.6,
+    "raw_p99_mm": 18.7,
+    "imerg_p99_mm": 54.0,
+    "brier_ge_20mm": {
+     "n_scored": 46580,
+     "hits": 722,
+     "misses": 3328,
+     "false_alarms": 3452,
+     "brier": 0.1456,
+     "brier_clim": 0.0795,
+     "skill": -0.831
+    },
+    "vs_ecmwf": {
+     "gained": 3,
+     "lost": 2,
+     "n_common": 17,
+     "mcnemar_p": 1.0,
+     "plain": "gained 3 flood days on ECMWF IFS, lost 2 (exact McNemar p = 1.00); with 19 flood days this difference is within noise."
+    }
+   }
+  },
+  {
+   "id": "gfs013",
+   "name": "NCEP GFS 0.11\u00b0",
+   "kind": "model",
+   "resolution": "0.11\u00b0 (~13 km)",
+   "leads": "previous_day1\u20137",
+   "history_start": "2024-01 (GFS precipitation on Previous Runs from 2024; GFS 2 m T from 2021-03)",
+   "licence": "CC BY 4.0 (Open-Meteo); NOAA GFS public domain",
+   "day1": {
+    "threshold_mm": 15.709,
+    "threshold_source": "matched to ECMWF's 138 flagged days on 2024+2025",
+    "fit_2024_2025": {
+     "flood_days_in_period": 11,
+     "flood_days_flagged": 3,
+     "days_flagged": 138,
+     "days_flagged_with_flood_reported": 6,
+     "false_alarm_share": 0.957
+    },
+    "all_seasons": {
+     "flood_days_in_period": 19,
+     "flood_days_flagged": 7,
+     "days_flagged": 213,
+     "days_flagged_with_flood_reported": 11,
+     "false_alarm_share": 0.948
+    },
+    "test_2026": {
+     "flood_days_in_period": 8,
+     "flood_days_flagged": 4,
+     "days_flagged": 75,
+     "days_flagged_with_flood_reported": 5,
+     "false_alarm_share": 0.933
+    },
+    "calibrated_p99_mm": 54.5,
+    "raw_p99_mm": 42.3,
+    "imerg_p99_mm": 53.9,
+    "brier_ge_20mm": {
+     "n_scored": 46852,
+     "hits": 1058,
+     "misses": 2992,
+     "false_alarms": 3008,
+     "brier": 0.1281,
+     "brier_clim": 0.0791,
+     "skill": -0.62
+    },
+    "vs_ecmwf": {
+     "gained": 1,
+     "lost": 5,
+     "n_common": 18,
+     "mcnemar_p": 0.219,
+     "plain": "gained 1 flood days on ECMWF IFS, lost 5 (exact McNemar p = 0.22); with 19 flood days this difference is within noise."
+    }
+   },
+   "day3": {
+    "threshold_mm": 14.79,
+    "threshold_source": "matched to ECMWF's 148 flagged days on 2024+2025",
+    "fit_2024_2025": {
+     "flood_days_in_period": 11,
+     "flood_days_flagged": 3,
+     "days_flagged": 148,
+     "days_flagged_with_flood_reported": 7,
+     "false_alarm_share": 0.953
+    },
+    "all_seasons": {
+     "flood_days_in_period": 19,
+     "flood_days_flagged": 8,
+     "days_flagged": 223,
+     "days_flagged_with_flood_reported": 13,
+     "false_alarm_share": 0.942
+    },
+    "test_2026": {
+     "flood_days_in_period": 8,
+     "flood_days_flagged": 5,
+     "days_flagged": 75,
+     "days_flagged_with_flood_reported": 6,
+     "false_alarm_share": 0.92
+    },
+    "calibrated_p99_mm": 54.6,
+    "raw_p99_mm": 35.4,
+    "imerg_p99_mm": 53.9,
+    "brier_ge_20mm": {
+     "n_scored": 46852,
+     "hits": 806,
+     "misses": 3244,
+     "false_alarms": 3267,
+     "brier": 0.139,
+     "brier_clim": 0.0791,
+     "skill": -0.758
+    },
+    "vs_ecmwf": {
+     "gained": 2,
+     "lost": 1,
+     "n_common": 18,
+     "mcnemar_p": 1.0,
+     "plain": "gained 2 flood days on ECMWF IFS, lost 1 (exact McNemar p = 1.00); with 19 flood days this difference is within noise."
+    }
+   }
+  },
+  {
+   "id": "gem_global",
+   "name": "CMC GEM global",
+   "kind": "model",
+   "resolution": "0.15\u00b0 (~15 km)",
+   "leads": "previous_day1\u20137",
+   "history_start": "2024-01 (open-data GEM from 2023-12-15)",
+   "licence": "CC BY 4.0 (Open-Meteo); ECCC Open Government Licence",
+   "day1": {
+    "threshold_mm": 16.94,
+    "threshold_source": "matched to ECMWF's 138 flagged days on 2024+2025",
+    "fit_2024_2025": {
+     "flood_days_in_period": 11,
+     "flood_days_flagged": 6,
+     "days_flagged": 138,
+     "days_flagged_with_flood_reported": 10,
+     "false_alarm_share": 0.928
+    },
+    "all_seasons": {
+     "flood_days_in_period": 19,
+     "flood_days_flagged": 8,
+     "days_flagged": 206,
+     "days_flagged_with_flood_reported": 15,
+     "false_alarm_share": 0.927
+    },
+    "test_2026": {
+     "flood_days_in_period": 8,
+     "flood_days_flagged": 2,
+     "days_flagged": 68,
+     "days_flagged_with_flood_reported": 5,
+     "false_alarm_share": 0.926
+    },
+    "calibrated_p99_mm": 54.6,
+    "raw_p99_mm": 93.1,
+    "imerg_p99_mm": 53.9,
+    "brier_ge_20mm": {
+     "n_scored": 46852,
+     "hits": 1063,
+     "misses": 2987,
+     "false_alarms": 2997,
+     "brier": 0.1277,
+     "brier_clim": 0.0791,
+     "skill": -0.616
+    },
+    "vs_ecmwf": {
+     "gained": 1,
+     "lost": 4,
+     "n_common": 18,
+     "mcnemar_p": 0.375,
+     "plain": "gained 1 flood days on ECMWF IFS, lost 4 (exact McNemar p = 0.38); with 19 flood days this difference is within noise."
+    }
+   },
+   "day3": {
+    "threshold_mm": 14.885,
+    "threshold_source": "matched to ECMWF's 148 flagged days on 2024+2025",
+    "fit_2024_2025": {
+     "flood_days_in_period": 11,
+     "flood_days_flagged": 4,
+     "days_flagged": 148,
+     "days_flagged_with_flood_reported": 5,
+     "false_alarm_share": 0.966
+    },
+    "all_seasons": {
+     "flood_days_in_period": 19,
+     "flood_days_flagged": 5,
+     "days_flagged": 211,
+     "days_flagged_with_flood_reported": 7,
+     "false_alarm_share": 0.967
+    },
+    "test_2026": {
+     "flood_days_in_period": 8,
+     "flood_days_flagged": 1,
+     "days_flagged": 63,
+     "days_flagged_with_flood_reported": 2,
+     "false_alarm_share": 0.968
+    },
+    "calibrated_p99_mm": 52.8,
+    "raw_p99_mm": 91.5,
+    "imerg_p99_mm": 53.1,
+    "brier_ge_20mm": {
+     "n_scored": 46444,
+     "hits": 977,
+     "misses": 2970,
+     "false_alarms": 3057,
+     "brier": 0.1298,
+     "brier_clim": 0.0778,
+     "skill": -0.668
+    },
+    "vs_ecmwf": {
+     "gained": 1,
+     "lost": 3,
+     "n_common": 18,
+     "mcnemar_p": 0.625,
+     "plain": "gained 1 flood days on ECMWF IFS, lost 3 (exact McNemar p = 0.62); with 19 flood days this difference is within noise."
+    }
+   }
+  },
+  {
+   "id": "jma_gsm",
+   "name": "JMA GSM",
+   "kind": "model",
+   "resolution": "0.5\u00b0 (~55 km)",
+   "leads": "previous_day1\u20137",
+   "history_start": "2018 on Previous Runs (JMA); 2023-12-15 in the AWS open-data table",
+   "licence": "CC BY 4.0 (Open-Meteo); JMA GSM redistributed as open data",
+   "day1": {
+    "threshold_mm": 11.875,
+    "threshold_source": "matched to ECMWF's 138 flagged days on 2024+2025",
+    "fit_2024_2025": {
+     "flood_days_in_period": 11,
+     "flood_days_flagged": 3,
+     "days_flagged": 139,
+     "days_flagged_with_flood_reported": 7,
+     "false_alarm_share": 0.95
+    },
+    "all_seasons": {
+     "flood_days_in_period": 19,
+     "flood_days_flagged": 7,
+     "days_flagged": 220,
+     "days_flagged_with_flood_reported": 12,
+     "false_alarm_share": 0.945
+    },
+    "test_2026": {
+     "flood_days_in_period": 8,
+     "flood_days_flagged": 4,
+     "days_flagged": 81,
+     "days_flagged_with_flood_reported": 5,
+     "false_alarm_share": 0.938
+    },
+    "calibrated_p99_mm": 55.0,
+    "raw_p99_mm": 23.6,
+    "imerg_p99_mm": 53.9,
+    "brier_ge_20mm": {
+     "n_scored": 46852,
+     "hits": 837,
+     "misses": 3213,
+     "false_alarms": 3166,
+     "brier": 0.1362,
+     "brier_clim": 0.0791,
+     "skill": -0.722
+    },
+    "vs_ecmwf": {
+     "gained": 2,
+     "lost": 6,
+     "n_common": 18,
+     "mcnemar_p": 0.289,
+     "plain": "gained 2 flood days on ECMWF IFS, lost 6 (exact McNemar p = 0.29); with 19 flood days this difference is within noise."
+    }
+   },
+   "day3": {
+    "threshold_mm": 9.929,
+    "threshold_source": "matched to ECMWF's 148 flagged days on 2024+2025",
+    "fit_2024_2025": {
+     "flood_days_in_period": 11,
+     "flood_days_flagged": 4,
+     "days_flagged": 147,
+     "days_flagged_with_flood_reported": 5,
+     "false_alarm_share": 0.966
+    },
+    "all_seasons": {
+     "flood_days_in_period": 19,
+     "flood_days_flagged": 7,
+     "days_flagged": 218,
+     "days_flagged_with_flood_reported": 9,
+     "false_alarm_share": 0.959
+    },
+    "test_2026": {
+     "flood_days_in_period": 8,
+     "flood_days_flagged": 3,
+     "days_flagged": 71,
+     "days_flagged_with_flood_reported": 4,
+     "false_alarm_share": 0.944
+    },
+    "calibrated_p99_mm": 54.2,
+    "raw_p99_mm": 25.0,
+    "imerg_p99_mm": 53.9,
+    "brier_ge_20mm": {
+     "n_scored": 45900,
+     "hits": 820,
+     "misses": 3133,
+     "false_alarms": 3169,
+     "brier": 0.1373,
+     "brier_clim": 0.0788,
+     "skill": -0.743
+    },
+    "vs_ecmwf": {
+     "gained": 2,
+     "lost": 2,
+     "n_common": 18,
+     "mcnemar_p": 1.0,
+     "plain": "gained 2 flood days on ECMWF IFS, lost 2 (exact McNemar p = 1.00); with 19 flood days this difference is within noise."
+    }
+   }
+  },
+  {
+   "id": "cma_grapes_global",
+   "name": "CMA GRAPES global",
+   "kind": "model",
+   "resolution": "0.125\u00b0 (~13 km)",
+   "leads": "previous_day1\u20137",
+   "history_start": "2024-01-01",
+   "licence": "CC BY 4.0 (Open-Meteo); CMA GRAPES open data as served by Open-Meteo",
+   "day1": {
+    "threshold_mm": 15.369,
+    "threshold_source": "matched to ECMWF's 138 flagged days on 2024+2025",
+    "fit_2024_2025": {
+     "flood_days_in_period": 11,
+     "flood_days_flagged": 3,
+     "days_flagged": 137,
+     "days_flagged_with_flood_reported": 6,
+     "false_alarm_share": 0.956
+    },
+    "all_seasons": {
+     "flood_days_in_period": 19,
+     "flood_days_flagged": 8,
+     "days_flagged": 230,
+     "days_flagged_with_flood_reported": 12,
+     "false_alarm_share": 0.948
+    },
+    "test_2026": {
+     "flood_days_in_period": 8,
+     "flood_days_flagged": 5,
+     "days_flagged": 93,
+     "days_flagged_with_flood_reported": 6,
+     "false_alarm_share": 0.935
+    },
+    "calibrated_p99_mm": 54.8,
+    "raw_p99_mm": 45.7,
+    "imerg_p99_mm": 53.5,
+    "brier_ge_20mm": {
+     "n_scored": 42772,
+     "hits": 878,
+     "misses": 2728,
+     "false_alarms": 2735,
+     "brier": 0.1277,
+     "brier_clim": 0.0773,
+     "skill": -0.651
+    },
+    "vs_ecmwf": {
+     "gained": 2,
+     "lost": 2,
+     "n_common": 15,
+     "mcnemar_p": 1.0,
+     "plain": "gained 2 flood days on ECMWF IFS, lost 2 (exact McNemar p = 1.00); with 19 flood days this difference is within noise."
+    }
+   },
+   "day3": {
+    "threshold_mm": 10.519,
+    "threshold_source": "matched to ECMWF's 148 flagged days on 2024+2025",
+    "fit_2024_2025": {
+     "flood_days_in_period": 11,
+     "flood_days_flagged": 3,
+     "days_flagged": 149,
+     "days_flagged_with_flood_reported": 5,
+     "false_alarm_share": 0.966
+    },
+    "all_seasons": {
+     "flood_days_in_period": 19,
+     "flood_days_flagged": 9,
+     "days_flagged": 254,
+     "days_flagged_with_flood_reported": 11,
+     "false_alarm_share": 0.957
+    },
+    "test_2026": {
+     "flood_days_in_period": 8,
+     "flood_days_flagged": 6,
+     "days_flagged": 105,
+     "days_flagged_with_flood_reported": 6,
+     "false_alarm_share": 0.943
+    },
+    "calibrated_p99_mm": 53.7,
+    "raw_p99_mm": 49.5,
+    "imerg_p99_mm": 53.6,
+    "brier_ge_20mm": {
+     "n_scored": 41956,
+     "hits": 783,
+     "misses": 2779,
+     "false_alarms": 2746,
+     "brier": 0.1317,
+     "brier_clim": 0.0778,
+     "skill": -0.692
+    },
+    "vs_ecmwf": {
+     "gained": 3,
+     "lost": 0,
+     "n_common": 14,
+     "mcnemar_p": 0.25,
+     "plain": "gained 3 flood days on ECMWF IFS, lost 0 (exact McNemar p = 0.25); with 19 flood days this difference is within noise."
+    }
+   }
+  }
+ ],
+ "blends": [
+  {
+   "id": "blend_best_two",
+   "name": "Mean of the best two (frozen on 2024+2025)",
+   "kind": "blend",
+   "members": [
+    "ecmwf_ifs025",
+    "gem_global"
+   ],
+   "rule": "mean of the calibrated daily totals, members fixed on 2024+2025",
+   "day1": {
+    "threshold_mm": 15.143,
+    "threshold_source": "matched to ECMWF's 138 flagged days on 2024+2025",
+    "fit_2024_2025": {
+     "flood_days_in_period": 11,
+     "flood_days_flagged": 7,
+     "days_flagged": 138,
+     "days_flagged_with_flood_reported": 10,
+     "false_alarm_share": 0.928
+    },
+    "all_seasons": {
+     "flood_days_in_period": 19,
+     "flood_days_flagged": 10,
+     "days_flagged": 209,
+     "days_flagged_with_flood_reported": 13,
+     "false_alarm_share": 0.938
+    },
+    "test_2026": {
+     "flood_days_in_period": 8,
+     "flood_days_flagged": 3,
+     "days_flagged": 71,
+     "days_flagged_with_flood_reported": 3,
+     "false_alarm_share": 0.958
+    },
+    "calibrated_p99_mm": 39.8,
+    "imerg_p99_mm": 53.9,
+    "brier_ge_20mm": {
+     "n_scored": 46852,
+     "hits": 1108,
+     "misses": 2942,
+     "false_alarms": 2596,
+     "brier": 0.1182,
+     "brier_clim": 0.0791,
+     "skill": -0.495
+    },
+    "vs_ecmwf": {
+     "gained": 0,
+     "lost": 1,
+     "n_common": 18,
+     "mcnemar_p": 1.0,
+     "plain": "gained 0 flood days on ECMWF IFS, lost 1 (exact McNemar p = 1.00); with 19 flood days this difference is within noise."
+    }
+   },
+   "day3": {
+    "threshold_mm": 14.026,
+    "threshold_source": "matched to ECMWF's 148 flagged days on 2024+2025",
+    "fit_2024_2025": {
+     "flood_days_in_period": 11,
+     "flood_days_flagged": 4,
+     "days_flagged": 147,
+     "days_flagged_with_flood_reported": 6,
+     "false_alarm_share": 0.959
+    },
+    "all_seasons": {
+     "flood_days_in_period": 19,
+     "flood_days_flagged": 8,
+     "days_flagged": 212,
+     "days_flagged_with_flood_reported": 10,
+     "false_alarm_share": 0.953
+    },
+    "test_2026": {
+     "flood_days_in_period": 8,
+     "flood_days_flagged": 4,
+     "days_flagged": 65,
+     "days_flagged_with_flood_reported": 4,
+     "false_alarm_share": 0.938
+    },
+    "calibrated_p99_mm": 39.3,
+    "imerg_p99_mm": 53.1,
+    "brier_ge_20mm": {
+     "n_scored": 46444,
+     "hits": 912,
+     "misses": 3035,
+     "false_alarms": 2369,
+     "brier": 0.1164,
+     "brier_clim": 0.0778,
+     "skill": -0.495
+    },
+    "vs_ecmwf": {
+     "gained": 1,
+     "lost": 0,
+     "n_common": 18,
+     "mcnemar_p": 1.0,
+     "plain": "gained 1 flood days on ECMWF IFS, lost 0 (exact McNemar p = 1.00); with 19 flood days this difference is within noise."
+    }
+   }
+  },
+  {
+   "id": "blend_all",
+   "name": "Mean of every usable model",
+   "kind": "blend",
+   "members": [
+    "ecmwf_ifs025",
+    "icon_global",
+    "arpege_world",
+    "gfs013",
+    "gem_global",
+    "jma_gsm",
+    "cma_grapes_global"
+   ],
+   "rule": "mean of the calibrated daily totals, members fixed on 2024+2025",
+   "day1": {
+    "threshold_mm": 9.616,
+    "threshold_source": "matched to ECMWF's 138 flagged days on 2024+2025",
+    "fit_2024_2025": {
+     "flood_days_in_period": 11,
+     "flood_days_flagged": 4,
+     "days_flagged": 137,
+     "days_flagged_with_flood_reported": 6,
+     "false_alarm_share": 0.956
+    },
+    "all_seasons": {
+     "flood_days_in_period": 19,
+     "flood_days_flagged": 9,
+     "days_flagged": 221,
+     "days_flagged_with_flood_reported": 11,
+     "false_alarm_share": 0.95
+    },
+    "test_2026": {
+     "flood_days_in_period": 8,
+     "flood_days_flagged": 5,
+     "days_flagged": 84,
+     "days_flagged_with_flood_reported": 5,
+     "false_alarm_share": 0.94
+    },
+    "calibrated_p99_mm": 35.4,
+    "imerg_p99_mm": 53.6,
+    "brier_ge_20mm": {
+     "n_scored": 42296,
+     "hits": 775,
+     "misses": 2827,
+     "false_alarms": 1739,
+     "brier": 0.108,
+     "brier_clim": 0.0781,
+     "skill": -0.383
+    },
+    "vs_ecmwf": {
+     "gained": 2,
+     "lost": 1,
+     "n_common": 14,
+     "mcnemar_p": 1.0,
+     "plain": "gained 2 flood days on ECMWF IFS, lost 1 (exact McNemar p = 1.00); with 19 flood days this difference is within noise."
+    }
+   },
+   "day3": {
+    "threshold_mm": 9.979,
+    "threshold_source": "matched to ECMWF's 148 flagged days on 2024+2025",
+    "fit_2024_2025": {
+     "flood_days_in_period": 11,
+     "flood_days_flagged": 3,
+     "days_flagged": 147,
+     "days_flagged_with_flood_reported": 4,
+     "false_alarm_share": 0.973
+    },
+    "all_seasons": {
+     "flood_days_in_period": 19,
+     "flood_days_flagged": 8,
+     "days_flagged": 222,
+     "days_flagged_with_flood_reported": 9,
+     "false_alarm_share": 0.959
+    },
+    "test_2026": {
+     "flood_days_in_period": 8,
+     "flood_days_flagged": 5,
+     "days_flagged": 75,
+     "days_flagged_with_flood_reported": 5,
+     "false_alarm_share": 0.933
+    },
+    "calibrated_p99_mm": 34.8,
+    "imerg_p99_mm": 52.6,
+    "brier_ge_20mm": {
+     "n_scored": 40324,
+     "hits": 701,
+     "misses": 2661,
+     "false_alarms": 1532,
+     "brier": 0.104,
+     "brier_clim": 0.0765,
+     "skill": -0.359
+    },
+    "vs_ecmwf": {
+     "gained": 2,
+     "lost": 0,
+     "n_common": 13,
+     "mcnemar_p": 0.5,
+     "plain": "gained 2 flood days on ECMWF IFS, lost 0 (exact McNemar p = 0.50); with 19 flood days this difference is within noise."
+    }
+   }
+  }
+ ]
+}
