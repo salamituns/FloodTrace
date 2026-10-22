@@ -75,3 +75,6 @@ export const LinkIcon = (p: P) => (
 export const HelpIcon = (p: P) => (
   <svg {...base} {...p}><path d="M7.4 7.3c0-2 1.6-3.2 3.4-3.2 1.8 0 3.3 1.2 3.3 3 0 1.4-.9 2-1.7 2.7-.7.5-1 1-1 1.7" /><circle cx="11.3" cy="14.9" r="0.7" fill="currentColor" stroke="none" /></svg>
 );
+export const InfoIcon = (p: P) => (
+  <svg {...base} {...p}><circle cx="10" cy="10" r="7" /><path d="M10 9v5" /><circle cx="10" cy="6.4" r="0.7" fill="currentColor" stroke="none" /></svg>
+);

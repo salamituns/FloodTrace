@@ -120,13 +120,21 @@ def write_json(path: Path, payload: dict) -> None:
 
 
 def load_env_credentials() -> None:
-    """Parse Earthdata credentials from the project .env into os.environ.
+    """Load Earthdata credentials into os.environ.
 
-    The .env contents and the credential values are never printed,
-    logged or written anywhere else.
+    The environment first: CI sets EARTHDATA_USERNAME and EARTHDATA_PASSWORD
+    directly, and then no .env is needed. Otherwise the project .env is
+    parsed exactly as before (a laptop run). The .env contents and the
+    credential values are never printed, logged or written anywhere else.
     """
+    if os.environ.get("EARTHDATA_USERNAME") and os.environ.get("EARTHDATA_PASSWORD"):
+        return
     if not ENV_FILE.is_file():
-        raise SystemExit(f"credentials missing: {ENV_FILE} not found")
+        raise SystemExit(
+            "credentials missing: set EARTHDATA_USERNAME and EARTHDATA_PASSWORD "
+            f"in the environment, or create {ENV_FILE} with Earthdata_username "
+            "and Earthdata_password entries"
+        )
     found: dict[str, str] = {}
     for line in ENV_FILE.read_text(encoding="utf-8").splitlines():
         line = line.strip()
@@ -141,7 +149,8 @@ def load_env_credentials() -> None:
             found[key] = value
     if "earthdata_username" not in found or "earthdata_password" not in found:
         raise SystemExit(
-            "credentials missing: .env needs Earthdata_username and "
+            "credentials missing: set EARTHDATA_USERNAME and EARTHDATA_PASSWORD "
+            "in the environment, or give .env Earthdata_username and "
             "Earthdata_password entries"
         )
     os.environ["EARTHDATA_USERNAME"] = found["earthdata_username"]

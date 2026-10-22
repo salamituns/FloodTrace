@@ -25,6 +25,12 @@ import {
 	type ForecastFile,
 	type ImpactsSummary,
 } from '../src/lib/forecast';
+import {
+	ABOUT_ISSUES_URL,
+	ABOUT_TEXT,
+	OFFICIAL_NOTICE,
+	aboutWordCount,
+} from '../src/lib/about';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 
@@ -215,6 +221,20 @@ check(trustSentence(null) === null, 'no calibration means no trust sentence');
 check(trustSentence({ applied: false } as never) === null, 'unapplied calibration shows nothing');
 
 check(forecastUrl(false, '?forecast=fixture') === '/events/forecast/latest.json', 'production ignores ?forecast=fixture');
+
+// ── Task 48: public notice ───────────────────────────────────────────────
+check(
+	OFFICIAL_NOTICE ===
+		'This is an independent tool, not a government warning. Follow NiMet and Lagos State (LASEMA) advice.',
+	'official notice names NiMet and LASEMA, not a government warning',
+);
+check(!/\b767\b|\b112\b/.test(OFFICIAL_NOTICE + ABOUT_TEXT), 'notice and About have no emergency numbers');
+check(aboutWordCount() < 200, `About text is under 200 words (${aboutWordCount()})`);
+check(ABOUT_TEXT.includes('independent project'), 'About says who made it');
+check(ABOUT_TEXT.includes('How much to trust this'), 'About points at the trust sentence');
+check(ABOUT_TEXT.includes('How we know'), 'About points at How we know');
+check(ABOUT_TEXT.includes('undercount'), 'About says reported floods undercount');
+check(ABOUT_ISSUES_URL === 'https://github.com/salamituns/FloodTrace/issues', 'mistake reports go to GitHub issues');
 
 if (failed) {
 	console.log(`\n${failed} check(s) failed`);

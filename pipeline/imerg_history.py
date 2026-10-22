@@ -216,13 +216,16 @@ def fetch_point_record(
         final_rows.extend(rows)
     late_header: dict[str, str] = {}
     late_rows: list[tuple[datetime, float]] = []
+    # Final lags about 3.5 months, so a recent window (--update) can have no
+    # Final rows at all: then the Late run covers the whole window.
     if final_rows:
-        last_final = max(stamp for stamp, _ in final_rows)
-        if last_final < end - timedelta(minutes=30):
-            late_start = last_final + timedelta(minutes=30)
-            late_header, late_rows = fetch_series(
-                name, lat, lon, late_start, end, VARIABLE_LATE, token, refresh
-            )
+        late_start = max(stamp for stamp, _ in final_rows) + timedelta(minutes=30)
+    else:
+        late_start = start
+    if late_start < end:
+        late_header, late_rows = fetch_series(
+            name, lat, lon, late_start, end, VARIABLE_LATE, token, refresh
+        )
     return final_header, final_rows, late_header, late_rows
 
 

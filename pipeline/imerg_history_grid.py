@@ -17,7 +17,14 @@ Outputs (in events/):
 Usage:
     pipeline/.venv/bin/python pipeline/imerg_history_grid.py \
         [events/lagos-2024-07-03] [--start YYYY-MM-DD] [--end YYYY-MM-DD] \
-        [--refresh]
+        [--refresh] [--update]
+
+--update (Task 47, the daily cloud run): read the committed
+events/rain_history_grid_daily.json, fetch only from its last day minus 7
+days to now (to catch NASA's late-arriving data), and merge: new values
+replace old ones on overlapping days, every earlier day stays
+byte-identical. Works without pipeline/cache/imerg_history/ present, and
+leaves the catalog files alone (they are full-rescan artifacts).
 
 Auth: reuses the .env credential loader through pipeline/imerg_history
 (get_token); credentials and tokens are never printed, logged or
@@ -48,6 +55,7 @@ CELL_HALF = 0.05
 TOP_N = 25
 BIGGEST_CHANGES = 10
 EVENT_CHECK_DATES = ("2024-07-02", "2024-07-03", "2011-07-10")
+UPDATE_BACKTRACK_DAYS = 7  # --update fetches from the last committed day minus this
 
 # Small hand list of Lagos districts (name, lon, lat) for approximate
 # cell labels; nearest entry wins.
@@ -181,6 +189,179 @@ def point_cell_names(event_dir: Path) -> dict[tuple[float, float], str]:
     return mapping
 
 
+def last_committed_day(grid: dict) -> date | None:
+    """Last date in grid['dates'] with a value for at least one cell.
+
+    The same definition as score_forecasts.py's imerg_last_day and
+    run_daily.py's imerg_state, so all three agree on where the history ends.
+    """
+    for index in range(len(grid["dates"]) - 1, -1, -1):
+        if any(cell["total_mm"][index] is not None for cell in grid["series"].values()):
+            return date.fromisoformat(grid["dates"][index])
+    return None
+
+
+def merge_grid_history(old: dict, new_dates: list[str], new_series: dict) -> dict:
+    """Merge a freshly fetched window into the committed grid history.
+
+    A pure function (Task 47): it reads only its arguments, mutates nothing
+    and returns a new payload.
+
+    - on days the refresh fetched, a new value replaces the committed one
+      (the Final run supersedes the Late run as NASA publishes it);
+    - where the refresh has no value for a day, the committed value stays,
+      so a partial API response never erases history;
+    - days before the window are untouched, byte-identical;
+    - days after the last committed one are appended, in date order.
+    """
+    old_dates = list(old["dates"])
+    merged_dates = sorted(set(old_dates) | set(new_dates))
+    old_index = {day: i for i, day in enumerate(old_dates)}
+    new_index = {day: i for i, day in enumerate(new_dates)}
+    series = {}
+    for cell_id, old_cell in old["series"].items():
+        new_cell = new_series.get(cell_id)
+        totals: list[float | None] = []
+        peaks: list[float | None] = []
+        for day in merged_dates:
+            oi = old_index.get(day)
+            ni = new_index.get(day) if new_cell is not None else None
+            old_total = old_cell["total_mm"][oi] if oi is not None else None
+            old_peak = old_cell["max_30min_mm_h"][oi] if oi is not None else None
+            new_total = new_cell["total_mm"][ni] if ni is not None else None
+            new_peak = new_cell["max_30min_mm_h"][ni] if ni is not None else None
+            totals.append(new_total if new_total is not None else old_total)
+            peaks.append(new_peak if new_peak is not None else old_peak)
+        series[cell_id] = {"total_mm": totals, "max_30min_mm_h": peaks}
+    return {"meta": old["meta"], "dates": merged_dates, "series": series}
+
+
+def run_update(event_dir: Path, end: datetime, refresh: bool) -> str:
+    """Incremental refresh of the committed rain history (--update, Task 47).
+
+    Fetches only (the committed history's last day - 7 days) .. end, to catch
+    NASA's late-arriving data, and merges the fresh window into
+    events/rain_history_grid_daily.json: new values replace old ones on
+    overlapping days, every earlier day stays byte-identical. Needs no cache
+    directory and no coastline file: the cells come from the committed file's
+    meta. The catalog files are full-rescan artifacts and are left alone; the
+    scorer and the forecast read only the daily grid.
+    """
+    out_dir = event_dir.parent
+    grid_path = out_dir / "rain_history_grid_daily.json"
+    if not grid_path.is_file():
+        raise SystemExit(
+            f"missing {grid_path}: --update refreshes a committed history; "
+            "run the full scan (without --update) first"
+        )
+    committed = json.loads(grid_path.read_text(encoding="utf-8"))
+    last_day = last_committed_day(committed)
+    if last_day is None:
+        raise SystemExit(f"{grid_path} has no values; run the full scan first")
+    tz = ZoneInfo(
+        json.loads((event_dir / "event.json").read_text(encoding="utf-8"))["timezone"]
+    )
+    start = datetime(
+        last_day.year, last_day.month, last_day.day, tzinfo=timezone.utc
+    ) - timedelta(days=UPDATE_BACKTRACK_DAYS)
+
+    hist.CACHE_DIR.mkdir(parents=True, exist_ok=True)
+    token = hist.get_token()
+    cells = committed["meta"]["cells"]
+    print(
+        f"incremental IMERG refresh {start:%Y-%m-%d} .. {end:%Y-%m-%d} UTC "
+        f"({last_day.isoformat()} - {UPDATE_BACKTRACK_DAYS} days .. now), "
+        f"{len(cells)} cells",
+        flush=True,
+    )
+    new_stats: dict[str, dict[date, list[float]]] = {}
+    final_ends: list[datetime] = []
+    n_late_rows = 0
+    for index, cell in enumerate(cells):
+        lon, lat = float(cell["lon"]), float(cell["lat"])
+        cache_name = cell.get("point") or cell["id"]  # point cells reuse Task 06 caches
+        f_header, f_rows, l_header, l_rows = hist.fetch_point_record(
+            cache_name, lat, lon, start, end, token, refresh
+        )
+        combined: dict[datetime, float] = {}
+        for stamp, rate in f_rows:
+            combined[stamp] = rate
+        for stamp, rate in l_rows:
+            combined.setdefault(stamp, rate)
+        new_stats[cell["id"]] = hist.daily_stats(combined, tz)
+        if f_rows:
+            final_ends.append(max(stamp for stamp, _ in f_rows))
+        n_late_rows += len(l_rows)
+        print(
+            f"  [{index + 1}/{len(cells)}] {cell['id']} "
+            f"({cell.get('place', nearest_place(lon, lat))}): "
+            f"{len(combined)} steps",
+            file=sys.stderr,
+            flush=True,
+        )
+    new_days = sorted({day for stats in new_stats.values() for day in stats})
+    if not new_days:
+        raise SystemExit("no IMERG data returned for any cell in the update window")
+    new_dates = [day.isoformat() for day in new_days]
+    new_series = {
+        cid: {
+            "total_mm": [
+                imerg.clean(stats[day][0]) if day in stats else None for day in new_days
+            ],
+            "max_30min_mm_h": [
+                imerg.clean(stats[day][1]) if day in stats else None for day in new_days
+            ],
+        }
+        for cid, stats in new_stats.items()
+    }
+
+    merged = merge_grid_history(committed, new_dates, new_series)
+    final_end = min(final_ends) if final_ends else None
+    run_meta = {
+        "final": {
+            "variable": hist.VARIABLE_FINAL,
+            "period": [hist.iso_z(start), hist.iso_z(final_end) if final_end else None],
+        },
+        "late": None,
+    }
+    if n_late_rows and final_end:
+        run_meta["late"] = {
+            "variable": hist.VARIABLE_LATE,
+            "period": [hist.iso_z(final_end + timedelta(minutes=30)), hist.iso_z(end)],
+        }
+    old_retrieved_at = merged["meta"].get("retrieved_at")
+    merged["meta"] = dict(merged["meta"])
+    merged["meta"]["product"] = (
+        ["GPM_3IMERGHH.07", "GPM_3IMERGHHL.07"] if n_late_rows else ["GPM_3IMERGHH.07"]
+    )
+    merged["meta"]["run"] = run_meta
+    merged["meta"]["retrieved_at"] = imerg.utc_now_iso()
+    merged["meta"]["update"] = {
+        "mode": "incremental (--update)",
+        "fetched": [hist.iso_z(start), hist.iso_z(end)],
+        "previous_retrieved_at": old_retrieved_at,
+        "note": (
+            f"only {start:%Y-%m-%d} .. now was fetched; days before that are "
+            "unchanged from the previous scan"
+        ),
+    }
+    imerg.write_json(grid_path, merged)
+
+    lines = [
+        "FloodTrace IMERG incremental refresh",
+        f"window fetched: {start:%Y-%m-%d} .. {end:%Y-%m-%d} UTC over {len(cells)} cells",
+        f"history now covers: {merged['dates'][0]} .. {merged['dates'][-1]} "
+        f"({len(merged['dates'])} days)",
+        "runs: final through "
+        + (f"{final_end.date()}" if final_end else "n/a")
+        + (f", late tail {n_late_rows} cell-steps" if n_late_rows else ", no late tail"),
+        f"wrote {grid_path} (merged; earlier days byte-identical)",
+    ]
+    summary = "\n".join(lines)
+    print(summary)
+    return summary
+
+
 def summary_of(candidate: dict, kind: str) -> dict:
     payload = {
         "rank": candidate["rank"],
@@ -228,6 +409,7 @@ def run(event_dir: Path, start: datetime, end: datetime, refresh: bool) -> str:
     cells = [(lon, lat) for lon, lat in centres if (lon, lat) not in dropped_set]
     point_cells = point_cell_names(event_dir)
 
+    hist.CACHE_DIR.mkdir(parents=True, exist_ok=True)
     token = hist.get_token()
     cell_stats: dict[tuple[float, float], dict[date, list[float]]] = {}
     final_ends: list[datetime] = []
@@ -601,9 +783,11 @@ def run(event_dir: Path, start: datetime, end: datetime, refresh: bool) -> str:
 def main() -> None:
     usage = (
         "usage: pipeline/.venv/bin/python pipeline/imerg_history_grid.py "
-        "[event-dir] [--start YYYY-MM-DD] [--end YYYY-MM-DD] [--refresh]"
+        "[event-dir] [--start YYYY-MM-DD] [--end YYYY-MM-DD] [--refresh] "
+        "[--update]"
     )
     refresh = "--refresh" in sys.argv
+    update = "--update" in sys.argv
     start = hist.RECORD_START
     end = datetime.now(timezone.utc).replace(minute=0, second=0, microsecond=0)
     positional: list[str] = []
@@ -617,13 +801,16 @@ def main() -> None:
         elif arg == "--end":
             index += 1
             end = datetime.fromisoformat(args[index]).replace(tzinfo=timezone.utc)
-        elif arg != "--refresh":
+        elif arg not in ("--refresh", "--update"):
             positional.append(arg)
         index += 1
     if len(positional) > 1 or index != len(args):
         raise SystemExit(usage)
     event_dir = Path(positional[0]) if positional else Path("events/lagos-2024-07-03")
-    run(event_dir, start, end, refresh)
+    if update:
+        run_update(event_dir, end, refresh)
+    else:
+        run(event_dir, start, end, refresh)
 
 
 if __name__ == "__main__":

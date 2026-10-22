@@ -29,6 +29,9 @@ from statistics import median
 
 warnings.filterwarnings("ignore", category=DeprecationWarning)
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from quotes import clip_quote  # noqa: E402
+
 import jsonschema  # noqa: E402  (pipeline/.venv has jsonschema 4.26 and shapely 2.2)
 from shapely.geometry import LineString, Point  # noqa: E402
 
@@ -246,7 +249,7 @@ def catalog_sources(day: dict, matched_names: list) -> list:
         if any(n and n in text for n in names):
             naming.append(rp)
     chosen = naming or day["reports"]
-    return [{"url": rp.get("url"), "publisher": rp.get("publisher"), "quote": rp.get("quote")} for rp in chosen[:3]]
+    return [{"url": rp.get("url"), "publisher": rp.get("publisher"), "quote": clip_quote(rp.get("quote"))} for rp in chosen[:3]]
 
 
 def catalog_floods_for_site(site_id: str, g, radius: float, lat0: float, lon0: float, catalog: dict):
@@ -513,7 +516,7 @@ def build_site(src, ctx) -> dict:
             "cause": (human or causes or [None])[0],
             "attributed_by": props.get("cause_attributed_by"),
             "who": props.get("cause_who"),
-            "quote": props.get("cause_quote") or props.get("quote"),
+            "quote": clip_quote(props.get("cause_quote") or props.get("quote")),
             "source_id": props.get("source_id"),
             "url": props.get("source_url"),
             "date": claim_date(props),

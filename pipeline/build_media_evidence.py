@@ -14,6 +14,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from geocode import geocode_many, in_bbox
+from quotes import clip_quote
 
 ROOT = Path(__file__).resolve().parents[1]
 BBOX = [2.70, 6.38, 4.35, 6.75]
@@ -77,6 +78,7 @@ def records() -> list[dict]:
         kwargs.setdefault("quote", None)
         kwargs.setdefault("observed_at", None)
         kwargs.setdefault("time_confidence", "unknown")
+        kwargs["quote"] = clip_quote(kwargs.get("quote"))
         return kwargs
 
     return [
@@ -799,7 +801,7 @@ def build(event_dir: Path) -> str:
                 "geocode_method": method,
                 "claim": rec["claim"],
                 "depth_note": rec["depth_note"],
-                "quote": rec["quote"],
+                "quote": clip_quote(rec["quote"]),
                 "verified": False,
                 "read_status": rec["read_status"],
             },

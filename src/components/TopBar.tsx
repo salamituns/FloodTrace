@@ -4,7 +4,8 @@ import { useEvent, useStore } from '../state/store';
 import { EventSwitcher } from './EventSwitcher';
 import { HowToRead } from './HowToRead';
 import { PlaceSearch } from './PlaceSearch';
-import { CalendarIcon, HelpIcon, LinkIcon, LogoMark, MapIcon, PinIcon } from './Icons';
+import { AboutThisTool } from './AboutThisTool';
+import { CalendarIcon, HelpIcon, InfoIcon, LinkIcon, LogoMark, MapIcon, PinIcon } from './Icons';
 import '../styles/places.css';
 
 /** Remembers a dismissed guide; if storage is unavailable, dismissal lasts for this session only. */
@@ -23,6 +24,7 @@ export function TopBar() {
     }
   });
   const [copied, setCopied] = useState(false);
+  const [aboutOpen, setAboutOpen] = useState(false);
 
   useEffect(() => {
     if (!copied) return;
@@ -116,8 +118,18 @@ export function TopBar() {
           <HelpIcon />
           <span className="topbar__action-label">How to read this</span>
         </button>
+        <button
+          type="button"
+          className="topbar__action"
+          onClick={() => setAboutOpen(true)}
+          title="About this tool"
+        >
+          <InfoIcon />
+          <span className="topbar__action-label">About this tool</span>
+        </button>
       </div>
       {howOpen && <HowToRead onClose={closeHowTo} />}
+      {aboutOpen && <AboutThisTool onClose={() => setAboutOpen(false)} />}
     </header>
   );
 }

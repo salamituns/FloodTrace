@@ -15,6 +15,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from geocode import geocode_many, in_bbox
+from quotes import clip_quote
 
 ROOT = Path(__file__).resolve().parents[1]
 BBOX = [2.70, 6.38, 4.35, 6.75]
@@ -124,6 +125,7 @@ def records() -> list[dict]:
         kwargs.setdefault("observed_at", None)
         kwargs.setdefault("time_confidence", "unknown")
         kwargs.setdefault("original_url", None)
+        kwargs["quote"] = clip_quote(kwargs.get("quote"))
         return kwargs
 
     return [
@@ -889,6 +891,7 @@ def build(event_dir: Path) -> str:
         n = len((rec.get("claim") or "").split())
         if n > 20:
             raise SystemExit(f"claim too long ({n} words): {rec['location_name']}")
+        rec["quote"] = clip_quote(rec.get("quote"))
         q = rec.get("quote") or ""
         if q and len(q.split()) > 25:
             raise SystemExit(f"quote too long ({len(q.split())} words): {q}")

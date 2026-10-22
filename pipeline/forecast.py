@@ -9,7 +9,9 @@ combines them with its own satellite-rain history. Per run it fetches, once:
     a second call) from the Open-Meteo Ensemble API;
   * the GloFAS river ensemble and its 1984-present daily-flow history for two
     river points from the Open-Meteo Flood API (4 calls);
-and computes the EOT20 astronomical tide locally (pyTMD, no network).
+and gets the EOT20 astronomical tide from the precomputed table
+(events/forecast/tide_table.json) or, when the window is outside it, locally
+with pyTMD (no network either way).
 
 Since Task 44 the ensemble's rain is CALIBRATED to Lagos rain before any number
 is computed: pipeline/calibrate.py fits a quantile mapping per lead day on the
@@ -36,6 +38,7 @@ from __future__ import annotations
 
 import json
 import math
+import os
 import re
 import sys
 from datetime import date, datetime, timedelta, timezone
@@ -52,6 +55,11 @@ from tide_eot20 import MODEL_DIR as TIDE_MODEL_DIR, EPOCH as TIDE_EPOCH  # noqa:
 
 EVENTS = ROOT / "events"
 OUT_DIR = EVENTS / "forecast"
+# FLOODTRACE_TIDE_TABLE points at a different precomputed tide table (testing
+# the live-computation fallback with FLOODTRACE_TIDE_MODEL_DIR beside it).
+TIDE_TABLE_PATH = Path(
+    os.environ.get("FLOODTRACE_TIDE_TABLE") or OUT_DIR / "tide_table.json"
+)
 CACHE_ROOT = ROOT / "pipeline" / "cache" / "forecast"
 SCHEMA_PATH = ROOT / "pipeline" / "schemas" / "forecast.schema.json"
 
@@ -216,15 +224,56 @@ def risk_ranges(sub: np.ndarray, times: list) -> list:
 
 
 # ---- tide -----------------------------------------------------------------
-def compute_tides(run_day: date, event_dirs: list):
-    ev = json.loads((event_dirs[-1] / "event.json").read_text())
-    lon, lat = ev["aoi"]["points"]["offshore_tide"]
+def tide_hour_times(run_day: date) -> list:
+    """The forecast's hour grid: run day 00:00 WAT, hourly, FORECAST_DAYS long."""
     start = datetime(run_day.year, run_day.month, run_day.day, tzinfo=WAT)
     end = start + timedelta(days=FORECAST_DAYS)
     times, t = [], start
     while t < end:
         times.append(t)
         t += timedelta(hours=1)
+    return times
+
+
+def tide_values_from_table(times: list, lon: float, lat: float) -> list | None:
+    """Hourly tide heights from the precomputed table, or None when the table
+    does not cover the forecast window or this point."""
+    if not TIDE_TABLE_PATH.is_file():
+        return None
+    table = json.loads(TIDE_TABLE_PATH.read_text(encoding="utf-8"))
+    meta = table["meta"]
+    if meta.get("interval_hours") != 1:
+        return None
+    start = datetime.fromisoformat(meta["start"])
+    if start.utcoffset() != times[0].utcoffset():
+        return None  # the table is on a different hour grid
+    index0 = int((times[0] - start).total_seconds() // 3600)
+    values = None
+    for point in table["points"]:
+        if point["lon"] == lon and point["lat"] == lat:
+            values = point["values"]
+            break
+    if values is None:
+        return None
+    if index0 < 0 or index0 + len(times) > len(values):
+        return None  # window not inside the table
+    return values[index0:index0 + len(times)]
+
+
+def tide_values_from_model(times: list, lon: float, lat: float) -> list:
+    """Hourly tide heights computed live with pyTMD (needs the 2.1 GB model)."""
+    if not (TIDE_MODEL_DIR / "EOT20").is_dir():
+        try:
+            table_ref = str(TIDE_TABLE_PATH.relative_to(ROOT))
+        except ValueError:
+            table_ref = str(TIDE_TABLE_PATH)
+        raise SystemExit(
+            "tide unavailable: the forecast window is not covered by "
+            f"{table_ref} and the EOT20 model is not present under "
+            f"{TIDE_MODEL_DIR}. Regenerate the table with "
+            "pipeline/tide_table.py on a machine that has the model, or see "
+            "docs/FORECAST.md for the model itself."
+        )
     delta = np.array([(x.astimezone(timezone.utc) - TIDE_EPOCH).total_seconds()
                       for x in times])
     tide = pyTMD.compute.tide_elevations(
@@ -235,16 +284,35 @@ def compute_tides(run_day: date, event_dirs: list):
     values = np.ma.filled(np.ma.asarray(tide, dtype=float), np.nan).reshape(-1)
     if np.isnan(values).any():
         raise SystemExit("EOT20 returned NaN hours at the offshore point")
+    return [round(float(v), 2) for v in values]  # centimetre, as in the table
+
+
+def compute_tides(run_day: date, event_dirs: list):
+    """High tides over the forecast window, from the precomputed table when it
+    covers the window (the daily cloud run needs no 2.1 GB model), else
+    computed live with pyTMD. Heights are rounded to the centimetre on both
+    paths, so the two agree exactly."""
+    ev = json.loads((event_dirs[-1] / "event.json").read_text())
+    lon, lat = ev["aoi"]["points"]["offshore_tide"]
+    times = tide_hour_times(run_day)
+    values = tide_values_from_table(times, lon, lat)
+    if values is not None:
+        source = "the precomputed tide table (events/forecast/tide_table.json)"
+    else:
+        values = tide_values_from_model(times, lon, lat)
+        source = "a local pyTMD computation (EOT20 model files)"
     high = []
     for i in range(1, len(values) - 1):
         if values[i] >= values[i - 1] and values[i] > values[i + 1]:
             high.append({
                 "time": times[i].replace(tzinfo=None).isoformat(timespec="minutes"),
-                "height_m": round(float(values[i]), 3),
+                "height_m": round(float(values[i]), 2),
             })
-    return {"point": {"lon": lon, "lat": lat,
+    return ({"point": {"lon": lon, "lat": lat,
                       "source": f"events/{event_dirs[-1].name}/event.json aoi.points.offshore_tide"},
-            "high_tides": high}, [datetime.fromisoformat(h["time"]) for h in high]
+             "high_tides": high},
+            [datetime.fromisoformat(h["time"]) for h in high],
+            source)
 
 
 # ---- rivers ---------------------------------------------------------------
@@ -524,10 +592,11 @@ def main() -> None:
         print(f"  {name}: snapped to {snapped}, history {hist['n_days']} days, "
               f"p90 {hist['p90_m3s']} / p99 {hist['p99_m3s']} m3/s")
 
-    print("computing EOT20 tide at the offshore point ...")
+    print("getting the tide at the offshore point ...")
     event_dirs = sorted([p for p in EVENTS.iterdir()
                          if p.is_dir() and p.name.startswith("lagos-")])
-    tides, tide_times = compute_tides(run_day, event_dirs)
+    tides, tide_times, tide_source = compute_tides(run_day, event_dirs)
+    print(f"  from {tide_source}")
     print(f"  {len(tides['high_tides'])} high tides over {FORECAST_DAYS} days")
 
     # ---- per cell, per day -------------------------------------------------
@@ -742,7 +811,7 @@ def main() -> None:
                 "url": "https://doi.org/10.17882/79489",
                 "licence": "CC BY 4.0",
                 "note": "Hart-Davis et al. (2021), EOT20, SEANOE, DGFI-TUM; "
-                        "astronomical tide computed locally with pyTMD at the "
+                        f"astronomical tide from {tide_source} at the "
                         "events' offshore point",
             },
             {
@@ -814,7 +883,7 @@ def main() -> None:
             "rain_headline": f"ecmwf_ifs025 (control + {n_series - 1} perturbed members)",
             "rain_second_opinion": f"gfs025 (control + {n_gfs - 1} perturbed members)",
             "rivers": "GloFAS via the Open-Meteo Flood API (control + 50 perturbed members)",
-            "tide": "EOT20 (17 constituents, computed locally with pyTMD)",
+            "tide": f"EOT20 (17 constituents), from {tide_source}",
         },
         "thresholds": {
             "hourly_rate_mm_h": HOURLY_RATE_MM_H,
@@ -900,11 +969,14 @@ def main() -> None:
                 f"({RIVER_HISTORY_START} onward, GloFAS reanalysis)."
             ),
             "tides": (
-                "The EOT20 astronomical tide is computed hourly at the offshore "
-                "point over the 7 forecast days; every local maximum is listed "
-                "as a high tide (times to the nearest hour, heights in metres "
-                "above sea level). No storm surge, no lagoon damping or phase "
-                "lag is included."
+                "The EOT20 astronomical tide is read hourly at the offshore "
+                "point over the 7 forecast days from the precomputed tide "
+                "table (events/forecast/tide_table.json, built by "
+                "pipeline/tide_table.py) when the window is inside it, and "
+                "computed locally with pyTMD otherwise; every local maximum "
+                "is listed as a high tide (times to the nearest hour, heights "
+                "in metres above sea level, rounded to the centimetre). No "
+                "storm surge, no lagoon damping or phase lag is included."
             ),
         },
         "caveats": [

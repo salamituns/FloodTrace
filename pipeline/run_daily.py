@@ -2,24 +2,26 @@
 """Task 45 (docs/tasks/45-daily-run.md): run the forecast every day, and keep score by itself.
 
 One entry point for the daily maintenance of the forecast. Steps, in order,
-each as a subprocess of the venv's Python with the repo root as its working
-directory:
+each as a subprocess of the pipeline's Python (the venv's when present, else
+the interpreter running this wrapper, e.g. on a GitHub Actions runner) with
+the repo root as its working directory:
 
   1. pipeline/forecast.py            every day (today's forecast).
-  2. pipeline/imerg_history_grid.py  only when events/rain_history_grid_daily.json
-     ends 5 or more days before today (Africa/Lagos), and at most once a day
-     (the file's meta.retrieved_at must not be today). It reads the Earthdata
-     login from .env by itself; this wrapper never touches credentials and
-     never passes any as arguments.
+  2. pipeline/imerg_history_grid.py --update  only when
+     events/rain_history_grid_daily.json ends 5 or more days before today
+     (Africa/Lagos), and at most once a day (the file's meta.retrieved_at
+     must not be today). Credentials come from the environment (CI) or .env
+     (a laptop); this wrapper never touches credentials and never passes
+     any as arguments.
   3. pipeline/score_forecasts.py     after a successful IMERG refresh, and on
      its own when events/forecast/scores.json is missing.
 
-Why the IMERG step gets no --start/--end: the script accepts a date range, but
-it rewrites rain_history_grid_daily.json to cover only the requested window,
-so a narrow range would throw away the 2000-present history the scorer and the
-analogues depend on. The default full range is the narrowest safe range, and
-it is cheap: responses are cached per 2-year chunk under
-pipeline/cache/imerg_history, so only the newest chunk hits the API.
+Why --update (Task 47): the IMERG step fetches only from the committed
+history's last day minus 7 days to now — enough to catch NASA's
+late-arriving data — and merges the fresh window in, leaving every earlier
+day byte-identical. The 2000-present history the scorer and the analogues
+depend on is never rewritten, so a daily run no longer needs the full-range
+scan or its cache.
 
 A failing step is logged and the run carries on to the next independent step
 (IMERG failing must not cost anyone today's forecast). The run exits non-zero
@@ -30,7 +32,9 @@ the whole run. A second concurrent run prints "already running" and exits 0.
 
 Logs: events/forecast/logs/run_daily-YYYY-MM.log, one file per month
 (Africa/Lagos). Each step logs a timestamp, the step name, its duration and
-its exit code; on failure the last 20 lines of its output follow.
+its exit code; on failure the last 20 lines of its output follow. The logs
+directory is created when missing; on CI the log lines also go to the job
+output, and the logs directory is never committed.
 
 Status: events/forecast/status.json after every run, validated against
 pipeline/schemas/run_daily_status.schema.json before it is written.
@@ -80,10 +84,12 @@ IMERG_LAG_DAYS = 5     # refresh the satellite history when it ends this far beh
 TAIL_LINES = 20        # lines of step output logged on failure
 
 VENV_PY = ROOT / "pipeline" / ".venv" / "bin" / "python"
+# CI has no venv: fall back to whatever interpreter is running the wrapper.
+PYTHON = str(VENV_PY) if VENV_PY.is_file() else sys.executable
 STEPS = {
-    "forecast": [str(VENV_PY), "pipeline/forecast.py"],
-    "imerg": [str(VENV_PY), "pipeline/imerg_history_grid.py"],
-    "score_forecasts": [str(VENV_PY), "pipeline/score_forecasts.py"],
+    "forecast": [PYTHON, "pipeline/forecast.py"],
+    "imerg": [PYTHON, "pipeline/imerg_history_grid.py", "--update"],
+    "score_forecasts": [PYTHON, "pipeline/score_forecasts.py"],
 }
 
 
@@ -126,7 +132,7 @@ def run_step(name: str, command: list[str]) -> dict:
 def fail_step_command(name: str) -> list[str]:
     """A command that fails on purpose; the real step command is never run."""
     message = f"step {name} failed on purpose (--fail-step)"
-    return [str(VENV_PY), "-c", f"import sys; sys.exit({message!r})"]
+    return [PYTHON, "-c", f"import sys; sys.exit({message!r})"]
 
 
 def imerg_state() -> tuple[date | None, str | None]:

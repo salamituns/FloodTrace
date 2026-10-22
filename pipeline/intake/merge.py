@@ -46,6 +46,7 @@ from statistics import median
 PIPELINE_DIR = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(PIPELINE_DIR))
 import geocode  # noqa: E402  (pipeline/geocode.py)
+from quotes import clip_quote  # noqa: E402
 
 PROJECT_ROOT = PIPELINE_DIR.parent
 EVENTS_DIR = PROJECT_ROOT / "events"
@@ -749,6 +750,10 @@ def main() -> None:
         validate(report, path)
         report = dict(report)
         report.setdefault("date_confidence", "approx")
+        if "quote" in report:
+            report["quote"] = clip_quote(report.get("quote"))
+        if "cause_quote" in report:
+            report["cause_quote"] = clip_quote(report.get("cause_quote"))
         reports.append(report)
     if not reports:
         raise SystemExit("no reports found")

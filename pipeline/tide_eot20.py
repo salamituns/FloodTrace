@@ -12,6 +12,7 @@ hourly.sea_level_height_msl) so the app can use either. Values are tide only (no
 from __future__ import annotations
 
 import json
+import os
 import sys
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
@@ -19,7 +20,13 @@ from pathlib import Path
 import numpy as np
 import pyTMD.compute
 
-MODEL_DIR = Path(__file__).resolve().parent / "cache" / "tide_models"
+# The EOT20 model directory (about 2.1 GB) lives under pipeline/cache/ and is
+# never committed. FLOODTRACE_TIDE_MODEL_DIR points the code at it elsewhere,
+# e.g. at an empty directory to prove a run does not need the model (Task 47).
+MODEL_DIR = Path(
+    os.environ.get("FLOODTRACE_TIDE_MODEL_DIR")
+    or Path(__file__).resolve().parent / "cache" / "tide_models"
+)
 EPOCH = datetime(2000, 1, 1, tzinfo=timezone.utc)
 
 

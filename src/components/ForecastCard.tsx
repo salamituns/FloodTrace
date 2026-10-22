@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState } from 'react';
+import { OFFICIAL_NOTICE } from '../lib/about';
 import {
 	analoguesLine,
 	cellContaining,
@@ -167,6 +168,7 @@ export function ForecastCard({ lon, lat }: { lon: number; lat: number }) {
 		<section className="card">
 			<h3>Coming up</h3>
 			<p className="area-answer">{headline}</p>
+			<p className="forecast-notice">{OFFICIAL_NOTICE}</p>
 			<p className={`forecast-made${fresh.stale ? ' forecast-made--stale' : ''}`}>{fresh.madeLine}</p>
 			<WeekStrip
 				days={weekDaysFrom(cell.days)}
@@ -265,12 +267,19 @@ export function ThisWeekCard() {
 	if (!file) return null;
 	const fresh = forecastFreshness(file.meta.run.generated_at);
 	const city = citywideHeadline(file);
-	if (city.quiet) return <p className="this-week--quiet">{city.text}</p>;
+	if (city.quiet)
+		return (
+			<div className="this-week--quiet">
+				<p>{city.text}</p>
+				<p className="forecast-notice">{OFFICIAL_NOTICE}</p>
+			</div>
+		);
 
 	return (
 		<section className="card this-week">
 			<h3>This week</h3>
 			<p className="area-answer">{city.text}</p>
+			<p className="forecast-notice">{OFFICIAL_NOTICE}</p>
 			<p className={`forecast-made${fresh.stale ? ' forecast-made--stale' : ''}`}>{fresh.madeLine}</p>
 			<WeekStrip
 				days={file.citywide.days.map((d) => ({

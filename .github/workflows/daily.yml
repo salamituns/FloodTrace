@@ -1,0 +1,70 @@
+# Task 47 (docs/tasks/47-cloud-daily-run.md): the daily forecast in the cloud.
+#
+# Runs the pipeline, commits the new forecast and lets the Cloudflare Pages
+# deployment rebuild. Nobody's laptop is involved. If the run fails, the job
+# still commits status.json (the forecast step records its own outcome there)
+# and then fails, so GitHub emails the owner.
+name: daily-forecast
+
+on:
+  schedule:
+    # 06:30 Lagos time every day. Lagos is UTC+1 with no daylight saving,
+    # so this is 05:30 UTC.
+    - cron: '30 5 * * *'
+  workflow_dispatch: {}  # manual runs from the Actions tab
+
+# read/write of the repo contents: nothing else is granted
+permissions:
+  contents: write
+
+# one daily run at a time; a queued manual run waits, it is not cancelled
+concurrency:
+  group: daily-forecast
+  cancel-in-progress: false
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'  # matches pipeline/.venv (3.12.8)
+          cache: pip
+          cache-dependency-path: pipeline/requirements.txt
+
+      - name: install the pipeline's Python dependencies
+        run: python -m pip install -r pipeline/requirements.txt
+
+      # The secrets live only on this step, and only in the environment:
+      # they are never echoed, logged or written to a file. run_daily.py
+      # passes them to the IMERG step; every other step ignores them.
+      - name: run the daily pipeline
+        env:
+          EARTHDATA_USERNAME: ${{ secrets.EARTHDATA_USERNAME }}
+          EARTHDATA_PASSWORD: ${{ secrets.EARTHDATA_PASSWORD }}
+        run: python pipeline/run_daily.py
+
+      # Runs even when the pipeline failed, so status.json (which records the
+      # failure) is still committed; the job itself then fails visibly.
+      # Only these paths are ever committed: the run archive (with status.json
+      # and the precomputed tide table) and the IMERG daily history.
+      - name: commit and push the new forecast
+        if: always()
+        run: |
+          set -eu
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add events/forecast events/rain_history_grid_daily.json
+          if git diff --cached --quiet; then
+            echo "nothing changed; no commit"
+            exit 0
+          fi
+          git commit -m "Daily forecast $(TZ=Africa/Lagos date +%F)"
+          if ! git push; then
+            echo "push rejected (a human push raced us); rebase once and retry"
+            git pull --rebase
+            git push
+          fi

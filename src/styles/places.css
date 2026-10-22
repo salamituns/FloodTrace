@@ -14,6 +14,10 @@
   right: 10px;
   z-index: 40;
   width: min(330px, calc(var(--right-w) - 16px));
+  max-width: calc(100vw - 16px);
+  max-height: calc(100dvh - var(--topbar-h) - 24px);
+  overflow-x: hidden;
+  overflow-y: auto;
   background: #fff;
   border: 1px solid var(--border-strong);
   border-radius: 10px;
@@ -23,9 +27,11 @@
   flex-direction: column;
   gap: 8px;
   white-space: normal; /* the top bar is nowrap; the panel must wrap at any width */
+  overflow-wrap: anywhere;
+  min-width: 0;
 }
 .howto__head { display: flex; justify-content: space-between; align-items: center; }
-.howto__close { color: #5d574e; font-size: 13px; line-height: 1; padding: 3px 6px; border-radius: 5px; }
+.howto__close { color: #5d574e; font-size: 13px; line-height: 1; padding: 3px 6px; border-radius: 5px; min-width: 40px; min-height: 40px; }
 .howto__close:hover { background: var(--panel-2); color: var(--text); }
 .howto p { margin: 0; line-height: 1.45; }
 .howto__steps { margin: 0; padding-left: 18px; display: flex; flex-direction: column; gap: 3px; line-height: 1.4; }
