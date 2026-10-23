@@ -2,35 +2,36 @@
  "meta": {
   "built_by": "pipeline/score_forecasts.py",
   "task": "42-forecast-scoring (docs/tasks/42-forecast-scoring.md), part A",
-  "generated_at": "2026-10-22T16:13:42+00:00",
+  "generated_at": "2026-10-23T20:21:07+00:00",
   "method": "Every archived forecast run is compared with what the IMERG satellite later measured for the same cell and day. Brier scores use the run's chance of at least 20 / 40 mm against the observed total; the climatology baseline is that cell's own frequency of such days in the April-November window (the year-months the catalog searched, 2014 onward), and skill = 1 - Brier / Brier_climatology. A medium or high level counts as a warning, scored as hits, misses and false alarms against IMERG >= 40 mm in that cell and against a flood reported within 5 km (the same rule as pipeline/forecast.py). Grouped by lead time, day 1 to day 7. Below 30 scored cell-days for a lead day, enough_data is false.",
-  "imerg_last_day": "2026-10-18",
+  "imerg_last_day": "2026-10-22",
   "archive_runs": [
    "2026-10-21-1933.json",
    "2026-10-21-2116.json",
    "2026-10-21.json",
-   "2026-10-22-1650.json",
-   "2026-10-22.json"
+   "2026-10-22.json",
+   "2026-10-23.json"
   ],
   "archive_first_run_date": "2026-10-21-1933",
   "calibrated_runs": [
-   "2026-10-22.json"
+   "2026-10-22.json",
+   "2026-10-23.json"
   ],
   "calibration": "Runs listed in calibrated_runs carry CALIBRATED rain (quantile mapping fitted by pipeline/calibrate.py; see each run's meta.calibration): their chance fields and median_mm are IMERG-equivalent, and raw_median_mm keeps the uncalibrated median beside it. Runs before that are raw, so the Brier and warning scores mix the two regimes while the archive fills. median_ge_40mm scores the raw and the calibrated median of the calibrated runs against IMERG >= 40 mm, so the calibration's effect on the medians shows there first.",
   "imerg_refresh": "The IMERG history (events/rain_history_grid_daily.json) is refreshed separately: run pipeline/imerg_history_grid.py first (it needs Earthdata credentials), then run this script. Days the satellite record does not yet cover are not scored.",
-  "note": "Nothing to score yet: no archived forecast day is covered by the IMERG history. The archive starts 2026-10-21-1933 and IMERG covers through 2026-10-18. Refresh IMERG (see imerg_refresh) and run again."
+  "note": null
  },
- "n_scored": 0,
- "enough_data": false,
+ "n_scored": 204,
+ "enough_data": true,
  "totals": {
-  "n_scored": 0,
-  "enough_data": false,
-  "brier_ge_20mm": null,
-  "brier_clim_ge_20mm": null,
-  "skill_ge_20mm": null,
-  "brier_ge_40mm": null,
-  "brier_clim_ge_40mm": null,
-  "skill_ge_40mm": null,
+  "n_scored": 204,
+  "enough_data": true,
+  "brier_ge_20mm": 0.0006,
+  "brier_clim_ge_20mm": 0.0091,
+  "skill_ge_20mm": 0.932,
+  "brier_ge_40mm": 0.0001,
+  "brier_clim_ge_40mm": 0.0008,
+  "skill_ge_40mm": 0.9378,
   "vs_imerg_ge_40mm": {
    "hits": 0,
    "misses": 0,
@@ -42,7 +43,7 @@
    "false_alarms": 0
   },
   "median_ge_40mm": {
-   "n_scored_calibrated_runs": 0,
+   "n_scored_calibrated_runs": 68,
    "raw": {
     "hits": 0,
     "misses": 0,
@@ -65,14 +66,14 @@
  "by_lead_day": [
   {
    "lead_day": 1,
-   "n_scored": 0,
-   "enough_data": false,
-   "brier_ge_20mm": null,
-   "brier_clim_ge_20mm": null,
-   "skill_ge_20mm": null,
-   "brier_ge_40mm": null,
-   "brier_clim_ge_40mm": null,
-   "skill_ge_40mm": null,
+   "n_scored": 136,
+   "enough_data": true,
+   "brier_ge_20mm": 0.0009,
+   "brier_clim_ge_20mm": 0.0091,
+   "skill_ge_20mm": 0.9005,
+   "brier_ge_40mm": 0.0001,
+   "brier_clim_ge_40mm": 0.0008,
+   "skill_ge_40mm": 0.9067,
    "vs_imerg_ge_40mm": {
     "hits": 0,
     "misses": 0,
@@ -84,7 +85,7 @@
     "false_alarms": 0
    },
    "median_ge_40mm": {
-    "n_scored_calibrated_runs": 0,
+    "n_scored_calibrated_runs": 68,
     "raw": {
      "hits": 0,
      "misses": 0,
@@ -99,14 +100,14 @@
   },
   {
    "lead_day": 2,
-   "n_scored": 0,
-   "enough_data": false,
-   "brier_ge_20mm": null,
-   "brier_clim_ge_20mm": null,
-   "skill_ge_20mm": null,
-   "brier_ge_40mm": null,
-   "brier_clim_ge_40mm": null,
-   "skill_ge_40mm": null,
+   "n_scored": 68,
+   "enough_data": true,
+   "brier_ge_20mm": 0.0,
+   "brier_clim_ge_20mm": 0.0091,
+   "skill_ge_20mm": 0.9948,
+   "brier_ge_40mm": 0.0,
+   "brier_clim_ge_40mm": 0.0008,
+   "skill_ge_40mm": 1.0,
    "vs_imerg_ge_40mm": {
     "hits": 0,
     "misses": 0,

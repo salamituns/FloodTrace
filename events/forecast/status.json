@@ -3,29 +3,33 @@
     "built_by": "pipeline/run_daily.py",
     "task": "45-daily-run (docs/tasks/45-daily-run.md)",
     "schema": "pipeline/schemas/run_daily_status.schema.json",
-    "generated_at": "2026-10-22T22:42:57+00:00"
+    "generated_at": "2026-10-23T20:21:08+00:00"
   },
-  "last_run": "2026-10-22T23:42:55+01:00",
+  "last_run": "2026-10-23T21:13:27+01:00",
   "ok": true,
   "steps": {
     "forecast": {
       "status": "ok",
-      "started_at": "2026-10-22T23:42:55+01:00",
-      "finished_at": "2026-10-22T23:42:57+01:00",
+      "started_at": "2026-10-23T21:13:27+01:00",
+      "finished_at": "2026-10-23T21:13:35+01:00",
       "exit_code": 0,
-      "seconds": 2.2
+      "seconds": 7.4
     },
     "imerg": {
-      "status": "skipped",
-      "at": "2026-10-22T23:42:57+01:00",
-      "reason": "--skip-imerg"
+      "status": "ok",
+      "started_at": "2026-10-23T21:13:35+01:00",
+      "finished_at": "2026-10-23T21:21:06+01:00",
+      "exit_code": 0,
+      "seconds": 450.8
     },
     "score_forecasts": {
-      "status": "skipped",
-      "at": "2026-10-22T23:42:57+01:00",
-      "reason": "no IMERG refresh this run and scores.json exists"
+      "status": "ok",
+      "started_at": "2026-10-23T21:21:06+01:00",
+      "finished_at": "2026-10-23T21:21:07+01:00",
+      "exit_code": 0,
+      "seconds": 1.7
     }
   },
-  "imerg_through": "2026-10-18",
-  "n_scored": 0
+  "imerg_through": "2026-10-22",
+  "n_scored": 204
 }
