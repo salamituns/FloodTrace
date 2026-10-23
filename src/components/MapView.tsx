@@ -10,6 +10,7 @@ import { siteBounds, sitePoint } from '../sites/geo';
 import { buildWatchList } from '../lib/watchList';
 import { EMPTY_RAIN_SUMMARY, PRIORITY_RGB } from './SitePanel';
 import type { SiteRecord } from '../sites/types';
+import { WAYBACK_CREDIT } from '../sites/wayback';
 import { causeLabel } from '../lib/causes';
 import { siteLinksForEvent } from '../sites/links';
 import { RAIN_STOPS, rainColor } from '../lib/rainColor';
@@ -996,7 +997,7 @@ export function MapView() {
         <DeckOverlay layers={deckLayers} getTooltip={tooltip} />
         <NavigationControl position="top-left" visualizePitch />
         <ScaleControl position="bottom-left" />
-        <AttributionControl compact={true} position="bottom-right" customAttribution={`${event.sar ? `Contains modified Copernicus Sentinel data ${new Date(event.sar.observedAt).getUTCFullYear()} · ` : ''}${event.rainGrid ? 'NASA GPM IMERG · ' : ''}${event.builtup && layers.builtup.visible ? 'GHSL © EC JRC · ' : ''}© OpenStreetMap contributors`} />
+        <AttributionControl compact={true} position="bottom-right" customAttribution={`${event.sar ? `Contains modified Copernicus Sentinel data ${new Date(event.sar.observedAt).getUTCFullYear()} · ` : ''}${event.rainGrid ? 'NASA GPM IMERG · ' : ''}${event.builtup && layers.builtup.visible ? 'GHSL © EC JRC · ' : ''}${mode === 'sites' && selectedSite?.change.wayback.length ? `${WAYBACK_CREDIT} · ` : ''}© OpenStreetMap contributors`} />
       </Map>
       {spotMenu && (
         <div className="map-menu" style={{ left: spotMenu.x, top: spotMenu.y }}>

@@ -247,13 +247,22 @@ h2, h3, h4 { margin: 0; font-size: 12.5px; font-weight: 600; }
 .promises li { display: flex; flex-direction: column; gap: 3px; align-items: flex-start; }
 
 .ba { display: flex; flex-direction: column; gap: 4px; }
-.ba__frame { position: relative; overflow: hidden; border-radius: 6px; background: #ddd; }
-.ba__frame img { display: block; width: 100%; height: auto; }
-.ba__frame .ba__top { position: absolute; inset: 0; height: 100%; }
+.ba__frame { position: relative; overflow: hidden; border-radius: 6px; background: #c8c8c8; touch-action: none; }
+.ba__frame .ba__top { position: absolute; inset: 0; }
+.ba__frame .ba__top .wb-chip { height: 100%; aspect-ratio: auto; }
 .ba__divider { position: absolute; top: 0; bottom: 0; width: 2px; background: #fff; box-shadow: 0 0 3px rgba(0,0,0,.5); pointer-events: none; }
-.ba input[type=range] { width: 100%; }
+.ba input[type=range] { width: 100%; min-height: 44px; }
 .ba__dates { display: flex; justify-content: space-between; align-items: center; color: var(--muted); font-size: 11px; }
 .ba__dates select { font: inherit; font-size: 11px; }
+
+.wb-chip { position: relative; width: 100%; overflow: hidden; background: #c8c8c8; }
+.wb-chip__tile { position: absolute; display: block; max-width: none; pointer-events: none; }
+.wb-chip__mark { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
+.wb-chip__ph, .wb-chip__fail {
+  position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
+  gap: 8px; background: #d4d2cc; color: #5d574e; font-size: 12px;
+}
+.wb-chip__fail button { font: inherit; font-weight: 600; color: var(--accent); }
 
 .spark { display: block; margin: 2px 0 4px; }
 .spark__line { fill: none; stroke: #2f7fb6; stroke-width: 1.6; }

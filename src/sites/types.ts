@@ -63,10 +63,24 @@ export interface SiteClaim {
   status_note?: string | null;
 }
 
+/** North-up lon/lat box of one Wayback chip (same crop as the old JPG). */
+export interface WaybackBounds {
+  west: number;
+  south: number;
+  east: number;
+  north: number;
+}
+
 export interface WaybackChip {
-  file: string;
-  marked_file?: string | null;
+  release: number;
+  zoom: number;
+  /** Esri WMTS template with `{level}`, `{row}`, `{col}`. */
+  tile_url: string;
+  bounds: WaybackBounds;
   resolution_m?: number | null;
+  /** Station close-ups also pin the station itself. */
+  lon?: number;
+  lat?: number;
 }
 
 export interface WaybackImage extends WaybackChip {

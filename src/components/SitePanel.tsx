@@ -6,7 +6,8 @@ import { causeLabel, CAUSES } from '../lib/causes';
 import { promiseStatus, type PromiseStatus, type PromiseUpdate } from '../lib/promises';
 import { buildWatchList, type RainSummary, type WatchTest } from '../lib/watchList';
 import type { CauseAttribution, CauseTag } from '../events/types';
-import type { EvidenceStatus, SiteClaim, SitePromise, SiteRecord, WaybackImage } from '../sites/types';
+import type { EvidenceStatus, SiteClaim, SitePromise, SiteRecord, WaybackChip, WaybackImage } from '../sites/types';
+import { BeforeAfterSlider, WAYBACK_CREDIT } from './WaybackChip';
 import { ClampText } from './ClampText';
 import { Chevron } from './Icons';
 import { InfoTip } from './InfoTip';
@@ -62,7 +63,6 @@ const pad = (n: number) => (n < 10 ? '0' : '') + n;
 const isoDay = (d: Date) => `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`;
 const plural = (n: number, word: string) => `${n} ${word}${n === 1 ? '' : 's'}`;
 const year = (iso: string) => iso.slice(0, 4);
-const asset = (f: string) => (f.startsWith('/') ? f : `/${f}`);
 
 /** Findings in words: what an imagery check or an official claim showed (docs/design/WORDS.md wording). */
 const FINDING_WORDS: Record<PromiseUpdate['finding'], string> = {
@@ -260,7 +260,7 @@ function Sparkline({ byYear, floodYears, fmt }: { byYear: Record<string, number>
 }
 
 /** Two dated images, one on top of the other; the slider reveals "after" over "before". */
-function BeforeAfter({ images }: { images: WaybackImage[] }) {
+function BeforeAfter({ images, geometry }: { images: WaybackImage[]; geometry: SiteRecord['geometry'] }) {
   // Drop coarse low-zoom fallbacks (e.g. the 1999 15 m mosaic): they can't show a drain.
   const usable = useMemo(
     () => images.filter((im) => (im.resolution_m ?? 0) <= 2).sort((a, b) => a.acq_date.localeCompare(b.acq_date)),
@@ -279,10 +279,8 @@ function BeforeAfter({ images }: { images: WaybackImage[] }) {
   // Close-ups can only be compared where both dates have one at the same station.
   const stations = (before.detail_chips ?? []).map((c) => c.station).filter((st) => after.detail_chips?.some((c) => c.station === st));
   const view = stations.includes(station) ? station : 'overview';
-  const src = (im: WaybackImage) => {
-    const chip = view === 'overview' ? im : im.detail_chips!.find((c) => c.station === view)!;
-    return asset(chip.marked_file ?? chip.file);
-  };
+  const chipOf = (im: WaybackImage): WaybackChip =>
+    view === 'overview' ? im : im.detail_chips!.find((c) => c.station === view)!;
   return (
     <div className="ba">
       {stations.length > 0 && (
@@ -294,12 +292,15 @@ function BeforeAfter({ images }: { images: WaybackImage[] }) {
           ))}
         </div>
       )}
-      <div className="ba__frame">
-        <img src={src(before)} alt={`Imagery ${fmtOn(before.acq_date)}`} />
-        <img src={src(after)} alt={`Imagery ${fmtOn(after.acq_date)}`} className="ba__top" style={{ clipPath: `inset(0 0 0 ${split}%)` }} />
-        <span className="ba__divider" style={{ left: `${split}%` }} />
-      </div>
-      <input type="range" min={0} max={100} value={split} onChange={(e) => setSplit(+e.target.value)} aria-label="Before/after split" />
+      <BeforeAfterSlider
+        before={chipOf(before)}
+        after={chipOf(after)}
+        beforeAlt={`Imagery ${fmtOn(before.acq_date)}`}
+        afterAlt={`Imagery ${fmtOn(after.acq_date)}`}
+        geometry={geometry}
+        split={split}
+        onSplit={setSplit}
+      />
       <div className="ba__dates">
         <label className="ba__end">
           Before <select value={bi} onChange={(e) => setBi(+e.target.value)} aria-label="Before date">
@@ -312,7 +313,7 @@ function BeforeAfter({ images }: { images: WaybackImage[] }) {
           </select>
         </label>
       </div>
-      <small className="causes__note">Esri World Imagery Wayback (acquisition dates) · Esri, Maxar, Earthstar Geographics</small>
+      <small className="causes__note">{WAYBACK_CREDIT}</small>
     </div>
   );
 }
@@ -435,7 +436,7 @@ function SiteDetail({ site, promises }: { site: SiteRecord; promises: Record<str
         </header>
         {ch.summary && <p className="site__summary">{ch.summary}</p>}
         <h4 className="subhead">Then and now</h4>
-        <BeforeAfter images={ch.wayback} />
+        <BeforeAfter images={ch.wayback} geometry={site.geometry} />
         {(ch.s2_wet_season || ch.buildings_0_10m) && (
           <Fold title="Measurements">
             {ch.s2_wet_season && (

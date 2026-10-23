@@ -10,7 +10,8 @@
    "release_vs_acquisition": "release date != acquisition date; for every release the release's own metadata layer was queried (identify) at the site point to get the real acquisition date (SRC_DATE), source and resolution of the raster drawn at the chip zoom; releases deduped by acquisition date",
    "chip": "point: 500 x 500 m; line: bbox + 150 m; JPEG q85; marked copy = site geometry drawn as a thin outline. Point chips and station detail chips are native z18 (17 or lower when tiles are missing). Whole-corridor chips for lines are rendered at the highest zoom that fits 1200 px and downscaled to that cap, so long corridors are layout-level overviews; lines whose bbox + pad exceeds 1400 m additionally get native-z18 500 x 500 m detail chips at their start/mid/end stations, on the anchor dates only",
    "dates_selected": "every distinct acquisition date up to 10 per site: the closest date either side of the event date and of each image_windows bound, then an even spread",
-   "cloud_note": "'brightness' is a cloud/haze heuristic (fraction of near-white pixels), not an interpretation"
+   "cloud_note": "'brightness' is a cloud/haze heuristic (fraction of near-white pixels), not an interpretation",
+   "displayed": "live Esri World Imagery Wayback tiles in the browser; pixels are not stored or redistributed"
   },
   "osm": {
    "source": "OpenStreetMap via Overpass, current data (not historical)",
@@ -138,14 +139,20 @@
      ],
      "downscaled_from_px": null,
      "chip_window": "line bbox + 150 m (656 x 1373 m)",
-     "file": "events/drainage_sites/agric-bridge/1999-01-15.jpg",
-     "marked_file": "events/drainage_sites/agric-bridge/1999-01-15_marked.jpg",
      "brightness": {
       "mean_luminance": 0.452,
       "bright_frac": 0.0
      },
      "detail_chips": [],
-     "label": "1999-01-15 z13 Terracolor 15m"
+     "label": "1999-01-15 z13 Terracolor 15m",
+     "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/10/{level}/{row}/{col}",
+     "bounds": {
+      "west": 3.4809494,
+      "south": 6.6245381,
+      "east": 3.4867859,
+      "north": 6.6368151
+     },
+     "cache_file": "pipeline/cache/wayback/chips/agric-bridge/1999-01-15.jpg"
     },
     {
      "acq_date": "2013-01-01",
@@ -164,14 +171,20 @@
      ],
      "downscaled_from_px": null,
      "chip_window": "line bbox + 150 m (656 x 1373 m)",
-     "file": "events/drainage_sites/agric-bridge/2013-01-01.jpg",
-     "marked_file": "events/drainage_sites/agric-bridge/2013-01-01_marked.jpg",
      "brightness": {
       "mean_luminance": 0.389,
       "bright_frac": 0.0
      },
      "detail_chips": [],
-     "label": "2013-01-01 z17 GE01 0.46m"
+     "label": "2013-01-01 z17 GE01 0.46m",
+     "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/29387/{level}/{row}/{col}",
+     "bounds": {
+      "west": 3.4809387,
+      "south": 6.6244742,
+      "east": 3.4868717,
+      "north": 6.6368896
+     },
+     "cache_file": "pipeline/cache/wayback/chips/agric-bridge/2013-01-01.jpg"
     },
     {
      "acq_date": "2015-12-08",
@@ -190,14 +203,20 @@
      ],
      "downscaled_from_px": null,
      "chip_window": "line bbox + 150 m (656 x 1373 m)",
-     "file": "events/drainage_sites/agric-bridge/2015-12-08.jpg",
-     "marked_file": "events/drainage_sites/agric-bridge/2015-12-08_marked.jpg",
      "brightness": {
       "mean_luminance": 0.448,
       "bright_frac": 0.0
      },
      "detail_chips": [],
-     "label": "2015-12-08 z17 WV02 0.5m"
+     "label": "2015-12-08 z17 WV02 0.5m",
+     "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/2168/{level}/{row}/{col}",
+     "bounds": {
+      "west": 3.4809387,
+      "south": 6.6244742,
+      "east": 3.4868717,
+      "north": 6.6368896
+     },
+     "cache_file": "pipeline/cache/wayback/chips/agric-bridge/2015-12-08.jpg"
     },
     {
      "acq_date": "2018-12-24",
@@ -216,14 +235,20 @@
      ],
      "downscaled_from_px": null,
      "chip_window": "line bbox + 150 m (656 x 1373 m)",
-     "file": "events/drainage_sites/agric-bridge/2018-12-24.jpg",
-     "marked_file": "events/drainage_sites/agric-bridge/2018-12-24_marked.jpg",
      "brightness": {
       "mean_luminance": 0.602,
       "bright_frac": 0.0
      },
      "detail_chips": [],
-     "label": "2018-12-24 z17 WV04 0.31m"
+     "label": "2018-12-24 z17 WV04 0.31m",
+     "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/4756/{level}/{row}/{col}",
+     "bounds": {
+      "west": 3.4809387,
+      "south": 6.6244742,
+      "east": 3.4868717,
+      "north": 6.6368896
+     },
+     "cache_file": "pipeline/cache/wayback/chips/agric-bridge/2018-12-24.jpg"
     },
     {
      "acq_date": "2020-01-03",
@@ -242,14 +267,20 @@
      ],
      "downscaled_from_px": null,
      "chip_window": "line bbox + 150 m (656 x 1373 m)",
-     "file": "events/drainage_sites/agric-bridge/2020-01-03.jpg",
-     "marked_file": "events/drainage_sites/agric-bridge/2020-01-03_marked.jpg",
      "brightness": {
       "mean_luminance": 0.483,
       "bright_frac": 0.0
      },
      "detail_chips": [],
-     "label": "2020-01-03 z17 WV03 0.31m"
+     "label": "2020-01-03 z17 WV03 0.31m",
+     "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/44710/{level}/{row}/{col}",
+     "bounds": {
+      "west": 3.4809387,
+      "south": 6.6244742,
+      "east": 3.4868717,
+      "north": 6.6368896
+     },
+     "cache_file": "pipeline/cache/wayback/chips/agric-bridge/2020-01-03.jpg"
     },
     {
      "acq_date": "2025-04-30",
@@ -268,17 +299,22 @@
      ],
      "downscaled_from_px": null,
      "chip_window": "line bbox + 150 m (656 x 1373 m)",
-     "file": "events/drainage_sites/agric-bridge/2025-04-30.jpg",
-     "marked_file": "events/drainage_sites/agric-bridge/2025-04-30_marked.jpg",
      "brightness": {
       "mean_luminance": 0.466,
       "bright_frac": 0.001
      },
      "detail_chips": [],
-     "label": "2025-04-30 z17 LG01 0.34m"
+     "label": "2025-04-30 z17 LG01 0.34m",
+     "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/51127/{level}/{row}/{col}",
+     "bounds": {
+      "west": 3.4809387,
+      "south": 6.6244742,
+      "east": 3.4868717,
+      "north": 6.6368896
+     },
+     "cache_file": "pipeline/cache/wayback/chips/agric-bridge/2025-04-30.jpg"
     }
    ],
-   "contact_sheet": "events/drainage_sites/agric-bridge/contact_sheet.jpg",
    "osm": {
     "source": "OpenStreetMap via Overpass (current data, not historical)",
     "licence": "ODbL (OpenStreetMap contributors)",
@@ -472,14 +508,20 @@
      ],
      "downscaled_from_px": null,
      "chip_window": "line bbox + 150 m (817 x 2216 m)",
-     "file": "events/drainage_sites/agungi-collector/2010-02-06.jpg",
-     "marked_file": "events/drainage_sites/agungi-collector/2010-02-06_marked.jpg",
      "brightness": {
       "mean_luminance": 0.352,
       "bright_frac": 0.0
      },
      "detail_chips": [],
-     "label": "2010-02-06 z16 WV02 0.5m"
+     "label": "2010-02-06 z16 WV02 0.5m",
+     "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/10/{level}/{row}/{col}",
+     "bounds": {
+      "west": 3.5146809,
+      "south": 6.436936,
+      "east": 3.5220623,
+      "north": 6.4569786
+     },
+     "cache_file": "pipeline/cache/wayback/chips/agungi-collector/2010-02-06.jpg"
     },
     {
      "acq_date": "2013-01-01",
@@ -498,14 +540,20 @@
      ],
      "downscaled_from_px": null,
      "chip_window": "line bbox + 150 m (817 x 2216 m)",
-     "file": "events/drainage_sites/agungi-collector/2013-01-01.jpg",
-     "marked_file": "events/drainage_sites/agungi-collector/2013-01-01_marked.jpg",
      "brightness": {
       "mean_luminance": 0.416,
       "bright_frac": 0.0
      },
      "detail_chips": [],
-     "label": "2013-01-01 z16 GE01 0.46m"
+     "label": "2013-01-01 z16 GE01 0.46m",
+     "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/29387/{level}/{row}/{col}",
+     "bounds": {
+      "west": 3.5146809,
+      "south": 6.436936,
+      "east": 3.5220623,
+      "north": 6.4569786
+     },
+     "cache_file": "pipeline/cache/wayback/chips/agungi-collector/2013-01-01.jpg"
     },
     {
      "acq_date": "2015-12-08",
@@ -524,14 +572,20 @@
      ],
      "downscaled_from_px": null,
      "chip_window": "line bbox + 150 m (817 x 2216 m)",
-     "file": "events/drainage_sites/agungi-collector/2015-12-08.jpg",
-     "marked_file": "events/drainage_sites/agungi-collector/2015-12-08_marked.jpg",
      "brightness": {
       "mean_luminance": 0.433,
       "bright_frac": 0.001
      },
      "detail_chips": [],
-     "label": "2015-12-08 z16 WV02 0.5m"
+     "label": "2015-12-08 z16 WV02 0.5m",
+     "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/2168/{level}/{row}/{col}",
+     "bounds": {
+      "west": 3.5146809,
+      "south": 6.436936,
+      "east": 3.5220623,
+      "north": 6.4569786
+     },
+     "cache_file": "pipeline/cache/wayback/chips/agungi-collector/2015-12-08.jpg"
     },
     {
      "acq_date": "2018-12-24",
@@ -550,14 +604,20 @@
      ],
      "downscaled_from_px": null,
      "chip_window": "line bbox + 150 m (817 x 2216 m)",
-     "file": "events/drainage_sites/agungi-collector/2018-12-24.jpg",
-     "marked_file": "events/drainage_sites/agungi-collector/2018-12-24_marked.jpg",
      "brightness": {
       "mean_luminance": 0.647,
       "bright_frac": 0.0
      },
      "detail_chips": [],
-     "label": "2018-12-24 z16 WV04 0.31m"
+     "label": "2018-12-24 z16 WV04 0.31m",
+     "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/4756/{level}/{row}/{col}",
+     "bounds": {
+      "west": 3.5146809,
+      "south": 6.436936,
+      "east": 3.5220623,
+      "north": 6.4569786
+     },
+     "cache_file": "pipeline/cache/wayback/chips/agungi-collector/2018-12-24.jpg"
     },
     {
      "acq_date": "2020-04-05",
@@ -576,8 +636,6 @@
      ],
      "downscaled_from_px": null,
      "chip_window": "line bbox + 150 m (817 x 2216 m)",
-     "file": "events/drainage_sites/agungi-collector/2020-04-05.jpg",
-     "marked_file": "events/drainage_sites/agungi-collector/2020-04-05_marked.jpg",
      "brightness": {
       "mean_luminance": 0.483,
       "bright_frac": 0.007
@@ -593,8 +651,15 @@
         842,
         848
        ],
-       "file": "events/drainage_sites/agungi-collector/2020-04-05_detail1.jpg",
-       "marked_file": "events/drainage_sites/agungi-collector/2020-04-05_detail1_marked.jpg"
+       "release": 44710,
+       "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/44710/{level}/{row}/{col}",
+       "bounds": {
+        "west": 3.5140425,
+        "south": 6.4360298,
+        "east": 3.5185593,
+        "north": 6.4405501
+       },
+       "cache_file": "pipeline/cache/wayback/chips/agungi-collector/2020-04-05_detail1.jpg"
       },
       {
        "station": "mid",
@@ -606,8 +671,15 @@
         842,
         849
        ],
-       "file": "events/drainage_sites/agungi-collector/2020-04-05_detail2.jpg",
-       "marked_file": "events/drainage_sites/agungi-collector/2020-04-05_detail2_marked.jpg"
+       "release": 44710,
+       "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/44710/{level}/{row}/{col}",
+       "bounds": {
+        "west": 3.5155284,
+        "south": 6.4447932,
+        "east": 3.5200453,
+        "north": 6.4493188
+       },
+       "cache_file": "pipeline/cache/wayback/chips/agungi-collector/2020-04-05_detail2.jpg"
       },
       {
        "station": "end",
@@ -619,11 +691,26 @@
         842,
         848
        ],
-       "file": "events/drainage_sites/agungi-collector/2020-04-05_detail3.jpg",
-       "marked_file": "events/drainage_sites/agungi-collector/2020-04-05_detail3_marked.jpg"
+       "release": 44710,
+       "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/44710/{level}/{row}/{col}",
+       "bounds": {
+        "west": 3.518452,
+        "south": 6.4533593,
+        "east": 3.5229689,
+        "north": 6.4578795
+       },
+       "cache_file": "pipeline/cache/wayback/chips/agungi-collector/2020-04-05_detail3.jpg"
       }
      ],
-     "label": "2020-04-05 z16 WV02 0.5m"
+     "label": "2020-04-05 z16 WV02 0.5m",
+     "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/44710/{level}/{row}/{col}",
+     "bounds": {
+      "west": 3.5146809,
+      "south": 6.436936,
+      "east": 3.5220623,
+      "north": 6.4569786
+     },
+     "cache_file": "pipeline/cache/wayback/chips/agungi-collector/2020-04-05.jpg"
     },
     {
      "acq_date": "2024-11-30",
@@ -642,8 +729,6 @@
      ],
      "downscaled_from_px": null,
      "chip_window": "line bbox + 150 m (817 x 2216 m)",
-     "file": "events/drainage_sites/agungi-collector/2024-11-30.jpg",
-     "marked_file": "events/drainage_sites/agungi-collector/2024-11-30_marked.jpg",
      "brightness": {
       "mean_luminance": 0.484,
       "bright_frac": 0.014
@@ -659,8 +744,15 @@
         842,
         848
        ],
-       "file": "events/drainage_sites/agungi-collector/2024-11-30_detail1.jpg",
-       "marked_file": "events/drainage_sites/agungi-collector/2024-11-30_detail1_marked.jpg"
+       "release": 51127,
+       "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/51127/{level}/{row}/{col}",
+       "bounds": {
+        "west": 3.5140425,
+        "south": 6.4360298,
+        "east": 3.5185593,
+        "north": 6.4405501
+       },
+       "cache_file": "pipeline/cache/wayback/chips/agungi-collector/2024-11-30_detail1.jpg"
       },
       {
        "station": "mid",
@@ -672,8 +764,15 @@
         842,
         849
        ],
-       "file": "events/drainage_sites/agungi-collector/2024-11-30_detail2.jpg",
-       "marked_file": "events/drainage_sites/agungi-collector/2024-11-30_detail2_marked.jpg"
+       "release": 51127,
+       "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/51127/{level}/{row}/{col}",
+       "bounds": {
+        "west": 3.5155284,
+        "south": 6.4447932,
+        "east": 3.5200453,
+        "north": 6.4493188
+       },
+       "cache_file": "pipeline/cache/wayback/chips/agungi-collector/2024-11-30_detail2.jpg"
       },
       {
        "station": "end",
@@ -685,14 +784,28 @@
         842,
         848
        ],
-       "file": "events/drainage_sites/agungi-collector/2024-11-30_detail3.jpg",
-       "marked_file": "events/drainage_sites/agungi-collector/2024-11-30_detail3_marked.jpg"
+       "release": 51127,
+       "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/51127/{level}/{row}/{col}",
+       "bounds": {
+        "west": 3.518452,
+        "south": 6.4533593,
+        "east": 3.5229689,
+        "north": 6.4578795
+       },
+       "cache_file": "pipeline/cache/wayback/chips/agungi-collector/2024-11-30_detail3.jpg"
       }
      ],
-     "label": "2024-11-30 z16 WV03 0.31m"
+     "label": "2024-11-30 z16 WV03 0.31m",
+     "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/51127/{level}/{row}/{col}",
+     "bounds": {
+      "west": 3.5146809,
+      "south": 6.436936,
+      "east": 3.5220623,
+      "north": 6.4569786
+     },
+     "cache_file": "pipeline/cache/wayback/chips/agungi-collector/2024-11-30.jpg"
     }
    ],
-   "contact_sheet": "events/drainage_sites/agungi-collector/contact_sheet.jpg",
    "osm": {
     "source": "OpenStreetMap via Overpass (current data, not historical)",
     "licence": "ODbL (OpenStreetMap contributors)",
@@ -915,14 +1028,20 @@
      ],
      "downscaled_from_px": null,
      "chip_window": "line bbox + 150 m (1070 x 2382 m)",
-     "file": "events/drainage_sites/alapere-ogudu/2012-05-01.jpg",
-     "marked_file": "events/drainage_sites/alapere-ogudu/2012-05-01_marked.jpg",
      "brightness": {
       "mean_luminance": 0.544,
       "bright_frac": 0.035
      },
      "detail_chips": [],
-     "label": "2012-05-01 z16 WV02 0.5m"
+     "label": "2012-05-01 z16 WV02 0.5m",
+     "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/10/{level}/{row}/{col}",
+     "bounds": {
+      "west": 3.3871579,
+      "south": 6.5718034,
+      "east": 3.3968353,
+      "north": 6.5933541
+     },
+     "cache_file": "pipeline/cache/wayback/chips/alapere-ogudu/2012-05-01.jpg"
     },
     {
      "acq_date": "2012-12-23",
@@ -941,14 +1060,20 @@
      ],
      "downscaled_from_px": null,
      "chip_window": "line bbox + 150 m (1070 x 2382 m)",
-     "file": "events/drainage_sites/alapere-ogudu/2012-12-23.jpg",
-     "marked_file": "events/drainage_sites/alapere-ogudu/2012-12-23_marked.jpg",
      "brightness": {
       "mean_luminance": 0.354,
       "bright_frac": 0.0
      },
      "detail_chips": [],
-     "label": "2012-12-23 z16 WV02 0.5m"
+     "label": "2012-12-23 z16 WV02 0.5m",
+     "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/29387/{level}/{row}/{col}",
+     "bounds": {
+      "west": 3.3871579,
+      "south": 6.5718034,
+      "east": 3.3968353,
+      "north": 6.5933541
+     },
+     "cache_file": "pipeline/cache/wayback/chips/alapere-ogudu/2012-12-23.jpg"
     },
     {
      "acq_date": "2015-12-08",
@@ -967,8 +1092,6 @@
      ],
      "downscaled_from_px": null,
      "chip_window": "line bbox + 150 m (1070 x 2382 m)",
-     "file": "events/drainage_sites/alapere-ogudu/2015-12-08.jpg",
-     "marked_file": "events/drainage_sites/alapere-ogudu/2015-12-08_marked.jpg",
      "brightness": {
       "mean_luminance": 0.433,
       "bright_frac": 0.001
@@ -984,8 +1107,15 @@
         421,
         424
        ],
-       "file": "events/drainage_sites/alapere-ogudu/2015-12-08_detail1.jpg",
-       "marked_file": "events/drainage_sites/alapere-ogudu/2015-12-08_detail1_marked.jpg"
+       "release": 2168,
+       "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/2168/{level}/{row}/{col}",
+       "bounds": {
+        "west": 3.3897436,
+        "south": 6.5897411,
+        "east": 3.3942604,
+        "north": 6.5942601
+       },
+       "cache_file": "pipeline/cache/wayback/chips/alapere-ogudu/2015-12-08_detail1.jpg"
       },
       {
        "station": "mid",
@@ -997,8 +1127,15 @@
         421,
         424
        ],
-       "file": "events/drainage_sites/alapere-ogudu/2015-12-08_detail2.jpg",
-       "marked_file": "events/drainage_sites/alapere-ogudu/2015-12-08_detail2_marked.jpg"
+       "release": 2168,
+       "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/2168/{level}/{row}/{col}",
+       "bounds": {
+        "west": 3.3870077,
+        "south": 6.5785608,
+        "east": 3.3915246,
+        "north": 6.5830798
+       },
+       "cache_file": "pipeline/cache/wayback/chips/alapere-ogudu/2015-12-08_detail2.jpg"
       },
       {
        "station": "end",
@@ -1010,11 +1147,26 @@
         421,
         424
        ],
-       "file": "events/drainage_sites/alapere-ogudu/2015-12-08_detail3.jpg",
-       "marked_file": "events/drainage_sites/alapere-ogudu/2015-12-08_detail3_marked.jpg"
+       "release": 2168,
+       "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/2168/{level}/{row}/{col}",
+       "bounds": {
+        "west": 3.393209,
+        "south": 6.5709081,
+        "east": 3.3977258,
+        "north": 6.5754273
+       },
+       "cache_file": "pipeline/cache/wayback/chips/alapere-ogudu/2015-12-08_detail3.jpg"
       }
      ],
-     "label": "2015-12-08 z16 WV02 0.5m"
+     "label": "2015-12-08 z16 WV02 0.5m",
+     "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/2168/{level}/{row}/{col}",
+     "bounds": {
+      "west": 3.3871579,
+      "south": 6.5718034,
+      "east": 3.3968353,
+      "north": 6.5933541
+     },
+     "cache_file": "pipeline/cache/wayback/chips/alapere-ogudu/2015-12-08.jpg"
     },
     {
      "acq_date": "2018-12-28",
@@ -1033,8 +1185,6 @@
      ],
      "downscaled_from_px": null,
      "chip_window": "line bbox + 150 m (1070 x 2382 m)",
-     "file": "events/drainage_sites/alapere-ogudu/2018-12-28.jpg",
-     "marked_file": "events/drainage_sites/alapere-ogudu/2018-12-28_marked.jpg",
      "brightness": {
       "mean_luminance": 0.578,
       "bright_frac": 0.0
@@ -1050,8 +1200,15 @@
         843,
         848
        ],
-       "file": "events/drainage_sites/alapere-ogudu/2018-12-28_detail1.jpg",
-       "marked_file": "events/drainage_sites/alapere-ogudu/2018-12-28_detail1_marked.jpg"
+       "release": 4756,
+       "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/4756/{level}/{row}/{col}",
+       "bounds": {
+        "west": 3.3897382,
+        "south": 6.5897411,
+        "east": 3.3942604,
+        "north": 6.5942601
+       },
+       "cache_file": "pipeline/cache/wayback/chips/alapere-ogudu/2018-12-28_detail1.jpg"
       },
       {
        "station": "mid",
@@ -1063,8 +1220,15 @@
         843,
         848
        ],
-       "file": "events/drainage_sites/alapere-ogudu/2018-12-28_detail2.jpg",
-       "marked_file": "events/drainage_sites/alapere-ogudu/2018-12-28_detail2_marked.jpg"
+       "release": 4756,
+       "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/4756/{level}/{row}/{col}",
+       "bounds": {
+        "west": 3.3870077,
+        "south": 6.5785608,
+        "east": 3.3915299,
+        "north": 6.5830798
+       },
+       "cache_file": "pipeline/cache/wayback/chips/alapere-ogudu/2018-12-28_detail2.jpg"
       },
       {
        "station": "end",
@@ -1076,11 +1240,26 @@
         843,
         849
        ],
-       "file": "events/drainage_sites/alapere-ogudu/2018-12-28_detail3.jpg",
-       "marked_file": "events/drainage_sites/alapere-ogudu/2018-12-28_detail3_marked.jpg"
+       "release": 4756,
+       "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/4756/{level}/{row}/{col}",
+       "bounds": {
+        "west": 3.393209,
+        "south": 6.5709081,
+        "east": 3.3977312,
+        "north": 6.5754326
+       },
+       "cache_file": "pipeline/cache/wayback/chips/alapere-ogudu/2018-12-28_detail3.jpg"
       }
      ],
-     "label": "2018-12-28 z16 WV03_VNIR 0.31m"
+     "label": "2018-12-28 z16 WV03_VNIR 0.31m",
+     "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/4756/{level}/{row}/{col}",
+     "bounds": {
+      "west": 3.3871579,
+      "south": 6.5718034,
+      "east": 3.3968353,
+      "north": 6.5933541
+     },
+     "cache_file": "pipeline/cache/wayback/chips/alapere-ogudu/2018-12-28.jpg"
     },
     {
      "acq_date": "2021-05-23",
@@ -1099,8 +1278,6 @@
      ],
      "downscaled_from_px": null,
      "chip_window": "line bbox + 150 m (1070 x 2382 m)",
-     "file": "events/drainage_sites/alapere-ogudu/2021-05-23.jpg",
-     "marked_file": "events/drainage_sites/alapere-ogudu/2021-05-23_marked.jpg",
      "brightness": {
       "mean_luminance": 0.422,
       "bright_frac": 0.002
@@ -1116,8 +1293,15 @@
         843,
         848
        ],
-       "file": "events/drainage_sites/alapere-ogudu/2021-05-23_detail1.jpg",
-       "marked_file": "events/drainage_sites/alapere-ogudu/2021-05-23_detail1_marked.jpg"
+       "release": 44710,
+       "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/44710/{level}/{row}/{col}",
+       "bounds": {
+        "west": 3.3897382,
+        "south": 6.5897411,
+        "east": 3.3942604,
+        "north": 6.5942601
+       },
+       "cache_file": "pipeline/cache/wayback/chips/alapere-ogudu/2021-05-23_detail1.jpg"
       },
       {
        "station": "mid",
@@ -1129,8 +1313,15 @@
         843,
         848
        ],
-       "file": "events/drainage_sites/alapere-ogudu/2021-05-23_detail2.jpg",
-       "marked_file": "events/drainage_sites/alapere-ogudu/2021-05-23_detail2_marked.jpg"
+       "release": 44710,
+       "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/44710/{level}/{row}/{col}",
+       "bounds": {
+        "west": 3.3870077,
+        "south": 6.5785608,
+        "east": 3.3915299,
+        "north": 6.5830798
+       },
+       "cache_file": "pipeline/cache/wayback/chips/alapere-ogudu/2021-05-23_detail2.jpg"
       },
       {
        "station": "end",
@@ -1142,11 +1333,26 @@
         843,
         849
        ],
-       "file": "events/drainage_sites/alapere-ogudu/2021-05-23_detail3.jpg",
-       "marked_file": "events/drainage_sites/alapere-ogudu/2021-05-23_detail3_marked.jpg"
+       "release": 44710,
+       "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/44710/{level}/{row}/{col}",
+       "bounds": {
+        "west": 3.393209,
+        "south": 6.5709081,
+        "east": 3.3977312,
+        "north": 6.5754326
+       },
+       "cache_file": "pipeline/cache/wayback/chips/alapere-ogudu/2021-05-23_detail3.jpg"
       }
      ],
-     "label": "2021-05-23 z16 WV03 0.31m"
+     "label": "2021-05-23 z16 WV03 0.31m",
+     "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/44710/{level}/{row}/{col}",
+     "bounds": {
+      "west": 3.3871579,
+      "south": 6.5718034,
+      "east": 3.3968353,
+      "north": 6.5933541
+     },
+     "cache_file": "pipeline/cache/wayback/chips/alapere-ogudu/2021-05-23.jpg"
     },
     {
      "acq_date": "2025-05-15",
@@ -1165,8 +1371,6 @@
      ],
      "downscaled_from_px": null,
      "chip_window": "line bbox + 150 m (1070 x 2382 m)",
-     "file": "events/drainage_sites/alapere-ogudu/2025-05-15.jpg",
-     "marked_file": "events/drainage_sites/alapere-ogudu/2025-05-15_marked.jpg",
      "brightness": {
       "mean_luminance": 0.431,
       "bright_frac": 0.0
@@ -1182,8 +1386,15 @@
         843,
         848
        ],
-       "file": "events/drainage_sites/alapere-ogudu/2025-05-15_detail1.jpg",
-       "marked_file": "events/drainage_sites/alapere-ogudu/2025-05-15_detail1_marked.jpg"
+       "release": 51127,
+       "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/51127/{level}/{row}/{col}",
+       "bounds": {
+        "west": 3.3897382,
+        "south": 6.5897411,
+        "east": 3.3942604,
+        "north": 6.5942601
+       },
+       "cache_file": "pipeline/cache/wayback/chips/alapere-ogudu/2025-05-15_detail1.jpg"
       },
       {
        "station": "mid",
@@ -1195,8 +1406,15 @@
         843,
         848
        ],
-       "file": "events/drainage_sites/alapere-ogudu/2025-05-15_detail2.jpg",
-       "marked_file": "events/drainage_sites/alapere-ogudu/2025-05-15_detail2_marked.jpg"
+       "release": 51127,
+       "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/51127/{level}/{row}/{col}",
+       "bounds": {
+        "west": 3.3870077,
+        "south": 6.5785608,
+        "east": 3.3915299,
+        "north": 6.5830798
+       },
+       "cache_file": "pipeline/cache/wayback/chips/alapere-ogudu/2025-05-15_detail2.jpg"
       },
       {
        "station": "end",
@@ -1208,14 +1426,28 @@
         843,
         849
        ],
-       "file": "events/drainage_sites/alapere-ogudu/2025-05-15_detail3.jpg",
-       "marked_file": "events/drainage_sites/alapere-ogudu/2025-05-15_detail3_marked.jpg"
+       "release": 51127,
+       "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/51127/{level}/{row}/{col}",
+       "bounds": {
+        "west": 3.393209,
+        "south": 6.5709081,
+        "east": 3.3977312,
+        "north": 6.5754326
+       },
+       "cache_file": "pipeline/cache/wayback/chips/alapere-ogudu/2025-05-15_detail3.jpg"
       }
      ],
-     "label": "2025-05-15 z16 LG04 0.34m"
+     "label": "2025-05-15 z16 LG04 0.34m",
+     "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/51127/{level}/{row}/{col}",
+     "bounds": {
+      "west": 3.3871579,
+      "south": 6.5718034,
+      "east": 3.3968353,
+      "north": 6.5933541
+     },
+     "cache_file": "pipeline/cache/wayback/chips/alapere-ogudu/2025-05-15.jpg"
     }
    ],
-   "contact_sheet": "events/drainage_sites/alapere-ogudu/contact_sheet.jpg",
    "osm": {
     "source": "OpenStreetMap via Overpass (current data, not historical)",
     "licence": "ODbL (OpenStreetMap contributors)",
@@ -1542,14 +1774,20 @@
      ],
      "downscaled_from_px": null,
      "chip_window": "line bbox + 150 m (1283 x 2195 m)",
-     "file": "events/drainage_sites/alpha-beach-156/1999-01-15.jpg",
-     "marked_file": "events/drainage_sites/alpha-beach-156/1999-01-15_marked.jpg",
      "brightness": {
       "mean_luminance": 0.267,
       "bright_frac": 0.0
      },
      "detail_chips": [],
-     "label": "1999-01-15 z13 Terracolor 15m"
+     "label": "1999-01-15 z13 Terracolor 15m",
+     "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/10/{level}/{row}/{col}",
+     "bounds": {
+      "west": 3.5012054,
+      "south": 6.4256776,
+      "east": 3.5128784,
+      "north": 6.4456354
+     },
+     "cache_file": "pipeline/cache/wayback/chips/alpha-beach-156/1999-01-15.jpg"
     },
     {
      "acq_date": "2012-12-23",
@@ -1568,14 +1806,20 @@
      ],
      "downscaled_from_px": null,
      "chip_window": "line bbox + 150 m (1283 x 2195 m)",
-     "file": "events/drainage_sites/alpha-beach-156/2012-12-23.jpg",
-     "marked_file": "events/drainage_sites/alpha-beach-156/2012-12-23_marked.jpg",
      "brightness": {
       "mean_luminance": 0.388,
       "bright_frac": 0.001
      },
      "detail_chips": [],
-     "label": "2012-12-23 z16 WV02 0.5m"
+     "label": "2012-12-23 z16 WV02 0.5m",
+     "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/29387/{level}/{row}/{col}",
+     "bounds": {
+      "west": 3.5012054,
+      "south": 6.4257203,
+      "east": 3.512814,
+      "north": 6.4455715
+     },
+     "cache_file": "pipeline/cache/wayback/chips/alpha-beach-156/2012-12-23.jpg"
     },
     {
      "acq_date": "2015-12-08",
@@ -1594,14 +1838,20 @@
      ],
      "downscaled_from_px": null,
      "chip_window": "line bbox + 150 m (1283 x 2195 m)",
-     "file": "events/drainage_sites/alpha-beach-156/2015-12-08.jpg",
-     "marked_file": "events/drainage_sites/alpha-beach-156/2015-12-08_marked.jpg",
      "brightness": {
       "mean_luminance": 0.432,
       "bright_frac": 0.003
      },
      "detail_chips": [],
-     "label": "2015-12-08 z16 WV02 0.5m"
+     "label": "2015-12-08 z16 WV02 0.5m",
+     "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/2168/{level}/{row}/{col}",
+     "bounds": {
+      "west": 3.5012054,
+      "south": 6.4257203,
+      "east": 3.512814,
+      "north": 6.4455715
+     },
+     "cache_file": "pipeline/cache/wayback/chips/alpha-beach-156/2015-12-08.jpg"
     },
     {
      "acq_date": "2018-12-24",
@@ -1620,14 +1870,20 @@
      ],
      "downscaled_from_px": null,
      "chip_window": "line bbox + 150 m (1283 x 2195 m)",
-     "file": "events/drainage_sites/alpha-beach-156/2018-12-24.jpg",
-     "marked_file": "events/drainage_sites/alpha-beach-156/2018-12-24_marked.jpg",
      "brightness": {
       "mean_luminance": 0.661,
       "bright_frac": 0.001
      },
      "detail_chips": [],
-     "label": "2018-12-24 z16 WV04 0.31m"
+     "label": "2018-12-24 z16 WV04 0.31m",
+     "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/4756/{level}/{row}/{col}",
+     "bounds": {
+      "west": 3.5012054,
+      "south": 6.4257203,
+      "east": 3.512814,
+      "north": 6.4455715
+     },
+     "cache_file": "pipeline/cache/wayback/chips/alpha-beach-156/2018-12-24.jpg"
     },
     {
      "acq_date": "2020-04-05",
@@ -1646,8 +1902,6 @@
      ],
      "downscaled_from_px": null,
      "chip_window": "line bbox + 150 m (1283 x 2195 m)",
-     "file": "events/drainage_sites/alpha-beach-156/2020-04-05.jpg",
-     "marked_file": "events/drainage_sites/alpha-beach-156/2020-04-05_marked.jpg",
      "brightness": {
       "mean_luminance": 0.49,
       "bright_frac": 0.009
@@ -1663,8 +1917,15 @@
         842,
         848
        ],
-       "file": "events/drainage_sites/alpha-beach-156/2020-04-05_detail1.jpg",
-       "marked_file": "events/drainage_sites/alpha-beach-156/2020-04-05_detail1_marked.jpg"
+       "release": 44710,
+       "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/44710/{level}/{row}/{col}",
+       "bounds": {
+        "west": 3.5086727,
+        "south": 6.4248087,
+        "east": 3.5131896,
+        "north": 6.4293292
+       },
+       "cache_file": "pipeline/cache/wayback/chips/alpha-beach-156/2020-04-05_detail1.jpg"
       },
       {
        "station": "mid",
@@ -1676,8 +1937,15 @@
         843,
         848
        ],
-       "file": "events/drainage_sites/alpha-beach-156/2020-04-05_detail2.jpg",
-       "marked_file": "events/drainage_sites/alpha-beach-156/2020-04-05_detail2_marked.jpg"
+       "release": 44710,
+       "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/44710/{level}/{row}/{col}",
+       "bounds": {
+        "west": 3.5080987,
+        "south": 6.4349796,
+        "east": 3.5126209,
+        "north": 6.4395
+       },
+       "cache_file": "pipeline/cache/wayback/chips/alpha-beach-156/2020-04-05_detail2.jpg"
       },
       {
        "station": "end",
@@ -1689,11 +1957,26 @@
         843,
         849
        ],
-       "file": "events/drainage_sites/alpha-beach-156/2020-04-05_detail3.jpg",
-       "marked_file": "events/drainage_sites/alpha-beach-156/2020-04-05_detail3_marked.jpg"
+       "release": 44710,
+       "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/44710/{level}/{row}/{col}",
+       "bounds": {
+        "west": 3.5003096,
+        "south": 6.4419467,
+        "east": 3.5048318,
+        "north": 6.4464723
+       },
+       "cache_file": "pipeline/cache/wayback/chips/alpha-beach-156/2020-04-05_detail3.jpg"
       }
      ],
-     "label": "2020-04-05 z16 WV02 0.5m"
+     "label": "2020-04-05 z16 WV02 0.5m",
+     "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/44710/{level}/{row}/{col}",
+     "bounds": {
+      "west": 3.5012054,
+      "south": 6.4257203,
+      "east": 3.512814,
+      "north": 6.4455715
+     },
+     "cache_file": "pipeline/cache/wayback/chips/alpha-beach-156/2020-04-05.jpg"
     },
     {
      "acq_date": "2024-11-30",
@@ -1712,8 +1995,6 @@
      ],
      "downscaled_from_px": null,
      "chip_window": "line bbox + 150 m (1283 x 2195 m)",
-     "file": "events/drainage_sites/alpha-beach-156/2024-11-30.jpg",
-     "marked_file": "events/drainage_sites/alpha-beach-156/2024-11-30_marked.jpg",
      "brightness": {
       "mean_luminance": 0.495,
       "bright_frac": 0.017
@@ -1729,8 +2010,15 @@
         842,
         848
        ],
-       "file": "events/drainage_sites/alpha-beach-156/2024-11-30_detail1.jpg",
-       "marked_file": "events/drainage_sites/alpha-beach-156/2024-11-30_detail1_marked.jpg"
+       "release": 51127,
+       "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/51127/{level}/{row}/{col}",
+       "bounds": {
+        "west": 3.5086727,
+        "south": 6.4248087,
+        "east": 3.5131896,
+        "north": 6.4293292
+       },
+       "cache_file": "pipeline/cache/wayback/chips/alpha-beach-156/2024-11-30_detail1.jpg"
       },
       {
        "station": "mid",
@@ -1742,8 +2030,15 @@
         843,
         848
        ],
-       "file": "events/drainage_sites/alpha-beach-156/2024-11-30_detail2.jpg",
-       "marked_file": "events/drainage_sites/alpha-beach-156/2024-11-30_detail2_marked.jpg"
+       "release": 51127,
+       "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/51127/{level}/{row}/{col}",
+       "bounds": {
+        "west": 3.5080987,
+        "south": 6.4349796,
+        "east": 3.5126209,
+        "north": 6.4395
+       },
+       "cache_file": "pipeline/cache/wayback/chips/alpha-beach-156/2024-11-30_detail2.jpg"
       },
       {
        "station": "end",
@@ -1755,14 +2050,28 @@
         843,
         849
        ],
-       "file": "events/drainage_sites/alpha-beach-156/2024-11-30_detail3.jpg",
-       "marked_file": "events/drainage_sites/alpha-beach-156/2024-11-30_detail3_marked.jpg"
+       "release": 51127,
+       "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/51127/{level}/{row}/{col}",
+       "bounds": {
+        "west": 3.5003096,
+        "south": 6.4419467,
+        "east": 3.5048318,
+        "north": 6.4464723
+       },
+       "cache_file": "pipeline/cache/wayback/chips/alpha-beach-156/2024-11-30_detail3.jpg"
       }
      ],
-     "label": "2024-11-30 z16 WV03 0.31m"
+     "label": "2024-11-30 z16 WV03 0.31m",
+     "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/51127/{level}/{row}/{col}",
+     "bounds": {
+      "west": 3.5012054,
+      "south": 6.4257203,
+      "east": 3.512814,
+      "north": 6.4455715
+     },
+     "cache_file": "pipeline/cache/wayback/chips/alpha-beach-156/2024-11-30.jpg"
     }
    ],
-   "contact_sheet": "events/drainage_sites/alpha-beach-156/contact_sheet.jpg",
    "osm": {
     "source": "OpenStreetMap via Overpass (current data, not historical)",
     "licence": "ODbL (OpenStreetMap contributors)",
@@ -2097,14 +2406,20 @@
      ],
      "downscaled_from_px": null,
      "chip_window": "line bbox + 150 m (11985 x 1793 m)",
-     "file": "events/drainage_sites/ibeju-lekki-expy/1999-01-15.jpg",
-     "marked_file": "events/drainage_sites/ibeju-lekki-expy/1999-01-15_marked.jpg",
      "brightness": {
       "mean_luminance": 0.273,
       "bright_frac": 0.0
      },
      "detail_chips": [],
-     "label": "1999-01-15 z13 Terracolor 15m"
+     "label": "1999-01-15 z13 Terracolor 15m",
+     "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/10/{level}/{row}/{col}",
+     "bounds": {
+      "west": 3.7734604,
+      "south": 6.4700273,
+      "east": 3.8817787,
+      "north": 6.486231
+     },
+     "cache_file": "pipeline/cache/wayback/chips/ibeju-lekki-expy/1999-01-15.jpg"
     },
     {
      "acq_date": "2011-01-10",
@@ -2126,14 +2441,20 @@
       190
      ],
      "chip_window": "line bbox + 150 m (11985 x 1793 m)",
-     "file": "events/drainage_sites/ibeju-lekki-expy/2011-01-10.jpg",
-     "marked_file": "events/drainage_sites/ibeju-lekki-expy/2011-01-10_marked.jpg",
      "brightness": {
       "mean_luminance": 0.506,
       "bright_frac": 0.158
      },
      "detail_chips": [],
-     "label": "2011-01-10 z14 WV02 0.5m"
+     "label": "2011-01-10 z14 WV02 0.5m",
+     "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/29387/{level}/{row}/{col}",
+     "bounds": {
+      "west": 3.7734604,
+      "south": 6.4700273,
+      "east": 3.8817787,
+      "north": 6.486231
+     },
+     "cache_file": "pipeline/cache/wayback/chips/ibeju-lekki-expy/2011-01-10.jpg"
     },
     {
      "acq_date": "2014-12-31",
@@ -2155,14 +2476,20 @@
       190
      ],
      "chip_window": "line bbox + 150 m (11985 x 1793 m)",
-     "file": "events/drainage_sites/ibeju-lekki-expy/2014-12-31.jpg",
-     "marked_file": "events/drainage_sites/ibeju-lekki-expy/2014-12-31_marked.jpg",
      "brightness": {
       "mean_luminance": 0.5,
       "bright_frac": 0.132
      },
      "detail_chips": [],
-     "label": "2014-12-31 z14 WV02 0.5m"
+     "label": "2014-12-31 z14 WV02 0.5m",
+     "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/2168/{level}/{row}/{col}",
+     "bounds": {
+      "west": 3.7734604,
+      "south": 6.4700273,
+      "east": 3.8817787,
+      "north": 6.486231
+     },
+     "cache_file": "pipeline/cache/wayback/chips/ibeju-lekki-expy/2014-12-31.jpg"
     },
     {
      "acq_date": "2018-01-27",
@@ -2184,14 +2511,20 @@
       190
      ],
      "chip_window": "line bbox + 150 m (11985 x 1793 m)",
-     "file": "events/drainage_sites/ibeju-lekki-expy/2018-01-27.jpg",
-     "marked_file": "events/drainage_sites/ibeju-lekki-expy/2018-01-27_marked.jpg",
      "brightness": {
       "mean_luminance": 0.426,
       "bright_frac": 0.0
      },
      "detail_chips": [],
-     "label": "2018-01-27 z14 WV02 0.5m"
+     "label": "2018-01-27 z14 WV02 0.5m",
+     "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/45441/{level}/{row}/{col}",
+     "bounds": {
+      "west": 3.7734604,
+      "south": 6.4700273,
+      "east": 3.8817787,
+      "north": 6.486231
+     },
+     "cache_file": "pipeline/cache/wayback/chips/ibeju-lekki-expy/2018-01-27.jpg"
     },
     {
      "acq_date": "2019-01-10",
@@ -2213,8 +2546,6 @@
       190
      ],
      "chip_window": "line bbox + 150 m (11985 x 1793 m)",
-     "file": "events/drainage_sites/ibeju-lekki-expy/2019-01-10.jpg",
-     "marked_file": "events/drainage_sites/ibeju-lekki-expy/2019-01-10_marked.jpg",
      "brightness": {
       "mean_luminance": 0.429,
       "bright_frac": 0.0
@@ -2230,8 +2561,15 @@
         842,
         849
        ],
-       "file": "events/drainage_sites/ibeju-lekki-expy/2019-01-10_detail1.jpg",
-       "marked_file": "events/drainage_sites/ibeju-lekki-expy/2019-01-10_detail1_marked.jpg"
+       "release": 56102,
+       "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/56102/{level}/{row}/{col}",
+       "bounds": {
+        "west": 3.7725323,
+        "south": 6.4721167,
+        "east": 3.7770492,
+        "north": 6.4766421
+       },
+       "cache_file": "pipeline/cache/wayback/chips/ibeju-lekki-expy/2019-01-10_detail1.jpg"
       },
       {
        "station": "mid",
@@ -2243,8 +2581,15 @@
         843,
         849
        ],
-       "file": "events/drainage_sites/ibeju-lekki-expy/2019-01-10_detail2.jpg",
-       "marked_file": "events/drainage_sites/ibeju-lekki-expy/2019-01-10_detail2_marked.jpg"
+       "release": 56102,
+       "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/56102/{level}/{row}/{col}",
+       "bounds": {
+        "west": 3.8254362,
+        "south": 6.4737318,
+        "east": 3.8299584,
+        "north": 6.4782571
+       },
+       "cache_file": "pipeline/cache/wayback/chips/ibeju-lekki-expy/2019-01-10_detail2.jpg"
       },
       {
        "station": "end",
@@ -2256,11 +2601,26 @@
         843,
         848
        ],
-       "file": "events/drainage_sites/ibeju-lekki-expy/2019-01-10_detail3.jpg",
-       "marked_file": "events/drainage_sites/ibeju-lekki-expy/2019-01-10_detail3_marked.jpg"
+       "release": 56102,
+       "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/56102/{level}/{row}/{col}",
+       "bounds": {
+        "west": 3.8781685,
+        "south": 6.4826012,
+        "east": 3.8826907,
+        "north": 6.4871211
+       },
+       "cache_file": "pipeline/cache/wayback/chips/ibeju-lekki-expy/2019-01-10_detail3.jpg"
       }
      ],
-     "label": "2019-01-10 z14 WV02 0.5m"
+     "label": "2019-01-10 z14 WV02 0.5m",
+     "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/56102/{level}/{row}/{col}",
+     "bounds": {
+      "west": 3.7734604,
+      "south": 6.4700273,
+      "east": 3.8817787,
+      "north": 6.486231
+     },
+     "cache_file": "pipeline/cache/wayback/chips/ibeju-lekki-expy/2019-01-10.jpg"
     },
     {
      "acq_date": "2023-12-25",
@@ -2282,8 +2642,6 @@
       190
      ],
      "chip_window": "line bbox + 150 m (11985 x 1793 m)",
-     "file": "events/drainage_sites/ibeju-lekki-expy/2023-12-25.jpg",
-     "marked_file": "events/drainage_sites/ibeju-lekki-expy/2023-12-25_marked.jpg",
      "brightness": {
       "mean_luminance": 0.43,
       "bright_frac": 0.0
@@ -2299,8 +2657,15 @@
         842,
         849
        ],
-       "file": "events/drainage_sites/ibeju-lekki-expy/2023-12-25_detail1.jpg",
-       "marked_file": "events/drainage_sites/ibeju-lekki-expy/2023-12-25_detail1_marked.jpg"
+       "release": 12428,
+       "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/12428/{level}/{row}/{col}",
+       "bounds": {
+        "west": 3.7725323,
+        "south": 6.4721167,
+        "east": 3.7770492,
+        "north": 6.4766421
+       },
+       "cache_file": "pipeline/cache/wayback/chips/ibeju-lekki-expy/2023-12-25_detail1.jpg"
       },
       {
        "station": "mid",
@@ -2312,8 +2677,15 @@
         843,
         849
        ],
-       "file": "events/drainage_sites/ibeju-lekki-expy/2023-12-25_detail2.jpg",
-       "marked_file": "events/drainage_sites/ibeju-lekki-expy/2023-12-25_detail2_marked.jpg"
+       "release": 12428,
+       "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/12428/{level}/{row}/{col}",
+       "bounds": {
+        "west": 3.8254362,
+        "south": 6.4737318,
+        "east": 3.8299584,
+        "north": 6.4782571
+       },
+       "cache_file": "pipeline/cache/wayback/chips/ibeju-lekki-expy/2023-12-25_detail2.jpg"
       },
       {
        "station": "end",
@@ -2325,11 +2697,26 @@
         843,
         848
        ],
-       "file": "events/drainage_sites/ibeju-lekki-expy/2023-12-25_detail3.jpg",
-       "marked_file": "events/drainage_sites/ibeju-lekki-expy/2023-12-25_detail3_marked.jpg"
+       "release": 12428,
+       "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/12428/{level}/{row}/{col}",
+       "bounds": {
+        "west": 3.8781685,
+        "south": 6.4826012,
+        "east": 3.8826907,
+        "north": 6.4871211
+       },
+       "cache_file": "pipeline/cache/wayback/chips/ibeju-lekki-expy/2023-12-25_detail3.jpg"
       }
      ],
-     "label": "2023-12-25 z14 WV02 0.5m"
+     "label": "2023-12-25 z14 WV02 0.5m",
+     "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/12428/{level}/{row}/{col}",
+     "bounds": {
+      "west": 3.7734604,
+      "south": 6.4700273,
+      "east": 3.8817787,
+      "north": 6.486231
+     },
+     "cache_file": "pipeline/cache/wayback/chips/ibeju-lekki-expy/2023-12-25.jpg"
     },
     {
      "acq_date": "2024-11-30",
@@ -2351,8 +2738,6 @@
       190
      ],
      "chip_window": "line bbox + 150 m (11985 x 1793 m)",
-     "file": "events/drainage_sites/ibeju-lekki-expy/2024-11-30.jpg",
-     "marked_file": "events/drainage_sites/ibeju-lekki-expy/2024-11-30_marked.jpg",
      "brightness": {
       "mean_luminance": 0.429,
       "bright_frac": 0.0
@@ -2368,8 +2753,15 @@
         842,
         849
        ],
-       "file": "events/drainage_sites/ibeju-lekki-expy/2024-11-30_detail1.jpg",
-       "marked_file": "events/drainage_sites/ibeju-lekki-expy/2024-11-30_detail1_marked.jpg"
+       "release": 10842,
+       "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/10842/{level}/{row}/{col}",
+       "bounds": {
+        "west": 3.7725323,
+        "south": 6.4721167,
+        "east": 3.7770492,
+        "north": 6.4766421
+       },
+       "cache_file": "pipeline/cache/wayback/chips/ibeju-lekki-expy/2024-11-30_detail1.jpg"
       },
       {
        "station": "mid",
@@ -2381,8 +2773,15 @@
         843,
         849
        ],
-       "file": "events/drainage_sites/ibeju-lekki-expy/2024-11-30_detail2.jpg",
-       "marked_file": "events/drainage_sites/ibeju-lekki-expy/2024-11-30_detail2_marked.jpg"
+       "release": 10842,
+       "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/10842/{level}/{row}/{col}",
+       "bounds": {
+        "west": 3.8254362,
+        "south": 6.4737318,
+        "east": 3.8299584,
+        "north": 6.4782571
+       },
+       "cache_file": "pipeline/cache/wayback/chips/ibeju-lekki-expy/2024-11-30_detail2.jpg"
       },
       {
        "station": "end",
@@ -2394,14 +2793,28 @@
         843,
         848
        ],
-       "file": "events/drainage_sites/ibeju-lekki-expy/2024-11-30_detail3.jpg",
-       "marked_file": "events/drainage_sites/ibeju-lekki-expy/2024-11-30_detail3_marked.jpg"
+       "release": 10842,
+       "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/10842/{level}/{row}/{col}",
+       "bounds": {
+        "west": 3.8781685,
+        "south": 6.4826012,
+        "east": 3.8826907,
+        "north": 6.4871211
+       },
+       "cache_file": "pipeline/cache/wayback/chips/ibeju-lekki-expy/2024-11-30_detail3.jpg"
       }
      ],
-     "label": "2024-11-30 z14 WV03 0.31m"
+     "label": "2024-11-30 z14 WV03 0.31m",
+     "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/10842/{level}/{row}/{col}",
+     "bounds": {
+      "west": 3.7734604,
+      "south": 6.4700273,
+      "east": 3.8817787,
+      "north": 6.486231
+     },
+     "cache_file": "pipeline/cache/wayback/chips/ibeju-lekki-expy/2024-11-30.jpg"
     }
    ],
-   "contact_sheet": "events/drainage_sites/ibeju-lekki-expy/contact_sheet.jpg",
    "osm": {
     "source": "OpenStreetMap via Overpass (current data, not historical)",
     "licence": "ODbL (OpenStreetMap contributors)",
@@ -2774,14 +3187,20 @@
      ],
      "downscaled_from_px": null,
      "chip_window": "line bbox + 150 m (4038 x 4241 m)",
-     "file": "events/drainage_sites/ijede-drain/2012-05-06.jpg",
-     "marked_file": "events/drainage_sites/ijede-drain/2012-05-06_marked.jpg",
      "brightness": {
       "mean_luminance": 0.407,
       "bright_frac": 0.0
      },
      "detail_chips": [],
-     "label": "2012-05-06 z15 QB02 0.6m"
+     "label": "2012-05-06 z15 QB02 0.6m",
+     "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/10/{level}/{row}/{col}",
+     "bounds": {
+      "west": 3.5866499,
+      "south": 6.5642147,
+      "east": 3.6231709,
+      "north": 6.6025838
+     },
+     "cache_file": "pipeline/cache/wayback/chips/ijede-drain/2012-05-06.jpg"
     },
     {
      "acq_date": "2013-01-01",
@@ -2800,14 +3219,20 @@
      ],
      "downscaled_from_px": null,
      "chip_window": "line bbox + 150 m (4038 x 4241 m)",
-     "file": "events/drainage_sites/ijede-drain/2013-01-01.jpg",
-     "marked_file": "events/drainage_sites/ijede-drain/2013-01-01_marked.jpg",
      "brightness": {
       "mean_luminance": 0.326,
       "bright_frac": 0.0
      },
      "detail_chips": [],
-     "label": "2013-01-01 z15 GE01 0.46m"
+     "label": "2013-01-01 z15 GE01 0.46m",
+     "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/29387/{level}/{row}/{col}",
+     "bounds": {
+      "west": 3.5866499,
+      "south": 6.5642147,
+      "east": 3.6231709,
+      "north": 6.6025838
+     },
+     "cache_file": "pipeline/cache/wayback/chips/ijede-drain/2013-01-01.jpg"
     },
     {
      "acq_date": "2021-05-23",
@@ -2826,8 +3251,6 @@
      ],
      "downscaled_from_px": null,
      "chip_window": "line bbox + 150 m (4038 x 4241 m)",
-     "file": "events/drainage_sites/ijede-drain/2021-05-23.jpg",
-     "marked_file": "events/drainage_sites/ijede-drain/2021-05-23_marked.jpg",
      "brightness": {
       "mean_luminance": 0.38,
       "bright_frac": 0.0
@@ -2843,8 +3266,15 @@
         843,
         848
        ],
-       "file": "events/drainage_sites/ijede-drain/2021-05-23_detail1.jpg",
-       "marked_file": "events/drainage_sites/ijede-drain/2021-05-23_detail1_marked.jpg"
+       "release": 13851,
+       "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/13851/{level}/{row}/{col}",
+       "bounds": {
+        "west": 3.5857379,
+        "south": 6.5657388,
+        "east": 3.5902601,
+        "north": 6.570258
+       },
+       "cache_file": "pipeline/cache/wayback/chips/ijede-drain/2021-05-23_detail1.jpg"
       },
       {
        "station": "mid",
@@ -2856,8 +3286,15 @@
         843,
         848
        ],
-       "file": "events/drainage_sites/ijede-drain/2021-05-23_detail2.jpg",
-       "marked_file": "events/drainage_sites/ijede-drain/2021-05-23_detail2_marked.jpg"
+       "release": 13851,
+       "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/13851/{level}/{row}/{col}",
+       "bounds": {
+        "west": 3.6031026,
+        "south": 6.5793975,
+        "east": 3.6076248,
+        "north": 6.5839165
+       },
+       "cache_file": "pipeline/cache/wayback/chips/ijede-drain/2021-05-23_detail2.jpg"
       },
       {
        "station": "end",
@@ -2869,11 +3306,26 @@
         843,
         848
        ],
-       "file": "events/drainage_sites/ijede-drain/2021-05-23_detail3.jpg",
-       "marked_file": "events/drainage_sites/ijede-drain/2021-05-23_detail3_marked.jpg"
+       "release": 13851,
+       "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/13851/{level}/{row}/{col}",
+       "bounds": {
+        "west": 3.6195391,
+        "south": 6.5989602,
+        "east": 3.6240613,
+        "north": 6.603479
+       },
+       "cache_file": "pipeline/cache/wayback/chips/ijede-drain/2021-05-23_detail3.jpg"
       }
      ],
-     "label": "2021-05-23 z15 WV03 0.31m"
+     "label": "2021-05-23 z15 WV03 0.31m",
+     "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/13851/{level}/{row}/{col}",
+     "bounds": {
+      "west": 3.5866499,
+      "south": 6.5642147,
+      "east": 3.6231709,
+      "north": 6.6025838
+     },
+     "cache_file": "pipeline/cache/wayback/chips/ijede-drain/2021-05-23.jpg"
     },
     {
      "acq_date": "2024-11-30",
@@ -2892,8 +3344,6 @@
      ],
      "downscaled_from_px": null,
      "chip_window": "line bbox + 150 m (4038 x 4241 m)",
-     "file": "events/drainage_sites/ijede-drain/2024-11-30.jpg",
-     "marked_file": "events/drainage_sites/ijede-drain/2024-11-30_marked.jpg",
      "brightness": {
       "mean_luminance": 0.386,
       "bright_frac": 0.0
@@ -2909,8 +3359,15 @@
         843,
         848
        ],
-       "file": "events/drainage_sites/ijede-drain/2024-11-30_detail1.jpg",
-       "marked_file": "events/drainage_sites/ijede-drain/2024-11-30_detail1_marked.jpg"
+       "release": 51127,
+       "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/51127/{level}/{row}/{col}",
+       "bounds": {
+        "west": 3.5857379,
+        "south": 6.5657388,
+        "east": 3.5902601,
+        "north": 6.570258
+       },
+       "cache_file": "pipeline/cache/wayback/chips/ijede-drain/2024-11-30_detail1.jpg"
       },
       {
        "station": "mid",
@@ -2922,8 +3379,15 @@
         843,
         848
        ],
-       "file": "events/drainage_sites/ijede-drain/2024-11-30_detail2.jpg",
-       "marked_file": "events/drainage_sites/ijede-drain/2024-11-30_detail2_marked.jpg"
+       "release": 51127,
+       "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/51127/{level}/{row}/{col}",
+       "bounds": {
+        "west": 3.6031026,
+        "south": 6.5793975,
+        "east": 3.6076248,
+        "north": 6.5839165
+       },
+       "cache_file": "pipeline/cache/wayback/chips/ijede-drain/2024-11-30_detail2.jpg"
       },
       {
        "station": "end",
@@ -2935,14 +3399,28 @@
         843,
         848
        ],
-       "file": "events/drainage_sites/ijede-drain/2024-11-30_detail3.jpg",
-       "marked_file": "events/drainage_sites/ijede-drain/2024-11-30_detail3_marked.jpg"
+       "release": 51127,
+       "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/51127/{level}/{row}/{col}",
+       "bounds": {
+        "west": 3.6195391,
+        "south": 6.5989602,
+        "east": 3.6240613,
+        "north": 6.603479
+       },
+       "cache_file": "pipeline/cache/wayback/chips/ijede-drain/2024-11-30_detail3.jpg"
       }
      ],
-     "label": "2024-11-30 z15 WV03 0.31m"
+     "label": "2024-11-30 z15 WV03 0.31m",
+     "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/51127/{level}/{row}/{col}",
+     "bounds": {
+      "west": 3.5866499,
+      "south": 6.5642147,
+      "east": 3.6231709,
+      "north": 6.6025838
+     },
+     "cache_file": "pipeline/cache/wayback/chips/ijede-drain/2024-11-30.jpg"
     }
    ],
-   "contact_sheet": "events/drainage_sites/ijede-drain/contact_sheet.jpg",
    "osm": {
     "source": "OpenStreetMap via Overpass (current data, not historical)",
     "licence": "ODbL (OpenStreetMap contributors)",
@@ -3109,14 +3587,20 @@
      ],
      "downscaled_from_px": null,
      "chip_window": "line bbox + 150 m (3611 x 4241 m)",
-     "file": "events/drainage_sites/ikorodu-dammed/2012-05-06.jpg",
-     "marked_file": "events/drainage_sites/ikorodu-dammed/2012-05-06_marked.jpg",
      "brightness": {
       "mean_luminance": 0.403,
       "bright_frac": 0.0
      },
      "detail_chips": [],
-     "label": "2012-05-06 z15 QB02 0.6m"
+     "label": "2012-05-06 z15 QB02 0.6m",
+     "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/10/{level}/{row}/{col}",
+     "bounds": {
+      "west": 3.5905123,
+      "south": 6.5642147,
+      "east": 3.6231709,
+      "north": 6.6025838
+     },
+     "cache_file": "pipeline/cache/wayback/chips/ikorodu-dammed/2012-05-06.jpg"
     },
     {
      "acq_date": "2013-01-01",
@@ -3135,14 +3619,20 @@
      ],
      "downscaled_from_px": null,
      "chip_window": "line bbox + 150 m (3611 x 4241 m)",
-     "file": "events/drainage_sites/ikorodu-dammed/2013-01-01.jpg",
-     "marked_file": "events/drainage_sites/ikorodu-dammed/2013-01-01_marked.jpg",
      "brightness": {
       "mean_luminance": 0.319,
       "bright_frac": 0.0
      },
      "detail_chips": [],
-     "label": "2013-01-01 z15 GE01 0.46m"
+     "label": "2013-01-01 z15 GE01 0.46m",
+     "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/29387/{level}/{row}/{col}",
+     "bounds": {
+      "west": 3.5905123,
+      "south": 6.5642147,
+      "east": 3.6231709,
+      "north": 6.6025838
+     },
+     "cache_file": "pipeline/cache/wayback/chips/ikorodu-dammed/2013-01-01.jpg"
     },
     {
      "acq_date": "2021-05-23",
@@ -3161,8 +3651,6 @@
      ],
      "downscaled_from_px": null,
      "chip_window": "line bbox + 150 m (3611 x 4241 m)",
-     "file": "events/drainage_sites/ikorodu-dammed/2021-05-23.jpg",
-     "marked_file": "events/drainage_sites/ikorodu-dammed/2021-05-23_marked.jpg",
      "brightness": {
       "mean_luminance": 0.374,
       "bright_frac": 0.0
@@ -3178,8 +3666,15 @@
         843,
         848
        ],
-       "file": "events/drainage_sites/ikorodu-dammed/2021-05-23_detail1.jpg",
-       "marked_file": "events/drainage_sites/ikorodu-dammed/2021-05-23_detail1_marked.jpg"
+       "release": 13851,
+       "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/13851/{level}/{row}/{col}",
+       "bounds": {
+        "west": 3.6195391,
+        "south": 6.5989602,
+        "east": 3.6240613,
+        "north": 6.603479
+       },
+       "cache_file": "pipeline/cache/wayback/chips/ikorodu-dammed/2021-05-23_detail1.jpg"
       },
       {
        "station": "mid",
@@ -3191,8 +3686,15 @@
         843,
         849
        ],
-       "file": "events/drainage_sites/ikorodu-dammed/2021-05-23_detail2.jpg",
-       "marked_file": "events/drainage_sites/ikorodu-dammed/2021-05-23_detail2_marked.jpg"
+       "release": 13851,
+       "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/13851/{level}/{row}/{col}",
+       "bounds": {
+        "west": 3.6048621,
+        "south": 6.5808896,
+        "east": 3.6093843,
+        "north": 6.585414
+       },
+       "cache_file": "pipeline/cache/wayback/chips/ikorodu-dammed/2021-05-23_detail2.jpg"
       },
       {
        "station": "end",
@@ -3204,11 +3706,26 @@
         843,
         848
        ],
-       "file": "events/drainage_sites/ikorodu-dammed/2021-05-23_detail3.jpg",
-       "marked_file": "events/drainage_sites/ikorodu-dammed/2021-05-23_detail3_marked.jpg"
+       "release": 13851,
+       "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/13851/{level}/{row}/{col}",
+       "bounds": {
+        "west": 3.5896003,
+        "south": 6.5633193,
+        "east": 3.5941225,
+        "north": 6.5678385
+       },
+       "cache_file": "pipeline/cache/wayback/chips/ikorodu-dammed/2021-05-23_detail3.jpg"
       }
      ],
-     "label": "2021-05-23 z15 WV03 0.31m"
+     "label": "2021-05-23 z15 WV03 0.31m",
+     "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/13851/{level}/{row}/{col}",
+     "bounds": {
+      "west": 3.5905123,
+      "south": 6.5642147,
+      "east": 3.6231709,
+      "north": 6.6025838
+     },
+     "cache_file": "pipeline/cache/wayback/chips/ikorodu-dammed/2021-05-23.jpg"
     },
     {
      "acq_date": "2024-11-30",
@@ -3227,8 +3744,6 @@
      ],
      "downscaled_from_px": null,
      "chip_window": "line bbox + 150 m (3611 x 4241 m)",
-     "file": "events/drainage_sites/ikorodu-dammed/2024-11-30.jpg",
-     "marked_file": "events/drainage_sites/ikorodu-dammed/2024-11-30_marked.jpg",
      "brightness": {
       "mean_luminance": 0.379,
       "bright_frac": 0.0
@@ -3244,8 +3759,15 @@
         843,
         848
        ],
-       "file": "events/drainage_sites/ikorodu-dammed/2024-11-30_detail1.jpg",
-       "marked_file": "events/drainage_sites/ikorodu-dammed/2024-11-30_detail1_marked.jpg"
+       "release": 51127,
+       "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/51127/{level}/{row}/{col}",
+       "bounds": {
+        "west": 3.6195391,
+        "south": 6.5989602,
+        "east": 3.6240613,
+        "north": 6.603479
+       },
+       "cache_file": "pipeline/cache/wayback/chips/ikorodu-dammed/2024-11-30_detail1.jpg"
       },
       {
        "station": "mid",
@@ -3257,8 +3779,15 @@
         843,
         849
        ],
-       "file": "events/drainage_sites/ikorodu-dammed/2024-11-30_detail2.jpg",
-       "marked_file": "events/drainage_sites/ikorodu-dammed/2024-11-30_detail2_marked.jpg"
+       "release": 51127,
+       "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/51127/{level}/{row}/{col}",
+       "bounds": {
+        "west": 3.6048621,
+        "south": 6.5808896,
+        "east": 3.6093843,
+        "north": 6.585414
+       },
+       "cache_file": "pipeline/cache/wayback/chips/ikorodu-dammed/2024-11-30_detail2.jpg"
       },
       {
        "station": "end",
@@ -3270,14 +3799,28 @@
         843,
         848
        ],
-       "file": "events/drainage_sites/ikorodu-dammed/2024-11-30_detail3.jpg",
-       "marked_file": "events/drainage_sites/ikorodu-dammed/2024-11-30_detail3_marked.jpg"
+       "release": 51127,
+       "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/51127/{level}/{row}/{col}",
+       "bounds": {
+        "west": 3.5896003,
+        "south": 6.5633193,
+        "east": 3.5941225,
+        "north": 6.5678385
+       },
+       "cache_file": "pipeline/cache/wayback/chips/ikorodu-dammed/2024-11-30_detail3.jpg"
       }
      ],
-     "label": "2024-11-30 z15 WV03 0.31m"
+     "label": "2024-11-30 z15 WV03 0.31m",
+     "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/51127/{level}/{row}/{col}",
+     "bounds": {
+      "west": 3.5905123,
+      "south": 6.5642147,
+      "east": 3.6231709,
+      "north": 6.6025838
+     },
+     "cache_file": "pipeline/cache/wayback/chips/ikorodu-dammed/2024-11-30.jpg"
     }
    ],
-   "contact_sheet": "events/drainage_sites/ikorodu-dammed/contact_sheet.jpg",
    "osm": {
     "source": "OpenStreetMap via Overpass (current data, not historical)",
     "licence": "ODbL (OpenStreetMap contributors)",
@@ -3418,14 +3961,20 @@
      ],
      "downscaled_from_px": null,
      "chip_window": "500 x 500 m",
-     "file": "events/drainage_sites/labora/2011-12-31.jpg",
-     "marked_file": "events/drainage_sites/labora/2011-12-31_marked.jpg",
      "brightness": {
       "mean_luminance": 0.449,
       "bright_frac": 0.0
      },
      "detail_chips": [],
-     "label": "2011-12-31 z17 QB02 0.6m"
+     "label": "2011-12-31 z17 QB02 0.6m",
+     "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/10/{level}/{row}/{col}",
+     "bounds": {
+      "west": 3.9177418,
+      "south": 6.4777347,
+      "east": 3.9222586,
+      "north": 6.4822654
+     },
+     "cache_file": "pipeline/cache/wayback/chips/labora/2011-12-31.jpg"
     },
     {
      "acq_date": "2012-01-07",
@@ -3444,14 +3993,20 @@
      ],
      "downscaled_from_px": null,
      "chip_window": "500 x 500 m",
-     "file": "events/drainage_sites/labora/2012-01-07.jpg",
-     "marked_file": "events/drainage_sites/labora/2012-01-07_marked.jpg",
      "brightness": {
       "mean_luminance": 0.246,
       "bright_frac": 0.0
      },
      "detail_chips": [],
-     "label": "2012-01-07 z17 GE01 0.46m"
+     "label": "2012-01-07 z17 GE01 0.46m",
+     "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/29387/{level}/{row}/{col}",
+     "bounds": {
+      "west": 3.9177418,
+      "south": 6.4777347,
+      "east": 3.9222586,
+      "north": 6.4822654
+     },
+     "cache_file": "pipeline/cache/wayback/chips/labora/2012-01-07.jpg"
     },
     {
      "acq_date": "2014-12-31",
@@ -3470,14 +4025,20 @@
      ],
      "downscaled_from_px": null,
      "chip_window": "500 x 500 m",
-     "file": "events/drainage_sites/labora/2014-12-31.jpg",
-     "marked_file": "events/drainage_sites/labora/2014-12-31_marked.jpg",
      "brightness": {
       "mean_luminance": 0.296,
       "bright_frac": 0.0
      },
      "detail_chips": [],
-     "label": "2014-12-31 z17 WV02 0.5m"
+     "label": "2014-12-31 z17 WV02 0.5m",
+     "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/2168/{level}/{row}/{col}",
+     "bounds": {
+      "west": 3.9177418,
+      "south": 6.4777347,
+      "east": 3.9222586,
+      "north": 6.4822654
+     },
+     "cache_file": "pipeline/cache/wayback/chips/labora/2014-12-31.jpg"
     },
     {
      "acq_date": "2019-01-10",
@@ -3496,14 +4057,20 @@
      ],
      "downscaled_from_px": null,
      "chip_window": "500 x 500 m",
-     "file": "events/drainage_sites/labora/2019-01-10.jpg",
-     "marked_file": "events/drainage_sites/labora/2019-01-10_marked.jpg",
      "brightness": {
       "mean_luminance": 0.292,
       "bright_frac": 0.0
      },
      "detail_chips": [],
-     "label": "2019-01-10 z18 WV02 0.5m"
+     "label": "2019-01-10 z18 WV02 0.5m",
+     "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/45441/{level}/{row}/{col}",
+     "bounds": {
+      "west": 3.9177418,
+      "south": 6.4777401,
+      "east": 3.9222586,
+      "north": 6.48226
+     },
+     "cache_file": "pipeline/cache/wayback/chips/labora/2019-01-10.jpg"
     },
     {
      "acq_date": "2023-12-25",
@@ -3522,17 +4089,22 @@
      ],
      "downscaled_from_px": null,
      "chip_window": "500 x 500 m",
-     "file": "events/drainage_sites/labora/2023-12-25.jpg",
-     "marked_file": "events/drainage_sites/labora/2023-12-25_marked.jpg",
      "brightness": {
       "mean_luminance": 0.284,
       "bright_frac": 0.0
      },
      "detail_chips": [],
-     "label": "2023-12-25 z18 WV02 0.5m"
+     "label": "2023-12-25 z18 WV02 0.5m",
+     "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/12428/{level}/{row}/{col}",
+     "bounds": {
+      "west": 3.9177418,
+      "south": 6.4777401,
+      "east": 3.9222586,
+      "north": 6.48226
+     },
+     "cache_file": "pipeline/cache/wayback/chips/labora/2023-12-25.jpg"
     }
    ],
-   "contact_sheet": "events/drainage_sites/labora/contact_sheet.jpg",
    "osm": {
     "source": "OpenStreetMap via Overpass (current data, not historical)",
     "licence": "ODbL (OpenStreetMap contributors)",
@@ -3693,19 +4265,23 @@
      ],
      "downscaled_from_px": null,
      "chip_window": "line bbox + 150 m (13605 x 1964 m)",
-     "file": "events/drainage_sites/lekki-epe-rehab/2013-01-01.jpg",
-     "marked_file": "events/drainage_sites/lekki-epe-rehab/2013-01-01_marked.jpg",
      "brightness": {
       "mean_luminance": 0.379,
       "bright_frac": 0.0
      },
      "detail_chips": [],
-     "label": "2013-01-01 z13 GE01 0.46m"
+     "label": "2013-01-01 z13 GE01 0.46m",
+     "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/4383/{level}/{row}/{col}",
+     "bounds": {
+      "west": 3.5829163,
+      "south": 6.4585991,
+      "east": 3.7059975,
+      "north": 6.4763382
+     },
+     "cache_file": "pipeline/cache/wayback/chips/lekki-epe-rehab/2013-01-01.jpg"
     },
     {
      "acq_date": "2018-12-24",
-     "file": null,
-     "marked_file": null,
      "chip_window": "line bbox + 150 m (13605 x 1964 m)",
      "detail_chips": [
       {
@@ -3718,8 +4294,7 @@
         843,
         848
        ],
-       "file": "events/drainage_sites/lekki-epe-rehab/2018-12-24_detail1.jpg",
-       "marked_file": "events/drainage_sites/lekki-epe-rehab/2018-12-24_detail1_marked.jpg"
+       "cache_file": "pipeline/cache/wayback/chips/lekki-epe-rehab/2018-12-24_detail1.jpg"
       },
       {
        "station": "mid",
@@ -3731,8 +4306,7 @@
         843,
         849
        ],
-       "file": "events/drainage_sites/lekki-epe-rehab/2018-12-24_detail2.jpg",
-       "marked_file": "events/drainage_sites/lekki-epe-rehab/2018-12-24_detail2_marked.jpg"
+       "cache_file": "pipeline/cache/wayback/chips/lekki-epe-rehab/2018-12-24_detail2.jpg"
       },
       {
        "station": "end",
@@ -3744,8 +4318,7 @@
         842,
         849
        ],
-       "file": "events/drainage_sites/lekki-epe-rehab/2018-12-24_detail3.jpg",
-       "marked_file": "events/drainage_sites/lekki-epe-rehab/2018-12-24_detail3_marked.jpg"
+       "cache_file": "pipeline/cache/wayback/chips/lekki-epe-rehab/2018-12-24_detail3.jpg"
       }
      ]
     },
@@ -3766,8 +4339,6 @@
      ],
      "downscaled_from_px": null,
      "chip_window": "line bbox + 150 m (13605 x 1964 m)",
-     "file": "events/drainage_sites/lekki-epe-rehab/2024-11-30.jpg",
-     "marked_file": "events/drainage_sites/lekki-epe-rehab/2024-11-30_marked.jpg",
      "brightness": {
       "mean_luminance": 0.433,
       "bright_frac": 0.0
@@ -3783,8 +4354,15 @@
         843,
         848
        ],
-       "file": "events/drainage_sites/lekki-epe-rehab/2024-11-30_detail1.jpg",
-       "marked_file": "events/drainage_sites/lekki-epe-rehab/2024-11-30_detail1_marked.jpg"
+       "release": 51127,
+       "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/51127/{level}/{row}/{col}",
+       "bounds": {
+        "west": 3.5820204,
+        "south": 6.4672982,
+        "east": 3.5865426,
+        "north": 6.4718182
+       },
+       "cache_file": "pipeline/cache/wayback/chips/lekki-epe-rehab/2024-11-30_detail1.jpg"
       },
       {
        "station": "mid",
@@ -3796,8 +4374,15 @@
         843,
         849
        ],
-       "file": "events/drainage_sites/lekki-epe-rehab/2024-11-30_detail2.jpg",
-       "marked_file": "events/drainage_sites/lekki-epe-rehab/2024-11-30_detail2_marked.jpg"
+       "release": 51127,
+       "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/51127/{level}/{row}/{col}",
+       "bounds": {
+        "west": 3.6429816,
+        "south": 6.46636,
+        "east": 3.6475039,
+        "north": 6.4708854
+       },
+       "cache_file": "pipeline/cache/wayback/chips/lekki-epe-rehab/2024-11-30_detail2.jpg"
       },
       {
        "station": "end",
@@ -3809,14 +4394,28 @@
         842,
         849
        ],
-       "file": "events/drainage_sites/lekki-epe-rehab/2024-11-30_detail3.jpg",
-       "marked_file": "events/drainage_sites/lekki-epe-rehab/2024-11-30_detail3_marked.jpg"
+       "release": 51127,
+       "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/51127/{level}/{row}/{col}",
+       "bounds": {
+        "west": 3.7023014,
+        "south": 6.4674474,
+        "east": 3.7068182,
+        "north": 6.4719728
+       },
+       "cache_file": "pipeline/cache/wayback/chips/lekki-epe-rehab/2024-11-30_detail3.jpg"
       }
      ],
-     "label": "2024-11-30 z13 WV03 0.31m"
+     "label": "2024-11-30 z13 WV03 0.31m",
+     "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/51127/{level}/{row}/{col}",
+     "bounds": {
+      "west": 3.5829163,
+      "south": 6.4585991,
+      "east": 3.7059975,
+      "north": 6.4763382
+     },
+     "cache_file": "pipeline/cache/wayback/chips/lekki-epe-rehab/2024-11-30.jpg"
     }
    ],
-   "contact_sheet": "events/drainage_sites/lekki-epe-rehab/contact_sheet.jpg",
    "osm": {
     "source": "OpenStreetMap via Overpass (current data, not historical)",
     "licence": "ODbL (OpenStreetMap contributors)",
@@ -4207,14 +4806,20 @@
      ],
      "downscaled_from_px": null,
      "chip_window": "line bbox + 150 m (1194 x 904 m)",
-     "file": "events/drainage_sites/marina-drainage/2012-05-01.jpg",
-     "marked_file": "events/drainage_sites/marina-drainage/2012-05-01_marked.jpg",
      "brightness": {
       "mean_luminance": 0.43,
       "bright_frac": 0.001
      },
      "detail_chips": [],
-     "label": "2012-05-01 z16 WV02 0.5m"
+     "label": "2012-05-01 z16 WV02 0.5m",
+     "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/10/{level}/{row}/{col}",
+     "bounds": {
+      "west": 3.3793044,
+      "south": 6.4507527,
+      "east": 3.3900762,
+      "north": 6.4589189
+     },
+     "cache_file": "pipeline/cache/wayback/chips/marina-drainage/2012-05-01.jpg"
     },
     {
      "acq_date": "2012-12-23",
@@ -4233,14 +4838,20 @@
      ],
      "downscaled_from_px": null,
      "chip_window": "line bbox + 150 m (1194 x 904 m)",
-     "file": "events/drainage_sites/marina-drainage/2012-12-23.jpg",
-     "marked_file": "events/drainage_sites/marina-drainage/2012-12-23_marked.jpg",
      "brightness": {
       "mean_luminance": 0.368,
       "bright_frac": 0.0
      },
      "detail_chips": [],
-     "label": "2012-12-23 z17 WV02 0.5m"
+     "label": "2012-12-23 z17 WV02 0.5m",
+     "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/29387/{level}/{row}/{col}",
+     "bounds": {
+      "west": 3.3792937,
+      "south": 6.4507527,
+      "east": 3.3900869,
+      "north": 6.4589296
+     },
+     "cache_file": "pipeline/cache/wayback/chips/marina-drainage/2012-12-23.jpg"
     },
     {
      "acq_date": "2015-12-08",
@@ -4259,14 +4870,20 @@
      ],
      "downscaled_from_px": null,
      "chip_window": "line bbox + 150 m (1194 x 904 m)",
-     "file": "events/drainage_sites/marina-drainage/2015-12-08.jpg",
-     "marked_file": "events/drainage_sites/marina-drainage/2015-12-08_marked.jpg",
      "brightness": {
       "mean_luminance": 0.371,
       "bright_frac": 0.0
      },
      "detail_chips": [],
-     "label": "2015-12-08 z17 WV02 0.5m"
+     "label": "2015-12-08 z17 WV02 0.5m",
+     "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/2168/{level}/{row}/{col}",
+     "bounds": {
+      "west": 3.3792937,
+      "south": 6.4507527,
+      "east": 3.3900869,
+      "north": 6.4589296
+     },
+     "cache_file": "pipeline/cache/wayback/chips/marina-drainage/2015-12-08.jpg"
     },
     {
      "acq_date": "2018-12-28",
@@ -4285,14 +4902,20 @@
      ],
      "downscaled_from_px": null,
      "chip_window": "line bbox + 150 m (1194 x 904 m)",
-     "file": "events/drainage_sites/marina-drainage/2018-12-28.jpg",
-     "marked_file": "events/drainage_sites/marina-drainage/2018-12-28_marked.jpg",
      "brightness": {
       "mean_luminance": 0.447,
       "bright_frac": 0.0
      },
      "detail_chips": [],
-     "label": "2018-12-28 z17 WV03_VNIR 0.31m"
+     "label": "2018-12-28 z17 WV03_VNIR 0.31m",
+     "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/4756/{level}/{row}/{col}",
+     "bounds": {
+      "west": 3.3792937,
+      "south": 6.4507527,
+      "east": 3.3900869,
+      "north": 6.4589296
+     },
+     "cache_file": "pipeline/cache/wayback/chips/marina-drainage/2018-12-28.jpg"
     },
     {
      "acq_date": "2021-05-23",
@@ -4311,14 +4934,20 @@
      ],
      "downscaled_from_px": null,
      "chip_window": "line bbox + 150 m (1194 x 904 m)",
-     "file": "events/drainage_sites/marina-drainage/2021-05-23.jpg",
-     "marked_file": "events/drainage_sites/marina-drainage/2021-05-23_marked.jpg",
      "brightness": {
       "mean_luminance": 0.389,
       "bright_frac": 0.004
      },
      "detail_chips": [],
-     "label": "2021-05-23 z17 WV03 0.31m"
+     "label": "2021-05-23 z17 WV03 0.31m",
+     "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/44710/{level}/{row}/{col}",
+     "bounds": {
+      "west": 3.3792937,
+      "south": 6.4507527,
+      "east": 3.3900869,
+      "north": 6.4589296
+     },
+     "cache_file": "pipeline/cache/wayback/chips/marina-drainage/2021-05-23.jpg"
     },
     {
      "acq_date": "2025-05-15",
@@ -4337,17 +4966,22 @@
      ],
      "downscaled_from_px": null,
      "chip_window": "line bbox + 150 m (1194 x 904 m)",
-     "file": "events/drainage_sites/marina-drainage/2025-05-15.jpg",
-     "marked_file": "events/drainage_sites/marina-drainage/2025-05-15_marked.jpg",
      "brightness": {
       "mean_luminance": 0.387,
       "bright_frac": 0.0
      },
      "detail_chips": [],
-     "label": "2025-05-15 z17 LG04 0.34m"
+     "label": "2025-05-15 z17 LG04 0.34m",
+     "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/51127/{level}/{row}/{col}",
+     "bounds": {
+      "west": 3.3792937,
+      "south": 6.4507527,
+      "east": 3.3900869,
+      "north": 6.4589296
+     },
+     "cache_file": "pipeline/cache/wayback/chips/marina-drainage/2025-05-15.jpg"
     }
    ],
-   "contact_sheet": "events/drainage_sites/marina-drainage/contact_sheet.jpg",
    "osm": {
     "source": "OpenStreetMap via Overpass (current data, not historical)",
     "licence": "ODbL (OpenStreetMap contributors)",
@@ -4631,14 +5265,20 @@
      ],
      "downscaled_from_px": null,
      "chip_window": "line bbox + 150 m (750 x 1731 m)",
-     "file": "events/drainage_sites/oko-oba-canal/2012-05-01.jpg",
-     "marked_file": "events/drainage_sites/oko-oba-canal/2012-05-01_marked.jpg",
      "brightness": {
       "mean_luminance": 0.626,
       "bright_frac": 0.167
      },
      "detail_chips": [],
-     "label": "2012-05-01 z16 WV02 0.5m"
+     "label": "2012-05-01 z16 WV02 0.5m",
+     "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/10/{level}/{row}/{col}",
+     "bounds": {
+      "west": 3.3103609,
+      "south": 6.6308471,
+      "east": 3.3171415,
+      "north": 6.6464915
+     },
+     "cache_file": "pipeline/cache/wayback/chips/oko-oba-canal/2012-05-01.jpg"
     },
     {
      "acq_date": "2013-12-19",
@@ -4657,14 +5297,20 @@
      ],
      "downscaled_from_px": null,
      "chip_window": "line bbox + 150 m (750 x 1731 m)",
-     "file": "events/drainage_sites/oko-oba-canal/2013-12-19.jpg",
-     "marked_file": "events/drainage_sites/oko-oba-canal/2013-12-19_marked.jpg",
      "brightness": {
       "mean_luminance": 0.423,
       "bright_frac": 0.0
      },
      "detail_chips": [],
-     "label": "2013-12-19 z16 WV02 0.5m"
+     "label": "2013-12-19 z16 WV02 0.5m",
+     "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/29387/{level}/{row}/{col}",
+     "bounds": {
+      "west": 3.3103609,
+      "south": 6.6308471,
+      "east": 3.3171415,
+      "north": 6.6464915
+     },
+     "cache_file": "pipeline/cache/wayback/chips/oko-oba-canal/2013-12-19.jpg"
     },
     {
      "acq_date": "2015-12-08",
@@ -4683,14 +5329,20 @@
      ],
      "downscaled_from_px": null,
      "chip_window": "line bbox + 150 m (750 x 1731 m)",
-     "file": "events/drainage_sites/oko-oba-canal/2015-12-08.jpg",
-     "marked_file": "events/drainage_sites/oko-oba-canal/2015-12-08_marked.jpg",
      "brightness": {
       "mean_luminance": 0.387,
       "bright_frac": 0.0
      },
      "detail_chips": [],
-     "label": "2015-12-08 z16 WV02 0.5m"
+     "label": "2015-12-08 z16 WV02 0.5m",
+     "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/2168/{level}/{row}/{col}",
+     "bounds": {
+      "west": 3.3103609,
+      "south": 6.6308471,
+      "east": 3.3171415,
+      "north": 6.6464915
+     },
+     "cache_file": "pipeline/cache/wayback/chips/oko-oba-canal/2015-12-08.jpg"
     },
     {
      "acq_date": "2018-12-28",
@@ -4709,8 +5361,6 @@
      ],
      "downscaled_from_px": null,
      "chip_window": "line bbox + 150 m (750 x 1731 m)",
-     "file": "events/drainage_sites/oko-oba-canal/2018-12-28.jpg",
-     "marked_file": "events/drainage_sites/oko-oba-canal/2018-12-28_marked.jpg",
      "brightness": {
       "mean_luminance": 0.614,
       "bright_frac": 0.0
@@ -4726,8 +5376,15 @@
         843,
         848
        ],
-       "file": "events/drainage_sites/oko-oba-canal/2018-12-28_detail1.jpg",
-       "marked_file": "events/drainage_sites/oko-oba-canal/2018-12-28_detail1_marked.jpg"
+       "release": 4756,
+       "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/4756/{level}/{row}/{col}",
+       "bounds": {
+        "west": 3.309449,
+        "south": 6.6299413,
+        "east": 3.3139712,
+        "north": 6.6344599
+       },
+       "cache_file": "pipeline/cache/wayback/chips/oko-oba-canal/2018-12-28_detail1.jpg"
       },
       {
        "station": "mid",
@@ -4739,8 +5396,15 @@
         843,
         848
        ],
-       "file": "events/drainage_sites/oko-oba-canal/2018-12-28_detail2.jpg",
-       "marked_file": "events/drainage_sites/oko-oba-canal/2018-12-28_detail2_marked.jpg"
+       "release": 4756,
+       "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/4756/{level}/{row}/{col}",
+       "bounds": {
+        "west": 3.3106023,
+        "south": 6.6367564,
+        "east": 3.3151245,
+        "north": 6.641275
+       },
+       "cache_file": "pipeline/cache/wayback/chips/oko-oba-canal/2018-12-28_detail2.jpg"
       },
       {
        "station": "end",
@@ -4752,11 +5416,26 @@
         843,
         849
        ],
-       "file": "events/drainage_sites/oko-oba-canal/2018-12-28_detail3.jpg",
-       "marked_file": "events/drainage_sites/oko-oba-canal/2018-12-28_detail3_marked.jpg"
+       "release": 4756,
+       "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/4756/{level}/{row}/{col}",
+       "bounds": {
+        "west": 3.3135206,
+        "south": 6.6428788,
+        "east": 3.3180428,
+        "north": 6.6474026
+       },
+       "cache_file": "pipeline/cache/wayback/chips/oko-oba-canal/2018-12-28_detail3.jpg"
       }
      ],
-     "label": "2018-12-28 z16 WV03_VNIR 0.31m"
+     "label": "2018-12-28 z16 WV03_VNIR 0.31m",
+     "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/4756/{level}/{row}/{col}",
+     "bounds": {
+      "west": 3.3103609,
+      "south": 6.6308471,
+      "east": 3.3171415,
+      "north": 6.6464915
+     },
+     "cache_file": "pipeline/cache/wayback/chips/oko-oba-canal/2018-12-28.jpg"
     },
     {
      "acq_date": "2021-05-23",
@@ -4775,8 +5454,6 @@
      ],
      "downscaled_from_px": null,
      "chip_window": "line bbox + 150 m (750 x 1731 m)",
-     "file": "events/drainage_sites/oko-oba-canal/2021-05-23.jpg",
-     "marked_file": "events/drainage_sites/oko-oba-canal/2021-05-23_marked.jpg",
      "brightness": {
       "mean_luminance": 0.439,
       "bright_frac": 0.001
@@ -4792,8 +5469,15 @@
         843,
         848
        ],
-       "file": "events/drainage_sites/oko-oba-canal/2021-05-23_detail1.jpg",
-       "marked_file": "events/drainage_sites/oko-oba-canal/2021-05-23_detail1_marked.jpg"
+       "release": 44710,
+       "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/44710/{level}/{row}/{col}",
+       "bounds": {
+        "west": 3.309449,
+        "south": 6.6299413,
+        "east": 3.3139712,
+        "north": 6.6344599
+       },
+       "cache_file": "pipeline/cache/wayback/chips/oko-oba-canal/2021-05-23_detail1.jpg"
       },
       {
        "station": "mid",
@@ -4805,8 +5489,15 @@
         843,
         848
        ],
-       "file": "events/drainage_sites/oko-oba-canal/2021-05-23_detail2.jpg",
-       "marked_file": "events/drainage_sites/oko-oba-canal/2021-05-23_detail2_marked.jpg"
+       "release": 44710,
+       "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/44710/{level}/{row}/{col}",
+       "bounds": {
+        "west": 3.3106023,
+        "south": 6.6367564,
+        "east": 3.3151245,
+        "north": 6.641275
+       },
+       "cache_file": "pipeline/cache/wayback/chips/oko-oba-canal/2021-05-23_detail2.jpg"
       },
       {
        "station": "end",
@@ -4818,11 +5509,26 @@
         843,
         849
        ],
-       "file": "events/drainage_sites/oko-oba-canal/2021-05-23_detail3.jpg",
-       "marked_file": "events/drainage_sites/oko-oba-canal/2021-05-23_detail3_marked.jpg"
+       "release": 44710,
+       "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/44710/{level}/{row}/{col}",
+       "bounds": {
+        "west": 3.3135206,
+        "south": 6.6428788,
+        "east": 3.3180428,
+        "north": 6.6474026
+       },
+       "cache_file": "pipeline/cache/wayback/chips/oko-oba-canal/2021-05-23_detail3.jpg"
       }
      ],
-     "label": "2021-05-23 z16 WV03 0.31m"
+     "label": "2021-05-23 z16 WV03 0.31m",
+     "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/44710/{level}/{row}/{col}",
+     "bounds": {
+      "west": 3.3103609,
+      "south": 6.6308471,
+      "east": 3.3171415,
+      "north": 6.6464915
+     },
+     "cache_file": "pipeline/cache/wayback/chips/oko-oba-canal/2021-05-23.jpg"
     },
     {
      "acq_date": "2025-05-15",
@@ -4841,8 +5547,6 @@
      ],
      "downscaled_from_px": null,
      "chip_window": "line bbox + 150 m (750 x 1731 m)",
-     "file": "events/drainage_sites/oko-oba-canal/2025-05-15.jpg",
-     "marked_file": "events/drainage_sites/oko-oba-canal/2025-05-15_marked.jpg",
      "brightness": {
       "mean_luminance": 0.436,
       "bright_frac": 0.002
@@ -4858,8 +5562,15 @@
         843,
         848
        ],
-       "file": "events/drainage_sites/oko-oba-canal/2025-05-15_detail1.jpg",
-       "marked_file": "events/drainage_sites/oko-oba-canal/2025-05-15_detail1_marked.jpg"
+       "release": 51127,
+       "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/51127/{level}/{row}/{col}",
+       "bounds": {
+        "west": 3.309449,
+        "south": 6.6299413,
+        "east": 3.3139712,
+        "north": 6.6344599
+       },
+       "cache_file": "pipeline/cache/wayback/chips/oko-oba-canal/2025-05-15_detail1.jpg"
       },
       {
        "station": "mid",
@@ -4871,8 +5582,15 @@
         843,
         848
        ],
-       "file": "events/drainage_sites/oko-oba-canal/2025-05-15_detail2.jpg",
-       "marked_file": "events/drainage_sites/oko-oba-canal/2025-05-15_detail2_marked.jpg"
+       "release": 51127,
+       "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/51127/{level}/{row}/{col}",
+       "bounds": {
+        "west": 3.3106023,
+        "south": 6.6367564,
+        "east": 3.3151245,
+        "north": 6.641275
+       },
+       "cache_file": "pipeline/cache/wayback/chips/oko-oba-canal/2025-05-15_detail2.jpg"
       },
       {
        "station": "end",
@@ -4884,14 +5602,28 @@
         843,
         849
        ],
-       "file": "events/drainage_sites/oko-oba-canal/2025-05-15_detail3.jpg",
-       "marked_file": "events/drainage_sites/oko-oba-canal/2025-05-15_detail3_marked.jpg"
+       "release": 51127,
+       "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/51127/{level}/{row}/{col}",
+       "bounds": {
+        "west": 3.3135206,
+        "south": 6.6428788,
+        "east": 3.3180428,
+        "north": 6.6474026
+       },
+       "cache_file": "pipeline/cache/wayback/chips/oko-oba-canal/2025-05-15_detail3.jpg"
       }
      ],
-     "label": "2025-05-15 z16 LG04 0.34m"
+     "label": "2025-05-15 z16 LG04 0.34m",
+     "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/51127/{level}/{row}/{col}",
+     "bounds": {
+      "west": 3.3103609,
+      "south": 6.6308471,
+      "east": 3.3171415,
+      "north": 6.6464915
+     },
+     "cache_file": "pipeline/cache/wayback/chips/oko-oba-canal/2025-05-15.jpg"
     }
    ],
-   "contact_sheet": "events/drainage_sites/oko-oba-canal/contact_sheet.jpg",
    "osm": {
     "source": "OpenStreetMap via Overpass (current data, not historical)",
     "licence": "ODbL (OpenStreetMap contributors)",
@@ -5117,14 +5849,20 @@
      ],
      "downscaled_from_px": null,
      "chip_window": "line bbox + 150 m (3197 x 653 m)",
-     "file": "events/drainage_sites/olopomeji/2012-05-01.jpg",
-     "marked_file": "events/drainage_sites/olopomeji/2012-05-01_marked.jpg",
      "brightness": {
       "mean_luminance": 0.547,
       "bright_frac": 0.033
      },
      "detail_chips": [],
-     "label": "2012-05-01 z15 WV02 0.5m"
+     "label": "2012-05-01 z15 WV02 0.5m",
+     "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/10/{level}/{row}/{col}",
+     "bounds": {
+      "west": 3.3788538,
+      "south": 6.5469476,
+      "east": 3.4077358,
+      "north": 6.5528312
+     },
+     "cache_file": "pipeline/cache/wayback/chips/olopomeji/2012-05-01.jpg"
     },
     {
      "acq_date": "2012-12-23",
@@ -5143,14 +5881,20 @@
      ],
      "downscaled_from_px": null,
      "chip_window": "line bbox + 150 m (3197 x 653 m)",
-     "file": "events/drainage_sites/olopomeji/2012-12-23.jpg",
-     "marked_file": "events/drainage_sites/olopomeji/2012-12-23_marked.jpg",
      "brightness": {
       "mean_luminance": 0.387,
       "bright_frac": 0.0
      },
      "detail_chips": [],
-     "label": "2012-12-23 z15 WV02 0.5m"
+     "label": "2012-12-23 z15 WV02 0.5m",
+     "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/29387/{level}/{row}/{col}",
+     "bounds": {
+      "west": 3.3788538,
+      "south": 6.5469476,
+      "east": 3.4077358,
+      "north": 6.5528312
+     },
+     "cache_file": "pipeline/cache/wayback/chips/olopomeji/2012-12-23.jpg"
     },
     {
      "acq_date": "2015-12-08",
@@ -5169,14 +5913,20 @@
      ],
      "downscaled_from_px": null,
      "chip_window": "line bbox + 150 m (3197 x 653 m)",
-     "file": "events/drainage_sites/olopomeji/2015-12-08.jpg",
-     "marked_file": "events/drainage_sites/olopomeji/2015-12-08_marked.jpg",
      "brightness": {
       "mean_luminance": 0.431,
       "bright_frac": 0.001
      },
      "detail_chips": [],
-     "label": "2015-12-08 z15 WV02 0.5m"
+     "label": "2015-12-08 z15 WV02 0.5m",
+     "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/2168/{level}/{row}/{col}",
+     "bounds": {
+      "west": 3.3788538,
+      "south": 6.5469476,
+      "east": 3.4077358,
+      "north": 6.5528312
+     },
+     "cache_file": "pipeline/cache/wayback/chips/olopomeji/2015-12-08.jpg"
     },
     {
      "acq_date": "2021-05-23",
@@ -5195,8 +5945,6 @@
      ],
      "downscaled_from_px": null,
      "chip_window": "line bbox + 150 m (3197 x 653 m)",
-     "file": "events/drainage_sites/olopomeji/2021-05-23.jpg",
-     "marked_file": "events/drainage_sites/olopomeji/2021-05-23_marked.jpg",
      "brightness": {
       "mean_luminance": 0.459,
       "bright_frac": 0.002
@@ -5212,8 +5960,15 @@
         842,
         849
        ],
-       "file": "events/drainage_sites/olopomeji/2021-05-23_detail1.jpg",
-       "marked_file": "events/drainage_sites/olopomeji/2021-05-23_detail1_marked.jpg"
+       "release": 13851,
+       "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/13851/{level}/{row}/{col}",
+       "bounds": {
+        "west": 3.4041309,
+        "south": 6.5462281,
+        "east": 3.4086478,
+        "north": 6.5507528
+       },
+       "cache_file": "pipeline/cache/wayback/chips/olopomeji/2021-05-23_detail1.jpg"
       },
       {
        "station": "mid",
@@ -5225,8 +5980,15 @@
         842,
         849
        ],
-       "file": "events/drainage_sites/olopomeji/2021-05-23_detail2.jpg",
-       "marked_file": "events/drainage_sites/olopomeji/2021-05-23_detail2_marked.jpg"
+       "release": 13851,
+       "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/13851/{level}/{row}/{col}",
+       "bounds": {
+        "west": 3.3912832,
+        "south": 6.548232,
+        "east": 3.3958,
+        "north": 6.5527566
+       },
+       "cache_file": "pipeline/cache/wayback/chips/olopomeji/2021-05-23_detail2.jpg"
       },
       {
        "station": "end",
@@ -5238,11 +6000,26 @@
         842,
         848
        ],
-       "file": "events/drainage_sites/olopomeji/2021-05-23_detail3.jpg",
-       "marked_file": "events/drainage_sites/olopomeji/2021-05-23_detail3_marked.jpg"
+       "release": 13851,
+       "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/13851/{level}/{row}/{col}",
+       "bounds": {
+        "west": 3.3779418,
+        "south": 6.5460416,
+        "east": 3.3824587,
+        "north": 6.5505609
+       },
+       "cache_file": "pipeline/cache/wayback/chips/olopomeji/2021-05-23_detail3.jpg"
       }
      ],
-     "label": "2021-05-23 z15 WV03 0.31m"
+     "label": "2021-05-23 z15 WV03 0.31m",
+     "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/13851/{level}/{row}/{col}",
+     "bounds": {
+      "west": 3.3788538,
+      "south": 6.5469476,
+      "east": 3.4077358,
+      "north": 6.5528312
+     },
+     "cache_file": "pipeline/cache/wayback/chips/olopomeji/2021-05-23.jpg"
     },
     {
      "acq_date": "2025-05-15",
@@ -5261,8 +6038,6 @@
      ],
      "downscaled_from_px": null,
      "chip_window": "line bbox + 150 m (3197 x 653 m)",
-     "file": "events/drainage_sites/olopomeji/2025-05-15.jpg",
-     "marked_file": "events/drainage_sites/olopomeji/2025-05-15_marked.jpg",
      "brightness": {
       "mean_luminance": 0.463,
       "bright_frac": 0.0
@@ -5278,8 +6053,15 @@
         842,
         849
        ],
-       "file": "events/drainage_sites/olopomeji/2025-05-15_detail1.jpg",
-       "marked_file": "events/drainage_sites/olopomeji/2025-05-15_detail1_marked.jpg"
+       "release": 64001,
+       "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/64001/{level}/{row}/{col}",
+       "bounds": {
+        "west": 3.4041309,
+        "south": 6.5462281,
+        "east": 3.4086478,
+        "north": 6.5507528
+       },
+       "cache_file": "pipeline/cache/wayback/chips/olopomeji/2025-05-15_detail1.jpg"
       },
       {
        "station": "mid",
@@ -5291,8 +6073,15 @@
         842,
         849
        ],
-       "file": "events/drainage_sites/olopomeji/2025-05-15_detail2.jpg",
-       "marked_file": "events/drainage_sites/olopomeji/2025-05-15_detail2_marked.jpg"
+       "release": 64001,
+       "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/64001/{level}/{row}/{col}",
+       "bounds": {
+        "west": 3.3912832,
+        "south": 6.548232,
+        "east": 3.3958,
+        "north": 6.5527566
+       },
+       "cache_file": "pipeline/cache/wayback/chips/olopomeji/2025-05-15_detail2.jpg"
       },
       {
        "station": "end",
@@ -5304,14 +6093,28 @@
         842,
         848
        ],
-       "file": "events/drainage_sites/olopomeji/2025-05-15_detail3.jpg",
-       "marked_file": "events/drainage_sites/olopomeji/2025-05-15_detail3_marked.jpg"
+       "release": 64001,
+       "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/64001/{level}/{row}/{col}",
+       "bounds": {
+        "west": 3.3779418,
+        "south": 6.5460416,
+        "east": 3.3824587,
+        "north": 6.5505609
+       },
+       "cache_file": "pipeline/cache/wayback/chips/olopomeji/2025-05-15_detail3.jpg"
       }
      ],
-     "label": "2025-05-15 z15 LG04 0.34m"
+     "label": "2025-05-15 z15 LG04 0.34m",
+     "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/64001/{level}/{row}/{col}",
+     "bounds": {
+      "west": 3.3788538,
+      "south": 6.5469476,
+      "east": 3.4077358,
+      "north": 6.5528312
+     },
+     "cache_file": "pipeline/cache/wayback/chips/olopomeji/2025-05-15.jpg"
     }
    ],
-   "contact_sheet": "events/drainage_sites/olopomeji/contact_sheet.jpg",
    "osm": {
     "source": "OpenStreetMap via Overpass (current data, not historical)",
     "licence": "ODbL (OpenStreetMap contributors)",
@@ -5619,14 +6422,20 @@
      ],
      "downscaled_from_px": null,
      "chip_window": "500 x 500 m",
-     "file": "events/drainage_sites/sangotedo-channel-notices/2012-05-06.jpg",
-     "marked_file": "events/drainage_sites/sangotedo-channel-notices/2012-05-06_marked.jpg",
      "brightness": {
       "mean_luminance": 0.488,
       "bright_frac": 0.004
      },
      "detail_chips": [],
-     "label": "2012-05-06 z17 QB02 0.6m"
+     "label": "2012-05-06 z17 QB02 0.6m",
+     "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/10/{level}/{row}/{col}",
+     "bounds": {
+      "west": 3.6333203,
+      "south": 6.4687587,
+      "east": 3.6378372,
+      "north": 6.4732787
+     },
+     "cache_file": "pipeline/cache/wayback/chips/sangotedo-channel-notices/2012-05-06.jpg"
     },
     {
      "acq_date": "2013-01-01",
@@ -5645,14 +6454,20 @@
      ],
      "downscaled_from_px": null,
      "chip_window": "500 x 500 m",
-     "file": "events/drainage_sites/sangotedo-channel-notices/2013-01-01.jpg",
-     "marked_file": "events/drainage_sites/sangotedo-channel-notices/2013-01-01_marked.jpg",
      "brightness": {
       "mean_luminance": 0.476,
       "bright_frac": 0.001
      },
      "detail_chips": [],
-     "label": "2013-01-01 z17 GE01 0.46m"
+     "label": "2013-01-01 z17 GE01 0.46m",
+     "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/29387/{level}/{row}/{col}",
+     "bounds": {
+      "west": 3.6333203,
+      "south": 6.4687587,
+      "east": 3.6378372,
+      "north": 6.4732787
+     },
+     "cache_file": "pipeline/cache/wayback/chips/sangotedo-channel-notices/2013-01-01.jpg"
     },
     {
      "acq_date": "2018-12-24",
@@ -5671,14 +6486,20 @@
      ],
      "downscaled_from_px": null,
      "chip_window": "500 x 500 m",
-     "file": "events/drainage_sites/sangotedo-channel-notices/2018-12-24.jpg",
-     "marked_file": "events/drainage_sites/sangotedo-channel-notices/2018-12-24_marked.jpg",
      "brightness": {
       "mean_luminance": 0.628,
       "bright_frac": 0.0
      },
      "detail_chips": [],
-     "label": "2018-12-24 z18 WV04 0.31m"
+     "label": "2018-12-24 z18 WV04 0.31m",
+     "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/4756/{level}/{row}/{col}",
+     "bounds": {
+      "west": 3.6333203,
+      "south": 6.4687587,
+      "east": 3.6378425,
+      "north": 6.4732787
+     },
+     "cache_file": "pipeline/cache/wayback/chips/sangotedo-channel-notices/2018-12-24.jpg"
     },
     {
      "acq_date": "2019-04-02",
@@ -5697,14 +6518,20 @@
      ],
      "downscaled_from_px": null,
      "chip_window": "500 x 500 m",
-     "file": "events/drainage_sites/sangotedo-channel-notices/2019-04-02.jpg",
-     "marked_file": "events/drainage_sites/sangotedo-channel-notices/2019-04-02_marked.jpg",
      "brightness": {
       "mean_luminance": 0.508,
       "bright_frac": 0.003
      },
      "detail_chips": [],
-     "label": "2019-04-02 z18 WV02 0.5m"
+     "label": "2019-04-02 z18 WV02 0.5m",
+     "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/44710/{level}/{row}/{col}",
+     "bounds": {
+      "west": 3.6333203,
+      "south": 6.4687587,
+      "east": 3.6378425,
+      "north": 6.4732787
+     },
+     "cache_file": "pipeline/cache/wayback/chips/sangotedo-channel-notices/2019-04-02.jpg"
     },
     {
      "acq_date": "2024-11-30",
@@ -5723,17 +6550,22 @@
      ],
      "downscaled_from_px": null,
      "chip_window": "500 x 500 m",
-     "file": "events/drainage_sites/sangotedo-channel-notices/2024-11-30.jpg",
-     "marked_file": "events/drainage_sites/sangotedo-channel-notices/2024-11-30_marked.jpg",
      "brightness": {
       "mean_luminance": 0.496,
       "bright_frac": 0.005
      },
      "detail_chips": [],
-     "label": "2024-11-30 z18 WV03 0.31m"
+     "label": "2024-11-30 z18 WV03 0.31m",
+     "tile_url": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/51127/{level}/{row}/{col}",
+     "bounds": {
+      "west": 3.6333203,
+      "south": 6.4687587,
+      "east": 3.6378425,
+      "north": 6.4732787
+     },
+     "cache_file": "pipeline/cache/wayback/chips/sangotedo-channel-notices/2024-11-30.jpg"
     }
    ],
-   "contact_sheet": "events/drainage_sites/sangotedo-channel-notices/contact_sheet.jpg",
    "osm": {
     "source": "OpenStreetMap via Overpass (current data, not historical)",
     "licence": "ODbL (OpenStreetMap contributors)",

@@ -2,7 +2,8 @@
 
 FloodTrace's own derived data (forecast runs, flood-day catalog, site records,
 compiled news locations, and other files we produce from the sources below) is
-licensed [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
+licensed [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/), except
+where a source's own licence is stricter (see FABDEM below).
 
 News quotes stay with their publishers. We keep short excerpts only (≤ 25
 words), with a link to the source.
@@ -21,8 +22,8 @@ words), with a link to the source.
 | Copernicus Sentinel-1 and Sentinel-2 | Copernicus open access | Copernicus Sentinel data [year of acquisition] |
 | Google Open Buildings | CC BY 4.0 (or ODbL 1.0) | Sirko et al. 2023, arXiv 2310.11622 |
 | GHSL built-up | Copernicus / JRC open data | European Commission, GHSL |
-| FABDEM (bare-earth DEM) | See product terms (derived from Copernicus GLO-30) | FABDEM, University of Bristol / Fathom |
-| Esri World Imagery Wayback | Esri imagery terms | Esri Wayback |
+| FABDEM (bare-earth DEM) | CC BY-NC-SA 4.0 | FABDEM, University of Bristol / Fathom |
+| Esri World Imagery Wayback | Esri imagery terms (live tiles; not stored or redistributed) | Esri World Imagery Wayback (Esri, Maxar, Earthstar Geographics, and the GIS User Community) |
 | OpenFreeMap basemap | ODbL (OSM-derived tiles) | © OpenFreeMap contributors, © OpenStreetMap contributors |
 
 ## OpenStreetMap-derived files (ODbL)
@@ -43,3 +44,20 @@ redistribute that data:
 Geocodes of news reports use Nominatim (OSM). The compiled flood locations in
 `events/flood_days.json` and `events/flood_spots.json` are FloodTrace's own
 catalog; they are not an OSM extract.
+
+## Esri World Imagery Wayback
+
+Esri imagery is displayed live from Esri's Wayback service in the visitor's
+browser. We do not store or redistribute Esri pixels. Credit under each image
+and on the map: Esri World Imagery Wayback (Esri, Maxar, Earthstar
+Geographics, and the GIS User Community).
+
+## FABDEM (CC BY-NC-SA 4.0)
+
+FABDEM is CC BY-NC-SA 4.0, not CC BY. Files derived from it carry that
+licence:
+
+- `events/terrain/` — terrain maps and the written verdict
+- `events/terrain_check.json` — city-wide terrain metrics
+- `events/drainage_sites_terrain.json` — the same metrics at each drainage site
+- `events/rough_model/` — the 30 m HAND / depression-fill water layers (built on FABDEM)

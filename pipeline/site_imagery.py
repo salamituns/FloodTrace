@@ -5,20 +5,20 @@ Imagery: Esri World Imagery Wayback (public, no login).  Release date is NOT
 acquisition date, so for every release in waybackconfig.json the release's own
 metadata MapServer is queried (identify) at the site point to get the real
 acquisition date, source/sensor and resolution of the raster actually drawn
-at the chip zoom.  Releases are deduped by acquisition date; the tool writes
-one JPEG q85 chip per distinct date (cap 10 per site, spread across the
-years, always keeping the closest date either side of the event date and of
-each image_windows bound):
+at the chip zoom.  Releases are deduped by acquisition date; the tool records
+the live tile view for each date (cap 10 per site, spread across the years,
+always keeping the closest date either side of the event date and of each
+image_windows bound).  The app draws those tiles in the browser; Esri pixels
+are not stored under events/.
 
-  events/drainage_sites/<site_id>/<acq-date>.jpg         chip
-  events/drainage_sites/<site_id>/<acq-date>_marked.jpg  same chip, site geometry drawn
-  events/drainage_sites/<site_id>/contact_sheet.jpg      all dates, labelled
+If a mosaic is needed for pipeline analysis, it is written under
+pipeline/cache/wayback/chips/ (gitignored).
 
 Chip window: point sites 500 x 500 m, line sites bbox + 150 m; zoom 18,
 falling back to 17 (or lower) when tiles are missing.  Tiles are cached under
 pipeline/cache/wayback/tiles/ and the tile cache is deleted at the end of a
 run.  Metadata identify responses are cached under pipeline/cache/wayback/meta/
-(immutable, kept between runs).
+(immutable, kept between runs).  waybackconfig.json is cached next to them.
 
 OSM context: current data via Overpass - waterways/drains
 (waterway=drain|canal|stream|river|ditch, culverts), buildings, bridge and
@@ -63,6 +63,7 @@ REPO = Path(__file__).resolve().parents[1]
 CACHE_WB = REPO / "pipeline" / "cache" / "wayback"
 CACHE_TILES = CACHE_WB / "tiles"
 CACHE_META = CACHE_WB / "meta"
+CHIP_CACHE = CACHE_WB / "chips"
 SITES_DIR = REPO / "events" / "drainage_sites"
 OUT_JSON = REPO / "events" / "drainage_sites_imagery.json"
 EVENTS = REPO / "events"
@@ -173,9 +174,13 @@ def http_get(url: str, params: dict | None = None, timeout: int = 60,
 # ---------------------------------------------------------------------------
 
 def load_releases() -> list[dict]:
-    cfg = json.loads(http_get(CONFIG_URL, timeout=120))
     CACHE_WB.mkdir(parents=True, exist_ok=True)
-    (CACHE_WB / "waybackconfig.json").write_text(json.dumps(cfg, indent=1))
+    cfg_path = CACHE_WB / "waybackconfig.json"
+    if cfg_path.exists():
+        cfg = json.loads(cfg_path.read_text())
+    else:
+        cfg = json.loads(http_get(CONFIG_URL, timeout=120))
+        cfg_path.write_text(json.dumps(cfg, indent=1))
     releases = []
     for num, entry in cfg.items():
         m = re.search(r"Wayback (\d{4}-\d{2}-\d{2})", entry.get("itemTitle", ""))
@@ -356,6 +361,120 @@ def lonlat_to_px(lon: float, lat: float, z: int) -> tuple[float, float]:
     s = math.sin(math.radians(lat))
     y = (0.5 - math.log((1 + s) / (1 - s)) / (4 * math.pi)) * n
     return x, y
+
+
+def px_to_lonlat(x: float, y: float, z: int) -> tuple[float, float]:
+    n = 256 * (1 << z)
+    lon = x / n * 360.0 - 180.0
+    lat = math.degrees(math.atan(math.sinh(math.pi * (1.0 - 2.0 * y / n))))
+    return lon, lat
+
+
+def mercator_bounds(corners_lonlat: list[tuple[float, float]], z: int) -> dict:
+    """North-up lon/lat box of the same web-mercator pixel crop as build_chip."""
+    xs, ys = [], []
+    for lon, lat in corners_lonlat:
+        px, py = lonlat_to_px(lon, lat, z)
+        xs.append(px)
+        ys.append(py)
+    left, top = round(min(xs)), round(min(ys))
+    right, bottom = round(max(xs)), round(max(ys))
+    west, north = px_to_lonlat(left, top, z)
+    east, south = px_to_lonlat(right, bottom, z)
+    return {
+        "west": round(west, 7),
+        "south": round(south, 7),
+        "east": round(east, 7),
+        "north": round(north, 7),
+    }
+
+
+def tile_url_for(release: dict | None, release_num: int) -> str:
+    if release and release.get("tile_url"):
+        return release["tile_url"]
+    return (f"https://wayback.maptiles.arcgis.com/arcgis/rest/services/"
+            f"World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/"
+            f"{release_num}/{{level}}/{{row}}/{{col}}")
+
+
+def live_view(release: dict | None, release_num: int, z: int,
+              corners_lonlat: list[tuple[float, float]]) -> dict:
+    """What the browser needs to draw this chip from Esri's tiles."""
+    return {
+        "release": release_num,
+        "zoom": z,
+        "tile_url": tile_url_for(release, release_num),
+        "bounds": mercator_bounds(corners_lonlat, z),
+    }
+
+
+def wayback_event_jpgs(obj: Any) -> list[str]:
+    """JPG paths under events/drainage_sites/ that are not Sentinel-2 or Open Buildings."""
+    found: list[str] = []
+    pat = re.compile(r"events/drainage_sites/[^\"'\s]+\.jpe?g", re.I)
+
+    def walk(x: Any) -> None:
+        if isinstance(x, str):
+            for m in pat.finditer(x):
+                path = m.group(0)
+                name = path.rsplit("/", 1)[-1]
+                if name.startswith("s2_") or name.startswith("ob_"):
+                    continue
+                found.append(path)
+        elif isinstance(x, dict):
+            for v in x.values():
+                walk(v)
+        elif isinstance(x, list):
+            for v in x:
+                walk(v)
+
+    walk(obj)
+    return found
+
+
+def chip_framing(geometry: dict) -> dict:
+    """Local-metre window and lon/lat corners used by build_chip (north-up)."""
+    qp = query_point_of(geometry)
+    if qp is None:
+        raise ValueError("no geometry")
+    to_xy, to_lonlat = local_proj(qp[0], qp[1])
+    gtype = geometry["type"]
+    if gtype == "Point":
+        rect = (-POINT_HALF_M, -POINT_HALF_M, POINT_HALF_M, POINT_HALF_M)
+        chip_note = f"{2 * POINT_HALF_M:.0f} x {2 * POINT_HALF_M:.0f} m"
+    else:
+        vs = [to_xy(*c) for c in geometry["coordinates"]]
+        rect = (min(x for x, _ in vs) - LINE_PAD_M,
+                min(y for _, y in vs) - LINE_PAD_M,
+                max(x for x, _ in vs) + LINE_PAD_M,
+                max(y for _, y in vs) + LINE_PAD_M)
+        chip_note = (f"line bbox + {LINE_PAD_M:.0f} m "
+                     f"({rect[2] - rect[0]:.0f} x {rect[3] - rect[1]:.0f} m)")
+    corners = [to_lonlat(rect[0], rect[1]), to_lonlat(rect[2], rect[1]),
+               to_lonlat(rect[2], rect[3]), to_lonlat(rect[0], rect[3])]
+    stations: list[dict] = []
+    if gtype == "LineString" and max(rect[2] - rect[0],
+                                     rect[3] - rect[1]) > STATION_LINE_M:
+        line = LineString(geometry["coordinates"])
+        for i, frac, name in ((1, 0.0, "start"), (2, 0.5, "mid"),
+                              (3, 1.0, "end")):
+            sp = line.interpolate(frac, normalized=True)
+            sx, sy = to_xy(sp.x, sp.y)
+            stations.append({
+                "i": i, "name": name,
+                "lon": round(sp.x, 6), "lat": round(sp.y, 6),
+                "corners": [
+                    to_lonlat(sx - POINT_HALF_M, sy - POINT_HALF_M),
+                    to_lonlat(sx + POINT_HALF_M, sy - POINT_HALF_M),
+                    to_lonlat(sx + POINT_HALF_M, sy + POINT_HALF_M),
+                    to_lonlat(sx - POINT_HALF_M, sy + POINT_HALF_M),
+                ],
+            })
+    return {
+        "query_point": qp, "gtype": gtype, "rect": rect, "corners": corners,
+        "chip_note": chip_note, "to_xy": to_xy, "to_lonlat": to_lonlat,
+        "stations": stations,
+    }
 
 
 def local_proj(lon0: float, lat0: float):
@@ -934,20 +1053,11 @@ def process_site(site: dict, releases: list[dict]) -> dict:
         return entry
 
     qp = site["query_point"]
-    to_xy, to_lonlat = local_proj(qp[0], qp[1])
-    gtype = site["geometry"]["type"]
-    if gtype == "Point":
-        rect = (-POINT_HALF_M, -POINT_HALF_M, POINT_HALF_M, POINT_HALF_M)
-        chip_note = f"{2 * POINT_HALF_M:.0f} x {2 * POINT_HALF_M:.0f} m"
-    else:
-        vs = [to_xy(*c) for c in site["geometry"]["coordinates"]]
-        rect = (min(x for x, _ in vs) - LINE_PAD_M, min(y for _, y in vs) - LINE_PAD_M,
-                max(x for x, _ in vs) + LINE_PAD_M, max(y for _, y in vs) + LINE_PAD_M)
-        chip_note = (f"line bbox + {LINE_PAD_M:.0f} m "
-                     f"({rect[2] - rect[0]:.0f} x {rect[3] - rect[1]:.0f} m)")
+    framing = chip_framing(site["geometry"])
+    to_xy, to_lonlat = framing["to_xy"], framing["to_lonlat"]
+    gtype, rect, corners, chip_note = (
+        framing["gtype"], framing["rect"], framing["corners"], framing["chip_note"])
     entry["chip_window"] = chip_note
-    corners = [to_lonlat(rect[0], rect[1]), to_lonlat(rect[2], rect[1]),
-               to_lonlat(rect[2], rect[3]), to_lonlat(rect[0], rect[3])]
 
     stats: Counter = Counter()
     groups = date_groups(qp, releases, stats)
@@ -995,18 +1105,8 @@ def process_site(site: dict, releases: list[dict]) -> dict:
     entry["corridor_zoom"] = z_c if gtype != "Point" else None
 
     # detail stations for long lines (anchor dates only, native z18)
-    stations = []
-    if gtype == "LineString" and max(rect[2] - rect[0], rect[3] - rect[1]) > STATION_LINE_M:
-        line = LineString(site["geometry"]["coordinates"])
-        for i, frac, name in ((1, 0.0, "start"), (2, 0.5, "mid"), (3, 1.0, "end")):
-            sp = line.interpolate(frac, normalized=True)
-            sx, sy = to_xy(sp.x, sp.y)
-            stations.append({
-                "i": i, "name": name, "lon": round(sp.x, 6), "lat": round(sp.y, 6),
-                "corners": [to_lonlat(sx - POINT_HALF_M, sy - POINT_HALF_M),
-                            to_lonlat(sx + POINT_HALF_M, sy - POINT_HALF_M),
-                            to_lonlat(sx + POINT_HALF_M, sy + POINT_HALF_M),
-                            to_lonlat(sx - POINT_HALF_M, sy + POINT_HALF_M)]})
+    stations = framing["stations"]
+    if stations:
         entry["stations"] = [{"name": st["name"], "lon": st["lon"],
                               "lat": st["lat"]} for st in stations]
         entry["station_note"] = (
@@ -1016,6 +1116,8 @@ def process_site(site: dict, releases: list[dict]) -> dict:
             "bound), plus the whole-corridor chip per date")
 
     images = []
+    chip_dir = CHIP_CACHE / sid
+    chip_dir.mkdir(parents=True, exist_ok=True)
     for d in selected:
         got = render_date(d, groups[d], corners, max_zoom=z_c)
         details = []
@@ -1029,28 +1131,13 @@ def process_site(site: dict, releases: list[dict]) -> dict:
                     continue
                 simg, sleft, s_top, sfz, srel, sz = got_s
                 sbase = f"{d.isoformat()}_detail{st['i']}.jpg"
-                smark = f"{d.isoformat()}_detail{st['i']}_marked.jpg"
-                simg.save(site_dir / sbase, "JPEG", quality=JPEG_Q, optimize=True)
-                s_px = [(p_[0] - sleft, p_[1] - s_top)
-                        for p_ in (lonlat_to_px(c[0], c[1], sz)
-                                   for c in site["geometry"]["coordinates"])]
-                dimg = draw_marked(simg, s_px, "LineString")
-                dd = ImageDraw.Draw(dimg)
-                cx, cy = lonlat_to_px(st["lon"], st["lat"], sz)
-                cx, cy = cx - sleft, cy - s_top
-                r = max(18, min(dimg.size) // 16)
-                dd.ellipse([cx - r, cy - r, cx + r, cy + r],
-                           outline=(0, 0, 0), width=4)
-                dd.ellipse([cx - r, cy - r, cx + r, cy + r],
-                           outline=MARK_COLOR, width=2)
-                dimg.save(site_dir / smark, "JPEG", quality=JPEG_Q, optimize=True)
+                simg.save(chip_dir / sbase, "JPEG", quality=JPEG_Q, optimize=True)
                 details.append({
                     "station": st["name"], "lon": st["lon"], "lat": st["lat"],
-                    "zoom": sz,
                     "gsd_m": round(2 * POINT_HALF_M / simg.width, 2),
                     "size_px": list(simg.size),
-                    "file": f"events/drainage_sites/{sid}/{sbase}",
-                    "marked_file": f"events/drainage_sites/{sid}/{smark}"})
+                    "cache_file": f"pipeline/cache/wayback/chips/{sid}/{sbase}",
+                    **live_view(srel, srel["release"], sz, st["corners"])})
                 log(f"[{sid}]   {sbase} release {srel['release']} z{sz} "
                     f"{simg.size[0]}px (station {st['name']})")
         if got is None:
@@ -1062,8 +1149,6 @@ def process_site(site: dict, releases: list[dict]) -> dict:
                     "station detail chips cover the anchor stations")
                 images.append({
                     "acq_date": d.isoformat(),
-                    "file": None,
-                    "marked_file": None,
                     "chip_window": chip_note,
                     "detail_chips": details})
                 log(f"[{sid}]   {d.isoformat()}: no corridor chip; "
@@ -1084,20 +1169,10 @@ def process_site(site: dict, releases: list[dict]) -> dict:
         w_m, h_m = rect[2] - rect[0], rect[3] - rect[1]
         gsd = max(w_m / img.width, h_m / img.height)
         base = f"{d.isoformat()}.jpg"
-        marked_name = f"{d.isoformat()}_marked.jpg"
-        img.save(site_dir / base, "JPEG", quality=JPEG_Q, optimize=True)
-        if gtype == "Point":
-            gp = lonlat_to_px(qp[0], qp[1], z)
-            geom_px = ((gp[0] - left) * scale, (gp[1] - top) * scale)
-        else:
-            geom_px = [((p_[0] - left) * scale, (p_[1] - top) * scale)
-                       for p_ in (lonlat_to_px(c[0], c[1], z)
-                                  for c in site["geometry"]["coordinates"])]
-        draw_marked(img, geom_px, gtype).save(
-            site_dir / marked_name, "JPEG", quality=JPEG_Q, optimize=True)
+        img.save(chip_dir / base, "JPEG", quality=JPEG_Q, optimize=True)
         stats_img = brightness_stats(img)
         source = " / ".join(s for s in (fz["sensor"], fz["product"], fz["vendor"]) if s) or None
-        kb = (site_dir / base).stat().st_size / 1024
+        kb = (chip_dir / base).stat().st_size / 1024
         log(f"[{sid}]   {base} release {rel['release']} ({rel['release_date']}) "
             f"z{z} {img.size[0]}px {kb:.0f}KB")
         if z < z_c:
@@ -1111,31 +1186,26 @@ def process_site(site: dict, releases: list[dict]) -> dict:
 
         images.append({
             "acq_date": d.isoformat(),
-            "release": rel["release"],
             "release_date": rel["release_date"],
             "first_release": min(e["release"]["release"] for e in groups[d]),
             "n_releases_carrying_date": len(groups[d]),
             "source": source,
             "sensor": fz["sensor"] or None,
             "resolution_m": fz["resolution_m"],
-            "zoom": z,
             "gsd_m": round(gsd, 2),
             "size_px": list(img.size),
             "downscaled_from_px": native_size if scale != 1.0 else None,
             "chip_window": chip_note,
-            "file": f"events/drainage_sites/{sid}/{base}",
-            "marked_file": f"events/drainage_sites/{sid}/{marked_name}",
+            "cache_file": f"pipeline/cache/wayback/chips/{sid}/{base}",
             "brightness": stats_img,
             "detail_chips": details,
             "label": f"{d.isoformat()} z{z} " +
                      (f"{fz['sensor']} " if fz["sensor"] else "") +
                      (f"{fz['resolution_m']:g}m"
                       if fz["resolution_m"] else ""),
+            **live_view(rel, rel["release"], z, corners),
         })
     entry["images"] = images
-    if images:
-        contact_sheet(sid, images, site_dir)
-        entry["contact_sheet"] = f"events/drainage_sites/{sid}/contact_sheet.jpg"
 
     # event-neighbour gaps over ALL distinct dates
     ev = site["event_date"]
@@ -1206,16 +1276,17 @@ def write_output(entries: list[dict]) -> None:
                                             "(SRC_DATE), source and resolution of the "
                                             "raster drawn at the chip zoom; releases "
                                             "deduped by acquisition date"),
-                "chip": ("point: 500 x 500 m; line: bbox + 150 m; JPEG q85; marked "
-                         "copy = site geometry drawn as a thin outline. Point "
-                         "chips and station detail chips are native z18 (17 or "
-                         "lower when tiles are missing). Whole-corridor chips for "
-                         "lines are rendered at the highest zoom that fits "
-                         f"{CORRIDOR_MAX_PX} px and downscaled to that cap, so "
-                         "long corridors are layout-level overviews; lines whose "
-                         f"bbox + pad exceeds {STATION_LINE_M:.0f} m additionally "
-                         "get native-z18 500 x 500 m detail chips at their "
-                         "start/mid/end stations, on the anchor dates only"),
+                "chip": ("point: 500 x 500 m; line: bbox + 150 m; north-up "
+                         "web-mercator crop. The app mosaics Esri tiles live "
+                         "(release, zoom, tile_url, lon/lat bounds). Analysis "
+                         "mosaics, if built, stay under pipeline/cache/wayback/"
+                         "chips/. Point chips and station detail chips are native "
+                         "z18 (17 or lower when tiles are missing). Whole-corridor "
+                         "views for lines use the highest zoom that fits "
+                         f"{CORRIDOR_MAX_PX} px; lines whose bbox + pad exceeds "
+                         f"{STATION_LINE_M:.0f} m additionally get native-z18 "
+                         "500 x 500 m detail chips at start/mid/end stations, "
+                         "on the anchor dates only"),
                 "dates_selected": (f"every distinct acquisition date up to "
                                    f"{MAX_DATES} per site: the closest date either "
                                    "side of the event date and of each "
@@ -1270,6 +1341,61 @@ def du(path: Path) -> int:
         if path.exists() else 0
 
 
+def attach_live_to_existing(releases: list[dict]) -> int:
+    """Rewrite the current imagery JSON with live tile fields; drop event JPG paths."""
+    if not OUT_JSON.exists():
+        log("no events/drainage_sites_imagery.json to rewrite")
+        return 1
+    by_rel = {r["release"]: r for r in releases}
+    doc = json.loads(OUT_JSON.read_text())
+    n = 0
+    for site in doc.get("sites", []):
+        geom = site.get("geometry")
+        if not geom:
+            continue
+        framing = chip_framing(geom)
+        stations = {st["name"]: st for st in framing["stations"]}
+        for img in site.get("images") or []:
+            rel_num = img.get("release")
+            z = img.get("zoom")
+            rel = by_rel.get(rel_num)
+            if rel_num is not None and z is not None:
+                img.update(live_view(rel, rel_num, z, framing["corners"]))
+                n += 1
+            old = img.pop("file", None)
+            img.pop("marked_file", None)
+            if old and not img.get("cache_file"):
+                name = Path(old).name
+                cached = CHIP_CACHE / site["site_id"] / name
+                if cached.exists():
+                    img["cache_file"] = str(cached.relative_to(REPO))
+            for c in img.get("detail_chips") or []:
+                st = stations.get(c.get("station"))
+                cz = c.get("zoom")
+                crel_num = c.get("release") or rel_num
+                crel = by_rel.get(crel_num)
+                if st and crel_num is not None and cz is not None:
+                    c.update(live_view(crel, crel_num, cz, st["corners"]))
+                    c["lon"] = st["lon"]
+                    c["lat"] = st["lat"]
+                    n += 1
+                cold = c.pop("file", None)
+                c.pop("marked_file", None)
+                if cold and not c.get("cache_file"):
+                    cname = Path(cold).name
+                    cached = CHIP_CACHE / site["site_id"] / cname
+                    if cached.exists():
+                        c["cache_file"] = str(cached.relative_to(REPO))
+        site.pop("contact_sheet", None)
+    meta_img = (doc.get("meta") or {}).setdefault("imagery", {})
+    meta_img["displayed"] = (
+        "live Esri World Imagery Wayback tiles in the browser; pixels are "
+        "not stored or redistributed")
+    OUT_JSON.write_text(json.dumps(doc, indent=1))
+    log(f"rewrote {OUT_JSON.relative_to(REPO)} with {n} live tile views")
+    return 0
+
+
 # ---------------------------------------------------------------------------
 
 def main() -> int:
@@ -1282,7 +1408,18 @@ def main() -> int:
                     help="test mode: every 20th release only")
     ap.add_argument("--keep-tiles", action="store_true",
                     help="do not delete the tile cache at the end")
+    ap.add_argument("--from-existing", action="store_true",
+                    help="rewrite live tile fields on the current imagery JSON "
+                         "(no mosaic, no OSM)")
     args = ap.parse_args()
+
+    if args.from_existing:
+        try:
+            rels = load_releases()
+        except Exception as exc:
+            log(f"waybackconfig unavailable ({exc}); using the standard tile URL pattern")
+            rels = []
+        return attach_live_to_existing(rels)
 
     CACHE_TILES.mkdir(parents=True, exist_ok=True)
     CACHE_META.mkdir(parents=True, exist_ok=True)

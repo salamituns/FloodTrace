@@ -338,28 +338,41 @@ def dossier_site_status(bullets, site_id):
 
 # ---------------------------------------------------------------- change blocks
 
+def wayback_live_chip(c: dict, res) -> dict | None:
+    """Browser fields for one Wayback chip. Skip dates that never got a live view."""
+    if not c.get("tile_url") or not c.get("bounds") or c.get("zoom") is None:
+        return None
+    if c.get("release") is None:
+        return None
+    out = {
+        "release": c["release"],
+        "zoom": c["zoom"],
+        "tile_url": c["tile_url"],
+        "bounds": c["bounds"],
+        "resolution_m": res,
+    }
+    if c.get("station"):
+        out["station"] = c["station"]
+        if c.get("lon") is not None:
+            out["lon"] = c["lon"]
+            out["lat"] = c["lat"]
+    return out
+
+
 def wayback_list(rec: dict) -> list:
     out = []
     for img in rec.get("images", []):
-        if not img.get("file"):
-            continue  # selected date whose tiles were missing (e.g. lekki-epe-rehab 2018-12-24)
         res = img.get("resolution_m")
-        out.append({
-            "acq_date": img["acq_date"],
-            "file": img["file"],
-            "marked_file": img.get("marked_file"),
-            "resolution_m": res,
-            "detail_chips": [
-                {
-                    "station": c.get("station"),
-                    "file": c["file"],
-                    "marked_file": c.get("marked_file"),
-                    # chips are crops of the same acquisition: they inherit its resolution
-                    "resolution_m": res,
-                }
-                for c in (img.get("detail_chips") or [])
-            ],
-        })
+        live = wayback_live_chip(img, res)
+        if live is None:
+            continue  # selected date whose tiles were missing (e.g. lekki-epe-rehab 2018-12-24)
+        live["acq_date"] = img["acq_date"]
+        live["detail_chips"] = []
+        for c in (img.get("detail_chips") or []):
+            d = wayback_live_chip(c, res)
+            if d:
+                live["detail_chips"].append(d)
+        out.append(live)
     out.sort(key=lambda e: e["acq_date"])
     return out
 
@@ -575,6 +588,15 @@ def computed_view(site: dict) -> str:
     ch = dict(s.get("change") or {})
     ch.pop("summary", None)
     ch.pop("stale", None)
+    # Live tile fields vs stored JPG paths are the same pictures; don't stale a review on that.
+    ch["wayback"] = [
+        {
+            "acq_date": w.get("acq_date"),
+            "resolution_m": w.get("resolution_m"),
+            "n_detail": len(w.get("detail_chips") or []),
+        }
+        for w in (ch.get("wayback") or [])
+    ]
     s["change"] = ch
     return json.dumps(s, sort_keys=True, ensure_ascii=False)
 

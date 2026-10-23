@@ -9,3 +9,9 @@ __pycache__/
 .DS_Store
 events/forecast/logs/
 events/forecast/.run_daily.lock
+
+# Esri Wayback chips: live tiles only. Sentinel-2 (s2_*) and Open Buildings (ob_*) stay.
+events/drainage_sites/**/[0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9].jpg
+events/drainage_sites/**/[0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]_marked.jpg
+events/drainage_sites/**/[0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]_detail*.jpg
+events/drainage_sites/**/contact_sheet.jpg

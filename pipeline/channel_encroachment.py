@@ -89,6 +89,7 @@ REPO = Path(__file__).resolve().parents[1]
 SITES_JSON = REPO / "events" / "drainage_sites.json"
 IMAGERY_JSON = REPO / "events" / "drainage_sites_imagery.json"
 SITES_DIR = REPO / "events" / "drainage_sites"
+CHIP_CACHE = REPO / "pipeline" / "cache" / "wayback" / "chips"
 OUT_JSON = REPO / "events" / "drainage_sites_buildings.json"
 CACHE = REPO / "pipeline" / "cache" / "open_buildings"
 CACHE_MANIFESTS = CACHE / "manifests"
@@ -915,18 +916,36 @@ def run_validation(site, site_dir, executor, channel=None):
                 site_geom=geom_utm, buffer=site_buffer, bpolys=bpolys)
 
 
+def wayback_chip_path(sid, img):
+    """Analysis mosaic: cache first, then a leftover events/ copy if one exists."""
+    if img.get("cache_file"):
+        p = REPO / img["cache_file"]
+        if p.exists():
+            return p
+    name = None
+    if img.get("file"):
+        name = Path(img["file"]).name
+    elif img.get("acq_date"):
+        name = f"{img['acq_date']}.jpg"
+    if not name:
+        return None
+    for p in (CHIP_CACHE / sid / name, SITES_DIR / sid / name):
+        if p.exists():
+            return p
+    return None
+
+
 def wayback_overlay(site, site_dir, val):
     sid = site["site_id"]
     img = json.loads(IMAGERY_JSON.read_text())
     entry = next((s for s in img["sites"] if s["site_id"] == sid), None)
     if entry is None:
         return None, None
-    chips = [i for i in entry.get("images", [])
-             if (SITES_DIR / sid / Path(i["file"]).name).exists()]
+    chips = [i for i in entry.get("images", []) if wayback_chip_path(sid, i)]
     if not chips:
         return None, None
     chip = max(chips, key=lambda i: i["acq_date"])
-    chip_path = SITES_DIR / sid / Path(chip["file"]).name
+    chip_path = wayback_chip_path(sid, chip)
     geom_utm = to_utm(_shape(entry["geometry"]))
     minx, miny, maxx, maxy = geom_utm.bounds
     if entry["geometry"]["type"] == "Point":
