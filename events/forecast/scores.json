@@ -2,9 +2,9 @@
  "meta": {
   "built_by": "pipeline/score_forecasts.py",
   "task": "42-forecast-scoring (docs/tasks/42-forecast-scoring.md), part A",
-  "generated_at": "2026-11-12T05:43:28+00:00",
+  "generated_at": "2026-11-15T05:43:15+00:00",
   "method": "Every archived forecast run is compared with what the IMERG satellite later measured for the same cell and day. Brier scores use the run's chance of at least 20 / 40 mm against the observed total; the climatology baseline is that cell's own frequency of such days in the April-November window (the year-months the catalog searched, 2014 onward), and skill = 1 - Brier / Brier_climatology. A medium or high level counts as a warning, scored as hits, misses and false alarms against IMERG >= 40 mm in that cell and against a flood reported within 5 km (the same rule as pipeline/forecast.py). Grouped by lead time, day 1 to day 7. Below 30 scored cell-days for a lead day, enough_data is false.",
-  "imerg_last_day": "2026-11-10",
+  "imerg_last_day": "2026-11-13",
   "archive_runs": [
    "2026-10-21-1933.json",
    "2026-10-21-2116.json",
@@ -30,7 +30,10 @@
    "2026-11-09.json",
    "2026-11-10.json",
    "2026-11-11.json",
-   "2026-11-12.json"
+   "2026-11-12.json",
+   "2026-11-13.json",
+   "2026-11-14.json",
+   "2026-11-15.json"
   ],
   "archive_first_run_date": "2026-10-21-1933",
   "calibrated_runs": [
@@ -55,27 +58,30 @@
    "2026-11-09.json",
    "2026-11-10.json",
    "2026-11-11.json",
-   "2026-11-12.json"
+   "2026-11-12.json",
+   "2026-11-13.json",
+   "2026-11-14.json",
+   "2026-11-15.json"
   ],
   "calibration": "Runs listed in calibrated_runs carry CALIBRATED rain (quantile mapping fitted by pipeline/calibrate.py; see each run's meta.calibration): their chance fields and median_mm are IMERG-equivalent, and raw_median_mm keeps the uncalibrated median beside it. Runs before that are raw, so the Brier and warning scores mix the two regimes while the archive fills. median_ge_40mm scores the raw and the calibrated median of the calibrated runs against IMERG >= 40 mm, so the calibration's effect on the medians shows there first.",
   "imerg_refresh": "The IMERG history (events/rain_history_grid_daily.json) is refreshed separately: run pipeline/imerg_history_grid.py first (it needs Earthdata credentials), then run this script. Days the satellite record does not yet cover are not scored.",
   "note": null
  },
- "n_scored": 8568,
+ "n_scored": 9996,
  "enough_data": true,
  "totals": {
-  "n_scored": 8568,
+  "n_scored": 9996,
   "enough_data": true,
-  "brier_ge_20mm": 0.0267,
-  "brier_clim_ge_20mm": 0.0304,
-  "skill_ge_20mm": 0.1231,
-  "brier_ge_40mm": 0.0036,
-  "brier_clim_ge_40mm": 0.003,
-  "skill_ge_40mm": -0.1919,
+  "brier_ge_20mm": 0.0282,
+  "brier_clim_ge_20mm": 0.033,
+  "skill_ge_20mm": 0.1445,
+  "brier_ge_40mm": 0.0043,
+  "brier_clim_ge_40mm": 0.004,
+  "skill_ge_40mm": -0.0771,
   "vs_imerg_ge_40mm": {
-   "hits": 2,
-   "misses": 18,
-   "false_alarms": 148
+   "hits": 4,
+   "misses": 30,
+   "false_alarms": 146
   },
   "vs_flood_reported_5km": {
    "hits": 0,
@@ -83,15 +89,15 @@
    "false_alarms": 150
   },
   "median_ge_40mm": {
-   "n_scored_calibrated_runs": 8092,
+   "n_scored_calibrated_runs": 9520,
    "raw": {
     "hits": 0,
-    "misses": 19,
+    "misses": 33,
     "false_alarms": 0
    },
    "calibrated": {
     "hits": 0,
-    "misses": 19,
+    "misses": 33,
     "false_alarms": 0
    }
   }
@@ -106,18 +112,18 @@
  "by_lead_day": [
   {
    "lead_day": 1,
-   "n_scored": 1428,
+   "n_scored": 1632,
    "enough_data": true,
-   "brier_ge_20mm": 0.0279,
-   "brier_clim_ge_20mm": 0.0276,
-   "skill_ge_20mm": -0.0111,
-   "brier_ge_40mm": 0.0051,
-   "brier_clim_ge_40mm": 0.0028,
-   "skill_ge_40mm": -0.846,
+   "brier_ge_20mm": 0.0262,
+   "brier_clim_ge_20mm": 0.0301,
+   "skill_ge_20mm": 0.1294,
+   "brier_ge_40mm": 0.0053,
+   "brier_clim_ge_40mm": 0.0037,
+   "skill_ge_40mm": -0.4461,
    "vs_imerg_ge_40mm": {
-    "hits": 1,
+    "hits": 3,
     "misses": 2,
-    "false_alarms": 71
+    "false_alarms": 69
    },
    "vs_flood_reported_5km": {
     "hits": 0,
@@ -125,32 +131,32 @@
     "false_alarms": 72
    },
    "median_ge_40mm": {
-    "n_scored_calibrated_runs": 1360,
+    "n_scored_calibrated_runs": 1564,
     "raw": {
      "hits": 0,
-     "misses": 3,
+     "misses": 5,
      "false_alarms": 0
     },
     "calibrated": {
      "hits": 0,
-     "misses": 3,
+     "misses": 5,
      "false_alarms": 0
     }
    }
   },
   {
    "lead_day": 2,
-   "n_scored": 1360,
+   "n_scored": 1564,
    "enough_data": true,
-   "brier_ge_20mm": 0.0237,
-   "brier_clim_ge_20mm": 0.0285,
-   "skill_ge_20mm": 0.1693,
-   "brier_ge_40mm": 0.0052,
-   "brier_clim_ge_40mm": 0.0029,
-   "skill_ge_40mm": -0.8152,
+   "brier_ge_20mm": 0.0241,
+   "brier_clim_ge_20mm": 0.0311,
+   "skill_ge_20mm": 0.2233,
+   "brier_ge_40mm": 0.0053,
+   "brier_clim_ge_40mm": 0.0038,
+   "skill_ge_40mm": -0.3927,
    "vs_imerg_ge_40mm": {
     "hits": 1,
-    "misses": 2,
+    "misses": 4,
     "false_alarms": 58
    },
    "vs_flood_reported_5km": {
@@ -159,32 +165,32 @@
     "false_alarms": 59
    },
    "median_ge_40mm": {
-    "n_scored_calibrated_runs": 1292,
+    "n_scored_calibrated_runs": 1496,
     "raw": {
      "hits": 0,
-     "misses": 3,
+     "misses": 5,
      "false_alarms": 0
     },
     "calibrated": {
      "hits": 0,
-     "misses": 3,
+     "misses": 5,
      "false_alarms": 0
     }
    }
   },
   {
    "lead_day": 3,
-   "n_scored": 1292,
+   "n_scored": 1496,
    "enough_data": true,
-   "brier_ge_20mm": 0.0261,
-   "brier_clim_ge_20mm": 0.0295,
-   "skill_ge_20mm": 0.1151,
-   "brier_ge_40mm": 0.0034,
-   "brier_clim_ge_40mm": 0.003,
-   "skill_ge_40mm": -0.1378,
+   "brier_ge_20mm": 0.0276,
+   "brier_clim_ge_20mm": 0.032,
+   "skill_ge_20mm": 0.138,
+   "brier_ge_40mm": 0.0042,
+   "brier_clim_ge_40mm": 0.004,
+   "skill_ge_40mm": -0.0725,
    "vs_imerg_ge_40mm": {
     "hits": 0,
-    "misses": 3,
+    "misses": 5,
     "false_alarms": 19
    },
    "vs_flood_reported_5km": {
@@ -193,32 +199,134 @@
     "false_alarms": 19
    },
    "median_ge_40mm": {
-    "n_scored_calibrated_runs": 1224,
+    "n_scored_calibrated_runs": 1428,
     "raw": {
      "hits": 0,
-     "misses": 3,
+     "misses": 5,
      "false_alarms": 0
     },
     "calibrated": {
      "hits": 0,
-     "misses": 3,
+     "misses": 5,
      "false_alarms": 0
     }
    }
   },
   {
    "lead_day": 4,
-   "n_scored": 1224,
+   "n_scored": 1428,
    "enough_data": true,
-   "brier_ge_20mm": 0.0242,
-   "brier_clim_ge_20mm": 0.0306,
-   "skill_ge_20mm": 0.2099,
-   "brier_ge_40mm": 0.0025,
-   "brier_clim_ge_40mm": 0.0031,
-   "skill_ge_40mm": 0.1899,
+   "brier_ge_20mm": 0.0268,
+   "brier_clim_ge_20mm": 0.0331,
+   "skill_ge_20mm": 0.1922,
+   "brier_ge_40mm": 0.0036,
+   "brier_clim_ge_40mm": 0.0041,
+   "skill_ge_40mm": 0.1341,
    "vs_imerg_ge_40mm": {
     "hits": 0,
-    "misses": 3,
+    "misses": 5,
+    "false_alarms": 0
+   },
+   "vs_flood_reported_5km": {
+    "hits": 0,
+    "misses": 0,
+    "false_alarms": 0
+   },
+   "median_ge_40mm": {
+    "n_scored_calibrated_runs": 1360,
+    "raw": {
+     "hits": 0,
+     "misses": 5,
+     "false_alarms": 0
+    },
+    "calibrated": {
+     "hits": 0,
+     "misses": 5,
+     "false_alarms": 0
+    }
+   }
+  },
+  {
+   "lead_day": 5,
+   "n_scored": 1360,
+   "enough_data": true,
+   "brier_ge_20mm": 0.0302,
+   "brier_clim_ge_20mm": 0.0343,
+   "skill_ge_20mm": 0.1197,
+   "brier_ge_40mm": 0.0039,
+   "brier_clim_ge_40mm": 0.0043,
+   "skill_ge_40mm": 0.0885,
+   "vs_imerg_ge_40mm": {
+    "hits": 0,
+    "misses": 5,
+    "false_alarms": 0
+   },
+   "vs_flood_reported_5km": {
+    "hits": 0,
+    "misses": 0,
+    "false_alarms": 0
+   },
+   "median_ge_40mm": {
+    "n_scored_calibrated_runs": 1292,
+    "raw": {
+     "hits": 0,
+     "misses": 5,
+     "false_alarms": 0
+    },
+    "calibrated": {
+     "hits": 0,
+     "misses": 5,
+     "false_alarms": 0
+    }
+   }
+  },
+  {
+   "lead_day": 6,
+   "n_scored": 1292,
+   "enough_data": true,
+   "brier_ge_20mm": 0.0305,
+   "brier_clim_ge_20mm": 0.0357,
+   "skill_ge_20mm": 0.1453,
+   "brier_ge_40mm": 0.004,
+   "brier_clim_ge_40mm": 0.0044,
+   "skill_ge_40mm": 0.0919,
+   "vs_imerg_ge_40mm": {
+    "hits": 0,
+    "misses": 5,
+    "false_alarms": 0
+   },
+   "vs_flood_reported_5km": {
+    "hits": 0,
+    "misses": 0,
+    "false_alarms": 0
+   },
+   "median_ge_40mm": {
+    "n_scored_calibrated_runs": 1224,
+    "raw": {
+     "hits": 0,
+     "misses": 4,
+     "false_alarms": 0
+    },
+    "calibrated": {
+     "hits": 0,
+     "misses": 4,
+     "false_alarms": 0
+    }
+   }
+  },
+  {
+   "lead_day": 7,
+   "n_scored": 1224,
+   "enough_data": true,
+   "brier_ge_20mm": 0.0338,
+   "brier_clim_ge_20mm": 0.0358,
+   "skill_ge_20mm": 0.0556,
+   "brier_ge_40mm": 0.0034,
+   "brier_clim_ge_40mm": 0.0039,
+   "skill_ge_40mm": 0.1159,
+   "vs_imerg_ge_40mm": {
+    "hits": 0,
+    "misses": 4,
     "false_alarms": 0
    },
    "vs_flood_reported_5km": {
@@ -230,114 +338,12 @@
     "n_scored_calibrated_runs": 1156,
     "raw": {
      "hits": 0,
-     "misses": 3,
+     "misses": 4,
      "false_alarms": 0
     },
     "calibrated": {
      "hits": 0,
-     "misses": 3,
-     "false_alarms": 0
-    }
-   }
-  },
-  {
-   "lead_day": 5,
-   "n_scored": 1156,
-   "enough_data": true,
-   "brier_ge_20mm": 0.0275,
-   "brier_clim_ge_20mm": 0.0319,
-   "skill_ge_20mm": 0.1397,
-   "brier_ge_40mm": 0.0028,
-   "brier_clim_ge_40mm": 0.0032,
-   "skill_ge_40mm": 0.122,
-   "vs_imerg_ge_40mm": {
-    "hits": 0,
-    "misses": 3,
-    "false_alarms": 0
-   },
-   "vs_flood_reported_5km": {
-    "hits": 0,
-    "misses": 0,
-    "false_alarms": 0
-   },
-   "median_ge_40mm": {
-    "n_scored_calibrated_runs": 1088,
-    "raw": {
-     "hits": 0,
-     "misses": 3,
-     "false_alarms": 0
-    },
-    "calibrated": {
-     "hits": 0,
-     "misses": 3,
-     "false_alarms": 0
-    }
-   }
-  },
-  {
-   "lead_day": 6,
-   "n_scored": 1088,
-   "enough_data": true,
-   "brier_ge_20mm": 0.0277,
-   "brier_clim_ge_20mm": 0.0333,
-   "skill_ge_20mm": 0.1703,
-   "brier_ge_40mm": 0.003,
-   "brier_clim_ge_40mm": 0.0034,
-   "skill_ge_40mm": 0.1258,
-   "vs_imerg_ge_40mm": {
-    "hits": 0,
-    "misses": 3,
-    "false_alarms": 0
-   },
-   "vs_flood_reported_5km": {
-    "hits": 0,
-    "misses": 0,
-    "false_alarms": 0
-   },
-   "median_ge_40mm": {
-    "n_scored_calibrated_runs": 1020,
-    "raw": {
-     "hits": 0,
-     "misses": 2,
-     "false_alarms": 0
-    },
-    "calibrated": {
-     "hits": 0,
-     "misses": 2,
-     "false_alarms": 0
-    }
-   }
-  },
-  {
-   "lead_day": 7,
-   "n_scored": 1020,
-   "enough_data": true,
-   "brier_ge_20mm": 0.031,
-   "brier_clim_ge_20mm": 0.0333,
-   "skill_ge_20mm": 0.0704,
-   "brier_ge_40mm": 0.0021,
-   "brier_clim_ge_40mm": 0.0026,
-   "skill_ge_40mm": 0.1921,
-   "vs_imerg_ge_40mm": {
-    "hits": 0,
-    "misses": 2,
-    "false_alarms": 0
-   },
-   "vs_flood_reported_5km": {
-    "hits": 0,
-    "misses": 0,
-    "false_alarms": 0
-   },
-   "median_ge_40mm": {
-    "n_scored_calibrated_runs": 952,
-    "raw": {
-     "hits": 0,
-     "misses": 2,
-     "false_alarms": 0
-    },
-    "calibrated": {
-     "hits": 0,
-     "misses": 2,
+     "misses": 4,
      "false_alarms": 0
     }
    }
